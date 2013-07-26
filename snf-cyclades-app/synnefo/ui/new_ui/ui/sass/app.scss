@@ -1,0 +1,258 @@
+// Global Foundation Settings
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "foundation/foundation-global"; // *always required
+// @import "foundation/components/global"; // *always required
+// @import "foundation/components/grid";
+// @import "foundation/components/visibility";
+// @import "foundation/components/block-grid";
+// @import "foundation/components/type";
+// @import "foundation/components/buttons";
+// @import "foundation/components/forms"; // *requires components/buttons
+// @import "foundation/components/custom-forms"; // *requires components/buttons, components/forms
+// @import "foundation/components/button-groups"; // *requires components/buttons
+// @import "foundation/components/dropdown-buttons"; // *requires components/buttons
+// @import "foundation/components/split-buttons"; // *requires components/buttons
+// @import "foundation/components/flex-video";
+// @import "foundation/components/section";
+// @import "foundation/components/top-bar";  // *requires components/grid
+// @import "foundation/components/orbit";
+// @import "foundation/components/reveal";
+// @import "foundation/components/joyride";
+// @import "foundation/components/clearing";
+// @import "foundation/components/alert-boxes";
+// @import "foundation/components/breadcrumbs";
+// @import "foundation/components/keystrokes";
+// @import "foundation/components/labels";
+// @import "foundation/components/inline-lists";
+// @import "foundation/components/pagination";
+// @import "foundation/components/panels";
+// @import "foundation/components/pricing-tables";
+// @import "foundation/components/progress-bars";
+// @import "foundation/components/side-nav";
+// @import "foundation/components/sub-nav";
+// @import "foundation/components/switch";
+// @import "foundation/components/magellan";
+// @import "foundation/components/tables";
+// @import "foundation/components/thumbs";
+// @import "foundation/components/tooltips";
+// @import "foundation/components/dropdown";
+
+
+// Set margin and padding to zero 
+@mixin marginPaddingZero() {
+	margin: 0;
+	padding: 0;
+}
+ 
+
+// Establishes the prequisits for sprite with background-image.
+// Background-position for normal and hover states need to 
+// be declared separetely
+@mixin sprite($image, $width, $height){
+	background:url($image);
+	width: $width;
+	height:$height;
+	display: inline-block;
+	text-indent: -2000px;
+	overflow: hidden;
+}
+
+// Transition for css properties
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+// Box-shadow property. For no box-shadow use box-shadow(none)
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+a:hover {
+@include transition(background, 300ms, ease-out);
+}
+
+.dummy-navigation {
+	position: fixed;
+	right:0;
+	top:100px;
+	padding:20px;
+	background:#cc0;
+	z-index:100;
+	line-height:160%;
+	a {
+		color:$black;
+		&:hover { color:$white }
+		&.open { color:$white;}
+		&.close {
+			float:right;
+			font-weight:bold;
+			font-size:20px;
+		}
+	}
+}
+
+.ours {
+	padding:8px 15px;
+	color:$white;
+	font-size:20px;
+	font-weight:bold;
+	background:#cc0;
+	display:none;
+	position: absolute;
+	&.questions { background:orange;}
+	&.problems { background:red;}
+	&.suggestions { background:#3EC9FF;}
+
+}
+
+
+.row-full {
+	width:$row-top-width;
+}
+
+.header {
+	position:relative;
+	padding:$header-padding-vertical $header-padding-horizontal;
+	border-bottom:1px solid $primary-color;
+	.logo {
+		text-align: center;
+	}
+	.actions {
+		text-align:center;
+		ul {
+			margin:$header-padding-vertical 0 0;
+			li {
+				list-style: none outside none;
+				display: inline-block;
+				margin:0 5px;
+				a {
+					display: block;
+					width:100%;
+					padding:8px 20px;
+					border:1px solid transparent;
+					&:hover {
+						border:1px solid $secondary-color;
+					}
+				}
+			}
+		}
+	}
+	.new-btn {
+		position: absolute;
+		left:$header-padding-horizontal;
+		bottom:$header-padding-vertical;
+		a {
+			display: inline-block;
+			padding:10px 20px;
+			border:1px solid $primary-color;
+			span {
+				font-size:emCalc(20px);
+			}
+			&:hover {
+				border-color:$secondary-color;
+				background:$secondary-color;
+				color:$white;
+			}
+		}
+	}
+}
+.login {
+	position:absolute;
+	right:$header-padding-horizontal;
+	top:$header-padding-vertical;
+}
+
+.top-nav {
+	position:absolute;
+	left:$header-padding-horizontal;
+	top:$header-padding-vertical;
+	ul {
+		@include marginPaddingZero();
+		li {
+			display: inline-block;
+			margin-right:15px;
+			a {
+				padding-bottom:5px;
+			}
+		}
+	}
+
+}
+
+
+// info styling
+
+.top-info {
+	padding:50px 100px;
+	position: relative;
+	.close {
+		position: absolute;
+		right:$header-padding-horizontal;
+		top:50px;
+		@include sprite('../images/info-close.png', 31px, 30px);
+	}
+}
+.info.alert {
+	background:$secondary-color;
+	color:$white;
+}
+
+.info.warning {
+	background:$warning-color;
+	color:$black;
+}
+
+.info.success {
+	background:$success-color;
+	color:$white;
+}
+
+.items-list {
+	padding:50px 0;
+	li {
+		text-align:center;
+		padding:20px;
+		.visible-info {
+			span {
+				display: block;
+			}
+		}
+	}
+}
+
+.vms {
+	.items-list {
+		li {
+			.img {
+				@include sprite('../images/vm-on.png', 56px, 58px);
+				margin-bottom: 20px;
+				position: relative;
+				&.stopped {
+					background-image:url('../images/vm-stopped.png');
+				}
+				.os {
+					@include sprite('../images/os-unknown.png', 22px, 22px);
+					position: absolute;
+					top:8px;
+					left:18px;
+					&.windows { background-image:url('../images/os-windows.png'); }
+					&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+					&.fedora { background-image:url('../images/os-fedora.png'); }
+				}
+			}
+		}
+	}
+}
