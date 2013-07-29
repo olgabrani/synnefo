@@ -28,11 +28,14 @@ $(document).ready(function(){
 	});
 
 	ui.setSidebarHeight();
-
+	$('.select-os li').click(function(e){
+		$('.select-os li').removeClass('selected');
+		$(this).addClass('selected');
+	})
 
 })
 
 $(window).resize(function(e){
 	ui.setSidebarHeight();
-	
+
 })

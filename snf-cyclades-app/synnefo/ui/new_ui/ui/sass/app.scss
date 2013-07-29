@@ -44,7 +44,9 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-
+.clearfix:before,
+.clearfix:after									{ content:" "; display:block; height:0; visibility:hidden; } /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/ */
+.clearfix:after									{ clear:both; }
 // Set margin and padding to zero 
 @mixin marginPaddingZero() {
 	margin: 0;
@@ -125,7 +127,7 @@ a:hover {
 }
 
 .lt-sidebar {
-	max-width:200px;
+	width:250px;
 	float:left;
 	overflow:scroll;
 	height:300px;
@@ -177,7 +179,8 @@ a:hover {
 			span {
 				font-size:emCalc(20px);
 			}
-			&:hover {
+			&:hover,
+			&.current {
 				border-color:$secondary-color;
 				background:$secondary-color;
 				color:$white;
@@ -357,4 +360,95 @@ a:hover {
 	padding-bottom:20px;
 	margin-bottom:20px;
 	border-bottom:2px dashed $primary-color;
+}
+
+.overlay {
+	background:$secondary-color;
+	a {
+		color:$white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	.lt-sidebar {
+		border-right:1px solid $white;
+		ul {
+			li {
+				list-style:none outside none;
+				a {
+					span { float:right; display:none;}
+					&:hover,
+					&.current {
+
+						text-decoration: none;
+						span { 
+							display:inline;
+						}
+					}
+				}
+			}
+		}
+	}
+	.lt-sidebar, 
+	.main {
+		padding:100px $header-padding-horizontal;
+	}
+}
+
+.create-vm {
+	.select-os {
+		li {
+			width:23%;
+			padding:20px;
+			list-style:none outside none;
+			display: inline-block;
+			float: left;
+			height: 220px;
+			margin:0 10px 10px 0;
+			&:hover,
+			&.selected {
+				background:$white;
+				h2, p, a {
+					color:$secondary-color;
+				}
+			}
+			.os {
+				@include sprite('../images/os-unknown.png', 30px, 30px);
+				background-size:100%;
+				margin-bottom:2em;
+				&.windows { background-image:url('../images/os-windows.png'); }
+				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+				&.fedora { background-image:url('../images/os-fedora.png'); }
+			}
+			h2 {
+				font-size:emCalc(16px);
+				font-weight:normal;
+				color:$white;
+			}
+			.details {
+				font-weight:bold;
+				font-size:emCalc(14px);
+			}
+		}
+	}
+}
+
+.navigation {
+	a 	{
+		display: inline-block;
+		padding:10px 20px;
+		background:$white;
+		text-align: center;
+		color:$secondary-color;
+		border:1px solid $secondary-color;
+		&:hover {
+			border-color:$white;
+			background:transparent;
+			color:$white;
+			text-decoration:none;
+		}
+		&.rt {
+			float:right;
+		}
+	}
 }
