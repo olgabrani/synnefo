@@ -56,12 +56,13 @@
 // Background-position for normal and hover states need to 
 // be declared separetely
 @mixin sprite($image, $width, $height){
-	background:url($image);
+	background:url($image) no-repeat center center;
 	width: $width;
 	height:$height;
 	display: inline-block;
 	text-indent: -2000px;
 	overflow: hidden;
+
 }
 
 // Transition for css properties
@@ -122,6 +123,21 @@ a:hover {
 .row-full {
 	width:$row-top-width;
 }
+
+.lt-sidebar {
+	max-width:200px;
+	float:left;
+	overflow:scroll;
+	height:300px;
+	&+.main {
+		overflow:hidden;
+	}
+}
+
+.main {
+	padding:20px 40px;
+}
+
 
 .header {
 	position:relative;
@@ -255,4 +271,90 @@ a:hover {
 			}
 		}
 	}
+}
+
+.lt-sidebar.vms {
+	font-size:emCalc(12px);
+	.items-list li .img, 
+	.items-list li .os {
+		background-size:80%;
+	}
+}
+
+.vm {
+	.img {
+				@include sprite('../images/vm-on.png', 56px, 58px);
+				margin-bottom: 20px;
+				position: relative;
+				&.stopped {
+					background-image:url('../images/vm-stopped.png');
+				}
+				.os {
+					@include sprite('../images/os-unknown.png', 22px, 22px);
+					position: absolute;
+					top:8px;
+					left:18px;
+					&.windows { background-image:url('../images/os-windows.png'); }
+					&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+					&.fedora { background-image:url('../images/os-fedora.png'); }
+				}
+			}
+}
+
+.details {
+	.top {
+		text-align: center;
+		.img {
+			@include sprite('../images/vm-on.png', 112px, 116px);
+			background-size:100%;
+		}
+		.os {
+			background-size:100%;
+			width:44px;
+			height:44px;
+			left:36px;
+			top:16px;
+		}
+		.actions {
+			ul {
+				padding:1em;
+				text-align:center;
+				li {
+					list-style: none outside none;
+					display: inline-block;
+					margin:0 10px;
+					min-width: 112px;
+					a {
+						display: block;
+						padding:5px 20px;
+						text-align:center;
+						border:1px solid $primary-color;
+						&:hover {
+							border-color:$secondary-color;
+							background:$secondary-color;
+							color:$white;
+						}
+					}
+
+				}
+			}
+		}
+		
+	}
+	.info {
+		dl {
+			margin:0;
+			dt {
+				display: inline-block;
+				width:25%;
+				float:left;
+			}
+		}
+	}
+}
+
+.border-bottom-style1 {
+	padding-bottom:20px;
+	margin-bottom:20px;
+	border-bottom:2px dashed $primary-color;
 }
