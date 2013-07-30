@@ -33,6 +33,16 @@ $(document).ready(function(){
 		$(this).addClass('selected');
 	})
 
+	$('.select-flavor dl span').click(function(e){
+		console.log('test');
+		$(this).parents('dl').find('span').removeClass('current');
+		$(this).addClass('current');
+	})
+
+	if ($('.overlay').length >0 ){
+		$('body').addClass('with-overlay');
+	}
+
 })
 
 $(window).resize(function(e){

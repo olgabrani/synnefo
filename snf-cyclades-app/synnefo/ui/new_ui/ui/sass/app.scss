@@ -83,8 +83,52 @@
   box-shadow: $shadows;
 }
 
+// border grey, on hover pink
+.btn1 {
+	border:1px solid $primary-color;
+	color:$primary-color;
+	display:inline-block;
+	padding:10px 20px;
+	line-height:1em;
+	text-align:center;
+	&:hover,
+	&.current {
+		border-color:$secondary-color;
+		background:$secondary-color;
+		color:$white;
+	}
+}
+
+// white background, on hover transparent
+.btn2 {
+	@extend .btn1;
+	color:$secondary-color;
+	background:$white;
+	border-color:$secondary-color;
+	&:hover, 
+	&.current {
+		color:$white;
+		background:transparent;
+		border-color:$white;
+	}
+}
+
+// reverse btn2
+.btn3 {
+	@extend .btn1;
+	color:$white; 
+	border-color:$white;
+	&:hover, 
+	&.current {
+		color:$secondary-color;
+		background:$white;
+		border-color:$white;
+	}
+}
+
+
 a:hover {
-@include transition(background, 300ms, ease-out);
+	@include transition(background, 300ms, ease-out);
 }
 
 .dummy-navigation {
@@ -140,11 +184,15 @@ a:hover {
 	padding:20px 40px;
 }
 
+body.with-overlay {
+	background:$secondary-color;
+}
 
 .header {
 	position:relative;
 	padding:$header-padding-vertical $header-padding-horizontal;
 	border-bottom:1px solid $primary-color;
+	background:$white;
 	.logo {
 		text-align: center;
 	}
@@ -173,17 +221,9 @@ a:hover {
 		left:$header-padding-horizontal;
 		bottom:$header-padding-vertical;
 		a {
-			display: inline-block;
-			padding:10px 20px;
-			border:1px solid $primary-color;
+			@extend .btn1;
 			span {
 				font-size:emCalc(20px);
-			}
-			&:hover,
-			&.current {
-				border-color:$secondary-color;
-				background:$secondary-color;
-				color:$white;
 			}
 		}
 	}
@@ -328,15 +368,7 @@ a:hover {
 					margin:0 10px;
 					min-width: 112px;
 					a {
-						display: block;
-						padding:5px 20px;
-						text-align:center;
-						border:1px solid $primary-color;
-						&:hover {
-							border-color:$secondary-color;
-							background:$secondary-color;
-							color:$white;
-						}
+						@extend .btn1;
 					}
 
 				}
@@ -364,18 +396,13 @@ a:hover {
 
 .overlay {
 	background:$secondary-color;
-	a {
-		color:$white;
-		&:hover {
-			text-decoration: underline;
-		}
-	}
 	.lt-sidebar {
 		border-right:1px solid $white;
 		ul {
 			li {
 				list-style:none outside none;
 				a {
+					color:$white;
 					span { float:right; display:none;}
 					&:hover,
 					&.current {
@@ -388,10 +415,16 @@ a:hover {
 				}
 			}
 		}
+
 	}
 	.lt-sidebar, 
 	.main {
 		padding:100px $header-padding-horizontal;
+	}
+	.navigation {
+		.rt {
+			float:right;
+		}
 	}
 }
 
@@ -403,7 +436,7 @@ a:hover {
 			list-style:none outside none;
 			display: inline-block;
 			float: left;
-			height: 220px;
+			height: 200px;
 			margin:0 10px 10px 0;
 			&:hover,
 			&.selected {
@@ -411,6 +444,9 @@ a:hover {
 				h2, p, a {
 					color:$secondary-color;
 				}
+			}
+			a {
+				color:$white;
 			}
 			.os {
 				@include sprite('../images/os-unknown.png', 30px, 30px);
@@ -431,24 +467,30 @@ a:hover {
 			}
 		}
 	}
-}
-
-.navigation {
-	a 	{
-		display: inline-block;
-		padding:10px 20px;
-		background:$white;
-		text-align: center;
-		color:$secondary-color;
-		border:1px solid $secondary-color;
-		&:hover {
-			border-color:$white;
-			background:transparent;
+	.select-flavor {
+		dl {
 			color:$white;
-			text-decoration:none;
-		}
-		&.rt {
-			float:right;
+			font-size:emCalc(20px);
+			margin-bottom:10px;
+			dd {
+				width:23%;
+				display: inline-block;
+			}
+			dt {
+				width:70%;
+				display: inline-block;
+				font-weight: normal;
+				span {
+					@extend .btn3;
+					min-width: 90px;
+					margin:0 10px;
+					&:first-child {
+						margin-left:0;
+					}
+				}
+			}
 		}
 	}
 }
+
+
