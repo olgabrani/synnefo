@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+    <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
@@ -7,9 +8,10 @@
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Synnefo | VM list</title>
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/vm_options.css" />
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
-
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -85,17 +87,29 @@
 						<p class="visible-info">
 							<span>IPv4 83.212.97.127</span>
 							<span>my awsome machine</span>
+							
 						</p>
 					</li>
 					<li>
-						<div class="img running">
-							VM running
-							<span class="os fedora">os</span>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os fedora">os</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
+							<div class="vm_options invisible" id="setdynamically"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="" class="option">details</a>
+							</div>
 						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
-						</p>
 					</li>
 					<li>
 						<div class="img stopped">
@@ -106,6 +120,7 @@
 							<span>IPv4 83.212.97.127</span>
 							<span>my awsome machine</span>
 						</p>
+
 					</li>
 					<li>
 						<div class="img running">
@@ -156,6 +171,7 @@
 		<span data-tooltip class="has-tip ours questions" title="Πόσο θα είναι το μέγιστο πλάτος της κύριας περιοχής" style="top:240px;left:20px">?</span>
 		<span data-tooltip class="has-tip ours problems" title="Πώς θα έχουμε δράσεις όπως filters κτλ" style="top:140px;left:250px">!!</span>
 	</div>
+	
  
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/foundation/foundation.js"></script>
@@ -187,6 +203,8 @@
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
 	<script src="javascripts/common.js"></script>
 	
+    <script src="javascripts/checkbox.js"></script>
+    <script src="javascripts/gp-script.js"></script>
   
   <script>
     $(document).foundation();
