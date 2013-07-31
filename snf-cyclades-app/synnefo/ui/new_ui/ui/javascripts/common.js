@@ -11,14 +11,18 @@ ui.closeDiv = function(closeEl, divToCloseClass) {
 
 // set lt-sidebar height 
 ui.setSidebarHeight = function(){
-	WindowHeight = $(window).height();
-	ltSidebarHeight = WindowHeight - $('.header').outerHeight();
+	var WindowHeight = $(window).height();
+	var h1= WindowHeight - $('.header').outerHeight();
+	var h2= $('.main.details').outerHeight();
+	if (h2>h1) {
+		var ltSidebarHeight = h2;
+	} else {
+		var ltSidebarHeight = h1;
+	}
 	$('.lt-sidebar').height(ltSidebarHeight);
 }
 
-ui.CntCheckedVms = function(){
-	return $('.vm_container .checkbox-checked').length;
-}
+
 
 $(document).ready(function(){
 
@@ -51,10 +55,7 @@ $(document).ready(function(){
 		e.preventDefault();
 	})
 
-	$('.vm_container .vm_options .select').click(function(e){
-		//var totalSelects = ui.CntCheckedVms();
-		//console.log(totalSelects);
-	})
+	
 
 
 })

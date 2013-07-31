@@ -23,13 +23,28 @@ $(document).ready(function(){
     $('.vm_options .select').click(function(event){
         event.preventDefault();
         var checkbox = $(this).find('.custom_checkbox');
+
         if(checkbox.hasClass('checkbox-unchecked')){
             checkbox.html('b');
+            checkbox.addClass('checkbox-checked'); 
             checkbox.removeClass('checkbox-unchecked'); 
         }
         else{
             checkbox.html('a'); 
+            checkbox.removeClass('checkbox-checked');
             checkbox.addClass('checkbox-unchecked');
+
+        }
+        var cntCheckbox = $('.vm_options .checkbox-checked').length;
+        if (cntCheckbox == 0 ){
+             $('.header .main-actions').hide();   
+        } else {
+            $('.header .main-actions').show();
+            if (cntCheckbox > 1) {
+                $('.header .main-actions .single').hide();
+            } else {
+                $('.header .main-actions .sigle').show();
+            }
         }
     });
    
