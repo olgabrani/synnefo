@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
     //show selection window of vm_list_v1.html
+    var elem;
     $('.vm_container').find('.img').mouseenter(function(event){
         event.preventDefault();
-        elem = $('.vm_container').find('.vm_options');
+        elem = $(this).siblings('.vm_options');
         if(elem.length!==0){
             elem.slideDown('slow');
             elem.removeClass('invisible');
