@@ -148,7 +148,6 @@ a:hover {
 }
 
 .dummy-navigation {
-	display:none;
 	position: fixed;
 	right:0;
 	top:100px;
@@ -215,15 +214,8 @@ body.with-overlay {
 	}
 	.actions {
 		text-align:center;
-		height:45px;
-		line-height:45px;
-		position:relative;
-		margin:2*$header-padding-vertical 0 $header-padding-vertical;
-		.main-actions {
-			display: none;
-		}
 		ul {
-			margin:0;
+			margin:$header-padding-vertical 0 0;
 			li {
 				list-style: none outside none;
 				display: inline-block;
@@ -242,10 +234,10 @@ body.with-overlay {
 	}
 	.new-btn {
 		position: absolute;
-		left:0;
-		bottom:0;
+		left:$header-padding-horizontal;
+		bottom:$header-padding-vertical;
 		a {
-			@extend .btn1;
+			@extend .btn4;
 			span {
 				font-size:emCalc(20px);
 			}
@@ -288,22 +280,14 @@ body.with-overlay {
 		@include sprite('../images/info-close.png', 31px, 30px);
 	}
 }
-
-
-.info.error {
-	background:$error-color;
-	color:$white;
-}
-
-
 .info.alert {
-	background:$alert-color;
+	background:$secondary-color;
 	color:$white;
 }
 
 .info.warning {
-	background:$primary-color;
-	color:$white;
+	background:$warning-color;
+	color:$black;
 }
 
 .info.success {
@@ -327,6 +311,18 @@ body.with-overlay {
 .vms {
 	.items-list {
 		li {
+			.more {
+				float:right;
+			}
+			.more-info {
+				position:relative;
+				.content {
+					position:absolute;
+					top:0;
+					right:0;
+					border:2px solid #ccc;
+				}
+			}
 			.img {
 				@include sprite('../images/vm-on.png', 56px, 58px);
 				margin-bottom: 20px;
@@ -551,5 +547,3 @@ body.with-overlay {
 		}
 	}
 }
-
-

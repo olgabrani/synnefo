@@ -25,12 +25,11 @@
 	</div>
 	<div class="row-full">
 		<header class="header">
-			<!-- logo -->
+			
 			<div class="logo">
-				<img src="http://dummyimage.com/300x100/000/fff" alt="software logo">
+				<img src="images/logo_01.png" alt="software logo">
 			</div>
-			<div class="new-btn"><a href=""><span>+</span> NEW MACHINE </a></div>
-			<!-- icons-nav -->
+			
 			<nav class="top-nav icons-nav">
 				
 				<ul>
@@ -43,26 +42,26 @@
 				 
 			</nav>
 			
-			<!-- login functionality -->
 			<div class="login">
 				<a href="">test@grnet.gr</a>
 			</div>
-			<!-- extra actions -->
-			<div class="actions">
+			<div class="actions clearfix">
 				
-				<div class="lt-actions"></div>
+				<div class="lt-actions">
+					<div class="new-btn"><a href="vm_create_a_v1.html"><span>+</span> NEW MACHINE </a></div>
+				</div>
 				<div class="main-actions">
 					<ul>
-						<li><a href="">Reboot</a></li>
-						<li><a href="">Shutdown</a></li>
-						<li><a href="">Console</a></li>
-						<li><a href="">Action1</a></li>
-						<li><a href="">Action2</a></li>
+						<li data-range="common"><a href="">Reboot</a></li>
+						<li data-range="common"><a href="">Shutdown</a></li>
+						<li data-range="atomic"><a href="">Console</a></li>
+						<li data-range="atomic"><a href="">Action1</a></li>
+						<li data-range="common"><a href="">Action2</a></li>
 					</ul>
 				</div>
 			</div>
 		</header>
-		<div class="info top-info success">
+		<div class="info top-info alert">
 			<div class="wrap">
 
 				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, suscipit in, erat. Sed malesuada, enim ut congue pharetra, massa elit convallis pede, ornare scelerisque libero neque ut neque. In at libero. </p>
@@ -80,15 +79,76 @@
 			<div class="vms">
 				<ul class="items-list small-block-grid-2 large-block-grid-4">
 					<li>
-						<div class="img running">
-							VM running
-							<span class="os windows">os</span>
-						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os kubuntu">kubuntu</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
 							
-						</p>
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os windows">windows</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
+							
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
+
+						</div>
+					</li>
+					<li>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os">os</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine οισδθφοισδθφ σοιδφθσδ </span>
+							</p>
+							
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
+
+						</div>
 					</li>
 					<li>
 						<div class="vm_container">
@@ -115,55 +175,100 @@
 						</div>
 					</li>
 					<li>
-						<div class="img stopped">
-							VM running
-							<span class="os kubuntu">os</span>
-						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
-						</p>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os fedora">os</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
+							
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
 
+						</div>
 					</li>
 					<li>
-						<div class="img running">
-							VM running
-							<span class="os windows">os</span>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os fedora">os</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
+							
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
+
 						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
-						</p>
 					</li>
 					<li>
-						<div class="img running">
-							VM running
-							<span class="os kubuntu">os</span>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os fedora">os</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
+							
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
+
 						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
-						</p>
 					</li>
 					<li>
-						<div class="img running">
-							VM running
-							<span class="os">os</span>
+						<div class="vm_container">
+							<div class="img running">
+								VM running
+								<span class="os fedora">os</span>
+							</div>
+							<p class="visible-info">
+								<span>IPv4 83.212.97.127</span>
+								<span>my awsome machine</span>
+							</p>
+							
+							<!-- selection window -->
+							<div class="vm_options invisible"> 
+								<a class="select" href="">select
+									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
+										a
+									</span>
+								</a><br>
+								<a href="" class="option">connect</a><br>
+								<a href="vm_details_v1.html" class="option">details</a>
+							</div>
+
 						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
-						</p>
-					</li>
-					<li>
-						<div class="img running">
-							VM running
-							<span class="os windows">os</span>
-						</div>
-						<p class="visible-info">
-							<span>IPv4 83.212.97.127</span>
-							<span>my awsome machine</span>
-						</p>
 					</li>
 				</ul>
 			</div>

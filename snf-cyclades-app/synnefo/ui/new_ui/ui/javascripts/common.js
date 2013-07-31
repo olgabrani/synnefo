@@ -16,6 +16,10 @@ ui.setSidebarHeight = function(){
 	$('.lt-sidebar').height(ltSidebarHeight);
 }
 
+ui.CntCheckedVms = function(){
+	return $('.vm_container .checkbox-checked').length;
+}
+
 $(document).ready(function(){
 
 	ui.closeDiv($('.info .close'), '.info');
@@ -42,6 +46,16 @@ $(document).ready(function(){
 	if ($('.overlay').length >0 ){
 		$('body').addClass('with-overlay');
 	}
+
+	$('.new-btn a.current').click(function(e){
+		e.preventDefault();
+	})
+
+	$('.vm_container .vm_options .select').click(function(e){
+		//var totalSelects = ui.CntCheckedVms();
+		//console.log(totalSelects);
+	})
+
 
 })
 
