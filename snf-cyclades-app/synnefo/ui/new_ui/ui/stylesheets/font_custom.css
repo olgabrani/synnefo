@@ -1,8 +1,6 @@
-/*input[type=checkbox]{
-	display: none;
-}
 
-*/
+/* checkboxes: selection window of vm_list_v1.html */
+
 @font-face {
 	font-family: 'checkboxes';
 	src:url('../fonts/checkboxes.eot');
