@@ -1,0 +1,135 @@
+
+/* styles for selection window (used for vm_list_v1.html) */
+
+.vm_options{
+	display: none;
+	border: 1px solid #ff7bac;
+	position: absolute;
+	top: -20%;
+	width: 100%;
+	height: 100%;
+	font-size: 27px;
+	font-weight: bold;
+	text-align: left;
+	background-color: white;
+	line-height: 45px;
+	padding-left: 1em;
+	padding-top: 0.65em;
+}
+
+.vm_options .custom_checkbox{
+	display: inline-block;
+	margin: 0;
+	padding-left: 1em;	
+	color: #ff7bac;
+}
+
+a.option:hover{
+	color: #ff7bac;
+}
+
+.vm_container{
+	width: 200px;
+	display: inline-block;
+	height: 187px;
+	position: relative;
+
+}
+
+
+/* styles for detailed info about vm (used for vm_details_v1.html) */
+
+
+.graph_container{
+	padding-bottom: 2em;
+
+}
+
+
+.wrap{
+	position: relative;
+}
+
+.section_header{
+	float: left;
+	width:22%;
+	margin-right: 2%;
+	font-weight: bold;
+}
+
+.right_side{
+	overflow: hidden;
+	width: 76%;
+}
+
+
+
+.info_simple{
+	display: inline-block;
+	width: 200px;	
+	margin-right: 10px;
+}
+
+
+.action_links{
+	display: inline-block;
+	width: 130px;
+	
+}
+
+.btn_pinkb{
+	width: 11.5em;
+	height: 3.8em;
+	line-height: 3.8em;
+	border: 1px solid #ff7bac;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.btn_pinkb a{
+	display: block;
+	padding-left: 1em;
+}
+
+.btn_pinkb a:hover, a.black:hover{
+	color: #ff7bac;
+}
+
+
+.btn_pinkb a img{
+	position: absolute;
+	right: 0.6em;
+	top: 0.6em;
+	height: 2.5em;
+}
+
+
+.action_links span:first-child{
+	margin-right: 5px;
+}
+
+.action_links a{
+	color: #ff7bac;
+	margin-right: 5px;
+}
+
+.row{
+	margin: 0 0 0.4em 0;
+}
+.middle_side{
+	max-width: 70%;
+}
+
+.txt_size{
+	height: 0.8em;
+	vertical-align: baseline;
+}
+
+a.black{
+	color: black;
+}
+
+a.black:hover{
+	color: #ff7bac;
+}

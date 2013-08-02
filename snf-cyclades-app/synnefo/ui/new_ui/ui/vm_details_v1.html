@@ -9,7 +9,7 @@
     <title>Synnefo | VM list</title>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
-
+    <link rel="stylesheet" href="stylesheets/styles.css" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -64,6 +64,8 @@
 	</div>
 	<div class="row-full wrapper">
 		<div class="lt-sidebar vms">
+
+			<!-- sidebar -->
 			<ul class="items-list">
 				<li>
 					<div class="img running">
@@ -137,6 +139,10 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- detailed view of vm -->
+
+		<!-- main image of vm -->
 		<div class="main details vm">
 			<a href="vm_list_v1.html" class="close" title="back to vm list">close</a>
 			<div class="top border-bottom-style1">
@@ -151,6 +157,8 @@
 					</ul>
 				</div>
 			</div>
+
+			<!--sections with details of vm -->
 			<section class="border-bottom-style1 info">
 				<dl>
 					<dt>Name</dt>
@@ -158,72 +166,229 @@
 					<dt>Status</dt>
 					<dd>running</dd>
 					<dt>OS</dt>
-					<dd>xxx Windows</dd>
+					<dd ><img class="txt_size" src="images/os-windows.png"> Windows</dd>
 					<dt>IPv4</dt>
 					<dd>83.212.97.127</dd>
 				</dl>
 			</section>
-			<section class="border-bottom-style1 info">
-				<dl>
-					<dt>disks</dt>
-					<dd>30Gb info info info</dd>
-					<dt></dt>
-					<dd>30Gb info info info</dd>
-					<dt></dt>
-					<dd>30Gb info info info</dd>
-					
-				</dl>
+			<section class="wrap border-bottom-style1 info">
+				<div class="tba">
+					<div class="section_header">
+						disks
+					</div>
+					<div class="right_side">
+						<div class="middle_side">
+							<div class="row">
+								<div class="info_simple">
+									30GB info info info
+								</div>
+								<div class="action_links">
+									<span><a href="">view</a></span>
+									<span><a href="">disconnect</a></span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="info_simple">
+									30GB info info info
+								</div>
+								<div class="action_links">
+									<span><a href="">view</a></span>
+									<span><a href="">disconnect</a></span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="info_simple">
+									30GB info info info
+								</div>
+								<div class="action_links">
+									<span><a href="">view</a></span>
+									<span><a href="">disconnect</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="btn_pinkb">
+							<a href="">
+								add disk
+								<img src="images/menu-icon-disks.png">
+							</a>
+						</div>
+					</div>
+				</div>
+			
 			</section>
-			<section class="border-bottom-style1 info">
-				<dl>
-					<dt>networks</dt>
-					<dd>network-1</dd>
-					<dt></dt>
-					<dd>network-1</dd>
-					<dt></dt>
-					<dd>network-1</dd>
-				</dl>
+			
+			<section class="wrap border-bottom-style1 info">
+				<div class="tba">
+					<div class="section_header">
+						networks
+					</div>
+					<div class="right_side">
+						<div class="middle_side">
+							<div class="row">
+								<div class="info_simple">
+								network 1
+								</div>
+								<div class="action_links">
+									<span><a href="">view</a></span>
+									<span><a href="">disconnect</a></span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="info_simple">
+								network 2
+								</div>
+								<div class="action_links">
+									<span><a href="">view</a></span>
+									<span><a href="">disconnect</a></span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="info_simple">
+								network 3
+							</div>
+								<div class="action_links">
+									<span><a href="">view</a></span>
+									<span><a href="">disconnect</a></span>
+								</div>
+							</div>
+							<div class="btn_pinkb">
+								<a href="">
+									add network
+									<img src="images/menu-icon-networks.png">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section class="border-bottom-style1 info">
-				<dl>
-					<dt>info</dt>
-					<dd> <dt>CPUs</dt><dd>4</dd></dd>
-					<dt></dt>
-					<dd> <dt>RAM</dt><dd>2048MB</dd></dd>
-					<dt></dt>
-					<dd> <dt>System Disk</dt><dd>20GB</dd></dd>
-					<dt></dt>
-					<dd> <dt>Image</dt><dd>(deleted image)</dd></dd>
-					<dt></dt>
-					<dd> <dt>IPv4</dt><dd>83.212.97.127</dd></dd>
-					<dt></dt>
-					<dd> <dt>IPv6</dt><dd>2001:648:2ffc:1112:a80c:eaff:fe15:baee
-</dd></dd>
-				</dl>
-				</section>
-				<section class="border-bottom-style1 info">
-				<dl>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-				</dl>
+
+			<section class="wrap border-bottom-style1 info">
+				<div class="tba">
+					<div class="section_header">
+						info
+					</div>
+					<div class="right_side">
+						<div class="middle_side">
+							<div class="row">
+								<span class="info_simple">
+								CPUs
+								</span>
+								<span class="info_simple">
+								4
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								RAM
+								</span>
+								<span class="info_simple">
+								2048MB
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								System Disk
+								</span>
+								<span class="info_simple">
+								20GB
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								Image
+								</span>
+								<span class="info_simple">
+								(deleted image)
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								Image Size
+								</span>
+								<span class="info_simple">
+								(none)
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								IPv4
+								</span>
+								<span class="info_simple">
+								83.212.97.127
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								IPv6
+								</span>
+								<span class="info_simple">
+								2001:648:2ffc:1112:a80c:eaff:fe15:baee
+								</span>								
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
-			<section class="border-bottom-style1 info">
-				<dl>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-					<dt>Name</dt>
-					<dd>My awesome machine</dd>
-				</dl>
+
+
+
+				<section class="wrap border-bottom-style1 info">
+				<div class="tba">
+					<div class="section_header">
+						tags
+					</div>
+					<div class="right_side">
+						<div class="middle_side">
+							<div class="row">
+								<span class="info_simple">
+								Owner
+								</span>
+								<span class="info_simple">
+								Kick ass dude
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								Role
+								</span>
+								<span class="info_simple">
+								Nothing
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								OS
+								</span>
+								<span class="info_simple">
+								Windows
+								</span>								
+							</div>
+							<div class="row">
+								<span class="info_simple">
+								<br><a class="black" href="">+ Add new tag</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="info">
+				<div class="row">
+					<span class="section_header">
+						CPU utilization
+					</span>
+					<div class="graph_container">
+						<img src="images/cpu-ts.png">
+					</div>		
+				</div>
+				<div class="row">
+					<span class="section_header">
+						network utilization
+					</span>
+					<div class="graph_container">
+						<img src="images/net-ts.png">
+					</div>		
+				</div>
 			</section>
 		</div>
 	</div>
