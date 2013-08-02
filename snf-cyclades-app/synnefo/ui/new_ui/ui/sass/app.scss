@@ -212,6 +212,9 @@ body.with-overlay {
 	background:$white;
 	.logo {
 		text-align: center;
+		img {
+			max-height: 30px;			
+		}
 	}
 	.actions {
 		text-align:center;
@@ -221,7 +224,9 @@ body.with-overlay {
 		margin:2*$header-padding-vertical 0 $header-padding-vertical;
 		.main-actions {
 			position:relative;
-			top:95px;
+			top:86px;
+			margin:0 -40px;
+			border-bottom:1px solid lighten($primary-color,20%);
 		}
 		ul {
 			margin:0;
@@ -418,7 +423,7 @@ body.with-overlay {
 				color:$secondary-color;
 				font-weight: bold;
 				font-size:emCalc(27px);
-
+				cursor: pointer;
 			}
 
 		}
@@ -436,11 +441,15 @@ body.with-overlay {
 	.items-list li .os {
 		background-size:80%;
 	}
-	li:hover,
+	li:hover {
+		background:lighten($primary-color,35%);
+	}
 	li.current {
 		background:lighten($primary-color,30%);
 		cursor: pointer;
+
 	}
+
 }
 
 .vm {
@@ -519,11 +528,13 @@ body.with-overlay {
 .border-bottom-style1 {
 	padding-bottom:20px;
 	margin-bottom:20px;
-	border-bottom:2px dashed $primary-color;
+	border-bottom:1px dashed $primary-color;
 }
 
 .overlay {
 	background:$secondary-color;
+	position: relative;
+	z-index:1;
 	.lt-sidebar {
 		border-right:1px solid $white;
 		ul {

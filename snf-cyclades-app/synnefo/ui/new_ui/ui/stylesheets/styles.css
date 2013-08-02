@@ -73,8 +73,10 @@ a.option:hover{
 
 .action_links{
 	display: inline-block;
-	width: 130px;
 	
+}
+.action_links a:hover {
+	text-decoration: underline;
 }
 
 .btn_pinkb{

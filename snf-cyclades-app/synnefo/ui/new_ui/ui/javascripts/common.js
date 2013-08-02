@@ -55,25 +55,15 @@ ui.VMactionsInit = function(){
 	var vm_container = $('.vms li .container');
 	var vm_img = vm_container.find('.img-wrap');
 
-	vm_img.mouseenter(
+	$('.vms li .container .img').mouseenter(
       function (e) {
-        $(this).parents('.container').find('.options').slideDown();
+        $(this).parents('.container').find('.options').fadeIn();
       }
     );
 
     $('li .container .options').mouseleave(
         function(e){
-        	var checkbox = $(this).find('.custom_checkbox');
-
-	        if (checkbox.hasClass('checkbox-checked')){
-	            checkbox.parents('.container').find('.more_checkbox').html(checkbox.clone());
-	            
-	        } else {
-	        	 checkbox.parents('.container').find('.more_checkbox').html('');
-	        }
-            $('li .container .options').hide();
-            
-            
+            $('li .container .options').fadeOut();
         }
     );
 
@@ -85,10 +75,43 @@ ui.VMactionsInit = function(){
         
         if(checkbox.hasClass('checkbox-checked')){
             checkbox.html('b');
+            $(this).parents('.container').find('.options').fadeOut();
+            
         }
         else{
             checkbox.html('a'); 
       
+        }
+        if (checkbox.hasClass('checkbox-checked')){
+            checkbox.parents('.container').find('.more_checkbox').html(checkbox.clone());
+            
+        } else {
+        	 checkbox.parents('.container').find('.more_checkbox').html('');
+        }
+        ui.cntCheckbox();
+    })
+    $('.more_checkbox').on('click', function(e){
+    	
+        var checkbox = $(this).find('span');
+        checkbox.toggleClass('checkbox-checked');
+        var self = $(this);
+        if(checkbox.hasClass('checkbox-checked')){
+            checkbox.html('b');
+            $(this).parents('.container').find('.options').fadeOut();
+            self.parents('.container').find('.custom_checkbox').addClass('checkbox-checked');
+            self.parents('.container').find('.custom_checkbox').html('b');
+            
+        }
+        else{
+            checkbox.html('a'); 
+            self.parents('.container').find('.custom_checkbox').removeClass('checkbox-checked');
+            self.parents('.container').find('.custom_checkbox').html('a');
+      
+        }
+
+        
+        if (!(checkbox.hasClass('checkbox-checked'))){
+         	self.html('');
         }
         ui.cntCheckbox();
     })
