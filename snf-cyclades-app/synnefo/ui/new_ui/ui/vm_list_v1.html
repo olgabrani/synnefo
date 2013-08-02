@@ -52,11 +52,11 @@
 				</div>
 				<div class="main-actions">
 					<ul>
-						<li><a href="">Reboot</a></li>
-						<li><a href="">Shutdown</a></li>
-						<li class="single"><a href="">Console</a></li>
-						<li><a href="">Multiple action</a></li>
-						<li class="single"><a href="">Single action</a></li>
+						<li class="running"><a href="">Reboot</a></li>
+						<li class="running"><a href="">Shutdown</a></li>
+						<li class="running single"><a href="">Console</a></li>
+						<li class="both"><a href="">Destroy</a></li>
+						<li class="stopped"><a href="">Start</a></li>
 					</ul>
 				</div>
 			</div>
@@ -80,197 +80,130 @@
 			<div class="vms">
 				<ul class="items-list small-block-grid-2 large-block-grid-4">
 					<li>
-						<div class="vm_container">
-							<div class="img running">
-								VM running
-								<span class="os kubuntu">kubuntu</span>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="" class="check">select<span class="custom_checkbox">a</span>		</a><br>
+									<a href="vm_details_v1.html">details</a><br>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
 							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									VM running
+									<span class="os windows">windows</span>
+								</div>
+							</div>
+							
 							<p class="visible-info">
 								<span>IPv4 83.212.97.127</span>
 								<span>my awsome machine</span>
 							</p>
+							<div class="more_checkbox"></div>	
 							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
 						</div>
 					</li>
 					<li>
-						<div class="vm_container">
-							<div class="img stopped">
-								VM running
-								<span class="os windows">windows</span>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="" class="check">select<span class="custom_checkbox">a</span>		</a><br>
+									<a href="vm_details_v1.html">details</a><br>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
 							</div>
+							<div class="img-wrap">
+								<div class="img stopped">
+									VM running
+									<span class="os kubuntu">kubuntu</span>
+								</div>
+							</div>
+							
 							<p class="visible-info">
 								<span>IPv4 83.212.97.127</span>
 								<span>my awsome machine</span>
 							</p>
+							<div class="more_checkbox"></div>	
 							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
 						</div>
 					</li>
 					<li>
-						<div class="vm_container">
-							<div class="img running">
-								VM running
-								<span class="os">os</span>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="" class="check">select<span class="custom_checkbox">a</span>		</a><br>
+									<a href="vm_details_v1.html">details</a><br>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
 							</div>
-							<p class="visible-info">
-								<span>IPv4 83.212.97.127</span>
-								<span>my awsome machine οισδθφοισδθφ σοιδφθσδ </span>
-							</p>
+							<div class="img-wrap">
+								<div class="img stopped">
+									VM running
+									<span class="os windows">windows</span>
+								</div>
+							</div>
 							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
-						</div>
-					</li>
-					<li>
-						<div class="vm_container">
-							<div class="img stopped">
-								VM running
-								<span class="os fedora">os</span>
-							</div>
 							<p class="visible-info">
 								<span>IPv4 83.212.97.127</span>
 								<span>my awsome machine</span>
 							</p>
+							<div class="more_checkbox"></div>	
 							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
 						</div>
 					</li>
 					<li>
-						<div class="vm_container">
-							<div class="img running">
-								VM running
-								<span class="os fedora">os</span>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="" class="check">select<span class="custom_checkbox">a</span>		</a><br>
+									<a href="vm_details_v1.html">details</a><br>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
 							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									VM running
+									<span class="os kubuntu">kubuntu</span>
+								</div>
+							</div>
+							
 							<p class="visible-info">
 								<span>IPv4 83.212.97.127</span>
 								<span>my awsome machine</span>
 							</p>
+							<div class="more_checkbox"></div>	
 							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
 						</div>
 					</li>
+					 
 					<li>
-						<div class="vm_container">
-							<div class="img running">
-								VM running
-								<span class="os fedora">os</span>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="" class="check">select<span class="custom_checkbox">a</span>		</a><br>
+									<a href="vm_details_v1.html">details</a><br>
+									<a href="#" data-reveal-id="vm-connect">connect</a>
+								</div>
 							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									VM running
+									<span class="os kubuntu">kubuntu</span>
+								</div>
+							</div>
+							
 							<p class="visible-info">
 								<span>IPv4 83.212.97.127</span>
 								<span>my awsome machine</span>
 							</p>
+							<div class="more_checkbox"></div>	
 							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
 						</div>
 					</li>
 					<li>
-						<div class="vm_container">
-							<div class="img running">
-								VM running
-								<span class="os fedora">os</span>
-							</div>
-							<p class="visible-info">
-								<span>IPv4 83.212.97.127</span>
-								<span>my awsome machine</span>
-							</p>
-							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
-						</div>
+						<div class="add-new"><a href="">NEW<br>MACHINE</a></div>	
 					</li>
-					<li>
-						<div class="vm_container">
-							<div class="img running">
-								VM running
-								<span class="os fedora">os</span>
-							</div>
-							<p class="visible-info">
-								<span>IPv4 83.212.97.127</span>
-								<span>my awsome machine</span>
-							</p>
-							
-							<!-- selection window -->
-							<div class="vm_options invisible"> 
-								<a class="select" href="">select
-									<span aria-hidden="true" class="custom_checkbox checkbox-unchecked">
-										a
-									</span>
-								</a><br>
-								<a href="" class="option">connect</a><br>
-								<a href="vm_details_v1.html" class="option">details</a>
-							</div>
-
-						</div>
-					</li>
+					 
 				</ul>
 			</div>
 		</section>
@@ -280,7 +213,13 @@
 		<span data-tooltip class="has-tip ours questions" title="Πόσο θα είναι το μέγιστο πλάτος της κύριας περιοχής" style="top:240px;left:20px">?</span>
 		<span data-tooltip class="has-tip ours problems" title="Πώς θα έχουμε δράσεις όπως filters κτλ" style="top:140px;left:250px">!!</span>
 	</div>
-	
+	<div id="vm-connect" class="reveal-modal medium">
+  		<p>A direct connection to this machine can be established using the <a target=​"_blank" href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</spam></p>
+
+		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+  		<a class="close-reveal-modal" title="close window">&#215;</a>
+	</div>
  
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/foundation/foundation.js"></script>

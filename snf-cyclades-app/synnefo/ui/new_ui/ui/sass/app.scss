@@ -220,7 +220,8 @@ body.with-overlay {
 		position:relative;
 		margin:2*$header-padding-vertical 0 $header-padding-vertical;
 		.main-actions {
-			display: none;
+			position:relative;
+			top:95px;
 		}
 		ul {
 			margin:0;
@@ -230,12 +231,21 @@ body.with-overlay {
 				margin:0 5px;
 				a {
 					display: block;
+					color:lighten($primary-color,30%);
 					width:100%;
 					padding:8px 20px;
 					border:1px solid transparent;
-					&:hover {
-						border:1px solid $secondary-color;
+					&.active {
+						color:$primary-color;
+						&:hover {
+							border:1px solid $secondary-color;
+							cursor: pointer;
+						}
 					}
+					&:hover {
+						cursor:default;
+					}
+
 				}
 			}
 		}
@@ -281,6 +291,7 @@ body.with-overlay {
 .top-info {
 	padding:50px 100px;
 	position: relative;
+	display:none;
 	.close {
 		position: absolute;
 		right:$header-padding-horizontal;
@@ -312,7 +323,7 @@ body.with-overlay {
 }
 
 .items-list {
-	padding:50px 0;
+	padding:25px 0;
 	li {
 		text-align:center;
 		padding:20px;
@@ -327,6 +338,20 @@ body.with-overlay {
 .vms {
 	.items-list {
 		li {
+			.add-new {
+				a {
+					margin:0 20px;
+					display: block;
+					font-weight: bold;
+					height:190px;
+					padding:65px 30px 15px;
+					border:2px dashed $primary-color;
+					&:hover {
+						border-color:$secondary-color;
+						color:$secondary-color;
+					}
+				}			
+			}
 			.img {
 				@include sprite('../images/vm-on.png', 56px, 58px);
 				margin-bottom: 20px;
@@ -343,7 +368,59 @@ body.with-overlay {
 					&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
 					&.fedora { background-image:url('../images/os-fedora.png'); }
 				}
+			
 			}
+			
+			.container {
+				border:1px solid transparent;
+				margin: 0 20px;
+				padding:20px 0;
+				position: relative;
+				.options {
+					width:100%;
+					height:100%;
+					background:$white;
+
+					position: absolute;
+					top:0;
+					left:0;
+					display: none;
+					z-index: 1;
+					.wrap {
+						height:190px;
+						padding:15px 30px;
+						text-align: left;
+						border:1px solid $secondary-color;
+						a {
+							font-size:emCalc(27px);
+							color:$primary-color;
+							line-height: 45px;
+							font-weight: bold;
+							.custom_checkbox {
+								color:$secondary-color;
+								position:relative;
+								top:5px;
+							}
+							span {
+								float:right;
+							}
+							&:hover {
+								color: $secondary-color;
+							}
+						}
+					}
+				}
+			}
+			.more_checkbox {
+				position:absolute;
+				right:31px;
+				top:15px;
+				color:$secondary-color;
+				font-weight: bold;
+				font-size:emCalc(27px);
+
+			}
+
 		}
 	}
 }
@@ -550,6 +627,23 @@ body.with-overlay {
 			}
 		}
 	}
+}
+
+#vm-connect {
+	.info {
+		font-style:italic;
+		font-size:emCalc(13px);
+		color: lighten($primary-color,5%);
+	}
+	.ssh {
+		text-align: center;
+		span {
+			padding: 10px 30px;
+			background:$secondary-color;
+			color:$white;
+		}
+	}
+	a:hover { color: $secondary-color;}
 }
 
 
