@@ -47,6 +47,18 @@ ui.cntCheckbox = function(){
 
     }
 }
+
+ui.setCheckedVMBgColor = function(){
+    console.log('test');
+    if ($('.more_checkbox span').length >0) {
+        $('.more_checkbox .checkbox-checked').parents('.container').addClass('set-bg');
+    } else {
+        $('.more_checkbox').parents('.container').removeClass('set-bg');    
+    }
+
+}
+
+
 ui.VMactionsInit = function(){
 
 	// if VM is stopped hide connect option 
@@ -88,6 +100,7 @@ ui.VMactionsInit = function(){
         } else {
         	 checkbox.parents('.container').find('.more_checkbox').html('');
         }
+        ui.setCheckedVMBgColor();
         ui.cntCheckbox();
     })
     $('.more_checkbox').on('click', function(e){
@@ -113,6 +126,7 @@ ui.VMactionsInit = function(){
         if (!(checkbox.hasClass('checkbox-checked'))){
          	self.html('');
         }
+        ui.setCheckedVMBgColor();
         ui.cntCheckbox();
     })
 }
@@ -135,12 +149,7 @@ $(document).ready(function(){
 		$(this).addClass('selected');
 	})
 
-	$('.select-flavor dl span').click(function(e){
-		console.log('test');
-		$(this).parents('dl').find('span').removeClass('current');
-		$(this).addClass('current');
-	})
-
+	
 	if ($('.overlay').length >0 ){
 		$('body').addClass('with-overlay');
 	}
