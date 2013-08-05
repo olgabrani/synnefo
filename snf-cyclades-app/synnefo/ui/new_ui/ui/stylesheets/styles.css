@@ -137,19 +137,31 @@ a.black:hover{
 }
 
 
-/* create vm: choosen flavor */
+/* create vm: choose flavor */
+
+.titles{
+	color: white;
+}
+
 
 .lt-sidebar ul li a.flavor_selection:hover span{
 	display: none;
 }
 
 
-.overlay .lt-sidebar ul li a.flavor_selection.choosen_flavor span{
+.overlay .lt-sidebar ul li a.flavor_selection.chosen_flavor span{
 	display: inline-block;
 }
 
+.create-vm .main .select-flavor dl dt span:hover{
+ 	color: white;
+	border-color: white;
+	background-color: #ff7bac;
+ }
 
-.titles{
-	/*font-weight: bold;*/
-	color: white;
-}
+
+.create-vm .main .select-flavor dl dt span.current:hover{
+ 	color: #ff7bac;
+	border-color: white;
+	background-color: white;
+ }

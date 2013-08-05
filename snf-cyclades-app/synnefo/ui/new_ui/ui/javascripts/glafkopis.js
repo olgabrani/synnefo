@@ -5,27 +5,26 @@ $(document).ready(function(){
         $(this).parents('dl').find('span').removeClass('current');
         $(this).addClass('current');
         if(select_flavor == 1){
-        	$('.lt-sidebar').find('a.choosen_flavor').removeClass('choosen_flavor');
+        	if(!$(this).parents('dl').hasClass('storage')){
+        	$('.lt-sidebar').find('a.chosen_flavor').removeClass('chosen_flavor');
         	select_flavor = 0;
-        }
+        	}
+    	}
     });
 
-	/* function that determines which values are included to small, medium and large flavor */
+	// tba: function that determines which values are included to small, medium and large flavor 
 
-
-
-
-	/* if a predefined flavor has been selected from the user, it highlights the proper resources */
+	// if a predefined flavor has been selected from the user, it highlights the proper resources 
 
 	$('.lt-sidebar li a.flavor_selection').click(function(e){
 		e.preventDefault();
 		select_flavor = 1;
 		var classes = $(this).attr('class').split(" ");
-		// the second class is: small_flavor or medium_flavor or large_flavor
+		// the second class is: 'small_flavor' or 'medium_flavor' or 'large_flavor'
 		
-		$(this).parent('li').siblings('li').find('a.choosen_flavor').removeClass('choosen_flavor');
-		$(this).addClass('choosen_flavor');
-		$('.select-flavor').find('dl span.current').removeClass('current');
+		$(this).parent('li').siblings('li').find('a.chosen_flavor').removeClass('chosen_flavor');
+		$(this).addClass('chosen_flavor');
+		$('.select-flavor').find('dl.cpus span.current, dl.ram span.current, dl.disk span.current').removeClass('current');
 		$('.select-flavor').find('.'+classes[1]).addClass('current');
 
 	});
