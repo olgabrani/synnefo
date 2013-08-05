@@ -9,6 +9,7 @@
     <title>Synnefo | VM list</title>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
 
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
@@ -66,10 +67,10 @@
 		<div class="overlay create-vm">
 			<div class="lt-sidebar">
 				<ul>
-					<li><a href="#">Predefined<span>></span></a></li>
-					<li><a href="#" class="current">Small<span>></span></a></li>
-					<li><a href="#">Medium<span>></span></a></li>
-					<li><a href="#">Large<span>></span></a></li>
+					<li><span class="titles">Predefined</span></li>
+					<li><a href="#" class="flavor_selection small_flavor">Small<span>></span></a></li>
+					<li><a href="#" class="flavor_selection medium_flavor">Medium<span>></span></a></li>
+					<li><a href="#" class="flavor_selection large_flavor">Large<span>></span></a></li>
 				</ul>
 				
 			</div>
@@ -78,15 +79,15 @@
 				<div class="select-flavor">
 					<dl class="clearfix">
 						<dd><strong>Cpu</strong> (x cores)</dd>
-						<dt><span>1</span><span>2</span><span>4</span></dt>
+						<dt><span class="small_flavor">1</span><span class="medium_flavor">2</span><span class="large_flavor">4</span></dt>
 					</dl>
 					<dl class="clearfix">
 						<dd><strong>Disk Size</strong> (GB)</dd>
-						<dt><span>10</span><span>20</span><span>40</span></dt>
+						<dt><span class="small_flavor">5</span><span class="medium_flavor">10</span><span class="large_flavor">20</span><span>40</span></dt>
 					</dl>
 					<dl class="clearfix">
 						<dd><strong>Memory Size</strong> (MB)</dd>
-						<dt><span>1024</span><span>2048</span><span>4096</span></dt>
+						<dt><span class="small_flavor">1024</span><span class="medium_flavor large_flavor">2048</span><span>4096</span></dt>
 					</dl>
 					<dl class="clearfix">
 						<dd><strong>Storage</strong></dd>
@@ -136,7 +137,7 @@
 	
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
 	<script src="javascripts/common.js"></script>
-	<script src="javascripts/common_ab.js"></script>
+	<script src="javascripts/glafkopis.js"></script>
 	
   
   <script>

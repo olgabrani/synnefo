@@ -135,3 +135,21 @@ a.black{
 a.black:hover{
 	color: #ff7bac;
 }
+
+
+/* create vm: choosen flavor */
+
+.lt-sidebar ul li a.flavor_selection:hover span{
+	display: none;
+}
+
+
+.overlay .lt-sidebar ul li a.flavor_selection.choosen_flavor span{
+	display: inline-block;
+}
+
+
+.titles{
+	/*font-weight: bold;*/
+	color: white;
+}
