@@ -66,7 +66,6 @@ a.option:hover{
 
 .info_simple{
 	display: inline-block;
-	width: 200px;	
 	margin-right: 10px;
 }
 
@@ -165,3 +164,29 @@ a.black:hover{
 	border-color: white;
 	background-color: white;
  }
+
+ /*  */
+
+ .big{
+ 	width: 55%;
+ }
+
+ .small{
+ 	width: 170px;
+ }
+
+.wrapper .details .top{
+	padding: 70px 2.5em;
+}
+
+.wrapper .details .top .actions ul li{
+	margin: 0 30px;
+}
+
+.height_up{
+	line-height: 1.3em;
+}
+
+.set{
+	margin-bottom: 1em;
+}
