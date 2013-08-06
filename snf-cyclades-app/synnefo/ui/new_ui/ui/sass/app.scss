@@ -347,6 +347,9 @@ body.with-overlay {
 				}
 			}			
 		}
+		.img-wrap {
+			height: 78px;
+		}
 		.img {
 			margin-bottom: 20px;
 			position: relative;
@@ -390,13 +393,16 @@ body.with-overlay {
 			position:absolute;
 			right:10px;
 			top:5px;
-			display: none;
-			color:$secondary-color;
+
+			color:lighten($primary-color,35%);
 			font-weight: bold;
 			font-size:emCalc(27px);
 			cursor: pointer;
 			z-index: 10;
 			span { position:relative; z-index:10;}
+			&.active {
+				color:$secondary-color;
+			}
 		}
 		.visible-info {
 			margin: 0 25px;

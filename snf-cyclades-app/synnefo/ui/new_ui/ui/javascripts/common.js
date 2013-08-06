@@ -66,29 +66,28 @@ ui.VMactionsInit = function(){
     
     $('.vms li .container').mouseenter(
       function (e) {
-        $(this).find('.img').css('visibility','hidden');
-        $(this).find('.options, .check').fadeIn('slow');
-        $(this).addClass('set-border');
-        $(this).find('.editable input').show();
-        $(this).find('.editable em').hide();
-        $(this).find('.visible-info em').each(function(){
+        $(this).find('.img').stop(true, true).fadeOut({
+            'duration':200,
+        });
+        $(this).find('.options, .check').stop(true, true).addClass('active');
+        $(this).find('.options').stop(true, true).fadeIn(500); 
+        $(this).stop(true, true).addClass('set-border');
+        $(this).find('.visible-info em').stop(true, true).each(function(){
             var emLeft = $(this).position();
             $(this).animate({
             left: -emLeft.left,
-            }, 'slow');        
+            }, 300);        
         }) 
       }
     );
 
     $('.vms li .container').mouseleave(
         function(e){
-            $(this).removeClass('set-border');
-            $(this).find('.img').css('visibility','visible');
-            $(this).find('.options').hide(); 
-            $(this).find('.custom_checkbox:not(.checkbox-checked)').parents('.check').hide();
-            $(this).find('.editable input').hide();
-            $(this).find('.editable em').show();
-            $(this).find('.visible-info em').each(function(){
+            $(this).stop(true, true).removeClass('set-border');
+            $(this).find('.options').stop(true, true).fadeOut(200); 
+            $(this).find('.img').stop(true, true).fadeIn('slow');
+            $(this).find('.custom_checkbox:not(.checkbox-checked)').parents('.check').stop(true, true).removeClass('active');
+            $(this).find('.visible-info em').stop(true, true).each(function(){
                 $(this).removeAttr('style');   
             }) 
          }
@@ -104,17 +103,18 @@ ui.VMactionsInit = function(){
         if(checkbox.hasClass('checkbox-checked')){
             checkbox.html('b');
             $(this).parents('.container').addClass('set-bg');
+            $(this).addClass('active');
         }
         else{
             checkbox.html('a'); 
             $(this).parents('.container').removeClass('set-bg');
-            $(this).hide();
+            $(this).removeClass('active');
       
         }
 
         // in any case, hide extra options and reset positions to normal
         $(this).parents('.container').removeClass('set-border');
-        $(this).parents('.container').find('.img').css('visibility','visible');
+        $(this).parents('.container').find('.img').fadeIn(200);
         $(this).parents('.container').find('.options').hide(); 
         $(this).parents('.container').find('.visible-info em').removeAttr('style');
 
