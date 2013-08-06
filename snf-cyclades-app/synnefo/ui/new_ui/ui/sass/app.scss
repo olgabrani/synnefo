@@ -376,7 +376,7 @@ body.with-overlay {
 					text-align: left;
 					a {
 						font-size:emCalc(27px);
-						display: block;
+						display: inline-block;
 						color:$primary-color;
 						line-height: 1em;
 						margin-bottom:10px;
@@ -425,6 +425,7 @@ body.with-overlay {
 	}
 }
 
+
 .lt-sidebar {
 	margin-top:43px;
 	overflow:scroll;
@@ -445,6 +446,20 @@ body.with-overlay {
 		cursor: pointer;
 
 	}
+
+	.jspDrag {
+		background-color:$primary-color;
+	}
+	.jspVerticalBar {
+		width:10px;
+		right:4px;
+	}
+	.jspTrack {
+		background:$white;
+		border-left:1px solid $primary-color;
+		border-right:1px solid $primary-color;
+	}
+
 
 }
 
@@ -695,5 +710,3 @@ body.with-overlay {
 		
 	}
 }
-
-

@@ -14,6 +14,7 @@ ui.setSidebarHeight = function(){
     var WindowHeight = $(window).height();
     var h1= WindowHeight - $('.header').outerHeight();
     var h2= $('.main.details').outerHeight();
+    
     if (h2>h1) {
         var ltSidebarHeight = h2;
     } else {
@@ -155,10 +156,10 @@ $(document).ready(function(){
             e.preventDefault();
         }
     })
-
+    $('.scroll-pane').jScrollPane();
 })
 
 $(window).resize(function(e){
     ui.setSidebarHeight();
-
+    $('.scroll-pane').jScrollPane();
 })
