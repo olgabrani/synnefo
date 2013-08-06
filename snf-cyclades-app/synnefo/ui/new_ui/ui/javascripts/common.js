@@ -62,11 +62,8 @@ ui.setCheckedVMBgColor = function(){
 ui.VMactionsInit = function(){
 
     // if VM is stopped hide connect option 
-    $('.vms li .container .stopped').parents('.container').find('.options .connect').hide();
-
-    var vm_container = $('.vms li .container');
-    var vm_img = vm_container.find('.img-wrap');
-
+    $('.vms .container .stopped').parents('.container').find('.options .connect').hide();
+    
     $('.vms li .container').mouseenter(
       function (e) {
         $(this).find('.img').css('visibility','hidden');
@@ -99,6 +96,7 @@ ui.VMactionsInit = function(){
 
     $('.vms .container .check').click(function(e){
         e.preventDefault();
+
         var checkbox = $(this).find('.custom_checkbox');
 
         checkbox.toggleClass('checkbox-checked');
@@ -110,11 +108,15 @@ ui.VMactionsInit = function(){
         else{
             checkbox.html('a'); 
             $(this).parents('.container').removeClass('set-bg');
+            $(this).hide();
       
         }
+
+        // in any case, hide extra options and reset positions to normal
         $(this).parents('.container').removeClass('set-border');
         $(this).parents('.container').find('.img').css('visibility','visible');
         $(this).parents('.container').find('.options').hide(); 
+        $(this).parents('.container').find('.visible-info em').removeAttr('style');
 
         ui.cntCheckbox();
     })

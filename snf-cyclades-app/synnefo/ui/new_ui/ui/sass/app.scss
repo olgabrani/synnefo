@@ -198,7 +198,7 @@ a:hover {
 }
 
 .main {
-	padding:20px 40px;
+	padding:43px 40px;
 }
 
 body.with-overlay {
@@ -327,16 +327,86 @@ body.with-overlay {
 	color:$white;
 }
 
+
 .items-list {
 	padding:25px 0;
 	li {
 		text-align:center;
 		padding:20px;
+		.add-new {
+			a {
+				margin:0 20px;
+				display: block;
+				font-weight: bold;
+				height:190px;
+				padding:65px 30px 15px;
+				border:2px dashed $primary-color;
+				&:hover {
+					border-color:$secondary-color;
+					color:$secondary-color;
+				}
+			}			
+		}
+		.img {
+			margin-bottom: 20px;
+			position: relative;
+			height:58px;
+		}
+		.container {
+			&.set-bg {	background:lighten($primary-color,30%); }
+			&.set-border {	border-color:$secondary-color; }
+			border:1px solid transparent;
+			margin: 0 20px;
+			padding:25px 0;
+			position: relative;
+			.options {
+				width:100%;
+				text-align:center;	
+				position: absolute;
+				top:-3px;
+				left:0;
+				display: none;
+				z-index: 1;
+				.wrap {
+					height:100%;
+					padding:25px;
+					text-align: left;
+					a {
+						font-size:emCalc(27px);
+						display: block;
+						color:$primary-color;
+						line-height: 1em;
+						margin-bottom:10px;
+
+						font-weight: bold;
+						&:hover {
+							color: $secondary-color;
+						}
+					}
+				}
+			}
+		}
+		.check {
+			position:absolute;
+			right:10px;
+			top:5px;
+			display: none;
+			color:$secondary-color;
+			font-weight: bold;
+			font-size:emCalc(27px);
+			cursor: pointer;
+			z-index: 10;
+			span { position:relative; z-index:10;}
+		}
 		.visible-info {
 			margin: 0 25px;
 			position:relative;
 			color:$primary-color;
+			overflow: hidden;
 			span {
+				&.title {
+					white-space: nowrap;
+				}
 				display: block;
 				position: relative;
 				em {
@@ -345,97 +415,12 @@ body.with-overlay {
 				}
 			}
 		}
+
 	}
 }
 
-.vms {
-	.items-list {
-		li {
-			.add-new {
-				a {
-					margin:0 20px;
-					display: block;
-					font-weight: bold;
-					height:190px;
-					padding:65px 30px 15px;
-					border:2px dashed $primary-color;
-					&:hover {
-						border-color:$secondary-color;
-						color:$secondary-color;
-					}
-				}			
-			}
-			.img {
-				@include sprite('../images/vm-on.png', 56px, 58px);
-				margin-bottom: 20px;
-				position: relative;
-				&.stopped {
-					background-image:url('../images/vm-stopped.png');
-				}
-				.os {
-					@include sprite('../images/os-unknown.png', 22px, 22px);
-					position: absolute;
-					top:8px;
-					left:18px;
-					&.windows { background-image:url('../images/os-windows.png'); }
-					&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
-					&.fedora { background-image:url('../images/os-fedora.png'); }
-				}
-			
-			}
-		
-			.container {
-				&.set-bg {	background:lighten($primary-color,30%); }
-				&.set-border {	border-color:$secondary-color; }
-				border:1px solid transparent;
-				margin: 0 20px;
-				padding:25px 0;
-				position: relative;
-				.options {
-					width:100%;
-					text-align:center;	
-					position: absolute;
-					top:-3px;
-					left:0;
-					display: none;
-					z-index: 1;
-					.wrap {
-						height:100%;
-						padding:25px;
-						text-align: left;
-						a {
-							font-size:emCalc(27px);
-							display: block;
-							color:$primary-color;
-							line-height: 1em;
-							margin-bottom:10px;
-
-							font-weight: bold;
-							&:hover {
-								color: $secondary-color;
-							}
-						}
-					}
-				}
-			}
-			.check {
-				position:absolute;
-				right:10px;
-				top:5px;
-				display: none;
-				color:$secondary-color;
-				font-weight: bold;
-				font-size:emCalc(27px);
-				cursor: pointer;
-				z-index: 10;
-				span { position:relative; z-index:10;}
-			}
-
-		}
-	}
-}
-
-.lt-sidebar.vms {
+.lt-sidebar {
+	margin-top:43px;
 	overflow:scroll;
 	height:300px;
 	font-size:emCalc(12px);
@@ -457,24 +442,48 @@ body.with-overlay {
 
 }
 
-.vm {
+.vms .items-list {
 	.img {
-				@include sprite('../images/vm-on.png', 56px, 58px);
-				margin-bottom: 20px;
-				position: relative;
-				&.stopped {
-					background-image:url('../images/vm-stopped.png');
-				}
-				.os {
-					@include sprite('../images/os-unknown.png', 22px, 22px);
-					position: absolute;
-					top:8px;
-					left:18px;
-					&.windows { background-image:url('../images/os-windows.png'); }
-					&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
-					&.fedora { background-image:url('../images/os-fedora.png'); }
-				}
+			@include sprite('../images/vm-on.png', 56px, 58px);
+			 
+			&.stopped {
+				background-image:url('../images/vm-stopped.png');
 			}
+			.os {
+				@include sprite('../images/os-unknown.png', 22px, 22px);
+				position: absolute;
+				top:8px;
+				left:18px;
+				&.windows { background-image:url('../images/os-windows.png'); }
+				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+				&.fedora { background-image:url('../images/os-fedora.png'); }
+			}
+		
+		}
+}
+
+
+.vm {
+	.top {
+		.img {
+			@include sprite('../images/vm-on.png', 112px, 116px);
+		}
+		&.stopped {
+			background-image:url('../images/vm-stopped.png');
+		}
+		.os {
+			@include sprite('../images/os-unknown.png', 22px, 22px);
+			position: absolute;
+			background-size:100%;
+			width:44px;
+			height:44px;
+			left:36px;
+			top:16px;
+			&.windows { background-image:url('../images/os-windows.png'); }
+			&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+			&.fedora { background-image:url('../images/os-fedora.png'); }
+		}
+	}
 }
 
 .details {
@@ -484,15 +493,9 @@ body.with-overlay {
 		padding:100px $header-padding-horizontal;
 		text-align: center;
 		.img {
-			@include sprite('../images/vm-on.png', 112px, 116px);
 			background-size:100%;
-		}
-		.os {
-			background-size:100%;
-			width:44px;
-			height:44px;
-			left:36px;
-			top:16px;
+			margin-bottom: 20px;
+			position: relative;
 		}
 		.actions {
 			ul {
@@ -529,6 +532,10 @@ body.with-overlay {
 		@include sprite('../images/info-close-grey.png', 31px, 30px);
 	}
 }
+
+
+
+
 
 .border-bottom-style1 {
 	padding-bottom:20px;
