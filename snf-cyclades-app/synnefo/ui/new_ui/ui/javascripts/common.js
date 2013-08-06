@@ -88,7 +88,9 @@ ui.VMactionsInit = function(){
             $(this).find('.img').stop(true, true).fadeIn('slow');
             $(this).find('.custom_checkbox:not(.checkbox-checked)').parents('.check').stop(true, true).removeClass('active');
             $(this).find('.visible-info em').stop(true, true).each(function(){
-                $(this).removeAttr('style');   
+                $(this).animate({
+                 left: 0,
+                }, 300);        
             }) 
          }
     );
@@ -112,11 +114,7 @@ ui.VMactionsInit = function(){
       
         }
 
-        // in any case, hide extra options and reset positions to normal
-        $(this).parents('.container').removeClass('set-border');
-        $(this).parents('.container').find('.img').fadeIn(200);
-        $(this).parents('.container').find('.options').hide(); 
-        $(this).parents('.container').find('.visible-info em').removeAttr('style');
+        
 
         ui.cntCheckbox();
     })
