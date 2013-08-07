@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
+
+    <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -33,11 +35,11 @@
 			<nav class="top-nav icons-nav">
 				
 				<ul>
-					<li><a href="" data-tooltip class="has-tip" title="Storage"><img src="images/menu-icon-storage.png" alt="network"></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="network"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Storage"><img src="images/menu-icon-storage.png" alt="vm"></a></li>
+					<li><a href="vm_list_v1.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
 					
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="network"></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="network"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
 				</ul>
 				 
 			</nav>
@@ -52,11 +54,8 @@
 				</div>
 				<div class="main-actions">
 					<ul>
-						<li class="running"><a href="">Reboot</a></li>
-						<li class="running"><a href="">Shutdown</a></li>
-						<li class="running single"><a href="">Console</a></li>
-						<li class="both"><a href="">Destroy</a></li>
-						<li class="stopped"><a href="">Start</a></li>
+						<li class="running"><a href="" class="active">Add machine</a></li>
+						<li class="both"><a href="" class="active">Destroy</a></li>
 					</ul>
 				</div>
 			</div>
@@ -95,7 +94,7 @@
 						<span>Network name</span>
 					</p>
 				</li>
-				<li>
+				<li class="current">
 					<div class="img">
 						<span>Network</span>
 					</div>
@@ -112,7 +111,7 @@
 
 		<!-- main image of network -->
 		<div class="main details network">
-			<a href="network_list_v1.html" class="close-font" title="back to network list"><span class="snf-font">c</span></a>
+			<a href="network_list_v1.html" class="close" title="back to network list"><span class="snf-font">c</span></a>
 			<div class="top border-bottom-style1">
 				<div class="img">
 					<span>Network</span>
@@ -120,7 +119,7 @@
 				</div>
 				<div class="actions">
 					<ul>
-						<li><a href="">+ machine</a></li>
+						<li><a href="#" data-reveal-id="network-add-vms">+ machine</a></li>
 						<li><a href="">destroy</a></li>
 					</ul>
 				</div>
@@ -189,6 +188,10 @@
 		<span data-tooltip class="has-tip ours suggestions" title="Μήπως να είναι λίγο πιο έντονα τα χρώματα; Μοιάζουν απενεργοποιημένα..." style="top:0;left:200px">:)</span>
 		<span data-tooltip class="has-tip ours questions" title="Πόσο θα είναι το μέγιστο πλάτος της κύριας περιοχής" style="top:240px;left:20px">?</span>
 		<span data-tooltip class="has-tip ours problems" title="Πώς θα έχουμε δράσεις όπως filters κτλ" style="top:140px;left:250px">!!</span>
+	</div>
+ <div id="network-add-vms" class="reveal-modal medium">
+  		<p>A widget to add vms</p>
+  		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
  
   <script src="javascripts/vendor/jquery.js"></script>

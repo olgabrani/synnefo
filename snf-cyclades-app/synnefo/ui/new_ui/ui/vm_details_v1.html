@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
+    
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
@@ -27,17 +29,17 @@
 		<header class="header">
 			
 			<div class="logo">
-				<img src="images/logo_01.png" alt="software logo">
+				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
 			</div>
 			
 			<nav class="top-nav icons-nav">
 				
 				<ul>
 					<li><a href="" data-tooltip class="has-tip" title="Storage"><img src="images/menu-icon-storage.png" alt="vm"></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
+					<li><a href="vm_list_v1.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
 					
 					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
+					<li><a href="network_list_v1.html" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
 				</ul>
 				 
 			</nav>
@@ -52,10 +54,10 @@
 				</div>
 				<div class="main-actions">
 					<ul>
-						<li class="running"><a href="">Reboot</a></li>
-						<li class="running"><a href="">Shutdown</a></li>
-						<li class="running single"><a href="">Console</a></li>
-						<li class="both"><a href="">Destroy</a></li>
+						<li class="running"><a href="" class="active">Reboot</a></li>
+						<li class="running"><a href="" class="active">Shutdown</a></li>
+						<li class="running single"><a href="" class="active">Console</a></li>
+						<li class="both"><a href="" class="active">Destroy</a></li>
 						<li class="stopped"><a href="">Start</a></li>
 					</ul>
 				</div>
@@ -79,14 +81,14 @@
 				<li>
 					<div class="img running">
 						VM running
-						<span class="os windows">os</span>
+						<span class="os kubuntu">kubuntu</span>
 					</div>
 					<p class="visible-info">
 						<span>IPv4 83.212.97.127</span>
 						<span>my awsome machine</span>
 					</p>
 				</li>
-				<li>
+				<li class="current">
 					<div class="img running">
 						VM running
 						<span class="os windows">os</span>
@@ -145,7 +147,7 @@
 						<span>my awsome machine</span>
 					</p>
 				</li>
-				
+
 				<li class="current">
 					<div class="img running">
 						VM running
@@ -213,7 +215,8 @@
 
 		<!-- main image of vm -->
 		<div class="main details vm">
-			<a href="vm_list_v1.html" class="close" title="back to vm list">close</a>
+
+			<a href="vm_list_v1.html" class="close" title="back to vm list"><span class="snf-font">c</span></a>
 			<div class="top border-bottom-style1">
 				<div class="img running">
 					VM running
@@ -221,7 +224,7 @@
 				</div>
 				<div class="actions">
 					<ul>
-						<li><a href="">connect</a></li>
+						<li><a href="#" data-reveal-id="vm-connect">connect</a></li>
 						
 					</ul>
 				</div>
@@ -466,7 +469,13 @@
 		<span data-tooltip class="has-tip ours questions" title="Πόσο θα είναι το μέγιστο πλάτος της κύριας περιοχής" style="top:240px;left:20px">?</span>
 		<span data-tooltip class="has-tip ours problems" title="Πώς θα έχουμε δράσεις όπως filters κτλ" style="top:140px;left:250px">!!</span>
 	</div>
- 
+ <div id="vm-connect" class="reveal-modal medium">
+  		<p>A direct connection to this machine can be established using the <a target=​"_blank" href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</spam></p>
+
+		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+  		<a class="close-reveal-modal" title="close window">&#215;</a>
+	</div>
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/foundation/foundation.js"></script>
 	

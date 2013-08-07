@@ -25,8 +25,8 @@ ui.setSidebarHeight = function(){
 
 ui.cntCheckbox = function(){ 
     var all = $('.checkbox-checked').length;
-    var running = $('.checkbox-checked').parents('.container').find('.img.running').length;
-    var stopped = $('.checkbox-checked').parents('.container').find('.img.stopped').length;
+    var running = $('.checkbox-checked').parents('.container').find('.running').length;
+    var stopped = $('.checkbox-checked').parents('.container').find('.stopped').length;
     $('.header .main-actions li a').removeClass('active');  
     if ( (running*stopped) > 0 ){          
          $('.header .main-actions li.both a').addClass('active');   
