@@ -165,10 +165,10 @@ a.black:hover{
 	background-color: white;
  }
 
- /*  */
+ /* styles for network details */
 
  .big{
- 	width: 55%;
+ 	width: 60%;
  }
 
  .small{
@@ -189,4 +189,44 @@ a.black:hover{
 
 .set{
 	margin-bottom: 1em;
+}
+
+
+.network .top .img {
+background: url("../images/network-green140x159.png") no-repeat center center;
+width: 140px;
+height: 159px;
+display: inline-block;
+text-indent: -2000px;
+overflow: hidden;
+}
+
+.networks .items-list .img {
+background: url("../images/network-green112x127.png") no-repeat center center;
+width: 112px;
+height: 127px;
+display: inline-block;
+text-indent: -2000px;
+overflow: hidden;
+}
+
+.network .close-font{
+	position: absolute;
+	right: 0.8em;
+	top: 2em;
+	font-size: 2em;
+	color: #b3b3b3;
+
+}
+
+
+/* styles for network list */
+
+.networks .items-list .container .img {
+background: url("../images/network-green69x78.png") no-repeat center center;
+width: 69px;
+height: 78px;
+display: inline-block;
+text-indent: -2000px;
+overflow: hidden;
 }

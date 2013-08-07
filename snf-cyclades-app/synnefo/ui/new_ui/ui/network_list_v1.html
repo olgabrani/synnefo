@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+    <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
@@ -8,10 +9,11 @@
     <meta name="viewport" content="width=device-width" />
     <title>Synnefo | VM list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
-    <link rel="stylesheet" href="stylesheets/styles.css" />
-    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -33,11 +35,11 @@
 			<nav class="top-nav icons-nav">
 				
 				<ul>
-					<li><a href="" data-tooltip class="has-tip" title="Storage"><img src="images/menu-icon-storage.png" alt="network"></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="network"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Storage"><img src="images/menu-icon-storage.png" alt="vm"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
 					
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="network"></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="network"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
 				</ul>
 				 
 			</nav>
@@ -48,7 +50,7 @@
 			<div class="actions clearfix">
 				
 				<div class="lt-actions">
-					<div class="new-btn"><a href=""><span>+</span> NEW NETWORK </a></div>
+					<div class="new-btn"><a href="vm_create_a_v1.html"><span>+</span> NEW NETWORK</a></div>
 				</div>
 				<div class="main-actions">
 					<ul>
@@ -67,128 +69,109 @@
 
 				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
 			</div>
-			<a href="#" class="close" title="hide message"></a>
+			<a href="#" class="close" title="hide message">close</a>
 		</div>
 
 	</div>
 	<div class="row-full wrapper">
+
 		
-		<!-- sidebar -->
-		<div class="lt-sidebar networks scroll-pane">
-
-			<ul class="items-list">
-				<li>
-					<div class="img">
-						<span>Network</span>
-					</div>
-					<p class="visible-info">
-						<span>IPv4 83.212.97.127</span>
-						<span>Network name</span>
-					</p>
-				</li>
-				<li>
-					<div class="img">
-						<span>Network</span>
-					</div>
-					<p class="visible-info">
-						<span>IPv4 83.212.97.127</span>
-						<span>Network name</span>
-					</p>
-				</li>
-				<li>
-					<div class="img">
-						<span>Network</span>
-					</div>
-					<p class="visible-info">
-						<span>IPv4 83.212.97.127</span>
-						<span>Network name</span>
-					</p>
-				</li>
-				
-			</ul>
-		</div>
-
-		<!-- detailed view of network -->
-
-		<!-- main image of network -->
-		<div class="main details network">
-			<a href="network_list_v1.html" class="close-font" title="back to network list"><span class="snf-font">c</span></a>
-			<div class="top border-bottom-style1">
-				<div class="img">
-					<span>Network</span>
-					
-				</div>
-				<div class="actions">
-					<ul>
-						<li><a href="">+ machine</a></li>
-						<li><a href="">destroy</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<!--sections with details of network -->
-			<section class="border-bottom-style1 info">
-				<dl>
-					<dt>Name</dt>
-					<dd>My Crazy Network</dd>
-					<dt>Status</dt>
-					<dd>running</dd>
-					<dt>Machines</dt>
-					<dd >2 x Machines</dd>
-					<dt>IPv6</dt>
-					<dd>2001:648:2ffc:1222:a800:ff:fe3f:98fe 
-</dd>
-				</dl>
-			</section>
-			<section class="wrap info">
-				<div class="tba">
-					<div class="section_header">
-						machines
-					</div>
-					<div class="right_side">
-						<div class="middle_side">
-						<div class="set">
-							<div class="row">
-								<div class="info_simple big">
-									<span class="height_up">My Windows Server 2012<br></span>
-									
-								</div>
-								<div class="action_links">
-									<span><a href="">remove</a></span>
-								</div>
-							</div>
-							<div class="row">
-								<div class="info_simple big">
-									<span class="height_up">IPv6: 2001:648:2ffc:1222:a800:ff:fe3f:98fe 
-									</span>
-								</div>
-							</div>
-						</div>
-						<div class="set">
-							<div class="row">
-								<div class="info_simple big">
-									<span class="height_up">My Windows Server 2012<br></span>
-									
-								</div>
-								<div class="action_links">
-									<span><a href="">remove</a></span>
-								</div>
-							</div>
-							<div class="row">
-								<div class="info_simple big">
-									<span class="height_up">IPv6: 2001:648:2ffc:1222:a800:ff:fe3f:98fe 
-									</span>
-								</div>
-							</div>
-						</div>
+		<!-- main area -->
+		<section class="main">
 			
-			</section>
-		</div>
+			<div class="networks entities vms">
+				<ul class="items-list small-block-grid-2 large-block-grid-4">
+					<li>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="network_details_v1.html">details</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img">
+									Network									
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>Network Name</em></span>
+							</p>
+							<a href="" class="check"><span class="snf-custom-checkbox">a</span></a>
+							
+						</div>
+					</li>
+					<li>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									
+									<a href="network_details_v1.html">details</a>
+									
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img">
+									Network
+									
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>Network Name</em></span>
+							</p>
+							<a href="" class="check"><span class="snf-custom-checkbox">a</span></a>
+							
+						</div>
+					</li>
+					
+					<li>
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									
+									<a href="network_details_v1.html">details</a>
+									
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img">
+									Network
+									
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>Network Name</em></span>
+							</p>
+							<a href="" class="check"><span class="snf-custom-checkbox">a</span></a>
+							
+						</div>
+					</li>
+					
+					 
+					<li>
+						<div class="add-new"><a href="">NEW<br>NETWORK</a></div>	
+					</li>
+					 
+				</ul>
+			</div>
+		</section>
 	</div>
 	<div class="extras">
 		<span data-tooltip class="has-tip ours suggestions" title="Μήπως να είναι λίγο πιο έντονα τα χρώματα; Μοιάζουν απενεργοποιημένα..." style="top:0;left:200px">:)</span>
 		<span data-tooltip class="has-tip ours questions" title="Πόσο θα είναι το μέγιστο πλάτος της κύριας περιοχής" style="top:240px;left:20px">?</span>
 		<span data-tooltip class="has-tip ours problems" title="Πώς θα έχουμε δράσεις όπως filters κτλ" style="top:140px;left:250px">!!</span>
+	</div>
+	<div id="vm-connect" class="reveal-modal medium">
+  		<p>A direct connection to this machine can be established using the <a target=​"_blank" href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</spam></p>
+
+		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+  		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
  
   <script src="javascripts/vendor/jquery.js"></script>
@@ -220,7 +203,10 @@
 	
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
 	<script src="javascripts/common.js"></script>
+	<script src="javascripts/common_ab.js"></script>
 	
+   
+    <script src="javascripts/gp-script.js"></script>
   
   <script>
     $(document).foundation();
