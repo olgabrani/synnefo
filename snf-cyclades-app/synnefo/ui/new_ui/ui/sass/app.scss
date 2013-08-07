@@ -372,7 +372,7 @@ body.with-overlay {
 				z-index: 1;
 				.wrap {
 					height:100%;
-					padding:25px;
+					padding:25px 25px 0;
 					text-align: left;
 					a {
 						font-size:emCalc(27px);

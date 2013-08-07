@@ -60,12 +60,12 @@ ui.setCheckedVMBgColor = function(){
 }
 
 
-ui.VMactionsInit = function(){
+ui.EntitiesActionsInit = function(){
 
     // if VM is stopped hide connect option 
     $('.vms .container .stopped').parents('.container').find('.options .connect').hide();
     
-    $('.vms li .container').mouseenter(
+    $('.entities li .container').mouseenter(
       function (e) {
         $(this).find('.img').stop(true, true).fadeOut({
             'duration':200,
@@ -82,7 +82,7 @@ ui.VMactionsInit = function(){
       }
     );
 
-    $('.vms li .container').mouseleave(
+    $('.entities li .container').mouseleave(
         function(e){
             $(this).stop(true, true).removeClass('set-border');
             $(this).find('.options').stop(true, true).fadeOut(200); 
@@ -96,7 +96,7 @@ ui.VMactionsInit = function(){
          }
     );
 
-    $('.vms .container .check').click(function(e){
+    $('.entities .container .check').click(function(e){
         e.preventDefault();
 
         var checkbox = $(this).find('.custom_checkbox');
@@ -149,7 +149,7 @@ $(document).ready(function(){
         e.preventDefault();
     })
 
-    ui.VMactionsInit();
+    ui.EntitiesActionsInit();
 
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
