@@ -111,7 +111,7 @@ ui.VMactionsInit = function(){
         else{
             checkbox.html('a'); 
             $(this).parents('.container').removeClass('set-bg');
-            $(this).removeClass('active');
+            
       
         }
 
