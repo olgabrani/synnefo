@@ -19,6 +19,7 @@ $(document).ready(function(){
 	$('.lt-sidebar li a.flavor_selection').click(function(e){
 		e.preventDefault();
 		select_flavor = 1;
+		console.log('yio!')
 		var classes = $(this).attr('class').split(" ");
 		// the second class is: 'small_flavor' or 'medium_flavor' or 'large_flavor'
 		

@@ -37,7 +37,7 @@ a.option:hover{
 }
 
 
-/* styles for detailed info about vm (used for vm_details_v1.html) */
+/* styles for the detailed info of each vm (used for vm_details_v1.html) */
 
 
 .graph_container{
@@ -143,8 +143,8 @@ a.black:hover{
 }
 
 
-.lt-sidebar ul li a.flavor_selection:hover span{
-	display: none;
+.lt-sidebar ul li a.flavor_selection{
+	display: block;
 }
 
 
@@ -191,23 +191,27 @@ a.black:hover{
 	margin-bottom: 1em;
 }
 
-
+/* main icon in details page */
 .network .top .img {
-background: url("../images/network-green140x159.png") no-repeat center center;
-width: 140px;
-height: 159px;
+background: url("../images/network-green102x116.png") no-repeat center center;
+width: 102px;
+height: 116px;
 display: inline-block;
 text-indent: -2000px;
 overflow: hidden;
+background-size: 100%;
 }
 
+
+/* scroll bar */
 .networks .items-list .img {
-background: url("../images/network-green112x127.png") no-repeat center center;
-width: 112px;
-height: 127px;
+background: url("../images/network-green102x116.png") no-repeat center center;
+height: 58px;
+width: 51px;
 display: inline-block;
 text-indent: -2000px;
 overflow: hidden;
+background-size: 80%;
 }
 
 .network .close-font{
@@ -223,10 +227,30 @@ overflow: hidden;
 /* styles for network list */
 
 .networks .items-list .container .img {
-background: url("../images/network-green69x78.png") no-repeat center center;
-width: 69px;
-height: 78px;
-display: inline-block;
+background: url("../images/network-green102x116.png") no-repeat center center;
+height: 58px;
+width: 51px;
 text-indent: -2000px;
 overflow: hidden;
+background-size: 100%
+}
+
+
+/* styles for confirmation window */
+
+.confirmation{
+	
+}
+
+
+/* detailed pages: about the gaps that separate the area with the big img and the buttons from the rest of the page */ 
+
+
+.details .top .actions ul{
+	padding: 1em 1em 0 1em;
+	margin-bottom: 0;
+} 
+
+.details .border-bottom-style1{
+	padding-bottom: 0;
 }
