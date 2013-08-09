@@ -10,9 +10,9 @@
     <title>Synnefo | VM list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
-    <link rel="stylesheet" href="stylesheets/styles.css" />
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
@@ -35,7 +35,7 @@
 			<nav class="top-nav icons-nav">
 				
 				<ul>
-					<li><a href="" data-tooltip class="has-tip" title="Storage"><img src="images/menu-icon-storage.png" alt="vm"></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
 					<li><a href="vm_list_v1.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
 					
 					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
@@ -54,7 +54,7 @@
 				</div>
 				<div class="main-actions">
 					<ul>
-						<li class="running"><a href="">Reboot</a></li>
+						<li class="running has-overlay" data-overlay-id="#overlay1"><a href="">Reboot</a></li>
 						<li class="running"><a href="">Shutdown</a></li>
 						<li class="running single"><a href="">Console</a></li>
 						<li class="both"><a href="">Destroy</a></li>
@@ -73,8 +73,11 @@
 		</div>
 
 	</div>
-	<div class="row-full wrapper">
-
+	<div class="row-full content">
+		<div id="overlay1" class="overlay-div">
+			<p>Are you sure you want to reboot your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+		</div>
 		<div class="confirmation"></div>
 		<!-- main area -->
 		<section class="main">
@@ -217,15 +220,12 @@
 	</div>
 	<div id="vm-connect" class="reveal-modal medium">
   		<p>A direct connection to this machine can be established using the <a target=​"_blank" href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
-		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</spam></p>
-
+		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
 		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
   		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
- 
-  <script src="javascripts/vendor/jquery.js"></script>
-  <script src="javascripts/foundation/foundation.js"></script>
-	
+	<script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
 	
 	<script src="javascripts/foundation/foundation.clearing.js"></script>

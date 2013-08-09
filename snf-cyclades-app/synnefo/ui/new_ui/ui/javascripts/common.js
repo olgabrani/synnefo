@@ -156,7 +156,26 @@ $(document).ready(function(){
             e.preventDefault();
         }
     })
-    $('.scroll-pane').jScrollPane();
+    //$('.scroll-pane').jScrollPane();
+
+    // TODO: more general function
+    $('.has-overlay a').click(function(e){
+        e.preventDefault();
+        if ($(this).hasClass('active')){
+            $('.content').append('<div class="overlay-modal overlay"><a href="vm_list_v1.html" class="close" title="cancel vm creation">close</a></div>');
+            $($(this).parents('.has-overlay').data('overlay-id')).fadeIn('slow');
+        }
+    })
+
+
+    $('.main-actions li a').click(function(e){
+        if (!($(this).hasClass('active'))) {
+            e.preventDefault();
+        }
+    })
+
+
+
 })
 
 $(window).resize(function(e){
