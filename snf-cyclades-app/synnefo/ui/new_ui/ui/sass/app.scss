@@ -549,7 +549,11 @@ body.with-overlay {
 			dt {
 				display: inline-block;
 				width:25%;
-				float:left;
+
+			}
+			dd {
+				width:74%;
+				display: inline-block;
 			}
 		}
 	}
@@ -705,26 +709,7 @@ body.with-overlay {
 .reveal-modal {
 	a:hover { color: $secondary-color;}	
 }
-.editable {
-	text-align:center;
-	input, em {
-		width:70%;
-		padding:5px 10px;
-		height: auto;
-		display: block;
-		margin:0 auto;
-		font-size: inherit;
-	}
-	input {
-		display: none;
-	}
-	em {
- 		overflow: hidden;
-		white-space: nowrap;
-		font-style:normal;
-		
-	}
-}
+
 
 // custom modal with opaque overlay
 .reveal-custom {
@@ -735,5 +720,58 @@ body.with-overlay {
 	background:yellow;
 	width:50%;
 	display:none;
+}
+
+
+.details dl {
+	.editable {
+		position: relative;
+		.input-txt {
+			width:320px;
+		}
+		.editbuttons {
+			position: absolute;
+			left:340px;
+			top:0;
+			a {
+				&.save, 
+				&.cancel { 
+
+				}
+				&:hover {
+				
+				}
+			
+			}
+		}
+		input[type="text"] {
+			position:relative;
+			height: 25px;
+			width:298px;
+			padding:0 10px;
+			font-size:inherit;	
+			margin:0;	
+			left:-11px;
+			top:-1px;
+		}
+
+	}
+
+}
+.editable {
+	.editbuttons {		
+		a {
+			color: $secondary-color;
+			&.save, 
+			&.cancel { display: none; }
+			&:hover {
+				color:$primary-color;
+			}
+		
+		}
+	}
+	input[type="text"] {
+		display: none;
+	}
 }
 

@@ -50,7 +50,7 @@ ui.cntCheckbox = function(){
 }
 
 ui.setCheckedVMBgColor = function(){
-    console.log('test');
+
     if ($('.check span').length >0) {
         $('.more_checkbox .checkbox-checked').parents('.container').addClass('set-bg');
     } else {
@@ -60,7 +60,7 @@ ui.setCheckedVMBgColor = function(){
 }
 
 
-ui.EntitiesActionsInit = function(){
+ui.entitiesActionsInit = function(){
 
     // if VM is stopped hide connect option 
     $('.vms .container .stopped').parents('.container').find('.options .connect').hide();
@@ -122,6 +122,93 @@ ui.EntitiesActionsInit = function(){
    
 }
 
+ui.editable = function(){
+
+/*
+resetForm hides save and cancel buttons, 
+text input and shows input-txt. resetForm does not alter 
+input-txt content.
+*/
+
+    function resetForm(e, elem) {
+        var el = elem.parents('.editable');
+        el.find('input[type="text"]').hide();
+        el.find('a.cancel, a.save').hide();
+        el.find('a.edit').show();
+        el.find('.input-txt').show();
+    }
+
+/* 
+showForm hides input-txt, shows save and cancel buttons and
+set input value to input-txt content.
+*/
+    function showForm(e,elem) {
+        e.stopPropagation(); 
+        e.preventDefault();
+        var el = elem.parents('.editable'); 
+        el.find('input[type="text"]').val(el.find('.input-txt').html());
+        el.find('input[type="text"]').show();
+        el.find('a.cancel, a.save').show();
+        elem.hide();
+        el.find('.input-txt').hide();
+
+    }
+
+/*
+setValue sets input-txt value to the input value.
+Makes sure that the input value is not empty.
+TODO:
+Ajax request to submit form
+*/
+
+    function setValue(elem) {
+        var el = elem.parents('.editable');
+        if( el.find('input[type="text"]').val() ) {
+            el.find('.input-txt').html(el.find('input[type="text"]').val());
+        }
+    }
+
+
+    $('.editable .edit').click(function(e){
+        showForm(e, $(this));
+    })
+
+    $('.editable .cancel').click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        resetForm(e, $(this));
+    })
+
+    $('.editable .save').click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        setValue($(this));
+        resetForm(e, $(this));
+
+    })
+
+
+    $('.editable input[type="text"]').click(function(e){
+        e.stopPropagation();
+    })
+
+    $('.editable input[type="text"]').keyup(function(e){
+        if(e.keyCode == 13) { 
+            setValue($(this));
+            resetForm(e, $(this));
+            
+        }
+    
+    })
+
+    $('html').click(function(e) {
+        resetForm(e, $('.editable a.cancel'));
+    });
+
+    
+
+}
+
 
 $(document).ready(function(){
 
@@ -149,14 +236,15 @@ $(document).ready(function(){
         e.preventDefault();
     })
 
-    ui.EntitiesActionsInit();
+    ui.entitiesActionsInit();
+    ui.editable();
 
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
             e.preventDefault();
         }
     })
-    //$('.scroll-pane').jScrollPane();
+    $('.scroll-pane').jScrollPane();
 
     // TODO: more general function
     $('.has-overlay a').click(function(e){
@@ -173,7 +261,6 @@ $(document).ready(function(){
             e.preventDefault();
         }
     })
-
 
 
 })
