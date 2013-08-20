@@ -27,7 +27,7 @@ ui.cntCheckbox = function(){
     var all = $('.checkbox-checked').length;
     var running = $('.checkbox-checked').parents('.container').find('.running').length;
     var stopped = $('.checkbox-checked').parents('.container').find('.stopped').length;
-    $('.header .main-actions li a').removeClass('active');  
+    $('.header .main-actions li:not(.permanent) a').removeClass('active');  
     if ( (running*stopped) > 0 ){          
          $('.header .main-actions li.both a').addClass('active');   
          $('.header .main-actions li.single a').removeClass('active');   
@@ -250,7 +250,7 @@ $(document).ready(function(){
     $('.has-overlay a').click(function(e){
         e.preventDefault();
         if ($(this).hasClass('active')){
-            $('.content').append('<div class="overlay-modal overlay"><a href="vm_list_v1.html" class="close" title="cancel vm creation">close</a></div>');
+            $('.content').append('<div class="overlay-modal overlay"><a href="" class="close" title="cancel vm creation">close</a></div>');
             $($(this).parents('.has-overlay').data('overlay-id')).fadeIn('slow');
         }
     })

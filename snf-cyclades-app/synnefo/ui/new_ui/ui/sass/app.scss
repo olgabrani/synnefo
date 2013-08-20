@@ -184,7 +184,7 @@ a:hover {
 
 
 .row-full {
-	width:$row-top-width;
+	max-width:$row-top-width;
 	margin:0 auto;
 }
 
@@ -246,7 +246,7 @@ body.with-overlay {
 					&.active {
 						color:$primary-color;
 						&:hover {
-							border:1px solid $secondary-color;
+							color:$secondary-color;
 							cursor: pointer;
 						}
 					}
@@ -336,6 +336,7 @@ body.with-overlay {
 	li {
 		text-align:center;
 		padding:20px;
+		list-style:none;
 		.add-new {
 			a {
 				margin:0 20px;
@@ -343,7 +344,7 @@ body.with-overlay {
 				font-weight: bold;
 				height:190px;
 				padding:65px 30px 15px;
-				border:2px dashed $primary-color;
+				border:1px dashed $primary-color;
 				&:hover {
 					border-color:$secondary-color;
 					color:$secondary-color;
@@ -707,6 +708,9 @@ body.with-overlay {
 
 
 .reveal-modal {
+	h3 {
+		font-size:1em;
+	}
 	a:hover { color: $secondary-color;}	
 }
 
