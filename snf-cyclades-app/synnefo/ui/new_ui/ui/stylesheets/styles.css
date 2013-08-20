@@ -136,34 +136,7 @@ a.black:hover{
 }
 
 
-/* create vm: choose flavor */
 
-.titles{
-	color: white;
-}
-
-
-.lt-sidebar ul li a.flavor_selection{
-	display: block;
-}
-
-
-.overlay .lt-sidebar ul li a.flavor_selection.chosen_flavor span{
-	display: inline-block;
-}
-
-.create-vm .main .select-flavor dl dt span:hover{
- 	color: white;
-	border-color: white;
-	background-color: #ff7bac;
- }
-
-
-.create-vm .main .select-flavor dl dt span.current:hover{
- 	color: #ff7bac;
-	border-color: white;
-	background-color: white;
- }
 
  /* styles for network details */
 
@@ -235,12 +208,6 @@ overflow: hidden;
 background-size: 100%
 }
 
-
-/* styles for confirmation window */
-
-.confirmation{
-	
-}
 
 
 /* detailed pages: about the gaps that separate the area with the big img and the buttons from the rest of the page */ 
@@ -315,4 +282,96 @@ to be transfered to sass
 
 .overlay .lt-sidebar.nav  {
 	overflow: auto;
+}
+
+
+/* styles for close icons (created with fontIcon "snf-font") */
+
+.overlay .close_char {
+	background: none;
+	text-indent: 0;
+	font-size: 1.8em; /* for the the character e (for d we can put 2em) */
+	color: white;
+}
+
+
+
+/* create network styles */
+
+.create-network {
+	color: white;
+}
+
+.create-network .check{
+	color: white;
+}
+
+.create-network p {
+	font-size: 0.8em;
+	font-style: italic;
+	margin: 5px 0 0;
+	width: 545px;
+}
+
+
+.create-network li {
+	list-style: none outside none;
+}
+
+.subnet_options {
+	margin: 0;
+}
+
+.network_options .check {
+	position: absolute;
+	right: 0;
+}
+
+.create-network .custom_checkbox {
+	font-size: 1.3em;
+}
+
+
+.network_options {
+	position: relative;
+	width: 350px;
+	min-height: 285px;
+	
+}
+
+.network_options li {
+	display: block;
+	margin-bottom: 13px;
+}
+
+.subnet_options li {
+	margin-bottom: 6px;
+	padding-left: 155px;
+}
+
+
+.network_options li form {
+	margin: 0;
+}
+.network_options li form input {
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	width: 200px;
+	height: 20px;
+	font-size: 0.9em;
+}
+
+.network_options li.manual form input {
+	right: -160px;
+	width: 150px;
+}
+
+
+.network_options li form input.hidden {
+	display: none;
+}
+
+span.sub_title {
+	position: absolute;
 }

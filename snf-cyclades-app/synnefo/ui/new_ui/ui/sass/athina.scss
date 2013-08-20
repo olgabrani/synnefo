@@ -1,7 +1,35 @@
-$red: red;
+// Global Foundation Settings
+@import "settings";
+
+/* create vm: choose flavor */
+
+.titles{
+	color: white;
+}
 
 
+.lt-sidebar ul li a.flavor_selection{
+	display: block;
+}
 
 
+.overlay .lt-sidebar ul li a.flavor_selection.chosen_flavor span{
+	display: inline-block;
+}
+ 
 
-body { color:$red;}
+ 
+.create-vm .main .select-flavor dl dt span{
+	&:hover{
+ 		color: white;
+		border-color: white;
+		background-color: $secondary-color;
+	} 
+	&.current {
+		&:hover {
+			color: $secondary-color;
+			border-color: white;
+			background-color: white;
+		}
+	}
+}
