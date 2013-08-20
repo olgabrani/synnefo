@@ -711,7 +711,16 @@ body.with-overlay {
 	h3 {
 		font-size:1em;
 	}
-	a:hover { color: $secondary-color;}	
+	a { 
+		color: $secondary-color;
+		&:hover {
+			text-decoration: underline;
+		}
+		&.close-reveal-modal:hover {
+			text-decoration: none;
+			color:$secondary-color;
+		}
+	}	
 }
 
 
@@ -731,12 +740,11 @@ body.with-overlay {
 	.editable {
 		position: relative;
 		.input-txt {
-			width:320px;
+			display: inline-block;
 		}
 		.editbuttons {
-			position: absolute;
-			left:340px;
-			top:0;
+			display: inline-block;
+			margin-left:20px;
 			a {
 				&.save, 
 				&.cancel { 
