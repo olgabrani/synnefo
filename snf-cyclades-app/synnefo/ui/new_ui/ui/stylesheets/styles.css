@@ -135,7 +135,25 @@ a.black:hover{
 	color: #ff7bac;
 }
 
+.wrapper .details dl .editable input
+{
+	width: 150px;
+}
 
+.wrapper .details dl .editable .editbuttons
+{
+	left: 80px;
+}
+
+.wrapper .details dl .editable .editbuttons .save {
+	position: absolute;
+	left:70px;
+}
+
+.wrapper .details dl .editable .editbuttons .cancel {
+	position: absolute;
+	left:90px;
+}
 
 
  /* styles for network details */
@@ -218,9 +236,6 @@ background-size: 100%
 	margin-bottom: 0;
 } 
 
-.details .border-bottom-style1{
-	padding-bottom: 0;
-}
 
 /*
 to be transfered to sass
