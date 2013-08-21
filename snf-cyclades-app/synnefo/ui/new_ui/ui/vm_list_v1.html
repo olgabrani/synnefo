@@ -18,13 +18,6 @@
 
 </head>
 <body>
-	<div class="dummy-navigation">
-		<a href="" class="close">X</a>
-		<a href="index.html">Homepage</a><br>
-		<a href="" class="our" data-our="questions">Show/Hide questions</a><br>
-		<a href="" class="our" data-our="suggestions">Show/Hide suggestions</a><br>
-		<a href="" class="our" data-our="problems">Show/Hide problems</a><br>
-	</div>
 	<div class="row-full">
 		<header class="header">
 			
@@ -35,7 +28,7 @@
 			<nav class="top-nav icons-nav">
 				
 				<ul>
-					<li><a href="" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
+					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
 					<li><a href="vm_list_v1.html" data-tooltip class="has-tip" title="Machines"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
 					
 					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
@@ -54,8 +47,8 @@
 				</div>
 				<div class="main-actions">
 					<ul>
-						<li class="running has-overlay" data-overlay-id="#overlay1"><a href="">Reboot</a></li>
-						<li class="running"><a href="">Shutdown</a></li>
+						<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
+						<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
 						<li class="running single"><a href="">Console</a></li>
 						<li class="both"><a href="">Destroy</a></li>
 						<li class="stopped"><a href="">Start</a></li>
@@ -76,12 +69,18 @@
 		</div>
 
 	</div>
-	<div class="row-full content">
-		<div id="overlay1" class="overlay-div">
-			<p>Are you sure you want to reboot your machine?</p>
-			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+	<div class="row-full content  overlay-wrapper ">
+		<div class="overlay-area">
+			<a href="" class="close">close</a>
+			<div id="overlay1" class="overlay-div">
+				<p>Are you sure you want to reboot your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			</div>
+			<div id="overlay2" class="overlay-div">
+				<p>Are you sure you want to shutdown your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			</div>
 		</div>
-		<div class="confirmation"></div>
 		<!-- main area -->
 		<section class="main">
 			
@@ -105,7 +104,7 @@
 							
 							<p class="visible-info">
 								<span><em>IPv4 83.212.97.127</em></span>
-								<span class="title"><em>vm name 1</em></span>
+								<span class="title"><em>vm name 1 really large name</em></span>
 							</p>
 							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
 							

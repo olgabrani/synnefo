@@ -30,7 +30,7 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // We use these as default colors throughout
 $primary-color: #919194;
 $secondary-color: #ff7bac;
-$black:#000;
+$black:#333;
 $white:#fff;
 
 $alert-color: $secondary-color;
@@ -209,7 +209,7 @@ $row-top-width:1300px;
 // $input-font-size: emCalc(14px);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: darken(#fff, 2%);
-// $input-border-color: darken(#fff, 20%);
+$input-border-color: $primary-color;
 // $input-focus-border-color: darken(#fff, 40%);
 // $input-border-style: solid;
 // $input-border-width: 1px;
@@ -391,30 +391,30 @@ $row-top-width:1300px;
 //
 
 // We use this to set the background color for the breadcrumb container.
-// $crumb-bg: lighten($secondary-color, 5%);
+$crumb-bg: transparent;
 
 // We use these to set the padding around the breadcrumbs.
-// $crumb-padding: emCalc(6px) emCalc(14px) emCalc(9px);
+$crumb-padding: 0 emCalc(14px) emCalc(9px);
 // $crumb-side-padding: emCalc(12px);
 
 // We use these to control border styles.
 // $crumb-function-factor: 10%;
 // $crumb-border-size: 1px;
 // $crumb-border-style: solid;
-// $crumb-border-color: darken($crumb-bg, $crumb-function-factor);
+$crumb-border-color: transparent;
 // $crumb-radius: $global-radius;
 
 // We use these to set various text styles for breadcrumbs.
-// $crumb-font-size: emCalc(11px);
+$crumb-font-size: inherit;
 // $crumb-font-color: $primary-color;
 // $crumb-font-color-current: #333;
 // $crumb-font-color-unavailable: #999;
-// $crumb-font-transform: uppercase;
-// $crumb-link-decor: underline;
+$crumb-font-transform: none;
+$crumb-link-decor: none;
 
 // We use these to control the slash between breadcrumbs
 // $crumb-slash-color: #aaa;
-// $crumb-slash: "/";
+$crumb-slash: ">";
 
 //
 // Clearing Variables
@@ -751,7 +751,7 @@ $row-top-width:1300px;
 //
 
 // We use this to se the prog bar height
-// $progress-bar-height: emCalc(25px);
+$progress-bar-height: emCalc(15px);
 // $progress-bar-color: transparent;
 
 // We use these to control the border styles

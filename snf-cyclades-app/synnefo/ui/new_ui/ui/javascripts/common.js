@@ -1,6 +1,9 @@
 ui = {};
 
 
+
+
+
 ui.closeDiv = function(closeEl, divToCloseClass) {
     closeEl.click(function(e){
         e.preventDefault();
@@ -8,6 +11,15 @@ ui.closeDiv = function(closeEl, divToCloseClass) {
     });
 }
 
+
+
+ui.trimChars = function( str, chars) {
+    if ( str.length>chars){
+        return jQuery.trim(str).substring(0, chars).split(" ").slice(0, -1).join(" ") + "...";
+    } else {
+        return str;
+    }
+}
 
 // set lt-sidebar height 
 ui.setSidebarHeight = function(){
@@ -205,12 +217,31 @@ Ajax request to submit form
         resetForm(e, $('.editable a.cancel'));
     });
 
-    
+}
+
+ui.overlay = function() {
+    $('[data-overlay-id]').click(function(e){
+        e.preventDefault();
+        var el = $(this);
+
+        // main-actions a need to be active to trigger overlay
+        if ( (el.parents('.main-actions').find('li a.active').length == 0) && (el.parents('.main-actions').length > 0) ) {
+            return false;
+        }
+        var id = el.data('overlay-id');
+        $('.overlay-area').show();
+        $(id).slideDown('slow');
+
+
+    });
+
 
 }
 
 
+
 $(document).ready(function(){
+
 
     ui.closeDiv($('.info .close'), '.info');
     ui.closeDiv($('.dummy-navigation .close'), '.dummy-navigation');
@@ -238,6 +269,7 @@ $(document).ready(function(){
 
     ui.entitiesActionsInit();
     ui.editable();
+    ui.overlay();
 
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
@@ -246,24 +278,28 @@ $(document).ready(function(){
     })
     $('.scroll-pane').jScrollPane();
 
-    // TODO: more general function
-    $('.has-overlay a').click(function(e){
-        e.preventDefault();
-        if ($(this).hasClass('active')){
-            $('.content').append('<div class="overlay-modal overlay"><a href="" class="close" title="cancel vm creation">close</a></div>');
-            $($(this).parents('.has-overlay').data('overlay-id')).fadeIn('slow');
-        }
-    })
 
+
+
+
+    $('.main .items-list .title em').each(function(){
+        $(this).html( ui.trimChars($(this).html(), 22) );
+
+    })
 
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
             e.preventDefault();
         }
     })
-
+    $('.overlay-area .close').click(function(e){
+        e.preventDefault();
+        $(this).parents('.overlay-area').hide();
+        $(this).parents('.overlay-area').find($('[data-overlay-id]')).hide();
+    })
 
 })
+
 
 $(window).resize(function(e){
     ui.setSidebarHeight();
