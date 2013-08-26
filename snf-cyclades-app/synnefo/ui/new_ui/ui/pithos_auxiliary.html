@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Synnefo | Pithos  list</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+
+    <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
+    <script src="javascripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+	
+	<div class="row-full">
+		<header class="header">
+			
+			<div class="logo">
+				<img src="images/logo_01.png" alt="software logo">
+			</div>
+			
+			<nav class="top-nav icons-nav">
+				
+				<ul>
+					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
+					<li><a href="vm_list_v1.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
+					
+					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
+					<li><a href="network_list_v1.html" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
+				</ul>
+				 
+			</nav>
+			
+			<div class="login">
+				<a href="">test@grnet.gr</a>
+			</div>
+			<div class="actions clearfix">
+				
+				<div class="lt-actions">
+					<div class="new-btn"><a href="#" data-overlay-id="#uploader"><span>+</span> UPLOAD </a></div>
+				</div>
+				<div class="main-actions">
+					<ul>
+						<li class="running"><a href="" class="active">Action 1</a></li>
+						<li class="both"><a href="" class="active">Action 2</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="info top-info alert">
+			<div class="wrap">
+				<p>ALERT!</p>
+
+				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
+			</div>
+			<a href="#" class="close" title="hide message"></a>
+		</div>
+
+	</div>
+	<div class="row-full overlay-wrapper storage">
+		<div class="overlay-area">
+			<a href="" class="close">close</a>
+			<div id="uploader" class="overlay-div upload-widget">
+				<h2>Drag and drop files here</h2>
+				<ul class="breadcrumbs">
+					<li><a href="">shared by me</a></li>
+					<li><a href="">folder 1</a></li>
+					<li>folder 2</li>
+				</ul>
+
+				<!-- uploading files view-->
+				<ul class="files">
+					<li>
+					<div class="name-col txt">file1.txt</div>
+					<div class="size-col">123KB</div>
+					<div class="progress-bar">
+						<div class="progress-wrap">
+							<div class="progress">
+								<span class="meter" style="width:90%">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="cancel-col">
+						<a href="" class="cancel"><span >cancel</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">5M</div>
+					<div class="progress-bar">
+						<div class="progress-wrap">
+							<div class="progress">
+								<span class="meter" style="width:50%">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="cancel-col">
+						<a href="" class="cancel"><span >cancel</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col txt">file1.txt</div>
+					<div class="size-col">123KB</div>
+					<div class="progress-bar">
+						<div class="progress-wrap">
+							<div class="progress">
+								<span class="meter" style="width:25%">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="cancel-col">
+						<a href="" class="cancel"><span >cancel</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">5M</div>
+					<div class="progress-bar">
+						<div class="progress-wrap">
+							<div class="progress">
+								<span class="meter" style="width:75%">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="cancel-col">
+						<a href="" class="cancel"><span >cancel</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col txt">file1.txt</div>
+					<div class="size-col">123KB</div>
+					<div class="progress-bar">
+						<div class="progress-wrap">
+							<div class="progress">
+								<span class="meter" style="width:50%">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="cancel-col">
+						<a href="" class="cancel"><span >cancel</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">5M</div>
+					<div class="progress-bar">
+						<div class="progress-wrap">
+							<div class="progress">
+								<span class="meter" style="width:15%">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="cancel-col">
+						<a href="" class="cancel"><span >cancel</span></a>
+					</div>
+				</li>
+				</ul>
+
+
+				<div class="btns">
+					<a href="">browse files</a>
+					<a href="">change folder</a>
+					<a href="">ok</a>
+				</div>
+			</div>
+
+		</div>
+		
+		<!-- sidebar -->
+		<div class="lt-sidebar">
+			 <nav class="sidenav">
+			 	<ul>
+			 		<li><a href="">trash</a><span>></span></li>
+			 		<li><a href="">shared with me</a><span>></span></li>
+			 		<li><a href="">shared by me</a><span>></span></li>
+			 		<li><a href="">groups</a><span>></span></li>
+			 	</ul>
+			 </nav>
+			 <form action="" method="">
+			 	<input type="text" placeholder="search">
+			 </form>
+		</div>
+
+		<div class="main content">
+			
+
+		<div class="confirmation"></div>
+			<ul class="breadcrumbs">
+				<li><a href="">shared by me</a></li>
+				<li><a href="">folder 1</a></li>
+				<li>folder 2</li>
+			</ul>
+			<ul class="files">
+				<li class="titles">
+					<div class="name-col">name</div>
+					<div class="size-col">size</div>
+					<div class="date-col">last modified</div>
+					<div class="actions-col">&nbsp;</div>
+				</li>
+				<li>
+					<div class="name-col folder" data-tooltip class="has-tip" title="metadata or info (ex. contains 3 files)">folder1</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col folder">folder1</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 4:23 pm</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col txt"  data-tooltip class="has-tip" title="metadata or info (ex. has been modified 3 times)">file1.txt</div>
+					<div class="size-col">5MB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col folder">folder1</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col txt">file1.txt</div>
+					<div class="size-col">5MB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col folder">folder1</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col txt">file1.txt</div>
+					<div class="size-col">5MB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col folder">folder1</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col txt">file1.txt</div>
+					<div class="size-col">5MB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col pdf">file2.pdf</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12 6:23 am</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+				<li>
+					<div class="name-col folder">folder1</div>
+					<div class="size-col">123KB</div>
+					<div class="date-col">23/12/12</div>
+					<div class="actions-col">
+						<a href="" class="delete" data-tooltip class="has-tip" title="Delete"><span class="snf-font">n</span></a>
+						<a href="" class="copy"  data-tooltip class="has-tip" title="Copy"><span class="snf-font">q</span></a>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+		<div class="progress-bar">
+			<span class="counter">6 files uploading</span>
+			<div class="progress-wrap"><div class="progress"><span class="meter" style="width:25%"></span></div></div>
+			<span class="more"><a href="">details ></a></span>
+		</div>
+	</div>
+	
+ 
+  <script src="javascripts/vendor/jquery.js"></script>
+  <script src="javascripts/foundation/foundation.js"></script>
+	
+	<script src="javascripts/foundation/foundation.alerts.js"></script>
+	
+	<script src="javascripts/foundation/foundation.clearing.js"></script>
+	
+	<script src="javascripts/foundation/foundation.cookie.js"></script>
+	
+	<script src="javascripts/foundation/foundation.dropdown.js"></script>
+	
+	<script src="javascripts/foundation/foundation.forms.js"></script>
+	
+	<script src="javascripts/foundation/foundation.joyride.js"></script>
+	
+	<script src="javascripts/foundation/foundation.magellan.js"></script>
+	
+	<script src="javascripts/foundation/foundation.orbit.js"></script>
+	
+	<script src="javascripts/foundation/foundation.placeholder.js"></script>
+	
+	<script src="javascripts/foundation/foundation.reveal.js"></script>
+	
+	<script src="javascripts/foundation/foundation.section.js"></script>
+	
+	<script src="javascripts/foundation/foundation.tooltips.js"></script>
+	
+	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
+	
+	<script src="javascripts/common.js"></script>
+	
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

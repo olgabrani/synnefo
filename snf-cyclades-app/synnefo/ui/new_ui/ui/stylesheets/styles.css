@@ -371,3 +371,73 @@ to be transfered to sass
 span.sub_title {
 	position: absolute;
 }
+
+
+/* pithos: list of uploading files */
+
+.upload-widget .files {
+	color: white;
+}
+
+.upload-widget .files li {
+	padding: 10px 190px;
+	border: none;
+	position: relative;
+}
+.upload-widget .files div{
+	display: inline-block;
+}
+
+.upload-widget .files .progress-bar {
+	position: static;
+	padding: 0;
+	width: 45%;
+	border: none;
+	background-color: transparent;
+}
+
+.upload-widget .files .progress-bar .progress-wrap {
+	width: 100%;
+	margin: 0;
+}
+
+
+.upload-widget .files .progress-bar .progress-wrap .progress {
+	display: block;
+	margin: 0;
+	border: 2px solid white;
+	padding: 0;
+	background-color: #ff7bac;
+}
+
+.upload-widget .files .progress-bar .progress-wrap .progress .meter {
+	background-color: white;
+}
+
+.upload-widget .files li .name-col {
+	width: 34%;
+	padding-left: 15px;
+}
+
+.upload-widget .files li .size-col {
+	width: 20%;
+	text-align: left;
+	float: none;
+}
+
+
+.upload-widget .files li .cancel-col {
+	width: 100px;
+	position: absolute;
+	right: 50px;
+	top: 9px;
+}
+
+.upload-widget .files li .cancel-col .cancel span {
+	display: block;
+	text-align: right;
+}
+
+/*.storage .upload-widget .files li {
+	clear: none;
+}*/
