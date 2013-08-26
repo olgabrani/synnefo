@@ -298,6 +298,15 @@ $(document).ready(function(){
         $(this).parents('.overlay-area').find($('[data-overlay-id]')).hide();
     })
 
+    $('.browse-files').click(function(e){
+        e.preventDefault();
+    })
+
+    Dropzone.options.myAwesomeDropzone = {
+        dictDefaultMessage:'',
+        clickable: '.browse-files',
+    };
+
 })
 
 
