@@ -439,7 +439,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       dictResponseError: "Server responded with {{statusCode}} code.",
       dictCancelUpload: "Cancel upload",
       dictCancelUploadConfirmation: "Are you sure you want to cancel this upload?",
-      dictRemoveFile: "snf- Remove file",
+      dictRemoveFile: "Remove file",
       dictRemoveFileConfirmation: null,
       dictMaxFilesExceeded: "You can only upload {{maxFiles}} files.",
       accept: function(file, done) {
@@ -608,7 +608,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
       },
       completemultiple: noop,
       maxfilesexceeded: noop,
-      previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div>\n  <div class=\"dz-success-mark\"><span>✔</span></div>\n  <div class=\"dz-error-mark\"><span>✘</span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>"
+      previewTemplate: "<li class=\"dz-preview dz-file-preview\">\n <div class=\"dz-filename name-col txt\"><span data-dz-name></span></div>\n    <div class=\"dz-size size-col\" data-dz-size></div>\n<div class=\"progress-bar \">\n<div class=\"progress-wrap\">\n<div class=\"progress dz-progress\"><span span class=\"meter dz-upload\" data-dz-uploadprogress></span></div></div></div>\n<div class=\"dz-success-mark\"><span>✔</span></div>\n  <div class=\"dz-error-mark\"><span>✘</span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</li>"
     };
 
     extend = function() {
@@ -989,7 +989,7 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
         size = size * 10;
         string = "b";
       }
-      return "<strong>" + (Math.round(size) / 10) + "</strong> " + string;
+      return "" + (Math.round(size) / 10) + "" + string;
     };
 
     Dropzone.prototype._updateMaxFilesReachedClass = function() {

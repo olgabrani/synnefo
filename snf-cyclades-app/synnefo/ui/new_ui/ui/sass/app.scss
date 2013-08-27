@@ -830,6 +830,7 @@ body.with-overlay {
 			padding:10px 20px;
 			border:1px solid transparent;
 			@extend .clearfix;
+			text-align: left;
 			.name-col {
 				float:left;
 				width:35%;
@@ -973,7 +974,10 @@ body.with-overlay {
 	}
 }
 
-.dropzone {
+
+	.dz-success-mark, .dz-error-mark, .dz-error-message {
+		display: none;
+
 }
 
 

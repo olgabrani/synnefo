@@ -302,9 +302,12 @@ $(document).ready(function(){
         e.preventDefault();
     })
 
-    Dropzone.options.myAwesomeDropzone = {
+    Dropzone.options.filesDropzone = {
         dictDefaultMessage:'',
         clickable: '.browse-files',
+        previewsContainer: '.dropzone-files',
+        createImageThumbnails: false,
+        dictRemoveFile: "snf-Remove file",
     };
 
 })

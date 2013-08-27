@@ -380,7 +380,7 @@ span.sub_title {
 }
 
 .upload-widget .files li {
-	padding: 10px 190px;
+	padding: 10px 120px;
 	border: none;
 	position: relative;
 }
@@ -391,7 +391,7 @@ span.sub_title {
 .upload-widget .files .progress-bar {
 	position: static;
 	padding: 0;
-	width: 45%;
+	width: 25%;
 	border: none;
 	background-color: transparent;
 }
@@ -416,15 +416,22 @@ span.sub_title {
 
 .upload-widget .files li .name-col {
 	width: 34%;
-	padding-left: 15px;
+
 }
 
 .upload-widget .files li .size-col {
-	width: 20%;
 	text-align: left;
 	float: none;
 }
 
+.upload-widget .files li .dz-success-mark {
+	margin-left:10px;
+}
+
+
+.upload-widget .files li .dz-error-mark {
+	display: none;
+}
 
 .upload-widget .files li .cancel-col {
 	width: 100px;
