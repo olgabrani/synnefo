@@ -3,12 +3,29 @@
 window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
-		el.innerHTML = '<span style="font-family: \'checkboxes\'">' + entity + '</span>' + html;
+		el.innerHTML = '<span style="font-family: \'snf-font-1\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-			'checkbox-checkbox-checked' : '&#x62;',
-			'checkbox-checkbox-partial' : '&#x63;',
-			'checkbox-checkbox-unchecked' : '&#x61;'
+			'snf-twitter-off-black' : '&#x67;',
+			'snf-cancel-circled' : '&#x63;',
+			'snf-checkbox-checked' : '&#x62;',
+			'snf-checkbox-unchecked' : '&#x61;',
+			'snf-cancel-circled2' : '&#x64;',
+			'snf-cancel-circled-outline' : '&#x65;',
+			'snf-cancel-outline' : '&#x66;',
+			'snf-ok' : '&#x68;',
+			'snf-remove' : '&#x69;',
+			'snf-ban-circle' : '&#x6a;',
+			'snf-ok-circle' : '&#x6b;',
+			'snf-ok-sign' : '&#x6c;',
+			'snf-remove-sign' : '&#x6d;',
+			'snf-minus-sign' : '&#x6e;',
+			'snf-pencil' : '&#x6f;',
+			'snf-edit' : '&#x70;',
+			'snf-edit-1' : '&#x71;',
+			'snf-pencil-circled' : '&#x72;',
+			'snf-icon-compute-outline' : '&#x73;',
+			'snf-icon-networks-fill' : '&#x74;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
@@ -22,7 +39,7 @@ window.onload = function() {
 			addIcon(el, attr);
 		}
 		c = el.className;
-		c = c.match(/checkbox-[^\s'"]+/);
+		c = c.match(/snf-[^\s'"]+/);
 		if (c && icons[c[0]]) {
 			addIcon(el, icons[c[0]]);
 		}
