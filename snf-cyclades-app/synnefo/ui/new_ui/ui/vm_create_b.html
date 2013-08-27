@@ -6,12 +6,12 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | Create Network</title>
+    <title>Synnefo | VM list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/styles.css" />
-    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/athina.css" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 
 </head>
@@ -34,10 +34,10 @@
 				
 				<ul>
 					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
-					<li><a href="vm_list_v1.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
+					<li><a href="vm_list.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
 					
 					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
-					<li><a href="network_list_v1.html" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
+					<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
 				</ul>
 				 
 			</nav>
@@ -48,7 +48,7 @@
 			<div class="actions clearfix">
 				
 				<div class="lt-actions">
-					<div class="new-btn"><a href="network_create_v1.html" class="current"><span>+</span> NEW NETWORK </a></div>
+					<div class="new-btn"><a href="vm_create_a.html" class="current"><span>+</span> NEW MACHINE </a></div>
 				</div>
 				<div class="main-actions">
 					<ul>
@@ -62,49 +62,42 @@
 			</div>
 		</header>
 		
+
 	</div>
 	<div class="row-full wrapper ">
-		<div class="overlay create-vm create-network">
+		<div class="overlay create-vm">
 			<div class="lt-sidebar nav">
-				tba...?
-
+				<ul>
+					<li><span class="titles">Predefined</span></li>
+					<li><a href="#" class="flavor_selection small_flavor">Small<span>></span></a></li>
+					<li><a href="#" class="flavor_selection medium_flavor">Medium<span>></span></a></li>
+					<li><a href="#" class="flavor_selection large_flavor">Large<span>></span></a></li>
+				</ul>
+				
 			</div>
 			<div class="main">
-				<a href="network_list_v1.html" class="close close_char" title="cancel network creation"><span class="snf-font">e</span></a>
-				<div>
-					<ul class="network_options clearfix">
-						<li>
-							<form><span >Network Name:</span><input type="text" name="network_name"></form>
-						</li>
-						<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
-							<a href="" class="check">
-								<span class="snf-font custom_checkbox checkbox-checked">b</span>
-							</a>
-							<p>
-						If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
-					</p>
-						</li>
-						<li>
-							<ul class="subnet_options">
-							<span class="sub_title">Network subnet:</span>
-								<li><span>Auto 
-									<a href="" class="check">
-										<span class="snf-font custom_checkbox checkbox-checked">b
-										</span>
-									</a>
-								</span></li>
-							<li class="manual"><form><span>Manual <a href="" class="check manual"><span class="snf-font custom_checkbox">a</span></a><input class="manual_sub hidden" type="text" name="network_name"></span></form>
-							</li>
-							<li><span>10.0.0.0/24 <a href="" class="check"><span class="snf-font custom_checkbox">a</span></a></span>
-							</li>
-							<li><span>192.168.0.0/24 <a href="" class="check"><span class="snf-font custom_checkbox">a</span></a></span>
-							</li>
-							</ul>	
-					</ul>
+				<a href="vm_list.html" class="close" title="cancel vm creation">close</a>
+				<div class="select-flavor">
+					<dl class="clearfix cpus">
+						<dd><strong>Cpu</strong> (x cores)</dd>
+						<dt><span class="small_flavor current">1</span><span class="medium_flavor">2</span><span class="large_flavor">4</span></dt>
+					</dl>
+					<dl class="clearfix disk">
+						<dd><strong>Disk Size</strong> (GB)</dd>
+						<dt><span class="small_flavor current">5</span><span class="medium_flavor">10</span><span class="large_flavor">20</span><span>40</span></dt>
+					</dl>
+					<dl class="clearfix ram">
+						<dd><strong>Memory Size</strong> (MB)</dd>
+						<dt><span class="small_flavor current">1024</span><span class="medium_flavor large_flavor">2048</span><span>4096</span></dt>
+					</dl>
+					<dl class="clearfix storage">
+						<dd><strong>Storage</strong></dd>
+						<dt><span class="current">Standard</span><span>Rdb</span><span>Local</span></dt>	
+					</dl>
 				</div>
 				<div class="navigation clearfix">
-					
-					<a class="rt btn2" href="network_list_v1.html" title="Create your private network">Create Network</a>
+					<a class="lt btn2" href="vm_create_a.html">PREVIOUS</a>
+					<a class="rt btn2" href="#">NEXT</a>
 				</div>
 			</div>
 		</div>
@@ -144,11 +137,11 @@
 	<script src="javascripts/foundation/foundation.tooltips.js"></script>
 	
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
-	
 	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
-	<script src="javascripts/common.js"></script>
+	
 	<script src="javascripts/glafkopis.js"></script>
+	<script src="javascripts/common.js"></script>
 	
   
   <script>
