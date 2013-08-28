@@ -74,7 +74,9 @@ $(document).ready(function(){
  	}
  	console.log(checkbox);
  })
-   
+  
+placementByUser();
+
 });
 
 
@@ -94,5 +96,17 @@ function checkAction(checkbox) {
         else{
         	console.log('Dn kanw tpt!');
         }
+}
+
+function placementByUser() {
+	$( ".sortable" ).sortable({
+ 	items: "> li:not(:last)",
+ 	stop: function(event, ui) {
+ 	$.map($(this).find('li'), function(el) {
+                return $(el).attr('data-order', $(el).index());
+            });
+	}
+});
+    $( ".sortable" ).disableSelection(); //i think unnecessary
 }
 
