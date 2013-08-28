@@ -75,8 +75,8 @@ $header-padding-horizontal:emCalc(40px);
 // Grid Variables
 //
 
-$row-top-width:1300px;
-// $row-width: 62.5em;
+$row-full-width:100%;
+$row-width: emCalc(1200px);
 // $column-gutter: 1.875em;
 // $total-columns: 12;
 
@@ -1019,3 +1019,9 @@ $tooltip-font-weight: normal;
 // $topbar-breakpoint: emCalc(940px); // Change to 9999px for always mobile layout
 // $topbar-media-query: "only screen and (min-width "#{$topbar-breakpoint}")";
 
+
+// Custom breakpoints
+
+$entities-list-large: emCalc(1100px);
+
+$entities-large: "only screen and (min-width:"#{$entities-list-large}")";

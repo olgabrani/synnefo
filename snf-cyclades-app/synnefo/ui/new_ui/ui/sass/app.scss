@@ -184,7 +184,7 @@ a:hover {
 
 
 .row-full {
-	max-width:$row-top-width;
+	max-width:$row-full-width;
 	margin:0 auto;
 }
 
@@ -331,9 +331,10 @@ body.with-overlay {
 	color:$white;
 }
 
-
+.entities {
+	padding-top:25px;
+}
 .items-list {
-	padding:25px 0;
 	li {
 		text-align:center;
 		padding:20px;
@@ -374,7 +375,7 @@ body.with-overlay {
 				top:-3px;
 				left:0;
 				display: none;
-				z-index: 1;
+				z-index: 11;
 				.wrap {
 					height:100%;
 					padding:25px 25px 0;
@@ -389,6 +390,38 @@ body.with-overlay {
 						font-weight: bold;
 						&:hover {
 							color: $secondary-color;
+						}
+					}
+					.details {
+						display: inline;
+						position: relative;
+
+						.info-box {
+							display: none;
+							position:absolute;
+							left:0;
+							top:20px;
+							background:$primary-color;
+							width:emCalc(300px);
+							padding:20px;
+							color:white;
+							h2 {
+								font-size:1em;
+								color:white;
+							}
+							dl {
+								font-size:1em;
+								dt {
+									float:left;
+									width:30%;
+								}
+								dd {
+									overflow:hidden;
+								}
+							}
+						}
+						&:hover {
+							.info-box { display:block;}
 						}
 					}
 				}
@@ -981,5 +1014,17 @@ body.with-overlay {
 }
 
 
+.onecol {
+	max-width:$row-width;
+	margin:0 auto;
+}
+
+@media #{$entities-large} {
+	.entities {
+		.items-list {
+			@include block-grid(4, 20px, true);
+		}
+	} 
+}
 
 
