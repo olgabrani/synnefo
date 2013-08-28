@@ -131,6 +131,26 @@ ui.entitiesActionsInit = function(){
 
         ui.cntCheckbox();
     })
+    $('.entities li .details').mouseenter(function (e) {
+        $(this).parents('.container').find('.info-box').show();
+    }) 
+      
+    $('.entities li .details').mouseleave(function (e) {
+        $(this).parents('.container').find('.info-box').hide();
+    })   
+    $('.entities li .container').mouseleave(
+        function(e){
+            $(this).stop(true, true).removeClass('set-border');
+            $(this).find('.options').stop(true, true).fadeOut(200); 
+            $(this).find('.img').stop(true, true).fadeIn('slow');
+            $(this).find('.custom_checkbox:not(.checkbox-checked)').parents('.check').stop(true, true).removeClass('active');
+            $(this).find('.visible-info em').stop(true, true).each(function(){
+                $(this).animate({
+                 left: 0,
+                }, 300);        
+            }) 
+         }
+    );
    
 }
 

@@ -375,7 +375,6 @@ body.with-overlay {
 				top:-3px;
 				left:0;
 				display: none;
-				z-index: 11;
 				.wrap {
 					height:100%;
 					padding:25px 25px 0;
@@ -392,38 +391,9 @@ body.with-overlay {
 							color: $secondary-color;
 						}
 					}
-					.details {
-						display: inline;
-						position: relative;
-
-						.info-box {
-							display: none;
-							position:absolute;
-							left:0;
-							top:20px;
-							background:$primary-color;
-							width:emCalc(300px);
-							padding:20px;
-							color:white;
-							h2 {
-								font-size:1em;
-								color:white;
-							}
-							dl {
-								font-size:1em;
-								dt {
-									float:left;
-									width:30%;
-								}
-								dd {
-									overflow:hidden;
-								}
-							}
-						}
-						&:hover {
-							.info-box { display:block;}
-						}
-					}
+						
+					
+					
 				}
 			}
 		}
@@ -440,6 +410,31 @@ body.with-overlay {
 			span { position:relative; z-index:10;}
 			&.active {
 				color:$secondary-color;
+			}
+		}
+		.info-box {			
+			position:absolute;
+			left:20px;
+			top:60px;
+			background:$primary-color;
+			width:emCalc(300px);
+			padding:20px;
+			color:white;
+			z-index:20;
+			display: none;
+			h2 {
+				font-size:1em;
+				color:white;
+			}
+			dl {
+				font-size:1em;
+				dt {
+					float:left;
+					width:30%;
+				}
+				dd {
+					overflow:hidden;
+				}
 			}
 		}
 		.visible-info {
