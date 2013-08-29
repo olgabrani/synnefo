@@ -859,6 +859,7 @@ body.with-overlay {
 			border:1px solid transparent;
 			@extend .clearfix;
 			text-align: left;
+			font-weight: normal;
 			.name-col {
 				float:left;
 				width:35%;
@@ -866,6 +867,8 @@ body.with-overlay {
 				&.folder { background:url(../images/icon-folder.png) no-repeat left center; }
 				&.txt { background:url(../images/icon-txt.png) no-repeat left center; }
 				&.pdf { background:url(../images/icon-pdf.png) no-repeat left center; }
+				&.image { background:url(../images/icon-image.png) no-repeat left center; }
+				font-weight: normal;
 			}
 			.size-col {
 				float:left;
