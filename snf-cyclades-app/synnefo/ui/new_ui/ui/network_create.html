@@ -81,25 +81,45 @@
 								<span class="snf-font custom_checkbox checkbox-checked">b</span>
 							</a>
 							<p>
-						If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
-					</p>
+								If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
+							</p>
 						</li>
 						<li>
-							<ul class="subnet_options">
 							<span class="sub_title">Network subnet:</span>
-								<li><span>Auto 
-									<a href="" class="check">
-										<span class="snf-font custom_checkbox checkbox-checked">b
+							<ul class="subnet_options">
+								<li>
+									<span>Auto 
+										<a href="" class="check">
+											<span class="snf-font custom_checkbox checkbox-checked">b</span>
+										</a>
+									</span>
+								</li>
+								<li class="manual">
+									<form>
+										<span>Manual
+											<a href="" class="check manual">
+												<span class="snf-font custom_checkbox">a</span>
+											</a>
+											<input class="manual_sub hidden" type="text" name="network_name">
 										</span>
-									</a>
-								</span></li>
-							<li class="manual"><form><span>Manual <a href="" class="check manual"><span class="snf-font custom_checkbox">a</span></a><input class="manual_sub hidden" type="text" name="network_name"></span></form>
-							</li>
-							<li><span>10.0.0.0/24 <a href="" class="check"><span class="snf-font custom_checkbox">a</span></a></span>
-							</li>
-							<li><span>192.168.0.0/24 <a href="" class="check"><span class="snf-font custom_checkbox">a</span></a></span>
-							</li>
-							</ul>	
+									</form>
+								</li>
+								<li>
+									<span>10.0.0.0/24 
+										<a href="" class="check">
+											<span class="snf-font custom_checkbox">a</span>
+										</a>
+									</span>
+								</li>
+								<li>
+									<span>192.168.0.0/24 
+										<a href="" class="check">
+											<span class="snf-font custom_checkbox">a</span>
+										</a>
+									</span>
+								</li>
+							</ul>
+						</li>	
 					</ul>
 				</div>
 				<div class="navigation clearfix">
