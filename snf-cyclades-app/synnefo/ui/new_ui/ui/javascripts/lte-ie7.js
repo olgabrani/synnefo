@@ -25,7 +25,13 @@ window.onload = function() {
 			'snf-edit-1' : '&#x71;',
 			'snf-pencil-circled' : '&#x72;',
 			'snf-icon-compute-outline' : '&#x73;',
-			'snf-icon-networks-fill' : '&#x74;'
+			'snf-icon-networks-fill' : '&#x74;',
+			'snf-HDD' : '&#x75;',
+			'snf-network' : '&#x76;',
+			'snf-PC' : '&#x77;',
+			'snf-PC_fill' : '&#x78;',
+			'snf-Pithos' : '&#x79;',
+			'snf-DASHboard' : '&#x7a;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;
