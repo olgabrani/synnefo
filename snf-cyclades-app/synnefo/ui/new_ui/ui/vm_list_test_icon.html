@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+    <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Synnefo | VM list</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/styles_test_icon.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
+    <script src="javascripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+	<div class="row-full">
+		<header class="header">
+			
+			<div class="logo">
+				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+			</div>
+			
+			<nav class="top-nav menu1 icons-nav">
+				
+				<ul>
+					<li><a href="pithos_list_test_icon.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-font">y</span></a></li>
+					<li><a href="vm_list_test_icon.html" data-tooltip class="has-tip" title="Machines"><span class="snf-font">w</span></a></li>
+					
+					<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-font">u</span></a></li>
+					<li><a href="network_list_test_icon.html" data-tooltip class="has-tip" title="Networks"><span class="snf-font">v</span></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-font">z</span></a></li>
+				</ul>
+				 
+			</nav>
+			
+			<div class="login">
+				<a href="">test@grnet.gr</a>
+			</div>
+			<div class="actions clearfix">
+				
+				<div class="lt-actions">
+					<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
+				</div>
+				<div class="main-actions">
+					<ul>
+						<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
+						<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
+						<li class="both"><a href="">Destroy</a></li>
+						<li class="stopped"><a href="">Start</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="info top-info alert">
+			<div class="wrap">
+				<p>ALERT!</p>
+
+				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
+			</div>
+			<a href="#" class="close" title="hide message">close</a>
+		</div>
+
+	</div>
+	<div class="row-full content  overlay-wrapper ">
+		<div class="overlay-area">
+			<a href="" class="close">close</a>
+			<div id="overlay1" class="overlay-div">
+				<p>Are you sure you want to reboot your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			</div>
+			<div id="overlay2" class="overlay-div">
+				<p>Are you sure you want to shutdown your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			</div>
+		</div>
+		<!-- main area -->
+		<section class="main onecol">
+			
+			<div class="vms entities">
+				<ul class="items-list small-block-grid-2 large-block-grid-3 sortable">
+					<li data-order="0">
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									<a href="vm_details.html" class="details">details</a>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									<div class="snf-font">x</div>
+									<span class="os windows">windows</span>
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>vm name 1 really large name</em></span>
+							</p>
+							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
+							<div class="info-box">
+								<h2>VM full name</h2>
+								<p>blah blah</p>
+								<dl>
+									<dt>Status</dt>
+									<dd>running</dd>
+									<dt>OS</dt>
+									<dd><img class="txt_size" src="images/os-windows.png"> Windows</dd>
+									<dt>IPv4</dt>
+									<dd>83.212.97.127</dd>
+								</dl>
+							</div>
+						</div>
+					</li>
+					<li data-order="1">
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									
+									<a href="vm_details.html" class="details">details</a>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									<div class="snf-font">x</div>
+									<span class="os windows">windows</span>
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>vm name 2</em></span>
+							</p>
+							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
+							<div class="info-box">
+								<h2>VM full name</h2>
+								<p>blah blah</p>
+								<dl>
+									<dt>Status</dt>
+									<dd>running</dd>
+									<dt>OS</dt>
+									<dd><img class="txt_size" src="images/os-windows.png"> Windows</dd>
+									<dt>IPv4</dt>
+									<dd>83.212.97.127</dd>
+								</dl>
+							</div>
+						</div>
+					</li>
+					<li data-order="2">
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									
+									<a href="vm_details.html" class="details">details</a>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img stopped">
+									<div class="snf-font">x</div>
+									<span class="os fedora">fedora</span>
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>vm name 3</em></span>
+							</p>
+							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
+							<div class="info-box">
+								<h2>VM full name</h2>
+								<p>blah blah</p>
+								<dl>
+									<dt>Status</dt>
+									<dd>running</dd>
+									<dt>OS</dt>
+									<dd><img class="txt_size" src="images/os-windows.png"> Windows</dd>
+									<dt>IPv4</dt>
+									<dd>83.212.97.127</dd>
+								</dl>
+							</div>
+						</div>
+					</li>
+					<li  data-order="3">
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									
+									<a href="vm_details.html" class="details">details</a>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									<div class="snf-font">x</div>
+									<span class="os">unknown</span>
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>vm name 4</em></span>
+							</p>
+							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
+							<div class="info-box">
+								<h2>VM full name</h2>
+								<p>blah blah</p>
+								<dl>
+									<dt>Status</dt>
+									<dd>running</dd>
+									<dt>OS</dt>
+									<dd><img class="txt_size" src="images/os-windows.png"> Windows</dd>
+									<dt>IPv4</dt>
+									<dd>83.212.97.127</dd>
+								</dl>
+							</div>
+						</div>
+					</li>
+					<li  data-order="4">
+						<div class="container">
+							<div class="options">
+								<div class="wrap">
+									
+									<a href="vm_details.html" class="details">details</a>
+									<a href="#" data-reveal-id="vm-connect" class="connect">connect</a>
+								</div>
+							</div>
+							<div class="img-wrap">
+								<div class="img running">
+									<div class="snf-font">x</div>
+									<span class="os kubuntu">kubuntu</span>
+								</div>
+							</div>
+							
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title"><em>vm name 5</em></span>
+							</p>
+							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
+							<div class="info-box">
+								<h2>VM full name</h2>
+								<p>blah blah</p>
+								<dl>
+									<dt>Status</dt>
+									<dd>running</dd>
+									<dt>OS</dt>
+									<dd><img class="txt_size" src="images/os-windows.png"> Windows</dd>
+									<dt>IPv4</dt>
+									<dd>83.212.97.127</dd>
+								</dl>
+							</div>
+						</div>
+					</li>
+					 
+					<li  data-order="5">
+						<div class="add-new"><a href="vm_create_a.html">NEW<br>MACHINE</a></div>	
+					</li>
+					 
+				</ul>
+			</div>
+		</section>
+	</div>
+	<div class="extras">
+		<span data-tooltip class="has-tip ours suggestions" title="Μήπως να είναι λίγο πιο έντονα τα χρώματα; Μοιάζουν απενεργοποιημένα..." style="top:0;left:200px">:)</span>
+		<span data-tooltip class="has-tip ours questions" title="Πόσο θα είναι το μέγιστο πλάτος της κύριας περιοχής" style="top:240px;left:20px">?</span>
+		<span data-tooltip class="has-tip ours problems" title="Πώς θα έχουμε δράσεις όπως filters κτλ" style="top:140px;left:250px">!!</span>
+	</div>
+	<div id="vm-connect" class="reveal-modal medium">
+  		<p>A direct connection to this machine can be established using the <a target=​"_blank" href="http://en.wikipedia.org/wiki/Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
+		
+		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+		<p>Alternatively you can connect to your VM via <a href="">Console</a> (slow connection - meant only for troubleshooting.</p>
+  		<a class="close-reveal-modal" title="close window">&#215;</a>
+	</div>
+	<script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
+	<script src="javascripts/foundation/foundation.alerts.js"></script>
+	
+	<script src="javascripts/foundation/foundation.clearing.js"></script>
+	
+	<script src="javascripts/foundation/foundation.cookie.js"></script>
+	
+	<script src="javascripts/foundation/foundation.dropdown.js"></script>
+	
+	<script src="javascripts/foundation/foundation.forms.js"></script>
+	
+	<script src="javascripts/foundation/foundation.joyride.js"></script>
+	
+	<script src="javascripts/foundation/foundation.magellan.js"></script>
+	
+	<script src="javascripts/foundation/foundation.orbit.js"></script>
+	
+	<script src="javascripts/foundation/foundation.placeholder.js"></script>
+	
+	<script src="javascripts/foundation/foundation.reveal.js"></script>
+	
+	<script src="javascripts/foundation/foundation.section.js"></script>
+	
+	<script src="javascripts/foundation/foundation.tooltips.js"></script>
+	
+	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
+	<script type="text/javascript" src="javascripts/dropzone.js"></script>
+	<script src="javascripts/common.js"></script>
+	<script src="javascripts/glafkopis.js"></script>
+	  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

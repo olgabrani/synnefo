@@ -1,0 +1,525 @@
+
+/* styles for selection window (used for vm_list_v1.html) */
+
+.vm_options{
+	display: none;
+	border: 1px solid #ff7bac;
+	position: absolute;
+	top: -20%;
+	width: 100%;
+	height: 100%;
+	font-size: 27px;
+	font-weight: bold;
+	text-align: left;
+	background-color: white;
+	line-height: 45px;
+	padding-left: 1em;
+	padding-top: 0.65em;
+}
+
+.vm_options .custom_checkbox{
+	display: inline-block;
+	margin: 0;
+	padding-left: 1em;	
+	color: #ff7bac;
+}
+
+a.option:hover{
+	color: #ff7bac;
+}
+
+.vm_container{
+	width: 200px;
+	display: inline-block;
+	height: 187px;
+	position: relative;
+
+}
+
+
+/* styles for the detailed info of each vm (used for vm_details_v1.html) */
+
+
+.graph_container{
+	padding-bottom: 2em;
+
+}
+
+
+.wrap{
+	position: relative;
+}
+
+.section_header{
+	float: left;
+	width:23%;
+	margin-right: 2%;
+	font-weight: bold;
+}
+
+.right_side{
+	overflow: hidden;
+	width: 75%;
+}
+
+
+
+.info_simple{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+
+.action_links{
+	display: inline-block;
+	
+}
+.action_links a:hover {
+	text-decoration: underline;
+}
+
+.btn_pinkb{
+	width: 11.5em;
+	height: 3.8em;
+	line-height: 3.8em;
+	border: 1px solid #ff7bac;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.btn_pinkb a{
+	display: block;
+	padding-left: 1em;
+}
+
+.btn_pinkb a:hover, a.black:hover{
+	color: #ff7bac;
+}
+
+
+.btn_pinkb a img{
+	position: absolute;
+	right: 0.6em;
+	top: 0.6em;
+	height: 2.5em;
+}
+
+
+.action_links span:first-child{
+	margin-right: 5px;
+}
+
+.action_links a{
+	color: #ff7bac;
+	margin-right: 5px;
+}
+
+.row{
+	margin: 0 0 0.4em 0;
+}
+.middle_side{
+	max-width: 70%;
+}
+
+.txt_size{
+	height: 0.8em;
+	vertical-align: baseline;
+}
+
+a.black{
+	color: black;
+}
+
+a.black:hover{
+	color: #ff7bac;
+}
+
+
+
+ /* styles for network details */
+
+ .big{
+ 	width: 60%;
+ }
+
+ .small{
+ 	width: 170px;
+ }
+
+.wrapper .details .top{
+	padding: 70px 2.5em;
+}
+
+.wrapper .details .top .actions ul li{
+	margin: 0 30px;
+}
+
+.height_up{
+	line-height: 1.3em;
+}
+
+.set{
+	margin-bottom: 1em;
+}
+
+/* main icon in details page */
+.network .top .img {
+background: url("../images/network-green102x116.png") no-repeat center center;
+width: 102px;
+height: 116px;
+display: inline-block;
+text-indent: -2000px;
+overflow: hidden;
+background-size: 100%;
+}
+
+
+/* scroll bar */
+.networks .items-list .img {
+background: url("../images/network-green102x116.png") no-repeat center center;
+height: 58px;
+width: 51px;
+display: inline-block;
+text-indent: -2000px;
+overflow: hidden;
+background-size: 80%;
+}
+
+.network .close-font{
+	position: absolute;
+	right: 0.8em;
+	top: 2em;
+	font-size: 2em;
+	color: #b3b3b3;
+
+}
+
+
+/* styles for network list */
+
+.networks .items-list .container .img {
+background: url("../images/network-green102x116.png") no-repeat center center;
+height: 58px;
+width: 51px;
+text-indent: -2000px;
+overflow: hidden;
+background-size: 100%
+}
+
+
+
+/* detailed pages: about the gaps that separate the area with the big img and the buttons from the rest of the page */ 
+
+
+.details .top .actions ul{
+	padding: 1em 1em 0;
+	margin-bottom: 0;
+} 
+
+
+/*
+to be transfered to sass
+*/
+
+.items-list li .container .options .wrap a {
+	width: 50%;
+}
+.content {
+	position: relative;
+}
+.content .overlay-modal {
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	z-index:98;
+	background: #ff7bac;
+}
+
+
+.content .overlay-div {
+	position:absolute; top:20%; left:25%; width:50%;
+	padding:25px;
+	background:white;
+	display:none; z-index:100;
+}
+
+.content .overlay-div .buttons {
+	margin-bottom:0;
+}
+
+.content .overlay-div .buttons a {
+	margin-right:20px;
+}
+
+/* line 133, ../sass/app.scss */
+.btn4 {
+  color: white;
+  border-color: #ff7bac;
+  background: #ff7bac;
+}
+/* line 139, ../sass/app.scss */
+.btn4:hover, .btn4.current {
+  border-color: #ff7bac;
+  color:#ff7bac;
+  background: white;
+}
+
+
+.overlay .lt-sidebar.nav ul li:hover  {
+	background-color: transparent;
+}
+
+.lt-sidebar.nav {
+	font-size: 1em
+}
+
+.overlay .lt-sidebar.nav  {
+	overflow: auto;
+}
+
+
+/* styles for close icons (created with fontIcon "snf-font") */
+
+.overlay .close_char {
+	background: none;
+	text-indent: 0;
+	font-size: 1.8em; /* for the the character e (for d we can put 2em) */
+	color: white;
+}
+
+
+
+/* create network styles */
+
+.create-network {
+	color: white;
+}
+
+.create-network .check{
+	color: white;
+}
+
+.create-network p {
+	font-size: 0.8em;
+	font-style: italic;
+	margin: 5px 0 0;
+	width: 545px;
+}
+
+
+.create-network li {
+	list-style: none outside none;
+}
+
+.subnet_options {
+	margin: 0;
+}
+
+.network_options .check {
+	position: absolute;
+	right: 0;
+}
+
+.create-network .custom_checkbox {
+	font-size: 1.3em;
+}
+
+
+.network_options {
+	position: relative;
+	width: 350px;
+	min-height: 285px;
+	
+}
+
+.network_options li {
+	display: block;
+	margin-bottom: 13px;
+}
+
+.subnet_options li {
+	margin-bottom: 6px;
+	padding-left: 155px;
+}
+
+
+.network_options li form {
+	margin: 0;
+}
+.network_options li form input {
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	width: 200px;
+	height: 20px;
+	font-size: 0.9em;
+}
+
+.network_options li.manual form input {
+	right: -160px;
+	width: 150px;
+}
+
+
+.network_options li form input.hidden {
+	display: none;
+}
+
+span.sub_title {
+	position: absolute;
+}
+
+
+/* pithos: list of uploading files */
+
+.upload-widget .files {
+	color: white;
+}
+
+.upload-widget .files li {
+	padding: 10px 120px;
+	border: none;
+	position: relative;
+}
+.upload-widget .files div{
+	display: inline-block;
+}
+
+.upload-widget .files .progress-bar {
+	position: static;
+	padding: 0;
+	width: 25%;
+	border: none;
+	background-color: transparent;
+}
+
+.upload-widget .files .progress-bar .progress-wrap {
+	width: 100%;
+	margin: 0;
+}
+
+
+.upload-widget .files .progress-bar .progress-wrap .progress {
+	display: block;
+	margin: 0;
+	border: 2px solid white;
+	padding: 0;
+	background-color: #ff7bac;
+}
+
+.upload-widget .files .progress-bar .progress-wrap .progress .meter {
+	background-color: white;
+}
+
+.upload-widget .files li .name-col {
+	width: 34%;
+
+}
+
+.upload-widget .files li .size-col {
+	text-align: left;
+	float: none;
+}
+
+.upload-widget .files li .dz-success-mark {
+	margin-left:10px;
+}
+
+
+.upload-widget .files li .dz-error-mark {
+	display: none;
+}
+
+.upload-widget .files li .cancel-col {
+	width: 100px;
+	position: absolute;
+	right: 50px;
+	top: 9px;
+}
+
+.upload-widget .files li .cancel-col .cancel span {
+	display: block;
+	text-align: right;
+}
+
+/*.storage .upload-widget .files li {
+	clear: none;
+}*/
+
+
+/* after sass for sure */
+
+.menu1 ul li a .snf-font {
+	font-size: 25px;
+	color: black; 
+}
+
+body .menu1 ul li {
+	margin-right: 9px;
+}
+
+body .menu1 ul li a:hover span {
+	color: #3582ac;
+}
+
+.menu2 ul li a .snf-font {
+	font-size: 25px;
+	font-weight: bold;
+	color: #919194;
+}
+
+.menu3 ul li a .snf-font {
+	font-size: 25px;
+	color: #919194;
+}
+
+
+body .menu2 ul li {
+	margin-right: 9px;
+}
+
+body .menu2 ul li a:hover span{
+	color: #3582ac;
+}
+
+body .vms .items-list .img.running, body .vms .items-list .img.stopped, body .networks .items-list .img.running, body .networks .items-list .img.stopped{
+	background: none;
+	text-indent: 0;
+	width: 60px;
+	height: 60px;
+}
+
+body .img  .snf-font {
+	font-size: 60px;
+}
+
+body .networks .img  .snf-font.bolding {
+	font-weight: bold;
+	font-size: 57px;
+	top: 6px;
+}
+body .networks .img  .snf-font {
+	position: relative;
+	top: 2px;
+}
+
+body .networks .running .snf-font {
+	color: #79c79e;
+}
+
+body .running  .snf-font {
+	color: #75c046;
+}
+
+
+body .stopped  .snf-font {
+	color: #e00e63;
+}
+
+
+body .vms .items-list .img .os {
+	left:19px;
+}
