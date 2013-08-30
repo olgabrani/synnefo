@@ -83,6 +83,14 @@
   box-shadow: $shadows;
 }
 
+a {
+	color:$secondary-color;
+	&:hover {
+		color:$primary-color;
+		@include transition(background, 300ms, ease-out);
+
+	}
+}
 // border grey, on hover pink
 .btn1 {
 	border:1px solid $primary-color;
@@ -95,7 +103,7 @@
 	&.current {
 		border-color:$secondary-color;
 		background:$secondary-color;
-		color:$white;
+		color:#fff;
 	}
 	&.current {
 		cursor:default;
@@ -106,25 +114,25 @@
 .btn2 {
 	@extend .btn1;
 	color:$secondary-color;
-	background:$white;
+	background:#fff;
 	border-color:$secondary-color;
 	&:hover, 
 	&.current {
 		background:transparent;
-		border-color:$white;
+		border-color:#fff;
 	}
 }
 
 // reverse btn2
 .btn3 {
 	@extend .btn1;
-	color:$white; 
-	border-color:$white;
+	color:#fff; 
+	border-color:#fff;
 	&:hover, 
 	&.current {
 		color:$secondary-color;
-		background:$white;
-		border-color:$white;
+		background:#fff;
+		border-color:#fff;
 	}
 }
 
@@ -132,19 +140,31 @@
 // reverse btn2
 .btn4 {
 	@extend .btn1;
-	color:$white; 
-	border-color:$white;
-	background:$success-color;
+	color:#fff; 
+	border-color:#fff;
+	background: $secondary-color;
 	&:hover, 
 	&.current {
-		border-color:$white;
-		background:darken($success-color,15%);
-
+		color: $secondary-color;
+  		border-color:  $secondary-color;
+  		background: white;
 	}
 }
 
-a:hover {
-	@include transition(background, 300ms, ease-out);
+
+
+// btn with image on the right
+.btn-img {
+	@extend .btn1;
+	border-color:$secondary-color;
+	&:hover {
+		background:transparent;
+	}
+	a {
+		img,span {
+			margin-left:5px;
+		}
+	}
 }
 
 .dummy-navigation {
@@ -158,8 +178,8 @@ a:hover {
 	line-height:160%;
 	a {
 		color:$black;
-		&:hover { color:$white }
-		&.open { color:$white;}
+		&:hover { color:#fff }
+		&.open { color:#fff;}
 		&.close {
 			float:right;
 			font-weight:bold;
@@ -170,7 +190,7 @@ a:hover {
 
 .ours {
 	padding:8px 15px;
-	color:$white;
+	color:#fff;
 	font-size:20px;
 	font-weight:bold;
 	background:#cc0;
@@ -193,6 +213,8 @@ a:hover {
 	float:left;
 	&.nav {
 		margin-top:0;
+		font-size:1em;
+		overflow: auto;
 	}
 	&+.main {
 		overflow:hidden;
@@ -211,7 +233,7 @@ body.with-overlay {
 	position:relative;
 	padding:$header-padding-vertical $header-padding-horizontal;
 	border-bottom:1px solid $primary-color;
-	background:$white;
+	background:#fff;
 	.logo {
 		text-align: center;
 		img {
@@ -312,23 +334,23 @@ body.with-overlay {
 
 .info.error {
 	background:$error-color;
-	color:$white;
+	color:#fff;
 }
 
 
 .info.alert {
 	background:$alert-color;
-	color:$white;
+	color:#fff;
 }
 
 .info.warning {
 	background:$primary-color;
-	color:$white;
+	color:#fff;
 }
 
 .info.success {
 	background:$success-color;
-	color:$white;
+	color:#fff;
 }
 
 .entities {
@@ -491,7 +513,7 @@ body.with-overlay {
 		right:4px;
 	}
 	.jspTrack {
-		background:$white;
+		background:#fff;
 
 		border:1px solid $primary-color;
 		border-top:1px solid lighten($primary-color,20%);
@@ -520,6 +542,12 @@ body.with-overlay {
 		}
 }
 
+.networks .items-list {
+	.img {
+			@include sprite('../images/network-green102x116.png', 51px, 58px);
+		}
+}
+
 
 .vm {
 	.top {
@@ -544,11 +572,19 @@ body.with-overlay {
 	}
 }
 
+
+.network {
+	.top {
+		.img {
+			@include sprite('../images/network-green102x116.png', 102px, 116px);
+		}
+	}
+}
+
 .details {
 	position:relative;
-		
 	.top {
-		padding:100px $header-padding-horizontal;
+		padding:70px $header-padding-horizontal;
 		text-align: center;
 		.img {
 			background-size:100%;
@@ -557,12 +593,13 @@ body.with-overlay {
 		}
 		.actions {
 			ul {
-				padding:1em;
+				padding:1em 1em 0;
+				margin:0;
 				text-align:center;
 				li {
 					list-style: none outside none;
 					display: inline-block;
-					margin:0 10px;
+					margin:0 30px;
 					min-width: 112px;
 					a {
 						@extend .btn1;
@@ -574,6 +611,52 @@ body.with-overlay {
 		
 	}
 	.info {
+		position: relative;
+		.section_header {
+			float: left;
+			width:22%;
+			margin-right: 2%;
+			font-weight: bold;
+		}
+
+		.right_side {
+			overflow: hidden;
+			width: 76%;
+			.middle_side {
+				float:left;
+				min-width:70%;
+				.action_links {
+					display: inline-block;
+					a {
+						margin-right:5px;
+						color:$secondary-color;
+					}
+				}
+				p {
+					margin-bottom:0;
+				}
+				.info_simple {
+					display: inline-block;
+					margin-right: 10px;
+					width:40%;
+				}
+			}
+			.btn-img {
+				float:right;
+				min-width: 180px;
+				text-align: center;
+			}
+			.set {
+				margin-bottom:1em;
+			}
+
+			
+		}
+		.btn-img {
+			float:right;
+		}
+		
+
 		dl {
 			margin:0;
 			dt {
@@ -584,6 +667,10 @@ body.with-overlay {
 			dd {
 				width:74%;
 				display: inline-block;
+				.os {
+					height:16px;
+					vertical-align: baseline;
+				}
 			}
 		}
 	}
@@ -597,6 +684,9 @@ body.with-overlay {
 		&:hover {
 			color:$secondary-color;
 		}
+	}
+	.graph_container {
+		padding-bottom: 2em;
 	}
 }
 
@@ -614,13 +704,16 @@ body.with-overlay {
 	background:$secondary-color;
 	position: relative;
 	z-index:10;
+
 	.lt-sidebar {
-		border-right:1px solid $white;
+		border-right:1px solid #fff;
+		color:#fff;
 		ul {
 			li {
 				list-style:none outside none;
+				
 				a {
-					color:$white;
+					color:#fff;
 					span { float:right; display:none;}
 					&:hover,
 					&.current {
@@ -652,6 +745,12 @@ body.with-overlay {
 		top:50px;
 		@include sprite('../images/info-close.png', 31px, 30px);
 	}
+	.close_char {
+		background: none;
+		text-indent: 0;
+		font-size: 1.8em; /* for the the character e (for d we can put 2em) */
+		color: white;
+	}
 }
 
 .create-vm {
@@ -666,13 +765,13 @@ body.with-overlay {
 			margin:0 10px 10px 0;
 			&:hover,
 			&.selected {
-				background:$white;
+				background:#fff;
 				h2, p, a {
 					color:$secondary-color;
 				}
 			}
 			a {
-				color:$white;
+				color:#fff;
 			}
 			.os {
 				@include sprite('../images/os-unknown.png', 30px, 30px);
@@ -685,7 +784,7 @@ body.with-overlay {
 			h2 {
 				font-size:emCalc(16px);
 				font-weight:normal;
-				color:$white;
+				color:#fff;
 			}
 			.details {
 				font-weight:bold;
@@ -695,7 +794,7 @@ body.with-overlay {
 	}
 	.select-flavor {
 		dl {
-			color:$white;
+			color:#fff;
 			font-size:emCalc(20px);
 			margin-bottom:10px;
 			dd {
@@ -730,7 +829,7 @@ body.with-overlay {
 		span {
 			padding: 10px 30px;
 			background:$secondary-color;
-			color:$white;
+			color:#fff;
 		}
 	}
 }
@@ -975,14 +1074,30 @@ body.with-overlay {
 		display: none;
 		z-index:100;
 		position: relative;
+		background:#fff;
+		top:20%; 
+		left:25%; 
+		width:50%;
+		padding:25px;
+		.buttons {
+			a {
+				margin-right:20px;
+			}
+		}
+		&.upload-widget {
+			background:transparent;
+			padding:45px 0;
+			width:80%;
+			left:10%;
+			border:1px solid white;
+		}
+
 	}
+
 }
 
 .upload-widget {
-	padding:45px 0;
-	width:80%;
-	border:1px solid white;
-	margin:50px auto;
+	
 	text-align:center;
 	h2, a{
 		color:#fff;
@@ -1003,6 +1118,59 @@ body.with-overlay {
 
 		display: inline-block;
 	}
+	.files {
+		color:#fff;
+		
+		li {
+			padding: 10px 120px;
+			border: none;
+			position: relative;
+			.dz-success-mark {
+				margin-left:10px;
+			}
+			.dz-error-mark {
+				display: none;
+			}
+			.cancel-col {
+				width: 100px;
+				position: absolute;
+				right: 50px;
+				top: 9px;
+				
+				.cancel span {
+					display: block;
+					text-align: right;
+				}
+			}
+		}
+		div {
+			display: inline-block;
+		}
+		.progress-bar {
+			position: static;
+			padding: 0;
+			width: 25%;
+			border: none;
+			background-color: transparent;
+			
+			.progress-wrap {
+				width: 100%;
+				margin: 0;
+			
+				.progress {
+					display: block;
+					margin: 0;
+					border: 2px solid white;
+					padding: 0;
+					background-color:  $secondary-color;
+				
+					.meter {
+						background-color: white;
+					}
+				}
+			}
+		}
+	}
 }
 
 
@@ -1010,6 +1178,75 @@ body.with-overlay {
 		display: none;
 
 }
+
+.create-network {
+	color: #fff;
+	.check {
+		color: #fff;
+	}
+	p {
+		font-size: 0.8em;
+		font-style: italic;
+		margin: 5px 0 0;
+		width: 545px;
+	}
+
+	li {
+		list-style: none outside none;
+	}
+	.custom_checkbox {
+		font-size: 1.3em;
+	}
+	.subnet_options {
+		margin: 0;
+		li {
+			margin-bottom: 6px;
+			padding-left: 155px;
+		}
+	}
+
+	.network_options {
+		position: relative;
+		width: 350px;
+		min-height: 285px;
+		
+		.check {
+			position: absolute;
+			right: 0;
+		}
+		
+		li {
+			display: block;
+			margin-bottom: 13px;
+		
+			form {
+				margin: 0;
+				
+				input {
+					position: absolute;
+					display: inline-block;
+					right: 0;
+					width: 200px;
+					height: 20px;
+					font-size: 0.9em;
+					
+					&.hidden {
+						display: none;
+					}
+				}
+			}
+			&.manual form input {
+				right: -160px;
+				width: 150px;
+			}
+		}		
+		span.sub_title {
+			float:left;
+		}
+	}
+}
+
+
 
 
 .onecol {
