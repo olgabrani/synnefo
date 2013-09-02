@@ -1,0 +1,84 @@
+.networks .items-list {
+	.img {
+			@include sprite('../images/network-green102x116.png', 51px, 58px);
+			background-size:100%;
+		}
+}
+
+.network {
+	.top {
+		.img {
+			@include sprite('../images/network-green102x116.png', 102px, 116px);
+		}
+	}
+}
+
+
+
+.create-network {
+	color: #fff;
+	.check {
+		color: #fff;
+	}
+	p {
+		font-size: 0.8em;
+		font-style: italic;
+		margin: 5px 0 0;
+		width: 545px;
+	}
+
+	li {
+		list-style: none outside none;
+	}
+	.custom_checkbox {
+		font-size: 1.3em;
+	}
+	.subnet_options {
+		margin: 0;
+		li {
+			margin-bottom: 6px;
+			padding-left: 155px;
+		}
+	}
+
+	.network_options {
+		position: relative;
+		width: 350px;
+		min-height: 285px;
+		
+		.check {
+			position: absolute;
+			right: 0;
+		}
+		
+		li {
+			display: block;
+			margin-bottom: 13px;
+		
+			form {
+				margin: 0;
+				
+				input {
+					position: absolute;
+					display: inline-block;
+					right: 0;
+					width: 200px;
+					height: 20px;
+					font-size: 0.9em;
+					
+					&.hidden {
+						display: none;
+					}
+				}
+			}
+			&.manual form input {
+				right: -160px;
+				width: 150px;
+			}
+		}		
+		span.sub_title {
+			float:left;
+		}
+	}
+}
+

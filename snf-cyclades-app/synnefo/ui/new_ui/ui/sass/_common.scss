@@ -1,0 +1,393 @@
+.clearfix:before,
+.clearfix:after									{ content:" "; display:block; height:0; visibility:hidden; } /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/ */
+.clearfix:after									{ clear:both; }
+// Set margin and padding to zero 
+@mixin marginPaddingZero() {
+	margin: 0;
+	padding: 0;
+}
+ 
+
+// Establishes the prequisits for sprite with background-image.
+// Background-position for normal and hover states need to 
+// be declared separetely
+@mixin sprite($image, $width, $height){
+	background:url($image) no-repeat center center;
+	width: $width;
+	height:$height;
+	display: inline-block;
+	text-indent: -2000px;
+	overflow: hidden;
+
+}
+
+// Transition for css properties
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+// Box-shadow property. For no box-shadow use box-shadow(none)
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+a {
+	color:$secondary-color;
+	&:hover {
+		color:$primary-color;
+		@include transition(background, 300ms, ease-out);
+
+	}
+}
+
+// border grey, on hover $secondary-color
+.btn1 {
+	border:1px solid $primary-color;
+	color:$primary-color;
+	display:inline-block;
+	padding:10px 20px;
+	line-height:1em;
+	text-align:center;
+	&:hover,
+	&.current {
+		border-color:$secondary-color;
+		background:$secondary-color;
+		color:#fff;
+	}
+	&.current {
+		cursor:default;
+	}
+}
+
+// white background, on hover transparent
+.btn2 {
+	@extend .btn1;
+	color:$secondary-color;
+	background:#fff;
+	border-color:$secondary-color;
+	&:hover, 
+	&.current {
+		background:transparent;
+		border-color:#fff;
+	}
+}
+
+// reverse btn2
+.btn3 {
+	@extend .btn1;
+	color:#fff; 
+	border-color:#fff;
+	&:hover, 
+	&.current {
+		color:$secondary-color;
+		background:#fff;
+		border-color:#fff;
+	}
+}
+
+.btn4 {
+	@extend .btn1;
+	color:#fff; 
+	border-color:#fff;
+	background: $secondary-color;
+	&:hover, 
+	&.current {
+		color: $secondary-color;
+  		border-color:  $secondary-color;
+  		background: white;
+	}
+}
+
+
+
+// btn with image on the right
+.btn-img {
+	@extend .btn1;
+	border-color:$secondary-color;
+	&:hover {
+		background:transparent;
+	}
+	a {
+		img,span {
+			margin-left:5px;
+		}
+	}
+}
+
+
+.row-full {
+	max-width:$row-full-width;
+	margin:0 auto;
+}
+
+.onecol {
+	max-width:$row-width;
+	margin:0 auto;
+}
+
+.lt-sidebar {
+	width:250px;
+	float:left;
+	&.nav {
+		margin-top:0;
+		font-size:1em;
+		overflow: auto;
+	}
+	&+.main {
+		overflow:hidden;
+	}
+}
+
+.main {
+	padding:43px 40px;
+}
+
+.header {
+	position:relative;
+	padding:$header-padding-vertical $header-padding-horizontal;
+	border-bottom:1px solid $primary-color;
+	background:#fff;
+	.logo {
+		text-align: center;
+		img {
+			max-height: 30px;			
+		}
+	}
+	.actions {
+		text-align:center;
+		height:45px;
+		line-height:45px;
+		position:relative;
+		margin:2*$header-padding-vertical 0 $header-padding-vertical;
+		.main-actions {
+			position:relative;
+			top:86px;
+			margin:0 -40px;
+			border-bottom:1px solid lighten($primary-color,20%);
+			z-index: 1;
+		}
+		ul {
+			margin:0;
+			li {
+				list-style: none outside none;
+				display: inline-block;
+				margin:0 5px;
+				a {
+					display: block;
+					color:lighten($primary-color,30%);
+					width:100%;
+					padding:8px 20px;
+					border:1px solid transparent;
+					&.active {
+						color:$primary-color;
+						&:hover {
+							color:$secondary-color;
+							cursor: pointer;
+						}
+					}
+					&:hover {
+						cursor:default;
+					}
+
+				}
+			}
+		}
+	}
+	.new-btn {
+		position: absolute;
+		left:0;
+		bottom:0;
+		a {
+			@extend .btn1;
+			span {
+				font-size:emCalc(20px);
+			}
+		}
+	}
+}
+.login {
+	position:absolute;
+	right:$header-padding-horizontal;
+	top:$header-padding-vertical;
+}
+
+.top-nav {
+	position:absolute;
+	left:$header-padding-horizontal;
+	top:$header-padding-vertical;
+	ul {
+		@include marginPaddingZero();
+		li {
+			display: inline-block;
+			margin-right:15px;
+			a {
+				padding-bottom:5px;
+			}
+		}
+	}
+
+}
+
+// info styling
+
+.top-info {
+	padding:50px 100px;
+	position: relative;
+	z-index:10;
+	display:none;
+	.close {
+		position: absolute;
+		right:$header-padding-horizontal;
+		top:50px;
+		@include sprite('../images/info-close.png', 31px, 30px);
+	}
+}
+
+
+.info.error {
+	background:$error-color;
+	color:#fff;
+}
+
+
+.info.alert {
+	background:$alert-color;
+	color:#fff;
+}
+
+.info.warning {
+	background:$primary-color;
+	color:#fff;
+}
+
+.info.success {
+	background:$success-color;
+	color:#fff;
+}
+
+.border-bottom-style1 {
+	padding-bottom:20px;
+	margin-bottom:20px;
+	border-bottom:1px dashed $primary-color;
+}
+
+
+body.with-overlay {
+	background:$secondary-color;
+}
+
+.reveal-modal {
+	h3 {
+		font-size:1em;
+	}
+	a { 
+		color: $secondary-color;
+		&:hover {
+			text-decoration: underline;
+		}
+		&.close-reveal-modal:hover {
+			text-decoration: none;
+			color:$secondary-color;
+		}
+	}	
+}
+
+
+// custom modal with opaque overlay
+.reveal-custom {
+	position: absolute;
+	top:100px;
+	left:25%;
+	z-index:99;
+	background:yellow;
+	width:50%;
+	display:none;
+}
+
+
+.overlay-wrapper {
+	position: relative;
+
+	.overlay-area {
+		display:none;
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background:$secondary-color;
+		z-index:20;
+	}
+	.close {
+		position: absolute;
+		right:$header-padding-horizontal;
+		top:50px;
+		@include sprite('../images/info-close.png', 31px, 30px);
+	}
+	.overlay-div {
+		display: none;
+		z-index:100;
+		position: relative;
+		background:#fff;
+		top:20%; 
+		left:25%; 
+		width:50%;
+		padding:25px;
+		.buttons {
+			a {
+				margin-right:20px;
+			}
+		}
+		&.upload-widget {
+			background:transparent;
+			padding:45px 0;
+			width:80%;
+			left:10%;
+			border:1px solid white;
+		}
+
+	}
+
+}
+
+
+.progress-bar {
+	position: fixed;
+	bottom:0;
+	left:0;
+	border-top:1px solid $secondary-color;
+	width:100%;
+	background:#fff;
+	padding:20px 0 20px 310px;
+	color:$primary-color;
+	span.counter {
+		display: inline-block;
+		margin-right:20px;
+		float:left;
+	}
+	a:hover {
+		color:$secondary-color;
+	}
+	div.progress-wrap {
+		display:inline-block;
+		float:left;
+		width:40%;
+		margin-right:60px;
+		.progress {
+			position: relative;
+			top:2px;
+		}
+	}
+	span.more {
+		display: inline-block;
+	}
+}
+
+

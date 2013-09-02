@@ -1,0 +1,128 @@
+.vms .items-list {
+	.img {
+			@include sprite('../images/vm-on.png', 56px, 58px);
+			 
+			&.stopped {
+				background-image:url('../images/vm-stopped.png');
+			}
+			.os {
+				@include sprite('../images/os-unknown.png', 22px, 22px);
+				position: absolute;
+				top:8px;
+				left:18px;
+				&.windows { background-image:url('../images/os-windows.png'); }
+				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+				&.fedora { background-image:url('../images/os-fedora.png'); }
+			}
+		
+		}
+}
+
+.vm {
+	.top {
+		.img {
+			@include sprite('../images/vm-on.png', 112px, 116px);
+		}
+		&.stopped {
+			background-image:url('../images/vm-stopped.png');
+		}
+		.os {
+			@include sprite('../images/os-unknown.png', 22px, 22px);
+			position: absolute;
+			background-size:100%;
+			width:44px;
+			height:44px;
+			left:36px;
+			top:16px;
+			&.windows { background-image:url('../images/os-windows.png'); }
+			&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+			&.fedora { background-image:url('../images/os-fedora.png'); }
+		}
+	}
+}
+
+
+.create-vm {
+	.select-os {
+		li {
+			width:23%;
+			padding:20px;
+			list-style:none outside none;
+			display: inline-block;
+			float: left;
+			height: 200px;
+			margin:0 10px 10px 0;
+			&:hover,
+			&.selected {
+				background:#fff;
+				h2, p, a {
+					color:$secondary-color;
+				}
+			}
+			a {
+				color:#fff;
+			}
+			.os {
+				@include sprite('../images/os-unknown.png', 30px, 30px);
+				background-size:100%;
+				margin-bottom:2em;
+				&.windows { background-image:url('../images/os-windows.png'); }
+				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+				&.fedora { background-image:url('../images/os-fedora.png'); }
+			}
+			h2 {
+				font-size:emCalc(16px);
+				font-weight:normal;
+				color:#fff;
+			}
+			.details {
+				font-weight:bold;
+				font-size:emCalc(14px);
+			}
+		}
+	}
+	.select-flavor {
+		dl {
+			color:#fff;
+			font-size:emCalc(20px);
+			margin-bottom:10px;
+			dd {
+				width:23%;
+				display: inline-block;
+			}
+			dt {
+				width:70%;
+				display: inline-block;
+				font-weight: normal;
+				span {
+					@extend .btn3;
+					min-width: 90px;
+					margin:0 10px;
+					&:first-child {
+						margin-left:0;
+					}
+				}
+			}
+		}
+	}
+}
+
+#vm-connect {
+	.info {
+		font-style:italic;
+		font-size:emCalc(13px);
+		color: lighten($primary-color,5%);
+	}
+	.ssh {
+		text-align: center;
+		span {
+			padding: 10px 30px;
+			background:$secondary-color;
+			color:#fff;
+		}
+	}
+}
+
+
+
+
