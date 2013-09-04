@@ -1,0 +1,112 @@
+// Global Foundation Settings
+@import "settings";
+
+//colors for main icons (icons of networks and vms)
+
+$vm-active-color: #75c046;
+$vm-stopped-color: #e00e63;
+$network-color: #79c79e;
+
+
+// menu1 is the simple menu and it is used on vm list 
+.menu1  {
+	ul {
+		li {
+			margin-right: 9px;
+			a {
+				.snf-font {
+					font-size: 25px;
+					color: $black;
+				}
+				&:hover {
+					span {
+						color: $secondary-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// menu2 is bold and gray and it is used on nets list 
+
+
+.menu2  {
+	ul {
+		li {
+			margin-right: 9px;
+			a {
+				.snf-font {
+					font-size: 25px;
+					font-weight: bold;
+					color: $primary-color;
+				}
+				&:hover {
+					span {
+						color: $secondary-color;
+					}
+				}
+			}
+		}
+	}
+}
+// no style at all... margins as before, used at pithos
+
+
+.menu3  {
+	ul {
+		li {
+			a {
+				.snf-font {
+					font-size: 25px;
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+
+//main icons
+
+
+
+body .items-list .img.running, body .vms .items-list .img.stopped{
+	background: none;
+	text-indent: 0;
+	width: 60px;
+	height: 60px;
+}
+
+body .img  .snf-font {
+	font-size: 60px;
+}
+
+body .networks .img  .snf-font.bolding {
+	font-weight: bold;
+	font-size: 57px;
+	top: 6px;
+}
+body .networks .img  .snf-font {
+	position: relative;
+	top: 2px;
+}
+
+body .networks .running .snf-font {
+	color: $network-color;
+}
+
+body .running  .snf-font {
+	color: $vm-active-color;
+}
+
+
+body .stopped  .snf-font {
+	color: $vm-stopped-color;
+}
+
+
+body .vms .items-list .img .os {
+	left:19px;
+}
