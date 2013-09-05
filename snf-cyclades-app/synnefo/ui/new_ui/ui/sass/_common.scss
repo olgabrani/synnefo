@@ -1,6 +1,31 @@
-.clearfix:before,
-.clearfix:after									{ content:" "; display:block; height:0; visibility:hidden; } /* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/ */
-.clearfix:after									{ clear:both; }
+/* Table of Contents
+  - Clearfix
+  - Mixins
+  - Buttons and links
+  - Layout 
+  - Header
+  
+ */
+
+
+
+/* Clearfix -------------------------------------------- */
+
+.clearfix {
+    zoom:1;
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/* Mixins ----------------------------------------------- */
+
 // Set margin and padding to zero 
 @mixin marginPaddingZero() {
 	margin: 0;
@@ -37,10 +62,15 @@
   box-shadow: $shadows;
 }
 
+
+
+/* Buttons and Links ----------------------------------------------- */
+
+
 a {
 	color:$secondary-color;
 	&:hover {
-		color:$primary-color;
+		color:$third-color;
 		@include transition(background, 300ms, ease-out);
 
 	}
@@ -153,11 +183,26 @@ a {
 	padding:$header-padding-vertical $header-padding-horizontal;
 	border-bottom:1px solid $primary-color;
 	background:#fff;
+	.icons-nav {
+		position:absolute;
+		left:$header-padding-horizontal;
+		top:$header-padding-vertical;
+	}
 	.logo {
 		text-align: center;
 		img {
 			max-height: 30px;			
 		}
+		h2 {
+			font-size: 1em;
+			color:$primary-color;
+			font-weight: normal;
+		}
+	}
+	.login {
+		position:absolute;
+		right:$header-padding-horizontal;
+		top:$header-padding-vertical;
 	}
 	.actions {
 		text-align:center;
@@ -211,28 +256,25 @@ a {
 		}
 	}
 }
-.login {
-	position:absolute;
-	right:$header-padding-horizontal;
-	top:$header-padding-vertical;
-}
 
-.top-nav {
-	position:absolute;
-	left:$header-padding-horizontal;
-	top:$header-padding-vertical;
-	ul {
-		@include marginPaddingZero();
-		li {
-			display: inline-block;
-			margin-right:15px;
-			a {
-				padding-bottom:5px;
+.icons-nav {
+	@include marginPaddingZero();
+	li {
+		display: inline-block;
+		margin-right:15px;
+		font-size: emCalc(24px);
+		line-height: 1em;
+		padding-bottom:5px;
+		a {
+			color:$black;
+			&:hover, &.current {
+				color:$third-color;
 			}
 		}
 	}
-
 }
+
+
 
 // info styling
 
@@ -278,86 +320,6 @@ a {
 }
 
 
-body.with-overlay {
-	background:$secondary-color;
-}
-
-.reveal-modal {
-	h3 {
-		font-size:1em;
-	}
-	a { 
-		color: $secondary-color;
-		&:hover {
-			text-decoration: underline;
-		}
-		&.close-reveal-modal:hover {
-			text-decoration: none;
-			color:$secondary-color;
-		}
-	}	
-}
-
-
-// custom modal with opaque overlay
-.reveal-custom {
-	position: absolute;
-	top:100px;
-	left:25%;
-	z-index:99;
-	background:yellow;
-	width:50%;
-	display:none;
-}
-
-
-.overlay-wrapper {
-	position: relative;
-
-	.overlay-area {
-		display:none;
-		position:absolute;
-		left:0;
-		right:0;
-		top:0;
-		width:100%;
-		height:100%;
-		background:$secondary-color;
-		z-index:20;
-	}
-	.close {
-		position: absolute;
-		right:$header-padding-horizontal;
-		top:50px;
-		@include sprite('../images/info-close.png', 31px, 30px);
-	}
-	.overlay-div {
-		display: none;
-		z-index:100;
-		position: relative;
-		background:#fff;
-		top:20%; 
-		left:25%; 
-		width:50%;
-		padding:25px;
-		.buttons {
-			a {
-				margin-right:20px;
-			}
-		}
-		&.upload-widget {
-			background:transparent;
-			padding:45px 0;
-			width:80%;
-			left:10%;
-			border:1px solid white;
-		}
-
-	}
-
-}
-
-
 .progress-bar {
 	position: fixed;
 	bottom:0;
@@ -371,9 +333,6 @@ body.with-overlay {
 		display: inline-block;
 		margin-right:20px;
 		float:left;
-	}
-	a:hover {
-		color:$secondary-color;
 	}
 	div.progress-wrap {
 		display:inline-block;

@@ -19,26 +19,25 @@
 <body>
 	<div class="row-full">
 		<header class="header">
-			<div class="logo">
-				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-			</div>
-			<nav class="top-nav icons-nav">
-				<ul>
-					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
-					<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
-					
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
-					<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
+			<nav>
+				<ul class="icons-nav">
+					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-font">y</span></a></li>
+					<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-font">w</span></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-font">u</span></a></li>
+					<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-font">v</span></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-font">z</span></a></li>
 				</ul>
 			</nav>
+			<div class="logo">
+				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+				<h2>Machines</h2>
+			</div>
+			
 			<div class="login">
 				<a href="">test@grnet.gr</a>
 			</div>
 			<div class="actions clearfix">
-				
-				<div class="lt-actions">
-					<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
-				</div>
+				<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
 				<div class="main-actions">
 					<ul>
 						<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
@@ -47,7 +46,6 @@
 						<li class="stopped"><a href="">Start</a></li>
 						 <!-- in case we want an action always activated
 						<li class="pernament"><a href="" class="active">Action</a></li> -->
-
 					</ul>
 				</div>
 			</div>
@@ -55,12 +53,10 @@
 		<div class="info top-info alert">
 			<div class="wrap">
 				<p>ALERT!</p>
-
 				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
 			</div>
 			<a href="#" class="close" title="hide message">close</a>
 		</div>
-
 	</div>
 	<div class="row-full content  overlay-wrapper ">
 		<div class="overlay-area">
@@ -99,16 +95,6 @@
 								<span class="title"><em>vm name 1 really large name</em></span>
 							</p>
 							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
-							<div class="info-box">
-								<h2>VM full name</h2>
-								<p>blah blah</p>
-								<dl>
-									<dt>Status</dt>
-									<dd>running</dd>
-									<dt>IPv4</dt>
-									<dd>83.212.97.127</dd>
-								</dl>
-							</div>
 						</div>
 					</li>
 					<li data-order="1">
@@ -132,16 +118,6 @@
 								<span class="title"><em>vm name 2</em></span>
 							</p>
 							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
-							<div class="info-box">
-								<h2>VM full name</h2>
-								<p>blah blah</p>
-								<dl>
-									<dt>Status</dt>
-									<dd>running</dd>
-									<dt>IPv4</dt>
-									<dd>83.212.97.127</dd>
-								</dl>
-							</div>
 						</div>
 					</li>
 					<li data-order="2">
@@ -165,16 +141,6 @@
 								<span class="title"><em>vm name 3</em></span>
 							</p>
 							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
-							<div class="info-box">
-								<h2>VM full name</h2>
-								<p>blah blah</p>
-								<dl>
-									<dt>Status</dt>
-									<dd>running</dd>
-									<dt>IPv4</dt>
-									<dd>83.212.97.127</dd>
-								</dl>
-							</div>
 						</div>
 					</li>
 					<li  data-order="3">
@@ -198,16 +164,6 @@
 								<span class="title"><em>vm name 4</em></span>
 							</p>
 							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
-							<div class="info-box">
-								<h2>VM full name</h2>
-								<p>blah blah</p>
-								<dl>
-									<dt>Status</dt>
-									<dd>running</dd>
-									<dt>IPv4</dt>
-									<dd>83.212.97.127</dd>
-								</dl>
-							</div>
 						</div>
 					</li>
 					<li  data-order="4">
@@ -231,16 +187,6 @@
 								<span class="title"><em>vm name 5</em></span>
 							</p>
 							<a href="" class="check"><span class="custom_checkbox snf-custom-checkbox">a</span></a>
-							<div class="info-box">
-								<h2>VM full name</h2>
-								<p>blah blah</p>
-								<dl>
-									<dt>Status</dt>
-									<dd>running</dd>
-									<dt>IPv4</dt>
-									<dd>83.212.97.127</dd>
-								</dl>
-							</div>
 						</div>
 					</li>
 					 

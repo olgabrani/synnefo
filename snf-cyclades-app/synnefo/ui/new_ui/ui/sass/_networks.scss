@@ -1,8 +1,8 @@
 .networks .items-list {
 	.img {
-			@include sprite('../images/network-green102x116.png', 51px, 58px);
-			background-size:100%;
-		}
+		@include sprite('../images/network-green102x116.png', 51px, 58px);
+		background-size:100%;
+	}
 }
 
 .network {

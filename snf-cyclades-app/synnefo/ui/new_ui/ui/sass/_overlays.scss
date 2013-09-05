@@ -1,0 +1,134 @@
+
+body.with-overlay {
+	background:$secondary-color;
+}
+
+.reveal-modal {
+	h3 {
+		font-size:1em;
+	}
+	a { 
+		color: $secondary-color;
+		&:hover {
+			text-decoration: underline;
+		}
+		&.close-reveal-modal:hover {
+			text-decoration: none;
+			color:$secondary-color;
+		}
+	}	
+}
+
+
+// custom modal with opaque overlay
+.reveal-custom {
+	position: absolute;
+	top:100px;
+	left:25%;
+	z-index:99;
+	background:yellow;
+	width:50%;
+	display:none;
+}
+
+
+.overlay-wrapper {
+	position: relative;
+
+	.overlay-area {
+		display:none;
+		position:absolute;
+		left:0;
+		right:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background:$secondary-color;
+		z-index:20;
+	}
+	.close {
+		position: absolute;
+		right:$header-padding-horizontal;
+		top:50px;
+		@include sprite('../images/info-close.png', 31px, 30px);
+	}
+	.overlay-div {
+		display: none;
+		z-index:100;
+		position: relative;
+		background:#fff;
+		top:20%; 
+		left:25%; 
+		width:50%;
+		padding:25px;
+		.buttons {
+			a {
+				margin-right:20px;
+			}
+		}
+		&.upload-widget {
+			background:transparent;
+			padding:45px 0;
+			width:80%;
+			left:10%;
+			border:1px solid white;
+		}
+
+	}
+
+}
+
+
+
+.overlay {
+	background:$secondary-color;
+	position: relative;
+	z-index:10;
+
+	.lt-sidebar {
+		border-right:1px solid #fff;
+		color:#fff;
+		ul {
+			li {
+				list-style:none outside none;
+				
+				a {
+					color:#fff;
+					span { float:right; display:none;}
+					&:hover,
+					&.current {
+
+						text-decoration: none;
+						span { 
+							display:inline;
+						}
+					}
+				}
+
+			}
+		}
+
+	}
+	.lt-sidebar, 
+	.main {
+		padding:100px $header-padding-horizontal;
+		position:relative;
+	}
+	.navigation {
+		.rt {
+			float:right;
+		}
+	}
+	.close {
+		position: absolute;
+		right:$header-padding-horizontal;
+		top:50px;
+		@include sprite('../images/info-close.png', 31px, 30px);
+	}
+	.close_char {
+		background: none;
+		text-indent: 0;
+		font-size: 1.8em; /* for the the character e (for d we can put 2em) */
+		color: white;
+	}
+}

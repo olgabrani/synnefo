@@ -1,0 +1,149 @@
+
+
+.details {
+	position:relative;
+	.top {
+		padding:70px $header-padding-horizontal;
+		text-align: center;
+		.img {
+			background-size:100%;
+			margin-bottom: 20px;
+			position: relative;
+		}
+		.actions {
+			ul {
+				padding:1em 1em 0;
+				margin:0;
+				text-align:center;
+				li {
+					list-style: none outside none;
+					display: inline-block;
+					margin:0 30px;
+					min-width: 112px;
+					a {
+						@extend .btn1;
+					}
+
+				}
+			}
+		}
+		
+	}
+	.info {
+		position: relative;
+		.section_header {
+			float: left;
+			width:22%;
+			margin-right: 2%;
+			font-weight: bold;
+		}
+
+		.right_side {
+			overflow: hidden;
+			width: 76%;
+			.middle_side {
+				float:left;
+				min-width:70%;
+				.action_links {
+					display: inline-block;
+					a {
+						margin-right:5px;
+					}
+				}
+				p {
+					margin-bottom:0;
+				}
+				.info_simple {
+					display: inline-block;
+					margin-right: 10px;
+					width:40%;
+				}
+			}
+			.btn-img {
+				float:right;
+				min-width: 180px;
+				text-align: center;
+			}
+			.set {
+				margin-bottom:1em;
+			}
+
+			
+		}
+		.btn-img {
+			float:right;
+		}
+		
+
+		dl {
+			margin:0;
+			dt {
+				display: inline-block;
+				width:25%;
+
+			}
+			dd {
+				width:74%;
+				display: inline-block;
+				.os {
+					height:16px;
+					vertical-align: baseline;
+				}
+			}
+		}
+	}
+	.close {
+		position: absolute;
+		right:$header-padding-horizontal;
+		top:$header-padding-horizontal+emCalc(43px);
+		span {
+			font-size:emCalc(32px);
+		}	
+	}
+	.graph_container {
+		padding-bottom: 2em;
+	}
+}
+
+
+
+
+
+
+.details dl {
+	.editable {
+		position: relative;
+		.input-txt {
+			display: inline-block;
+			margin-right: 6px;
+		}
+		.editbuttons {
+			display: inline-block;
+			a {
+				margin-right: 6px;
+				&.save, 
+				&.cancel { 
+
+				}
+				&:hover {
+				
+				}
+			
+			}
+		}
+		input[type="text"] {
+			position:relative;
+			height: 25px;
+			width:298px;
+			padding:0 10px;
+			font-size:inherit;	
+			margin:0;	
+			left:-11px;
+			top:-1px;
+		}
+
+	}
+
+}
+
+

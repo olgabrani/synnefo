@@ -1,0 +1,43 @@
+
+.lt-sidebar {
+	margin-top:43px;
+	overflow:scroll;
+	height:300px;
+	font-size:emCalc(12px);
+	.items-list {
+		padding:0;
+	}
+	.items-list li .img, 
+	.items-list li .os {
+		background-size:80%;
+	}
+	.items-list li .img .os {
+		top:10px;
+	}
+	li:hover {
+		background:lighten($primary-color,35%);
+	}
+	li.current {
+		background:lighten($primary-color,30%);
+		cursor: pointer;
+
+	}
+
+	.jspDrag {
+		background-color:$primary-color;
+	}
+	.jspVerticalBar {
+		width:10px;
+		right:4px;
+	}
+	.jspTrack {
+		background:#fff;
+
+		border:1px solid $primary-color;
+		border-top:1px solid lighten($primary-color,20%);
+	}
+
+
+}
+
+

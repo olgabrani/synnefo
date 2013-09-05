@@ -18,44 +18,32 @@
 <body>
 	<div class="row-full">
 		<header class="header">
-			<div class="logo">
-				<img src="images/logo_01.png" alt="software logo">
-			</div>
-			<nav class="top-nav icons-nav">
-				
-				<ul>
-					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><img src="images/menu-icon-storage.png" alt="vm"></a></li>
-					<li><a href="vm_list.html" data-tooltip class="has-tip" title="Compute"><img src="images/menu-icon-compute.png" alt="vm"></a></li>
-					
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><img src="images/menu-icon-disks.png" alt="vm"></a></li>
-					<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><img src="images/menu-icon-networks.png" alt="vm"></a></li>
+			<nav>
+				<ul class="icons-nav">
+					<li><a href="pithos_list.html" data-tooltip class="has-tip current" title="Storage" ><span class="snf-font">y</span></a></li>
+					<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-font">w</span></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-font">u</span></a></li>
+					<li><a href="network_list.html" data-tooltip class="has-tip current" title="Networks"><span class="snf-font">v</span></a></li>
+					<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-font">z</span></a></li>
 				</ul>
 			</nav>
+			<div class="logo">
+				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+				<h2>Networks</h2>
+			</div>
 			<div class="login">
 				<a href="">test@grnet.gr</a>
 			</div>
 			<div class="actions clearfix">
-				
-				<div class="lt-actions">
-					<div class="new-btn"><a href="#" data-overlay-id="#uploader"><span>+</span> UPLOAD </a></div>
-				</div>
+				<div class="new-btn"><a href="#" data-overlay-id="#uploader"><span>+</span> UPLOAD </a></div>
 				<div class="main-actions">
 					<ul>
-						<li class="running"><a href="" class="active">Action 1</a></li>
-						<li class="both"><a href="" class="active">Action 2</a></li>
+						<li class="running single"><a href="">Add machine</a></li>
+						<li class="both"><a href="">Destroy</a></li>
 					</ul>
 				</div>
 			</div>
 		</header>
-		<div class="info top-info alert">
-			<div class="wrap">
-				<p>ALERT!</p>
-
-				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
-			</div>
-			<a href="#" class="close" title="hide message"></a>
-		</div>
-
 	</div>
 	<div class="row-full overlay-wrapper storage">
 		<div class="overlay-area">

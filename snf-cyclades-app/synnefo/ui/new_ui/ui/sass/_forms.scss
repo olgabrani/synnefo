@@ -1,0 +1,11 @@
+.editable {
+	.editbuttons {		
+		a {
+			&.save, 
+			&.cancel { display: none; }
+		}
+	}
+	input[type="text"] {
+		display: none;
+	}
+}
