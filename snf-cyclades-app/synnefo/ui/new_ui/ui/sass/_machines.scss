@@ -1,15 +1,28 @@
+// Global Foundation Settings
+@import "settings";
+
 .vms .items-list {
 	.img {
-			@include sprite('../images/vm-on.png', 56px, 58px);
+			//@include sprite('../images/vm-on.png', 56px, 58px);
+			width: 60px;
+			height: 60px; // do we prefer to put it in items_list??
+			display: inline-block;
+			.snf-PC_fill {
+				font-size: 60px;
+				color: $vm-active-color;
+			}
 			 
 			&.stopped {
-				background-image:url('../images/vm-stopped.png');
+				.snf-PC_fill {
+					color: $vm-stopped-color;
+				}				
+				//background-image:url('../images/vm-stopped.png');
 			}
 			.os {
 				@include sprite('../images/os-unknown.png', 22px, 22px);
 				position: absolute;
 				top:8px;
-				left:18px;
+				left:19px;
 				&.windows { background-image:url('../images/os-windows.png'); }
 				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
 				&.fedora { background-image:url('../images/os-fedora.png'); }
@@ -21,19 +34,28 @@
 .vm {
 	.top {
 		.img {
-			@include sprite('../images/vm-on.png', 112px, 116px);
-		}
-		&.stopped {
-			background-image:url('../images/vm-stopped.png');
+			//@include sprite('../images/vm-on.png', 112px, 116px);
+			display: inline-block;
+			height: 112px;
+			.snf-PC_fill {
+					font-size: 112px;
+					color: $vm-active-color;
+				}
+				 
+				&.stopped {
+					.snf-PC_fill {
+						color: $vm-stopped-color;
+					}			
+				//background-image:url('../images/vm-stopped.png');
+			}
 		}
 		.os {
-			@include sprite('../images/os-unknown.png', 22px, 22px);
+			@include sprite('../images/os-unknown.png', 44px, 44px);
 			position: absolute;
 			background-size:100%;
-			width:44px;
-			height:44px;
-			left:36px;
-			top:16px;
+			
+			left:34px;
+			top:11px;
 			&.windows { background-image:url('../images/os-windows.png'); }
 			&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
 			&.fedora { background-image:url('../images/os-fedora.png'); }

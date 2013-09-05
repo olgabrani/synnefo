@@ -6,13 +6,17 @@
 	font-size:emCalc(12px);
 	.items-list {
 		padding:0;
+	 li .img .snf-PC_fill {
+		font-size: 54px;
 	}
-	.items-list li .img, 
+	}
+
+	.items-list li .img,
 	.items-list li .os {
 		background-size:80%;
 	}
 	.items-list li .img .os {
-		top:10px;
+		top:6px;
 	}
 	li:hover {
 		background:lighten($primary-color,35%);
