@@ -3,7 +3,7 @@
 window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
-		el.innerHTML = '<span style="font-family: \'snf-font-1\'">' + entity + '</span>' + html;
+		el.innerHTML = '<span style="font-family: \'snf-font\'">' + entity + '</span>' + html;
 	}
 	var icons = {
 			'snf-twitter-off-black' : '&#x67;',
@@ -31,10 +31,11 @@ window.onload = function() {
 			'snf-PC' : '&#x77;',
 			'snf-PC_fill' : '&#x78;',
 			'snf-Pithos' : '&#x79;',
-			'snf-DASHboard' : '&#x7a;'
+			'snf-DASHboard' : '&#x7a;',
+			'snf-eye' : '&#x41;'
 		},
 		els = document.getElementsByTagName('*'),
-		i, attr, html, c, el;
+		i, attr, c, el;
 	for (i = 0; ; i += 1) {
 		el = els[i];
 		if(!el) {

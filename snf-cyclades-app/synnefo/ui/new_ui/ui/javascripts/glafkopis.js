@@ -39,12 +39,12 @@ $(document).ready(function(){
 
  $('.network_options .check').click(function(e){
  	e.preventDefault();
- 	var checkbox = $(this).find('.custom_checkbox');
+ 	var checkbox = $(this).find('.snf-checkbox-checked, .snf-checkbox-unchecked');
  	var list = $(this).closest('ul');
  	
  	checkAction(checkbox); //allazw to checkbox p pataw
  	if(list.hasClass('subnet_options')){
- 		checkedBefore = $(this).closest('li').siblings('li').find('span.checkbox-checked');
+ 		checkedBefore = $(this).closest('li').siblings('li').find('span.snf-checkbox-checked');
  		if($(checkedBefore).closest('li').find('a').hasClass('manual'))
  		{
  			$(checkedBefore).closest('li').find('.manual_sub').hide();
@@ -53,19 +53,19 @@ $(document).ready(function(){
  		
  		if($(this).hasClass('manual')) {
 
- 			if($(checkbox).text()=='a') {
+ 			if($(checkbox).hasClass('snf-checkbox-unchecked')) {
  				$(this).closest('span').find('.manual_sub').hide();
- 		}
- 		else {
- 			$(this).closest('span').find('.manual_sub').show();
- 		}
+ 			}
+	 		else {
+	 			$(this).closest('span').find('.manual_sub').show();
+	 		}
 
  			//$(this).closest('span').find('.manual_sub').toggleClass('hidden');
  			
  		}
  	}
  	else if($(this).closest('li').hasClass('dhcp_option')) {
- 		if($(checkbox).text()=='a') {
+ 		if($(checkbox).hasClass('snf-checkbox-unchecked')) {
  			$('.network_options').find('.subnet_options').hide();
  		}
  		else {
@@ -81,18 +81,11 @@ placementByUser();
 
 
 function checkAction(checkbox) {
-        var otherChecked = checkbox.closest('li').siblings('li').find('span.checkbox-checked').length;
+        var otherChecked = checkbox.closest('li').siblings('li').find('span.snf-checkbox-checked').length;
         if(otherChecked!=0){
-			checkbox.toggleClass('checkbox-checked');
-		    if(checkbox.hasClass('checkbox-checked')){
-		        checkbox.html('b');
-		        
-		    }
-		    else{
-		    	
-		    	checkbox.html('a');
-		    }
-        }
+			checkbox.toggleClass('snf-checkbox-checked');
+			checkbox.toggleClass('snf-checkbox-unchecked');
+		}
         else{
         	console.log('Dn kanw tpt!');
         }

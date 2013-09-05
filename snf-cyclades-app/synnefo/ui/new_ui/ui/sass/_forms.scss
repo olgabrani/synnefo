@@ -1,8 +1,15 @@
 .editable {
 	.editbuttons {		
 		a {
-			&.save, 
-			&.cancel { display: none; }
+			&.save {
+				display: none;
+				span {
+					font-size: 18px;
+				}
+			} 
+			&.cancel {
+				@extend a.save
+			}
 		}
 	}
 	input[type="text"] {

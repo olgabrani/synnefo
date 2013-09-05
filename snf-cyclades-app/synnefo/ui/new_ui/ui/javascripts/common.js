@@ -36,9 +36,9 @@ ui.setSidebarHeight = function(){
 }
 
 ui.cntCheckbox = function(){ 
-    var all = $('.checkbox-checked').length;
-    var running = $('.checkbox-checked').parents('.container').find('.running').length;
-    var stopped = $('.checkbox-checked').parents('.container').find('.stopped').length;
+    var all = $('.snf-checkbox-checked').length;
+    var running = $('.snf-checkbox-checked').parents('.container').find('.running').length;
+    var stopped = $('.snf-checkbox-checked').parents('.container').find('.stopped').length;
     $('.header .main-actions li:not(.permanent) a').removeClass('active');  
     if ( (running*stopped) > 0 ){          
          $('.header .main-actions li.both a').addClass('active');   
@@ -99,7 +99,7 @@ ui.entitiesActionsInit = function(){
             $(this).stop(true, true).removeClass('set-border');
             $(this).find('.options').stop(true, true).fadeOut(200); 
             $(this).find('.img').stop(true, true).fadeIn('slow');
-            $(this).find('.custom_checkbox:not(.checkbox-checked)').parents('.check').stop(true, true).removeClass('active');
+            $(this).find('.snf-checkbox-unchecked').parents('.check').stop(true, true).removeClass('active');
             $(this).find('.visible-info em').stop(true, true).each(function(){
                 $(this).animate({
                  left: 0,
@@ -111,17 +111,16 @@ ui.entitiesActionsInit = function(){
     $('.entities .container .check').click(function(e){
         e.preventDefault();
 
-        var checkbox = $(this).find('.custom_checkbox');
+        var checkbox = $(this).find('.snf-checkbox-unchecked, .snf-checkbox-checked');
 
-        checkbox.toggleClass('checkbox-checked');
+        checkbox.toggleClass('snf-checkbox-unchecked');
+        checkbox.toggleClass('snf-checkbox-checked');
         
-        if(checkbox.hasClass('checkbox-checked')){
-            checkbox.html('b');
+        if(checkbox.hasClass('snf-checkbox-checked')){
             $(this).parents('.container').addClass('set-bg');
             $(this).addClass('active');
         }
         else{
-            checkbox.html('a'); 
             $(this).parents('.container').removeClass('set-bg');
             
       
@@ -143,7 +142,7 @@ ui.entitiesActionsInit = function(){
             $(this).stop(true, true).removeClass('set-border');
             $(this).find('.options').stop(true, true).fadeOut(200); 
             $(this).find('.img').stop(true, true).fadeIn('slow');
-            $(this).find('.custom_checkbox:not(.checkbox-checked)').parents('.check').stop(true, true).removeClass('active');
+            $(this).find('.snf-checkbox-unchecked').parents('.check').stop(true, true).removeClass('active');
             $(this).find('.visible-info em').stop(true, true).each(function(){
                 $(this).animate({
                  left: 0,
