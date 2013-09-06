@@ -257,7 +257,93 @@ ui.overlay = function() {
 
 }
 
+//permits only one checkbox to be checked in a ul
+ui.checkAction = function(checkbox) {
+        var otherChecked = checkbox.closest('li').siblings('li').find('span.snf-checkbox-checked').length;
+        if(otherChecked!=0){
+            checkbox.toggleClass('snf-checkbox-checked');
+            checkbox.toggleClass('snf-checkbox-unchecked');
+        }
+        
+}
 
+
+// when user moves a vm or network icon (list view)
+ui.placementByUser = function() {
+    if($('.sortable').length != 0) {
+        $( ".sortable" ).sortable({
+            items: "> li:not(:last)",
+            stop: function(event, ui) {
+                $.map($(this).find('li'), function(el) {
+                            return $(el).attr('data-order', $(el).index());
+                        });
+            }
+        });
+
+        $( ".sortable" ).disableSelection(); //i think unnecessary
+    }
+}
+
+//create vm
+ui.pickFlavor = function(flavorSelection) {
+        ui.select_flavor = 1;
+        console.log(flavorSelection);
+        var classes = $(flavorSelection).attr('class').split(" ");
+        // the second class is: 'small_flavor' or 'medium_flavor' or 'large_flavor'
+        
+        $(flavorSelection).parent('li').siblings('li').find('a.chosen_flavor').removeClass('chosen_flavor');
+        $(flavorSelection).addClass('chosen_flavor');
+        $('.select-flavor').find('dl.cpus span.current, dl.ram span.current, dl.disk span.current').removeClass('current');
+        $('.select-flavor').find('.'+classes[1]).addClass('current');
+
+}
+
+
+ui.pickResources = function(resource) {
+        $(resource).parents('dl').find('span').removeClass('current');
+        $(resource).addClass('current');
+        if(ui.select_flavor == 1){
+            if(!$(resource).parents('dl').hasClass('storage')){
+            $('.lt-sidebar').find('a.chosen_flavor').removeClass('chosen_flavor');
+            select_flavor = 0;
+            }
+        }
+    }
+
+
+ui.netOptions = function(option) {
+    var checkbox = $(option).find('.snf-checkbox-checked, .snf-checkbox-unchecked');
+    var list = $(option).closest('ul');
+    
+    ui.checkAction(checkbox); //allazw to checkbox p pataw
+    if(list.hasClass('subnet_options')){
+        checkedBefore = $(option).closest('li').siblings('li').find('span.snf-checkbox-checked');
+        if($(checkedBefore).closest('li').find('a').hasClass('manual'))
+        {
+            $(checkedBefore).closest('li').find('.manual_sub').hide();
+        }
+        ui.checkAction(checkedBefore); //allazw ta alla checkboxes
+        
+        if($(option).hasClass('manual')) {
+
+            if($(checkbox).hasClass('snf-checkbox-unchecked')) {
+                $(option).closest('span').find('.manual_sub').hide();
+            }
+            else {
+                $(option).closest('span').find('.manual_sub').show();
+            }
+        }
+    }
+    else if($(option).closest('li').hasClass('dhcp_option')) {
+        if($(checkbox).hasClass('snf-checkbox-unchecked')) {
+            $('.network_options').find('.subnet_options').hide();
+        }
+        else {
+            $('.network_options').find('.subnet_options').show();
+        }
+    }
+}
+    
 
 $(document).ready(function(){
 
@@ -347,6 +433,34 @@ $(document).ready(function(){
             }
         }
     });
+
+
+    // create vm
+    // choose resources one by one
+    ui.select_flavor =0;
+    $('.select-flavor dl span').click(function(e){
+        e.preventDefault();
+        ui.pickResources(this);
+        
+        
+    });
+
+    // create vm
+    // if a predefined flavor has been selected from the user, it highlights the proper resources 
+    $('.lt-sidebar li a.flavor_selection').click(function(e){
+        e.preventDefault();
+        ui.pickFlavor(this);        
+    });
+
+    // create network
+    // checkbox: basic reaction on click (checked, unchecked)
+    $('.network_options .check').click(function(e){
+        e.preventDefault();
+        ui.netOptions(this);
+    })
+  
+    ui.placementByUser();
+   
 
 })
 
