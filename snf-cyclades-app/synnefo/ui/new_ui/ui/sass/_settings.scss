@@ -964,10 +964,10 @@ $has-tip-border-bottom: 0 none;
 // $has-tip-font-color: #333;
 $has-tip-border-bottom-hover: none;
 // $has-tip-font-color-hover: $primary-color;
-// $has-tip-cursor-type: help;
+$has-tip-cursor-type: inherit;
 
 $tooltip-padding: emCalc(4px) emCalc(10px);
-$tooltip-bg: $primary-color;
+$tooltip-bg: $black;
 // $tooltip-font-size: emCalc(15px);
 $tooltip-font-weight: normal;
 // $tooltip-font-color: #fff;

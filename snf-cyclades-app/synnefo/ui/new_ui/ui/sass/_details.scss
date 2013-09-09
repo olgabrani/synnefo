@@ -1,4 +1,4 @@
-
+/* Detailed view for VMs, networks  */
 
 .details {
 	position:relative;
@@ -6,7 +6,6 @@
 		padding:70px $header-padding-horizontal;
 		text-align: center;
 		.img {
-			
 			margin-bottom: 20px;
 			position: relative;
 		}
@@ -27,7 +26,6 @@
 				}
 			}
 		}
-		
 	}
 	.info {
 		position: relative;
@@ -37,7 +35,6 @@
 			margin-right: 2%;
 			font-weight: bold;
 		}
-
 		.right_side {
 			overflow: hidden;
 			width: 76%;
@@ -106,10 +103,6 @@
 }
 
 
-
-
-
-
 .details dl {
 	.editable {
 		position: relative;
@@ -119,17 +112,6 @@
 		}
 		.editbuttons {
 			display: inline-block;
-			a {
-				margin-right: 6px;
-				&.save, 
-				&.cancel { 
-
-				}
-				&:hover {
-				
-				}
-			
-			}
 		}
 		input[type="text"] {
 			position:relative;

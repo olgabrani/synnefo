@@ -54,19 +54,9 @@
 // detailed view of vm, network etc
 @import "details";
 
-// styles for lt-sidebar
 @import "lt-sidebar";
-
-// styles for forms/editable areas
 @import "forms";
-
-// VMs ( vm list, vm details, create vm)
 @import "machines";
-// Networks ( network list, network details, create network)
 @import "networks";
-// Storage ( pithos list, upload new file )
 @import "storage";
-
-
-// modals and overlays
 @import "overlays";

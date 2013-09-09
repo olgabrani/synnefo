@@ -17,37 +17,34 @@
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-	<div class="row-full">
-		<header class="header">
-			<nav>
-				<ul class="icons-nav">
-					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
-					<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
-					<li><a href="network_list.html" data-tooltip class="has-tip current" title="Networks"><span class="snf-network"></span></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
+	<header class="header">
+		<nav>
+			<ul class="icons-nav">
+				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip current" title="Networks"><span class="snf-network"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
+			</ul>
+		</nav>
+		<div class="logo">
+			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+			<h2>Networks</h2>
+		</div>
+		<div class="login">
+			<a href="">test@grnet.gr</a>
+		</div>
+		<div class="actions clearfix">
+			<div class="new-btn"><a href="network_create.html"><span>+</span> NEW NETWORK</a></div>
+			<div class="main-actions">
+				<ul>
+					<li class="running single"><a href="">Add machine</a></li>
+					<li class="both"><a href="">Destroy</a></li>
 				</ul>
-			</nav>
-			<div class="logo">
-				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-				<h2>Networks</h2>
 			</div>
-			<div class="login">
-				<a href="">test@grnet.gr</a>
-			</div>
-			<div class="actions clearfix">
-				<div class="new-btn"><a href="network_create.html"><span>+</span> NEW NETWORK</a></div>
-				<div class="main-actions">
-					<ul>
-						<li class="running single"><a href="">Add machine</a></li>
-						<li class="both"><a href="">Destroy</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
-	</div>
-	<div class="row-full wrapper">
-		<!-- sidebar -->
+		</div>
+	</header>
+	<div class="overlay-wrapper">
 		<div class="lt-sidebar networks scroll-pane">
 
 			<ul class="items-list">
@@ -81,10 +78,6 @@
 				
 			</ul>
 		</div>
-
-		<!-- detailed view of network -->
-
-		<!-- main image of network -->
 		<div class="main details network">
 			<a href="network_list.html" class="close" title="back to network list"><span class="snf-font">c</span></a>
 			<div class="top border-bottom-style1">
@@ -98,8 +91,6 @@
 					</ul>
 				</div>
 			</div>
-
-			<!--sections with details of network -->
 			<section class="border-bottom-style1 info">
 				<dl>
 					<dt>Name</dt><dd>My Crazy Network</dd>
@@ -108,7 +99,6 @@
 					<dt>IPv6</dt><dd>2001:648:2ffc:1222:a800:ff:fe3f:98fe </dd>
 				</dl>
 			</section>
-
 			<section class="wrap info">
 				<div class="section_header">
 					machines

@@ -1,9 +1,21 @@
+/* Table of Contents
+
+  - lt-sidebar general styles
+  - lt-sidebar list view
+  - custom scrollbar styles (jscrollpane)
+
+*/ 
+
+/* lt-sidebar general styles ----------------------------------------------- */
 
 .lt-sidebar {
 	margin-top:43px;
 	overflow:scroll;
 	height:300px;
 	font-size:emCalc(12px);
+
+/* lt-sidebar list view ----------------------------------------------- */
+
 	.items-list {
 		padding:0;
 	 li .img .snf-PC_fill {
@@ -26,6 +38,8 @@
 		cursor: pointer;
 
 	}
+
+/* custom scrollbar styles (jscrollpane) ----------------------------------------------- */
 
 	.jspDrag {
 		background-color:$primary-color;

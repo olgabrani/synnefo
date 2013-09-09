@@ -16,36 +16,34 @@
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-	<div class="row-full">
-		<header class="header">
-			<nav>
-				<ul class="icons-nav">
-					<li><a href="pithos_list.html" data-tooltip class="has-tip current" title="Storage" ><span class="snf-Pithos"></span></a></li>
-					<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
-					<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
+	<header class="header">
+		<nav>
+			<ul class="icons-nav">
+				<li><a href="pithos_list.html" data-tooltip class="has-tip current" title="Storage" ><span class="snf-Pithos"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
+			</ul>
+		</nav>
+		<div class="logo">
+			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+			<h2>Storage</h2>
+		</div>
+		<div class="login">
+			<a href="">test@grnet.gr</a>
+		</div>
+		<div class="actions clearfix">
+			<div class="new-btn"><a href="#" data-overlay-id="#uploader"><span>+</span> UPLOAD </a></div>
+			<div class="main-actions">
+				<ul>
+					<li class="running single"><a href="">Add machine</a></li>
+					<li class="both"><a href="">Destroy</a></li>
 				</ul>
-			</nav>
-			<div class="logo">
-				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-				<h2>Storage</h2>
 			</div>
-			<div class="login">
-				<a href="">test@grnet.gr</a>
-			</div>
-			<div class="actions clearfix">
-				<div class="new-btn"><a href="#" data-overlay-id="#uploader"><span>+</span> UPLOAD </a></div>
-				<div class="main-actions">
-					<ul>
-						<li class="running single"><a href="">Add machine</a></li>
-						<li class="both"><a href="">Destroy</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
-	</div>
-	<div class="row-full overlay-wrapper storage">
+		</div>
+	</header>
+	<div class="overlay-wrapper storage">
 		<div class="overlay-area">
 			<a href="" class="close">close</a>
 			<div id="uploader" class="overlay-div upload-widget">
@@ -69,8 +67,7 @@
 			</div>
 
 		</div>
-		<div class="onecol">
-			<!-- sidebar -->
+		<div class="row">
 			<div class="lt-sidebar">
 				 <nav class="sidenav">
 				 	<ul>
@@ -84,11 +81,8 @@
 				 	<input type="text" placeholder="search">
 				 </form>
 			</div>
-
-			<div class="main content">
-				
-
-			<div class="confirmation"></div>
+			<div class="main">
+				<div class="confirmation"></div>
 				<ul class="breadcrumbs">
 					<li><a href="">shared by me</a></li>
 					<li><a href="">folder 1</a></li>
@@ -200,7 +194,7 @@
 			</div>
 		</div>
 		<div class="progress-bar">
-			<div class="onecol">
+			<div class="row">
 				<span class="counter">6 files uploading</span>
 				<div class="progress-wrap"><div class="progress"><span class="meter" style="width:25%"></span></div></div>
 				<span class="more"><a href="">details ></a></span>

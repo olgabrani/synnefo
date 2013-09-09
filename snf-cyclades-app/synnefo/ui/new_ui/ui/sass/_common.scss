@@ -1,9 +1,13 @@
 /* Table of Contents
+
   - Clearfix
   - Mixins
-  - Buttons and links
+  - Buttons and Links
   - Layout 
   - Header
+  - Icon Navigation
+  - Top Info
+  - Progress Bar
   
  */
 
@@ -26,7 +30,6 @@
 
 /* Mixins ----------------------------------------------- */
 
-// Set margin and padding to zero 
 @mixin marginPaddingZero() {
 	margin: 0;
 	padding: 0;
@@ -76,7 +79,6 @@ a {
 	}
 }
 
-// border grey, on hover $secondary-color
 .btn1 {
 	border:1px solid $primary-color;
 	color:$primary-color;
@@ -95,7 +97,6 @@ a {
 	}
 }
 
-// white background, on hover transparent
 .btn2 {
 	@extend .btn1;
 	color:$secondary-color;
@@ -108,7 +109,6 @@ a {
 	}
 }
 
-// reverse btn2
 .btn3 {
 	@extend .btn1;
 	color:#fff; 
@@ -130,13 +130,10 @@ a {
 	&.current {
 		color: $secondary-color;
   		border-color:  $secondary-color;
-  		background: white;
+  		background: #fff;
 	}
 }
 
-
-
-// btn with image on the right
 .btn-img {
 	@extend .btn1;
 	border-color:$secondary-color;
@@ -151,15 +148,7 @@ a {
 }
 
 
-.row-full {
-	max-width:$row-full-width;
-	margin:0 auto;
-}
-
-.onecol {
-	max-width:$row-width;
-	margin:0 auto;
-}
+/* Layout ----------------------------------------------- */
 
 .lt-sidebar {
 	width:250px;
@@ -176,7 +165,12 @@ a {
 
 .main {
 	padding:43px 40px;
+	overflow:hidden;
 }
+
+
+
+/* Header ----------------------------------------------- */
 
 .header {
 	position:relative;
@@ -257,6 +251,9 @@ a {
 	}
 }
 
+
+/* Icons Navigation ----------------------------------------------- */
+
 .icons-nav {
 	@include marginPaddingZero();
 	li {
@@ -276,7 +273,8 @@ a {
 
 
 
-// info styling
+
+/* Top info  ----------------------------------------------- */
 
 .top-info {
 	padding:50px 100px;
@@ -320,6 +318,8 @@ a {
 }
 
 
+/* Progress Bar ----------------------------------------------- */
+
 .progress-bar {
 	position: fixed;
 	bottom:0;
@@ -348,5 +348,3 @@ a {
 		display: inline-block;
 	}
 }
-
-

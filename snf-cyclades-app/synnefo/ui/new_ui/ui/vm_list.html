@@ -16,49 +16,48 @@
     <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
-<body>
-	<div class="row-full">
-		<header class="header">
-			<nav>
-				<ul class="icons-nav">
-					<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
-					<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC"></span></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
-					<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
-					<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
-				</ul>
-			</nav>
-			<div class="logo">
-				<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-				<h2>Machines</h2>
-			</div>
-			
-			<div class="login">
-				<a href="">test@grnet.gr</a>
-			</div>
-			<div class="actions clearfix">
-				<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
-				<div class="main-actions">
-					<ul>
-						<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
-						<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
-						<li class="both"><a href="">Destroy</a></li>
-						<li class="stopped"><a href="">Start</a></li>
-						 <!-- in case we want an action always activated
-						<li class="pernament"><a href="" class="active">Action</a></li> -->
-					</ul>
-				</div>
-			</div>
-		</header>
-		<div class="info top-info alert">
-			<div class="wrap">
-				<p>ALERT!</p>
-				<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
-			</div>
-			<a href="#" class="close" title="hide message">close</a>
+<body>	
+	<header class="header">
+		<nav>
+			<ul class="icons-nav">
+				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
+			</ul>
+		</nav>
+		<div class="logo">
+			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+			<h2>Machines</h2>
 		</div>
+		
+		<div class="login">
+			<a href="">test@grnet.gr</a>
+		</div>
+		<div class="actions clearfix">
+			<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
+			<div class="main-actions">
+				<ul>
+					<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
+					<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
+					<li class="both"><a href="">Destroy</a></li>
+					<li class="stopped"><a href="">Start</a></li>
+					 <!-- in case we want an action always activated
+					<li class="pernament"><a href="" class="active">Action</a></li> -->
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="info top-info alert">
+		<div class="wrap">
+			<p>ALERT!</p>
+			<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
+		</div>
+		<a href="#" class="close" title="hide message">close</a>
 	</div>
-	<div class="row-full content  overlay-wrapper ">
+	
+	<div class="overlay-wrapper ">
 		<div class="overlay-area">
 			<a href="" class="close">close</a>
 			<div id="overlay1" class="overlay-div">
@@ -70,9 +69,7 @@
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 			</div>
 		</div>
-		<!-- main area -->
-		<section class="main onecol">
-			
+		<section class="main row">
 			<div class="vms entities">
 				<ul class="items-list small-block-grid-2 large-block-grid-3 sortable">
 					<li data-order="0">

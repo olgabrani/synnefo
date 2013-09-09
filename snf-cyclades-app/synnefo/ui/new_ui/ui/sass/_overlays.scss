@@ -1,4 +1,8 @@
+/* 
 
+Overlays (Todo: clean up)
+
+*/
 body.with-overlay {
 	background:$secondary-color;
 }
@@ -93,6 +97,7 @@ body.with-overlay {
 				list-style:none outside none;
 				
 				a {
+					display: block;
 					color:#fff;
 					span { float:right; display:none;}
 					&:hover,
