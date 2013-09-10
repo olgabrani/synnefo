@@ -2,32 +2,41 @@
 
 .vms .items-list {
 	.img {
-			//@include sprite('../images/vm-on.png', 56px, 58px);
-			width: 60px;
-			height: 60px; // do we prefer to put it in items_list??
-			display: inline-block;
-			.snf-PC_fill {
-				font-size: 60px;
-				color: $vm-active-color;
+		width: 60px;
+		span {
+			&:hover {
+				cursor: pointer;
 			}
-			 
-			&.stopped {
-				.snf-PC_fill {
-					color: $vm-stopped-color;
-				}				
-				//background-image:url('../images/vm-stopped.png');
-			}
-			.os {
-				@include sprite('../images/os-unknown.png', 22px, 22px);
-				position: absolute;
-				top:8px;
-				left:19px;
-				&.windows { background-image:url('../images/os-windows.png'); }
-				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
-				&.fedora { background-image:url('../images/os-fedora.png'); }
-			}
-		
 		}
+		&:hover {
+			.snf-PC_fill {
+				color: darken($vm-active-color,10%);
+			}
+		}
+		.snf-PC_fill {
+			font-size: 60px;
+			color: $vm-active-color;
+		}
+		&.stopped {
+			.snf-PC_fill {
+				color: $vm-stopped-color;
+			}
+		}
+		&.stopped:hover {
+			.snf-PC_fill {
+				color: darken($vm-stopped-color,10%);
+			}
+		}
+		.os {
+			@include sprite('../images/os-unknown.png', 22px, 22px);
+			position: absolute;
+			top:8px;
+			left:19px;
+			&.windows { background-image:url('../images/os-windows.png'); }
+			&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+			&.fedora { background-image:url('../images/os-fedora.png'); }
+		}
+	}
 }
 
 .vm {
@@ -37,15 +46,13 @@
 			display: inline-block;
 			height: 112px;
 			.snf-PC_fill {
-					font-size: 112px;
-					color: $vm-active-color;
+				font-size: 112px;
+				color: $vm-active-color;
+			}
+			&.stopped {
+				.snf-PC_fill {
+					color: $vm-stopped-color;
 				}
-				 
-				&.stopped {
-					.snf-PC_fill {
-						color: $vm-stopped-color;
-					}			
-				//background-image:url('../images/vm-stopped.png');
 			}
 		}
 		.os {

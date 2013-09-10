@@ -258,13 +258,16 @@ a {
 	@include marginPaddingZero();
 	li {
 		display: inline-block;
-		margin-right:15px;
+		margin-right:10px;
 		font-size: emCalc(24px);
 		line-height: 1em;
 		padding-bottom:5px;
+		width: 30px;
+		overflow: hidden;
 		a {
 			color:$black;
-			&:hover, &.current {
+			&:hover,&.current {
+				font-size:30px;
 				color:$third-color;
 			}
 		}

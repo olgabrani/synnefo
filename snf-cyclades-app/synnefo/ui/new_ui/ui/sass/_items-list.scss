@@ -30,6 +30,7 @@
 			margin-bottom: 20px;
 			position: relative;
 			height:58px;
+			display: inline-block;
 		}
 		.container {
 			&.set-bg {	background:lighten($primary-color,38%); }

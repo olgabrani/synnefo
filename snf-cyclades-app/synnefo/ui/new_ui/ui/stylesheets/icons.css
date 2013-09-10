@@ -1,39 +1,39 @@
-/* line 14, ../sass/icons.scss */
+/* line 7, ../sass/icons.scss */
 .menu1 ul li {
   margin-right: 9px;
 }
-/* line 17, ../sass/icons.scss */
+/* line 10, ../sass/icons.scss */
 .menu1 ul li a .snf-font {
   font-size: 25px;
   color: #333333;
 }
-/* line 22, ../sass/icons.scss */
+/* line 15, ../sass/icons.scss */
 .menu1 ul li a:hover span {
   color: #3582ac;
 }
 
-/* line 37, ../sass/icons.scss */
+/* line 30, ../sass/icons.scss */
 .menu2 ul li {
   margin-right: 9px;
 }
-/* line 40, ../sass/icons.scss */
+/* line 33, ../sass/icons.scss */
 .menu2 ul li a .snf-font {
   font-size: 25px;
   font-weight: bold;
   color: #919194;
 }
-/* line 46, ../sass/icons.scss */
+/* line 39, ../sass/icons.scss */
 .menu2 ul li a:hover span {
   color: #3582ac;
 }
 
-/* line 61, ../sass/icons.scss */
+/* line 54, ../sass/icons.scss */
 .menu3 ul li a .snf-font {
   font-size: 25px;
   color: #919194;
 }
 
-/* line 75, ../sass/icons.scss */
+/* line 68, ../sass/icons.scss */
 body .items-list .img.running, body .vms .items-list .img.stopped {
   background: none;
   text-indent: 0;
@@ -41,40 +41,40 @@ body .items-list .img.running, body .vms .items-list .img.stopped {
   height: 60px;
 }
 
-/* line 82, ../sass/icons.scss */
+/* line 75, ../sass/icons.scss */
 body .img .snf-font {
   font-size: 60px;
 }
 
-/* line 86, ../sass/icons.scss */
+/* line 79, ../sass/icons.scss */
 body .networks .img .snf-font.bolding {
   font-weight: bold;
   font-size: 57px;
   top: 6px;
 }
 
-/* line 91, ../sass/icons.scss */
+/* line 84, ../sass/icons.scss */
 body .networks .img .snf-font {
   position: relative;
   top: 2px;
 }
 
-/* line 96, ../sass/icons.scss */
+/* line 89, ../sass/icons.scss */
 body .networks .running .snf-font {
   color: #79c79e;
 }
 
-/* line 100, ../sass/icons.scss */
+/* line 93, ../sass/icons.scss */
 body .running .snf-font {
   color: #75c046;
 }
 
-/* line 105, ../sass/icons.scss */
+/* line 98, ../sass/icons.scss */
 body .stopped .snf-font {
-  color: #e00e63;
+  color: #ff3366;
 }
 
-/* line 110, ../sass/icons.scss */
+/* line 103, ../sass/icons.scss */
 body .vms .items-list .img .os {
   left: 19px;
 }

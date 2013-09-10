@@ -1,9 +1,6 @@
 ui = {};
 
 
-
-
-
 ui.closeDiv = function(closeEl, divToCloseClass) {
     closeEl.click(function(e){
         e.preventDefault();
@@ -79,18 +76,9 @@ ui.entitiesActionsInit = function(){
     
     $('.entities li .container').mouseenter(
       function (e) {
-        $(this).find('.img').stop(true, true).fadeOut({
-            'duration':200,
-        });
         $(this).find('.options, .check').stop(true, true).addClass('active');
         $(this).find('.options').stop(true, true).fadeIn(500); 
         $(this).stop(true, true).addClass('set-border');
-        $(this).find('.visible-info em').stop(true, true).each(function(){
-            var emLeft = $(this).position();
-            $(this).animate({
-            left: -emLeft.left,
-            }, 300);        
-        }) 
       }
     );
 
@@ -98,13 +86,7 @@ ui.entitiesActionsInit = function(){
         function(e){
             $(this).stop(true, true).removeClass('set-border');
             $(this).find('.options').stop(true, true).fadeOut(200); 
-            $(this).find('.img').stop(true, true).fadeIn('slow');
             $(this).find('.snf-checkbox-unchecked').parents('.check').stop(true, true).removeClass('active');
-            $(this).find('.visible-info em').stop(true, true).each(function(){
-                $(this).animate({
-                 left: 0,
-                }, 300);        
-            }) 
          }
     );
 
