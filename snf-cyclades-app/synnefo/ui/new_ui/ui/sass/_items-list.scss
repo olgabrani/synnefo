@@ -39,32 +39,10 @@
 			margin: 0 20px;
 			padding:25px 0;
 			position: relative;
-			.options {
-				width:100%;
-				text-align:center;	
-				position: absolute;
-				top:-3px;
-				left:0;
-				display: none;
-				.wrap {
-					height:100%;
-					padding:25px 25px 0;
-					text-align: left;
-					a {
-						font-size:emCalc(27px);
-						display: inline-block;
-						color:$primary-color;
-						line-height: 1em;
-						margin-bottom:10px;
-
-						font-weight: bold;
-						&:hover {
-							color: $secondary-color;
-						}
-					}
-						
-					
-					
+			&:hover {
+				@extend .set-border;
+				.check {
+					@extend .active;
 				}
 			}
 		}

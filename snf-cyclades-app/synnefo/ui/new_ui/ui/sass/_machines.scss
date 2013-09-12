@@ -23,8 +23,8 @@
 			}
 		}
 		&.stopped:hover {
-			.snf-PC_fill {
-				color: darken($vm-stopped-color,10%);
+			span {
+				cursor: default;
 			}
 		}
 		.os {
