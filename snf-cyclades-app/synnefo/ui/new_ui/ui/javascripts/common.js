@@ -1,6 +1,11 @@
+/*
+* Various functions that will be used throughout all templates
+* are inside ui Object
+*/
+
 ui = {};
 
-
+/* when closeEl el is clicked, its parent with class divToCloseClass slidesUp */
 ui.closeDiv = function(closeEl, divToCloseClass) {
     closeEl.click(function(e){
         e.preventDefault();
@@ -9,30 +14,31 @@ ui.closeDiv = function(closeEl, divToCloseClass) {
 }
 
 
-
 ui.trimChars = function( str, chars) {
     if ( str.length>chars){
-        return jQuery.trim(str).substring(0, chars).split(" ").slice(0, -1).join(" ") + "...";
+        return $.trim(str).substring(0, chars)+ "...";
     } else {
         return str;
     }
 }
 
-// set lt-sidebar height 
+/* sets lt-sidebar height. Useful for jscrollpane scrollbar */
 ui.setSidebarHeight = function(){
     var WindowHeight = $(window).height();
     var h1= WindowHeight - $('.header').outerHeight();
-    var h2= $('.main.details').outerHeight();
-    
-    if (h2>h1) {
-        var ltSidebarHeight = h2;
-    } else {
-        var ltSidebarHeight = h1;
-    }
-    $('.lt-sidebar').height(ltSidebarHeight);
+    var h2= $('.main').outerHeight();
+    $('.lt-sidebar').height((h2>h1) ? h2 : h1);
 }
 
-ui.cntCheckbox = function(){ 
+
+/* 
+* Logic for Entities actions. Present in items_list pages
+* Available categories are :
+*  - both/single ( for multiple entities/single entities)
+*  - running/stopped ( for running/stopped entities)
+*  - permanent ( for entities always active )
+*/
+ui.entitiesActionsEnabled = function(){
     var all = $('.snf-checkbox-checked').length;
     var running = $('.snf-checkbox-checked').parents('.container').find('.running').length;
     var stopped = $('.snf-checkbox-checked').parents('.container').find('.stopped').length;
@@ -47,54 +53,24 @@ ui.cntCheckbox = function(){
         } else if (stopped>0) {
             $('.header .main-actions li.both a').addClass('active');   
             $('.header .main-actions li.stopped a').addClass('active');   
-
-        } else {
-
         }
         if ( all > 1 ) {
             $('.header .main-actions li.single a').removeClass('active');   
         }
-
     }
 }
-
-ui.setCheckedVMBgColor = function(){
-
-    if ($('.check span').length >0) {
-        $('.more_checkbox .checkbox-checked').parents('.container').addClass('set-bg');
-    } else {
-        $('.more_checkbox').parents('.container').removeClass('set-bg');    
-    }
-
-}
-
 
 ui.entitiesActionsInit = function(){
 
-    // if VM is stopped hide connect option 
-    $('.vms .container .stopped').parents('.container').find('.options .connect').hide();
-    
-    $('.entities li .container').mouseenter(
-      function (e) {
-        $(this).find('.options, .check').stop(true, true).addClass('active');
-        $(this).find('.options').stop(true, true).fadeIn(500); 
-        $(this).stop(true, true).addClass('set-border');
-      }
-    );
-
     $('.entities li .container').mouseleave(
         function(e){
-            $(this).stop(true, true).removeClass('set-border');
-            $(this).find('.options').stop(true, true).fadeOut(200); 
-            $(this).find('.snf-checkbox-unchecked').parents('.check').stop(true, true).removeClass('active');
+            $(this).find('.snf-checkbox-unchecked').parents('.check').removeClass('active');
          }
     );
 
     $('.entities .container .check').click(function(e){
         e.preventDefault();
-
         var checkbox = $(this).find('.snf-checkbox-unchecked, .snf-checkbox-checked');
-
         checkbox.toggleClass('snf-checkbox-unchecked');
         checkbox.toggleClass('snf-checkbox-checked');
         
@@ -104,56 +80,41 @@ ui.entitiesActionsInit = function(){
         }
         else{
             $(this).parents('.container').removeClass('set-bg');
-            
-      
         }
-
-        
-
-        ui.cntCheckbox();
+        ui.entitiesActionsEnabled();
     })
-    $('.entities li .details').mouseenter(function (e) {
-        $(this).parents('.container').find('.info-box').show();
-    }) 
-      
-    $('.entities li .details').mouseleave(function (e) {
-        $(this).parents('.container').find('.info-box').hide();
-    })   
-    $('.entities li .container').mouseleave(
-        function(e){
-            $(this).stop(true, true).removeClass('set-border');
-            $(this).find('.options').stop(true, true).fadeOut(200); 
-            $(this).find('.img').stop(true, true).fadeIn('slow');
-            $(this).find('.snf-checkbox-unchecked').parents('.check').stop(true, true).removeClass('active');
-            $(this).find('.visible-info em').stop(true, true).each(function(){
-                $(this).animate({
-                 left: 0,
-                }, 300);        
-            }) 
-         }
-    );
    
 }
 
+/*
+* In order for the editable value functionality to work, the html markup
+* should be:
+    <div class="editable">
+        <span class="input-txt">editable value</span>
+        <input type="text">
+        <a href="#" class="edit">edit</a>
+        <a href="#" class="save">save</a>
+        <a href="#" class="cancel">cancel</a>
+    </div>
+*/
 ui.editable = function(){
 
 /*
-resetForm hides save and cancel buttons, 
-text input and shows input-txt. resetForm does not alter 
-input-txt content.
+* resetForm hides save and cancel buttons,
+* text input and shows input-txt. resetForm does not alter
+* input-txt content.
 */
 
     function resetForm(e, elem) {
         var el = elem.parents('.editable');
         el.find('input[type="text"]').hide();
         el.find('a.cancel, a.save').hide();
-        el.find('a.edit').show();
-        el.find('.input-txt').show();
+        el.find('a.edit, .input-txt').show();
     }
 
 /* 
-showForm hides input-txt, shows save and cancel buttons and
-set input value to input-txt content.
+* showForm hides input-txt, shows save and cancel buttons and
+* sets input value to input-txt content.
 */
     function showForm(e,elem) {
         e.stopPropagation(); 
@@ -220,11 +181,11 @@ Ajax request to submit form
 
 }
 
+/* TODO: better overlay functionality */
 ui.overlay = function() {
     $('[data-overlay-id]').click(function(e){
         e.preventDefault();
         var el = $(this);
-
         // main-actions a need to be active to trigger overlay
         if ( (el.parents('.main-actions').find('li a.active').length == 0) && (el.parents('.main-actions').length > 0) ) {
             return false;
@@ -232,8 +193,6 @@ ui.overlay = function() {
         var id = el.data('overlay-id');
         $('.overlay-area').show();
         $(id).slideDown('slow');
-
-
     });
 
 
@@ -329,17 +288,13 @@ ui.netOptions = function(option) {
 
 $(document).ready(function(){
 
-
-    ui.closeDiv($('.info .close'), '.info');
-    ui.closeDiv($('.dummy-navigation .close'), '.dummy-navigation');
-
-    $('.dummy-navigation .our').click(function(e){
-        e.preventDefault();
-        $('.ours.'+$(this).data('our')).toggle();
-        $(this).toggleClass('open');
-    });
-
     ui.setSidebarHeight();
+    ui.closeDiv($('.info .close'), '.info');
+    ui.entitiesActionsInit();
+    ui.editable();
+    ui.overlay();
+
+
     $('.select-os li').click(function(e){
         $('.select-os li').removeClass('selected');
         $(this).addClass('selected');
@@ -354,10 +309,6 @@ $(document).ready(function(){
         e.preventDefault();
     })
 
-    ui.entitiesActionsInit();
-    ui.editable();
-    ui.overlay();
-
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
             e.preventDefault();
@@ -365,12 +316,8 @@ $(document).ready(function(){
     })
     $('.scroll-pane').jScrollPane();
 
-
-
-
-
     $('.main .items-list .title em').each(function(){
-        $(this).html( ui.trimChars($(this).html(), 22) );
+        $(this).html( ui.trimChars($(this).html(), 20) );
 
     })
 
