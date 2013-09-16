@@ -1,17 +1,17 @@
 @font-face {
-	font-family: 'snf-font';
-	src:url('../fonts/snf-font.eot');
-	src:url('../fonts/snf-font.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/snf-font.woff') format('woff'),
-		url('../fonts/snf-font.ttf') format('truetype'),
-		url('../fonts/snf-font.svg#snf-font') format('svg');
+	font-family: "snf-font";
+	src:url("../fonts/snf-font.eot");
+	src:url("../fonts/snf-font.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/snf-font.woff") format("woff"),
+		url("../fonts/snf-font.ttf") format("truetype"),
+		url("../fonts/snf-font.svg#snf-font") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'snf-font';
+	font-family: "snf-font";
 	content: attr(data-icon);
 	speak: none;
 	font-weight: normal;
@@ -25,11 +25,11 @@
 /* Use the following CSS code if you want to have a class per icon */
 /*
 Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
+you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
 .snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-cancel-circled2, .snf-cancel-circled-outline, .snf-cancel-outline, .snf-ok, .snf-remove, .snf-ban-circle, .snf-ok-circle, .snf-ok-sign, .snf-remove-sign, .snf-minus-sign, .snf-pencil, .snf-edit, .snf-edit-1, .snf-pencil-circled, .snf-icon-compute-outline, .snf-icon-networks-fill, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye {
-	font-family: 'snf-font';
+	font-family: "snf-font";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
