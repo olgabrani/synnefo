@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
-.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-cancel-circled2, .snf-cancel-circled-outline, .snf-cancel-outline, .snf-ok, .snf-remove, .snf-ban-circle, .snf-ok-circle, .snf-ok-sign, .snf-remove-sign, .snf-minus-sign, .snf-pencil, .snf-edit, .snf-edit-1, .snf-pencil-circled, .snf-icon-compute-outline, .snf-icon-networks-fill, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye {
+.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-cancel-circled2, .snf-cancel-circled-outline, .snf-cancel-outline, .snf-ok, .snf-remove, .snf-ban-circle, .snf-ok-circle, .snf-ok-sign, .snf-remove-sign, .snf-minus-sign, .snf-pencil, .snf-edit, .snf-edit-1, .snf-pencil-circled, .snf-icon-compute-outline, .snf-icon-networks-fill, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked{
 	font-family: "snf-font";
 	speak: none;
 	font-style: normal;
@@ -118,4 +118,10 @@ you can use the generic selector below, but it"s slower:
 }
 .snf-eye:before {
 	content: "\41";
+}
+.snf-radio-checked:before {
+	content: "\42";
+}
+.snf-radio-unchecked:before {
+	content: "\43";
 }

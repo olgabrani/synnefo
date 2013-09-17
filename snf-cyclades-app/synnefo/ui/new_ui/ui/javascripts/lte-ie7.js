@@ -32,7 +32,9 @@ window.onload = function() {
 			'snf-PC_fill' : '&#x78;',
 			'snf-Pithos' : '&#x79;',
 			'snf-DASHboard' : '&#x7a;',
-			'snf-eye' : '&#x41;'
+			'snf-eye' : '&#x41;',
+			'snf-radio-checked' : '&#x42;',
+			'snf-radio-unchecked' : '&#x43;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
