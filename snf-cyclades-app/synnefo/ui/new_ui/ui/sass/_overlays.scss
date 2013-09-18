@@ -38,7 +38,6 @@ body.with-overlay {
 
 .overlay-wrapper {
 	position: relative;
-
 	.overlay-area {
 		display:none;
 		position:absolute;
@@ -47,7 +46,7 @@ body.with-overlay {
 		top:0;
 		width:100%;
 		height:100%;
-		background:$secondary-color;
+		background:$overlay-color;
 		z-index:20;
 	}
 	.close {
@@ -77,18 +76,21 @@ body.with-overlay {
 			left:10%;
 			border:1px solid white;
 		}
-
+		&.wizard {
+			background:transparent;
+			padding:0;
+			width:100%;
+			top:0;
+			left:0;
+		}
 	}
-
 }
-
 
 
 .overlay {
 	background:$secondary-color;
 	position: relative;
 	z-index:10;
-
 	.lt-sidebar {
 		border-right:1px solid #fff;
 		color:#fff;
@@ -102,7 +104,6 @@ body.with-overlay {
 					span { float:right; display:none;}
 					&:hover,
 					&.current {
-
 						text-decoration: none;
 						span { 
 							display:inline;
@@ -135,5 +136,123 @@ body.with-overlay {
 		text-indent: 0;
 		font-size: 1.8em; /* for the the character e (for d we can put 2em) */
 		color: white;
+	}
+}
+
+.wizard {
+	position: relative;
+	top:0;
+	color:white;
+	.top {
+		background:$overlay-color-top;
+		.sub-menu {
+			padding:10px 0;
+			ul {
+				margin:0;
+				padding:0;
+				list-style: none outside none;
+				li {
+					display: inline;
+					margin-right:10px;
+					list-style: none outside none;
+					a {
+						color:$black;
+						&:hover, &.current {
+							color:white;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+	.middle {
+
+	}
+	.bottom {
+		position: fixed;
+		left:0;
+		right:0;
+		bottom:0;
+		border-top:1px solid $black;
+		padding:10px 0;
+		.nav {
+			height: 30px;
+			line-height:30px;
+			color:white;
+			span {
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+			}
+		}
+		.prev {
+			float:left;
+			display: inline-block;
+			padding-left:11px;
+			background:url('../images/nav-edge-lt.png') no-repeat left center;
+			span {
+				padding:0 12px 0 10px;
+				border:1px solid white;
+				border-left:0 none;
+				height: 30px;
+				line-height: 30px;
+			}
+			&:hover {
+				background-image:url('../images/nav-edge-lt-hover.png');
+				span {
+					border-width:2px;
+					line-height:28px;
+				}
+			}
+		}
+		.next {
+			float:right;
+			display: inline-block;
+			padding-right:11px;
+			background:url('../images/nav-edge-rt.png') no-repeat right center;
+			span {
+				padding:0 10px 0 12px;
+				border:1px solid white;
+				border-right:0 none;
+			}
+			&:hover {
+				background-image:url('../images/nav-edge-rt-hover.png');
+				span {
+					border-width:2px;
+					line-height:28px;
+				}
+			}
+		}
+		.nums {
+			text-align: center;
+			list-style:none outside none;
+			margin:0;
+			li {
+				list-style:none outside none;
+				display: inline-block;
+				border-radius:50%;
+				border:1px solid $primary-color;
+				width:25px;
+				height:25px;
+				line-height: 25px;
+				margin:0 3px;
+				a {
+					color:$primary-color;
+					display: block;
+				}
+				&:hover,&.current{
+					border-color:white;
+					a {
+						color:white;
+					}
+				}
+				&.current {
+					font-size:emCalc(20px);
+					width:30px;
+					height:30px;
+				}
+			}
+		}
 	}
 }

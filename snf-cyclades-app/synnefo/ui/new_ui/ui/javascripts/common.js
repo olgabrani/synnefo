@@ -44,18 +44,18 @@ ui.entitiesActionsEnabled = function(){
     var stopped = $('.snf-checkbox-checked').parents('.container').find('.stopped').length;
     $('.header .main-actions li:not(.permanent) a').removeClass('active');  
     if ( (running*stopped) > 0 ){          
-         $('.header .main-actions li.both a').addClass('active');   
-         $('.header .main-actions li.single a').removeClass('active');   
+         $('.main-actions li.both a').addClass('active');
+         $('.main-actions li.single a').removeClass('active');
     } else {
         if (running > 0) {
-            $('.header .main-actions li.both a').addClass('active');   
-            $('.header .main-actions li.running a').addClass('active');   
+            $('.main-actions li.both a').addClass('active');
+            $('.main-actions li.running a').addClass('active');
         } else if (stopped>0) {
-            $('.header .main-actions li.both a').addClass('active');   
-            $('.header .main-actions li.stopped a').addClass('active');   
+            $('.main-actions li.both a').addClass('active');
+            $('.main-actions li.stopped a').addClass('active');
         }
         if ( all > 1 ) {
-            $('.header .main-actions li.single a').removeClass('active');   
+            $('.main-actions li.single a').removeClass('active');
         }
     }
 }
