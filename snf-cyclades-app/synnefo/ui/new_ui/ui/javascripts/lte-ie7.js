@@ -34,7 +34,14 @@ window.onload = function() {
 			'snf-DASHboard' : '&#x7a;',
 			'snf-eye' : '&#x41;',
 			'snf-radio-checked' : '&#x42;',
-			'snf-radio-unchecked' : '&#x43;'
+			'snf-radio-unchecked' : '&#x43;',
+			'snf-close' : '&#x44;',
+			'snf-cpu' : '&#x45;',
+			'snf-lock_closed' : '&#x46;',
+			'snf-lock_open' : '&#x47;',
+			'snf-modem' : '&#x48;',
+			'snf-www' : '&#x49;',
+			'snf-ram' : '&#x4a;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
