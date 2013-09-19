@@ -28,22 +28,12 @@
 		</nav>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-			<h2>Storage</h2>
 		</div>
 		<div class="login">
 			<a href="">test@grnet.gr</a>
 		</div>
-		<div class="actions clearfix">
-			<div class="new-btn"><a href="#" data-overlay-id="#uploader"><span>+</span> UPLOAD </a></div>
-			<div class="main-actions">
-				<ul>
-					<li class="running single"><a href="">Add machine</a></li>
-					<li class="both"><a href="">Destroy</a></li>
-				</ul>
-			</div>
-		</div>
 	</header>
-	<div class="overlay-wrapper storage">
+	<div class="overlay-wrapper">
 		<div class="overlay-area">
 			<a href="" class="close">close</a>
 			<div id="uploader" class="overlay-div upload-widget">
@@ -63,11 +53,22 @@
 						<a href="">change folder</a>
 						<a href="">ok</a>
 					</div>
-
 			</div>
-
 		</div>
-		<div class="row">
+		<section class="actions-bar clearfix">
+			<div class="row">
+				<div class="new-btn"><a href="" data-overlay-id="#uploader">UPLOAD FILE</a></div>
+				<div class="main-actions">
+					<ul>
+						<li class="permanent" ><a href="">Action</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<div class="row storage">
 			<div class="lt-sidebar">
 				 <nav class="sidenav">
 				 	<ul>

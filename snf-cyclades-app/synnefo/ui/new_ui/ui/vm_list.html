@@ -29,37 +29,14 @@
 		</nav>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-			<h2>Machines</h2>
 		</div>
-		
 		<div class="login">
 			<a href="">test@grnet.gr</a>
 		</div>
-		<div class="actions clearfix">
-			<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
-			<div class="main-actions">
-				<ul>
-					<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
-					<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
-					<li class="both"><a href="">Destroy</a></li>
-					<li class="stopped"><a href="">Start</a></li>
-					 <!-- in case we want an action always activated
-					<li class="pernament"><a href="" class="active">Action</a></li> -->
-				</ul>
-			</div>
-		</div>
 	</header>
-	<div class="info top-info alert">
-		<div class="wrap">
-			<p>ALERT!</p>
-			<p>Nunc at velit quis lectus nonummy eleifend. Curabitur eros. Aenean ligula dolor, gravida auctor, auctor et, neque ut neque. In at libero. </p>
-		</div>
-		<a href="#" class="close" title="hide message">close</a>
-	</div>
-	
-	<div class="overlay-wrapper ">
+	<div class="overlay-wrapper">
 		<div class="overlay-area">
-			<a href="" class="close">close</a>
+			<a href="" class="close"><a href="" class="close"><span class="snf-font">e</span></a></a>
 			<div id="overlay1" class="overlay-div">
 				<p>Are you sure you want to reboot your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
@@ -68,7 +45,225 @@
 				<p>Are you sure you want to shutdown your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 			</div>
+			<div id="vm-wizard" class="overlay-div wizard">
+				<div class="top">
+					<div class="row">
+						<a href="" class="close"><span class="snf-font">e</span></a>
+						<nav class="sub-menu">
+							<ul>
+								<li><a href="" class="current">System</a></li>
+								<li><a href="">My images</a></li>
+								<li><a href="">Shared with me</a></li>
+								<li><a href="">Public</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="middle">
+					<div class="row">
+						<div class="wizard-content">
+							<div class="vm-wizard-carousel">
+								<div class="step step-1">
+									<ul class="os">
+										<li>
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<div class="name-col">Ubuntu Desktop LTS (Long Term Support)</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+										<li>
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<div class="name-col">Windows Server 2008 R2</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+										<li>
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<div class="name-col">Ubuntu Desktop LTS (Long Term Support)</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+										<li>
+											<div class="img-col"><img src="images/os-unknown.png" alt=""></div>
+											<div class="name-col">Whatever</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+										<li>
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<div class="name-col">Ubuntu Desktop LTS (Long Term Support)</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+										<li>
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<div class="name-col">Ubuntu Desktop LTS (Long Term Support)</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+										<li>
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<div class="name-col">Ubuntu Desktop LTS (Long Term Support)</div>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+											<div class="details">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</details>
+										</li>
+									</ul>
+								</div>
+								<div class="step step-2">test2</div>
+								<div class="step step-3">test3</div>
+								<div class="step step-4">test4</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="row">
+						<a href="" class="nav prev"><span>PREVIOUS</span></a>
+						<a href="" class="nav next"><span>NEXT</span></a>
+						<ul class="nums">
+							<li class="current"><a href="">1</a></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
+		<section class="actions-bar clearfix">
+			<div class="row">
+				<div class="new-btn"><a href="" data-overlay-id="#vm-wizard"><span>+</span> NEW MACHINE </a></div>
+				<div class="main-actions">
+					<ul>
+						<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
+						<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
+						<li class="both"><a href="">Destroy</a></li>
+						<li class="stopped"><a href="">Start</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</section>
 		<section class="main row">
 			<div class="vms entities">
 				<ul class="items-list small-block-grid-2 large-block-grid-3 sortable">
@@ -222,6 +417,7 @@
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
 	<script src="javascripts/common.js"></script>
+	<script type="text/javascript" src="javascripts/vm-wizard.js"></script>
 	
 	  
   <script>

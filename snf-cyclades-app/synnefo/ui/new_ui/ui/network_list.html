@@ -29,22 +29,27 @@
 		</nav>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-			<h2>Networks</h2>
 		</div>
 		<div class="login">
 			<a href="">test@grnet.gr</a>
 		</div>
-		<div class="actions clearfix">
-			<div class="new-btn"><a href="network_create.html"><span>+</span> NEW NETWORK</a></div>
-			<div class="main-actions">
-				<ul>
-					<li class="running single"><a href="">Add machine</a></li>
-					<li class="both"><a href="">Destroy</a></li>
-				</ul>
-			</div>
-		</div>
 	</header>
 	<div class="overlay-wrapper">
+		<section class="actions-bar clearfix">
+			<div class="row">
+				<div class="new-btn"><a href="network_create.html"><span>+</span> NEW NETWORK </a></div>
+				<div class="main-actions">
+					<ul>
+						<li class="running" ><a href="">Reboot</a></li>
+						<li class="running"><a href="">Shutdown</a></li>
+						<li class="both"><a href="">Destroy</a></li>
+						<li class="stopped"><a href="">Start</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</section>
 		<section class="main row">
 			<div class="networks entities">
 				<ul class="items-list small-block-grid-2 large-block-grid-3 sortable">

@@ -28,24 +28,10 @@
 		</nav>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
-			<h2>Machines</h2>
 		</div>
 		
 		<div class="login">
 			<a href="">test@grnet.gr</a>
-		</div>
-		<div class="actions clearfix">
-			<div class="new-btn"><a href="vm_create_a.html"><span>+</span> NEW MACHINE </a></div>
-			<div class="main-actions">
-				<ul>
-					<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
-					<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
-					<li class="both"><a href="">Destroy</a></li>
-					<li class="stopped"><a href="">Start</a></li>
-					 <!-- in case we want an action always activated
-					<li class="pernament"><a href="" class="active">Action</a></li> -->
-				</ul>
-			</div>
 		</div>
 	</header>
 	<div class="info top-info alert">
@@ -56,6 +42,21 @@
 		<a href="#" class="close" title="hide message">close</a>
 	</div>
 	<div class="overlay-wrapper">
+		<section class="actions-bar clearfix">
+			<div class="row">
+				<div class="new-btn"><a href="" data-overlay-id="#vm-wizard"><span>+</span> NEW MACHINE </a></div>
+				<div class="main-actions">
+					<ul>
+						<li class="running" ><a href="" data-overlay-id="#overlay1">Reboot</a></li>
+						<li class="running"><a href="" data-overlay-id="#overlay1">Shutdown</a></li>
+						<li class="both"><a href="">Destroy</a></li>
+						<li class="stopped"><a href="">Start</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</section>
 		<div class="lt-sidebar vms scroll-pane">
 			<ul class="items-list">
 				<li>
