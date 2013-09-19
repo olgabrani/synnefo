@@ -191,6 +191,7 @@ ui.overlay = function() {
             return false;
         }
         var id = el.data('overlay-id');
+
         $('.overlay-area').show();
         $(id).slideDown('slow');
     });
@@ -329,7 +330,7 @@ $(document).ready(function(){
     $('.overlay-area .close').click(function(e){
         e.preventDefault();
         $(this).parents('.overlay-area').hide();
-        $(this).parents('.overlay-area').find($('[data-overlay-id]')).hide();
+        $(this).parents('.overlay-area').find($('.overlay-div')).hide();
     })
 
     $('.browse-files').click(function(e){
@@ -389,7 +390,11 @@ $(document).ready(function(){
     })
   
     ui.placementByUser();
-   
+    $('.os .btn-col a').click( function(e){
+        e.preventDefault();
+        $(this).toggleClass('current');
+        $(this).parents('li').find('.details').slideToggle();
+    })
 
 })
 

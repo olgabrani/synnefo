@@ -157,6 +157,26 @@ a {
 	}
 }
 
+.btn5 {
+	border:1px solid white;
+	color:white;
+	display:inline-block;
+	padding:0 20px;
+	line-height:emCalc(28px);
+	height:emCalc(30px);
+	text-align:center;
+	font-size:emCalc(12px);
+	&:hover {
+		border-width:2px;
+		line-height: emCalc(26px);
+		padding:0 19px;
+	}
+	&.current {
+		background:white;
+		color:$secondary-color;
+	}
+}
+
 .btn-img {
 	@extend .btn1;
 	border-color:$secondary-color;
@@ -172,8 +192,12 @@ a {
 
 
 /* Layout ----------------------------------------------- */
-html,body, .overlay-wrapper {
+html,body {
 	height:100%;
+}
+
+.overlay-wrapper {
+	min-height:100%;
 }
 
 .lt-sidebar {
@@ -200,13 +224,17 @@ html,body, .overlay-wrapper {
 
 .header {
 	position:relative;
-	padding:$header-padding-vertical $header-padding-horizontal;
+	height:$header-height;
+	line-height:$header-height;
+	padding:0 $header-padding-horizontal;
 	border-bottom:1px solid $primary-color;
 	background:#fff;
 	.icons-nav {
 		position:absolute;
-		left:$header-padding-horizontal;
-		top:$header-padding-vertical;
+		left:$header-padding-horizontal - $icons-nav-margin-horizontal;
+		height:$header-height;
+		line-height:$header-height;
+		top:0;
 	}
 	.logo {
 		text-align: center;
@@ -223,8 +251,10 @@ html,body, .overlay-wrapper {
 	}
 	.login {
 		position:absolute;
+		top:0;
 		right:$header-padding-horizontal;
-		top:$header-padding-vertical;
+		height:$header-height;
+		line-height:$header-height;
 	}
 	
 }
@@ -287,11 +317,12 @@ html,body, .overlay-wrapper {
 	@include marginPaddingZero();
 	li {
 		display: inline-block;
-		margin-right:10px;
+		margin:0 $icons-nav-margin-horizontal;
 		font-size: emCalc(24px);
 		line-height: 1em;
 		padding-bottom:5px;
 		width: 30px;
+		text-align:center;
 		overflow: hidden;
 		a {
 			color:$black;

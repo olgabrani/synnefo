@@ -56,9 +56,12 @@ $global-radius: 1px;
 // $global-rounded: 1000px;
 
 // header settings
+$header-height:emCalc(70px);
 $header-padding-vertical:emCalc(20px);
 $header-padding-horizontal:emCalc(40px);
 
+// icons nav settings
+$icons-nav-margin-horizontal : emCalc(5px);
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
