@@ -8,9 +8,9 @@ ui.wizard ={
 	// sets the width and height of the carousel and its divs
 	set_dimensions: function() {
 		console.log('set dimentions');
-		ui.wizard.relocation = $('.wizard-content').width();
-		$('.vm-wizard-carousel').children('div').width(ui.wizard.relocation+'px');
-		$('.vm-wizard-carousel').children('div').height($('.wizard-content').height()+'px');
+		ui.wizard.relocation = $('.overlay-wrapper').width();
+		console.log(ui.wizard.relocation);
+		$('.vm-wizard-carousel').children('div').width(ui.wizard.relocation);
 	},
 
 	// sets the width and height of the carousel and its divs when the screen is resized (in PIXELS)
