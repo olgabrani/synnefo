@@ -66,6 +66,10 @@
   box-shadow: $shadows;
 }
 
+@mixin padding1-0 {
+	padding: 1px 0;
+}
+
 /* Circle and Tags ----------------------------------------------- */
 .circle {
 	display:inline-block;

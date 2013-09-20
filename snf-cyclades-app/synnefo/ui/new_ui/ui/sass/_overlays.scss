@@ -446,3 +446,56 @@ body.with-overlay {
 	width: 20000px;
 	position:relative;
 }
+
+// step3 vm wizard
+.advanced-conf-step {
+	color: $wizard-base-font-color;
+	h2 {
+		color: $wizard-base-font-color;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.adv-main {
+		height: 23em;
+		padding: 10px 0;
+		.vm-name {
+			font-weight: bold;
+		}
+		.expand-arrow {
+			display: none;
+		}
+		input[type="text"] {
+			width: 200px;
+			border: 0;
+			border-bottom: 1px solid $wizard-base-font-color;
+			background-color: $overlay-color;
+			outline: 0;
+			color: $wizard-base-font-color;
+			//to be improved!!!!
+			-webkit-box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
+			-moz-box-shadow:    7px 7px 0px rgba(72, 80, 87, 0);
+			box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
+		}
+	}
+}
+.advanced-conf-options {
+	display: none;
+	.ssh-keys-area {
+		background-color: $ssh-opt-area-color;
+		@include padding1-0();
+	}
+	.networks-area {
+		background-color: $net-opt-area-color;
+		@include padding1-0();
+		li.network-data {
+			ul.ips-list {
+				display:none;
+			}
+		}
+	}
+	.tags-area {
+		@include padding1-0();
+		background-color: $tag-opt-area-color;
+	}
+
+}
