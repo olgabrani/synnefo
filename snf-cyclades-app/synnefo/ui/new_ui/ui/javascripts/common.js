@@ -226,31 +226,10 @@ ui.placementByUser = function() {
     }
 }
 
-//create vm
-ui.pickFlavor = function(flavorSelection) {
-        ui.select_flavor = 1;
-        console.log(flavorSelection);
-        var classes = $(flavorSelection).attr('class').split(" ");
-        // the second class is: 'small_flavor' or 'medium_flavor' or 'large_flavor'
-        
-        $(flavorSelection).parent('li').siblings('li').find('a.chosen_flavor').removeClass('chosen_flavor');
-        $(flavorSelection).addClass('chosen_flavor');
-        $('.select-flavor').find('dl.cpus span.current, dl.ram span.current, dl.disk span.current').removeClass('current');
-        $('.select-flavor').find('.'+classes[1]).addClass('current');
-
-}
-
-
 ui.pickResources = function(resource) {
-        $(resource).parents('dl').find('span').removeClass('current');
-        $(resource).addClass('current');
-        if(ui.select_flavor == 1){
-            if(!$(resource).parents('dl').hasClass('storage')){
-            $('.lt-sidebar').find('a.chosen_flavor').removeClass('chosen_flavor');
-            select_flavor = 0;
-            }
-        }
-    }
+    $('.flavor .with-flavor a:not(.'+resource+')').removeClass('current');
+    $('.flavor .with-flavor a.'+resource+'').addClass('current');
+}
 
 
 ui.netOptions = function(option) {
@@ -364,23 +343,27 @@ $(document).ready(function(){
         }
     });
 
-
-    // create vm
-    // choose resources one by one
-    ui.select_flavor =0;
-    $('.select-flavor dl span').click(function(e){
+    // vm wizard pick flavor
+    $('.wizard .sub-menu a[data-size]').on( "click", function(e) {
         e.preventDefault();
-        ui.pickResources(this);
-        
-        
+        $(this).parents('.sub-menu').find('a').removeClass('current');
+        $(this).addClass('current');
+        ui.pickResources($(this).data('size')); 
     });
 
-    // create vm
-    // if a predefined flavor has been selected from the user, it highlights the proper resources 
-    $('.lt-sidebar li a.flavor_selection').click(function(e){
+    $('.wizard .flavor .options a').click(function(e){
         e.preventDefault();
-        ui.pickFlavor(this);        
-    });
+        $('.wizard .sub-menu a[data-size]').removeClass('current');
+        $(this).parents('.options').find('a').removeClass('current');
+        $(this).addClass('current');
+    })
+
+    $('.wizard .os > li').click(function(e){
+        e.preventDefault();
+        $('.wizard .os >li').removeClass('current');
+        $(this).addClass('current');
+    })
+
 
     // create network
     // checkbox: basic reaction on click (checked, unchecked)

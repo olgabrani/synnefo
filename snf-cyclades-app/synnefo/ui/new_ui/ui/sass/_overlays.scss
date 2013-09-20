@@ -53,17 +53,16 @@ body.with-overlay {
 		position: absolute;
 		right:$header-padding-horizontal;
 		top:50px;
-		font-size:25px;
-		color:$primary-color;
+		font-size:32px;
+		color:white;
 		&:hover {
-			color:white;
+			color:$primary-color;
 		}
 	}
 	.row {
 		.close {
 			position:static;
 			float:right;
-			padding-top:5px;
 		}
 	}
 	.overlay-div {
@@ -159,6 +158,10 @@ body.with-overlay {
 		height:$bar-height;
 		line-height: $bar-height;
 		.sub-menu {
+			display: none;
+			&[data-step="1"] {
+				display: block;
+			}
 			ul {
 				margin:0;
 				padding:0;
@@ -190,7 +193,14 @@ body.with-overlay {
 				li {
 					list-style: none outside none;
 					@extend .clearfix;
-					margin-bottom:1.5em;
+					padding:0.5em 0;
+					margin-bottom:0.5em;
+					&:hover {
+						background:lighten($overlay-color-top, 10%);
+					}
+					&.current {
+						background:$overlay-color-top;
+					}
 					.img-col {
 						float:left;
 						width:10%;
@@ -231,6 +241,104 @@ body.with-overlay {
 							}
 							dd {
 								margin:0 0 5px;
+							}
+						}
+					}
+				}
+			}
+			.flavor {
+				list-style: none outside none;
+				li {
+					list-style:none outside none;
+					margin-bottom:1.5em;
+					.title {
+						@extend .clearfix;
+						margin-bottom:emCalc(5px);
+						color:white;
+						vertical-align: top;
+						.icon {
+							display: block;
+							width:5%;
+							font-size:emCalc(40px);
+							float: left;
+						}
+						h2 {
+							font-size:emCalc(16px);
+							span {
+								font-weight:normal;
+							}
+							float:left;
+							width: 19%;
+							color:white;
+							margin-right:4%;
+							&:hover {
+								& + p {
+									visibility: visible;
+								}
+							}
+						}
+						p {
+							visibility: hidden;
+							float:left;
+							width:70%;
+							font-size:emCalc(12px);
+						}
+					}
+					.options-bar {
+						@extend .clearfix;
+						.bar {
+							width:24%;
+							float: left;
+							margin-right:4%;
+							height: 26px;
+							position: relative;
+							top:2px;
+							.wrap {
+								border:1px solid white;
+								padding:1px;
+								height: 100%;
+								.container {
+									height: 100%;
+									.total {
+										background:$primary-color;
+										height: 100%;
+										float:left;
+										position: relative;
+										.current {
+											background:white;
+											height: 100%;
+											float:left;
+										}
+										span {
+											position:absolute;
+											right:10px;
+											color:$black;
+											font-size: emCalc(12px);
+										}
+										&.low {
+											span {
+												right:-30px;
+												color:white;
+											}
+										}
+									}
+								}
+							}
+						}
+						.options {
+							overflow:hidden;
+							list-style: none outside none;
+							li {
+								list-style: none outside none;
+								display: inline-block;
+								margin-right: 10px;
+								a {
+									@extend .btn5;
+									min-width: 60px;
+									&.current {
+										color:$overlay-color;
+									}
+								}
 							}
 						}
 					}
@@ -309,12 +417,16 @@ body.with-overlay {
 				a {
 					color:$primary-color;
 					display: block;
+					&:hover {
+						cursor: default;
+					}
 				}
-				&:hover,&.current{
+				&.current{
 					border-color:white;
 					a {
 						color:white;
 					}
+
 				}
 				&.current {
 					font-size:emCalc(20px);

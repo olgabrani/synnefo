@@ -75,6 +75,8 @@ ui.wizard ={
 	},
 	// for the carousel index
 	indicate_step: function(step) {
+		$('.wizard .top .sub-menu[data-step]').hide();
+		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
 		$('.nums').children().find('a:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
 	}
@@ -89,6 +91,9 @@ ui.wizard.current_position =0;
 var new_vm_btn =$('.new-btn, .add-new');
 var prev_btn = $('.bottom').find('.nav.prev');
 var next_btn = $('.bottom').find('.nav.next');
+$('.wizard .nums').click(function(e){
+	e.preventDefault();
+})
 
 ui.wizard.initialize_relocation(new_vm_btn);
 ui.wizard.move_to_step(prev_btn, next_btn);
