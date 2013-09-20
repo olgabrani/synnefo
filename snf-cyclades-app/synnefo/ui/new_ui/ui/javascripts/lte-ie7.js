@@ -41,7 +41,8 @@ window.onload = function() {
 			'snf-lock_open' : '&#x47;',
 			'snf-modem' : '&#x48;',
 			'snf-www' : '&#x49;',
-			'snf-ram' : '&#x4a;'
+			'snf-ram' : '&#x4a;',
+			'snf-network_full' : '&#x4b;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
