@@ -379,6 +379,12 @@ $(document).ready(function(){
         $(this).parents('li').find('.details').slideToggle();
     })
 
+
+    $('.ssh-keys-area li span').click(function(e){
+        $(this).toggleClass('snf-checkbox-unchecked');
+        $(this).toggleClass('snf-checkbox-checked');
+    })
+
 })
 
 

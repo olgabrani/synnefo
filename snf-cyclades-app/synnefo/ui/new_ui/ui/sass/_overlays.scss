@@ -456,13 +456,18 @@ body.with-overlay {
 		font-weight: bold;
 	}
 	.adv-main {
-		height: 23em;
-		padding: 10px 0;
+		padding: 10px 0 30px;
+		width:$row-small;
 		.vm-name {
 			font-weight: bold;
 		}
-		.expand-arrow {
-			display: none;
+		.btn5 {
+			&:hover {
+				color:white;
+			}
+			&.current, &.current:hover {
+				color:$overlay-color;
+			}
 		}
 		input[type="text"] {
 			width: 200px;
@@ -480,22 +485,47 @@ body.with-overlay {
 }
 .advanced-conf-options {
 	display: none;
+	.area {
+		padding:30px 0;
+		.btn5{
+			&:hover {
+				color:white;
+			}
+		}
+	}
 	.ssh-keys-area {
 		background-color: $ssh-opt-area-color;
-		@include padding1-0();
+		.row{
+			width:$row-small;
+		}
+		ul {
+			li {
+				list-style: none outside none;
+				span {
+					margin-left:20px;
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+		}
 	}
 	.networks-area {
 		background-color: $net-opt-area-color;
-		@include padding1-0();
 		li.network-data {
 			ul.ips-list {
 				display:none;
 			}
 		}
+		.row{
+			width:$row-small;
+		}
 	}
 	.tags-area {
-		@include padding1-0();
 		background-color: $tag-opt-area-color;
+		.row{
+			width:$row-small;
+		}
 	}
 
 }
