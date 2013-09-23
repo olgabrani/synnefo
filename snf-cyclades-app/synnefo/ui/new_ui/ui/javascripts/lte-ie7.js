@@ -43,6 +43,10 @@ window.onload = function() {
 			'snf-www' : '&#x49;',
 			'snf-ram' : '&#x4a;',
 			'snf-network_full' : '&#x4b;'
+			'snf-arrow-up' : '&#x4c;',
+			'snf-arrow-down' : '&#x4e;',
+			'snf-arrow-up-2' : '&#x4f;',
+			'snf-arrow-down-2' : '&#x4d;' /* rename of snf-arrow-right */
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
