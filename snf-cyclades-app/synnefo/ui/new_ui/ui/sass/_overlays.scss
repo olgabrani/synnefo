@@ -43,7 +43,7 @@ body.with-overlay {
 		position:absolute;
 		left:0;
 		right:0;
-		top:0;
+		top:-$header-height;
 		width:100%;
 		height:100%;
 		background:$overlay-color;
@@ -54,9 +54,9 @@ body.with-overlay {
 		right:$header-padding-horizontal;
 		top:50px;
 		font-size:32px;
-		color:white;
+		color:$primary-color;
 		&:hover {
-			color:$primary-color;
+			color:white;
 		}
 	}
 	.row {
@@ -88,7 +88,7 @@ body.with-overlay {
 		}
 		&.wizard {
 			background:$overlay-color;
-			padding:0;
+			padding:0 ;
 			width:100%;
 			top:0;
 			left:0;
@@ -157,6 +157,11 @@ body.with-overlay {
 		background:$overlay-color-top;
 		height:$bar-height;
 		line-height: $bar-height;
+		position:fixed;
+		left:0;
+		top:$header-height;
+		width:100%;
+		z-index:40;
 		.sub-menu {
 			display: none;
 			&[data-step="1"] {
@@ -184,6 +189,7 @@ body.with-overlay {
 		}
 	}
 	.middle {
+		padding-top:$bar-height;
 		.step {
 			padding:50px 0;
 			float:left;
@@ -194,7 +200,6 @@ body.with-overlay {
 					list-style: none outside none;
 					@extend .clearfix;
 					padding:0.5em 0;
-					margin-bottom:0.5em;
 					&:hover {
 						background:lighten($overlay-color-top, 10%);
 					}

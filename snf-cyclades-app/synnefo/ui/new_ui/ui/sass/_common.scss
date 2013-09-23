@@ -200,6 +200,10 @@ html,body {
 	height:100%;
 }
 
+body {
+	padding-top:$header-height+$bar-height;
+}
+
 .overlay-wrapper {
 	min-height:100%;
 }
@@ -227,12 +231,17 @@ html,body {
 /* Header ----------------------------------------------- */
 
 .header {
-	position:relative;
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	width:100%;
 	height:$header-height;
 	line-height:$header-height;
 	padding:0 $header-padding-horizontal;
 	border-bottom:1px solid $primary-color;
-	background:#fff;
+	background:white;
+	z-index:100;
 	.icons-nav {
 		position:absolute;
 		left:$header-padding-horizontal - $icons-nav-margin-horizontal;
@@ -266,10 +275,15 @@ html,body {
 /* Actions Bar ----------------------------------------------- */
 
 .actions-bar {
+	position:fixed;
+	left:0;
+	top:$header-height;
+	width:100%;
+	z-index:15;
 	text-align:center;
 	height:$bar-height;
 	line-height:$bar-height;
-	position:relative;
+	background:white;
 	border-bottom:1px solid $primary-color;
 	.row {
 		position: relative;
