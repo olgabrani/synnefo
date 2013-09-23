@@ -1,0 +1,128 @@
+// Global Foundation Settings
+@import "settings";
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+
+
+$ssh-opt-area-color: #ff7049;
+$net-opt-area-color: #ff948c;
+$tag-opt-area-color: #4c71ff;
+$wizard-base-font-color: white;
+$wizard-expand-link: rgb(233, 230, 230); //spasmeno aspro
+$wizard-paragraph-font-size: 10px;
+$wizard-common-font-size: 16px;
+@mixin adv-conf-padding {
+	padding: 35px 200px 80px;
+}
+
+
+.advanced-conf-step {
+	color: $wizard-base-font-color;
+
+	h2 {
+		color: $wizard-base-font-color;
+		font-size: $wizard-common-font-size;
+		font-weight: bold;
+	}
+
+	p {
+		font-size: $wizard-paragraph-font-size;
+	}
+
+	ul {
+		list-style-type: none;
+	}
+
+	.checkbox-label {
+		margin-right:15px;
+		display: inline-block;
+		color: $wizard-base-font-color;
+		font-size: $wizard-common-font-size;
+
+	}
+	.icon {
+		font-size: 24px;
+		margin: 2px;
+		color: $wizard-base-font-color;
+	}
+
+	// Upper area with the name of the vm and a button for configuration options			
+	.adv-main {
+		padding: 65px 200px 0;
+		
+
+		.vm-name {
+			
+			.label-vm-name {
+				font-weight: bold;
+				color: $wizard-base-font-color;
+				font-size: 16px;
+			}
+			input[type="text"] {
+
+				width: 200px;
+				border: 0;
+				border-bottom: 1px solid $wizard-base-font-color;
+				background-color: $overlay-color;
+				outline: 0;
+				color: $wizard-base-font-color;
+				//to be improved!!!!
+				-webkit-box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
+				-moz-box-shadow:    7px 7px 0px rgba(72, 80, 87, 0);
+				box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
+			}
+		}
+
+
+
+		.expand-btn {
+			padding-top: 50px;
+			padding-bottom: 20px;
+			
+			.expand-link {
+				color: $wizard-expand-link;
+				&:hover {
+					color: $wizard-base-font-color;
+				}
+				&.current {
+				color:$wizard-base-font-color;
+				}
+			}
+		}
+	}
+
+	// all the the areas that have the advanced options
+	.advanced-conf-options {
+		display: none;
+		.ssh-keys-area {
+			background-color: $ssh-opt-area-color;
+			@include adv-conf-padding();
+		}
+
+		.networks-area {
+			background-color: $net-opt-area-color;
+			@include adv-conf-padding();
+			li.network-data {
+				.net-icons {
+				/*	position: absolute;
+					left: -10px;
+					text-align: right; */
+				}
+				ul.ips-list {
+					display:none;
+					background-color: $wizard-base-font-color;
+					color: $net-opt-area-color;
+					margin: 0;
+
+				}
+			}
+		}
+
+		.tags-area {
+			@include adv-conf-padding();
+			background-color: $tag-opt-area-color;
+		}
+
+	}
+}
+

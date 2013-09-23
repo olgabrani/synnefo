@@ -155,13 +155,15 @@ you can use the generic selector below, but it"s slower:
 .snf-arrow-up:before {
 	content: "\4c";
 }
+
 .snf-arrow-down:before {
-	content: "\4e";
+	content: "\4d";
 }
+
 .snf-arrow-up-2:before {
 	content: "\4f";
 }
 
 .snf-arrow-down-2:before {
-	content: "\4d";
+	content: "\4e";
 }

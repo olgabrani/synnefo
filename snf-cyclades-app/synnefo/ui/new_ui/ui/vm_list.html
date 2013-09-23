@@ -10,6 +10,7 @@
     <title>Synnefo | VM list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/temp.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
@@ -36,7 +37,7 @@
 	</header>
 	<div class="overlay-wrapper">
 		<div class="overlay-area">
-			<a href="" class="close"><a href="" class="close"><span class="snf-close"></span></a></a>
+			<a href="" class="close"><span class="snf-close"></span></a>
 			<div id="overlay1" class="overlay-div">
 				<p>Are you sure you want to reboot your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
@@ -454,7 +455,7 @@
 										<li>
 											<div class="title">
 												<span class="snf-HDD icon"></span>
-												<h2>Storage</span></h2>
+												<h2>Storage</h2>
 												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
 											</div>
 											<div class="options-bar">
@@ -478,34 +479,50 @@
 									</ul>
 								</div>
 							</div>
-							<!--step 3 -->
+<!--step 3 -->
 							<div class="step step-3">
 								<div class="advanced-conf-step">
-									<div class="adv-main row">
-										<div class="vm-name">Machine name</div>
+									<div class="adv-main">
+										<div class="vm-name">
+										<label class="label-vm-name">Machine name</label>
 										<input type="text" value="My Ubuntu Server">
-										<div><a class="btn5" href="">Advanced Configuration</a></div>
+									</div>
+									<div class="expand-btn">
+										<a class="expand-link" href="">
+											Advanced Configuration 
+											<span class="snf-arrow-down"></span>
+										</a>
+									</div>
 									</div>
 									<div class="advanced-conf-options">
 										<div class="ssh-keys-area area">
 											<div class="row">
-												<h2>Public SSH</h2>
+												<h2>Public SSH keys</h2>
 												<p>Your account contains the following SSH public keys. Select one or more to activate in your new machine. You will then be able to ssh with the corresponding private key without a password."</p>
 												<ul>
-													<li>My public key long name one <span class="snf-checkbox-unchecked"></span></li>
-													<li>My public key long name one <span class="snf-checkbox-unchecked"></span></li>
-													<li>My public key long name one <span class="snf-checkbox-unchecked"></span></li>
+													<li><label class="checkbox-label">My public key long name one </label><span class="snf-checkbox-unchecked"></span></li>
+													<li><label class="checkbox-label">My public key long name one </label><span class="snf-checkbox-unchecked"></span></li>
+													<li><label class="checkbox-label">My public key long name one </label><span class="snf-checkbox-unchecked"></span></li>
 												</ul>
-												<div><a href="" class="btn5">...show more keys<a/></div>
+												<div>
+													<a href="" class="btn5">... show more keys</a>
+												</div>
 											</div>
 										</div>
+
 										<div class="networks-area area">
 											<div class="row">
 												<h2>Networks</h2>
 												<ul>
 													<li class="network-data">
+														<span class="net-icons">
+															<span class="snf-www icon"></span>
+															<span class="snf-network_full icon"></span>
+														</span>
 														<span>Public Network</span>
-														<span><a class="select-network snf-checkbox-unchecked" href=""></a></span>
+														<span>
+															<a class="select-network snf-checkbox-unchecked" href=""></a>
+														</span>
 														<ul class="ips-list row">
 															<li>
 																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
@@ -519,8 +536,15 @@
 														</ul>
 													</li>
 													<li class="network-data">
-														<span>Public Network</span>
-														<span><a class="select-network snf-checkbox-unchecked" href=""></a></span>
+														<span class="net-icons">
+															<span class="snf-www icon"></span>
+															<span class="snf-network_full icon"></span>
+															<span class="snf-modem icon"></span>
+														</span>
+														<span>Routed Network Network</span>
+														<span>
+															<a class="select-network snf-checkbox-unchecked" href=""></a>
+														</span>
 														<ul class="ips-list row">
 															<li>
 																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
@@ -534,8 +558,13 @@
 														</ul>
 													</li>
 													<li class="network-data">
-														<span>Public Network</span>
-														<span><a class="select-network snf-checkbox-unchecked" href=""></a></span>
+														<span class="net-icons">
+															<span class="snf-network_full icon"></span>
+														</span>
+														<span>Private Network 1</span>
+														<span>
+															<a class="select-network snf-checkbox-unchecked" href=""></a>
+														</span>
 														<ul class="ips-list row">
 															<li>
 																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
@@ -548,8 +577,13 @@
 														</ul>
 													</li>
 													<li class="network-data">
-														<span>Public Network</span>
-														<span><a class="select-network snf-checkbox-unchecked" href=""></a></span>
+														<span class="net-icons">
+															<span class="snf-network_full icon"></span>
+														</span>
+														<span>Private Network 2</span>
+														<span>
+															<a class="select-network snf-checkbox-unchecked" href=""></a>
+														</span>
 														<ul class="ips-list row">
 															<li>
 																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
@@ -563,22 +597,7 @@
 
 														</ul>
 													</li>
-													<li class="network-data">
-														<span>Public Network</span>
-														<span><a class="select-network snf-checkbox-unchecked" href=""></a></span>
-														<ul class="ips-list row">
-															<li>
-																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
-															</li>
-															<li>
-																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
-															</li>
-															<li>
-																192.168.2.3 <span class=""><a class ="select-ip snf-checkbox-unchecked"></a></span>
-															</li>
-
-														</ul>
-													</li>
+												
 													<li class="more-networks">
 														<span>...</span>
 													</li>
@@ -600,7 +619,7 @@
 										</div>
 									</div>
 								</div>
-<!--step 3 -->				</div>
+<!-- end step 3 -->				</div>
 							<div class="step step-4">test4</div>
 						</div>
 					</div>
@@ -619,6 +638,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<section class="actions-bar clearfix">
 			<div class="row">
 				<div class="new-btn"><a href="" data-overlay-id="#vm-wizard"><span>+</span> NEW MACHINE </a></div>
@@ -745,7 +765,8 @@
 				</ul>
 			</div>
 		</section>
-	</div>
+		</div>
+	
 	<div id="vm-connect" class="reveal-modal medium">
   		<p>A direct connection to this machine can be established using the <a target=​"_blank" href="http://en.wikipedia.org/wiki/Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
 		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
@@ -754,6 +775,7 @@
 		<p>Alternatively you can connect to your VM via <a href="">Console</a> (slow connection - meant only for troubleshooting.</p>
   		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
+
 	<script src="javascripts/vendor/jquery.js"></script>
 	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
 	<script src="javascripts/foundation/foundation.js"></script>
@@ -786,8 +808,8 @@
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
-	<script src="javascripts/common.js"></script>
 	<script src="javascripts/temp.js"></script>
+	<script src="javascripts/common.js"></script>
 	<script type="text/javascript" src="javascripts/vm-wizard.js"></script>
 	
 	  
