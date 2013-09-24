@@ -33,6 +33,7 @@ ui.wizard ={
 	
 
 	move_to_step: function(prev_btn, next_btn) {
+		var speed =500;
 		// when the button "next" is pressed show the next step (if there is a next step)
 		next_btn.click(function(){
 			event.preventDefault();
@@ -41,8 +42,14 @@ ui.wizard ={
 				prev_btn.find('span').html('PREVIOUS');
 				ui.wizard.current_step++;
 				ui.wizard.current_position -=ui.wizard.relocation;
-				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, 500);
+				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
 				ui.wizard.indicate_step(ui.wizard.current_step);
+				ui.wizard.set_movement_tags(ui.wizard.current_step, prev_btn, next_btn);
+
+				if(ui.wizard.current_step == 3) {
+					setTimeout(function() { $('.vm-name').find('input').focus() }, speed/2);
+				}
+
 			}
 			else {
 				console.log('This is the last step.');
@@ -55,8 +62,9 @@ ui.wizard ={
 			if(ui.wizard.current_step > 1){
 				ui.wizard.current_step--;
 				ui.wizard.current_position +=ui.wizard.relocation;
-				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, 500);
+				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
 				ui.wizard.indicate_step(ui.wizard.current_step);
+				ui.wizard.set_movement_tags(ui.wizard.current_step, prev_btn, next_btn);
 			}
 			else {
 				console.log('This is the 1st step.')
@@ -79,6 +87,20 @@ ui.wizard ={
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
 		$('.nums').children().find('a:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
+	},
+
+
+	set_movement_tags: function(step, left_btn, right_btn) {
+		if (step==1) {
+			left_btn.find('span').html('CANCEL');
+		}
+		else if(step==ui.wizard.vm.total_step) {
+			right_btn.find('span').html('CREATE');
+		}
+		else {
+			left_btn.find('span').html('PREVIOUS');
+			right_btn.find('span').html('NEXT');
+		}
 	}
 }
 
@@ -97,5 +119,7 @@ $(document).ready(function(){
 
 	ui.wizard.initialize_relocation(new_vm_btn);
 	ui.wizard.move_to_step(prev_btn, next_btn);
+	ui.wizard.set_movement_tags(ui.wizard.current_step, prev_btn, next_btn);
+
 
 });
