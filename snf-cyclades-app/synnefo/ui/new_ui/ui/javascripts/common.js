@@ -375,16 +375,13 @@ $(document).ready(function(){
     ui.placementByUser();
     $('.os .btn-col a').click( function(e){
         e.preventDefault();
+        e.stopPropagation();
         $(this).toggleClass('current');
         $(this).parents('li').find('.details').slideToggle();
     })
-
-
-    $('.ssh-keys-area li span').click(function(e){
-        $(this).toggleClass('snf-checkbox-unchecked');
-        $(this).toggleClass('snf-checkbox-checked');
-    })
-
+/* $('.advanced-conf-options .checkbox').click(function(e){
+        $(this).find('span').toggleClass('snf-checkbox-unchecked, snf-checkbox-checked');
+    })*/
 })
 
 

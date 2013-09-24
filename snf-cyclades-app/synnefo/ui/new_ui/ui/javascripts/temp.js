@@ -19,15 +19,4 @@
     $(this).parents('li.network-data').find('.ips-list').slideToggle();
     })
 
- $('.ssh-keys-area li span').click(function(e){
-        e.preventDefault();
-        checkbox = $(this);
-        console.log('iiii!!! you clicked me!!');
-        console.log($(this));
-        checkbox.toggleClass('snf-checkbox-unchecked');
-        console.log('qq');
-        checkbox.toggleClass('snf-checkbox-checked');
-    })
-
-
 })

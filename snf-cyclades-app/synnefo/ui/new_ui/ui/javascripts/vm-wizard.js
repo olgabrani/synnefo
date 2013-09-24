@@ -38,9 +38,10 @@ ui.wizard ={
 			event.preventDefault();
 			console.log('you clicked next!')
 			if(ui.wizard.current_step < ui.wizard.vm.total_step){
+				prev_btn.find('span').html('PREVIOUS');
 				ui.wizard.current_step++;
 				ui.wizard.current_position -=ui.wizard.relocation;
-				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, 1000);
+				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, 500);
 				ui.wizard.indicate_step(ui.wizard.current_step);
 			}
 			else {
@@ -51,11 +52,10 @@ ui.wizard ={
 		// when the button "previous" is pressed show the previous step (if there is a previous step)
 		prev_btn.click(function(){
 			event.preventDefault();
-			console.log('you clicked previous!');
 			if(ui.wizard.current_step > 1){
 				ui.wizard.current_step--;
 				ui.wizard.current_position +=ui.wizard.relocation;
-				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, 1000);
+				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, 500);
 				ui.wizard.indicate_step(ui.wizard.current_step);
 			}
 			else {
@@ -85,18 +85,17 @@ ui.wizard ={
 
 $(document).ready(function(){
 
-ui.wizard.current_step =1;
-ui.wizard.current_position =0;
+	ui.wizard.current_step =1;
+	ui.wizard.current_position =0;
 
-var new_vm_btn =$('.new-btn, .add-new');
-var prev_btn = $('.bottom').find('.nav.prev');
-var next_btn = $('.bottom').find('.nav.next');
-$('.wizard .nums').click(function(e){
-	e.preventDefault();
-})
+	var new_vm_btn =$('.new-btn, .add-new');
+	var prev_btn = $('.bottom').find('.nav.prev');
+	var next_btn = $('.bottom').find('.nav.next');
+	$('.wizard .nums').click(function(e){
+		e.preventDefault();
+	})
 
-ui.wizard.initialize_relocation(new_vm_btn);
-ui.wizard.move_to_step(prev_btn, next_btn);
-
+	ui.wizard.initialize_relocation(new_vm_btn);
+	ui.wizard.move_to_step(prev_btn, next_btn);
 
 });

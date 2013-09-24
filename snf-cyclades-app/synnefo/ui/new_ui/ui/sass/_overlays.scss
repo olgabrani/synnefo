@@ -43,7 +43,7 @@ body.with-overlay {
 		position:absolute;
 		left:0;
 		right:0;
-		top:-$header-height;
+		top:-$bar-height;
 		width:100%;
 		height:100%;
 		background:$overlay-color;
@@ -492,28 +492,36 @@ body.with-overlay {
 	display: none;
 	.area {
 		padding:30px 0;
+		.row {
+			width:$row-small;
+		}
 		.btn5{
 			&:hover {
 				color:white;
 			}
 		}
-	}
-	.ssh-keys-area {
-		background-color: $ssh-opt-area-color;
-		.row{
-			width:$row-small;
-		}
 		ul {
 			li {
-				list-style: none outside none;
-				span {
-					margin-left:20px;
+				list-style:none outside none;
+				margin-bottom:7px;
+				&.checkbox {
 					&:hover {
 						cursor: pointer;
 					}
 				}
+				h3 {
+					width: $conf-area-h-width;
+					color:white;
+					font-size:1em;
+					font-weight: normal;
+					margin:0 20px 0 0;
+					display: inline-block;
+				}
 			}
 		}
+	}
+	.ssh-keys-area {
+		background-color: $ssh-opt-area-color;
 	}
 	.networks-area {
 		background-color: $net-opt-area-color;
@@ -522,15 +530,9 @@ body.with-overlay {
 				display:none;
 			}
 		}
-		.row{
-			width:$row-small;
-		}
 	}
 	.tags-area {
 		background-color: $tag-opt-area-color;
-		.row{
-			width:$row-small;
-		}
 	}
 
 }
