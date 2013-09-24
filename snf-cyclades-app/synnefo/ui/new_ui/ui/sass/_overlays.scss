@@ -349,6 +349,36 @@ body.with-overlay {
 					}
 				}
 			}
+			.summary {
+				.row {
+					padding-top:1em;
+					margin-top:1em;
+					border-top:1px solid white;
+					&:first-child {
+						border-top:0 none;
+					}
+				}
+				h2 {
+					font-size:1em;
+					color:white;
+				}
+				dl {
+					margin-bottom:0;
+					span {
+						margin-right:10px;
+						font-size:20px;
+					}
+					dt {
+						display: inline-block;
+						width: 45%;
+						vertical-align: top;
+					}
+					dd {
+						display: inline-block;
+						width:45%;
+					}
+				}
+			}
 		}
 	}
 	.bottom {
