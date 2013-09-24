@@ -6787,48 +6787,26 @@ a.th {
   max-width: 800px;
 }
 
-/* line 19, ../sass/temp.scss */
-.advanced-conf-step {
-  color: white;
-}
-/* line 22, ../sass/temp.scss */
-.advanced-conf-step h2 {
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-}
-/* line 28, ../sass/temp.scss */
-.advanced-conf-step p {
-  font-size: 10px;
-}
-/* line 32, ../sass/temp.scss */
-.advanced-conf-step ul {
-  list-style-type: none;
-}
-/* line 36, ../sass/temp.scss */
+/* line 20, ../sass/temp.scss */
 .advanced-conf-step .checkbox-label {
   margin-right: 15px;
   display: inline-block;
   color: white;
   font-size: 16px;
 }
-/* line 43, ../sass/temp.scss */
+/* line 27, ../sass/temp.scss */
 .advanced-conf-step .icon {
   font-size: 24px;
   margin: 2px;
   color: white;
 }
-/* line 50, ../sass/temp.scss */
-.advanced-conf-step .adv-main {
-  padding: 65px 200px 0;
-}
-/* line 56, ../sass/temp.scss */
+/* line 38, ../sass/temp.scss */
 .advanced-conf-step .adv-main .vm-name .label-vm-name {
   font-weight: bold;
   color: white;
   font-size: 16px;
 }
-/* line 61, ../sass/temp.scss */
+/* line 43, ../sass/temp.scss */
 .advanced-conf-step .adv-main .vm-name input[type="text"] {
   width: 200px;
   border: 0;
@@ -6840,52 +6818,20 @@ a.th {
   -moz-box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
   box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
 }
-/* line 78, ../sass/temp.scss */
+/* line 58, ../sass/temp.scss */
 .advanced-conf-step .adv-main .expand-btn {
   padding-top: 50px;
   padding-bottom: 20px;
 }
-/* line 82, ../sass/temp.scss */
+/* line 62, ../sass/temp.scss */
 .advanced-conf-step .adv-main .expand-btn .expand-link {
   color: #e9e6e6;
 }
-/* line 84, ../sass/temp.scss */
+/* line 64, ../sass/temp.scss */
 .advanced-conf-step .adv-main .expand-btn .expand-link:hover {
   color: white;
 }
-/* line 87, ../sass/temp.scss */
+/* line 67, ../sass/temp.scss */
 .advanced-conf-step .adv-main .expand-btn .expand-link.current {
   color: white;
-}
-/* line 95, ../sass/temp.scss */
-.advanced-conf-step .advanced-conf-options {
-  display: none;
-}
-/* line 97, ../sass/temp.scss */
-.advanced-conf-step .advanced-conf-options .ssh-keys-area {
-  background-color: #ff7049;
-  padding: 35px 200px 80px;
-}
-/* line 102, ../sass/temp.scss */
-.advanced-conf-step .advanced-conf-options .networks-area {
-  background-color: #ff948c;
-  padding: 35px 200px 80px;
-}
-/* line 106, ../sass/temp.scss */
-.advanced-conf-step .advanced-conf-options .networks-area li.network-data .net-icons {
-  /*	position: absolute;
-  	left: -10px;
-  	text-align: right; */
-}
-/* line 111, ../sass/temp.scss */
-.advanced-conf-step .advanced-conf-options .networks-area li.network-data ul.ips-list {
-  display: none;
-  background-color: white;
-  color: #ff948c;
-  margin: 0;
-}
-/* line 121, ../sass/temp.scss */
-.advanced-conf-step .advanced-conf-options .tags-area {
-  padding: 35px 200px 80px;
-  background-color: #4c71ff;
 }

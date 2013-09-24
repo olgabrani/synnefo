@@ -9,7 +9,7 @@ $net-opt-area-color: #ff948c;
 $tag-opt-area-color: #4c71ff;
 $wizard-base-font-color: white;
 $wizard-expand-link: rgb(233, 230, 230); //spasmeno aspro
-$wizard-paragraph-font-size: 10px;
+
 $wizard-common-font-size: 16px;
 @mixin adv-conf-padding {
 	padding: 35px 200px 80px;
@@ -17,22 +17,6 @@ $wizard-common-font-size: 16px;
 
 
 .advanced-conf-step {
-	color: $wizard-base-font-color;
-
-	h2 {
-		color: $wizard-base-font-color;
-		font-size: $wizard-common-font-size;
-		font-weight: bold;
-	}
-
-	p {
-		font-size: $wizard-paragraph-font-size;
-	}
-
-	ul {
-		list-style-type: none;
-	}
-
 	.checkbox-label {
 		margin-right:15px;
 		display: inline-block;
@@ -48,8 +32,6 @@ $wizard-common-font-size: 16px;
 
 	// Upper area with the name of the vm and a button for configuration options			
 	.adv-main {
-		padding: 65px 200px 0;
-		
 
 		.vm-name {
 			
@@ -73,8 +55,6 @@ $wizard-common-font-size: 16px;
 			}
 		}
 
-
-
 		.expand-btn {
 			padding-top: 50px;
 			padding-bottom: 20px;
@@ -89,40 +69,6 @@ $wizard-common-font-size: 16px;
 				}
 			}
 		}
-	}
-
-	// all the the areas that have the advanced options
-	.advanced-conf-options {
-		display: none;
-		.ssh-keys-area {
-			background-color: $ssh-opt-area-color;
-			@include adv-conf-padding();
-		}
-
-		.networks-area {
-			background-color: $net-opt-area-color;
-			@include adv-conf-padding();
-			li.network-data {
-				.net-icons {
-				/*	position: absolute;
-					left: -10px;
-					text-align: right; */
-				}
-				ul.ips-list {
-					display:none;
-					background-color: $wizard-base-font-color;
-					color: $net-opt-area-color;
-					margin: 0;
-
-				}
-			}
-		}
-
-		.tags-area {
-			@include adv-conf-padding();
-			background-color: $tag-opt-area-color;
-		}
-
 	}
 }
 

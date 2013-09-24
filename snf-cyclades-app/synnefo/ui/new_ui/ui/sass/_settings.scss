@@ -105,7 +105,7 @@ $btn-height:30px;
 
 $row-full-width:100%;
 $row-width: emCalc(1200px);
-$row-small: emCalc(760px);
+$row-small: emCalc(600px);
 
 $conf-area-h-width: emCalc(300px);
 // $column-gutter: 1.875em;
@@ -126,6 +126,7 @@ $conf-area-h-width: emCalc(300px);
 // Typography Variables
 //
 
+$wizard-paragraph-font-size: 10px;
 // We use these to control header font styles
 $header-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $header-font-weight: bold;

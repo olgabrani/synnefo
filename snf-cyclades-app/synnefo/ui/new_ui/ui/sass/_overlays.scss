@@ -367,41 +367,49 @@ body.with-overlay {
 			line-height: $bar-height;
 			color:white;
 			display: inline-block;
+			position: relative;
+			top:($bar-height - 30px)/2;
 			span {
 				display: inline-block;
 				height: 30px;
 				line-height:30px;
-				border:1px solid white;
-			}
-			&:hover {
-				span {
-					border-width:2px;
-					line-height:28px;
-				}
+				float: left;
 			}
 		}
 		.prev {
 			float:left;
-			padding-left:11px;
-			background:url('../images/nav-edge-lt.png') no-repeat left center;
+			height:30px;
+			padding-left:19px;
+			background:url('../images/nav-edge-lt.png') no-repeat left top;
 			span {
-				padding:0 12px 0 10px;
-				border-left:0 none;
+				padding-right:10px;
+				background:url('../images/nav-lt.png') no-repeat right top;
 			}
 			&:hover {
-				background-image:url('../images/nav-edge-lt-hover.png');
+				background-position:left bottom;
+				@include transition(background, 0, ease-out);
+				span {
+					background-position:right bottom;
+					@include transition(background, 0, ease-out);
+				}
 			}
 		}
 		.next {
 			float:right;
-			padding-right:11px;
-			background:url('../images/nav-edge-rt.png') no-repeat right center;
+			height:30px;
+			padding-right:19px;
+			background:url('../images/nav-edge-rt.png') no-repeat right top;
 			span {
-				padding:0 10px 0 12px;
-				border-right:0 none;
+				padding-left:10px;
+				background:url('../images/nav-rt.png') no-repeat left top;
 			}
 			&:hover {
-				background-image:url('../images/nav-edge-rt-hover.png');
+				background-position:right bottom;
+				@include transition(background, 0, ease-out);
+				span {
+					background-position:left bottom;
+					@include transition(background, 0, ease-out);
+				}
 			}
 		}
 		.nums {
@@ -457,8 +465,11 @@ body.with-overlay {
 	color: $wizard-base-font-color;
 	h2 {
 		color: $wizard-base-font-color;
-		font-size: 16px;
-		font-weight: bold;
+		font-size: 1em;
+		margin:0 auto 1em;
+	}
+	p {
+		font-size: $wizard-paragraph-font-size;
 	}
 	.adv-main {
 		padding: 10px 0 30px;
@@ -502,6 +513,7 @@ body.with-overlay {
 		}
 		ul {
 			li {
+				position: relative;
 				list-style:none outside none;
 				margin-bottom:7px;
 				&.checkbox {
@@ -525,11 +537,40 @@ body.with-overlay {
 	}
 	.networks-area {
 		background-color: $net-opt-area-color;
-		li.network-data {
-			ul.ips-list {
-				display:none;
+		li {
+			.net-icons {
+				padding-right:20px;
+				position:absolute;
+				left:-200px;
+				top:-12px;
+				width:200px;
+				text-align: right;
+				font-size:30px;
+				span {
+					margin-left:6px;
+					&.snf-modem {
+						position: relative;
+						top:-6px;
+					}
+				}
+			}
+			&.more {
+				display: none;
+				background:white;
+				margin-bottom:1em;
+				padding:30px 0;
+				color:$net-opt-area-color;
+				h3 {
+					color:$net-opt-area-color;
+				}
+				.btn5 {
+					margin-top:1em;
+					border-color:$net-opt-area-color;
+					color:$net-opt-area-color;
+				}
 			}
 		}
+
 	}
 	.tags-area {
 		background-color: $tag-opt-area-color;

@@ -379,9 +379,15 @@ $(document).ready(function(){
         $(this).toggleClass('current');
         $(this).parents('li').find('.details').slideToggle();
     })
-/* $('.advanced-conf-options .checkbox').click(function(e){
-        $(this).find('span').toggleClass('snf-checkbox-unchecked, snf-checkbox-checked');
-    })*/
+
+    $('.advanced-conf-options .checkbox').click(function(e){
+        console.log($(this).find('span'));
+        $(this).find('h3').next('span').toggleClass('snf-checkbox-unchecked snf-checkbox-checked ');
+    })
+
+    $('.advanced-conf-options .has-more').click(function(e){
+        $(this).next('.more').slideToggle();
+    })
 })
 
 
