@@ -94,8 +94,13 @@
 		right:$header-padding-horizontal;
 		top:$header-padding-horizontal+emCalc(43px);
 		span {
-			font-size:emCalc(32px);
+			font-size:32px;
 		}	
+		&:hover {
+			span {
+				color:darken($primary-color,10%);
+			}
+		}
 	}
 	.graph_container {
 		padding-bottom: 2em;

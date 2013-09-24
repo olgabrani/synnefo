@@ -191,7 +191,7 @@ body.with-overlay {
 	.middle {
 		padding-top:$bar-height;
 		.step {
-			padding:50px 0;
+			padding:50px 0 (50px + $bar-height);
 			float:left;
 			position:relative;
 			width:$row-width;
@@ -379,6 +379,120 @@ body.with-overlay {
 					}
 				}
 			}
+			.advanced-conf-step {
+				color: $wizard-base-font-color;
+				h2 {
+					color: $wizard-base-font-color;
+					font-size: 1em;
+					margin:0 auto 1em;
+				}
+				p {
+					font-size: $wizard-paragraph-font-size;
+				}
+				.expand-btn {
+					margin: 50px 0 30px;
+					a {
+						color:white;
+					}
+				}
+				.adv-main {
+					padding: 10px 0 30px;
+					width:$row-small;
+					.vm-name {
+						h2 {
+							color:white;
+							font-size:1em;
+							margin-bottom:0.5em;
+						}
+					}
+					.btn5 {
+						&:hover {
+							color:white;
+						}
+						&.current, &.current:hover {
+							color:$overlay-color;
+						}
+					}
+				}
+				.advanced-conf-options {
+					display: none;
+					.area {
+						padding:30px 0;
+						.row {
+							width:$row-small;
+						}
+						.btn5{
+							&:hover {
+								color:white;
+							}
+						}
+						ul {
+							li {
+								position: relative;
+								list-style:none outside none;
+								margin-bottom:7px;
+								&.checkbox {
+									&:hover {
+										cursor: pointer;
+									}
+								}
+								h3 {
+									width: $conf-area-h-width;
+									color:white;
+									font-size:1em;
+									font-weight: normal;
+									margin:0 20px 0 0;
+									display: inline-block;
+								}
+							}
+						}
+					}
+					.ssh-keys-area {
+						background-color: $ssh-opt-area-color;
+					}
+					.networks-area {
+						background-color: $net-opt-area-color;
+						li {
+							.net-icons {
+								padding-right:20px;
+								position:absolute;
+								left:-200px;
+								top:-12px;
+								width:200px;
+								text-align: right;
+								font-size:30px;
+								span {
+									margin-left:6px;
+									&.snf-modem {
+										position: relative;
+										top:-6px;
+									}
+								}
+							}
+							&.more {
+								display: none;
+								background:white;
+								margin-bottom:1em;
+								padding:30px 0;
+								color:$net-opt-area-color;
+								h3 {
+									color:$net-opt-area-color;
+								}
+								.btn5 {
+									margin-top:1em;
+									border-color:$net-opt-area-color;
+									color:$net-opt-area-color;
+								}
+							}
+						}
+
+					}
+					.tags-area {
+						background-color: $tag-opt-area-color;
+					}
+
+				}
+			}
 		}
 	}
 	.bottom {
@@ -488,122 +602,4 @@ body.with-overlay {
 .vm-wizard-carousel {
 	width: 20000px;
 	position:relative;
-}
-
-// step3 vm wizard
-.advanced-conf-step {
-	color: $wizard-base-font-color;
-	h2 {
-		color: $wizard-base-font-color;
-		font-size: 1em;
-		margin:0 auto 1em;
-	}
-	p {
-		font-size: $wizard-paragraph-font-size;
-	}
-	.adv-main {
-		padding: 10px 0 30px;
-		width:$row-small;
-		.vm-name {
-			font-weight: bold;
-		}
-		.btn5 {
-			&:hover {
-				color:white;
-			}
-			&.current, &.current:hover {
-				color:$overlay-color;
-			}
-		}
-		input[type="text"] {
-			width: 200px;
-			border: 0;
-			border-bottom: 1px solid $wizard-base-font-color;
-			background-color: $overlay-color;
-			outline: 0;
-			color: $wizard-base-font-color;
-			//to be improved!!!!
-			-webkit-box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
-			-moz-box-shadow:    7px 7px 0px rgba(72, 80, 87, 0);
-			box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
-		}
-	}
-}
-.advanced-conf-options {
-	display: none;
-	.area {
-		padding:30px 0;
-		.row {
-			width:$row-small;
-		}
-		.btn5{
-			&:hover {
-				color:white;
-			}
-		}
-		ul {
-			li {
-				position: relative;
-				list-style:none outside none;
-				margin-bottom:7px;
-				&.checkbox {
-					&:hover {
-						cursor: pointer;
-					}
-				}
-				h3 {
-					width: $conf-area-h-width;
-					color:white;
-					font-size:1em;
-					font-weight: normal;
-					margin:0 20px 0 0;
-					display: inline-block;
-				}
-			}
-		}
-	}
-	.ssh-keys-area {
-		background-color: $ssh-opt-area-color;
-	}
-	.networks-area {
-		background-color: $net-opt-area-color;
-		li {
-			.net-icons {
-				padding-right:20px;
-				position:absolute;
-				left:-200px;
-				top:-12px;
-				width:200px;
-				text-align: right;
-				font-size:30px;
-				span {
-					margin-left:6px;
-					&.snf-modem {
-						position: relative;
-						top:-6px;
-					}
-				}
-			}
-			&.more {
-				display: none;
-				background:white;
-				margin-bottom:1em;
-				padding:30px 0;
-				color:$net-opt-area-color;
-				h3 {
-					color:$net-opt-area-color;
-				}
-				.btn5 {
-					margin-top:1em;
-					border-color:$net-opt-area-color;
-					color:$net-opt-area-color;
-				}
-			}
-		}
-
-	}
-	.tags-area {
-		background-color: $tag-opt-area-color;
-	}
-
 }

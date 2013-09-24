@@ -10,7 +10,6 @@
     <title>Synnefo | VM list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
-    <link rel="stylesheet" href="stylesheets/temp.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
@@ -374,6 +373,13 @@
 							</div>
 							<div class="step step-2">
 								<div class="row">
+									<form class="custom">
+									  <select id="" class="medium">
+									    <option>Assign to project</option>
+									    <option>Project 2</option>
+									    <option>Project 3</option>
+									  </select>
+									</form>
 									<ul class="flavor">
 										<li>
 											<div class="title">
@@ -476,8 +482,8 @@
 								<div class="advanced-conf-step">
 									<div class="adv-main row">
 										<div class="vm-name">
-											<label class="label-vm-name">Machine name</label>
-											<input type="text" value="My Ubuntu Server">
+											<h2>Machine name</h2>
+											<span class="input"><input type="text" value="My Ubuntu Server"></span>
 										</div>
 										<div class="expand-btn">
 											<a class="expand-link" href="">
@@ -815,11 +821,8 @@
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
-	<script src="javascripts/temp.js"></script>
 	<script src="javascripts/common.js"></script>
 	<script type="text/javascript" src="javascripts/vm-wizard.js"></script>
-	
-	  
   <script>
     $(document).foundation();
   </script>
