@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
+    <link rel="stylesheet" href="stylesheets/farbtastic.css" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
 <body>	
@@ -566,15 +567,35 @@
 										<div class="tags-area area">
 											<div class="row">
 												<h2>Tags</h2>
-												<p>Dude use your tags like you eat your cereal. You can colour code them as well</p>
-												<span>My tags</span><span>select</span>
-												<ul>
-													<li>1</li>
-													<li>2</li>
-													<li>3</li>
-													<li>... *na doume pos epektinetai an uparxoun perissotera ssh keys*</li>
-												</ul>
-											</div>
+												<p>Dude use your tags like you eat your cereal.<br>You can color code them as well</p>
+												<dl>
+													<dt class="title">My tags</dt> <dd class="title">select</dd>
+													<dt><span class="tag-demo tag4"></span>Operating system</dt> <dd class="snf-checkbox-unchecked"></dd>
+													<dt><span class="tag-demo tag5"></span>Pirate PC 1</dt> <dd class="snf-checkbox-unchecked"></dd>
+													<dt><span class="tag-demo tag6"></span>Pirate PC 2</dt> <dd class="snf-checkbox-unchecked"></dd>
+													<dt><span class="tag-demo tag7"></span>Pirate PC 3</dt> <dd class="snf-checkbox-unchecked"></dd>				
+												</dl>
+												<div ><a class="btn5" href="">add Tag</a></div>
+												<div class="snf-color-picker">
+													<form action="" style="width: 400px;">
+														<div id="picker">
+															<div class="farbtastic">
+																<div class="color" style="background-color: rgb(255, 0, 21);"></div>
+																<div class="wheel"></div>
+																<div class="overlay"></div>
+																<div class="h-marker marker" style="left: 90px; top: 13px;"></div>
+																<div class="sl-marker marker" style="left: 87px; top: 114px;"></div>
+															</div>
+														</div>
+														<div class="form-item">
+															<input type="text" id="color" name="color" value="#16C1E9" disabled>
+															<span class="input"><input class="tag_name" type="text" value="My Tag"></span>
+														</div>
+													</form>									
+
+
+												</div>
+											</div> <!-- end of row -->
 										</div>
 									</div>
 								</div>
@@ -822,9 +843,13 @@
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
 	<script src="javascripts/common.js"></script>
+	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
 	<script type="text/javascript" src="javascripts/vm-wizard.js"></script>
   <script>
     $(document).foundation();
+    $(document).ready(function() {
+
+    })
   </script>
 </body>
 </html>

@@ -399,6 +399,8 @@ $(document).ready(function(){
         link.parents('div.advanced-conf-step').find('.advanced-conf-options').slideToggle();
     })
 
+    $('#picker').farbtastic('#color');
+
 })
 
 

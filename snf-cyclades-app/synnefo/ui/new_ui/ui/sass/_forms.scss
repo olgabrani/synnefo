@@ -35,16 +35,33 @@
 			padding:0 12px 0 6px;
 			border:0 none;
 			background:url(../images/input-bg-rt.png) no-repeat right bottom;
-			background-color: $overlay-color;
+			background-color: transparent;
 			outline: 0;
 			margin:0;
 			color: $wizard-base-font-color;
 			//to be improved!!!!
-			-webkit-box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
-			-moz-box-shadow:    7px 7px 0px rgba(72, 80, 87, 0);
-			box-shadow: 7px 7px 0px rgba(72, 80, 87, 0);
+			-webkit-box-shadow: none;
+			-moz-box-shadow:    none;
+			box-shadow: none;
+
+			&.tag_name {
+				width: 70px;
+			}
 		}
 	}
+	#color {
+		@extend .tag-demo;
+		margin: 0 6px 0 15px;
+		
+		bottom: -10px;
+		color: transparent;
+	}
+
+	.snf-color-picker>form {
+		height:237px;
+		width: 100%
+	}
+
 }
 .wizard {
 	form.custom .custom.dropdown.medium {

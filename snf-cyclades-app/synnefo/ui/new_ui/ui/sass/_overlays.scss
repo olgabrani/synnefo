@@ -3,9 +3,9 @@
 Overlays (Todo: clean up)
 
 */
-body.with-overlay {
-	background:$secondary-color;
-}
+// body.with-overlay {
+// 	background:$secondary-color;
+// }
 
 .reveal-modal {
 	h3 {
@@ -100,7 +100,7 @@ body.with-overlay {
 .overlay {
 	background:$secondary-color;
 	position: relative;
-	z-index:10;
+	// z-index:10;
 	.lt-sidebar {
 		border-right:1px solid #fff;
 		color:#fff;
@@ -389,11 +389,13 @@ body.with-overlay {
 				p {
 					font-size: $wizard-paragraph-font-size;
 				}
+
 				.expand-btn {
 					margin: 50px 0 30px;
 					a {
-						color:white;
+						color:$wizard-base-font-color;
 					}
+					
 				}
 				.adv-main {
 					padding: 10px 0 30px;
@@ -405,14 +407,14 @@ body.with-overlay {
 							margin-bottom:0.5em;
 						}
 					}
-					.btn5 {
-						&:hover {
-							color:white;
-						}
-						&.current, &.current:hover {
-							color:$overlay-color;
-						}
-					}
+					// .btn5 {
+					// 	&:hover {
+					// 		color:white;
+					// 	}
+					// 	&.current, &.current:hover {
+					// 		color:$overlay-color;
+					// 	}
+					// }
 				}
 				.advanced-conf-options {
 					display: none;
@@ -421,11 +423,11 @@ body.with-overlay {
 						.row {
 							width:$row-small;
 						}
-						.btn5{
-							&:hover {
-								color:white;
-							}
-						}
+						// .btn5{
+						// 	&:hover {
+						// 		color:white;
+						// 	}
+						// }
 						ul {
 							li {
 								position: relative;
@@ -489,6 +491,48 @@ body.with-overlay {
 					}
 					.tags-area {
 						background-color: $tag-opt-area-color;
+						dt, dd { 
+							display:inline-block;
+							font-weight: normal;
+						}
+						dt {
+							width:45%;
+						}
+						dd {
+							width:30%;
+							padding-right: 25%;
+						}
+						.title {
+							position: relative;
+							left: -11px;
+							font-weight: bold;
+						}
+						p {
+							position:relative;
+							left:-11px;
+						}
+						
+						#picker {
+							position: relative;
+							border: 1px solid $wizard-base-font-color;
+							padding: 6px;
+							width: 207px;
+							margin: 30px 5px;
+							display: inline-block;
+							// width: 195px;
+							// margin: auto;
+						}
+
+						.form-item {
+							// margin: auto;
+							//width: 108px;
+							display:inline-block;
+							position: relative;
+							bottom: 40px;
+						}
+
+
+
 					}
 
 				}
@@ -597,9 +641,10 @@ body.with-overlay {
 
 .wizard-content {
 	overflow: hidden;
+	width: 100%;
 }
 
 .vm-wizard-carousel {
-	width: 20000px;
+	width: 90000px;
 	position:relative;
 }
