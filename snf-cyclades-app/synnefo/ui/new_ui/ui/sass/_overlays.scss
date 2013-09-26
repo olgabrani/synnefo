@@ -442,6 +442,7 @@ Overlays (Todo: clean up)
 									font-weight: normal;
 									margin:0 20px 0 0;
 									display: inline-block;
+									//&.net-name { width: 9.063em }
 								}
 							}
 						}
@@ -454,12 +455,14 @@ Overlays (Todo: clean up)
 						li {
 							.net-icons {
 								padding-right:20px;
-								position:absolute;
-								left:-200px;
-								top:-12px;
-								width:200px;
+								// position:absolute;
+								// left:-200px;
+								// top:-12px;
+								display: inline-block;
+								width:145px;
 								text-align: right;
 								font-size:30px;
+								margin-bottom: 0;
 								span {
 									margin-left:6px;
 									&.snf-modem {
@@ -468,6 +471,9 @@ Overlays (Todo: clean up)
 									}
 								}
 							}
+					
+							
+							
 							&.more {
 								display: none;
 								background:$net-more-opt-area-color;
@@ -498,9 +504,17 @@ Overlays (Todo: clean up)
 							display: inline-block;
 						}
 						.form-item {
-							display:inline-block;
-							position: relative;
-							bottom: 40px;
+							//display:inline-block;
+							// position: relative;
+							// bottom: 20px;
+						
+						}
+						.btns {
+							// position: relative;
+							// bottom: -45px;
+							// margin-bottom: 45px;
+							margin-top: 77px;
+							margin-bottom: 30px;
 						}
 						.btn5 {
 							margin-right:20px;
