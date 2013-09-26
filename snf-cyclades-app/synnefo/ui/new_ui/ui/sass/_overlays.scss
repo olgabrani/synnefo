@@ -193,7 +193,7 @@ Overlays (Todo: clean up)
 	.middle {
 		padding-top:$bar-height;
 		.step {
-			padding:50px 0 (50px + $bar-height);
+			padding:50px 0 50px;
 			float:left;
 			position:relative;
 			width:$row-width;
@@ -409,15 +409,15 @@ Overlays (Todo: clean up)
 							margin-bottom:0.5em;
 						}
 					}
-					// .btn5 {
-					// 	&:hover {
-					// 		color:white;
-					// 	}
-					// 	&.current, &.current:hover {
-					// 		color:$overlay-color;
-					// 	}
-					// }
 				}
+				.btn5 {
+				    &:hover {
+					    color:white;
+				}
+				    &.current, &.current:hover {
+				        color:$overlay-color;
+				    }
+			    }
 				.advanced-conf-options {
 					display: none;
 					.area {
@@ -425,11 +425,6 @@ Overlays (Todo: clean up)
 						.row {
 							width:$row-small;
 						}
-						// .btn5{
-						// 	&:hover {
-						// 		color:white;
-						// 	}
-						// }
 						ul {
 							li {
 								position: relative;
@@ -493,47 +488,23 @@ Overlays (Todo: clean up)
 					}
 					.tags-area {
 						background-color: $tag-opt-area-color;
-						dt, dd { 
-							display:inline-block;
-							font-weight: normal;
+						.snf-color-picker {
+							display: none;
 						}
-						dt {
-							width:45%;
-						}
-						dd {
-							width:30%;
-							padding-right: 25%;
-						}
-						.title {
-							position: relative;
-							left: -11px;
-							font-weight: bold;
-						}
-						p {
-							position:relative;
-							left:-11px;
-						}
-						
 						#picker {
 							position: relative;
-							border: 1px solid $wizard-base-font-color;
-							padding: 6px;
 							width: 207px;
 							margin: 30px 5px;
 							display: inline-block;
-							// width: 195px;
-							// margin: auto;
 						}
-
 						.form-item {
-							// margin: auto;
-							//width: 108px;
 							display:inline-block;
 							position: relative;
 							bottom: 40px;
 						}
-
-
+						.btn5 {
+							margin-right:20px;
+						}
 
 					}
 

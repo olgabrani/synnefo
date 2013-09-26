@@ -484,7 +484,7 @@
 									<div class="adv-main row">
 										<div class="vm-name">
 											<h2>Machine name</h2>
-											<span class="input"><input type="text" value="My Ubuntu Server"></span>
+											<span class="input"><input type="text" placeholder="My Ubuntu Server"></span>
 										</div>
 										<div class="expand-btn">
 											<a class="expand-link" href="">
@@ -569,14 +569,30 @@
 											<div class="row">
 												<h2>Tags</h2>
 												<p>Dude use your tags like you eat your cereal.<br>You can color code them as well</p>
-												<dl>
-													<dt class="title">My tags</dt> <dd class="title">select</dd>
-													<dt><span class="tag-demo tag4"></span>Operating system</dt> <dd class="snf-checkbox-unchecked"></dd>
-													<dt><span class="tag-demo tag5"></span>Pirate PC 1</dt> <dd class="snf-checkbox-unchecked"></dd>
-													<dt><span class="tag-demo tag6"></span>Pirate PC 2</dt> <dd class="snf-checkbox-unchecked"></dd>
-													<dt><span class="tag-demo tag7"></span>Pirate PC 3</dt> <dd class="snf-checkbox-unchecked"></dd>				
-												</dl>
-												<div ><a class="btn5" href="">add Tag</a></div>
+												<ul>
+													<li class="checkbox">
+														<h3>
+															<span class="tag-demo tag4"></span>
+															Operating system
+														</h3>
+														<span class="snf-checkbox-unchecked"></span>
+													</li>
+													<li class="checkbox">
+														<h3>
+															<span class="tag-demo tag5"></span>
+															Pirate PC1
+														</h3>
+														<span class="snf-checkbox-unchecked"></span>
+													</li>
+													<li class="checkbox">
+														<h3>
+															<span class="tag-demo tag6"></span>
+															Pirate PC1
+														</h3>
+														<span class="snf-checkbox-unchecked"></span>
+													</li>
+												</ul>
+												<div ><a class="btn5 show-add-tag" href="">add Tag</a></div>
 												<div class="snf-color-picker">
 													<form action="" style="width: 400px;">
 														<div id="picker">
@@ -590,10 +606,13 @@
 														</div>
 														<div class="form-item">
 															<input type="text" id="color" name="color" value="#16C1E9" disabled>
-															<span class="input"><input class="tag_name" type="text" value="My Tag"></span>
+															<span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
 														</div>
 													</form>									
-
+													<div>
+														<a class="btn5" href="">OK</a>
+														<a class="btn5 hide-add-tag" href="" id="hide-add-tag">CANCEL</a>
+													</div>
 
 												</div>
 											</div> <!-- end of row -->

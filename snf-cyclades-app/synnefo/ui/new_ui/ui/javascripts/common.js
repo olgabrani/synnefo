@@ -265,7 +265,14 @@ ui.netOptions = function(option) {
     }
 }
     
-
+function goToByScroll(id){
+      // Remove "link" from the ID
+    id = id.replace("link", "");
+      // Scroll
+    $('html,body').animate({
+        scrollTop: $("#"+id).offset().top},
+        'slow');
+}
 $(document).ready(function(){
 
     ui.setSidebarHeight();
@@ -400,6 +407,15 @@ $(document).ready(function(){
     })
 
     $('#picker').farbtastic('#color');
+    $('.show-add-tag').click(function(e){
+        e.preventDefault();
+        $(this).parents('.tags-area').find('.snf-color-picker').slideDown();
+        goToByScroll('hide-add-tag');
+    })
+    $('.hide-add-tag').click(function(e){
+        e.preventDefault();
+        $(this).parents('.snf-color-picker').slideUp();
+    })
 
 })
 
