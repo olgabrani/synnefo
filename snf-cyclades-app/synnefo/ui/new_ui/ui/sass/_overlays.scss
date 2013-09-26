@@ -181,6 +181,8 @@ Overlays (Todo: clean up)
 						color:$black;
 						&:hover, &.current {
 							color:white;
+						}
+						&.current {
 							text-decoration: underline;
 						}
 					}
@@ -473,7 +475,7 @@ Overlays (Todo: clean up)
 							}
 							&.more {
 								display: none;
-								background:white;
+								background:$net-more-opt-area-color;
 								margin-bottom:1em;
 								padding:30px 0;
 								color:$net-opt-area-color;
@@ -556,6 +558,7 @@ Overlays (Todo: clean up)
 			color:white;
 			display: inline-block;
 			position: relative;
+			font-size: emCalc(12px);
 			top:($bar-height - 30px)/2;
 			span {
 				display: inline-block;
@@ -606,6 +609,7 @@ Overlays (Todo: clean up)
 			margin:0;
 			height: $bar-height;
 			line-height: $bar-height;
+			font-size:emCalc(12px);
 			li {
 				list-style:none outside none;
 				display: inline-block;
@@ -613,7 +617,7 @@ Overlays (Todo: clean up)
 				border:1px solid $primary-color;
 				width:25px;
 				height:25px;
-				line-height: 25px;
+				line-height: 21px;
 				margin:0 3px;
 				a {
 					color:$primary-color;
@@ -630,9 +634,10 @@ Overlays (Todo: clean up)
 
 				}
 				&.current {
-					font-size:emCalc(20px);
+					font-size:emCalc(16px);
 					width:30px;
 					height:30px;
+					line-height: 27px;
 				}
 			}
 		}
@@ -641,7 +646,7 @@ Overlays (Todo: clean up)
 
 .wizard-content {
 	overflow: hidden;
-	width: 100%;
+	width:100%;
 }
 
 .vm-wizard-carousel {
