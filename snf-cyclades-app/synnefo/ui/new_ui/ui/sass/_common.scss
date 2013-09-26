@@ -115,7 +115,6 @@ a {
 	&:hover {
 		color:$third-color;
 		@include transition(background, 300ms, ease-out);
-
 	}
 }
 

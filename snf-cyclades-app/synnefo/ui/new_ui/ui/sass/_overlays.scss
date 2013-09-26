@@ -545,11 +545,17 @@ Overlays (Todo: clean up)
 			position: relative;
 			font-size: emCalc(12px);
 			top:($bar-height - 30px)/2;
+			&:hover {
+				@include transition(background, 0ms, ease-out);
+			}
 			span {
 				display: inline-block;
 				height: 30px;
 				line-height:30px;
 				float: left;
+				&:hover {
+					@include transition(background, 0ms, linear);
+				}
 			}
 		}
 		.prev {
@@ -563,10 +569,8 @@ Overlays (Todo: clean up)
 			}
 			&:hover {
 				background-position:left bottom;
-				@include transition(background, 0, ease-out);
 				span {
 					background-position:right bottom;
-					@include transition(background, 0, ease-out);
 				}
 			}
 		}
@@ -581,10 +585,8 @@ Overlays (Todo: clean up)
 			}
 			&:hover {
 				background-position:right bottom;
-				@include transition(background, 0, ease-out);
 				span {
 					background-position:left bottom;
-					@include transition(background, 0, ease-out);
 				}
 			}
 		}

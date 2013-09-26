@@ -8,7 +8,7 @@ ui.wizard ={
 	// sets the width and height of the carousel and its divs
 	set_dimensions: function() {
 		console.log('set dimentions');
-		ui.wizard.relocation = $('.overlay-wrapper').width();
+		ui.wizard.relocation = $(window).width();
 		console.log(ui.wizard.relocation);
 		$('.vm-wizard-carousel').children('div').width(ui.wizard.relocation);
 	},
@@ -35,8 +35,8 @@ ui.wizard ={
 	move_to_step: function(prev_btn, next_btn) {
 		var speed =500;
 		// when the button "next" is pressed show the next step (if there is a next step)
-		next_btn.click(function(){
-			event.preventDefault();
+		next_btn.click(function(e){
+			e.preventDefault();
 			console.log('you clicked next!')
 			if(ui.wizard.current_step < ui.wizard.vm.total_step){
 				prev_btn.find('span').html('PREVIOUS');
@@ -57,8 +57,8 @@ ui.wizard ={
 		})
 
 		// when the button "previous" is pressed show the previous step (if there is a previous step)
-		prev_btn.click(function(){
-			event.preventDefault();
+		prev_btn.click(function(e){
+			e.preventDefault();
 			if(ui.wizard.current_step > 1){
 				ui.wizard.current_step--;
 				ui.wizard.current_position +=ui.wizard.relocation;
@@ -73,13 +73,10 @@ ui.wizard ={
 	},
 
 	// sets the width and height of the steps and of the carousel (in PIXELS)
-	initialize_relocation: function(start_btns){
-		start_btns.click(function() {
-			event.preventDefault();
+	initialize_relocation: function(){
 			console.log('initialize_relocation');
 			ui.wizard.adjust_to_resized_screen();
 			ui.wizard.set_dimensions();
-		})
 	},
 	// for the carousel index
 	indicate_step: function(step) {
@@ -117,7 +114,7 @@ $(document).ready(function(){
 		e.preventDefault();
 	})
 
-	ui.wizard.initialize_relocation(new_vm_btn);
+	ui.wizard.initialize_relocation();
 	ui.wizard.move_to_step(prev_btn, next_btn);
 	ui.wizard.set_movement_tags(ui.wizard.current_step, prev_btn, next_btn);
 
