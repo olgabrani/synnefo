@@ -232,38 +232,40 @@ ui.pickResources = function(resource) {
 }
 
 
-ui.netOptions = function(option) {
-    var checkbox = $(option).find('.snf-checkbox-checked, .snf-checkbox-unchecked');
-    var list = $(option).closest('ul');
+// ui.netOptions = function(option) {
+//     var checkbox = $(option).find('.snf-checkbox-checked, .snf-checkbox-unchecked, .snf-radio-checked, .snf-radio-unchecked');
+//     var list = $(option).closest('ul');
     
-    ui.checkAction(checkbox); //allazw to checkbox p pataw
-    if(list.hasClass('subnet_options')){
-        checkedBefore = $(option).closest('li').siblings('li').find('span.snf-checkbox-checked');
-        if($(checkedBefore).closest('li').find('a').hasClass('manual'))
-        {
-            $(checkedBefore).closest('li').find('.manual_sub').hide();
-        }
-        ui.checkAction(checkedBefore); //allazw ta alla checkboxes
+//     ui.checkAction(checkbox); //allazw to checkbox p pataw
+//     if(list.hasClass('subnet_options')){
+//         checkedBefore = $(option).closest('li').siblings('li').find('span.snf-radio-checked');
+//         if($(checkedBefore).closest('li').find('a').hasClass('manual'))
+//         {
+//             $(checkedBefore).closest('li').find('.manual_sub').hide();
+//         }
+//         ui.checkAction(checkedBefore); //allazw ta alla checkboxes
         
-        if($(option).hasClass('manual')) {
+//         if($(option).hasClass('manual')) {
 
-            if($(checkbox).hasClass('snf-checkbox-unchecked')) {
-                $(option).closest('span').find('.manual_sub').hide();
-            }
-            else {
-                $(option).closest('span').find('.manual_sub').show();
-            }
-        }
-    }
-    else if($(option).closest('li').hasClass('dhcp_option')) {
-        if($(checkbox).hasClass('snf-checkbox-unchecked')) {
-            $('.network_options').find('.subnet_options').hide();
-        }
-        else {
-            $('.network_options').find('.subnet_options').show();
-        }
-    }
-}
+//             if($(checkbox).hasClass('snf-checkbox-unchecked')) {
+//                 $(option).closest('span').find('.manual_sub').hide();
+//             }
+//             else {
+//                 $(option).closest('span').find('.manual_sub').show();
+//             }
+//         }
+//     }
+//     else if($(option).closest('li').hasClass('dhcp_option')) {
+//         if($(checkbox).hasClass('snf-checkbox-unchecked')) {
+//             $('.network_options').find('.subnet_options').hide();
+//             $('.network_options').find('.sub_title').hide();
+//         }
+//         else {
+//             $('.network_options').find('.sub_title').show();
+//             $('.network_options').find('.subnet_options').show();
+//         }
+//     }
+// }
     
 function goToByScroll(id){
       // Remove "link" from the ID
@@ -376,7 +378,7 @@ $(document).ready(function(){
     // checkbox: basic reaction on click (checked, unchecked)
     $('.network_options .check').click(function(e){
         e.preventDefault();
-        ui.netOptions(this);
+      //  ui.netOptions(this);
     })
   
     ui.placementByUser();
@@ -406,7 +408,7 @@ $(document).ready(function(){
         link.parents('div.advanced-conf-step').find('.advanced-conf-options').slideToggle();
     })
 
-    $('#picker').farbtastic('#color');
+    if($('#picker').length>0) { $('#picker').farbtastic('#color'); }
     $('.show-add-tag').click(function(e){
         e.preventDefault();
         $(this).parents('.tags-area').find('.snf-color-picker').slideDown();

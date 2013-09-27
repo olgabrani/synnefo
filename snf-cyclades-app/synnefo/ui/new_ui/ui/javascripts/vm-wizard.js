@@ -151,14 +151,14 @@ ui.wizard ={
 		
 		$('.vm-wizard-carousel').css({left: ui.wizard.current_position+'px'});
 		$('.bottom').show();
-		$('#vm-wizard').find('.current').removeClass('current');
+		$('.step-1').find('.current').removeClass('current');
 		ui.wizard.indicate_step(ui.wizard.current_step);
 		$('#vm-wizard').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked').removeClass('snf-checkbox-checked');
 		$('#vm-wizard').find('.default').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
 		$('.details').hide();
-		$('.wizard .top .sub-menu ul li:first-child a').addClass('current');
+		$('.wizard .top .sub-menu[data-step="1"] ul li:first-child a').addClass('current');
 		ui.pickResources('small');
-		$('.wizard .step-2 .options li a:contains(DRBD)').addClass('current')
+		//$('.wizard .step-2 .options li a:contains(DRBD)').addClass('current')
 		$('.vm-name input').val('');
 		$('.advanced-conf-options').hide();
 		$('.snf-color-picker').hide();

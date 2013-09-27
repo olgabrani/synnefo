@@ -17,11 +17,11 @@
 
 
 
-.create-network {
-	color: #fff;
-	.check {
-		color: #fff;
-	}
+#network-wizard {
+	// color: #fff;
+	// .check {
+	// 	color: #fff;
+	// }
 	p {
 		font-size: 0.8em;
 		font-style: italic;
@@ -41,8 +41,14 @@
 			margin-bottom: 6px;
 			padding-left: 155px;
 		}
-	}
+}
 
+// for network creation wizard
+
+.main {
+
+	padding: 40px;
+	a {	color: $wizard-base-font-color;}
 	.network_options {
 		position: relative;
 		width: 350px;
@@ -83,4 +89,4 @@
 		}
 	}
 }
-
+}
