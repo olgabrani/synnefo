@@ -187,6 +187,9 @@ a {
 		line-height: $btn-height - 4px;
 		padding:0 19px;
 	}
+	&:focus {
+		border-width: 2px;
+	}
 	&.current {
 		background:white;
 		color:$secondary-color;

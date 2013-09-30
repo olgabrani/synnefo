@@ -55,7 +55,7 @@ Overlays (Todo: clean up)
 		top:50px;
 		font-size:32px;
 		color:$primary-color;
-		&:hover {
+		&:hover, &:focus {
 			color:white;
 		}
 	}
@@ -179,7 +179,7 @@ Overlays (Todo: clean up)
 					list-style: none outside none;
 					a {
 						color:$black;
-						&:hover, &.current {
+						&:hover, &:focus, &.current {
 							color:white;
 						}
 						&.current {
@@ -396,7 +396,12 @@ Overlays (Todo: clean up)
 					margin: 50px 0 30px;
 					a {
 						color:$wizard-base-font-color;
+						&:focus {
+							border: 1px solid #91969a;
+							padding: 2px;
+						}
 					}
+
 					
 				}
 				.adv-main {
@@ -592,6 +597,9 @@ Overlays (Todo: clean up)
 					background-position:left bottom;
 					float:right;
 				}
+			}
+			&:focus {
+				color:cyan;
 			}
 		}
 		.nums {
