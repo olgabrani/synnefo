@@ -546,6 +546,7 @@ Overlays (Todo: clean up)
 			position: relative;
 			font-size: emCalc(12px);
 			top:($bar-height - 30px)/2;
+			width: 100px;
 			&:hover {
 				@include transition(background, 0ms, ease-out);
 			}
@@ -583,11 +584,13 @@ Overlays (Todo: clean up)
 			span {
 				padding-left:10px;
 				background:url('../images/nav-rt.png') no-repeat left top;
+				float: right;
 			}
 			&:hover {
 				background-position:right bottom;
 				span {
 					background-position:left bottom;
+					float:right;
 				}
 			}
 		}

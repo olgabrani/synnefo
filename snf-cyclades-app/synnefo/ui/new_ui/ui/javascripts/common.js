@@ -4,6 +4,7 @@
 */
 
 ui = {};
+ui.wizard = {};
 
 /* when closeEl el is clicked, its parent with class divToCloseClass slidesUp */
 ui.closeDiv = function(closeEl, divToCloseClass) {
@@ -199,13 +200,23 @@ ui.overlay = function() {
 
 }
 
-//permits only one checkbox to be checked in a ul
-ui.checkAction = function(checkbox) {
-        var otherChecked = checkbox.closest('li').siblings('li').find('span.snf-checkbox-checked').length;
-        if(otherChecked!=0){
-            checkbox.toggleClass('snf-checkbox-checked');
-            checkbox.toggleClass('snf-checkbox-unchecked');
-        }
+
+ui.change_checkbox_state =function(checkbox_link) {
+     $(checkbox_link).find('span.snf-checkbox-unchecked, span.snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
+}
+
+ui.change_radiobutton_state = function(radiobtn_link) {
+    $(radiobtn_link).find('span.snf-radio-unchecked, span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
+}
+
+ui.check_one_radiobtn = function(radiobtn_link) {
+    tt = $(radiobtn_link);
+    $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
+}
+
+ui.expand_arrow = function(arrow_link) {
+    var arrow = arrow_link.find('span.snf-arrow-up, span.snf-arrow-down');
+    arrow.toggleClass('snf-arrow-up snf-arrow-down');
         
 }
 
@@ -398,15 +409,7 @@ $(document).ready(function(){
         $(this).next('.more').slideToggle();
     })
 
-    $('.adv-main .expand-link').click( function(e){
-        e.preventDefault();
-        var link = $(this);
-        link.toggleClass('current');
-        var arrow = link.find('span.snf-arrow-up, span.snf-arrow-down');
-        arrow.toggleClass('snf-arrow-up');
-        arrow.toggleClass('snf-arrow-down');
-        link.parents('div.advanced-conf-step').find('.advanced-conf-options').slideToggle();
-    })
+
 
     if($('#picker').length>0) { $('#picker').farbtastic('#color'); }
     $('.show-add-tag').click(function(e){

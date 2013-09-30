@@ -32,6 +32,13 @@
 	li {
 		list-style: none outside none;
 	}
+
+	.net_wiz_main {
+		padding: 40px;
+		width:390px;
+
+	}
+
 	.snf-checkbox-checked, .snf-checkbox-unchecked {
 		font-size: 1.3em;
 	}
@@ -54,10 +61,11 @@
 		width: 350px;
 		min-height: 285px;
 		
-		.check {
+		.check, .radio_btn {
 			position: absolute;
 			right: 0;
 		}
+		
 		
 		li {
 			display: block;

@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
     <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -72,10 +73,10 @@
 				<div class="middle">
 					<div class="wizard-content">
 
-						<div class="main">
+						<div class="row main">
 							<ul class="network_options clearfix">
 									<li>
-										<div clas="row">
+										<div class="row main">
 											<form><span >Network Name:</span><input type="text" name="network_name"></form>
 										</div>
 									</li>
@@ -92,7 +93,7 @@
 										<ul class="subnet_options">
 											<li>
 												<span>Auto 
-													<a href="" class="check">
+													<a href="" class="radio_btn">
 														<span class="snf-radio-checked"></span>
 													</a>
 												</span>
@@ -100,7 +101,7 @@
 											<li class="manual">
 												<form>
 													<span>Manual
-														<a href="" class="check manual">
+														<a href="" class="radio_btn manual">
 															<span class="snf-radio-unchecked"></span>
 														</a>
 														<input class="manual_sub hidden" type="text" name="network_name">
@@ -109,14 +110,14 @@
 											</li>
 											<li>
 												<span>10.0.0.0/24 
-													<a href="" class="check">
+													<a href="" class="radio_btn">
 														<span class="snf-radio-unchecked"></span>
 													</a>
 												</span>
 											</li>
 											<li>
 												<span>192.168.0.0/24 
-													<a href="" class="check">
+													<a href="" class="radio_btn">
 														<span class="snf-radio-unchecked"></span>
 													</a>
 												</span>
@@ -129,6 +130,16 @@
 
 					</div>
 				</div>
+<!-- new tba start -->
+				<div class="bottom">
+					<div class="row">
+						<a href="" class="nav prev"><span>CANCEL</span></a>
+						<a href="" class="nav next"><span>CREATE</span></a>
+						
+					</div>
+				</div>
+<!-- new tba end -->
+
 			</div>
 
 	</div>
@@ -210,11 +221,10 @@
 		</section>
 	</div>
 	
- 
+
   <script src="javascripts/vendor/jquery.js"></script>
-  <script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
-  <script src="javascripts/foundation/foundation.js"></script>
-	
+	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
 	
 	<script src="javascripts/foundation/foundation.clearing.js"></script>
@@ -240,14 +250,17 @@
 	<script src="javascripts/foundation/foundation.tooltips.js"></script>
 	
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
-	<script type="text/javascript" src="javascripts/dropzone.js"></script>
-	
-	<script src="javascripts/common.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
 	
+
+	<script src="javascripts/common.js"></script>
+	<script src="javascripts/network-wizard.js"></script>
+	<!-- <script src="javascripts/vm-wizard.js"></script> -->
+	
+
   <script>
     $(document).foundation();
   </script>
