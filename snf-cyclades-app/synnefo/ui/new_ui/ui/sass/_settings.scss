@@ -33,6 +33,7 @@ $secondary-color: #919194;
 $third-color: #30c79e;
 $overlay-color: #485057;
 $overlay-color-top:#636a70;
+$overlay-darker-color:#33383D;
 $black:#333;
 
 $alert-color: $secondary-color;
@@ -122,6 +123,8 @@ $conf-area-h-width: emCalc(300px);
 
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
 // $block-grid-media-queries: true;
+
+$small-mobile:emCalc(480px);
 
 //
 // Typography Variables

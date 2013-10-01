@@ -203,23 +203,36 @@ Overlays (Todo: clean up)
 					@extend .clearfix;
 					padding:0.5em 0;
 					&:hover {
-						background:lighten($overlay-color-top, 10%);
+						background:$overlay-darker-color;
 					}
 					&.current {
-						background:$overlay-color-top;
+						background:white;
+						color:$overlay-color;
+						.btn-col {
+							a {
+								@extend .btn5;
+								border-color:$overlay-color;
+								color:$overlay-color;
+								&.current {
+									color:white;
+									background:$overlay-color;
+								}
+							}
+						}
 					}
 					.img-col {
 						float:left;
 						width:10%;
+						padding-right:10px;
 					}
 					.name-col {
 						float: left;
-						width:70%;
-
 						color: $wizard-base-font-color;
 						&:focus  {
 							background:lighten($overlay-color-top, 10%);
 						}
+						width:65%;
+						padding-right:10px;
 					}
 					.size-col {
 						float:left;
@@ -228,6 +241,7 @@ Overlays (Todo: clean up)
 					.btn-col {
 						float:left;
 						width:10%;
+						margin-left:10px;
 						a {
 							@extend .btn5;
 							&.current {
@@ -237,9 +251,9 @@ Overlays (Todo: clean up)
 					}
 					.details {
 						display: none;
-						background:white;
-						padding:30px 10%;
-						margin:20px 0;
+						background:darken(white,10%);
+						padding:30px 0;
+						margin:20px 6px 6px;
 						color: $body-font-color;
 						h3 {
 							font-size: 1em;

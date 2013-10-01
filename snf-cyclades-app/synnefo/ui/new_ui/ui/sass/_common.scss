@@ -9,13 +9,9 @@
   - Icon Navigation
   - Top Info
   - Progress Bar
-  
- */
+  - Responsive
 
-// temporary visual help to check the tab functionality
-// *:focus {
-// 	border:2px solid blue;
-// }
+ */
 
 
 /* Clearfix -------------------------------------------- */
@@ -250,6 +246,9 @@ body {
 }
 
 
+.row {
+	padding:0 30px;
+}
 
 /* Header ----------------------------------------------- */
 
@@ -274,6 +273,10 @@ body {
 	}
 	.logo {
 		text-align: center;
+		a {
+			position: relative;
+			top:-5px;
+		}
 		img {
 			max-height: 30px;			
 		}
@@ -450,5 +453,25 @@ body {
 	}
 	span.more {
 		display: inline-block;
+	}
+}
+
+
+/* Responive ------------------------------------------------ */
+@media only screen and (max-width: $small-mobile) {
+}
+
+@media only screen and (max-width: $small-screen) {
+	body {
+		padding-top:2*$header-height+$bar-height;
+	}
+	.actions-bar {
+		top:2*$header-height;
+	}
+	.header {
+		height: 2*$header-height;
+		.icons-nav {
+			position: static;
+		}
 	}
 }
