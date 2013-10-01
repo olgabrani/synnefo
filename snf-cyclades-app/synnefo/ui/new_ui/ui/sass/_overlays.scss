@@ -574,7 +574,8 @@ Overlays (Todo: clean up)
 				padding-right:10px;
 				background:url('../images/nav-lt.png') no-repeat right top;
 			}
-			&:hover {
+			&:hover,
+			&.active {
 				background-position:left bottom;
 				span {
 					background-position:right bottom;
@@ -591,15 +592,13 @@ Overlays (Todo: clean up)
 				background:url('../images/nav-rt.png') no-repeat left top;
 				float: right;
 			}
-			&:hover {
+			&:hover,
+			&.active {
 				background-position:right bottom;
 				span {
 					background-position:left bottom;
 					float:right;
 				}
-			}
-			&:focus {
-				color:cyan;
 			}
 		}
 		.nums {

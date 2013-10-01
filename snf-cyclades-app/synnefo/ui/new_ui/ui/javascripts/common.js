@@ -397,7 +397,7 @@ $(document).ready(function(){
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('current');
-        $(this).parents('li').find('.details').slideToggle();
+        $(this).parents('li').find('.details').stop().slideToggle();
     })
 
     $('.advanced-conf-options .checkbox').click(function(e){

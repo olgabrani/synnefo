@@ -123,6 +123,7 @@ ui.wizard ={
 				ui.wizard.adjust_to_resized_screen();
 				ui.wizard.set_dimensions();
 			})
+			$('.step-1 .os li:first').find('.btn-col a').focus();
 	},
 
 	// for the carousel index
@@ -163,7 +164,7 @@ ui.wizard ={
 		
 		$('.vm-wizard-carousel').css({left: ui.wizard.current_position+'px'});
 		$('.bottom').show();
-		$('.step-1').find('.current').removeClass('current');
+		//$('.step-1').find('.current').removeClass('current');
 		ui.wizard.indicate_step(ui.wizard.current_step);
 		ui.wizard.set_movement_tags();
 		$('#vm-wizard').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked').removeClass('snf-checkbox-checked');
@@ -183,7 +184,7 @@ ui.wizard ={
 		ui.wizard.vm.btns.expand_down.click(function(e){
 	        e.preventDefault();
 	      	ui.expand_arrow(ui.wizard.vm.btns.expand_down);
-	        ui.wizard.vm.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').slideToggle();
+	        ui.wizard.vm.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
 	    })
 	}
 
@@ -209,10 +210,9 @@ $(document).ready(function(){
 	ui.wizard.set_movement_tags();
 	ui.wizard.expand_area();
 
-
-
-
- 	
-
-
+	$('.step-1 .os li:last').find('.btn-col a').focusout(function(e) {
+		e.preventDefault();
+		$('.nav.next').focus();
+		$('.nav.next').addClass('active');
+	})
 });
