@@ -215,6 +215,11 @@ Overlays (Todo: clean up)
 					.name-col {
 						float: left;
 						width:70%;
+
+						color: $wizard-base-font-color;
+						&:focus  {
+							background:lighten($overlay-color-top, 10%);
+						}
 					}
 					.size-col {
 						float:left;
@@ -626,7 +631,7 @@ Overlays (Todo: clean up)
 				}
 				&.current{
 					border-color:white;
-					a {
+					* {
 						color:white;
 					}
 

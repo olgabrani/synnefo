@@ -48,11 +48,11 @@ ui.wizard ={
 
 		// carousel movement when right or left arrow is pressed
 		$(document).keydown(function(e) {
-			if(e.keyCode==39) {
+			if(e.keyCode==39 && ui.wizard.current_step!=ui.wizard.vm.total_step) {
 				go_next();
 				return false;
 			}
-			else if(e.keyCode==37) {
+			else if(e.keyCode==37 && ui.wizard.current_step!=1) {
 				go_prev();
 				return false;
 			}
@@ -71,6 +71,21 @@ ui.wizard ={
 			
 		});
 
+		ui.wizard.vm.btns.next.focusout(function(e) {
+			if(ui.wizard.current_step!=ui.wizard.vm.total_step) {
+				$(this).removeClass('active');
+				go_next();
+			}
+		
+		});
+		
+		ui.wizard.vm.btns.previous.focusout(function(e) {
+			if(ui.wizard.current_step!=1) {
+				$(this).removeClass('active');
+				go_prev();
+			}
+		
+		});
 
 		function go_next() {
 			console.log('going next!');
@@ -82,8 +97,10 @@ ui.wizard ={
 				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
 				ui.wizard.indicate_step(ui.wizard.current_step);
 				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.vm.btns.previous, ui.wizard.vm.btns.next);
-
-				if(ui.wizard.current_step == 3) {
+				if(ui.wizard.current_step == 2) {
+					$('.sub-menu[data-step=2] li:first').find('a').focus();
+				}
+				else if(ui.wizard.current_step == 3) {
 					setTimeout(function() { $('.vm-name').find('input').focus() }, speed/2);
 				}
 
@@ -103,7 +120,10 @@ ui.wizard ={
 				ui.wizard.indicate_step(ui.wizard.current_step);
 				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.vm.btns.previous, ui.wizard.vm.btns.next);
 
-				if(ui.wizard.current_step == 3) {
+				if(ui.wizard.current_step == 2) {
+					$('.sub-menu[data-step=2] li:first').find('a').focus();
+				}
+				else if(ui.wizard.current_step == 3) {
 					setTimeout(function() { $('.vm-name').find('input').focus() }, speed/2);
 				}
 			}
@@ -122,8 +142,8 @@ ui.wizard ={
 				ui.wizard.reset();
 				ui.wizard.adjust_to_resized_screen();
 				ui.wizard.set_dimensions();
+				$('.sub-menu[data-step=1] li:first').find('a').focus();
 			})
-			$('.step-1 .os li:first').find('.btn-col a').focus();
 	},
 
 	// for the carousel index
@@ -132,7 +152,7 @@ ui.wizard ={
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
 		//$('.nums li:nth-child('+ui.wizard.current_step+'').addClass('current');
-		$('.nums').children().find('a:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
+		$('.nums').children().find('*:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
 	},
 
 	// changes the text of next and previous buttons
@@ -186,7 +206,7 @@ ui.wizard ={
 	      	ui.expand_arrow(ui.wizard.vm.btns.expand_down);
 	        ui.wizard.vm.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
 	    })
-	}
+	},
 
 }
 
@@ -214,5 +234,22 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('.nav.next').focus();
 		$('.nav.next').addClass('active');
-	})
+	});
+
+
+	$('.nav.previous').focus(function(e){
+		$(this).addClass('active');
+	});
+
+	$('.nav.previous').focusout(function(e){
+		e.preventDefault();
+		$(this).addClass('active');
+		$(this).removeClass('active');
+
+	});
+
+
+
+	
+
 });

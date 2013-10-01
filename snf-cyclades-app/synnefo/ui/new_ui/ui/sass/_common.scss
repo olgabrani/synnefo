@@ -12,6 +12,10 @@
   
  */
 
+// temporary visual help to check the tab functionality
+// *:focus {
+// 	border:2px solid blue;
+// }
 
 
 /* Clearfix -------------------------------------------- */
@@ -188,9 +192,10 @@ a {
 	font-size:emCalc(12px);
 	&:hover,
 	&:focus {
-		border-width:2px;
-		line-height: $btn-height - 4px;
-		padding:0 19px;
+		// border-width:2px;
+		// line-height: $btn-height - 4px;
+		// padding:0 19px;
+		background:lighten($overlay-color-top, 10%);
 	}
 	&.current {
 		background:white;

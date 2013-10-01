@@ -196,8 +196,6 @@ ui.overlay = function() {
         $('.overlay-area').show();
         $(id).slideDown('slow');
     });
-
-
 }
 
 
