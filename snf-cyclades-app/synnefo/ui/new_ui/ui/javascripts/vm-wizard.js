@@ -1,19 +1,16 @@
 // all functions use pixels
 ui.wizard ={
 	current_step: undefined,
-	vm: {
-		total_step: 4,
-		btns: {
-			start: undefined,
-			close: undefined,
-			next: undefined,
-			previous: undefined,
-			expand_down: undefined
-		}
-	},
-	
+	total_step: 4,
 	current_position: undefined,
 	relocation: undefined,
+	btns: {
+		start: undefined,
+		close: undefined,
+		next: undefined,
+		previous: undefined,
+		expand_down: undefined
+	},
 
 
 	// sets the width and height of the carousel and its divs
@@ -48,38 +45,51 @@ ui.wizard ={
 
 		// carousel movement when right or left arrow is pressed
 		$(document).keydown(function(e) {
-			if(e.keyCode==39 && ui.wizard.current_step!=ui.wizard.vm.total_step) {
+
+			// right arrow keyCode == 39
+			if(e.keyCode==39 && ui.wizard.current_step!=ui.wizard.total_step) {
 				go_next();
 				return false;
 			}
+			// left arrow keyCode == 37
 			else if(e.keyCode==37 && ui.wizard.current_step!=1) {
 				go_prev();
 				return false;
 			}
+			// enter keyCode == 13
+			else if (e.keyCode==13 && ui.wizard.current_step==ui.wizard.total_step) {
+				console.log('close you!');
+				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
+
+			}
+			// esc keyCode == 27
+			else if(e.keyCode== 27 && ui.wizard.current_step==1) {
+				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
+			}
 		});
 		
 		// when the button "next" is pressed show the next step (if there is a next step)
-		ui.wizard.vm.btns.next.click(function(e){
+		ui.wizard.btns.next.click(function(e){
 			e.preventDefault();
 			go_next();
 		})
 
 		// when the button "previous" is pressed show the previous step (if there is a previous step)
-		ui.wizard.vm.btns.previous.click(function(e){
+		ui.wizard.btns.previous.click(function(e){
 			e.preventDefault();
 			go_prev();
 			
 		});
 
-		ui.wizard.vm.btns.next.focusout(function(e) {
-			if(ui.wizard.current_step!=ui.wizard.vm.total_step) {
+		ui.wizard.btns.next.focusout(function(e) {
+			if(ui.wizard.current_step!=ui.wizard.total_step) {
 				$(this).removeClass('active');
 				go_next();
 			}
 		
 		});
 		
-		ui.wizard.vm.btns.previous.focusout(function(e) {
+		ui.wizard.btns.previous.focusout(function(e) {
 			if(ui.wizard.current_step!=1) {
 				$(this).removeClass('active');
 				go_prev();
@@ -90,13 +100,13 @@ ui.wizard ={
 		function go_next() {
 			console.log('going next!');
 			console.log('you clicked next!')
-			if(ui.wizard.current_step < ui.wizard.vm.total_step){
+			if(ui.wizard.current_step < ui.wizard.total_step){
 				ui.wizard.current_step++;
 				ui.wizard.current_position -=ui.wizard.relocation;
 				$('.vm-wizard-carousel').finish();
 				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
 				ui.wizard.indicate_step(ui.wizard.current_step);
-				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.vm.btns.previous, ui.wizard.vm.btns.next);
+				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
 				if(ui.wizard.current_step == 2) {
 					$('.sub-menu[data-step=2] li:first').find('a').focus();
 				}
@@ -118,7 +128,7 @@ ui.wizard ={
 				$('.vm-wizard-carousel').finish();
 				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
 				ui.wizard.indicate_step(ui.wizard.current_step);
-				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.vm.btns.previous, ui.wizard.vm.btns.next);
+				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
 
 				if(ui.wizard.current_step == 2) {
 					$('.sub-menu[data-step=2] li:first').find('a').focus();
@@ -137,7 +147,7 @@ ui.wizard ={
 	// sets the width and height of the steps and of the carousel (in PIXELS)
 	initialize_relocation: function(){
 			console.log('initialize_relocation');
-			ui.wizard.vm.btns.start.click(function(e) {
+			ui.wizard.btns.start.click(function(e) {
 				e.preventDefault();	
 				ui.wizard.reset();
 				ui.wizard.adjust_to_resized_screen();
@@ -158,16 +168,16 @@ ui.wizard ={
 	// changes the text of next and previous buttons
 	set_movement_tags: function() {
 		if (ui.wizard.current_step==1) {
-			ui.wizard.vm.btns.previous.find('span').html('CANCEL');
-			ui.wizard.vm.btns.next.find('span').html('NEXT');
+			ui.wizard.btns.previous.find('span').html('CANCEL');
+			ui.wizard.btns.next.find('span').html('NEXT');
 		}
-		else if(ui.wizard.current_step==ui.wizard.vm.total_step) {
-			ui.wizard.vm.btns.previous.find('span').html('PREVIOUS');
-			ui.wizard.vm.btns.next.find('span').html('CREATE');
+		else if(ui.wizard.current_step==ui.wizard.total_step) {
+			ui.wizard.btns.previous.find('span').html('PREVIOUS');
+			ui.wizard.btns.next.find('span').html('CREATE');
 		}
 		else {
-			ui.wizard.vm.btns.previous.find('span').html('PREVIOUS');
-			ui.wizard.vm.btns.next.find('span').html('NEXT');
+			ui.wizard.btns.previous.find('span').html('PREVIOUS');
+			ui.wizard.btns.next.find('span').html('NEXT');
 		}
 	},
 
@@ -201,10 +211,10 @@ ui.wizard ={
 	},
 
 	expand_area: function() {
-		ui.wizard.vm.btns.expand_down.click(function(e){
+		ui.wizard.btns.expand_down.click(function(e){
 	        e.preventDefault();
-	      	ui.expand_arrow(ui.wizard.vm.btns.expand_down);
-	        ui.wizard.vm.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
+	      	ui.expand_arrow(ui.wizard.btns.expand_down);
+	        ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
 	    })
 	},
 
@@ -216,10 +226,10 @@ $(document).ready(function(){
 	ui.wizard.current_step =1;
 	ui.wizard.current_position =0;
 
-	ui.wizard.vm.btns.start =$('.new-btn, .add-new');
-	ui.wizard.vm.btns.previous = $('.bottom').find('.nav.prev');
-	ui.wizard.vm.btns.next = $('.bottom').find('.nav.next');
-	ui.wizard.vm.btns.expand_down =$('.adv-main').find('.expand-link');
+	ui.wizard.btns.start =$('.new-btn, .add-new');
+	ui.wizard.btns.previous = $('.bottom').find('.nav.prev');
+	ui.wizard.btns.next = $('.bottom').find('.nav.next');
+	ui.wizard.btns.expand_down =$('.adv-main').find('.expand-link');
 	
 	$('.wizard .nums').click(function(e){
 		e.preventDefault();
@@ -247,6 +257,13 @@ $(document).ready(function(){
 		$(this).removeClass('active');
 
 	});
+
+
+	$('.sub-menu[data-step=2] li:last').find('a').focusout(function(e) {
+		e.preventDefault();
+		$('.step-2').find('.dropdown a:first').focus();
+
+	})
 
 
 
