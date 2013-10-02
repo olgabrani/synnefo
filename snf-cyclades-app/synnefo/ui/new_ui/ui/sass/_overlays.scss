@@ -207,6 +207,12 @@ Overlays (Todo: clean up)
 				display: inline;
 				p {
 					display: none;
+					position: relative;
+					top: 1px;
+					strong {
+						font-size:16px;
+						margin-right:10px;
+					}
 				}
 				em {
 					display: inline-block;
@@ -257,7 +263,8 @@ Overlays (Todo: clean up)
 					list-style: none outside none;
 					@extend .clearfix;
 					padding:0.5em 0;
-					&:hover {
+					&:hover,
+					&.hover {
 						background:$overlay-darker-color;
 					}
 					&.current {
@@ -286,9 +293,6 @@ Overlays (Todo: clean up)
 					.name-col {
 						float: left;
 						color: $wizard-base-font-color;
-						&:focus  {
-							background:lighten($overlay-color-top, 10%);
-						}
 						width:65%;
 						padding-right:10px;
 					}
@@ -355,6 +359,7 @@ Overlays (Todo: clean up)
 							width: 19%;
 							color:white;
 							margin-right:4%;
+							padding-left:emCalc(10px);
 							&:hover {
 								& + p {
 									visibility: visible;
@@ -468,7 +473,6 @@ Overlays (Todo: clean up)
 				p {
 					font-size: $wizard-paragraph-font-size;
 				}
-
 				.expand-btn {
 					margin: 50px 0 30px;
 					a {
@@ -645,7 +649,7 @@ Overlays (Todo: clean up)
 		.prev {
 			float:left;
 			height:30px;
-			padding-left:19px;
+			padding-left:18px;
 			background:url('../images/nav-edge-lt.png') no-repeat left top;
 			span {
 				padding-right:10px;
@@ -662,7 +666,7 @@ Overlays (Todo: clean up)
 		.next {
 			float:right;
 			height:30px;
-			padding-right:19px;
+			padding-right:18px;
 			background:url('../images/nav-edge-rt.png') no-repeat right top;
 			span {
 				padding-left:10px;
@@ -692,4 +696,22 @@ Overlays (Todo: clean up)
 }
 
 
-// for network creation wizard
+/* Responive ------------------------------------------------ */
+@media only screen and (max-width: $small-mobile) {
+}
+
+@media only screen and (max-width: $small-screen) {
+	.wizard {
+		.top {
+			position: static;
+		}
+		.middle {
+			padding-top:0;
+		}
+	}
+	.overlay-wrapper {
+		.overlay-area {
+			top:0;
+		}
+	}
+}

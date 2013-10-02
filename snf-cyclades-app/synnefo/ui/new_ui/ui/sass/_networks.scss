@@ -18,17 +18,6 @@
 
 
 #network-wizard {
-	// color: #fff;
-	// .check {
-	// 	color: #fff;
-	// }
-	p {
-		font-size: 0.8em;
-		font-style: italic;
-		margin: 5px 0 0;
-		width: 545px;
-	}
-
 	li {
 		list-style: none outside none;
 	}
@@ -53,17 +42,26 @@
 // for network creation wizard
 
 .main {
-
 	padding: 40px;
 	a {	color: $wizard-base-font-color;}
 	.network_options {
+		.dhcp_option {
+			p {
+				font-size:emCalc(12px);
+			}
+		}
 		position: relative;
-		width: 350px;
-		min-height: 285px;
-		
+		width: $row-small;
+		margin:0 auto;
 		.check, .radio_btn {
 			position: absolute;
 			right: 0;
+		}
+		.network-name {
+			h2 {
+				color:white;
+				font-size: emCalc(16px);
+			}
 		}
 		
 		

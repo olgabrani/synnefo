@@ -51,21 +51,24 @@
 		</div>
 			<div id="network-wizard" class="overlay-div wizard">
 				<div class="top">
-					<div class="row">
-						<a href="" class="close"><span class="snf-close"></span></a>
-						<nav class="sub-menu" data-step="1">
-							<ul>
-								<li><a href="" class="current">Menu</a></li>
-							<!--	<li><a href="">Menu Option</a></li>
-								<li><a href="">Menu Option</a></li>
-								<li><a href="">Menu Option</a></li> -->
+					<div class="numbers">
+						<div class="row">
+							<a href="" class="close"><span class="snf-close"></span></a>
+							<ul class="nums">
+								<li class="current">
+									<em><span href="">1</span></em>
+									<p><strong>Create new private network</strong></p>
+								</li>
 							</ul>
-						</nav>
-						<nav class="sub-menu" data-step=2>
+						</div>
+					</div>
+					<div class="row">
+						<nav class="sub-menu" data-step=1>
 							<ul>
-								<li><a href="" class="current" data-size="small">Small</a></li>
-								<li><a href="" data-size="medium">Medium</a></li>
-								<li><a href="" data-size="large">Large</a></li>
+								<li><a href="" class="current">System</a></li>
+								<li><a href="">My images</a></li>
+								<li><a href="">Shared with me</a></li>
+								<li><a href="">Public</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -76,8 +79,9 @@
 						<div class="row main">
 							<ul class="network_options clearfix">
 									<li>
-										<div class="row main">
-											<form><span >Network Name:</span><input type="text" name="network_name"></form>
+										<div class="network-name">
+											<h2>Network name</h2>
+											<span class="input"><input type="text" placeholder="My Network"></span>
 										</div>
 									</li>
 									<li class="dhcp_option"><span>Assign IP addresses automatically:</span>

@@ -65,6 +65,7 @@ $global-radius: 1px;
 
 // header settings
 $header-height:70px;
+$header-height-responsive:120px;
 $header-padding-vertical:emCalc(20px);
 $header-padding-horizontal:emCalc(40px);
 
@@ -77,6 +78,7 @@ $bar-submenu-height:50px;
 
 // button options
 $btn-height:30px;
+
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;

@@ -262,8 +262,12 @@ $(document).ready(function(){
 
 	})
 
-
-
+	$('.os .name-col').focus(function(e){
+		$(this).parents('li').addClass('hover');
+	})
+	$('.os .name-col').focusout(function(e){
+		$(this).parents('li').removeClass('hover');
+	})
 	
 
 });

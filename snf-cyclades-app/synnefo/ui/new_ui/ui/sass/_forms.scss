@@ -24,31 +24,30 @@
 		display: none;
 	}
 }
+.input {
+	display: inline-block;
+	background:url(../images/input-bg-lt.png) no-repeat left bottom;
+	padding-left:5px;
+	input[type="text"] {
+		width: 145px;
+		padding:0 12px 0 6px;
+		border:0 none;
+		background:url(../images/input-bg-rt.png) no-repeat right bottom;
+		background-color: transparent;
+		outline: 0;
+		margin:0;
+		color: $wizard-base-font-color;
+		//to be improved!!!!
+		-webkit-box-shadow: none;
+		-moz-box-shadow:    none;
+		box-shadow: none;
 
-.advanced-conf-step {
-	.input {
-		display: inline-block;
-		background:url(../images/input-bg-lt.png) no-repeat left bottom;
-		padding-left:6px;
-		input[type="text"] {
-			width: 145px;
-			padding:0 12px 0 6px;
-			border:0 none;
-			background:url(../images/input-bg-rt.png) no-repeat right bottom;
-			background-color: transparent;
-			outline: 0;
-			margin:0;
-			color: $wizard-base-font-color;
-			//to be improved!!!!
-			-webkit-box-shadow: none;
-			-moz-box-shadow:    none;
-			box-shadow: none;
-
-			&.tag_name {
-				width: 70px;
-			}
+		&.tag_name {
+			width: 70px;
 		}
 	}
+}
+.advanced-conf-step {
 	#color {
 		@extend .tag-demo;
 		margin: 0 6px 0 15px;
@@ -61,7 +60,6 @@
 		height:237px;
 		width: 100%
 	}
-
 }
 .wizard {
 	form.custom .custom.dropdown.medium {
