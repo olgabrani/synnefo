@@ -60,7 +60,6 @@ ui.wizard ={
 			else if (e.keyCode==13 && ui.wizard.current_step==ui.wizard.total_step) {
 				console.log('close you!');
 				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
-
 			}
 			// esc keyCode == 27
 			else if(e.keyCode== 27 && ui.wizard.current_step==1) {
@@ -78,7 +77,6 @@ ui.wizard ={
 		ui.wizard.btns.previous.click(function(e){
 			e.preventDefault();
 			go_prev();
-			
 		});
 
 		ui.wizard.btns.next.focusout(function(e) {
@@ -86,7 +84,6 @@ ui.wizard ={
 				$(this).removeClass('active');
 				go_next();
 			}
-		
 		});
 		
 		ui.wizard.btns.previous.focusout(function(e) {
@@ -94,7 +91,6 @@ ui.wizard ={
 				$(this).removeClass('active');
 				go_prev();
 			}
-		
 		});
 
 		function go_next() {
@@ -152,7 +148,6 @@ ui.wizard ={
 				ui.wizard.reset();
 				ui.wizard.adjust_to_resized_screen();
 				ui.wizard.set_dimensions();
-				$('.sub-menu[data-step=1] li:first').find('a').focus();
 			})
 	},
 
@@ -161,8 +156,9 @@ ui.wizard ={
 		$('.wizard .top .sub-menu[data-step]').hide();
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
-		//$('.nums li:nth-child('+ui.wizard.current_step+'').addClass('current');
-		$('.nums').children().find('*:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
+		$('.nums li').show();
+		$('.nums li:nth-child('+ui.wizard.current_step+'').addClass('current');
+		$('.nums .current').prevAll('li').hide();
 	},
 
 	// changes the text of next and previous buttons

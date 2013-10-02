@@ -155,13 +155,17 @@ Overlays (Todo: clean up)
 	color:white;
 	.top {
 		background:$overlay-color-top;
-		height:$bar-height;
-		line-height: $bar-height;
+		height:$bar-height+$bar-submenu-height;
 		position:fixed;
 		left:0;
 		top:$header-height;
 		width:100%;
 		z-index:40;
+		.numbers {
+			height:$bar-height;
+			line-height:$bar-height;
+			background:$overlay-darker-color;
+		}
 		.sub-menu {
 			display: none;
 			&[data-step="1"] {
@@ -175,7 +179,7 @@ Overlays (Todo: clean up)
 				li {
 					display: inline;
 					margin-right:10px;
-					line-height: $bar-height;
+					line-height: $bar-submenu-height;
 					list-style: none outside none;
 					a {
 						color:$black;
@@ -189,9 +193,60 @@ Overlays (Todo: clean up)
 				}
 			}
 		}
+		.nums {
+			text-align: right;
+			list-style:none outside none;
+			margin:0;
+			height: $bar-height;
+			line-height: $bar-height;
+			font-size:emCalc(12px);
+			padding-right:120px;
+			color:$secondary-color;
+			li {
+				list-style:none outside none;
+				display: inline;
+				p {
+					display: none;
+				}
+				em {
+					display: inline-block;
+					border-radius:50%;
+					border:1px solid $secondary-color;
+					width:25px;
+					height:25px;
+					line-height: 21px;
+					margin:0 3px;
+					text-align: center;
+					font-style: normal;
+				}
+				a {
+					color:$secondary-color;
+					display: block;
+					&:hover {
+						cursor: default;
+					}
+				}
+				&.current{
+					float: left;
+					p {
+						display: inline-block;
+					}
+					em {
+						font-size:emCalc(16px);
+						width:30px;
+						height:30px;
+						line-height: 27px;
+						border-color:$secondary-color;
+						* {
+							color:$secondary-color;
+						}
+					}
+				}
+			}
+		}
 	}
 	.middle {
-		padding-top:$bar-height;
+		padding-top:$bar-height+$bar-submenu-height;
 		.step {
 			padding:50px 0 50px;
 			float:left;
@@ -208,6 +263,9 @@ Overlays (Todo: clean up)
 					&.current {
 						background:white;
 						color:$overlay-color;
+						.name-col {
+							color:$overlay-color;
+						}
 						.btn-col {
 							a {
 								@extend .btn5;
@@ -617,44 +675,6 @@ Overlays (Todo: clean up)
 				span {
 					background-position:left bottom;
 					float:right;
-				}
-			}
-		}
-		.nums {
-			text-align: center;
-			list-style:none outside none;
-			margin:0;
-			height: $bar-height;
-			line-height: $bar-height;
-			font-size:emCalc(12px);
-			li {
-				list-style:none outside none;
-				display: inline-block;
-				border-radius:50%;
-				border:1px solid $primary-color;
-				width:25px;
-				height:25px;
-				line-height: 21px;
-				margin:0 3px;
-				a {
-					color:$primary-color;
-					display: block;
-					&:hover {
-						cursor: default;
-					}
-				}
-				&.current{
-					border-color:white;
-					* {
-						color:white;
-					}
-
-				}
-				&.current {
-					font-size:emCalc(16px);
-					width:30px;
-					height:30px;
-					line-height: 27px;
 				}
 			}
 		}

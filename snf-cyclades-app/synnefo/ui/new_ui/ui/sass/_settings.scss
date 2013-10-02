@@ -29,7 +29,7 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 
 // We use these as default colors throughout
 $primary-color: #919194;
-$secondary-color: #919194;
+$secondary-color: #30c79e;
 $third-color: #30c79e;
 $overlay-color: #485057;
 $overlay-color-top:#636a70;
@@ -47,7 +47,7 @@ $vm-stopped-color: #e00e63;
 $network-color: #79c79e;
 
 //colors for main icons (icons of networks and vms)
-$vm-active-color: #75c046;
+$vm-active-color: $secondary-color;
 $vm-stopped-color: #FF3366;
 $network-color: #79c79e;
 
@@ -73,6 +73,7 @@ $icons-nav-margin-horizontal : emCalc(5px);
 
 // bar options
 $bar-height:60px;
+$bar-submenu-height:50px;
 
 // button options
 $btn-height:30px;
