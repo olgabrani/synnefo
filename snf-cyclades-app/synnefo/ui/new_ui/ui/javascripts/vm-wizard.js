@@ -226,9 +226,17 @@ ui.wizard ={
 		
 		$('.vm-wizard-carousel').css({left: ui.wizard.current_position+'px'});
 		$('.bottom').show();
+		$('.os li').removeClass('current');
+		$('.os .btn-col a').removeClass('current');
+		$('.os li.preselected').addClass('current');
 		//$('.step-1').find('.current').removeClass('current');
 		ui.wizard.indicate_step(ui.wizard.current_step);
 		ui.wizard.set_movement_tags();
+		$('.ssh-keys-area').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked');
+		$('.ssh-keys-area').find('.snf-checkbox-checked').removeClass('snf-checkbox-checked');
+		$('.networks-area .checkbox').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked');
+		$('.networks-area .checkbox').find('.snf-checkbox-checked').removeClass('snf-checkbox-checked');
+		$('.networks-area .more').hide();
 		$('#vm-wizard').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked').removeClass('snf-checkbox-checked');
 		$('#vm-wizard').find('.default').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
 		$('.details').hide();
