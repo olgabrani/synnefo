@@ -284,6 +284,8 @@ function goToByScroll(id){
         scrollTop: $("#"+id).offset().top},
         'slow');
 }
+
+
 $(document).ready(function(){
 
     ui.setSidebarHeight();

@@ -12,6 +12,39 @@ ui.wizard ={
 		expand_down: undefined
 	},
 
+	set_container_height: function(step) {
+		if (step === true) {
+			step =0;
+		} else {
+			step = ui.wizard.current_step;
+		}
+		var topHeight = $('.top').height();
+		var stepHeight = $('.step-'+(step+1)+'').height();
+		var res = topHeight+stepHeight;
+		console.log('step', step);
+		if (step == 2) {
+			$('.wizard-content').removeAttr('style');
+		} else {
+			$('.wizard-content').height(res);
+		}
+    },
+    set_container_height_back: function(step) {
+		if (step === true) {
+			step =1;
+		} else {
+			step = ui.wizard.current_step;
+		}
+		var topHeight = $('.top').height();
+		var stepHeight = $('.step-'+step+'').height();
+		var res = topHeight+stepHeight;
+		console.log('step', step);
+		if (step == 3) {
+			$('.wizard-content').removeAttr('style');
+		} else {
+			$('.wizard-content').height(res);
+		}
+    },
+
 
 	// sets the width and height of the carousel and its divs
 	set_dimensions: function() {
@@ -19,6 +52,7 @@ ui.wizard ={
 		ui.wizard.relocation = $(window).width();
 		console.log(ui.wizard.relocation);
 		$('.vm-wizard-carousel').children('div.step').width(ui.wizard.relocation);
+		ui.wizard.set_container_height(true);
 	},
 
 	// sets the width and height of the carousel and its divs when the screen is resized (in PIXELS)
@@ -96,6 +130,7 @@ ui.wizard ={
 		function go_next() {
 			console.log('going next!');
 			console.log('you clicked next!')
+			ui.wizard.set_container_height();
 			if(ui.wizard.current_step < ui.wizard.total_step){
 				ui.wizard.current_step++;
 				ui.wizard.current_position -=ui.wizard.relocation;
@@ -109,7 +144,6 @@ ui.wizard ={
 				else if(ui.wizard.current_step == 3) {
 					setTimeout(function() { $('.vm-name').find('input').focus() }, speed/2);
 				}
-
 			}
 			else {
 				console.log('This is the last step.');
@@ -119,7 +153,8 @@ ui.wizard ={
 
 		function go_prev() {
 			if(ui.wizard.current_step > 1){
-				ui.wizard.current_step--;
+				--ui.wizard.current_step;
+				ui.wizard.set_container_height_back();
 				ui.wizard.current_position +=ui.wizard.relocation;
 				$('.vm-wizard-carousel').finish();
 				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
