@@ -276,6 +276,10 @@ body {
 		a {
 			position: relative;
 			top:-5px;
+			&:focus {
+				border: 1px solid $secondary-color;
+				padding: 10px;
+			}
 		}
 		img {
 			max-height: 30px;			
