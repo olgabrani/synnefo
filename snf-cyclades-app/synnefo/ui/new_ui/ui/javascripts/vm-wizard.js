@@ -103,28 +103,14 @@ ui.wizard ={
 		
 		// when the button "next" is pressed show the next step (if there is a next step)
 		ui.wizard.btns.next.click(function(e){
-			e.preventDefault();
+			// e.preventDefault();
 			go_next();
 		})
 
 		// when the button "previous" is pressed show the previous step (if there is a previous step)
 		ui.wizard.btns.previous.click(function(e){
-			e.preventDefault();
+			// e.preventDefault();
 			go_prev();
-		});
-
-		ui.wizard.btns.next.focusout(function(e) {
-			if(ui.wizard.current_step!=ui.wizard.total_step) {
-				$(this).removeClass('active');
-				go_next();
-			}
-		});
-		
-		ui.wizard.btns.previous.focusout(function(e) {
-			if(ui.wizard.current_step!=1) {
-				$(this).removeClass('active');
-				go_prev();
-			}
 		});
 
 		function go_next() {
@@ -214,6 +200,7 @@ ui.wizard ={
 	},
 
 	close: function(bottom_area, main_area, total_area) {
+		console.log('tha kleisw')
 		$(bottom_area).hide();
 		$(main_area).slideUp();
 		$(total_area).slideUp();
@@ -252,8 +239,8 @@ ui.wizard ={
 
 	expand_area: function() {
 		ui.wizard.btns.expand_down.click(function(e){
-	        e.preventDefault();
-	      	ui.expand_arrow(ui.wizard.btns.expand_down);
+	        // e.preventDefault();
+	      	ui.expandArrow(ui.wizard.btns.expand_down);
 	        ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
 	    })
 	},
@@ -263,6 +250,10 @@ ui.wizard ={
 
 $(document).ready(function(){
 
+	$('#vm-wizard').find('a').click(function(e) {
+		e.preventDefault();
+	});
+
 	ui.wizard.current_step =1;
 	ui.wizard.current_position =0;
 
@@ -270,18 +261,17 @@ $(document).ready(function(){
 	ui.wizard.btns.previous = $('.bottom').find('.nav.prev');
 	ui.wizard.btns.next = $('.bottom').find('.nav.next');
 	ui.wizard.btns.expand_down =$('.adv-main').find('.expand-link');
-	
-	$('.wizard .nums').click(function(e){
-		e.preventDefault();
-	})
-
+	ui.wizard.btns.close =$('#vm-wizard').find('.close');
 	ui.wizard.initialize_relocation();
 	ui.wizard.move_to_step();
 	ui.wizard.set_movement_tags();
 	ui.wizard.expand_area();
 
+	ui.wizard.btns.close.click(function(e) {
+		ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
+	});
+
 	$('.step-1 .os li:last').find('.btn-col a').focusout(function(e) {
-		e.preventDefault();
 		$('.nav.next').focus();
 		$('.nav.next').addClass('active');
 	});
@@ -292,25 +282,34 @@ $(document).ready(function(){
 	});
 
 	$('.nav.previous').focusout(function(e){
-		e.preventDefault();
-		$(this).addClass('active');
+		// $(this).addClass('active');
 		$(this).removeClass('active');
 
 	});
 
 
 	$('.sub-menu[data-step=2] li:last').find('a').focusout(function(e) {
-		e.preventDefault();
 		$('.step-2').find('.dropdown a:first').focus();
 
-	})
+	});
 
 	$('.os .name-col').focus(function(e){
 		$(this).parents('li').addClass('hover');
-	})
+	});
+
 	$('.os .name-col').focusout(function(e){
 		$(this).parents('li').removeClass('hover');
-	})
-	
+	});
+
+
+	$('.checkbox .check').click(function(e) {
+		e.stopPropagation();
+
+		if($(this).closest('.checkbox').hasClass('has-more')) {
+            $(this).parent().next('.more').slideToggle();
+        }
+	})	
+
+
 
 });

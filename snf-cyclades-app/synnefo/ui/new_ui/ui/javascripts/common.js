@@ -70,10 +70,10 @@ ui.entitiesActionsInit = function(){
     );
 
     $('.entities .container .check').click(function(e){
-        e.preventDefault();
+        // e.preventDefault();
         var checkbox = $(this).find('.snf-checkbox-unchecked, .snf-checkbox-checked');
-        checkbox.toggleClass('snf-checkbox-unchecked');
-        checkbox.toggleClass('snf-checkbox-checked');
+        // checkbox.toggleClass('snf-checkbox-unchecked');
+        // checkbox.toggleClass('snf-checkbox-checked');
         
         if(checkbox.hasClass('snf-checkbox-checked')){
             $(this).parents('.container').addClass('set-bg');
@@ -199,20 +199,19 @@ ui.overlay = function() {
 }
 
 
-ui.change_checkbox_state =function(checkbox_link) {
-     $(checkbox_link).find('span.snf-checkbox-unchecked, span.snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
+ui.changeCheckboxState =function(checkbox_link) {
+     $(checkbox_link).find('.snf-checkbox-unchecked, .snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
 }
 
-ui.change_radiobutton_state = function(radiobtn_link) {
+ui.changeRadiobuttonState = function(radiobtn_link) {
     $(radiobtn_link).find('span.snf-radio-unchecked, span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
 }
 
-ui.check_one_radiobtn = function(radiobtn_link) {
-    tt = $(radiobtn_link);
+ui.checkOneRadioButton = function(radiobtn_link) {
     $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
 }
 
-ui.expand_arrow = function(arrow_link) {
+ui.expandArrow = function(arrow_link) {
     var arrow = arrow_link.find('span.snf-arrow-up, span.snf-arrow-down');
     arrow.toggleClass('snf-arrow-up snf-arrow-down');
         
@@ -240,42 +239,6 @@ ui.pickResources = function(resource) {
     $('.flavor .with-flavor a.'+resource+'').addClass('current');
 }
 
-
-// ui.netOptions = function(option) {
-//     var checkbox = $(option).find('.snf-checkbox-checked, .snf-checkbox-unchecked, .snf-radio-checked, .snf-radio-unchecked');
-//     var list = $(option).closest('ul');
-    
-//     ui.checkAction(checkbox); //allazw to checkbox p pataw
-//     if(list.hasClass('subnet_options')){
-//         checkedBefore = $(option).closest('li').siblings('li').find('span.snf-radio-checked');
-//         if($(checkedBefore).closest('li').find('a').hasClass('manual'))
-//         {
-//             $(checkedBefore).closest('li').find('.manual_sub').hide();
-//         }
-//         ui.checkAction(checkedBefore); //allazw ta alla checkboxes
-        
-//         if($(option).hasClass('manual')) {
-
-//             if($(checkbox).hasClass('snf-checkbox-unchecked')) {
-//                 $(option).closest('span').find('.manual_sub').hide();
-//             }
-//             else {
-//                 $(option).closest('span').find('.manual_sub').show();
-//             }
-//         }
-//     }
-//     else if($(option).closest('li').hasClass('dhcp_option')) {
-//         if($(checkbox).hasClass('snf-checkbox-unchecked')) {
-//             $('.network_options').find('.subnet_options').hide();
-//             $('.network_options').find('.sub_title').hide();
-//         }
-//         else {
-//             $('.network_options').find('.sub_title').show();
-//             $('.network_options').find('.subnet_options').show();
-//         }
-//     }
-// }
-    
 function goToByScroll(id){
       // Remove "link" from the ID
     id = id.replace("link", "");
@@ -290,9 +253,19 @@ $(document).ready(function(){
 
     ui.setSidebarHeight();
     ui.closeDiv($('.info .close'), '.info');
-    ui.entitiesActionsInit();
     ui.editable();
     ui.overlay();
+
+
+    // checkbox: basic reaction on click (checked, unchecked)
+    $('.check').click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('HI!');
+        ui.changeCheckboxState(this);
+    });
+
+    ui.entitiesActionsInit();
 
 
     $('.select-os li').click(function(e){
@@ -326,10 +299,13 @@ $(document).ready(function(){
             e.preventDefault();
         }
     })
-    $('.overlay-area .close').click(function(e){
+    $('.overlay-area').children('.close').click(function(e){
         e.preventDefault();
+        e.stopPropagation();
         $(this).parents('.overlay-area').hide();
         $(this).parents('.overlay-area').find($('.overlay-div')).hide();
+
+        if($(this).parents('#network-wizard')) {console.log('vm wizard')}
     })
 
     $('.browse-files').click(function(e){
@@ -363,6 +339,8 @@ $(document).ready(function(){
         }
     });
 
+    ui.placementByUser();
+
     // vm wizard pick flavor
     $('.wizard .sub-menu a[data-size]').on( "click", function(e) {
         e.preventDefault();
@@ -376,51 +354,48 @@ $(document).ready(function(){
         $('.wizard .sub-menu a[data-size]').removeClass('current');
         $(this).parents('.options').find('a').removeClass('current');
         $(this).addClass('current');
-    })
+    });
 
     $('.wizard .os > li').click(function(e){
         e.preventDefault();
         $('.wizard .os >li').removeClass('current');
         $(this).addClass('current');
-    })
+    });
 
-
-    // create network
-    // checkbox: basic reaction on click (checked, unchecked)
-    $('.network_options .check').click(function(e){
-        e.preventDefault();
-      //  ui.netOptions(this);
-    })
-  
-    ui.placementByUser();
     $('.os .btn-col a').click( function(e){
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('current');
         $(this).parents('li').find('.details').stop().slideToggle();
-    })
+    });
 
     $('.advanced-conf-options .checkbox').click(function(e){
-        console.log($(this).find('span'));
-        $(this).find('h3').next('span').toggleClass('snf-checkbox-unchecked snf-checkbox-checked ');
-    })
+        e.preventDefault();
+        var checkbox = $(this).find('.check');
+        ui.changeCheckboxState(checkbox);
+        if($(this).hasClass('has-more')) {
+            $(this).next('.more').slideToggle();
+        }
+    });
 
-    $('.advanced-conf-options .has-more').click(function(e){
-        $(this).next('.more').slideToggle();
-    })
 
+    if($('#picker').length>0) {
+        $('#picker').farbtastic('#color');
+    };
 
-
-    if($('#picker').length>0) { $('#picker').farbtastic('#color'); }
     $('.show-add-tag').click(function(e){
         e.preventDefault();
         $(this).parents('.tags-area').find('.snf-color-picker').slideDown();
         goToByScroll('hide-add-tag');
-    })
+       ui.colorPickerVisible =1;
+    });
+
     $('.hide-add-tag').click(function(e){
         e.preventDefault();
-        $(this).parents('.snf-color-picker').slideUp();
-    })
+        $(this).parents('.snf-color-picker').slideUp('400', function(){
+            ui.colorPickerVisible = 0;
+        });
+    });
 
 })
 

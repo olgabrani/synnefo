@@ -5,13 +5,20 @@ ui.wizard.network = {
                 create: undefined,
                 close: undefined,
                 new_network: undefined
-            }
+            },
+        close: function(bottom_area, main_area, total_area) {
+            $(bottom_area).hide();
+            $(main_area).slideUp();
+            $(total_area).slideUp();
+        }
 }
 
 
 
 $(document).ready(function(){
-
+    $('#network-wizard').find('a').click(function(e) {
+        e.preventDefault();
+    });
     ui.wizard.network.elemID = '#network-wizard';
     ui.wizard.network.btns.new_network = $(ui.wizard.network.elemID);
     ui.wizard.network.btns.close = ui.wizard.network.btns.new_network.find('.close');
@@ -22,19 +29,15 @@ $(document).ready(function(){
      // create network
     $('.network_options .check').click(function(e){
     e.preventDefault();
-
-    ui.change_checkbox_state(this);
     $(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
-
     });
 
     $('.network_options .radio_btn').click(function(e){
         e.preventDefault();
-
         var state = $(this).find('span');
         if(state.hasClass('snf-radio-unchecked')) {
-            ui.check_one_radiobtn(this);
-            ui.change_radiobutton_state(this);
+            ui.checkOneRadioButton(this);
+            ui.changeRadiobuttonState(this);
 
             if($(this).hasClass('manual')) {
                 $(this).siblings('.manual_sub').toggle();
@@ -44,5 +47,15 @@ $(document).ready(function(){
             }
         }
        
-    })
+    });
+    $(ui.wizard.network.btns.cancel).click(function(e) {
+        ui.wizard.network.close('.bottom', '#network-wizard', '.overlay-area');
+    });
+    $(ui.wizard.network.btns.create).click(function(e) {
+        ui.wizard.network.close('.bottom', '#network-wizard', '.overlay-area');
+    });
+    $(ui.wizard.network.btns.close).click(function(e) {
+        ui.wizard.network.close('.bottom', '#network-wizard', '.overlay-area');
+    });
+
 })

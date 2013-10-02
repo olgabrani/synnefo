@@ -116,6 +116,12 @@ a {
 		color:$third-color;
 		@include transition(background, 300ms, ease-out);
 	}
+
+	
+}
+
+.more a .snf-checkbox-checked, .more a .snf-checkbox-unchecked{
+	color: $net-opt-area-color;
 }
 
 .btn1 {
