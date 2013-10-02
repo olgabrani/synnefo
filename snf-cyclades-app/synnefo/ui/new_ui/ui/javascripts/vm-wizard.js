@@ -157,7 +157,8 @@ ui.wizard ={
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
 		$('.nums li').show();
-		$('.nums li:nth-child('+ui.wizard.current_step+'').addClass('current');
+		//$('.nums li:nth-child('+ui.wizard.current_step+'').addClass('current');
+		$('.nums').children().find('*:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
 		$('.nums .current').prevAll('li').hide();
 	},
 
