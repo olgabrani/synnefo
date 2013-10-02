@@ -269,6 +269,9 @@ body {
 		height:$header-height;
 		line-height:$header-height;
 		top:0;
+		li {
+			line-height: $header-height;
+		}
 	}
 	.logo {
 		text-align: center;
