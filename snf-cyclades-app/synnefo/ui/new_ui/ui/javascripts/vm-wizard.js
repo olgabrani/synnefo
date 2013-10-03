@@ -1,7 +1,7 @@
 // all functions use pixels
 ui.wizard ={
 	current_step: undefined,
-	total_step: 4,
+	total_step:  $('.wizard-content .step').length,
 	current_position: undefined,
 	relocation: undefined,
 	btns: {
@@ -11,8 +11,8 @@ ui.wizard ={
 		previous: undefined,
 		expand_down: undefined
 	},
-
-	set_container_height: function(step) {
+	speed: 500,
+	/*set_container_height: function(step) {
 		if (step === true) {
 			step =0;
 		} else {
@@ -27,7 +27,7 @@ ui.wizard ={
 		} else {
 			$('.wizard-content').height(res);
 		}
-    },
+    }, 
     set_container_height_back: function(step) {
 		if (step === true) {
 			step =1;
@@ -43,133 +43,77 @@ ui.wizard ={
 		} else {
 			$('.wizard-content').height(res);
 		}
-    },
+    },*/
 
-
-	// sets the width and height of the carousel and its divs
-	set_dimensions: function() {
-		console.log('set dimentions');
-		ui.wizard.relocation = $(window).width();
-		console.log(ui.wizard.relocation);
-		$('.vm-wizard-carousel').children('div.step').width(ui.wizard.relocation);
-		ui.wizard.set_container_height(true);
+	set_dimensions: function (){
+		$('.vm-wizard-carousel').css('width', 100*ui.wizard.total_step+'%');
+		$('.vm-wizard-carousel .step').css('width', 100/ui.wizard.total_step+'%');
 	},
 
-	// sets the width and height of the carousel and its divs when the screen is resized (in PIXELS)
-	adjust_to_resized_screen: function() {
-		$(window).resize(function() {
-			console.log('resized');
-			ui.wizard.set_dimensions();
-
-			if(ui.wizard.current_position<=0) {
-				// the carousel moves to left -> this is the case that acts on resize
-				ui.wizard.current_position = -((ui.wizard.current_step-1)*ui.wizard.relocation);
-			}
-			else
-				ui.wizard.current_position = (ui.wizard.current_step-1)*ui.wizard.relocation;
-
-			$('.vm-wizard-carousel').css('left', ui.wizard.current_position+'px');
-		})
+	submit_data: function (){
+		console.log('submit data dummy function');
 	},
 
-	
+	move: function () {
+		var percentage = -(ui.wizard.current_step-1)*100+'%';
+		$('.vm-wizard-carousel').stop().animate({ 'left': percentage }, ui.wizard.speed);
+		$('.nav.next').attr('data-step',ui.wizard.current_step);
+		ui.wizard.indicate_step(ui.wizard.current_step);
+		ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
 
-	move_to_step: function() {
-		var speed =500;
+	},
 
-		// carousel movement when right or left arrow is pressed
+	go_next: function () {
+		if(ui.wizard.current_step < ui.wizard.total_step){
+			ui.wizard.current_step++;
+			ui.wizard.move();
+		}
+		else {
+			console.log('e');
+			ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
+			ui.wizard.submit_data();
+		}
+	},
+
+	go_prev:function() {
+		if(ui.wizard.current_step > 1){
+			ui.wizard.current_step--;
+			ui.wizard.move();
+		}
+		else {
+			ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
+		}
+	},
+
+	init_events: function(){
+		ui.wizard.set_dimensions();
 		$(document).keydown(function(e) {
-
 			// right arrow keyCode == 39
-			if(e.keyCode==39 && ui.wizard.current_step!=ui.wizard.total_step) {
-				go_next();
+			// ui.wizard.total_step+1 because current_step has not changed yet
+			if(e.keyCode==39 && ui.wizard.current_step!=(ui.wizard.total_step+1)) {
+				console.log('ui.wizard.current_step', ui.wizard.current_step);
+				console.log('ui.wizard.total_step', ui.wizard.total_step);
+				ui.wizard.go_next();
 				return false;
 			}
 			// left arrow keyCode == 37
 			else if(e.keyCode==37 && ui.wizard.current_step!=1) {
-				go_prev();
+				ui.wizard.go_prev();
 				return false;
 			}
-			// enter keyCode == 13
-			else if (e.keyCode==13 && ui.wizard.current_step==ui.wizard.total_step) {
-				console.log('close you!');
-				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
-			}
-			// esc keyCode == 27
+			// ESC
 			else if(e.keyCode== 27 && ui.wizard.current_step==1) {
 				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
 			}
 		});
 		
-		// when the button "next" is pressed show the next step (if there is a next step)
 		ui.wizard.btns.next.click(function(e){
-			// e.preventDefault();
-			go_next();
+			ui.wizard.go_next();
 		})
 
-		// when the button "previous" is pressed show the previous step (if there is a previous step)
 		ui.wizard.btns.previous.click(function(e){
-			// e.preventDefault();
-			go_prev();
+			ui.wizard.go_prev();
 		});
-
-		function go_next() {
-			console.log('going next!');
-			console.log('you clicked next!')
-			ui.wizard.set_container_height();
-			if(ui.wizard.current_step < ui.wizard.total_step){
-				ui.wizard.current_step++;
-				ui.wizard.current_position -=ui.wizard.relocation;
-				$('.vm-wizard-carousel').finish();
-				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
-				ui.wizard.indicate_step(ui.wizard.current_step);
-				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
-				if(ui.wizard.current_step == 2) {
-					$('.sub-menu[data-step=2] li:first').find('a').focus();
-				}
-				else if(ui.wizard.current_step == 3) {
-					setTimeout(function() { $('.vm-name').find('input').focus() }, speed/2);
-				}
-			}
-			else {
-				console.log('This is the last step.');
-				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
-			}
-		}
-
-		function go_prev() {
-			if(ui.wizard.current_step > 1){
-				--ui.wizard.current_step;
-				ui.wizard.set_container_height_back();
-				ui.wizard.current_position +=ui.wizard.relocation;
-				$('.vm-wizard-carousel').finish();
-				$('.vm-wizard-carousel').animate({left: ui.wizard.current_position+'px'}, speed);
-				ui.wizard.indicate_step(ui.wizard.current_step);
-				ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
-
-				if(ui.wizard.current_step == 2) {
-					$('.sub-menu[data-step=2] li:first').find('a').focus();
-				}
-				else if(ui.wizard.current_step == 3) {
-					setTimeout(function() { $('.vm-name').find('input').focus() }, speed/2);
-				}
-			}
-			else {
-				console.log('This is the 1st step.')
-				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
-			}
-		}
-	},
-
-	// sets the width and height of the steps and of the carousel (in PIXELS)
-	initialize_relocation: function(){
-			console.log('initialize_relocation');
-			ui.wizard.btns.start.click(function(e) {
-				e.preventDefault();	
-				ui.wizard.reset();
-				ui.wizard.adjust_to_resized_screen();
-				ui.wizard.set_dimensions();
-			})
 	},
 
 	// for the carousel index
@@ -178,8 +122,7 @@ ui.wizard ={
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
 		$('.nums li').show();
-		//$('.nums li:nth-child('+ui.wizard.current_step+'').addClass('current');
-		$('.nums').children().find('*:contains("'+ui.wizard.current_step+'")').parent('li').addClass('current');
+		$('.nums li:nth-child('+ui.wizard.current_step+')').addClass('current');
 		$('.nums .current').prevAll('li').hide();
 	},
 
@@ -200,18 +143,17 @@ ui.wizard ={
 	},
 
 	close: function(bottom_area, main_area, total_area) {
-		console.log('tha kleisw')
 		$(bottom_area).hide();
 		$(main_area).slideUp();
-		$(total_area).slideUp();
+		$(total_area).slideUp('slow', function(){
+			ui.wizard.reset();
+		});
 	},
 
 	// manually sets elements to a initial state
 	reset: function() {
 		ui.wizard.current_step = 1;
-		ui.wizard.current_position = 0;
-		
-		$('.vm-wizard-carousel').css({left: ui.wizard.current_position+'px'});
+		$('.vm-wizard-carousel').css('left',0);
 		$('.bottom').show();
 		$('.os li').removeClass('current');
 		$('.os .btn-col a').removeClass('current');
@@ -244,72 +186,161 @@ ui.wizard ={
 	        ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
 	    })
 	},
+	focus_custom: function(el, step) {
+		el.focus();
+		el.attr('data-step',step);
+	}
 
 }
 
 
 $(document).ready(function(){
 
-	$('#vm-wizard').find('a').click(function(e) {
-		e.preventDefault();
-	});
+/*
+Various functions for vm creation wizard
+*/
 
-	ui.wizard.current_step =1;
-	ui.wizard.current_position =0;
+/* step functions */
+/* step-1: Pick OS */
+ 	$('.wizard .os > li').click(function(e){
+        e.preventDefault();
+        $('.wizard .os >li').removeClass('current');
+        $(this).addClass('current');
+    });
 
-	ui.wizard.btns.start =$('.new-btn, .add-new');
-	ui.wizard.btns.previous = $('.bottom').find('.nav.prev');
-	ui.wizard.btns.next = $('.bottom').find('.nav.next');
-	ui.wizard.btns.expand_down =$('.adv-main').find('.expand-link');
-	ui.wizard.btns.close =$('#vm-wizard').find('.close');
-	ui.wizard.initialize_relocation();
-	ui.wizard.move_to_step();
-	ui.wizard.set_movement_tags();
-	ui.wizard.expand_area();
-
-	ui.wizard.btns.close.click(function(e) {
-		ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
-	});
-
-	$('.step-1 .os li:last').find('.btn-col a').focusout(function(e) {
-		$('.nav.next').focus();
-		$('.nav.next').addClass('active');
-	});
+    $('.os .btn-col a').click( function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).toggleClass('current');
+        $(this).parents('li').find('.details').stop().slideToggle();
+    });
 
 
-	$('.nav.previous').focus(function(e){
-		$(this).addClass('active');
-	});
+/* step-2: Select flavor */
+    $('.wizard .sub-menu a[data-size]').on( "click", function(e) {
+        e.preventDefault();
+        $(this).parents('.sub-menu').find('a').removeClass('current');
+        $(this).addClass('current');
+        ui.pickResources($(this).data('size')); 
+    });
 
-	$('.nav.previous').focusout(function(e){
-		// $(this).addClass('active');
-		$(this).removeClass('active');
+    $('.wizard .flavor .options a').click(function(e){
+        e.preventDefault();
+        $('.wizard .sub-menu a[data-size]').removeClass('current');
+        $(this).parents('.options').find('a').removeClass('current');
+        $(this).addClass('current');
+    });
 
-	});
+/* step-3: Advanced options */
+   
+    $('.advanced-conf-options .checkbox').click(function(e){
+        e.preventDefault();
+        var checkbox = $(this).find('.check');
+        ui.changeCheckboxState(checkbox);
+        if($(this).hasClass('has-more')) {
+            $(this).next('.more').slideToggle();
+        }
+    });
 
+   	$('.show-add-tag').click(function(e){
+        e.preventDefault();
+        $(this).parents('.tags-area').find('.snf-color-picker').slideDown();
+        goToByScroll('hide-add-tag');
+        ui.colorPickerVisible =1;
+    });
 
-	$('.sub-menu[data-step=2] li:last').find('a').focusout(function(e) {
-		$('.step-2').find('.dropdown a:first').focus();
+    $('.hide-add-tag').click(function(e){
+        e.preventDefault();
+        $(this).parents('.snf-color-picker').slideUp('400', function(){
+            ui.colorPickerVisible = 0;
+        });
+    });
 
-	});
-
-	$('.os .name-col').focus(function(e){
-		$(this).parents('li').addClass('hover');
-	});
-
-	$('.os .name-col').focusout(function(e){
-		$(this).parents('li').removeClass('hover');
-	});
-
-
-	$('.checkbox .check').click(function(e) {
+    $('.checkbox .check').click(function(e) {
 		e.stopPropagation();
 
 		if($(this).closest('.checkbox').hasClass('has-more')) {
             $(this).parent().next('.more').slideToggle();
         }
-	})	
+	})
+/* end of step functions */
+
+/* navigation and numbers functions */
+$('.nav.previous').focus(function(e){
+	$(this).addClass('active');
+});
+
+$('.nav.previous').focusout(function(e){
+	// $(this).addClass('active');
+	$(this).removeClass('active');
+
+});
+
+$('.sub-menu[data-step=2] li:last').find('a').focusout(function(e) {
+	$('.step-2').find('.dropdown a:first').focus();
+
+});
+
+$('.os .name-col').focus(function(e){
+	$(this).parents('li').addClass('hover');
+});
+
+$('.os .name-col').focusout(function(e){
+	$(this).parents('li').removeClass('hover');
+});
 
 
+/* end of navigation and numbers functions */
 
+
+/* focus and tabs functionality */
+$('.step-1 .os li:last').find('.btn-col a').focusout(function(e) {
+	ui.wizard.focus_custom( $('.nav.next') , 1);
+});
+
+$('.step-2 a:last').focusout(function(e) {
+	ui.wizard.focus_custom( $('.nav.next') , 2);
+});
+
+$('.step-3 a:last').focusout(function(e) {
+	ui.wizard.focus_custom( $('.nav.next') , 3);
+});
+
+$('.nav.next').keydown(function(e) {
+	var code = e.keyCode || e.which;
+	if (code == '9') {
+		var step = $(this).data('step');
+		$('.step[data-step='+step+']').find('a, input').first().focus();
+	   return false;
+   }
+});
+
+
+// make sure that is always correctly moved
+$('a, input').focus(function(e){
+	console.log('parent-step',$(this).parents('.step').data('step'));
+	if ($(this).parents('.step').data('step')> 0) {
+		if ( ui.wizard.current_step == ($(this).parents('.step').data('step'))) {
+		} else {
+			ui.wizard.current_step = $(this).parents('.step').data('step');
+			ui.wizard.move();q
+		}
+	}
+})
+/* end of focus and tabs functionality */
+
+	$('#vm-wizard').find('a').click(function(e) {
+		e.preventDefault();
+	});
+	ui.wizard.current_step =1;
+	ui.wizard.btns.previous = $('.bottom').find('.nav.prev');
+	ui.wizard.btns.next = $('.bottom').find('.nav.next');
+	ui.wizard.btns.expand_down =$('.adv-main').find('.expand-link');
+	ui.wizard.btns.close =$('#vm-wizard').find('.close');
+	ui.wizard.init_events();
+	ui.wizard.set_movement_tags();
+	ui.wizard.expand_area();
+	ui.wizard.btns.close.click(function(e) {
+		ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
+	});
 });

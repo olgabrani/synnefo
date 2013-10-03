@@ -4,6 +4,10 @@
 */
 
 ui = {};
+/*
+* ui.wizards get populated in vm-wizard.js
+* here is the declaration only
+*/
 ui.wizard = {};
 
 /* when closeEl el is clicked, its parent with class divToCloseClass slidesUp */
@@ -195,28 +199,9 @@ ui.overlay = function() {
 
         $('.overlay-area').show();
         $(id).slideDown('slow');
+        $(id).find('a').first().focus();
     });
 }
-
-
-ui.changeCheckboxState =function(checkbox_link) {
-     $(checkbox_link).find('.snf-checkbox-unchecked, .snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
-}
-
-ui.changeRadiobuttonState = function(radiobtn_link) {
-    $(radiobtn_link).find('span.snf-radio-unchecked, span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
-}
-
-ui.checkOneRadioButton = function(radiobtn_link) {
-    $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
-}
-
-ui.expandArrow = function(arrow_link) {
-    var arrow = arrow_link.find('span.snf-arrow-up, span.snf-arrow-down');
-    arrow.toggleClass('snf-arrow-up snf-arrow-down');
-        
-}
-
 
 // when user moves a vm or network icon (list view)
 ui.placementByUser = function() {
@@ -249,6 +234,28 @@ function goToByScroll(id){
 }
 
 
+/*
+* functions concerning checkboxes and radiobuttons links
+*/
+ui.changeCheckboxState =function(checkbox_link) {
+     $(checkbox_link).find('.snf-checkbox-unchecked, .snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
+}
+
+ui.changeRadiobuttonState = function(radiobtn_link) {
+    $(radiobtn_link).find('span.snf-radio-unchecked, span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
+}
+
+ui.checkOneRadioButton = function(radiobtn_link) {
+    $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
+}
+/* toggle expand arrrow */
+ui.expandArrow = function(arrow_link) {
+    var arrow = arrow_link.find('span.snf-arrow-up, span.snf-arrow-down');
+    arrow.toggleClass('snf-arrow-up snf-arrow-down');
+}
+
+
+
 $(document).ready(function(){
 
     ui.setSidebarHeight();
@@ -261,18 +268,12 @@ $(document).ready(function(){
     $('.check').click(function(e){
         e.preventDefault();
         e.stopPropagation();
-        console.log('HI!');
+        console.log('check this', this);
+        console.log('check $this', $(this));
         ui.changeCheckboxState(this);
     });
 
     ui.entitiesActionsInit();
-
-
-    $('.select-os li').click(function(e){
-        $('.select-os li').removeClass('selected');
-        $(this).addClass('selected');
-    })
-
     
     if ($('.overlay').length >0 ){
         $('body').addClass('with-overlay');
@@ -304,8 +305,6 @@ $(document).ready(function(){
         e.stopPropagation();
         $(this).parents('.overlay-area').hide();
         $(this).parents('.overlay-area').find($('.overlay-div')).hide();
-
-        if($(this).parents('#network-wizard')) {console.log('vm wizard')}
     })
 
     $('.browse-files').click(function(e){
@@ -341,62 +340,9 @@ $(document).ready(function(){
 
     ui.placementByUser();
 
-    // vm wizard pick flavor
-    $('.wizard .sub-menu a[data-size]').on( "click", function(e) {
-        e.preventDefault();
-        $(this).parents('.sub-menu').find('a').removeClass('current');
-        $(this).addClass('current');
-        ui.pickResources($(this).data('size')); 
-    });
-
-    $('.wizard .flavor .options a').click(function(e){
-        e.preventDefault();
-        $('.wizard .sub-menu a[data-size]').removeClass('current');
-        $(this).parents('.options').find('a').removeClass('current');
-        $(this).addClass('current');
-    });
-
-    $('.wizard .os > li').click(function(e){
-        e.preventDefault();
-        $('.wizard .os >li').removeClass('current');
-        $(this).addClass('current');
-    });
-
-    $('.os .btn-col a').click( function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).toggleClass('current');
-        $(this).parents('li').find('.details').stop().slideToggle();
-    });
-
-    $('.advanced-conf-options .checkbox').click(function(e){
-        e.preventDefault();
-        var checkbox = $(this).find('.check');
-        ui.changeCheckboxState(checkbox);
-        if($(this).hasClass('has-more')) {
-            $(this).next('.more').slideToggle();
-        }
-    });
-
-
     if($('#picker').length>0) {
         $('#picker').farbtastic('#color');
     };
-
-    $('.show-add-tag').click(function(e){
-        e.preventDefault();
-        $(this).parents('.tags-area').find('.snf-color-picker').slideDown();
-        goToByScroll('hide-add-tag');
-       ui.colorPickerVisible =1;
-    });
-
-    $('.hide-add-tag').click(function(e){
-        e.preventDefault();
-        $(this).parents('.snf-color-picker').slideUp('400', function(){
-            ui.colorPickerVisible = 0;
-        });
-    });
-
 })
 
 

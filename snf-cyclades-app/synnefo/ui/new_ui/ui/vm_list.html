@@ -95,7 +95,7 @@ Confirm that the options you have selected are correct</p>
 				<div class="middle">
 					<div class="wizard-content">
 						<div class="vm-wizard-carousel">
-							<div class="step step-1" id="step-1">
+							<div class="step step-1" id="step-1" data-step="1">
 								<ul class="os">
 									<li>
 										<div class="row">
@@ -205,117 +205,9 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li>
-										<div class="row">
-											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Ubuntu Desktop LTS (Long Term Support)</a>
-											<div class="size-col">10GB</div>
-											<div class="btn-col"><a href="">details</a></div>
-										</div>
-										<div class="details">
-											<div class="row">
-												<h3>Image metadata</h3>
-												<dl>
-													<dt>Owner</dt>
-													<dd>system</dd>
-													<dt>OS</dt>
-													<dd>Kubuntu</dd>
-													<dt>Kernel</dt>
-													<dd>4.8.2</dd>
-													<dt>Size</dt>
-													<dd>2.51GB</dd>
-													<dt>Users</dt>
-													<dd>user</dd>
-													<dt>Root partition</dt>
-													<dd>1</dd>
-												</dl>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="row">
-											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
-											<a href="" class="name-col">Windows 2012</a>
-											<div class="size-col">10GB</div>
-											<div class="btn-col"><a href="">details</a></div>
-										</div>
-										<div class="details">
-											<div class="row">
-												<h3>Image metadata</h3>
-												<dl>
-													<dt>Owner</dt>
-													<dd>system</dd>
-													<dt>OS</dt>
-													<dd>Kubuntu</dd>
-													<dt>Kernel</dt>
-													<dd>4.8.2</dd>
-													<dt>Size</dt>
-													<dd>2.51GB</dd>
-													<dt>Users</dt>
-													<dd>user</dd>
-													<dt>Root partition</dt>
-													<dd>1</dd>
-												</dl>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="row">
-											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
-											<a href="" class="name-col">Kubuntu</a>
-											<div class="size-col">10GB</div>
-											<div class="btn-col"><a href="">details</a></div>
-										</div>
-										<div class="details">
-											<div class="row">
-												<h3>Image metadata</h3>
-												<dl>
-													<dt>Owner</dt>
-													<dd>system</dd>
-													<dt>OS</dt>
-													<dd>Kubuntu</dd>
-													<dt>Kernel</dt>
-													<dd>4.8.2</dd>
-													<dt>Size</dt>
-													<dd>2.51GB</dd>
-													<dt>Users</dt>
-													<dd>user</dd>
-													<dt>Root partition</dt>
-													<dd>1</dd>
-												</dl>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="row">
-											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Ubuntu Desktop LTS (Long Term Support)</a>
-											<div class="size-col">10GB</div>
-											<div class="btn-col"><a href="">details</a></div>
-										</div>
-										<div class="details">
-											<div class="row">
-												<h3>Image metadata</h3>
-												<dl>
-													<dt>Owner</dt>
-													<dd>system</dd>
-													<dt>OS</dt>
-													<dd>Kubuntu</dd>
-													<dt>Kernel</dt>
-													<dd>4.8.2</dd>
-													<dt>Size</dt>
-													<dd>2.51GB</dd>
-													<dt>Users</dt>
-													<dd>user</dd>
-													<dt>Root partition</dt>
-													<dd>1</dd>
-												</dl>
-											</div>
-										</div>
-									</li>
 								</ul>
 							</div>
-							<div class="step step-2" id="step-2">
+							<div class="step step-2" id="step-2" data-step=2>
 								<div class="row">
 									<form class="custom">
 									  <select class="medium">
@@ -430,7 +322,7 @@ Confirm that the options you have selected are correct</p>
 								</div>
 							</div>
 <!--step 3 -->
-							<div class="step step-3" id="step-3">
+							<div class="step step-3" id="step-3" data-step="3">
 								<div class="advanced-conf-step">
 									<div class="adv-main row">
 										<div class="vm-name">
@@ -575,7 +467,7 @@ Confirm that the options you have selected are correct</p>
 									</div>
 								</div>
 <!-- end step 3 -->				</div>
-							<div class="step step-4" id="step-4">
+							<div class="step step-4" id="step-4" data-step=4>
 								<div class="summary">
 									<div class="row">
 										<dl>
@@ -637,7 +529,7 @@ Confirm that the options you have selected are correct</p>
 				<div class="bottom">
 					<div class="row">
 						<a href="" class="nav prev"><span>CANCEL</span></a>
-						<a href="" class="nav next"><span>NEXT</span></a>
+						<a href="" class="nav next" data-step="1"><span>NEXT</span></a>
 					</div>
 				</div>
 			</div>
@@ -763,7 +655,7 @@ Confirm that the options you have selected are correct</p>
 					</li>
 					 
 					<li  data-order="5">
-						<div class="add-new"><a href="vm_create_a.html">NEW<br>MACHINE</a></div>	
+						<div class="add-new"><a href="vm_create_a.html" data-overlay-id="#vm-wizard">NEW<br>MACHINE</a></div>
 					</li>
 					 
 				</ul>
