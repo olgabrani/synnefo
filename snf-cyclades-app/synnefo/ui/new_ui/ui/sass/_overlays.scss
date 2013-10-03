@@ -258,6 +258,9 @@ Overlays (Todo: clean up)
 			float:left;
 			position:relative;
 			width:$row-width;
+			overflow:hidden;
+			overflow-y: scroll;
+			
 			.os {
 				li {
 					list-style: none outside none;
@@ -386,6 +389,14 @@ Overlays (Todo: clean up)
 								border:1px solid white;
 								padding:1px;
 								height: 100%;
+								&.disabled-progress-bar {
+									border-color: #3a4046;
+									.container{
+										.total {
+											background-color: #3a4046;
+										}
+									}
+								}
 								.container {
 									height: 100%;
 									.total {
@@ -412,6 +423,7 @@ Overlays (Todo: clean up)
 										}
 									}
 								}
+
 							}
 						}
 						.options {

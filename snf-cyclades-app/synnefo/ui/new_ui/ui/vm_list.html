@@ -318,10 +318,10 @@ Confirm that the options you have selected are correct</p>
 							<div class="step step-2" id="step-2">
 								<div class="row">
 									<form class="custom">
-									  <select id="" class="medium">
-									    <option>Assign to project</option>
-									    <option>Project 2</option>
-									    <option>Project 3</option>
+									  <select class="medium">
+									    <option><a href=>Assign to project</a></option>
+									    <option><a href="">Project 2</a></option>
+                                                <option><a href="">Project 3</a></option>
 									  </select>
 									</form>
 									<ul class="flavor">
@@ -410,7 +410,15 @@ Confirm that the options you have selected are correct</p>
 											</div>
 											<div class="options-bar">
 												<div class="bar">
-													&nbsp;
+													<div class="wrap  disabled-progress-bar">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:100%">
+																<div class="current" style="width:0%"></div>
+																<span></span>
+															</div>
+														</div>
+													</div>
 												</div>
 												<ul class="options">
 													<li><a href="" class="current">DRBD</a></li>
@@ -571,6 +579,7 @@ Confirm that the options you have selected are correct</p>
 								<div class="summary">
 									<div class="row">
 										<dl>
+										<a href="" id="topEl"></a>
 											<dt>Machine name</dt>
 											<dd>handsome frank</dd>
 										</dl>
