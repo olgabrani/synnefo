@@ -12,42 +12,11 @@ ui.wizard ={
 		expand_down: undefined
 	},
 	speed: 500,
-	/*set_container_height: function(step) {
-		if (step === true) {
-			step =0;
-		} else {
-			step = ui.wizard.current_step;
-		}
-		var topHeight = $('.top').height();
-		var stepHeight = $('.step-'+(step+1)+'').height();
-		var res = topHeight+stepHeight;
-		console.log('step', step);
-		if (step == 2) {
-			$('.wizard-content').removeAttr('style');
-		} else {
-			$('.wizard-content').height(res);
-		}
-    }, 
-    set_container_height_back: function(step) {
-		if (step === true) {
-			step =1;
-		} else {
-			step = ui.wizard.current_step;
-		}
-		var topHeight = $('.top').height();
-		var stepHeight = $('.step-'+step+'').height();
-		var res = topHeight+stepHeight;
-		console.log('step', step);
-		if (step == 3) {
-			$('.wizard-content').removeAttr('style');
-		} else {
-			$('.wizard-content').height(res);
-		}
-    },*/
 
 	set_dimensions: function (){
 		$('.vm-wizard-carousel').css('width', 100*ui.wizard.total_step+'%');
 		$('.vm-wizard-carousel .step').css('width', 100/ui.wizard.total_step+'%');
+		ui.wizard.set_step_height('.step', '.top', '.bottom', '.header');
 	},
 
 	submit_data: function (){
@@ -57,11 +26,11 @@ ui.wizard ={
 	data_next_array: ['test1','el2','el4','el7'],
 
 	focus_fun: function(){
-		$('.nav.next').attr('data-step',ui.wizard.current_step);
-		$('.nav.next').removeAttr('data-next');
-		$('.nav.next').attr('data-next', ui.wizard.data_next_array[ui.wizard.current_step]);
-		$('.'+ui.wizard.data_next_array[ui.wizard.current_step]+'').first().focus();
-		console.log('focus_fun',ui.wizard.data_next_array[ui.wizard.current_step]);
+		// $('.nav.next').attr('data-step',ui.wizard.current_step);
+		// $('.nav.next').removeAttr('data-next');
+		// $('.nav.next').attr('data-next', ui.wizard.data_next_array[ui.wizard.current_step]);
+		// $('.'+ui.wizard.data_next_array[ui.wizard.current_step]+'').first().focus();
+		// console.log('focus_fun',ui.wizard.data_next_array[ui.wizard.current_step]);
 	},
 
 	move: function () {
@@ -96,6 +65,7 @@ ui.wizard ={
 
 	init_events: function(){
 		ui.wizard.set_dimensions();
+
 		$(document).keydown(function(e) {
 			// right arrow keyCode == 39
 			// ui.wizard.total_step+1 because current_step has not changed yet
@@ -155,35 +125,24 @@ ui.wizard ={
 		$(total_area).slideUp('slow', function(){
 			ui.wizard.reset();
 		});
+		 ui.wizard.preselect_elements(bottom_area);
+            ui.wizard.preselect_elements(main_area);
+            ui.wizard.preselect_elements(total_area);
 	},
 
 	// manually sets elements to a initial state
 	reset: function() {
-		ui.wizard.current_step = 1;
-		$('.vm-wizard-carousel').css('left',0);
-		$('.bottom').show();
-		$('.os li').removeClass('current');
-		$('.os .btn-col a').removeClass('current');
-		$('.os li.preselected').addClass('current');
-		//$('.step-1').find('.current').removeClass('current');
-		ui.wizard.indicate_step(ui.wizard.current_step);
-		ui.wizard.set_movement_tags();
-		$('.ssh-keys-area').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked');
-		$('.ssh-keys-area').find('.snf-checkbox-checked').removeClass('snf-checkbox-checked');
-		$('.networks-area .checkbox').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked');
-		$('.networks-area .checkbox').find('.snf-checkbox-checked').removeClass('snf-checkbox-checked');
-		$('.networks-area .more').hide();
-		$('#vm-wizard').find('.snf-checkbox-checked').addClass('snf-checkbox-unchecked').removeClass('snf-checkbox-checked');
-		$('#vm-wizard').find('.default').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
-		$('.details').hide();
-		$('.wizard .top .sub-menu[data-step="1"] ul li:first-child a').addClass('current');
-		ui.pickResources('small');
-		//$('.wizard .step-2 .options li a:contains(DRBD)').addClass('current')
-		$('.vm-name input').val('');
-		$('.advanced-conf-options').hide();
-		$('.snf-color-picker').hide();
-
-
+		  ui.wizard.current_step = 1;
+        $('.vm-wizard-carousel').css('left',0);
+        $('.bottom').show();
+        ui.wizard.indicate_step(ui.wizard.current_step);
+        ui.wizard.set_movement_tags();
+        $('.networks-area .more').show();
+        $('.details').hide();
+        $('.vm-name input').val('');
+        $('.advanced-conf-options').hide();
+        $('.snf-color-picker').hide();
+        $('.step').scrollTop(0);
 	},
 
 	expand_area: function() {
@@ -196,7 +155,31 @@ ui.wizard ={
 	focus_custom: function(el, step) {
 		el.focus();
 		el.attr('data-step',step);
-	}
+	},
+
+	preselect_elements: function(area) {
+        $(area).find('.current').not('.preselected').removeClass('current');
+        $(area).find('.preselected').not('.current').addClass('current'); //needs improvement
+        $(area).find('.snf-radio-checked').not('.preselected').toggleClass('snf-radio-checked snf-radio-unchecked');
+        $(area).find('.snf-radio-unchecked.preselected').toggleClass('snf-radio-checked snf-radio-unchecked');
+        $(area).find('.snf-checkbox-checked').not('.preselected').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+        $(area).find('.snf-checkbox-unchecked.preselected').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+        $('.expand-link').find('.snf-arrow-up').toggleClass('snf-arrow-up snf-arrow-down'); //needs improvement
+     },
+
+     set_step_height: function(stepEl, fixedTopEl, fixedBottomEl, headerEl) {
+		topHeight = $(fixedTopEl).height();
+		bottomHeight = $('.bottom .row').height();
+		totalHeight	= $(window).height();
+		headerHeight = $(headerEl).height();
+		stepHeight = totalHeight-topHeight-bottomHeight-headerHeight;
+		console.log('stepHeight: ', stepHeight)
+		tt=stepEl;
+		$(stepEl).outerHeight(stepHeight);
+		$('.wizard-content').outerHeight(stepHeight);	
+	},
+
+
 
 }
 
@@ -340,5 +323,9 @@ $('a').keyup(function(e){
 	ui.wizard.expand_area();
 	ui.wizard.btns.close.click(function(e) {
 		ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
+	});
+
+	$(window).resize(function() {
+		ui.wizard.set_step_height('.step', '.top', '.bottom', '.header')
 	});
 });
