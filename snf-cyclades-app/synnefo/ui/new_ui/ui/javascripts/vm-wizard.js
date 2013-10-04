@@ -54,10 +54,20 @@ ui.wizard ={
 		console.log('submit data dummy function');
 	},
 
+	data_next_array: ['test1','el2','el4','el7'],
+
+	focus_fun: function(){
+		$('.nav.next').attr('data-step',ui.wizard.current_step);
+		$('.nav.next').removeAttr('data-next');
+		$('.nav.next').attr('data-next', ui.wizard.data_next_array[ui.wizard.current_step]);
+		$('.'+ui.wizard.data_next_array[ui.wizard.current_step]+'').first().focus();
+		console.log('focus_fun',ui.wizard.data_next_array[ui.wizard.current_step]);
+	},
+
 	move: function () {
 		var percentage = -(ui.wizard.current_step-1)*100+'%';
 		$('.vm-wizard-carousel').stop().animate({ 'left': percentage }, ui.wizard.speed);
-		$('.nav.next').attr('data-step',ui.wizard.current_step);
+		ui.wizard.focus_fun();
 		ui.wizard.indicate_step(ui.wizard.current_step);
 		ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
 
@@ -69,9 +79,8 @@ ui.wizard ={
 			ui.wizard.move();
 		}
 		else {
-			console.log('e');
-			ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
 			ui.wizard.submit_data();
+			ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
 		}
 	},
 
@@ -91,8 +100,6 @@ ui.wizard ={
 			// right arrow keyCode == 39
 			// ui.wizard.total_step+1 because current_step has not changed yet
 			if(e.keyCode==39 && ui.wizard.current_step!=(ui.wizard.total_step+1)) {
-				console.log('ui.wizard.current_step', ui.wizard.current_step);
-				console.log('ui.wizard.total_step', ui.wizard.total_step);
 				ui.wizard.go_next();
 				return false;
 			}
@@ -271,7 +278,6 @@ $('.nav.previous').focus(function(e){
 });
 
 $('.nav.previous').focusout(function(e){
-	// $(this).addClass('active');
 	$(this).removeClass('active');
 
 });
@@ -294,40 +300,32 @@ $('.os .name-col').focusout(function(e){
 
 
 /* focus and tabs functionality */
-$('.step-1 .os li:last').find('.btn-col a').focusout(function(e) {
-	ui.wizard.focus_custom( $('.nav.next') , 1);
-});
 
-$('.step-2 a:last').focusout(function(e) {
-	ui.wizard.focus_custom( $('.nav.next') , 2);
-});
-
-$('.step-3 a:last').focusout(function(e) {
-	ui.wizard.focus_custom( $('.nav.next') , 3);
-});
-
-$('.nav.next').keydown(function(e) {
-	var code = e.keyCode || e.which;
-	if (code == '9') {
-		var step = $(this).data('step');
-		$('.step[data-step='+step+']').find('a, input').first().focus();
-	   return false;
-   }
-});
+$('a').keyup(function(e){
+	var self = this;
+	if (e.keyCode==9||e.which==9){
+		if ($(self).attr('data-next')) {
+			$(self).focusout(function(e){
+				var classname = $(self).data('next');
+				console.log('tab goes to ',classname);
+				$('.'+classname+'').first().focus();
+			})
+		}
+	}
+})
 
 
 // make sure that is always correctly moved
-$('a, input').focus(function(e){
-	console.log('parent-step',$(this).parents('.step').data('step'));
+/*$('a, input').focus(function(e){
 	if ($(this).parents('.step').data('step')> 0) {
 		if ( ui.wizard.current_step == ($(this).parents('.step').data('step'))) {
 		} else {
 			ui.wizard.current_step = $(this).parents('.step').data('step');
-			ui.wizard.move();q
+			ui.wizard.move();
 		}
 	}
 })
-/* end of focus and tabs functionality */
+*//* end of focus and tabs functionality */
 
 	$('#vm-wizard').find('a').click(function(e) {
 		e.preventDefault();

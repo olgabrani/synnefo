@@ -664,6 +664,9 @@ Overlays (Todo: clean up)
 					@include transition(background, 0ms, linear);
 				}
 			}
+			&:focus {
+				color:green;
+			}
 		}
 		.prev {
 			float:left;

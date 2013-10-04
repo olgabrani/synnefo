@@ -77,17 +77,17 @@ Confirm that the options you have selected are correct</p>
 					<div class="row">
 						<nav class="sub-menu" data-step=1>
 							<ul>
-								<li><a href="" class="current">System</a></li>
+								<li><a href="" class="current el2">System</a></li>
 								<li><a href="">My images</a></li>
 								<li><a href="">Shared with me</a></li>
-								<li><a href="">Public</a></li>
+								<li><a href="" data-next="el1">Public</a></li>
 							</ul>
 						</nav>
 						<nav class="sub-menu" data-step=2>
 							<ul>
-								<li><a href="" class="current" data-size="small">Small</a></li>
+								<li><a href="" class="current el4" data-size="small">Small</a></li>
 								<li><a href="" data-size="medium">Medium</a></li>
-								<li><a href="" data-size="large">Large</a></li>
+								<li><a href="" data-size="large" data-next="el5">Large</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -100,7 +100,7 @@ Confirm that the options you have selected are correct</p>
 									<li>
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Ubuntu Desktop LTS (Long Term Support)</a>
+											<a href="" class="name-col el1">Ubuntu Desktop LTS (Long Term Support)</a>
 											<div class="size-col">10GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
@@ -181,7 +181,7 @@ Confirm that the options you have selected are correct</p>
 									<li  class="current preselected">
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Ubuntu Desktop LTS (Long Term Support)</a>
+											<a href="" class="name-col" data-next="el3">Ubuntu Desktop LTS (Long Term Support)</a>
 											<div class="size-col">10GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
@@ -211,7 +211,7 @@ Confirm that the options you have selected are correct</p>
 								<div class="row">
 									<form class="custom">
 									  <select class="medium">
-									    <option><a href=>Assign to project</a></option>
+									    <option><a href="" class="el5">Assign to project</a></option>
 									    <option><a href="">Project 2</a></option>
                                                 <option><a href="">Project 3</a></option>
 									  </select>
@@ -314,20 +314,19 @@ Confirm that the options you have selected are correct</p>
 												</div>
 												<ul class="options">
 													<li><a href="" class="current">DRBD</a></li>
-													<li><a href="">Archipelago</a></li>
+													<li><a href="" data-next="el6">Archipelago</a></li>
 												</ul>
 											</div>
 										</li>
 									</ul>
 								</div>
 							</div>
-<!--step 3 -->
-							<div class="step step-3" id="step-3" data-step="3">
+							<div class="step step-3" id="step-3" data-step=3>
 								<div class="advanced-conf-step">
 									<div class="adv-main row">
 										<div class="vm-name">
 											<h2>Machine name</h2>
-											<span class="input"><input type="text" placeholder="My Ubuntu Server"></span>
+											<span class="input"><input type="text" placeholder="My Ubuntu Server" class="el7"></span>
 										</div>
 										<div class="expand-btn">
 											<a class="expand-link" href="">
@@ -460,9 +459,8 @@ Confirm that the options you have selected are correct</p>
 														<a class="btn5" href="">OK</a>
 														<a class="btn5 hide-add-tag" href="" id="hide-add-tag">CANCEL</a>
 													</div>
-
 												</div>
-											</div> <!-- end of row -->
+											</div>
 										</div>
 									</div>
 								</div>
@@ -528,8 +526,8 @@ Confirm that the options you have selected are correct</p>
 				</div>
 				<div class="bottom">
 					<div class="row">
-						<a href="" class="nav prev"><span>CANCEL</span></a>
-						<a href="" class="nav next" data-step="1"><span>NEXT</span></a>
+						<a href="" class="nav prev el3 el6"><span>CANCEL</span></a>
+						<a href="" class="nav next" data-step="1" data-next="el2"><span>NEXT</span></a>
 					</div>
 				</div>
 			</div>
