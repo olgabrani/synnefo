@@ -34,7 +34,7 @@ $third-color: #30c79e;
 $overlay-color: #485057;
 $overlay-color-top:#636a70;
 $overlay-darker-color:#33383D;
-$black:#333;
+$black:#1a1a1a;
 
 $alert-color: $secondary-color;
 $success-color: #00a551;
@@ -64,17 +64,17 @@ $global-radius: 1px;
 // $global-rounded: 1000px;
 
 // header settings
-$header-height:70px;
+$header-height:80px;
 $header-height-responsive:120px;
 $header-padding-vertical:emCalc(20px);
-$header-padding-horizontal:emCalc(40px);
+$header-padding-horizontal:emCalc(15px);
 
 // icons nav settings
 $icons-nav-margin-horizontal : emCalc(5px);
 
 // bar options
-$bar-height:60px;
-$bar-submenu-height:50px;
+$bar-height:50px;
+$bar-submenu-height:40px;
 
 // button options
 $btn-height:30px;
@@ -109,7 +109,7 @@ $btn-height:30px;
 //
 
 $row-full-width:100%;
-$row-width: emCalc(1200px);
+$row-width: 1200px;
 $row-small: emCalc(600px);
 
 $conf-area-h-width: emCalc(300px);
