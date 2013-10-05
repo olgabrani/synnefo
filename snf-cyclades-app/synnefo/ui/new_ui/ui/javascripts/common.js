@@ -220,11 +220,6 @@ ui.placementByUser = function() {
     }
 }
 
-ui.pickResources = function(resource) {
-    $('.flavor .with-flavor a:not(.'+resource+')').removeClass('current');
-    $('.flavor .with-flavor a.'+resource+'').addClass('current');
-}
-
 function goToByScroll(id){
       // Remove "link" from the ID
     id = id.replace("link", "");

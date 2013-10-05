@@ -21,15 +21,14 @@
 	<header class="header">
 		<nav>
 			<ul class="icons-nav">
-				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
-				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC_fill"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Dashboard"><span class="snf-DASHboard"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
+				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
 			</ul>
 		</nav>
 		<div class="login">
-			<a href="">test@grnet.gr</a>
+			<a href=""><span class="snf-lock_open"></span></a>
 		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
@@ -99,8 +98,35 @@ Confirm that the options you have selected are correct</p>
 								<ul class="os">
 									<li  class="current preselected">
 										<div class="row">
-											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col el1">Ubuntu Desktop LTS (Long Term Support)</a>
+											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
+											<a href="" class="name-col el1">Kubuntu</a>
+											<div class="size-col">3.13 GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="row">
+											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
+											<a href="" class="name-col">Kubuntu LTS</a>
 											<div class="size-col">10GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
@@ -127,8 +153,8 @@ Confirm that the options you have selected are correct</p>
 									<li>
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Ubuntu Desktop LTS (Long Term Support)</a>
-											<div class="size-col">10GB</div>
+											<a href="" class="name-col" data-next="el3">Fedora</a>
+											<div class="size-col">3.67 GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
 										<div class="details">
@@ -153,9 +179,9 @@ Confirm that the options you have selected are correct</p>
 									</li>
 									<li>
 										<div class="row">
-											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Ubuntu Desktop LTS (Long Term Support)</a>
-											<div class="size-col">10GB</div>
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2012</a>
+											<div class="size-col">13.66 GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
 										<div class="details">
@@ -180,9 +206,9 @@ Confirm that the options you have selected are correct</p>
 									</li>
 									<li>
 										<div class="row">
-											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col" data-next="el3">Ubuntu Desktop LTS (Long Term Support)</a>
-											<div class="size-col">10GB</div>
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2008</a>
+											<div class="size-col">10.79 GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
 										<div class="details">
@@ -205,6 +231,7 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
+									
 								</ul>
 							</div>
 							<div class="step step-2" id="step-2" data-step=2>
@@ -312,7 +339,7 @@ Confirm that the options you have selected are correct</p>
 														</div>
 													</div>
 												</div>
-												<ul class="options">
+												<ul class="options storage">
 													<li><a href="" class="current preselected">DRBD</a></li>
 													<li><a href="" data-next="el6">Archipelago</a></li>
 												</ul>
@@ -362,13 +389,13 @@ Confirm that the options you have selected are correct</p>
 														<span class="snf-network_full"></span>
 													</div>
 													Public Network</h3>
-													<a href="" class="check"><span class="snf-checkbox-checked preselected"></span></a>
+													<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
 												</li>
 												<li class="more">
 													<div class="row">
 														<div class="checkbox clearfix">
 															<h3>192.168.2.3</h3>
-															<a href="" class="check"><span class="snf-checkbox-checked preselected"></span></a>
+															<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
 														</div>
 														<div class="checkbox clearfix">
 															<h3>192.168.2.3</h3>

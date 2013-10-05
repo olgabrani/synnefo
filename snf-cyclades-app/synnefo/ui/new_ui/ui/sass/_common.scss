@@ -306,6 +306,7 @@ body {
 		right:$header-padding-horizontal;
 		height:$header-height;
 		line-height:$header-height;
+		font-size: emCalc(26px);
 	}
 	
 }
@@ -374,7 +375,7 @@ body {
 	li {
 		display: inline-block;
 		margin:0 $icons-nav-margin-horizontal;
-		font-size: emCalc(23px);
+		font-size: emCalc(26px);
 		line-height: 1em;
 		padding-bottom:5px;
 		width: 30px;
@@ -383,7 +384,7 @@ body {
 		a {
 			color:$black;
 			&:hover,&.current {
-				font-size:30px;
+				// font-size:30px;
 				color:$third-color;
 			}
 		}

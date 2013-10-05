@@ -35,10 +35,16 @@ ui.wizard ={
 
 	move: function () {
 		var percentage = -(ui.wizard.current_step-1)*100+'%';
-		$('.vm-wizard-carousel').stop().animate({ 'left': percentage }, ui.wizard.speed);
+		$('.step').css('overflow-y', 'hidden');
+		$('.vm-wizard-carousel').stop().animate({ 'left': percentage }, ui.wizard.speed, function() {
+			$('.step').css('overflow-y', 'scroll');
+		});
 		ui.wizard.focus_fun();
 		ui.wizard.indicate_step(ui.wizard.current_step);
 		ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
+		 if(ui.wizard.current_step == 3) {
+					setTimeout(function() { $('.vm-name').find('input').focus() }, ui.wizard.speed/2);
+				}
 
 	},
 
@@ -120,14 +126,18 @@ ui.wizard ={
 	},
 
 	close: function(bottom_area, main_area, total_area) {
-		$(bottom_area).hide();
-		$(main_area).slideUp();
-		$(total_area).slideUp('slow', function(){
-			ui.wizard.reset();
-		});
-		 ui.wizard.preselect_elements(bottom_area);
-            ui.wizard.preselect_elements(main_area);
-            ui.wizard.preselect_elements(total_area);
+        	$('.step').animate({
+        		scrollTop: 0}, 800, 'swing', function() {
+
+				$(bottom_area).hide();
+				$(main_area).slideUp();
+				$(total_area).slideUp(400, function(){
+					ui.wizard.reset();
+					ui.wizard.preselect_elements(bottom_area);
+		            ui.wizard.preselect_elements(main_area);
+		            ui.wizard.preselect_elements(total_area);
+				});
+        		});
 	},
 
 	// manually sets elements to a initial state
@@ -142,14 +152,20 @@ ui.wizard ={
         $('.vm-name input').val('');
         $('.advanced-conf-options').hide();
         $('.snf-color-picker').hide();
-        $('.step').scrollTop(0);
 	},
 
 	expand_area: function() {
 		ui.wizard.btns.expand_down.click(function(e){
 	        // e.preventDefault();
 	      	ui.expandArrow(ui.wizard.btns.expand_down);
-	        ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle();
+	        ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle(600, function() {
+	        	if($('.advanced-conf-options:visible').length != 0) {
+	        		ui.wizard.btns.expand_down.find('.snf-arrow-down .snf-arrow-up').removeClass('snf-arrow-down').addClass('snf-arrow-up');
+	        	} 
+	        	else {
+	        		ui.wizard.btns.expand_down.find('.snf-arrow-down .snf-arrow-up').addClass('snf-arrow-down');
+	        	}
+	        });
 	    })
 	},
 	focus_custom: function(el, step) {
@@ -159,12 +175,13 @@ ui.wizard ={
 
 	preselect_elements: function(area) {
         $(area).find('.current').not('.preselected').removeClass('current');
-        $(area).find('.preselected').not('.current').addClass('current'); //needs improvement
-        $(area).find('.snf-radio-checked').not('.preselected').toggleClass('snf-radio-checked snf-radio-unchecked');
-        $(area).find('.snf-radio-unchecked.preselected').toggleClass('snf-radio-checked snf-radio-unchecked');
-        $(area).find('.snf-checkbox-checked').not('.preselected').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
-        $(area).find('.snf-checkbox-unchecked.preselected').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
-        $('.expand-link').find('.snf-arrow-up').toggleClass('snf-arrow-up snf-arrow-down'); //needs improvement
+        $(area).find('.preselected').not('.current').addClass('current');
+        $(area).find('.custom.dropdown.medium a:first').addClass('current'); // to fix
+        $(area).find('.snf-radio-checked').not('.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
+        $(area).find('.snf-radio-unchecked.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
+        $(area).find('.snf-checkbox-checked').not('.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+        $(area).find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+        $('.expand-link').find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
      },
 
      set_step_height: function(stepEl, fixedTopEl, fixedBottomEl, headerEl) {
@@ -179,7 +196,10 @@ ui.wizard ={
 		$('.wizard-content').outerHeight(stepHeight);	
 	},
 
-
+	pickResources: function(resource) {
+	    $('.flavor .with-flavor a:not(.'+resource+')').removeClass('current');
+	    $('.flavor .with-flavor a.'+resource+'').addClass('current');
+	}
 
 }
 
@@ -208,15 +228,21 @@ Various functions for vm creation wizard
 
 /* step-2: Select flavor */
     $('.wizard .sub-menu a[data-size]').on( "click", function(e) {
-        e.preventDefault();
+       // e.preventDefault();
         $(this).parents('.sub-menu').find('a').removeClass('current');
         $(this).addClass('current');
-        ui.pickResources($(this).data('size')); 
+        ui.wizard.pickResources($(this).data('size')); 
     });
 
-    $('.wizard .flavor .options a').click(function(e){
-        e.preventDefault();
+    $('.wizard .flavor .options:not(".storage") a').click(function(e){
+        // e.preventDefault();
         $('.wizard .sub-menu a[data-size]').removeClass('current');
+        $(this).parents('.options').find('a').removeClass('current');
+        $(this).addClass('current');
+    });
+
+  	$('.wizard .flavor .options.storage a').click(function(e){
+        // e.preventDefault();
         $(this).parents('.options').find('a').removeClass('current');
         $(this).addClass('current');
     });
