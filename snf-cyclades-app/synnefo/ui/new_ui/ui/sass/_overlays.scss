@@ -303,16 +303,19 @@ Overlays (Todo: clean up)
 					.img-col {
 						float:left;
 						width:50px;
+						line-height: $btn-height;
 					}
 					.name-col {
 						float: left;
 						color: $wizard-base-font-color;
 						width:71%;
 						padding-right:10px;
+						line-height: $btn-height;
 					}
 					.size-col {
 						float:left;
 						width:10%;
+						line-height: $btn-height;
 					}
 					.btn-col {
 						float:right;
@@ -657,7 +660,7 @@ Overlays (Todo: clean up)
         left:0;
         right:0;
         bottom:0;
-        border-top:1px solid $black;
+        border-top:1px solid $overlay-color-top;
         background:$overlay-color;
         .row {
             height: $bar-height;
