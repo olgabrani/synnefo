@@ -264,8 +264,6 @@ $(document).ready(function(){
     $('.check').click(function(e){
         e.preventDefault();
         e.stopPropagation();
-        console.log('check this', this);
-        console.log('check $this', $(this));
         ui.changeCheckboxState(this);
     });
 

@@ -13,53 +13,53 @@ ui.wizard ={
 	},
 	speed: 500,
 
-	set_dimensions: function (){
+	setDimensions: function (){
 		$('.vm-wizard-carousel').css('width', 100*ui.wizard.total_step+'%');
 		$('.vm-wizard-carousel .step').css('width', 100/ui.wizard.total_step+'%');
-		ui.wizard.set_step_height('.step', '.top', '.bottom', '.header');
+		ui.wizard.setStepHeight('.step', '.top', '.bottom', '.header');
 	},
 
-	submit_data: function (){
+	submitData: function (){
 		console.log('submit data dummy function');
 	},
 
 	data_next_array: ['test1','el2','el4','el7'],
 
-	focus_fun: function(){
+	focusFun: function(){
 		// $('.nav.next').attr('data-step',ui.wizard.current_step);
 		// $('.nav.next').removeAttr('data-next');
 		// $('.nav.next').attr('data-next', ui.wizard.data_next_array[ui.wizard.current_step]);
 		// $('.'+ui.wizard.data_next_array[ui.wizard.current_step]+'').first().focus();
-		// console.log('focus_fun',ui.wizard.data_next_array[ui.wizard.current_step]);
+		// console.log('focusFun',ui.wizard.data_next_array[ui.wizard.current_step]);
 	},
 
 	move: function () {
 		var percentage = -(ui.wizard.current_step-1)*100+'%';
 		$('.step').css('overflow-y', 'hidden');
-		$('.vm-wizard-carousel').stop().animate({ 'left': percentage }, ui.wizard.speed, function() {
+		$('.vm-wizard-carousel').stop(true, true).animate({ 'left': percentage }, ui.wizard.speed, function() {
 			$('.step').css('overflow-y', 'scroll');
 		});
-		ui.wizard.focus_fun();
-		ui.wizard.indicate_step(ui.wizard.current_step);
-		ui.wizard.set_movement_tags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
-		 if(ui.wizard.current_step == 3) {
+		ui.wizard.focusFun();
+		ui.wizard.indicateStep(ui.wizard.current_step);
+		ui.wizard.setMovementTags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
+		 if(ui.wizard.current_step == 3 && $('.step-3 .advanced-conf-options:visible').length == 0) {
 					setTimeout(function() { $('.vm-name').find('input').focus() }, ui.wizard.speed/2);
 				}
 
 	},
 
-	go_next: function () {
+	goNext: function () {
 		if(ui.wizard.current_step < ui.wizard.total_step){
 			ui.wizard.current_step++;
 			ui.wizard.move();
 		}
 		else {
-			ui.wizard.submit_data();
+			ui.wizard.submitData();
 			ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area');
 		}
 	},
 
-	go_prev:function() {
+	goPrev:function() {
 		if(ui.wizard.current_step > 1){
 			ui.wizard.current_step--;
 			ui.wizard.move();
@@ -69,38 +69,39 @@ ui.wizard ={
 		}
 	},
 
-	init_events: function(){
-		ui.wizard.set_dimensions();
+	initEvents: function(){
+		ui.wizard.setDimensions();
 
 		$(document).keydown(function(e) {
 			// right arrow keyCode == 39
-			// ui.wizard.total_step+1 because current_step has not changed yet
-			if(e.keyCode==39 && ui.wizard.current_step!=(ui.wizard.total_step+1)) {
-				ui.wizard.go_next();
-				return false;
-			}
-			// left arrow keyCode == 37
-			else if(e.keyCode==37 && ui.wizard.current_step!=1) {
-				ui.wizard.go_prev();
-				return false;
-			}
-			// ESC
-			else if(e.keyCode== 27 && ui.wizard.current_step==1) {
-				ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
-			}
+			if($('.vm-wizard-carousel:visible').length != 0) {
+				if(e.keyCode==39 && ui.wizard.current_step!=(ui.wizard.total_step)) {
+					ui.wizard.goNext();
+					return false;
+				}
+				// left arrow keyCode == 37
+				else if(e.keyCode==37 && ui.wizard.current_step!=1) {
+					ui.wizard.goPrev();
+					return false;
+				}
+				// ESC
+				else if(e.keyCode== 27 && ui.wizard.current_step==1) {
+					ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
+				}
+		}
 		});
 		
 		ui.wizard.btns.next.click(function(e){
-			ui.wizard.go_next();
+			ui.wizard.goNext();
 		})
 
 		ui.wizard.btns.previous.click(function(e){
-			ui.wizard.go_prev();
+			ui.wizard.goPrev();
 		});
 	},
 
 	// for the carousel index
-	indicate_step: function(step) {
+	indicateStep: function(step) {
 		$('.wizard .top .sub-menu[data-step]').hide();
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
 		$('.nums').children().removeClass('current');
@@ -110,7 +111,7 @@ ui.wizard ={
 	},
 
 	// changes the text of next and previous buttons
-	set_movement_tags: function() {
+	setMovementTags: function() {
 		if (ui.wizard.current_step==1) {
 			ui.wizard.btns.previous.find('span').html('CANCEL');
 			ui.wizard.btns.next.find('span').html('NEXT');
@@ -127,15 +128,14 @@ ui.wizard ={
 
 	close: function(bottom_area, main_area, total_area) {
         	$('.step').animate({
-        		scrollTop: 0}, 800, 'swing', function() {
-
+        		scrollTop: 0}, 1400, 'swing', function() {
 				$(bottom_area).hide();
-				$(main_area).slideUp();
-				$(total_area).slideUp(400, function(){
+				$(main_area).slideUp(600);
+				$(total_area).slideUp(600, function(){
 					ui.wizard.reset();
-					ui.wizard.preselect_elements(bottom_area);
-		            ui.wizard.preselect_elements(main_area);
-		            ui.wizard.preselect_elements(total_area);
+					ui.wizard.preselectElements(bottom_area);
+		            ui.wizard.preselectElements(main_area);
+		            ui.wizard.preselectElements(total_area);
 				});
         		});
 	},
@@ -145,8 +145,8 @@ ui.wizard ={
 		  ui.wizard.current_step = 1;
         $('.vm-wizard-carousel').css('left',0);
         $('.bottom').show();
-        ui.wizard.indicate_step(ui.wizard.current_step);
-        ui.wizard.set_movement_tags();
+        ui.wizard.indicateStep(ui.wizard.current_step);
+        ui.wizard.setMovementTags();
         $('.networks-area .more').show();
         $('.details').hide();
         $('.vm-name input').val('');
@@ -154,7 +154,7 @@ ui.wizard ={
         $('.snf-color-picker').hide();
 	},
 
-	expand_area: function() {
+	expandArea: function() {
 		ui.wizard.btns.expand_down.click(function(e){
 	        // e.preventDefault();
 	      	ui.expandArrow(ui.wizard.btns.expand_down);
@@ -168,12 +168,12 @@ ui.wizard ={
 	        });
 	    })
 	},
-	focus_custom: function(el, step) {
+	focusCustom: function(el, step) {
 		el.focus();
 		el.attr('data-step',step);
 	},
 
-	preselect_elements: function(area) {
+	preselectElements: function(area) {
         $(area).find('.current').not('.preselected').removeClass('current');
         $(area).find('.preselected').not('.current').addClass('current');
         $(area).find('.custom.dropdown.medium a:first').addClass('current'); // to fix
@@ -184,14 +184,12 @@ ui.wizard ={
         $('.expand-link').find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
      },
 
-     set_step_height: function(stepEl, fixedTopEl, fixedBottomEl, headerEl) {
-		topHeight = $(fixedTopEl).height();
-		bottomHeight = $('.bottom .row').height();
-		totalHeight	= $(window).height();
-		headerHeight = $(headerEl).height();
-		stepHeight = totalHeight-topHeight-bottomHeight-headerHeight;
-		console.log('stepHeight: ', stepHeight)
-		tt=stepEl;
+     setStepHeight: function(stepEl, fixedTopEl, fixedBottomEl, headerEl) {
+		var topHeight = $(fixedTopEl).height();
+		var bottomHeight = $('.bottom .row').height();
+		var totalHeight	= $(window).height();
+		var headerHeight = $(headerEl).height();
+		var stepHeight = totalHeight-topHeight-bottomHeight-headerHeight;
 		$(stepEl).outerHeight(stepHeight);
 		$('.wizard-content').outerHeight(stepHeight);	
 	},
@@ -234,29 +232,59 @@ Various functions for vm creation wizard
         ui.wizard.pickResources($(this).data('size')); 
     });
 
-    $('.wizard .flavor .options:not(".storage") a').click(function(e){
+    $('.wizard .flavor .options:not(".vm-storage-selection") a').click(function(e){
         // e.preventDefault();
         $('.wizard .sub-menu a[data-size]').removeClass('current');
         $(this).parents('.options').find('a').removeClass('current');
         $(this).addClass('current');
     });
 
-  	$('.wizard .flavor .options.storage a').click(function(e){
+  	$('.wizard .flavor .options.vm-storage-selection a').click(function(e){
         // e.preventDefault();
         $(this).parents('.options').find('a').removeClass('current');
         $(this).addClass('current');
     });
 
 /* step-3: Advanced options */
-   
+
+	// reaction li.click   
     $('.advanced-conf-options .checkbox').click(function(e){
         e.preventDefault();
+        var self = this;
         var checkbox = $(this).find('.check');
         ui.changeCheckboxState(checkbox);
+        console.log('a1');
         if($(this).hasClass('has-more')) {
-            $(this).next('.more').slideToggle();
+            $(this).next('.more').stop().slideToggle(400, function() {
+            	console.log('a2');
+            	if($(self).next('.more:visible').length != 0) {
+            		$(checkbox).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
+            			console.log('a3');
+            	}
+            	else {
+            		$(checkbox).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
+            	}
+            });
         }
     });
+    // reaction a.click
+    $('.checkbox .check').click(function(e) {
+		e.stopPropagation();
+		var self = this;
+		if($(this).closest('.checkbox').hasClass('has-more')) {
+			console.log('hi');
+            $(this).parent().next('.more').stop().slideToggle(400, function() {
+            	console.log('a2');
+            	if($(self).parent().next('.more:visible').length != 0) {
+            		$(self).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
+            			console.log('a3');
+            	}
+            	else {
+            		$(self).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
+            	}
+            });
+        }
+	});
 
    	$('.show-add-tag').click(function(e){
         e.preventDefault();
@@ -272,13 +300,6 @@ Various functions for vm creation wizard
         });
     });
 
-    $('.checkbox .check').click(function(e) {
-		e.stopPropagation();
-
-		if($(this).closest('.checkbox').hasClass('has-more')) {
-            $(this).parent().next('.more').slideToggle();
-        }
-	})
 /* end of step functions */
 
 /* navigation and numbers functions */
@@ -344,14 +365,14 @@ $('a').keyup(function(e){
 	ui.wizard.btns.next = $('.bottom').find('.nav.next');
 	ui.wizard.btns.expand_down =$('.adv-main').find('.expand-link');
 	ui.wizard.btns.close =$('#vm-wizard').find('.close');
-	ui.wizard.init_events();
-	ui.wizard.set_movement_tags();
-	ui.wizard.expand_area();
+	ui.wizard.initEvents();
+	ui.wizard.setMovementTags();
+	ui.wizard.expandArea();
 	ui.wizard.btns.close.click(function(e) {
 		ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
 	});
 
 	$(window).resize(function() {
-		ui.wizard.set_step_height('.step', '.top', '.bottom', '.header')
+		ui.wizard.setStepHeight('.step', '.top', '.bottom', '.header')
 	});
 });
