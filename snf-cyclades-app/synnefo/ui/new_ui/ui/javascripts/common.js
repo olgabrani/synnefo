@@ -199,7 +199,9 @@ ui.overlay = function() {
 
         $('.overlay-area').show();
         $(id).slideDown('slow');
-
+        if ($('.step-1').length>0) {
+            ui.wizard.setStepHeight($('.step-1'));
+        }
         $(id).find('a').first().focus();
     });
 }

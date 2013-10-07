@@ -1,4 +1,3 @@
-// all functions use pixels
 ui.wizard ={
 	current_step: undefined,
 	total_step:  $('.wizard-content .step').length,
@@ -16,7 +15,6 @@ ui.wizard ={
 	setDimensions: function (){
 		$('.vm-wizard-carousel').css('width', 100*ui.wizard.total_step+'%');
 		$('.vm-wizard-carousel .step').css('width', 100/ui.wizard.total_step+'%');
-		ui.wizard.setStepHeight('.step', '.top', '.bottom', '.header');
 	},
 
 	submitData: function (){
@@ -35,17 +33,17 @@ ui.wizard ={
 
 	move: function () {
 		var percentage = -(ui.wizard.current_step-1)*100+'%';
-		$('.step').css('overflow-y', 'hidden');
-		$('.vm-wizard-carousel').stop(true, true).animate({ 'left': percentage }, ui.wizard.speed, function() {
-			$('.step').css('overflow-y', 'scroll');
+		$('#dummy-link-'+ui.wizard.current_step+'').scrollintoview({
+			'duration':0,
 		});
+		ui.wizard.setStepHeight($('.step-'+ui.wizard.current_step+''));
+		$('.vm-wizard-carousel').stop(true, true).animate({ 'left': percentage }, ui.wizard.speed);
 		ui.wizard.focusFun();
 		ui.wizard.indicateStep(ui.wizard.current_step);
 		ui.wizard.setMovementTags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
-		 if(ui.wizard.current_step == 3 && $('.step-3 .advanced-conf-options:visible').length == 0) {
-					setTimeout(function() { $('.vm-name').find('input').focus() }, ui.wizard.speed/2);
-				}
-
+	 	if(ui.wizard.current_step == 3 && $('.step-3 .advanced-conf-options:visible').length == 0) {
+			setTimeout(function() { $('.vm-name').find('input').focus() }, ui.wizard.speed/2);
+		}
 	},
 
 	goNext: function () {
@@ -71,7 +69,6 @@ ui.wizard ={
 
 	initEvents: function(){
 		ui.wizard.setDimensions();
-
 		$(document).keydown(function(e) {
 			// right arrow keyCode == 39
 			if($('.vm-wizard-carousel:visible').length != 0) {
@@ -88,7 +85,7 @@ ui.wizard ={
 				else if(e.keyCode== 27 && ui.wizard.current_step==1) {
 					ui.wizard.close('.bottom', '#vm-wizard', '.overlay-area')
 				}
-		}
+			}
 		});
 		
 		ui.wizard.btns.next.click(function(e){
@@ -156,9 +153,10 @@ ui.wizard ={
 
 	expandArea: function() {
 		ui.wizard.btns.expand_down.click(function(e){
-	        // e.preventDefault();
-	      	ui.expandArrow(ui.wizard.btns.expand_down);
-	        ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle(600, function() {
+            ui.expandArrow(ui.wizard.btns.expand_down);
+            $('.wizard-content').removeAttr('style');
+            ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle(600, function() {
+				;ui.wizard.setStepHeight($('.step-3'));
 	        	if($('.advanced-conf-options:visible').length != 0) {
 	        		ui.wizard.btns.expand_down.find('.snf-arrow-down .snf-arrow-up').removeClass('snf-arrow-down').addClass('snf-arrow-up');
 	        	} 
@@ -184,14 +182,12 @@ ui.wizard ={
         $('.expand-link').find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
      },
 
-     setStepHeight: function(stepEl, fixedTopEl, fixedBottomEl, headerEl) {
-		var topHeight = $(fixedTopEl).height();
-		var bottomHeight = $('.bottom .row').height();
-		var totalHeight	= $(window).height();
-		var headerHeight = $(headerEl).height();
-		var stepHeight = totalHeight-topHeight-bottomHeight-headerHeight;
-		$(stepEl).outerHeight(stepHeight);
-		$('.wizard-content').outerHeight(stepHeight);	
+    setStepHeight: function(stepEl) {
+		var h1 = stepEl.height();
+		var h2 = $('.wizard .top').height();
+		var res =  h1 +h2;
+		console.log(res);
+	    $('.wizard-content').outerHeight(res);
 	},
 
 	pickResources: function(resource) {
@@ -220,7 +216,10 @@ Various functions for vm creation wizard
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('current');
-        $(this).parents('li').find('.details').stop().slideToggle();
+        $('.wizard-content').removeAttr('style'); 
+        $(this).parents('li').find('.details').stop().slideToggle('slow', function(){
+			ui.wizard.setStepHeight($('.step-1'));
+        });
     });
 
 
@@ -253,13 +252,11 @@ Various functions for vm creation wizard
         var self = this;
         var checkbox = $(this).find('.check');
         ui.changeCheckboxState(checkbox);
-        console.log('a1');
         if($(this).hasClass('has-more')) {
             $(this).next('.more').stop().slideToggle(400, function() {
-            	console.log('a2');
+				ui.wizard.setStepHeight($('.step-3'));
             	if($(self).next('.more:visible').length != 0) {
             		$(checkbox).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
-            			console.log('a3');
             	}
             	else {
             		$(checkbox).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
@@ -288,8 +285,10 @@ Various functions for vm creation wizard
 
    	$('.show-add-tag').click(function(e){
         e.preventDefault();
-        $(this).parents('.tags-area').find('.snf-color-picker').slideDown();
-        goToByScroll('hide-add-tag');
+        $(this).parents('.tags-area').find('.snf-color-picker').slideDown('slow', function(){
+			ui.wizard.setStepHeight($('.step-3'));
+			goToByScroll('hide-add-tag');
+        });
         ui.colorPickerVisible =1;
     });
 
@@ -373,6 +372,6 @@ $('a').keyup(function(e){
 	});
 
 	$(window).resize(function() {
-		ui.wizard.setStepHeight('.step', '.top', '.bottom', '.header')
+		ui.wizard.setStepHeight($('.step-'+ui.wizard.current_step+''));
 	});
 });

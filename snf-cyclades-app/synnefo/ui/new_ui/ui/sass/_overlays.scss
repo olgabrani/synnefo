@@ -262,11 +262,14 @@ Overlays (Todo: clean up)
 	.middle {
 		padding-top:$bar-height+$bar-submenu-height;
 		.step {
+			.dummy-link {
+				position: absolute;
+				top:-250px;
+				left:0;
+			}
 			padding:50px 0 50px;
 			position:relative;
 			width:$row-width;
-			overflow:hidden;
-			overflow-y: scroll;
 			&.step-2 {
 				padding-top:30px;
 				.dropdown {
