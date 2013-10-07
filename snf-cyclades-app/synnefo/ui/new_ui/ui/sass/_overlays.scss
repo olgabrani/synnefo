@@ -478,11 +478,22 @@ Overlays (Todo: clean up)
 			}
 			.summary {
 				.row {
-					padding-top:1em;
-					margin-top:1em;
-					border-top:1px solid white;
+					.wrap {
+						max-width: $row-small;
+						border-top:1px solid white;
+						padding-top:2em;
+						margin-top:1em;
+					}
 					&:first-child {
-						border-top:0 none;
+						.wrap {
+							border-top:0 none;
+							margin-top:0;
+						}
+						dl {
+							dt {
+								font-weight: bold;
+							}
+						}
 					}
 				}
 				h2 {
@@ -492,17 +503,20 @@ Overlays (Todo: clean up)
 				dl {
 					margin-bottom:0;
 					span {
-						margin-right:10px;
+						width:40px;
+						display: inline-block;
 						font-size:20px;
 					}
 					dt {
 						display: inline-block;
-						width: 45%;
+						width: 42%;
 						vertical-align: top;
+						font-weight:600;
 					}
 					dd {
 						display: inline-block;
 						width:45%;
+						margin-bottom:1em;
 					}
 				}
 			}
