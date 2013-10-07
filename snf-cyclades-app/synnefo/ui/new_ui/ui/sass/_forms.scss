@@ -48,6 +48,14 @@
 	}
 }
 .advanced-conf-step {
+	.adv-main {
+		.input {
+			padding-left: 0px;
+			input[type="text"] {
+				width: 140px;
+			}
+        }
+	}
 	#color {
 		@extend .tag-demo;
 		margin: 0 6px 0 15px;
