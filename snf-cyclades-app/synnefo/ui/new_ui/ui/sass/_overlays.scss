@@ -378,7 +378,7 @@ Overlays (Todo: clean up)
 						vertical-align: top;
 						.icon {
 							display: block;
-							width:5%;
+							width:60px;
 							font-size:emCalc(40px);
 							float: left;
 						}
@@ -388,20 +388,28 @@ Overlays (Todo: clean up)
 								font-weight:normal;
 							}
 							float:left;
-							width: 19%;
+							width: 140px;
 							color:white;
-							margin-right:4%;
+							margin-right:60px;
 							padding-left:emCalc(10px);
 							&:hover {
-								& + p {
-									visibility: visible;
+								em {
+									opacity:1;
 								}
+							}
+							em {
+								display: block;
+								font-size:emCalc(9px);
+								color:$black;
+								font-style:normal;
+								font-weight:normal;
+								opacity:0.6;
 							}
 						}
 						p {
 							visibility: hidden;
-							float:left;
-							width:70%;
+							overflow:hidden;
+							min-height:40px;
 							color:$black;
 							font-size:emCalc(9px);
 						}
@@ -409,9 +417,9 @@ Overlays (Todo: clean up)
 					.options-bar {
 						@extend .clearfix;
 						.bar {
-							width:24%;
-							float: left;
-							margin-right:4%;
+							width:200px;
+							float:left;
+							margin-right:60px;
 							height: 20px;
 							position: relative;
 							top:10px;
@@ -444,6 +452,7 @@ Overlays (Todo: clean up)
 											right:10px;
 											color:$black;
 											font-size: emCalc(9px);
+											top:2px;
 										}
 										&.low {
 											span {
@@ -750,9 +759,6 @@ Overlays (Todo: clean up)
                 &:hover {
                     @include transition(background, 0ms, linear);
                 }
-            }
-            &:focus {
-                color:green;
             }
         }
         .prev {

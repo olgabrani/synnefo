@@ -187,7 +187,7 @@ ui.wizard ={
 		var h2 = $('.wizard .top').height();
 		var res =  h1 +h2;
 		console.log(res);
-	    $('.wizard-content').outerHeight(res);
+	    $('.wizard-content').css('height',res);
 	},
 
 	pickResources: function(resource) {
@@ -216,7 +216,7 @@ Various functions for vm creation wizard
         e.preventDefault();
         e.stopPropagation();
         $(this).toggleClass('current');
-        $('.wizard-content').removeAttr('style'); 
+        var self = this;
         $(this).parents('li').find('.details').stop().slideToggle('slow', function(){
 			ui.wizard.setStepHeight($('.step-1'));
         });
@@ -264,6 +264,20 @@ Various functions for vm creation wizard
             });
         }
     });
+
+    $('.flavor .options a').hover(
+		function(){
+			var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
+			var text = $(this).data('help');
+			paragraph.html(text);
+			paragraph.css('visibility','visible');
+		}, function() {
+			var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
+			paragraph.css('visibility','hidden');
+		 }
+    );
+
+
     // reaction a.click
     $('.checkbox .check').click(function(e) {
 		e.stopPropagation();
