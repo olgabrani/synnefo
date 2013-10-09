@@ -24,11 +24,9 @@ ui.wizard ={
 	data_next_array: ['el0','el2','el4','el7'],
 
 	focusFun: function(){
-		// $('.nav.next').attr('data-step',ui.wizard.current_step);
-		// $('.nav.next').removeAttr('data-next');
-		// $('.nav.next').attr('data-next', ui.wizard.data_next_array[ui.wizard.current_step]);
-		// $('.'+ui.wizard.data_next_array[ui.wizard.current_step]+'').first().focus();
-		// console.log('focusFun',ui.wizard.data_next_array[ui.wizard.current_step]);
+		$('.firstfocus-'+ui.wizard.current_step+'').first().focus();
+		$('.nav.next').removeAttr('data-next');
+		$('.nav.next').attr('data-next', ui.wizard.data_next_array[ui.wizard.current_step]);
 	},
 
 	move: function () {
@@ -354,28 +352,21 @@ $('.os .name-col').focusout(function(e){
 $('a').keyup(function(e){
 	var self = this;
 	if (e.keyCode==9||e.which==9){
-		if ($(self).attr('data-next')) {
-			$(self).focusout(function(e){
-				var classname = $(self).data('next');
-				console.log('tab goes to ',classname);
-				$('.'+classname+'').first().focus();
-			})
+		if(e.shiftKey) {
+	    } else {
+	       //Focus next input
+	       if ($(self).attr('data-next')) {
+				$(self).focusout(function(e){
+					var classname = $(self).data('next');
+					console.log('tab goes to ',classname);
+					$('.'+classname+'').first().focus();
+				});
+			}
 		}
 	}
 })
 
-
-// make sure that is always correctly moved
-/*$('a, input').focus(function(e){
-	if ($(this).parents('.step').data('step')> 0) {
-		if ( ui.wizard.current_step == ($(this).parents('.step').data('step'))) {
-		} else {
-			ui.wizard.current_step = $(this).parents('.step').data('step');
-			ui.wizard.move();
-		}
-	}
-})
-*//* end of focus and tabs functionality */
+/* end of focus and tabs functionality */
 
 	$('#vm-wizard').find('a').click(function(e) {
 		e.preventDefault();

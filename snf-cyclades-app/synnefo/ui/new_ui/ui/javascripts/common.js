@@ -339,6 +339,7 @@ $(document).ready(function(){
     if($('#picker').length>0) {
         $('#picker').farbtastic('#color');
     };
+
 })
 
 

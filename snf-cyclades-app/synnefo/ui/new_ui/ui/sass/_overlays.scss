@@ -749,7 +749,8 @@ Overlays (Todo: clean up)
             font-size: emCalc(12px);
             top:($bar-height - 30px)/2;
             width: 100px;
-            &:hover {
+            &:hover,
+            &:focus {
                 @include transition(background, 0ms, ease-out);
             }
             span {
@@ -757,7 +758,8 @@ Overlays (Todo: clean up)
                 height: 30px;
                 line-height:30px;
                 float: left;
-                &:hover {
+                &:hover,
+                &:focus {
                     @include transition(background, 0ms, linear);
                 }
             }
@@ -772,7 +774,8 @@ Overlays (Todo: clean up)
                 background:url('../images/nav-lt.png') no-repeat right top;
             }
             &:hover,
-            &.active {
+            &.active,
+            &:focus {
                 background-position:left bottom;
                 span {
                     background-position:right bottom;
@@ -790,7 +793,8 @@ Overlays (Todo: clean up)
                 float: right;
             }
             &:hover,
-            &.active {
+            &.active,
+            &:focus {
                 background-position:right bottom;
                 span {
                     background-position:left bottom;
