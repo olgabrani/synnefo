@@ -243,6 +243,17 @@ Various functions for vm creation wizard
         $(this).addClass('current');
     });
 
+	$('.flavor .options a').hover(
+		function(){
+			var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
+			var text = $(this).data('help');
+			paragraph.html(text);
+			paragraph.css('visibility','visible');
+		}, function() {
+			var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
+			paragraph.css('visibility','hidden');
+		 }
+    );
 /* step-3: Advanced options */
 
 	// reaction li.click   
@@ -264,17 +275,6 @@ Various functions for vm creation wizard
         }
     });
 
-    $('.flavor .options a').hover(
-		function(){
-			var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
-			var text = $(this).data('help');
-			paragraph.html(text);
-			paragraph.css('visibility','visible');
-		}, function() {
-			var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
-			paragraph.css('visibility','hidden');
-		 }
-    );
 
 
     // reaction a.click
