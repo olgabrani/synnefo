@@ -185,8 +185,14 @@ ui.wizard ={
 		var h1 = stepEl.height();
 		var h2 = $('.wizard .top').height();
 		var res =  h1 +h2;
-		console.log(res);
 	    $('.wizard-content').css('height',res);
+	},
+
+	returnStepHeight: function(stepEl) {
+		var h1 = stepEl.height();
+		var h2 = $('.wizard .top').height();
+		var res =  h1 +h2;
+		return res;
 	},
 
 	pickResources: function(resource) {
@@ -298,9 +304,9 @@ Various functions for vm creation wizard
 
    	$('.show-add-tag').click(function(e){
         e.preventDefault();
-        $(this).parents('.tags-area').find('.snf-color-picker').slideDown(400, function(){
-			goToByScroll('hide-add-tag');
+        $(this).parents('.tags-area').find('.snf-color-picker').slideDown('slow', function(){
 			ui.wizard.setStepHeight($('.step-3'));
+			$('#hide-add-tag-dummy').scrollintoview({'duration':'slow'});
         });
         ui.colorPickerVisible =1;
     });
@@ -308,7 +314,9 @@ Various functions for vm creation wizard
     $('.hide-add-tag').click(function(e){
         e.preventDefault();
         $(this).parents('.tags-area').find('.snf-color-picker').slideUp(400, function(){
+            $('.show-add-tag').first().scrollintoview({'duration':'slow'});
             ui.colorPickerVisible = 0;
+            ui.wizard.setStepHeight($('.step-3'));
         });
     });
 
