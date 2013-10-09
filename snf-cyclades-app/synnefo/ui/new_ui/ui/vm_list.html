@@ -369,7 +369,9 @@ Confirm that the options you have selected are correct</p>
 									<div class="adv-main row">
 										<div class="vm-name">
 											<h2>Machine name</h2>
-											<span class="input"><input type="text" placeholder="My Ubuntu Server" class="el7"></span>
+											<span class="input">
+												<input type="text" placeholder="My Ubuntu Server" class="el7">
+											</span>
 										</div>
 										<div class="expand-btn">
 											<a class="expand-link" href="">
@@ -384,26 +386,42 @@ Confirm that the options you have selected are correct</p>
 												<h2>Public SSH keys</h2>
 												<p>Your account contains the following SSH public keys. Select one or more to activate in your new machine. You will then be able to ssh with the corresponding private key without a password."</p>
 												<ul>
-													<li class="checkbox"><h3>My public key long name one </h3><a href="" class="check"><span class="snf-checkbox-unchecked"></span></a></li>
-													<li class="checkbox"><h3>Other public key </h3><a href="" class="check"><span class="snf-checkbox-unchecked"></span></a></li>
-													<li class="checkbox"><h3>My public key long name one </h3><a href="" class="check"><span class="snf-checkbox-unchecked"></span></a></li>
+													<li class="checkbox">
+														<h3>My public key long name one </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+													<li class="checkbox">
+														<h3>Other public key </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+													<li class="checkbox">
+														<h3>My public key long name one </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
 												</ul>
 												<div>
 													<a href="" class="btn5">... show more keys</a>
 												</div>
 											</div>
 										</div>
-
 										<div class="networks-area area">
 											<h2 class="row">Networks</h2>
 											<ul>
 												<li class="checkbox row has-more select-net">
-												<h3 class="">	
-													<div class="net-icons">
-														<span class="snf-www"></span>
-														<span class="snf-network_full"></span>
-													</div>
-													Public Network</h3>
+													<h3 class="">
+														<div class="net-icons">
+															<span class="temp-line line1"></span>
+															<span class="snf-www"></span>
+															<span class="snf-network_full"></span>
+														</div>
+														Public Network
+													</h3>
 													<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
 												</li>
 												<li class="more">
@@ -426,41 +444,53 @@ Confirm that the options you have selected are correct</p>
 													</div>
 												</li>
 												<li class="checkbox row select-net">
-												<h3 class="net-name">
-												<div class="net-icons">
-														<span class="snf-www"></span>
-														<span class="snf-modem"></span>
-														<span class="snf-network_full"></span>
-													</div>
-													
-													Routed Network</h3>
-													<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
-												</li>
-												<li class="checkbox row select-net">
-												<h3 class="net-name">
-													<div class="net-icons">
-														<span class="snf-network_full"></span>
-													</div>
-													Private Network 1</h3>
-													<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													<h3 class="net-name">
+														<div class="net-icons">
+															<span class="temp-line line1"></span>
+															<span class="temp-line line2"></span>
+															<span class="snf-www"></span>
+															<span class="snf-modem"></span>
+															<span class="snf-network_full"></span>
+														</div>
+														Routed Network
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
 												</li>
 												<li class="checkbox row select-net">
 													<h3 class="net-name">
-													<div class="net-icons">
-														<span class="snf-network_full"></span>
-													</div>
-													Private Network 2</h3>
-													<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+														<div class="net-icons">
+															<span class="snf-network_full"></span>
+														</div>
+														Private Network 1
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+												<li class="checkbox row select-net">
+													<h3 class="net-name">
+														<div class="net-icons">
+															<span class="snf-network_full"></span>
+														</div>
+														Private Network 2
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
 												</li>
 											</ul>
-
 										</div>
 										<div class="tags-area area">
 											<div class="row">
 												<h2>Tags</h2>
 												<p>Dude use your tags like you eat your cereal.<br>You can color code them as well</p>
-												<span class="list-header"><h3>My Tags</h3><span>select</span></span>
 												<ul>
+													<li>
+														<h3>My tags</h3>
+														<span>select</span>
+													</li>
 													<li class="checkbox">
 														<h3>
 															<span class="tag-demo tag4"></span>

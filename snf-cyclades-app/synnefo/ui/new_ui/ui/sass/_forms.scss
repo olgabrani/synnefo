@@ -1,8 +1,19 @@
 /* Table of Contents
 
+- mixins
 - editable 
 
 */
+
+/* mixins  ------------------ */
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  ::-moz-placeholder          {@content}
+  :-moz-placeholder           {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 
 /* editable (used for changing info asychronously) ------------------ */
 
@@ -27,9 +38,9 @@
 .input {
 	display: inline-block;
 	background:url(../images/input-bg-lt.png) no-repeat left bottom;
-	padding-left:5px;
+	padding-left:6px;
 	input[type="text"] {
-		width: 145px;
+		width: 138px;
 		padding:0 12px 0 6px;
 		border:0 none;
 		background:url(../images/input-bg-rt.png) no-repeat right bottom;
@@ -37,33 +48,23 @@
 		outline: 0;
 		margin:0;
 		color: $wizard-base-font-color;
-		//to be improved!!!!
-		-webkit-box-shadow: none;
-		-moz-box-shadow:    none;
-		box-shadow: none;
-
-		&.tag_name {
-			width: 70px;
-		}
+		@include box-shadow(none);
+	}
+	@include placeholder {
+	    color:$black;
 	}
 }
 .advanced-conf-step {
-	.adv-main {
-		.input {
-			padding-left: 0px;
-			input[type="text"] {
-				width: 140px;
-			}
-        }
-	}
 	#color {
 		@extend .tag-demo;
-		margin: 0 6px 0 15px;
-		
+		margin: 0 15px 0 10px;
 		bottom: -10px;
+		border-color:transparent;
 		color: transparent;
 	}
-
+	@include placeholder {
+		    color:white;
+		}
 	.snf-color-picker>form {
 		height:237px;
 		width: 100%

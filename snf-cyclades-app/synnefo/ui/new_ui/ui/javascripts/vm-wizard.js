@@ -299,16 +299,16 @@ Various functions for vm creation wizard
 
    	$('.show-add-tag').click(function(e){
         e.preventDefault();
-        $(this).parents('.tags-area').find('.snf-color-picker').slideDown('slow', function(){
-			ui.wizard.setStepHeight($('.step-3'));
+        $(this).parents('.tags-area').find('.snf-color-picker').slideDown(400, function(){
 			goToByScroll('hide-add-tag');
+			ui.wizard.setStepHeight($('.step-3'));
         });
         ui.colorPickerVisible =1;
     });
 
     $('.hide-add-tag').click(function(e){
         e.preventDefault();
-        $(this).parents('.snf-color-picker').slideUp('400', function(){
+        $(this).parents('.tags-area').find('.snf-color-picker').slideUp(400, function(){
             ui.colorPickerVisible = 0;
         });
     });
