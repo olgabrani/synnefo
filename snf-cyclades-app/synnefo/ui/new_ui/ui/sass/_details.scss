@@ -92,7 +92,7 @@
 	.close {
 		position: absolute;
 		right:$header-padding-horizontal;
-		top:$header-padding-horizontal+emCalc(43px);
+		top:$header-padding-horizontal + 43px;
 		span {
 			font-size:32px;
 		}	

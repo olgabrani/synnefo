@@ -197,8 +197,8 @@ ui.overlay = function() {
         }
         var id = el.data('overlay-id');
 
-        $('.overlay-area').show();
-        $(id).slideDown('slow');
+        $('.overlay-area').fadeIn('slow');
+        $(id).fadeIn('slow');
         if ($('.step-1').length>0) {
             ui.wizard.setStepHeight($('.step-1'));
         }
