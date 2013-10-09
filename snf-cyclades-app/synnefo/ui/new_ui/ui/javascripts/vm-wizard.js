@@ -104,9 +104,12 @@ ui.wizard ={
 	indicateStep: function(step) {
 		$('.wizard .top .sub-menu[data-step]').hide();
 		$('.wizard .top .sub-menu[data-step='+step+']').fadeIn();
+		
 		$('.nums').children().removeClass('current');
-		$('.nums li').show();
+		 $('.nums li:not(".current")').show();
 		$('.nums li:nth-child('+ui.wizard.current_step+')').addClass('current');
+		$('.nums li.current').hide();
+		 $('.nums li.current').fadeIn('slow').css("display","inline");
 		$('.nums .current').prevAll('li').hide();
 	},
 
