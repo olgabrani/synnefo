@@ -399,7 +399,8 @@ Overlays (Todo: clean up)
 							}
 							em {
 								display: block;
-								font-size:emCalc(9px);
+								margin-top:4px;
+								font-size:emCalc(11px);
 								color:$black;
 								font-style:normal;
 								font-weight:normal;
@@ -411,7 +412,7 @@ Overlays (Todo: clean up)
 							overflow:hidden;
 							min-height:40px;
 							color:$black;
-							font-size:emCalc(9px);
+							font-size:emCalc(11px);
 						}
 					}
 					.options-bar {
