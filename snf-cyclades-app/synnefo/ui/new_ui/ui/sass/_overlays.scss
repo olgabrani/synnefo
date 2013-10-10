@@ -370,10 +370,12 @@ Overlays (Todo: clean up)
 				list-style: none outside none;
 				li {
 					list-style:none outside none;
-					margin-bottom:2.5em;
+					margin-bottom:30px;
 					.title {
 						@extend .clearfix;
-						margin-bottom:emCalc(5px);
+						height:40px;
+						overflow:hidden;
+						margin-bottom:emCalc(8px);
 						color:white;
 						vertical-align: top;
 						.icon {
@@ -405,6 +407,7 @@ Overlays (Todo: clean up)
 								font-style:normal;
 								font-weight:normal;
 								opacity:0.6;
+								white-space: nowrap;
 							}
 						}
 						p {
@@ -487,6 +490,7 @@ Overlays (Todo: clean up)
 				}
 			}
 			.summary {
+				padding-bottom:40px;
 				.row {
 					.wrap {
 						max-width: $row-small;
@@ -658,7 +662,7 @@ Overlays (Todo: clean up)
                             }
                             &.more {
                                 background:$net-more-opt-area-color;
-                                margin-bottom:0;
+                                margin:$step-adv-padding 0;
                                 padding:$step-adv-padding 0;
                                 color:$net-opt-area-color;
                                 h3 {

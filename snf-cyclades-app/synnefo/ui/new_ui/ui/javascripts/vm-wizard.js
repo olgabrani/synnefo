@@ -32,12 +32,10 @@ ui.wizard ={
 	move: function () {
 		var percentage = -(ui.wizard.current_step-1)*100+'%';
 		ui.wizard.setStepHeight($('.step-'+ui.wizard.current_step+''));
+		$('#dummy-link-'+(ui.wizard.current_step-1)+'').scrollintoview({'duration':0});
 		$('.vm-wizard-carousel').stop(true, true).animate(
 			{ 'left': percentage },
 			ui.wizard.speed
-			,function(){
-				$('#dummy-link-'+ui.wizard.current_step+'').scrollintoview({'duration':0});
-			}
 		);
 		ui.wizard.focusFun();
 		ui.wizard.indicateStep(ui.wizard.current_step);
@@ -180,18 +178,34 @@ ui.wizard ={
         $('.expand-link').find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
      },
 
-    setStepHeight: function(stepEl) {
+	setStepHeight: function(stepEl) {
 		var h1 = stepEl.height();
 		var h2 = $('.wizard .top').height();
-		var res =  h1 +h2;
-	    $('.wizard-content').css('height',res);
+		var h3 = $('.header').height();
+		var h4 = $(window).height();
+		var res2 =  h4-h3-h2-h1;
+		var res1 =  h1 +h2;
+		if(res2>h1) {
+			$('.wizard-content').css('height',res2);
+		}
+		else {
+		    $('.wizard-content').css('height',res1);
+		}
 	},
 
 	returnStepHeight: function(stepEl) {
 		var h1 = stepEl.height();
 		var h2 = $('.wizard .top').height();
-		var res =  h1 +h2;
-		return res;
+		var h3 = $('.header').height();
+		var h4 = $(window).height();
+		var res2 =  h4-h3-h2-h1;
+		var res1 =  h1 +h2;
+		if(res2>h1) {
+			return res2;
+		}
+		else {
+			return res1;
+		}
 	},
 
 	pickResources: function(resource) {
@@ -221,10 +235,10 @@ Various functions for vm creation wizard
         e.stopPropagation();
         $(this).toggleClass('current');
         var self = this;
-        $(this).parents('li').find('.details').stop().slideToggle('slow', function(){
+        $(this).parents('li').find('.details').stop().slideToggle('slow', 'easeOutExpo',function(){
 			ui.wizard.setStepHeight($('.step-1'));
         });
-    });
+	});
 
 
 /* step-2: Select flavor */
