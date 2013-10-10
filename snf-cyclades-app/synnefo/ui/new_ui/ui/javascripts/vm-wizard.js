@@ -143,9 +143,10 @@ ui.wizard ={
         ui.wizard.setMovementTags();
         $('.networks-area .more').show();
         $('.details').hide();
-        $('.vm-name input').val('');
+        $('.vm-wizard-carousel input').val('');
         $('.advanced-conf-options').hide();
         $('.snf-color-picker').hide();
+        ui.wizard.preselectElements('.wizard');
 	},
 
 	expandArea: function() {
