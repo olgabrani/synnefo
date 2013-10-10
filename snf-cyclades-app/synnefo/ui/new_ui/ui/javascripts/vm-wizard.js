@@ -153,13 +153,13 @@ ui.wizard ={
             ui.expandArrow(ui.wizard.btns.expand_down);
             $('.wizard-content').removeAttr('style');
             ui.wizard.btns.expand_down.parents('div.advanced-conf-step').find('.advanced-conf-options').stop().slideToggle(600, function() {
-				;ui.wizard.setStepHeight($('.step-3'));
 	        	if($('.advanced-conf-options:visible').length != 0) {
 	        		ui.wizard.btns.expand_down.find('.snf-arrow-down .snf-arrow-up').removeClass('snf-arrow-down').addClass('snf-arrow-up');
 	        	} 
 	        	else {
 	        		ui.wizard.btns.expand_down.find('.snf-arrow-down .snf-arrow-up').addClass('snf-arrow-down');
 	        	}
+				ui.wizard.setStepHeight($('.step-3'));
 	        });
 	    })
 	},
@@ -239,6 +239,23 @@ Various functions for vm creation wizard
         $('.wizard .sub-menu a[data-size]').removeClass('current');
         $(this).parents('.options').find('a').removeClass('current');
         $(this).addClass('current');
+
+        var size, count;
+        if($(this).hasClass('small')) {
+            size = 'small';
+        }
+        else if ($(this).hasClass('medium')){
+            size = 'medium';
+        }
+
+        else if($(this).hasClass('large')) {
+            size = 'large';
+        }
+
+        count = $('.wizard .step-2 .options.with-flavor .'+size+'.current').length;
+        if(count == 3) {
+            $('.wizard .sub-menu[data-step=2]').find('a[data-size='+size+']').addClass('current');
+        }
     });
 
   	$('.wizard .flavor .options.vm-storage-selection a').click(function(e){
