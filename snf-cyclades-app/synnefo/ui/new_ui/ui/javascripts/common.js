@@ -197,11 +197,9 @@ ui.overlay = function() {
         }
         var id = el.data('overlay-id');
 
-        $('.overlay-area').fadeIn('slow');
+        $('.overlay-area').fadeIn(100);
+        $('body').addClass('with-overlay');
         $(id).fadeIn('slow');
-        if ($('.step-1').length>0) {
-            ui.wizard.setStepHeight($('.step-1'));
-        }
         $(id).find('a').first().focus();
     });
 }
@@ -271,10 +269,6 @@ $(document).ready(function(){
 
     ui.entitiesActionsInit();
     
-    if ($('.overlay').length >0 ){
-        $('body').addClass('with-overlay');
-    }
-
     $('.new-btn a.current').click(function(e){
         e.preventDefault();
     })
@@ -301,6 +295,7 @@ $(document).ready(function(){
         e.stopPropagation();
         $(this).parents('.overlay-area').hide();
         $(this).parents('.overlay-area').find($('.overlay-div')).hide();
+        $('body').removeClass('with-overlay');
     })
 
     $('.browse-files').click(function(e){
@@ -327,7 +322,7 @@ $(document).ready(function(){
             preload: [0,1] // Will preload 0 - before current, and 1 after the current image
         },
         image: {
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            tError: 'The image could not be loaded.',
             titleSrc: function(item) {
                 return item.el.data('title');
             }

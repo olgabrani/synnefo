@@ -3,9 +3,9 @@
 Overlays (Todo: clean up)
 
 */
-// body.with-overlay {
-//     background:$secondary-color;
-// }
+body.with-overlay {
+     background:$overlay-color;
+}
 
 .reveal-modal {
     h3 {
@@ -261,15 +261,19 @@ Overlays (Todo: clean up)
 	}
 	.middle {
 		padding-top:$bar-height+$bar-submenu-height;
+		.steps {
+			position:relative;
+			width:100%;
+		}
 		.step {
-			.dummy-link {
-				position: absolute;
-				top:-250px;
-				left:0;
+			position: absolute;
+			top:0;
+			width:100%;
+			display:none;
+			&.current {
+				display: block;
 			}
 			padding:50px 0 50px;
-			position:relative;
-			width:$row-width;
 			&.step-2 {
 				padding-top:30px;
 				.dropdown {
@@ -805,19 +809,6 @@ Overlays (Todo: clean up)
                     float:right;
                 }
             }
-        }
-    }
-}
-
-
-.wizard-content {
-    overflow: hidden;
-    width:100%;
-    .vm-wizard-carousel {
-        position:relative;
-        left:0;
-        .step {
-            float:left;
         }
     }
 }
