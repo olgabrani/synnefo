@@ -111,7 +111,7 @@
 
 
 a {
-	color:$secondary-color;
+	color:$primary-color;
 	&:hover {
 		color:$third-color;
 		@include transition(background, 300ms, ease-out);
@@ -324,7 +324,13 @@ body {
 	height:$bar-height;
 	line-height:$bar-height;
 	background:white;
-	border-bottom:1px solid $primary-color;
+	.border-dashed {
+		background-image: url("../images/border-dashes.png");
+		background-repeat: repeat-x;
+		height: 4px;
+		position: relative;
+		top: -3px;
+	}
 	.row {
 		position: relative;
 		height: $bar-height;
@@ -353,6 +359,24 @@ body {
 				}
 
 			}
+		}
+	}
+
+	#sb-search {
+		height: 50px;
+		position: absolute;
+		right: 15px;
+		top: -10px;
+		.sb-icon-search {
+			background-color: white;
+			color: $primary-color;
+
+		}
+		.sb-search-input {
+			width: 300px;
+			margin-right: 51px;
+			margin: 0;
+			height: 52px;
 		}
 	}
 }
