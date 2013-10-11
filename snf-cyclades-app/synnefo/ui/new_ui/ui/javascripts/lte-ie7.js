@@ -47,6 +47,9 @@ window.onload = function() {
 			'snf-arrow-down-2' : '&#x4e;',
 			'snf-arrow-up-2' : '&#x4f;',
 			'snf-arrow-down' : '&#x4d;' /* rename of snf-arrow-right */
+			'snf-list' : '&#x51;',
+			'snf-layout' : '&#x52;',
+			'snf-search' : '&#x50;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
