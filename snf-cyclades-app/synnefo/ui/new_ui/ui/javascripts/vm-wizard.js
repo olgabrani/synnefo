@@ -49,11 +49,13 @@ ui.wizard = {
 		ui.wizard.focusFun();
 		ui.wizard.indicateStep(ui.wizard.current_step);
 		ui.wizard.setMovementTags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
+		$('body').css('overflow','hidden');
 		// the current visible pane
         current = this.getCurrent();
         // Set next pane position on the right of the current one
         // Add current to the next pane, so that it will become
         // visible
+        console.log('1');
         step.css({
             left: pos.toString() + '%'
         }).addClass("current");
@@ -64,7 +66,6 @@ ui.wizard = {
         step.css({
             top: this.getScrollOffset() + 'px'
         });
-
         $('.step').animate({
             marginLeft: (-pos).toString() + '%'
         }, {
@@ -81,6 +82,7 @@ ui.wizard = {
                 $('.step').css({
                     marginLeft: '0'
                 });
+                $('body').css('overflow','visible');
             }, this)
         });
 	},
@@ -174,13 +176,13 @@ ui.wizard = {
 	// manually sets elements to a initial state
 	resetWizard: function() {
 		ui.wizard.current_step = 1;
-		$('.vm-wizard-carousel').css('left', 0);
+		$('.step').removeAttr('style');
 		$('.bottom').show();
 		ui.wizard.indicateStep(ui.wizard.current_step);
 		ui.wizard.setMovementTags();
 		$('.networks-area .more').show();
 		$('.details').hide();
-		$('.vm-wizard-carousel input').val('');
+		$('.vm-name input').removeAttr('value');
 		$('.advanced-conf-options').hide();
 		$('.snf-color-picker').hide();
 		ui.wizard.preselectElements('.wizard');
@@ -214,6 +216,7 @@ ui.wizard = {
 		$(area).find('.snf-checkbox-checked').not('.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
 		$(area).find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
 		$('.expand-link').find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
+		$('.step-1').addClass('current');
 	},
 
 	pickResources: function(resource) {
