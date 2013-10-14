@@ -113,15 +113,19 @@ ui.wizard = {
 
 	initEvents: function() {
 		ui.wizard.setDimensions();
+
+
 		$(document).keydown(function(e) {
+			var exp = $('.vm-name input').is(':focus') && $('.vm-name input').val().length>0 && ui.wizard.current_step ==3;
+			console.log('exp',exp);
 			// right arrow keyCode == 39
 			if ($('.wizard:visible').length != 0) {
-				if (e.keyCode == 39 && ui.wizard.current_step != (ui.wizard.total_step)) {
+				if (e.keyCode == 39 && ui.wizard.current_step != (ui.wizard.total_step) &&(!exp)) {
 					ui.wizard.goNext();
 					return false;
 				}
 				// left arrow keyCode == 37
-				else if (e.keyCode == 37 && ui.wizard.current_step != 1 && !($('.vm-name input').val())) {
+				else if (e.keyCode == 37 && ui.wizard.current_step != 1 &&(!exp)) {
 					ui.wizard.goPrev();
 					return false;
 				}

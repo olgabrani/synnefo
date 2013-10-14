@@ -1,7 +1,8 @@
 /* Table of Contents
 
-- editable 
-
+- editable
+- universal form styles
+- vm wizard styles
 */
 
 
@@ -25,6 +26,10 @@
 		display: none;
 	}
 }
+
+
+/* universal form styles ------------------ */
+
 .input {
 	display: inline-block;
 	background:url(../images/input-bg-lt.png) no-repeat left bottom;
@@ -44,6 +49,9 @@
 		}
 	}
 }
+
+/* vm wizard styles ------------------ */
+
 .advanced-conf-step {
 	#color {
 		@extend .tag-demo;
