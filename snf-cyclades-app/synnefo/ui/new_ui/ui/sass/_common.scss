@@ -374,11 +374,14 @@ body {
 	#sb-search {
 		height: 50px;
 		position: absolute;
-		right: 15px;
+		right: 75px;
 		top: -10px;
 		.sb-icon-search {
 			background-color: white;
 			color: $primary-color;
+			top: -6px;
+			font-size: 20px;
+			width:50px;
 			&:hover {
 				color: $secondary-color;
 			}
@@ -399,6 +402,24 @@ body {
 			    color:$secondary-color;
 			}
 		}
+	}
+
+	.view-type {
+		display:inline-block;
+		position: absolute;
+		right: 15px;
+		top: 0px;
+		.current {
+			color: $secondary-color;
+		}
+		.snf-list {
+				margin-right: 4px;
+				font-size: 24px;
+			}
+		.snf-layout {
+				font-size: 25px;
+			}
+		
 	}
 }
 .new-btn {

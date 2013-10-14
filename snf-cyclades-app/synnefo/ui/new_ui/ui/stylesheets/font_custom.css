@@ -169,10 +169,10 @@ you can use the generic selector below, but it"s slower:
 }
 
 .snf-list:before {
-	content: "\51";
+	content: "\52";
 }
 .snf-layout:before {
-	content: "\52";
+	content: "\51";
 }
 
 .snf-search:before {
