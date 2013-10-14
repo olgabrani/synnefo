@@ -238,11 +238,26 @@ ui.wizard = {
 		$(area).find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
 		$('.expand-link').find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
 		$('.step-1').addClass('current');
+		
+		$('.os li').hide();
+		$('#vm-wizard .top .sub-menu[data-step=1] .preselected').data('img-type')
+		$('.os').find('.'+$('#vm-wizard .top .sub-menu[data-step=1] .preselected').data('img-type')).show();
 	},
 
 	pickResources: function(resource) {
 		$('.flavor .with-flavor a:not(.' + resource + ')').removeClass('current');
 		$('.flavor .with-flavor a.' + resource + '').addClass('current');
+	},
+
+	showImageCategory: function(imagesCategory) {
+		$(imagesCategory).closest('.sub-menu').find('.current').removeClass('current');
+		$(imagesCategory).addClass('current');
+		$('.os li').hide();
+		$('.os .details').hide();
+		selectedImages = $(imagesCategory).data('img-type');
+		$('.os').find('.'+selectedImages).fadeIn();
+		
+	
 	}
 
 }
@@ -441,4 +456,10 @@ Various functions for vm creation wizard
 	ui.wizard.btns.close.click(function() {
 		ui.wizard.close();
 	});
+	
+	$('.os .system-images').show();
+
+	$('#vm-wizard .top .sub-menu[data-step=1] a').click(function() {
+		ui.wizard.showImageCategory(this);
+	})
 });

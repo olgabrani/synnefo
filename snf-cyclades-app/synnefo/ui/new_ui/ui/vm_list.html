@@ -78,10 +78,10 @@ Confirm that the options you have selected are correct</p>
 					<div class="row">
 						<nav class="sub-menu" data-step=1>
 							<ul>
-								<li><a href="" class="current preselected el2 firstfocus-1">System</a></li>
-								<li><a href="">My images</a></li>
-								<li><a href="">Shared with me</a></li>
-								<li><a href="" data-next="el1">Public</a></li>
+								<li><a href="" class="current preselected el2 firstfocus-1" data-img-type="system-images">System</a></li>
+								<li><a href="" data-img-type="my-images">My images</a></li>
+								<li><a href="" data-img-type="shared-images">Shared with me</a></li>
+								<li><a href="" data-next="el1" data-img-type="public-images">Public</a></li>
 							</ul>
 						</nav>
 						<nav class="sub-menu" data-step=2>
@@ -99,7 +99,7 @@ Confirm that the options you have selected are correct</p>
 							<div class="step step-1 current" id="step-1" data-step="1">
 								<div id="dummy-link-1" class="dummy-link">&nbsp;</div>
 								<ul class="os">
-									<li  class="current preselected">
+									<li  class="current preselected system-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
 											<a href="" class="name-col el1">Kubuntu</a>
@@ -126,7 +126,7 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li>
+									<li class="public-images current preselected">
 										<div class="row">
 											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
 											<a href="" class="name-col">Kubuntu LTS</a>
@@ -153,7 +153,34 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li>
+									<li class="public-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<a href="" class="name-col">Fedora</a>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="shared-images current preselected">
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
 											<a href="" class="name-col">Fedora</a>
@@ -180,7 +207,7 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li>
+									<li class="my-images current preselected">
 										<div class="row">
 											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
 											<a href="" class="name-col">Windows Server 2012</a>
@@ -207,7 +234,34 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li>
+									<li class="system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2012</a>
+											<div class="size-col">13.66 GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="system-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
 											<a href="" class="name-col">Windows Server 2008</a>

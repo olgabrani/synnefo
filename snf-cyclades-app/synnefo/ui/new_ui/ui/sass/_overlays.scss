@@ -285,6 +285,7 @@ body.with-overlay {
 			}
 			.os {
 				li {
+					display: none;
 					list-style: none outside none;
 					font-size:emCalc(12px);
 					@extend .clearfix;

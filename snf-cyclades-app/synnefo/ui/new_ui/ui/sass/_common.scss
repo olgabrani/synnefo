@@ -379,9 +379,9 @@ body {
 		.sb-icon-search {
 			background-color: white;
 			color: $primary-color;
-			top: -6px;
-			font-size: 20px;
-			width:50px;
+			top: -4px;
+			font-size: 18px;
+			width:40px;
 			&:hover {
 				color: $secondary-color;
 			}
@@ -415,9 +415,13 @@ body {
 		.snf-list {
 				margin-right: 4px;
 				font-size: 24px;
+				line-height: 50px;
+				vertical-align: middle;
 			}
 		.snf-layout {
 				font-size: 25px;
+				line-height: 50px;
+				vertical-align: middle;
 			}
 		
 	}
