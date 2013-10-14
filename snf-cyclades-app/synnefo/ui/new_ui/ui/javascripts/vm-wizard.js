@@ -11,13 +11,14 @@ ui.wizard = {
 		expand_down: undefined
 	},
 	speed: 500,
+	semaphore:1,
 
 	setDimensions: function() {
 		$('.vm-wizard-carousel').css('width', 100 * ui.wizard.total_step + '%');
 		$('.vm-wizard-carousel .step').css('width', 100 / ui.wizard.total_step + '%');
 	},
 	getCurrent: function(){
-		return $('.step').filter('.current');
+		return $('.step').filter('.current').first();
 	},
 
 	getNextStep: function() {
@@ -45,36 +46,35 @@ ui.wizard = {
 	},
 
 	move: function(step, pos) {
-
+		ui.wizard.semaphore = 0;
 		ui.wizard.focusFun();
 		ui.wizard.indicateStep(ui.wizard.current_step);
 		ui.wizard.setMovementTags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
 		$('body').css('overflow','hidden');
 		// the current visible pane
-        current = this.getCurrent();
+        var current = this.getCurrent();
         // Set next pane position on the right of the current one
         // Add current to the next pane, so that it will become
         // visible
-        console.log('1');
         step.css({
             left: pos.toString() + '%'
         }).addClass("current");
-
+        console.log(current,'current');
         // identify the current scroll position. Use it to
         // set next pane top position. We assume all panes
         // are within the scroll context of the main window.
         step.css({
             top: this.getScrollOffset() + 'px'
         });
-        window.scroll(0, 0);
-        $('.step').finish().animate({
+        $('.step').stop(false,true).animate({
             marginLeft: (-pos).toString() + '%'
         }, {
-            complete: _.bind(function() {
+				complete: _.bind(function() {
                 // assuming all the following take place
                 // instantaneously within a single browser 
                 // render cycle, no flickering should occur.
                 current.removeClass("current");
+			    window.scroll(0, 0);
                 step.css({
                     left: '0',
                     top: '0'
@@ -86,8 +86,10 @@ ui.wizard = {
                 if (ui.wizard.current_step == 3 ){
 					$('.vm-name input').first().focus();
                 }
+                ui.wizard.semaphore =1;
             }, this)
         });
+
 	},
 
 	goNext: function() {
@@ -97,8 +99,10 @@ ui.wizard = {
 			ui.wizard.close();
 			return;
 		}
-		ui.wizard.current_step++;
-		ui.wizard.move(next, 100);
+		if (ui.wizard.semaphore == 1) {
+			ui.wizard.current_step++;
+			ui.wizard.move(next, 100);
+		}
 	},
 
 	goPrev: function() {
@@ -107,8 +111,10 @@ ui.wizard = {
 			ui.wizard.close();
 			return;
 		}
-		ui.wizard.current_step--;
-		ui.wizard.move(prev, -100);
+		if (ui.wizard.semaphore == 1) {
+			ui.wizard.current_step--;
+			ui.wizard.move(prev, -100);
+		}
 	},
 
 	initEvents: function() {
@@ -117,7 +123,6 @@ ui.wizard = {
 
 		$(document).keydown(function(e) {
 			var exp = $('.vm-name input').is(':focus') && $('.vm-name input').val().length>0 && ui.wizard.current_step ==3;
-			console.log('exp',exp);
 			// right arrow keyCode == 39
 			if ($('.wizard:visible').length != 0) {
 				if (e.keyCode == 39 && ui.wizard.current_step != (ui.wizard.total_step) &&(!exp)) {
@@ -403,14 +408,16 @@ Various functions for vm creation wizard
 	/* focus and tabs functionality */
 
 	$('a').keyup(function(e) {
+
 		var self = this;
 		if (e.keyCode == 9 || e.which == 9) {
-			if (e.shiftKey) {} else {
+			if (e.shiftKey) {
+				alert(e);
+			} else {
 				//Focus next input
 				if ($(self).attr('data-next')) {
 					$(self).focusout(function(e) {
 						var classname = $(self).data('next');
-						console.log('tab goes to ', classname);
 						$('.' + classname + '').first().focus();
 					});
 				}
