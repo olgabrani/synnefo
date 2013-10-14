@@ -66,7 +66,8 @@ ui.wizard = {
         step.css({
             top: this.getScrollOffset() + 'px'
         });
-        $('.step').animate({
+        window.scroll(0, 0);
+        $('.step').finish().animate({
             marginLeft: (-pos).toString() + '%'
         }, {
             complete: _.bind(function() {
@@ -74,7 +75,6 @@ ui.wizard = {
                 // instantaneously within a single browser 
                 // render cycle, no flickering should occur.
                 current.removeClass("current");
-                window.scroll(0, 0);
                 step.css({
                     left: '0',
                     top: '0'
@@ -197,7 +197,8 @@ ui.wizard = {
 		ui.wizard.setMovementTags();
 		$('.networks-area .more').show();
 		$('.details').hide();
-		$('.vm-name input').removeAttr('value');
+		$('.vm-name input').val("");
+		$('.form-item input').val("");
 		$('.advanced-conf-options').hide();
 		$('.snf-color-picker').hide();
 		ui.wizard.preselectElements('.wizard');
