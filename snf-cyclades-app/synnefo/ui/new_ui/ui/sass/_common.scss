@@ -70,6 +70,15 @@
 	padding: 1px 0;
 }
 
+
+@mixin placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+
 /* Circle and Tags ----------------------------------------------- */
 .circle {
 	display:inline-block;
@@ -370,13 +379,25 @@ body {
 		.sb-icon-search {
 			background-color: white;
 			color: $primary-color;
-
+			&:hover {
+				color: $secondary-color;
+			}
 		}
 		.sb-search-input {
+			background:transparent;
+			border:0 none;
 			width: 300px;
 			margin-right: 51px;
 			margin: 0;
 			height: 52px;
+			&:focus {
+				outline: 0 none;
+				border:0 none;
+				@include box-shadow(none);
+			}
+			@include placeholder {
+			    color:$secondary-color;
+			}
 		}
 	}
 }

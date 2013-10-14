@@ -83,6 +83,9 @@ ui.wizard = {
                     marginLeft: '0'
                 });
                 $('body').css('overflow','visible');
+                if (ui.wizard.current_step == 3 ){
+					$('.vm-name input').first().focus();
+                }
             }, this)
         });
 	},
@@ -104,7 +107,6 @@ ui.wizard = {
 			ui.wizard.close();
 			return;
 		}
-		console.log('goPrev',ui.wizard.current_step);
 		ui.wizard.current_step--;
 		ui.wizard.move(prev, -100);
 	},
@@ -119,7 +121,7 @@ ui.wizard = {
 					return false;
 				}
 				// left arrow keyCode == 37
-				else if (e.keyCode == 37 && ui.wizard.current_step != 1) {
+				else if (e.keyCode == 37 && ui.wizard.current_step != 1 && !($('.vm-name input').val())) {
 					ui.wizard.goPrev();
 					return false;
 				}
@@ -131,10 +133,19 @@ ui.wizard = {
 		});
 
 		ui.wizard.btns.next.click(function(e) {
+			if (ui.wizard.current_step == ui.wizard.total_step ){
+				ui.wizard.submitData();
+				ui.wizard.close();
+				return false;
+			}
 			ui.wizard.goNext();
-		})
+		});
 
 		ui.wizard.btns.previous.click(function(e) {
+			if (ui.wizard.current_step == 1 ){
+				ui.wizard.close();
+				return false;
+			}
 			ui.wizard.goPrev();
 		});
 	},

@@ -1,18 +1,8 @@
 /* Table of Contents
 
-- mixins
 - editable 
 
 */
-
-/* mixins  ------------------ */
-
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  ::-moz-placeholder          {@content}
-  :-moz-placeholder           {@content}
-  :-ms-input-placeholder      {@content}
-}
 
 
 /* editable (used for changing info asychronously) ------------------ */
@@ -49,9 +39,9 @@
 		margin:0;
 		color: $wizard-base-font-color;
 		@include box-shadow(none);
-	}
-	@include placeholder {
-	    color:$black;
+		@include placeholder {
+			color:$black;
+		}
 	}
 }
 .advanced-conf-step {
