@@ -78,7 +78,11 @@
 				}
 			}
 		}
-
+	}
+	&.list-view {
+		li {
+			width:100%;
+		}
 	}
 }
 
@@ -86,6 +90,11 @@
 	.entities {
 		.items-list {
 			@include block-grid(4, 20px, true);
+			&.list-view	{
+				li {
+					width:100%;
+				}
+			}
 		}
 	} 
 }

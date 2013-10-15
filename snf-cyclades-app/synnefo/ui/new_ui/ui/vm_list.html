@@ -58,17 +58,17 @@
 									<p><strong>Select an OS</strong> Choose your preferred image</p>
 								</li>
 								<li>
-									<em><span disabled>2</span></em>
+									<em><span>2</span></em>
 									<p><strong>Select CPUs, RAM and Disk Size </strong>
 Available options are filtered based on the selected image</p>
 								</li>
 								<li>
-									<em><span disabled>3</span></em>
+									<em><span>3</span></em>
 									<p><strong>Virtual machine custom options</strong>
 Virtual machine custom options</p>
 								</li>
 								<li>
-									<em><span disabled>4</span></em>
+									<em><span>4</span></em>
 									<p><strong>Confirm your settings</strong>
 Confirm that the options you have selected are correct</p>
 								</li>
@@ -97,7 +97,6 @@ Confirm that the options you have selected are correct</p>
 					<div class="wizard-content">
 						<div class="steps">
 							<div class="step step-1 current" id="step-1" data-step="1">
-								<div id="dummy-link-1" class="dummy-link">&nbsp;</div>
 								<ul class="os">
 									<li  class="current preselected system-images">
 										<div class="row">
@@ -126,7 +125,7 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li class="public-images current preselected">
+									<li class="public-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
 											<a href="" class="name-col">Kubuntu LTS</a>
@@ -180,7 +179,7 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li class="shared-images current preselected">
+									<li class="shared-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
 											<a href="" class="name-col">Fedora</a>
@@ -207,7 +206,7 @@ Confirm that the options you have selected are correct</p>
 											</div>
 										</div>
 									</li>
-									<li class="my-images current preselected">
+									<li class="my-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
 											<a href="" class="name-col">Windows Server 2012</a>
@@ -292,13 +291,12 @@ Confirm that the options you have selected are correct</p>
 								</ul>
 							</div>
 							<div class="step step-2" id="step-2" data-step=2>
-								<div id="dummy-link-2" class="dummy-link">&nbsp;</div>
 								<div class="row">
 									<form class="custom">
 									  <select class="medium">
-									    <option><a href="" class="el5">Assign to project</a></option>
-									    <option><a href="">Project 2</a></option>
-                                                <option><a href="">Project 3</a></option>
+									    <option class="el5">Assign to project</option>
+									    <option>Project 2</option>
+									    <option>Project 3</option>
 									  </select>
 									</form>
 									<ul class="flavor">
@@ -420,7 +418,6 @@ Confirm that the options you have selected are correct</p>
 								</div>
 							</div>
 							<div class="step step-3" id="step-3" data-step=3>
-								<div id="dummy-link-3" class="dummy-link">&nbsp;</div>
 								<div class="advanced-conf-step">
 									<div class="adv-main row">
 										<div class="vm-name">
@@ -471,11 +468,11 @@ Confirm that the options you have selected are correct</p>
 											<ul>
 												<li class="checkbox row has-more select-net">
 													<h3 class="">	
-														<div class="net-icons">
+														<span class="net-icons">
 															<span class="temp-line line1"></span>
 															<span class="snf-www"></span>
 															<span class="snf-network_full"></span>
-														</div>
+														</span>
 														Public Network
 													</h3>
 													<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
@@ -501,13 +498,13 @@ Confirm that the options you have selected are correct</p>
 												</li>
 												<li class="checkbox row select-net">
 													<h3 class="net-name">
-														<div class="net-icons">
+														<span class="net-icons">
 															<span class="temp-line line1"></span>
 															<span class="temp-line line2"></span>
 															<span class="snf-www"></span>
 															<span class="snf-modem"></span>
 															<span class="snf-network_full"></span>
-														</div>
+														</span>
 														Routed Network
 													</h3>
 													<a href="" class="check">
@@ -516,9 +513,9 @@ Confirm that the options you have selected are correct</p>
 												</li>
 												<li class="checkbox row select-net">
 													<h3 class="net-name">
-														<div class="net-icons">
+														<span class="net-icons">
 															<span class="snf-network_full"></span>
-														</div>
+														</span>
 														Private Network 1
 													</h3>
 													<a href="" class="check">
@@ -527,9 +524,9 @@ Confirm that the options you have selected are correct</p>
 												</li>
 												<li class="checkbox row select-net">
 													<h3 class="net-name">
-														<div class="net-icons">
+														<span class="net-icons">
 															<span class="snf-network_full"></span>
-														</div>
+														</span>
 														Private Network 2
 													</h3>
 													<a href="" class="check">
@@ -571,7 +568,7 @@ Confirm that the options you have selected are correct</p>
 												</ul>
 												<div ><a class="btn5 show-add-tag" href="" id="show-add-tag">add Tag</a></div>
 												<div class="snf-color-picker">
-													<form action="" style="width: 400px;">
+													<form action="#" method="post">
 														<div id="picker">
 															<div class="farbtastic">
 																<div class="color" style="background-color: rgb(255, 0, 21);"></div>
@@ -598,7 +595,6 @@ Confirm that the options you have selected are correct</p>
 								</div>
 <!-- end step 3 -->				</div>
 							<div class="step step-4" id="step-4" data-step=4>
-								<div id="dummy-link-4" class="dummy-link">&nbsp;</div>
 								<div class="summary">
 									<div class="row">
 										<div class="wrap">
@@ -695,8 +691,8 @@ Confirm that the options you have selected are correct</p>
 				    </form>
 			    </div>
 			    <div class="view-type">
-			    	<a href=""><span class="snf-list"></span></a>
-			    	<a href=""><span class="snf-layout current"></span></a>
+					<a href="" class="list"><span class="snf-list"></span></a>
+					<a href="" class="grid"><span class="snf-layout current"></span></a>
 			    </div>
 			</div>
 			<div class="border-dashed"></div>
@@ -815,11 +811,11 @@ Confirm that the options you have selected are correct</p>
 		</div>
 	
 	<div id="vm-connect" class="reveal-modal medium">
-  		<p>A direct connection to this machine can be established using the <a target=​"_blank" href="http://en.wikipedia.org/wiki/Secure_Shell">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+		<p>A direct connection to this machine can be established using the <a href="http://en.wikipedia.org/wiki/Secure_Shell" title="">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
 		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
 		
 		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
-		<p>Alternatively you can connect to your VM via <a href="">Console</a> (slow connection - meant only for troubleshooting.</p>
+		<p>Alternatively you can connect to your VM via <a href="#" title="">Console</a> (slow connection - meant only for troubleshooting.</p>
   		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
 

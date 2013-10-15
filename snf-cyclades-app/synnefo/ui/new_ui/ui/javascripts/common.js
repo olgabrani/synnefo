@@ -337,6 +337,25 @@ $(document).ready(function(){
     if($('#sb-search').length>0) {
         new UISearch( document.getElementById( 'sb-search' ) );
     }
+
+
+    /* grid/list view for items-list */
+
+    $('.view-type .list').click(function(e){
+        e.preventDefault();
+        $('.view-type .grid span').removeClass('current');
+        $(this).find('span').addClass('current');
+        $('.items-list').removeClass('small-block-grid-2 large-block-grid-3');
+        $('.items-list').addClass('list-view');
+    })
+
+     $('.view-type .grid').click(function(e){
+        e.preventDefault();
+        $('.view-type .list span').removeClass('current');
+        $(this).find('span').addClass('current');
+        $('.items-list').addClass('small-block-grid-2 large-block-grid-3');
+        $('.items-list').removeClass('list-view');
+    })
 })
 
 
