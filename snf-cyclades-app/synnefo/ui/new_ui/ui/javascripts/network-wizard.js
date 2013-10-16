@@ -11,7 +11,6 @@ ui.wizard.network = {
         $('.overlay-area').fadeOut(400, function() {
             $('.overlay-div').hide();
         });
-        ui.wizard.resetWizard();
         }
 }
 
