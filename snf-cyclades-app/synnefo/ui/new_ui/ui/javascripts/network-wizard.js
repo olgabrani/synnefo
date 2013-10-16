@@ -7,9 +7,11 @@ ui.wizard.network = {
                 new_network: undefined
             },
         close: function(bottom_area, main_area, total_area) {
-            $(bottom_area).hide();
-            $(main_area).slideUp();
-            $(total_area).slideUp();
+          $('body').removeClass('with-overlay');
+        $('.overlay-area').fadeOut(400, function() {
+            $('.overlay-div').hide();
+        });
+        ui.wizard.resetWizard();
         }
 }
 

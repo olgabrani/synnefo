@@ -334,7 +334,9 @@ $(document).ready(function(){
     if($('#picker').length>0) {
         $('#picker').farbtastic('#color');
     };
-new UISearch( document.getElementById( 'sb-search' ) );
+    if($('#sb-search').length>0) {
+        new UISearch( document.getElementById( 'sb-search' ) );
+    }
 })
 
 
