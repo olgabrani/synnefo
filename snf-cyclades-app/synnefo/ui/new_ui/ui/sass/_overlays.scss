@@ -38,6 +38,8 @@ body.with-overlay {
 
 .overlay-wrapper {
 	position: relative;
+	left:0;
+	top:0;
 	.overlay-area {
 		display:none;
 		position:absolute;
@@ -158,6 +160,8 @@ body.with-overlay {
 		height:$bar-height+$bar-submenu-height;
 		position:fixed;
 		left:0;
+		right:0;
+		bottom:auto;
 		top:$header-height;
 		width:100%;
 		z-index:40;

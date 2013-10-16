@@ -271,8 +271,18 @@ Various functions for vm creation wizard
 
 	/* step functions */
 	/* step-1: Pick OS */
-	$('.wizard .os > li').click(function(e) {
+	$('.wizard .os > li').keydown(function(e) {
+	  if(e.keyCode == 13) {
+	    $(this).trigger("click", true);
+	    e.preventDefault();
+	  }
+	});
+
+	$('.wizard .os > li').click(function(e, wasEnterKey) {
 		e.preventDefault();
+		if ( $(this).hasClass('current') && wasEnterKey) {
+			ui.wizard.goNext();
+		}
 		$('.wizard .os >li').removeClass('current');
 		$(this).addClass('current');
 	});
@@ -427,7 +437,6 @@ Various functions for vm creation wizard
 		var self = this;
 		if (e.keyCode == 9 || e.which == 9) {
 			if (e.shiftKey) {
-				alert(e);
 			} else {
 				//Focus next input
 				if ($(self).attr('data-next')) {
