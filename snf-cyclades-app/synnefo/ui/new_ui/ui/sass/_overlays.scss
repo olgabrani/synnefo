@@ -200,6 +200,11 @@ body.with-overlay {
 						&.current {
 							text-decoration: underline;
 						}
+						&.disabled {
+							color: $disabled-flavor-color;
+							cursor: default;
+
+						}
 					}
 				}
 			}
@@ -441,10 +446,10 @@ body.with-overlay {
 								padding:1px;
 								height: 100%;
 								&.disabled-progress-bar {
-									border-color: #3a4046;
+									border-color: $disabled-resource-color;
 									.container{
 										.total {
-											background-color: #3a4046;
+											background-color: $disabled-resource-color;
 										}
 									}
 								}
@@ -491,6 +496,16 @@ body.with-overlay {
 									min-width: 60px;
 									&.current {
 										color:$overlay-color;
+									}
+									&.disabled {
+										border-color: $disabled-resource-color;
+										color: $disabled-resource-color;
+										&:hover, &:active {
+											cursor: default;
+											border-width: 1px;
+											line-height: 28px;
+
+										}
 									}
 								}
 							}

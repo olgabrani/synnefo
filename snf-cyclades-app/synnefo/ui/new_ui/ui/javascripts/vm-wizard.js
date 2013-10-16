@@ -12,11 +12,19 @@ ui.wizard = {
 	},
 	speed: 500,
 	semaphore:1,
-
-	setDimensions: function() {
-		$('.vm-wizard-carousel').css('width', 100 * ui.wizard.total_step + '%');
-		$('.vm-wizard-carousel .step').css('width', 100 / ui.wizard.total_step + '%');
+	vm: {
+		getSize: function(elem) {
+			if ($(elem).hasClass('small')) {
+				return 'small';
+			} else if ($(elem).hasClass('medium')) {
+				return 'medium';
+			} else if ($(elem).hasClass('large')) {
+				return 'large';
+			}
+		}
 	},
+	network: {},
+
 	getCurrent: function(){
 		return $('.step').filter('.current').first();
 	},
@@ -59,7 +67,6 @@ ui.wizard = {
         step.css({
             left: pos.toString() + '%'
         }).addClass("current");
-        console.log(current,'current');
         // identify the current scroll position. Use it to
         // set next pane top position. We assume all panes
         // are within the scroll context of the main window.
@@ -94,11 +101,6 @@ ui.wizard = {
 
 	goNext: function() {
 		var next = ui.wizard.getNextStep();
-		if (!next) {
-			ui.wizard.submitData();
-			ui.wizard.close();
-			return;
-		}
 		if (ui.wizard.semaphore == 1) {
 			ui.wizard.current_step++;
 			ui.wizard.move(next, 100);
@@ -107,10 +109,6 @@ ui.wizard = {
 
 	goPrev: function() {
 		var prev = ui.wizard.getPreviousStep();
-		if (!prev) {
-			ui.wizard.close();
-			return;
-		}
 		if (ui.wizard.semaphore == 1) {
 			ui.wizard.current_step--;
 			ui.wizard.move(prev, -100);
@@ -118,19 +116,17 @@ ui.wizard = {
 	},
 
 	initEvents: function() {
-		ui.wizard.setDimensions();
-
-
 		$(document).keydown(function(e) {
-			var exp = $('.vm-name input').is(':focus') && $('.vm-name input').val().length>0 && ui.wizard.current_step ==3;
+			var exp1 = $('.vm-name input').is(':focus') && $('.vm-name input').val().length>0;
+			var exp2 = $('.form-item input').is(':focus') && $('.form-item input').val().length>0;
 			// right arrow keyCode == 39
 			if ($('.wizard:visible').length != 0) {
-				if (e.keyCode == 39 && ui.wizard.current_step != (ui.wizard.total_step) &&(!exp)) {
+				if (e.keyCode == 39 && ui.wizard.current_step != (ui.wizard.total_step) &&(!exp1) && (!exp2)) {
 					ui.wizard.goNext();
 					return false;
 				}
 				// left arrow keyCode == 37
-				else if (e.keyCode == 37 && ui.wizard.current_step != 1 &&(!exp)) {
+				else if (e.keyCode == 37 && ui.wizard.current_step != 1 &&(!exp1) &&(!exp2)) {
 					ui.wizard.goPrev();
 					return false;
 				}
@@ -297,29 +293,28 @@ Various functions for vm creation wizard
 
 
 	/* step-2: Select flavor */
-	$('.wizard .sub-menu a[data-size]').on("click", function(e) {
+	disabledElems = $('.flavor a.disabled');
+	disabledElemsNum = $('.flavor a.disabled').length;
+	
+	if(disabledElemsNum>0) {
+		for(i=0; i<disabledElemsNum; i++) {
+			$('.wizard .sub-menu[data-step=2]').find('a[data-size=' + ui.wizard.vm.getSize(disabledElems.get(i)) + ']').removeClass('current').addClass('disabled');
+		}
+	}
+	$('.wizard .sub-menu a[data-size]:not(.disabled)').on("click", function(e) {
 		// e.preventDefault();
 		$(this).parents('.sub-menu').find('a').removeClass('current');
 		$(this).addClass('current');
 		ui.wizard.pickResources($(this).data('size'));
 	});
 
-	$('.wizard .flavor .options:not(".vm-storage-selection") a').click(function(e) {
+	$('.wizard .flavor .options:not(".vm-storage-selection") a:not(.disabled)').click(function(e) {
 		// e.preventDefault();
 		$('.wizard .sub-menu a[data-size]').removeClass('current');
 		$(this).parents('.options').find('a').removeClass('current');
 		$(this).addClass('current');
-
-		var size, count;
-		if ($(this).hasClass('small')) {
-			size = 'small';
-		} else if ($(this).hasClass('medium')) {
-			size = 'medium';
-		} else if ($(this).hasClass('large')) {
-			size = 'large';
-		}
-
-		count = $('.wizard .step-2 .options.with-flavor .' + size + '.current').length;
+		var size = ui.wizard.vm.getSize(this);
+		var count = $('.wizard .step-2 .options.with-flavor .' + size + '.current').length;
 		if (count == 3) {
 			$('.wizard .sub-menu[data-step=2]').find('a[data-size=' + size + ']').addClass('current');
 		}
@@ -342,6 +337,8 @@ Various functions for vm creation wizard
 			paragraph.css('visibility', 'hidden');
 		}
 	);
+
+
 	/* step-3: Advanced options */
 
 	// reaction li.click   
@@ -368,12 +365,9 @@ Various functions for vm creation wizard
 		e.stopPropagation();
 		var self = this;
 		if ($(this).closest('.checkbox').hasClass('has-more')) {
-			console.log('hi');
 			$(this).parent().next('.more').stop().slideToggle(400, function() {
-				console.log('a2');
 				if ($(self).parent().next('.more:visible').length != 0) {
 					$(self).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
-					console.log('a3');
 				} else {
 					$(self).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
 				}
