@@ -200,6 +200,11 @@ ui.overlay = function() {
         $('.overlay-area').fadeIn(100);
         $('body').addClass('with-overlay');
         $(id).fadeIn('slow');
+        console.log(id);
+        if (id=='#network-wizard') {
+            $(id).find('input').first().focus();
+            return false;
+        }
         $(id).find('a').first().focus();
     });
 }

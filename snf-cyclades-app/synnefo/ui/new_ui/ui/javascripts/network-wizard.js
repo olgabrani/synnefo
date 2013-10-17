@@ -1,19 +1,18 @@
 ui.wizard.network = {
-         elemID: undefined,
-            btns: {
-                cancel: undefined,
-                create: undefined,
-                close: undefined,
-                new_network: undefined
-            },
-        close: function(bottom_area, main_area, total_area) {
-          $('body').removeClass('with-overlay');
+    elemID: undefined,
+    btns: {
+        cancel: undefined,
+        create: undefined,
+        close: undefined,
+        new_network: undefined
+    },
+    close: function(bottom_area, main_area, total_area) {
+        $('body').removeClass('with-overlay');
         $('.overlay-area').fadeOut(400, function() {
             $('.overlay-div').hide();
         });
-        }
+    }
 }
-
 
 
 $(document).ready(function(){
