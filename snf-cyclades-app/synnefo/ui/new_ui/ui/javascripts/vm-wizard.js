@@ -55,6 +55,7 @@ ui.wizard = {
 
 	move: function(step, pos) {
 		ui.wizard.semaphore = 0;
+		$('.actions-bar').hide();
 		ui.wizard.focusFun();
 		ui.wizard.indicateStep(ui.wizard.current_step);
 		ui.wizard.setMovementTags(ui.wizard.current_step, ui.wizard.btns.previous, ui.wizard.btns.next);
@@ -73,7 +74,7 @@ ui.wizard = {
         step.css({
             top: this.getScrollOffset() + 'px'
         });
-        $('.step').stop(false,true).animate({
+        $('.step').animate({
             marginLeft: (-pos).toString() + '%'
         }, {
 				complete: _.bind(function() {
@@ -93,6 +94,7 @@ ui.wizard = {
                 if (ui.wizard.current_step == 3 ){
 					$('.vm-name input').first().focus();
                 }
+                $('.actions-bar').show();
                 ui.wizard.semaphore =1;
             }, this)
         });
