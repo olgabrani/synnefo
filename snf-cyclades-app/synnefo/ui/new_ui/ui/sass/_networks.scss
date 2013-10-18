@@ -35,8 +35,7 @@
 	}
 
 	.net_wiz_main {
-		padding: 40px;
-		width:390px;
+		width:360px;
 
 	}
 
@@ -46,25 +45,24 @@
 	.subnet_options {
 		margin: 0;
 		li {
-			margin-bottom: 6px;
-			padding-left: 155px;
+			margin-top: 20px;
 		}
-}
+	}
 
 // for network creation wizard
 
 .main {
-	padding: 40px;
 	a {	color: $wizard-base-font-color;}
 	.network_options {
 		.dhcp_option {
 			p {
 				font-size:emCalc(12px);
+				margin-top:20px;
+				margin-bottom:60px;
 			}
 		}
 		position: relative;
-		width: $row-small;
-		margin:0 auto;
+		width: 360px;
 		.check, .radio_btn {
 			position: absolute;
 			right: 0;
@@ -74,6 +72,8 @@
 			}
 		}
 		.network-name {
+			margin-top: 50px;
+			margin-bottom: 50px;
 			h2 {
 				color:white;
 				font-size: emCalc(16px);
@@ -83,7 +83,6 @@
 		
 		li {
 			display: block;
-			margin-bottom: 13px;
 			&.manual{
 				position: relative;
 				.input {
@@ -96,7 +95,7 @@
 			}
 		}		
 		span.sub_title {
-			float:left;
+			
 		}
 	}
 }
