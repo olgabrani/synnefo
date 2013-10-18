@@ -21,6 +21,21 @@ ui.wizard = {
 			} else if ($(elem).hasClass('large')) {
 				return 'large';
 			}
+		},
+
+
+		pickResources: function(resource) {
+			$('.flavor .with-flavor a:not(.' + resource + ')').removeClass('current');
+			$('.flavor .with-flavor a.' + resource + '').addClass('current');
+		},
+
+		hideNext: function() {
+			if(ui.wizard.current_step == 2 && $('.flavor a.disabled').hasClass('small')) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	},
 	network: {},
@@ -178,6 +193,8 @@ ui.wizard = {
 		} else if (ui.wizard.current_step == ui.wizard.total_step) {
 			ui.wizard.btns.previous.find('span').html('PREVIOUS');
 			ui.wizard.btns.next.find('span').html('CREATE');
+		} else if (ui.wizard.vm.hideNext()){
+			ui.wizard.btns.next.hide();
 		} else {
 			ui.wizard.btns.previous.find('span').html('PREVIOUS');
 			ui.wizard.btns.next.find('span').html('NEXT');
@@ -242,10 +259,6 @@ ui.wizard = {
 		$('.os').find('.'+$('#vm-wizard .top .sub-menu[data-step=1] .preselected').data('img-type')).show();
 	},
 
-	pickResources: function(resource) {
-		$('.flavor .with-flavor a:not(.' + resource + ')').removeClass('current');
-		$('.flavor .with-flavor a.' + resource + '').addClass('current');
-	},
 
 	showImageCategory: function(imagesCategory) {
 		$(imagesCategory).closest('.sub-menu').find('.current').removeClass('current');
@@ -295,19 +308,25 @@ Various functions for vm creation wizard
 
 
 	/* step-2: Select flavor */
-	disabledElems = $('.flavor a.disabled');
-	disabledElemsNum = $('.flavor a.disabled').length;
-	
+	var disabledElems = $('.flavor a.disabled');
+	var disabledElemsNum = $('.flavor a.disabled').length;
 	if(disabledElemsNum>0) {
+		var size;
 		for(i=0; i<disabledElemsNum; i++) {
-			$('.wizard .sub-menu[data-step=2]').find('a[data-size=' + ui.wizard.vm.getSize(disabledElems.get(i)) + ']').removeClass('current').addClass('disabled');
+			size = ui.wizard.vm.getSize(disabledElems.get(i));
+			$('.wizard .sub-menu[data-step=2]').find('a[data-size=' + size + ']').removeClass('current').addClass('disabled');
+			$('#vm-wizard .flavor').find('.'+size).removeClass('current preselected');
+			if(size == 'small') {
+				$('#vm-wizard .flavor .vm-storage-selection a').removeClass('current preselected');
+
+			}
 		}
 	}
 	$('.wizard .sub-menu a[data-size]:not(.disabled)').on("click", function(e) {
 		// e.preventDefault();
 		$(this).parents('.sub-menu').find('a').removeClass('current');
 		$(this).addClass('current');
-		ui.wizard.pickResources($(this).data('size'));
+		ui.wizard.vm.pickResources($(this).data('size'));
 	});
 
 	$('.wizard .flavor .options:not(".vm-storage-selection") a:not(.disabled)').click(function(e) {
