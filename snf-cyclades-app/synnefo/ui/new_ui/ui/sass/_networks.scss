@@ -18,6 +18,16 @@
 
 
 #network-wizard {
+
+	a {
+		&.nav:focus {
+			border: none;
+		}
+		&:focus {
+			border: 1px solid $overlay-color-top;
+		}
+	}
+
 	li {
 		list-style: none outside none;
 	}
@@ -68,26 +78,15 @@
 		li {
 			display: block;
 			margin-bottom: 13px;
-		
-			form {
-				margin: 0;
-				
-				input {
+			&.manual{
+				position: relative;
+				.input {
 					position: absolute;
-					display: inline-block;
-					right: 0;
-					width: 200px;
-					height: 20px;
-					font-size: 0.9em;
-					
-					&.hidden {
-						display: none;
-					}
+					right: -170px;
+					width: 150px;
+					bottom: 5px;
+					display: none;
 				}
-			}
-			&.manual form input {
-				right: -160px;
-				width: 150px;
 			}
 		}		
 		span.sub_title {

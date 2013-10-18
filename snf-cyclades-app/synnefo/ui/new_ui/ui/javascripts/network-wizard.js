@@ -10,7 +10,18 @@ ui.wizard.network = {
         $('body').removeClass('with-overlay');
         $('.overlay-area').fadeOut(400, function() {
             $('.overlay-div').hide();
+        ui.wizard.network.reset('#network-wizard');
         });
+    },
+
+    reset: function(area) {
+        $(area).find('input').val('');
+        $(area).find('.snf-radio-checked').not('.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
+        $(area).find('.snf-radio-unchecked.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
+        $(area).find('.snf-checkbox-checked').not('.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+        $(area).find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+        $(area).find('li .manual .input').hide();
+        $(area).find('ul.subnet_options').parent('li').show();
     }
 }
 
@@ -25,11 +36,9 @@ $(document).ready(function(){
     ui.wizard.network.btns.cancel = ui.wizard.network.btns.new_network.find('.bottom .nav.prev');
     ui.wizard.network.btns.create = ui.wizard.network.btns.new_network.find('.bottom .nav.next');
 
-
-     // create network
     $('.network_options .check').click(function(e){
-    e.preventDefault();
-    $(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
+        e.preventDefault();
+        $(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
     });
 
     $('.network_options .radio_btn').click(function(e){
@@ -40,10 +49,10 @@ $(document).ready(function(){
             ui.changeRadiobuttonState(this);
 
             if($(this).hasClass('manual')) {
-                $(this).siblings('.manual_sub').toggle();
+                $(this).siblings('.input').toggle();
             }
             else {
-                $(this).closest('li').siblings().find('.manual_sub').hide();
+                $(this).closest('li').siblings('.manual').find('.input').hide();
             }
         }
        

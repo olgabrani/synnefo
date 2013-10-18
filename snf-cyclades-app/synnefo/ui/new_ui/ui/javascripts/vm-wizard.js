@@ -206,10 +206,10 @@ ui.wizard = {
 		$('.overlay-area').fadeOut(400, function() {
 			$('.overlay-div').hide();
 		});
-		ui.wizard.resetWizard();
+		ui.wizard.reset();
 	},
 	// manually sets elements to a initial state
-	resetWizard: function() {
+	reset: function() {
 		ui.wizard.current_step = 1;
 		$('.step').removeAttr('style');
 		$('.bottom').show();

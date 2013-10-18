@@ -39,8 +39,9 @@
 
 	<!-- overlays start -->
 	<div class="overlay-area">
-		<a href="" class="close"><span class="snf-close"></span></a>
+		
 		<div id="overlay1" class="overlay-div">
+			<a href="" class="close"><span class="snf-close"></span></a>
 			<p>Are you sure you want to reboot your machine?</p>
 			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 		</div>
@@ -79,7 +80,7 @@
 									</li>
 									<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
 										<a href="" class="check">
-											<span class="snf-checkbox-checked"></span>
+											<span class="snf-checkbox-checked prechecked"></span>
 										</a>
 										<p>
 											If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
@@ -91,7 +92,7 @@
 											<li>
 												<span>Auto 
 													<a href="" class="radio_btn">
-														<span class="snf-radio-checked"></span>
+														<span class="snf-radio-checked prechecked"></span>
 													</a>
 												</span>
 											</li>
@@ -101,7 +102,7 @@
 														<a href="" class="radio_btn manual">
 															<span class="snf-radio-unchecked"></span>
 														</a>
-														<input class="manual_sub hidden" type="text" name="network_name">
+														<span class="input"><input type="text" placeholder=""></span>
 													</span>
 												</form>
 											</li>
