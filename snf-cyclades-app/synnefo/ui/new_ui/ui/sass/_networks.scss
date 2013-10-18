@@ -23,13 +23,15 @@
 		&.nav:focus {
 			border: none;
 		}
-		&:focus {
-			border: 1px solid $overlay-color-top;
-		}
+		&.radio_btn:focus, &.check:focus{
+				border: 1px solid #aee7cc;
+				padding: 2px;
+			}
 	}
 
 	li {
 		list-style: none outside none;
+		position: relative;
 	}
 
 	.net_wiz_main {
@@ -66,6 +68,10 @@
 		.check, .radio_btn {
 			position: absolute;
 			right: 0;
+			&:focus {
+				right: -3px;
+				top: -3px;
+			}
 		}
 		.network-name {
 			h2 {
