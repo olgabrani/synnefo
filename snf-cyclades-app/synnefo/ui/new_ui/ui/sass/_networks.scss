@@ -34,11 +34,6 @@
 		position: relative;
 	}
 
-	.net_wiz_main {
-		width:360px;
-
-	}
-
 	.snf-checkbox-checked, .snf-checkbox-unchecked {
 		font-size: 1.3em;
 	}
@@ -48,55 +43,52 @@
 			margin-top: 20px;
 		}
 	}
+	.step {
+		a {	color: $wizard-base-font-color;}
+		.network_options {
+			position: relative;
+			padding-bottom: 20px;
+			.dhcp_option {
+				p {
+					font-size:emCalc(12px);
+					margin-top:20px;
+					margin-bottom:60px;
+				}
+			}
+			.check, .radio_btn {
+				position: absolute;
+				right: 0;
+				&:focus {
+					right: -3px;
+					top: -3px;
+				}
+			}
+			.network-name {
+				margin-bottom: 50px;
+				h2 {
+					color:white;
+					font-size: emCalc(16px);
+				}
+			}
+			
+			
+			li {
+				display: block;
+				width: 360px;
+				&.manual{
+					position: relative;
+					.input {
+						position: absolute;
+						right: -170px;
+						width: 150px;
+						bottom: 5px;
+						display: none;
+					}
+				}
+			}
+		}
+	}
 
 // for network creation wizard
 
-.main {
-	a {	color: $wizard-base-font-color;}
-	.network_options {
-		.dhcp_option {
-			p {
-				font-size:emCalc(12px);
-				margin-top:20px;
-				margin-bottom:60px;
-			}
-		}
-		position: relative;
-		width: 360px;
-		.check, .radio_btn {
-			position: absolute;
-			right: 0;
-			&:focus {
-				right: -3px;
-				top: -3px;
-			}
-		}
-		.network-name {
-			margin-top: 50px;
-			margin-bottom: 50px;
-			h2 {
-				color:white;
-				font-size: emCalc(16px);
-			}
-		}
-		
-		
-		li {
-			display: block;
-			&.manual{
-				position: relative;
-				.input {
-					position: absolute;
-					right: -170px;
-					width: 150px;
-					bottom: 5px;
-					display: none;
-				}
-			}
-		}		
-		span.sub_title {
-			
-		}
-	}
-}
 }

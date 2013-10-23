@@ -165,8 +165,6 @@ body.with-overlay {
 		top:$header-height;
 		width:100%;
 		z-index:40;
-		.row {
-		}
 		.numbers {
 			.row {
 				max-width: 100%;
@@ -177,33 +175,36 @@ body.with-overlay {
 			line-height:$bar-height; 
 			background:$overlay-darker-color;
 		}
-		.sub-menu {
-			display: none;
-			&[data-step="1"] {
-				display: block;
-			}
-			ul {
-				margin:0;
-				padding:0;
-				list-style: none outside none;
-				font-size:emCalc(12px);
-				li {
-					display: inline;
-					margin-right:10px;
-					line-height: $bar-submenu-height;
+		.menus {
+			height: 50px;
+			.sub-menu {
+				display: none;
+				&[data-step="1"] {
+					display: block;
+				}
+				ul {
+					margin:0;
+					padding:0;
 					list-style: none outside none;
-					a {
-						color:$black;
-						&:hover, &:focus, &.current {
-							color:white;
-						}
-						&.current {
-							text-decoration: underline;
-						}
-						&.disabled {
-							color: $disabled-flavor-color;
-							cursor: default;
+					font-size:emCalc(12px);
+					li {
+						display: inline;
+						margin-right:10px;
+						line-height: $bar-submenu-height;
+						list-style: none outside none;
+						a {
+							color:$black;
+							&:hover, &:focus, &.current {
+								color:white;
+							}
+							&.current {
+								text-decoration: underline;
+							}
+							&.disabled {
+								color: $disabled-flavor-color;
+								cursor: default;
 
+							}
 						}
 					}
 				}
@@ -319,6 +320,9 @@ body.with-overlay {
 								}
 							}
 						}
+					}
+					&.system-images {
+						display: list-item;
 					}
 					.img-col {
 						float:left;
@@ -703,7 +707,7 @@ body.with-overlay {
                                     color:$net-opt-area-color;
                                     margin-left:145px;
                                 }
-                                .checkbox {
+                                .with-checkbox {
                                     a {
                                         span {
                                             color: $net-opt-area-color;

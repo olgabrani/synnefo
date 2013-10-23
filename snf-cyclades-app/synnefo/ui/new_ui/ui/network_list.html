@@ -52,10 +52,10 @@
 			<div id="network-wizard" class="overlay-div wizard">
 				<div class="top">
 					<div class="numbers">
-						<div class="row">
+						<div class="menus row">
 							<a href="" class="close"><span class="snf-close"></span></a>
 							<ul class="nums">
-								<li class="current">
+								<li class="preselected current">
 									<em><span href="">1</span></em>
 									<p><strong>Create new private network</strong></p>
 								</li>
@@ -68,71 +68,68 @@
 					</div>
 				</div>
 				<div class="middle">
-					<div class="wizard-content">
-
-						<div class="row main">
-							<ul class="network_options clearfix">
-									<li>
-										<div class="network-name">
-											<h2>Network name</h2>
-											<span class="input"><input type="text" placeholder="My Network"></span>
-										</div>
-									</li>
-									<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
-										<a href="" class="check">
-											<span class="snf-checkbox-checked prechecked"></span>
-										</a>
-										<p>
-											If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
-										</p>
-									</li>
-									<li>
-										<span class="sub_title">Network subnet:</span>
-										<ul class="subnet_options">
-											<li>
-												<span>Auto 
-													<a href="" class="radio_btn">
-														<span class="snf-radio-checked prechecked"></span>
-													</a>
-												</span>
-											</li>
-											<li class="manual">
-												<form>
-													<span>Manual
-														<a href="" class="radio_btn manual">
-															<span class="snf-radio-unchecked"></span>
-														</a>
-														<span class="input"><input type="text" placeholder=""></span>
-													</span>
-												</form>
-											</li>
-											<li>
-												<span>10.0.0.0/24 
-													<a href="" class="radio_btn">
+				<div class="steps">
+					<div class="step step-1 preselected current">
+						<ul class="row network_options">
+								<li>
+									<div class="network-name">
+										<h2>Network name</h2>
+										<span class="input"><input class="el1" type="text" placeholder="My Network"></span>
+									</div>
+								</li>
+								<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
+									<a href="" class="check">
+										<span class="snf-checkbox-checked prechecked"></span>
+									</a>
+									<p>
+										If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
+									</p>
+								</li>
+								<li>
+									<span class="sub_title">Network subnet:</span>
+									<ul class="subnet_options">
+										<li>
+											<span>Auto 
+												<a href="" class="radio_btn">
+													<span class="snf-radio-checked prechecked"></span>
+												</a>
+											</span>
+										</li>
+										<li class="manual">
+											<form>
+												<span>Manual
+													<a href="" class="radio_btn manual">
 														<span class="snf-radio-unchecked"></span>
 													</a>
+													<span class="input"><input type="text" placeholder="192.168.32.0/24"></span>
 												</span>
-											</li>
-											<li>
-												<span>192.168.0.0/24 
-													<a href="" class="radio_btn">
-														<span class="snf-radio-unchecked"></span>
-													</a>
-												</span>
-											</li>
-										</ul>
-									</li>	
-								</ul>
-							</div>
-
-
+											</form>
+										</li>
+										<li>
+											<span>10.0.0.0/24 
+												<a href="" class="radio_btn">
+													<span class="snf-radio-unchecked"></span>
+												</a>
+											</span>
+										</li>
+										<li>
+											<span>192.168.0.0/24 
+												<a href="" class="radio_btn">
+													<span class="snf-radio-unchecked"></span>
+												</a>
+											</span>
+										</li>
+									</ul>
+								</li>	
+							</ul>
+						</div>
 					</div>
 				</div>
 <!-- new tba start -->
 				<div class="bottom">
 					<div class="row">
 						<a href="" class="nav prev"><span>CANCEL</span></a>
-						<a href="" class="nav next"><span>CREATE</span></a>
+						<a href="" class="nav next" data-next="el1"><span>CREATE</span></a>
 						
 					</div>
 				</div>
@@ -259,8 +256,7 @@
 	<script type="text/javascript" src="javascripts/ExpandingSearchBar/classie.js"></script>
 	<script type="text/javascript" src="javascripts/ExpandingSearchBar/uisearch.js"></script>
 	<script src="javascripts/common.js"></script>
-	<script src="javascripts/network-wizard.js"></script>
-	<!-- <script src="javascripts/vm-wizard.js"></script> -->
+	<script src="javascripts/wizard.js"></script>
 	
 
   <script>

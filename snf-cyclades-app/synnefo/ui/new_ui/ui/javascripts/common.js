@@ -249,13 +249,24 @@ ui.changeRadiobuttonState = function(radiobtn_link) {
 ui.checkOneRadioButton = function(radiobtn_link) {
     $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
 }
-/* toggle expand arrrow */
-ui.expandArrow = function(arrow_link) {
-    var arrow = arrow_link.find('span.snf-arrow-up, span.snf-arrow-down');
-    arrow.toggleClass('snf-arrow-up snf-arrow-down');
+
+
+// toggle expand arrrow  and corresponding area
+// todo: one function for all the areas we reveal
+ui.expandDownArea = function(arrow_link, area) {
+    var arrow_link = $(arrow_link);
+    var area = $(area);
+            arrow_link.find('span.snf-arrow-up, span.snf-arrow-down').toggleClass('snf-arrow-up snf-arrow-down');
+            // $('.wizard-content').removeAttr('style');
+            area.stop().slideToggle(600, function() {
+                if (area.is(':visible').length != 0) {
+                    arrow_link.find('.snf-arrow-down .snf-arrow-up').removeClass('snf-arrow-down').addClass('snf-arrow-up');
+                } else {
+                    arrow_link.find('.snf-arrow-down .snf-arrow-up').addClass('snf-arrow-down');
+                }
+
+            });
 }
-
-
 
 $(document).ready(function(){
 
@@ -265,12 +276,37 @@ $(document).ready(function(){
     ui.overlay();
 
 
+    $("a.disabled").each(function() {
+        $(this).removeAttr('href');
+    });
+    
+    $("a.disabled").click(function(e) {
+        e.preventDefault();
+    });
+
     // checkbox: basic reaction on click (checked, unchecked)
     $('.check').click(function(e){
         e.preventDefault();
         e.stopPropagation();
         ui.changeCheckboxState(this);
     });
+
+
+    $('.with-checkbox').click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var checkbox = self.find('.check');
+        ui.changeCheckboxState(checkbox);
+    });
+
+    $('.radio_btn').click(function(e) {
+        e.preventDefault();
+         var state = $(this).find('span');
+         if(state.hasClass('snf-radio-unchecked')) {
+            ui.checkOneRadioButton(this);
+            ui.changeRadiobuttonState(this);
+        }
+    })
 
     ui.entitiesActionsInit();
     

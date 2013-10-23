@@ -38,12 +38,13 @@
 	</header>
 	<div class="overlay-wrapper">
 		<div class="overlay-area">
-			<a href="" class="close"><span class="snf-close"></span></a>
 			<div id="overlay1" class="overlay-div">
+				<a href="" class="close"><span class="snf-close"></span></a>
 				<p>Are you sure you want to reboot your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 			</div>
 			<div id="overlay2" class="overlay-div">
+				<a href="" class="close"><span class="snf-close"></span></a>
 				<p>Are you sure you want to shutdown your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 			</div>
@@ -75,7 +76,7 @@ Confirm that the options you have selected are correct</p>
 							</ul>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row menus">
 						<nav class="sub-menu" data-step=1>
 							<ul>
 								<li><a href="" class="current preselected el2 firstfocus-1" data-img-type="system-images">System</a></li>
@@ -94,9 +95,8 @@ Confirm that the options you have selected are correct</p>
 					</div>
 				</div>
 				<div class="middle">
-					<div class="wizard-content">
 						<div class="steps">
-							<div class="step step-1 current" id="step-1" data-step="1">
+							<div class="step step-1 current preselected" id="step-1" data-step="1">
 								<ul class="os">
 									<li  class="current preselected system-images">
 										<div class="row">
@@ -427,7 +427,7 @@ Confirm that the options you have selected are correct</p>
 											</span>
 										</div>
 										<div class="expand-btn">
-											<a class="expand-link" href="">
+											<a class="expand-arrow" href="">
 												Advanced Configuration
 												<span class="snf-arrow-down preselected"></span>
 											</a>
@@ -439,19 +439,19 @@ Confirm that the options you have selected are correct</p>
 												<h2>Public SSH keys</h2>
 												<p>Your account contains the following SSH public keys. Select one or more to activate in your new machine. You will then be able to ssh with the corresponding private key without a password."</p>
 												<ul>
-													<li class="checkbox">
+													<li class="with-checkbox">
 														<h3>My public key long name one </h3>
 														<a href="" class="check">
 															<span class="snf-checkbox-unchecked"></span>
 														</a>
 													</li>
-													<li class="checkbox">
+													<li class="with-checkbox">
 														<h3>Other public key </h3>
 														<a href="" class="check">
 															<span class="snf-checkbox-unchecked"></span>
 														</a>
 													</li>
-													<li class="checkbox">
+													<li class="with-checkbox">
 														<h3>My public key long name one </h3>
 														<a href="" class="check">
 															<span class="snf-checkbox-unchecked"></span>
@@ -466,7 +466,7 @@ Confirm that the options you have selected are correct</p>
 										<div class="networks-area area">
 											<h2 class="row">Networks</h2>
 											<ul>
-												<li class="checkbox row has-more select-net">
+												<li class="with-checkbox row has-more select-net">
 													<h3 class="">	
 														<span class="net-icons">
 															<span class="temp-line line1"></span>
@@ -479,15 +479,15 @@ Confirm that the options you have selected are correct</p>
 												</li>
 												<li class="more">
 													<div class="row">
-														<div class="checkbox clearfix">
+														<div class="with-checkbox clearfix">
 															<h3>192.168.2.3</h3>
 															<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
 														</div>
-														<div class="checkbox clearfix">
+														<div class="with-checkbox clearfix">
 															<h3>192.168.2.3</h3>
 															<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
 														</div>
-														<div class="checkbox clearfix">
+														<div class="with-checkbox clearfix">
 															<h3>192.168.2.3</h3>
 															<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
 														</div>
@@ -496,7 +496,7 @@ Confirm that the options you have selected are correct</p>
 														</div>
 													</div>
 												</li>
-												<li class="checkbox row select-net">
+												<li class="with-checkbox row select-net">
 													<h3 class="net-name">
 														<span class="net-icons">
 															<span class="temp-line line1"></span>
@@ -511,7 +511,7 @@ Confirm that the options you have selected are correct</p>
 														<span class="snf-checkbox-unchecked"></span>
 													</a>
 												</li>
-												<li class="checkbox row select-net">
+												<li class="with-checkbox row select-net">
 													<h3 class="net-name">
 														<span class="net-icons">
 															<span class="snf-network_full"></span>
@@ -522,7 +522,7 @@ Confirm that the options you have selected are correct</p>
 														<span class="snf-checkbox-unchecked"></span>
 													</a>
 												</li>
-												<li class="checkbox row select-net">
+												<li class="with-checkbox row select-net">
 													<h3 class="net-name">
 														<span class="net-icons">
 															<span class="snf-network_full"></span>
@@ -544,21 +544,21 @@ Confirm that the options you have selected are correct</p>
 														<h3>My tags</h3>
 														<span>select</span>
 													</li>
-													<li class="checkbox">
+													<li class="with-checkbox">
 														<h3>
 															<span class="tag-demo tag4"></span>
 															Operating system
 														</h3>
 														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
 													</li>
-													<li class="checkbox">
+													<li class="with-checkbox">
 														<h3>
 															<span class="tag-demo tag5"></span>
 															Pirate PC1
 														</h3>
 														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
 													</li>
-													<li class="checkbox">
+													<li class="with-checkbox">
 														<h3>
 															<span class="tag-demo tag6"></span>
 															Pirate PC1
@@ -593,7 +593,7 @@ Confirm that the options you have selected are correct</p>
 										</div>
 									</div>
 								</div>
-<!-- end step 3 -->				</div>
+	<!-- end step 3 -->				</div>
 							<div class="step step-4" id="step-4" data-step=4>
 								<div class="summary">
 									<div class="row">
@@ -660,7 +660,6 @@ Confirm that the options you have selected are correct</p>
 							</div>
 						</div>
 					</div>
-				</div>
 				<div class="bottom">
 					<div class="row">
 						<a href="" class="nav prev el3"><span>CANCEL</span></a>
@@ -859,7 +858,8 @@ Confirm that the options you have selected are correct</p>
 	<script type="text/javascript" src="javascripts/ExpandingSearchBar/classie.js"></script>
 	<script type="text/javascript" src="javascripts/ExpandingSearchBar/uisearch.js"></script>
 	<script src="javascripts/common.js"></script>
-	<script type="text/javascript" src="javascripts/vm-wizard.js"></script>
+	
+	<script type="text/javascript" src="javascripts/wizard.js"></script>
   <script>
     $(document).foundation();
     $(document).ready(function() {
