@@ -157,7 +157,7 @@ body.with-overlay {
 	color:white;
 	.top {
 		background:$overlay-color-top;
-		height:$bar-height+$bar-submenu-height;
+		height:90px; // numbers height+menus height-10px
 		position:fixed;
 		left:0;
 		right:0;
@@ -171,8 +171,8 @@ body.with-overlay {
 				padding:0 $header-padding-horizontal
 
 			}
-			height:$bar-height;
-			line-height:$bar-height; 
+			height: 50px;
+			line-height: 50px;
 			background:$overlay-darker-color;
 		}
 		.menus {
@@ -214,8 +214,8 @@ body.with-overlay {
 			text-align: right;
 			list-style:none outside none;
 			margin:0;
-			height: $bar-height;
-			line-height: $bar-height;
+			height: 50px;
+			line-height: 50px;
 			font-size:emCalc(9px);
 			padding-right:120px;
 			color:$secondary-color;

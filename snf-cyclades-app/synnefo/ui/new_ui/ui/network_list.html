@@ -142,40 +142,32 @@
 	
 
 		<section class="actions-bar clearfix">
-			<div class="row">
-				<div class="new-btn">
-					<a data-overlay-id="#network-wizard" href="#"><span>+</span> NEW NETWORK </a></div>
-				<div class="main-actions">
-					<ul>
-						<li class="running" ><a href="">Reboot</a></li>
-						<li class="running"><a href="">Shutdown</a></li>
-						<li class="both"><a href="">Destroy</a></li>
-						<li class="stopped"><a href="">Start</a></li>
-						 <!-- in case we want an action always activated
-						<li class="pernament"><a href="" class="active">Action</a></li> -->
-					</ul>
-				</div>
+			<h2>Network Overview</h2>
+			<div id="search-utility" class="search">
+				<span class="snf-search"></span>
+				<form>
+					<input class="snf-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+				</form>
 			</div>
-			<div class="border-dashed"></div>
+			<div class="filter-menu">
+				<a class="filter" href="">Filter</a>
+				<ul class="options">
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+				</ul>
+				</div>
+				<div class="view-type">
+					<a href="" class="list"><span class="snf-list"></span></a>
+					<a href="" class="grid"><span class="snf-layout current"></span></a>
+			    </div>
 		</section>
 		<section class="main row">
 			<div class="networks entities">
 				<ul class="items-list small-block-grid-2 large-block-grid-3 sortable">
 					<li data-order="0">
-						<div class="container">
-							<div class="img-wrap">
-								<div class="img running">
-									Network
-								</div>
-							</div>
-							<p class="visible-info">
-								<span><em>IPv4 83.212.97.127</em></span>
-								<span class="title">
-									<a href="network_details.html"><em>Network name</em></a>
-								</span>
-							</p>
-							<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
-						</div>
+						<div class="add-new"><a data-overlay-id="#network-wizard" href="#">NEW<br>NETWORK</a></div>
 					</li>
 					<li data-order="1">
 						<div class="container">
@@ -210,7 +202,20 @@
 						</div>
 					</li>
 					<li data-order="3">
-						<div class="add-new"><a data-overlay-id="#network-wizard" href="#">NEW<br>NETWORK</a></div>	
+						<div class="container">
+							<div class="img-wrap">
+								<div class="img running">
+									Network
+								</div>
+							</div>
+							<p class="visible-info">
+								<span><em>IPv4 83.212.97.127</em></span>
+								<span class="title">
+									<a href="network_details.html"><em>Network name</em></a>
+								</span>
+							</p>
+							<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+						</div>
 					</li>
 				</ul>
 			</div>

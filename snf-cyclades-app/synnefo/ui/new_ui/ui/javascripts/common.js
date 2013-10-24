@@ -388,7 +388,7 @@ $(document).ready(function(){
         $(this).find('span').addClass('current');
         $('.items-list').removeClass('small-block-grid-2 large-block-grid-3');
         $('.items-list').addClass('list-view');
-    })
+    });
 
      $('.view-type .grid').click(function(e){
         e.preventDefault();
@@ -396,6 +396,16 @@ $(document).ready(function(){
         $(this).find('span').addClass('current');
         $('.items-list').addClass('small-block-grid-2 large-block-grid-3');
         $('.items-list').removeClass('list-view');
+    });
+
+    // set filter visible
+    $('.filter-menu .filter').click(function(e) {
+        e.preventDefault();
+        var self = this;
+        $(self).parents('.filter-menu').toggleClass('current');
+        // $(self).siblings('.options').stop().slideToggle(400, function() {
+        //     if($(self).s)
+        // });
     })
 })
 

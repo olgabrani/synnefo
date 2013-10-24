@@ -276,7 +276,6 @@ body {
 	height:$header-height;
 	line-height:$header-height;
 	padding:0 $header-padding-horizontal;
-	border-bottom:1px solid $primary-color;
 	background:white;
 	z-index:100;
 	.icons-nav {
@@ -324,6 +323,54 @@ body {
 /* Actions Bar ----------------------------------------------- */
 
 .actions-bar {
+	border-bottom: 1px solid $primary-color;
+	padding-bottom: 44px;
+	h2 {
+		position: absolute;
+		left: 15px;
+		top: 11px;
+		color: $primary-color;
+		font-size: 0.9em;
+		font-weight: normal;
+		line-height: 2em;
+	}
+	.filter-menu {
+		position: absolute;
+		right: 29px;
+		font-size: 0.9em;
+		width: 120px;
+		.filter {
+			padding: 0 9px 4px;
+			line-height: 34px
+		}
+		.options {
+			display: none;
+			position: absolute;
+			left: -33px;
+			top: 37px;
+			width: 120px;
+			list-style-type: none;
+			padding: 3px 15px;
+			text-align: left;
+			margin:0;
+		}
+		&.current {
+			.filter {
+				border: 1px solid lighten($primary-color,10%);
+				display: inline-block;
+				line-height: 32px;
+			}
+			.options {
+				background-color: lighten($primary-color,10%);
+				display: inline-block;
+				a {
+					color: white;
+				}
+			}
+		}
+
+
+	}
 	position:fixed;
 	left:0;
 	top:$header-height;
@@ -333,54 +380,22 @@ body {
 	height:$bar-height;
 	line-height:$bar-height;
 	background:white;
-	.border-dashed {
-		background-image: url("../images/border-dashes.png");
-		background-repeat: repeat-x;
-		height: 4px;
-		position: relative;
-		top: -3px;
-	}
+	
 	.row {
 		position: relative;
 		height: $bar-height;
-	}
-	ul {
-		margin:0;
-		li {
-			list-style: none outside none;
-			display: inline-block;
-			line-height: $bar-height;
-			a {
-				display: block;
-				color:lighten($primary-color,30%);
-				width:100%;
-				padding:0 20px;
-				border:1px solid transparent;
-				&.active {
-					color:$primary-color;
-					&:hover {
-						color:$secondary-color;
-						cursor: pointer;
-					}
-				}
-				&:hover {
-					cursor:default;
-				}
-
-			}
-		}
 	}
 
 	#sb-search {
 		height: 50px;
 		position: absolute;
-		right: 75px;
+		right: 105px;
 		top: -10px;
 		.sb-icon-search {
 			background-color: white;
 			color: $primary-color;
 			top: -4px;
-			font-size: 18px;
+			font-size: 0.8em;
 			width:40px;
 			&:hover {
 				color: $secondary-color;
@@ -407,6 +422,39 @@ body {
 		}
 	}
 
+	#search-utility {
+		position: absolute;
+		display: inline-block;
+		width: 220px;
+		height: 2em;
+		right:118px;
+		background-color: lighten($primary-color,35%);
+		padding-bottom: 35px;
+		.snf-search {
+			position: relative;
+			right: -10px;
+			color: $primary-color;
+		}
+		form {
+			display: inline-block;
+			width: 200px;
+			input {
+				display: inline-block;
+				border: transparent;
+				background-color: transparent;
+				color: $primary-color;
+				height: 1.8em;
+				padding-top: 0.3em;
+				padding-bottom: 0.3em;
+				// line-height: 1.2em;
+				width: 184px;
+				font-size: 0.9em;
+				box-shadow: none;
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	.view-type {
 		display:inline-block;
 		position: absolute;
@@ -416,15 +464,15 @@ body {
 			color: $secondary-color;
 		}
 		.snf-list {
-				margin-right: 4px;
-				font-size: 24px;
-				line-height: 50px;
-				vertical-align: middle;
+				margin-right: 6px;
+				font-size: 1em;
+				// line-height: 50px;
+				vertical-align: bottom;
 			}
 		.snf-layout {
-				font-size: 25px;
-				line-height: 50px;
-				vertical-align: middle;
+				font-size: 1.1em;
+				// line-height: 50px;
+				vertical-align: bottom;
 			}
 		
 	}
