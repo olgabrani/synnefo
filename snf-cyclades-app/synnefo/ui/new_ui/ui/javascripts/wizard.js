@@ -451,25 +451,15 @@ $(document).ready(function() {
 			// reaction li.click *
 			wizard.find('.advanced-conf-options .with-checkbox').click(function(e) {
 				e.preventDefault();
-				var self = $(this);
-				var checkbox = self.find('.check');
-				ui.changeCheckboxState(checkbox);
-				if (self.hasClass('has-more')) {
-					self.next('.more').stop().slideToggle(400, function() {
-						if (self.next('.more:visible').length != 0) {
-							checkbox.find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
-						} else {
-							checkbox.find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
-						}
-					});
-				}
+				$(this).find('.check').trigger('click');
 			});
 
 			// reaction a.click *
 			$('.with-checkbox .check').click(function(e) {
 				e.stopPropagation();
+				console.log('hi');
 				var self = this;
-				if ($(this).closest('.checkbox').hasClass('has-more')) {
+				if ($(this).closest('.with-checkbox').hasClass('has-more')) {
 					$(this).parent().next('.more').stop().slideToggle(400, function() {
 						if ($(self).parent().next('.more:visible').length != 0) {
 							$(self).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
@@ -504,12 +494,21 @@ $(document).ready(function() {
 		else if (wizardType == 'network-wizard') {
 
 			wizard.find('.network_options .check').click(function(e){
-		        e.preventDefault();
-		        $(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
-    		});
+				e.preventDefault();
+				e.stopPropagation();
+				this.blur();
+				$(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
+			});
+
+			wizard.find('.network_options .dhcp_option').click(function(e){
+				e.preventDefault();
+				$(this).find('.check').trigger('click');
+			});
 
 			wizard.find('.network_options .radio_btn').click(function(e){
 		        e.preventDefault();
+		        e.stopPropagation();
+		        this.blur();
 		        var state = $(this).find('span');
 	            if($(this).hasClass('manual')) {
 	                $(this).siblings('.input').toggle();
@@ -518,6 +517,10 @@ $(document).ready(function() {
 	                $(this).closest('li').siblings('.manual').find('.input').hide();
 	            }		       
 		    });
+
+			wizard.find('.subnet_options>li').click(function(e) {
+				$(this).find('.radio_btn').trigger('click');
+			})
 		}
 	}
 

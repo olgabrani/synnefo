@@ -325,6 +325,15 @@ body {
 .actions-bar {
 	border-bottom: 1px solid $primary-color;
 	padding-bottom: 44px;
+	position:fixed;
+	left:0;
+	top:$header-height;
+	width:100%;
+	z-index:15;
+	text-align:center;
+	height:$bar-height;
+	line-height:$bar-height;
+	background:white;
 	h2 {
 		position: absolute;
 		left: 15px;
@@ -371,15 +380,6 @@ body {
 
 
 	}
-	position:fixed;
-	left:0;
-	top:$header-height;
-	width:100%;
-	z-index:15;
-	text-align:center;
-	height:$bar-height;
-	line-height:$bar-height;
-	background:white;
 	
 	.row {
 		position: relative;
@@ -425,19 +425,19 @@ body {
 	#search-utility {
 		position: absolute;
 		display: inline-block;
-		width: 220px;
+		width: 200px;
 		height: 2em;
 		right:118px;
 		background-color: lighten($primary-color,35%);
 		padding-bottom: 35px;
 		.snf-search {
 			position: relative;
-			right: -10px;
+			right: -2px;
 			color: $primary-color;
 		}
 		form {
 			display: inline-block;
-			width: 200px;
+			width: 164px;
 			input {
 				display: inline-block;
 				border: transparent;
@@ -445,10 +445,10 @@ body {
 				color: $primary-color;
 				height: 1.8em;
 				padding-top: 0.3em;
-				padding-bottom: 0.3em;
+				// padding-bottom: 0.3em;
 				// line-height: 1.2em;
-				width: 184px;
-				font-size: 0.9em;
+				width: 160px;
+				font-size: 0.8em;
 				box-shadow: none;
 				margin-bottom: 0;
 			}
@@ -466,14 +466,10 @@ body {
 		.snf-list {
 				margin-right: 6px;
 				font-size: 1em;
-				// line-height: 50px;
-				vertical-align: bottom;
-			}
+		}
 		.snf-layout {
 				font-size: 1.1em;
-				// line-height: 50px;
-				vertical-align: bottom;
-			}
+		}
 		
 	}
 }

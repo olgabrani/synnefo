@@ -285,6 +285,7 @@ $(document).ready(function(){
     });
 
     // checkbox: basic reaction on click (checked, unchecked)
+    // see wizard
     $('.check').click(function(e){
         e.preventDefault();
         e.stopPropagation();

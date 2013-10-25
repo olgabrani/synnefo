@@ -15,7 +15,7 @@
 				margin:0 20px;
 				display: block;
 				font-weight: bold;
-				height:190px;
+				height:180px;
 				padding:65px 30px 15px;
 				border:1px dashed $primary-color;
 				&:hover {
@@ -44,6 +44,22 @@
 				.check {
 					@extend .active;
 				}
+			}
+		}
+		.overlap_options {
+			// display: none;
+			width: 202px;
+			height:180px;
+			background-color: $primary-color;
+			ul {
+				li {
+					padding-top: 0;
+					a {
+						color: white;
+					}
+				}
+			}
+			.actions_list {
 			}
 		}
 		.check {
