@@ -335,28 +335,29 @@ body {
 	line-height:$bar-height;
 	background:white;
 	h2 {
-		position: absolute;
-		left: 15px;
-		top: 11px;
+		float: left;
+		margin-left: 15px;
+		margin-top: 11px;
 		color: $primary-color;
 		font-size: 0.9em;
-		font-weight: normal;
 		line-height: 2em;
+		font-weight: normal;
 	}
 	.filter-menu {
-		position: absolute;
-		right: 29px;
+		float:right;
 		font-size: 0.9em;
-		width: 120px;
+		width: 70px;
+		position: relative;
 		.filter {
 			padding: 0 9px 4px;
+			// margin-top: 2px;
 			line-height: 34px
 		}
 		.options {
 			display: none;
-			position: absolute;
-			left: -33px;
-			top: 37px;
+			position: relative;
+			left: -58px;
+			top: -4px;
 			width: 120px;
 			list-style-type: none;
 			padding: 3px 15px;
@@ -423,11 +424,10 @@ body {
 	}
 
 	#search-utility {
-		position: absolute;
-		display: inline-block;
+		float: right;
+		// margin-right:15px;
 		width: 200px;
 		height: 2em;
-		right:118px;
 		background-color: lighten($primary-color,35%);
 		padding-bottom: 35px;
 		.snf-search {
@@ -456,10 +456,8 @@ body {
 	}
 
 	.view-type {
-		display:inline-block;
-		position: absolute;
-		right: 15px;
-		top: 0px;
+		float: right;
+		margin-right:15px;
 		.current {
 			color: $secondary-color;
 		}
