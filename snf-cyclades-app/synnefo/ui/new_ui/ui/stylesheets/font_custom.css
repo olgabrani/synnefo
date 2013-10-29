@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
-.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-cancel-circled2, .snf-cancel-circled-outline, .snf-cancel-outline, .snf-ok, .snf-remove, .snf-ban-circle, .snf-ok-circle, .snf-ok-sign, .snf-remove-sign, .snf-minus-sign, .snf-pencil, .snf-edit, .snf-edit-1, .snf-pencil-circled, .snf-icon-compute-outline, .snf-icon-networks-fill, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-cpu, .snf-lock_closed, .snf-lock_open, .snf-modem, .snf-www, .snf-ram, .snf-network_full, .snf-arrow-up, .snf-arrow-down, .snf-arrow-up-2, .snf-arrow-down-2, .snf-list, .snf-layout, .snf-search{
+.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-ok, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit-1, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-cpu, .snf-lock_closed, .snf-lock_open, .snf-modem, .snf-www, .snf-ram, .snf-network_full, .snf-arrow-up, .snf-arrow-down, .snf-list, .snf-layout, .snf-search{
 	font-family: "snf-font";
 	speak: none;
 	font-style: normal;
@@ -50,53 +50,20 @@ you can use the generic selector below, but it"s slower:
 .snf-checkbox-unchecked:before {
 	content: "\61";
 }
-.snf-cancel-circled2:before {
-	content: "\64";
-}
-.snf-cancel-circled-outline:before {
-	content: "\65";
-}
-.snf-cancel-outline:before {
-	content: "\66";
-}
 .snf-ok:before {
 	content: "\68";
-}
-.snf-remove:before {
-	content: "\69";
 }
 .snf-ban-circle:before {
 	content: "\6a";
 }
-.snf-ok-circle:before {
-	content: "\6b";
-}
 .snf-ok-sign:before {
 	content: "\6c";
-}
-.snf-remove-sign:before {
-	content: "\6d";
 }
 .snf-minus-sign:before {
 	content: "\6e";
 }
-.snf-pencil:before {
-	content: "\6f";
-}
-.snf-edit:before {
-	content: "\70";
-}
 .snf-edit-1:before {
 	content: "\71";
-}
-.snf-pencil-circled:before {
-	content: "\72";
-}
-.snf-icon-compute-outline:before {
-	content: "\73";
-}
-.snf-icon-networks-fill:before {
-	content: "\74";
 }
 .snf-HDD:before {
 	content: "\75";
@@ -125,7 +92,6 @@ you can use the generic selector below, but it"s slower:
 .snf-radio-unchecked:before {
 	content: "\43";
 }
-
 .snf-close:before {
 	content: "\44";
 }
@@ -147,34 +113,21 @@ you can use the generic selector below, but it"s slower:
 .snf-ram:before {
 	content: "\4a";
 }
-
 .snf-network_full:before {
 	content: "\4b";
 }
-
 .snf-arrow-up:before {
 	content: "\4c";
 }
-
 .snf-arrow-down:before {
 	content: "\4d";
 }
-
-.snf-arrow-up-2:before {
-	content: "\4f";
-}
-
-.snf-arrow-down-2:before {
-	content: "\4e";
-}
-
 .snf-list:before {
 	content: "\52";
 }
 .snf-layout:before {
 	content: "\51";
 }
-
 .snf-search:before {
 	content: "\50";
 }
