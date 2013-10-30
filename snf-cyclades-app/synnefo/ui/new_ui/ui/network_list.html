@@ -71,6 +71,15 @@
 				<div class="steps">
 					<div class="step step-1 preselected current">
 						<ul class="row network_options">
+								<li class="project-selection">
+									<form class="custom">
+									  <select class="medium">
+									    <option class="el5">Basic Project</option>
+									    <option>Project 2</option>
+									    <option>Project 3</option>
+									  </select>
+									</form>
+								</li>
 								<li>
 									<div class="network-name">
 										<h2>Network name</h2>
@@ -81,9 +90,9 @@
 									<a href="" class="check">
 										<span class="snf-checkbox-checked prechecked"></span>
 									</a>
-									<p>
-										If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
-									</p>
+								</li>
+								<li class="explanatory">
+									If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
 								</li>
 								<li>
 									<span class="sub_title">Network subnet:</span>
@@ -140,28 +149,27 @@
 	</div>
 	<!-- overlays end -->
 	
-
-		<section class="actions-bar clearfix">
-			<h2>Network Overview</h2>
-			<div id="search-utility" class="search">
-				<span class="snf-search"></span>
-				<form>
-					<input class="snf-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
-				</form>
-			</div>
-			<div class="filter-menu">
-				<a class="filter" href="">Filter</a>
-				<ul class="options">
-					<li><a href=""> set an option</a></li>
-					<li><a href=""> set an option</a></li>
-					<li><a href=""> set an option</a></li>
-					<li><a href=""> set an option</a></li>
-				</ul>
-				</div>
+<section class="actions-bar clearfix">
+			<h2>Virtual Machine Overview</h2>
 				<div class="view-type">
 					<a href="" class="list"><span class="snf-list"></span></a>
 					<a href="" class="grid"><span class="snf-layout current"></span></a>
-			    </div>
+				</div>
+				<div class="filter-menu">
+					<a class="filter" href="">Filter</a>
+					<ul class="options">
+						<li><a href=""> set an option</a></li>
+						<li><a href=""> set an option</a></li>
+						<li><a href=""> set an option</a></li>
+						<li><a href=""> set an option</a></li>
+					</ul>
+				</div>
+				<div id="search-utility" class="search">
+					<span class="snf-search"></span>
+					<form>
+						<input class="snf-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+					</form>
+				</div>
 		</section>
 		<section class="main row">
 			<div class="networks entities">

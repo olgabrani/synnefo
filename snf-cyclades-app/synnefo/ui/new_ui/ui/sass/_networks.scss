@@ -48,12 +48,10 @@
 		.network_options {
 			position: relative;
 			padding-bottom: 20px;
-			.dhcp_option {
-				p {
+			.explanatory {
 					font-size:emCalc(12px);
 					margin-top:20px;
 					margin-bottom:60px;
-				}
 			}
 			.check, .radio_btn {
 				position: absolute;
@@ -64,7 +62,7 @@
 				}
 			}
 			.network-name {
-				margin-bottom: 50px;
+				margin: 40px 0;
 				h2 {
 					color:white;
 					font-size: emCalc(16px);
@@ -72,7 +70,7 @@
 			}
 			
 			
-			li {
+			li{
 				display: block;
 				width: 360px;
 				&.manual{
@@ -84,6 +82,9 @@
 						bottom: 5px;
 						display: none;
 					}
+				}
+				&.project-selection li {
+					width: 100%;
 				}
 			}
 		}

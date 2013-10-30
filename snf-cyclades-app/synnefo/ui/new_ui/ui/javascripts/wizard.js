@@ -510,12 +510,14 @@ $(document).ready(function() {
 		        e.stopPropagation();
 		        this.blur();
 		        var state = $(this).find('span');
-	            if($(this).hasClass('manual')) {
-	                $(this).siblings('.input').toggle();
-	            }
-	            else {
-	                $(this).closest('li').siblings('.manual').find('.input').hide();
-	            }		       
+		        if(state.hasClass('snf-radio-checked')) {
+		            if($(this).hasClass('manual')) {
+		                $(this).siblings('.input').show();
+		            }
+		            else {
+		                $(this).closest('li').siblings('.manual').find('.input').hide();
+		            }
+		        }
 		    });
 
 			wizard.find('.subnet_options>li').click(function(e) {
