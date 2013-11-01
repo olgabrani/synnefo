@@ -1,0 +1,43 @@
+.secondary-wizard {
+	h2 {
+		font-size: 1.5em;
+		margin-top: 10px;
+	}
+	p {
+		font-size: 14px;
+		&.buttons {
+			text-align: center;
+			a {
+				text-decoration: none;
+				color: white;
+				&:first-child {
+					margin-right:20px;
+				}
+				&:hover {
+					color: #0e9973;
+					text-decoration: none;
+				}
+				&.current {
+					color: #0e9973;
+				}
+
+			}
+		}
+	}
+	.close {
+		font-size: 30px;
+		top: 16px;
+	}
+	.generate-key-area {
+		display: none;
+		height: 250px;
+		border: 1px solid $secondary-color;
+		padding: 10px;
+	}
+	.import-key-area {
+		display: none;
+		height: 250px;
+		border: 1px solid $secondary-color;
+		padding: 10px;
+	}
+}

@@ -48,6 +48,55 @@
 				<p>Are you sure you want to shutdown your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 			</div>
+			<div id="overlay3" class="reveal-modal medium secondary-wizard">
+				<div></div>
+				<h2>SSH keys</h2>
+				<a class="close-reveal-modal close" title="close"><span class="snf-close"></span></a>
+				<p>You can use SSH keys to establish a secure connection between your computer and your virtual machines.<br>
+				Note: SSH keys are supported only for Linux machines.</p>
+				<p>Click "generate new" to create a new SSH key pair.</p>
+				<p>Click "import/add" to import your public key from your home machine or to copy/paste its contents to ~okeanos.</p>
+				<p class="buttons"><a href="" class="btn4 generate-key-btn">generate</a><a href="" class="btn4 import-key-btn">add/import</a></p>
+				<div class="generate-key-area">
+					<p>clock tba</p>
+					<p>
+						Your new public key has been added.<br>
+						To download your *private key* click here.
+					</p>
+					<p>
+						Note: We do not keep it! I f you don't download now you cannot access it in the future.
+					</p>
+				</div>
+				<div class="import-key-area">
+					<div class="key-name">
+						<label>Key name</label>
+						<input>
+						<div class="error-msg"></div>
+					</div>
+					<div class="key-content">
+						<label>Key content</label>
+						<div class="error-msg"></div>
+						<input>
+					</div>
+					<div class="upload-key">
+						<label>Import from file (header maybe?)</label>
+							<p class="buttons">
+								<a href="" class="browse-files dz-clickable">browse files</a>
+							</p>
+						<form action="#" class="dropzone" id="files-dropzone">
+							<p>sto plai?</p>
+							<ul class="files dropzone-files"></ul>
+							<div class="dz-default dz-message"><span></span></div>
+						</form>
+						<p class="buttons"><a href="" class="btn4">Cancel</a><a href="" class="btn4">Submit</a></p>
+					</div>
+				</div>
+				<h3>Your SSH public keys</h3>
+				<ul>
+					<li><div>key name</div><div><a href="">show key</a><a href="">edit</a><a href="">remove</a></div></li>
+				</ul>
+				<p class="buttons"><a href="" class="btn4">OK</a></p>
+			</div>
 			<div id="vm-wizard" class="overlay-div wizard">
 				<div class="top">
 					<div class="numbers">
@@ -459,7 +508,7 @@ Confirm that the options you have selected are correct</p>
 													</li>
 												</ul>
 												<div>
-													<a href="" class="btn5">... show more keys</a>
+													<a href="" class="btn5" data-reveal-id="" title="set data-reveal-id: overlay3">manage ssh keys</a>
 												</div>
 											</div>
 										</div>
@@ -886,6 +935,7 @@ Confirm that the options you have selected are correct</p>
 	<script src="javascripts/common.js"></script>
 	
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
+	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
   <script>
     $(document).foundation();
     $(document).ready(function() {

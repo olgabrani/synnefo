@@ -258,7 +258,7 @@ ui.expandDownArea = function(arrow_link, area) {
             arrow_link.find('span.snf-arrow-up, span.snf-arrow-down').toggleClass('snf-arrow-up snf-arrow-down');
             // $('.wizard-content').removeAttr('style');
             area.stop().slideToggle(600, function() {
-                if (area.is(':visible').length != 0) {
+                if (area.is(':visible')) {
                     arrow_link.find('.snf-arrow-down .snf-arrow-up').removeClass('snf-arrow-down').addClass('snf-arrow-up');
                 } else {
                     arrow_link.find('.snf-arrow-down .snf-arrow-up').addClass('snf-arrow-down');
