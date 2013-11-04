@@ -257,7 +257,6 @@ body {
 
 .main {
 	padding:0 10px;
-	overflow:hidden;
 }
 
 /* Header ----------------------------------------------- */
@@ -340,7 +339,6 @@ body {
 /* Actions Bar ----------------------------------------------- */
 
 .actions-bar {
-	border-bottom: 1px solid $primary-color;
 	position:fixed;
 	left:0;
 	top:$header-height;
