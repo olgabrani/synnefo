@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
-    <link rel="stylesheet" href="stylesheets/ExpandingSearchBar/component.css" />
 
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
@@ -30,7 +29,13 @@
 			</ul>
 		</nav>
 		<div class="login">
-			<a href=""><span class="snf-lock_open"></span></a>
+			<div class="wrap">
+				<a href="">user1@synnefo.org</a>
+				<ul>
+					<li><a href="">dashboard</a></li>
+					<li><a href="">sign out</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
@@ -720,25 +725,25 @@ Confirm that the options you have selected are correct</p>
 		
 		<section class="actions-bar clearfix">
 			<h2>Virtual Machine Overview</h2>
-				<div class="view-type">
-					<a href="" class="list"><span class="snf-list"></span></a>
-					<a href="" class="grid"><span class="snf-layout current"></span></a>
-				</div>
-				<div class="filter-menu">
-					<a class="filter" href="">Filter</a>
-					<ul class="options">
-						<li><a href=""> set an option</a></li>
-						<li><a href=""> set an option</a></li>
-						<li><a href=""> set an option</a></li>
-						<li><a href=""> set an option</a></li>
-					</ul>
-				</div>
-				<div id="search-utility" class="search">
-					<span class="snf-search"></span>
-					<form>
-						<input class="snf-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
-					</form>
-				</div>
+			<div class="view-type">
+				<a href="" class="list"><span class="snf-list"></span></a>
+				<a href="" class="grid"><span class="snf-layout current"></span></a>
+			</div>
+			<div class="filter-menu">
+				<a class="filter" href="">Filter</a>
+				<ul class="options">
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+				</ul>
+			</div>
+			<div id="hd-search" class="hd-search">
+			    <form>
+					<span class="hd-icon-search snf-search"></span>
+			        <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			    </form>
+			</div>
 		</section>
 		<section class="main row">
 			<div class="vms entities">
@@ -929,9 +934,6 @@ Confirm that the options you have selected are correct</p>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/modernizr.custom.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/classie.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/uisearch.js"></script>
 	<script src="javascripts/common.js"></script>
 	
 	<script type="text/javascript" src="javascripts/wizard.js"></script>

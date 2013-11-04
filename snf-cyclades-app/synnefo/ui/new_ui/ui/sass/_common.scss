@@ -311,11 +311,33 @@ body {
 	}
 	.login {
 		position:absolute;
-		top:0;
+		top:25px;
 		right:$header-padding-horizontal;
-		height:$header-height;
-		line-height:$header-height;
-		font-size: emCalc(26px);
+		.wrap {
+			border:1px solid $overlay-color;
+			background: white;
+			color:$overlay-color;
+			font-size:emCalc(10px);
+			padding:10px 20px;
+			line-height:100%;
+			ul {
+				display: none;
+				padding:0;
+				margin:0;
+				list-style: none outside none;
+				li {
+					list-style: none outside none;
+					padding:0;
+					padding-top:10px;
+
+				}
+			}
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+		}
 	}
 	
 }
@@ -324,7 +346,6 @@ body {
 
 .actions-bar {
 	border-bottom: 1px solid $primary-color;
-	padding-bottom: 44px;
 	position:fixed;
 	left:0;
 	top:$header-height;
@@ -333,43 +354,40 @@ body {
 	text-align:center;
 	height:$bar-height;
 	line-height:$bar-height;
-	background:white;
+	color:$overlay-color;
+	background-color: lighten($primary-color,35%);
+	a {
+		color:$overlay-color;
+	}
 	h2 {
 		float: left;
 		margin-left: 15px;
-		margin-top: 11px;
-		color: $primary-color;
-		font-size: 0.9em;
-		line-height: 2em;
+		color: $overlay-color;
+		font-size: emCalc(12px);
+		line-height: $bar-height;
 		font-weight: normal;
 	}
 	.filter-menu {
 		float:right;
-		font-size: 0.9em;
-		width: 70px;
 		position: relative;
 		.filter {
-			padding: 0 9px 4px;
-			// margin-top: 2px;
-			line-height: 34px
+			padding: 0 10px;
+			font-size:emCalc(12px);
+			position: relative;
+			top:-2px;
 		}
 		.options {
 			display: none;
-			position: relative;
-			left: -58px;
-			top: -4px;
+			position: absolute;
+			right: 0;
+			top:$bar-height;
 			width: 120px;
 			list-style-type: none;
-			padding: 3px 15px;
+			padding: 10px 15px 15px;
 			text-align: left;
 			margin:0;
 		}
 		&.current {
-			.filter {
-				border: 1px solid lighten($primary-color,10%);
-				display: inline-block;
-				line-height: 32px;
-			}
 			.options {
 				background-color: lighten($primary-color,10%);
 				display: inline-block;
@@ -387,83 +405,100 @@ body {
 		height: $bar-height;
 	}
 
-	#sb-search {
-		height: 50px;
-		position: absolute;
-		right: 105px;
-		top: -10px;
-		.sb-icon-search {
-			background-color: white;
+	.hd-search {
+		$icon-dim :24px;
+		width: $icon-dim;
+		overflow:hidden;
+		position:relative;
+		float: right;
+		height: $bar-height;
+		-webkit-transition: width 0.3s;
+	    -moz-transition: width 0.3s;
+	    transition: width 0.3s;
+	    -webkit-backface-visibility: hidden;
+		.hd-icon-search {
 			color: $primary-color;
-			top: -4px;
-			font-size: 0.8em;
-			width:40px;
+			display: block;
+			width: $bar-height;
+			height: $bar-height;
+			line-height: $bar-height;
+			float: left;
 			&:hover {
-				color: $secondary-color;
+				cursor:pointer;
 			}
 		}
-		.sb-search-input {
-			background:transparent;
-			border:0 none;
-			width: 300px;
-			margin-right: 51px;
-			margin: 0;
-			height: 52px;
-			&:focus {
-				outline: 0 none;
-				border:0 none;
-				@include box-shadow(none);
-			}
+		.hd-search-input {
+			border: transparent;
+			background-color: white;
+			color: $overlay-color;
+			padding: 0 10px;
+			width: 160px;
+			font-size: emCalc(10px);
+			box-shadow: none;
+			height:0.7* $bar-height;
+			line-height: 0.7* $bar-height;
+			position: absolute;
+			top:4px;
+			left:$bar-height;
 			@include placeholder {
-			    color:$secondary-color;
+				color:$overlay-color;
 			}
 		}
-		.sb-search-submit {
-			width: 40px;
+		&.hd-open {
+			width: 190px;
 		}
 	}
 
-	#search-utility {
+	.sb-search {
+		$icon-dim :24px;
 		float: right;
-		// margin-right:15px;
-		width: 200px;
-		height: 2em;
-		background-color: lighten($primary-color,35%);
-		padding-bottom: 35px;
-		.snf-search {
-			position: relative;
-			right: -2px;
+		margin-top:3px;
+		min-width: $icon-dim;
+		height: $icon-dim;
+		.sb-icon-search {
+			height: $icon-dim;
+			width: $icon-dim;
 			color: $primary-color;
 		}
 		form {
 			display: inline-block;
-			width: 164px;
-			input {
-				display: inline-block;
-				border: transparent;
-				background-color: transparent;
-				color: $primary-color;
-				height: 1.8em;
-				padding-top: 0.3em;
-				// padding-bottom: 0.3em;
-				// line-height: 1.2em;
-				width: 160px;
-				font-size: 0.8em;
-				box-shadow: none;
-				margin-bottom: 0;
+			margin:0;
+			.input-wrap {
+				width:180px;
+				overflow: hidden;
 			}
+			input {
+				border: transparent;
+				background-color: white;
+				color: $overlay-color;
+				padding: 0 10px;
+				width: 160px;
+				font-size: emCalc(10px);
+				box-shadow: none;
+				height:0.7* $bar-height;
+				line-height: 0.7* $bar-height;
+				position: relative;
+				top:-3px;
+				@include placeholder {
+					color:$overlay-color;
+				}
+			}
+		}
+		&.sb-search-open {
+			width:220px;
 		}
 	}
 
 	.view-type {
 		float: right;
 		margin-right:15px;
-		.current {
+		.current,
+		a:hover {
 			color: $secondary-color;
 		}
 		.snf-list {
 				margin-right: 6px;
-				font-size: 1em;
+				font-size: 17px;
 		}
 		.snf-layout {
 				font-size: 1.1em;

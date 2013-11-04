@@ -269,6 +269,11 @@ ui.expandDownArea = function(arrow_link, area) {
 
 $(document).ready(function(){
 
+
+    $('#hd-search .hd-icon-search').click(function(e){
+        $(this).parents('.hd-search').toggleClass('hd-open');
+    })
+
     ui.setSidebarHeight();
     ui.closeDiv($('.info .close'), '.info');
     ui.editable();
@@ -401,11 +406,7 @@ $(document).ready(function(){
     // set filter visible
     $('.filter-menu .filter').click(function(e) {
         e.preventDefault();
-        var self = this;
-        $(self).parents('.filter-menu').toggleClass('current');
-        // $(self).siblings('.options').stop().slideToggle(400, function() {
-        //     if($(self).s)
-        // });
+        $(this).parents('.filter-menu').toggleClass('current');
     })
 })
 
