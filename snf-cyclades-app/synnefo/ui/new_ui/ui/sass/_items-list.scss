@@ -1,23 +1,23 @@
 /* List view for VMs, networks  */
 
-.entities {
-	padding-top:25px;
-}
-
-
 .items-list {
+	@include block-grid(2, 0, true);
+	@media #{$small} {
+		@include block-grid(4, 0, true);
+	};
+	background:url(../images/dashed_atom.png) repeat-y left center;
 	li {
 		text-align:center;
 		padding:20px;
 		list-style:none;
+		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
 		.add-new {
 			a {
 				margin:0 20px;
 				display: block;
 				font-weight: bold;
-				height:180px;
-				padding:65px 30px 15px;
-				border:1px dashed $primary-color;
+				height: 100%;
+				width:100%;
 				&:hover {
 					border-color:$third-color;
 				}
@@ -163,7 +163,6 @@
 @media #{$entities-large} {
 	.entities {
 		.items-list {
-			@include block-grid(4, 20px, true);
 			&.list-view	{
 				li {
 					width:100%;

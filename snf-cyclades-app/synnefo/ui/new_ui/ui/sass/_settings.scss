@@ -112,7 +112,7 @@ $btn-height:30px;
 //
 
 $row-full-width:100%;
-$row-width: 1200px;
+$row-width: emCalc(960px);
 $row-small: emCalc(580px);
 
 $conf-area-h-width: emCalc(300px);
