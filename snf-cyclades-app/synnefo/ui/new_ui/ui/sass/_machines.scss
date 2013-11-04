@@ -17,16 +17,12 @@
 			font-size: 60px;
 			color: $vm-active-color;
 		}
-		&.stopped {
-			.snf-PC_fill {
-				color: $vm-stopped-color;
-			}
-		}
-		&.stopped:hover {
-			span {
-				cursor: default;
-			}
-		}
+		// &.off {
+		// 	.snf-PC_fill {
+		// 		color: $vm-off-color;
+		// 	}
+		// }
+		// }
 		.os {
 			@include sprite('../images/os-unknown.png', 22px, 22px);
 			position: absolute;
@@ -37,6 +33,57 @@
 			&.fedora { background-image:url('../images/os-fedora.png'); }
 		}
 	}
+	[data-status="off"] {
+		.img {
+			.snf-PC_fill {
+				color: $vm-off-color;
+			}
+		}
+		.status .logs, .status .state a{
+			color: $vm-off-color;
+		}
+	}
+	[data-status="error"] {
+		.img {
+			.snf-PC_fill {
+				color: $vm-error-color;
+			}
+		}
+		.status .logs, .status .state a{
+			color: $vm-error-color;
+		}
+	}
+	[data-status="shutting"] {
+		.img {
+			.snf-PC_fill {
+				color: $vm-shutting-color;
+			}
+		}
+		.status .logs, .status .state a{
+			color: $vm-shutting-color;
+		}
+	}
+	[data-status="starting"] {
+		.img {
+			.snf-PC_fill {
+				color: $vm-starting-color;
+			}
+		}
+		.status .logs, .status .state a{
+			color: $vm-starting-color;
+		}
+	}
+	[data-status="rebooting"] {
+		.img {
+			.snf-PC_fill {
+				color: $vm-rebooting-color;
+			}
+		}
+		.status .logs, .status .state a{
+			color: $vm-rebooting-color;
+		}
+	}
+	// there's no running and building
 }
 
 .vm {
@@ -49,9 +96,9 @@
 				font-size: 112px;
 				color: $vm-active-color;
 			}
-			&.stopped {
+			&.off {
 				.snf-PC_fill {
-					color: $vm-stopped-color;
+					color: $vm-off-color;
 				}
 			}
 		}

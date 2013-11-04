@@ -9,9 +9,10 @@
 	&>li {
 		text-align:center;
 		padding:20px;
+		position: relative;
 		list-style:none;
 		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
-		min-height: 215px;
+		height: 215px;
 		.add-new {
 			a {
 				margin:0 20px;
@@ -25,11 +26,12 @@
 			}			
 		}
 		.img-wrap {
-			height: 78px;
-			margin: 0 60px;
+			// height: 78px;
+			// margin: 0 60px;
+			text-align: center;
 		}
 		.img {
-			margin-bottom: 20px;
+			margin-bottom: 16px;
 			position: relative;
 			height:58px;
 			display: inline-block;
@@ -37,15 +39,35 @@
 		.container {
 			&.set-bg {	background:lighten($primary-color,38%); }
 			&.set-border {	border-color:$secondary-color; }
+			height:160px;
 			border:1px solid transparent;
-			margin: 0 20px;
-			padding:25px 0;
+			margin: 16px 20px 20px;
 			position: relative;
+			line-height:120%;
+			.tags {
+				width: 100%;
+				min-height: 12px;
+				position: absolute;
+				bottom: 6px;
+				// margin-top: 16px;
+			}
+			.status {
+				font-size: 12px;
+				text-align: center;
+				a {
+					color: $secondary-color;
+					
+				}
+				span {
+					color: $secondary-color;
+					display: block;
+				}
+			}
 		}
 		.more {
 			$col-height: 200px;
 			display: none;
-			height:180px;
+			// height:180px;
 			background: #fff;
 			margin: -30px;
 			height: 100%;
@@ -123,13 +145,18 @@
 			}
 		}
 		.visible-info {
-			margin: 0 25px;
+			// margin: 0 25px;
+			text-align: center;
+			font-size: 12px;
 			position:relative;
 			color:$primary-color;
 			overflow: hidden;
+			margin-bottom: 4px;
 			span {
 				&.title {
-					white-space: nowrap;
+					// white-space: nowrap;
+					height: 3em;
+					overflow: hidden;
 				}
 				display: block;
 				position: relative;
