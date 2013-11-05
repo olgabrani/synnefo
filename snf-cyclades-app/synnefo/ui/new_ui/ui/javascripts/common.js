@@ -67,6 +67,13 @@ ui.entitiesActionsEnabled = function(){
 
 ui.entitiesActionsInit = function(){
 
+    // TODO: refactor this
+    $('.entities a').click(function(){
+        if ($(this).attr('data-reveal-id')) {
+            $('.entities li .more').hide();
+        }
+    })
+
     if ($('.entities .items-list >li').length == 1) {
         $('.overlay-wrapper').addClass('no-vm');
     }
@@ -77,7 +84,7 @@ ui.entitiesActionsInit = function(){
     $('.entities li .img').mouseenter(function(e) {
         if ($(this).closest('.container').siblings('.more').length>0) {
             $(this).closest('.container').stop(true, true).hide();
-            $(this).closest('.container').siblings('.more').stop(true, true).fadeIn(500);//stop().slideToggle(600);
+            $(this).closest('.container').siblings('.more').stop(true, true).fadeIn(600);//stop().slideToggle(600);
         }
     });
     $('.entities li .more').mouseleave(function(e) {
