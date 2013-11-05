@@ -314,11 +314,12 @@ body {
 			}
 		}
 		.wrap {
+			$wr-padd-top:12px;
 			border:1px solid $overlay-color;
 			background: white;
 			color:$overlay-color;
-			font-size:emCalc(10px);
-			padding:10px 35px 10px 20px;
+			font-size:emCalc(12px);
+			padding:$wr-padd-top 30px;
 			line-height:100%;
 			ul {
 				display: none;
@@ -328,7 +329,7 @@ body {
 				li {
 					list-style: none outside none;
 					padding:0;
-					padding-top:10px;
+					padding-top:$wr-padd-top;
 
 
 				}
