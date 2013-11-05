@@ -307,12 +307,18 @@ body {
 		position:absolute;
 		top:25px;
 		right:$header-padding-horizontal;
+		a {
+			color:$overlay-color;
+			&:hover {
+				color:$secondary-color;
+			}
+		}
 		.wrap {
 			border:1px solid $overlay-color;
 			background: white;
 			color:$overlay-color;
 			font-size:emCalc(10px);
-			padding:10px 20px;
+			padding:10px 35px 10px 20px;
 			line-height:100%;
 			ul {
 				display: none;
@@ -323,6 +329,7 @@ body {
 					list-style: none outside none;
 					padding:0;
 					padding-top:10px;
+
 
 				}
 			}
