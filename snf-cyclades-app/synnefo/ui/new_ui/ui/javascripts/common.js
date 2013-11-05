@@ -67,6 +67,9 @@ ui.entitiesActionsEnabled = function(){
 
 ui.entitiesActionsInit = function(){
 
+    if ($('.entities .items-list >li').length == 1) {
+        $('.overlay-wrapper').addClass('no-vm');
+    }
     $('.entities li .more').each(function(){
         var width = $(this).parent('li').outerWidth()  + 20;
         $(this).css('width', width);

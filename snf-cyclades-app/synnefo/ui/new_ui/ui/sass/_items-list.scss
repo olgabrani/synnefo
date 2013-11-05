@@ -2,10 +2,13 @@
 
 .items-list {
 	@include block-grid(2, 0, true);
+	padding-left:1px;
 	@media #{$small} {
 		@include block-grid(4, 0, true);
+		padding-left:1px;
 	};
 	background:url(../images/dashed_atom.png) repeat-y left center;
+
 	&>li {
 		text-align:center;
 		padding:20px;

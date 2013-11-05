@@ -96,6 +96,21 @@ body.with-overlay {
 			left:0;
 		}
 	}
+	.welcome { 
+		display:none;
+	}
+	&.no-vm {
+		background:url(../images/draw-welcome.png) no-repeat center 80px $secondary-color;
+		.welcome {
+			display:none;
+			color:#fff;
+			text-align:center;
+			position: relative;
+			top:10px;
+			left:75px;
+			display:block;
+		}
+	}
 }
 
 
