@@ -748,49 +748,24 @@ Confirm that the options you have selected are correct</p>
 		<section class="main row">
 			<div class="vms entities">
 				<ul class="items-list sortable">
-					<li data-order="0">
-						<div class="add-new"><a href="vm_create_a.html" data-overlay-id="#vm-wizard">NEW<br>MACHINE</a></div>
-					</li>
-					<li data-order="1" data-status="running">
-						<div class="more">
-							<div class="clearfix">
-								<div class="col lt">
-									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
-									</ul>
-								</div>
-								<div class="col rt">
-									<ul>
-										<li><a href="">Connect</a></li>
-										<li><a href="">Details</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="vm-name">vm name 1 really large name vm name vm 1 really large name vm</div>
-						</div>
+					<li data-status="add-new">
 						<div class="container">
 							<div class="img-wrap">
-								<div class="img running">
-									<span class="snf-PC_fill" data-reveal-id="vm-connect"></span>
-									<span class="os fedora" data-reveal-id="vm-connect">fedora</span>
+								<div class="img">
+								<a href="" data-overlay-id="#vm-wizard">
+									<span class="snf-PC_fill"></span>
+									<span class="os symbol">+</span>
+									</a>
 								</div>
 							</div>
 							<p class="visible-info">
 								<span class="title">
-									<a href="vm_details.html"><em>vm name 1 really large name vm name vm 1 really large name vm</em></a>
+									<a><em>New Machine</em></a>
 								</span>
 							</p>
-							<div class="tags">
-							</div>
-							<div class= "status">
-							</div>
 						</div>
 					</li>
-					<li data-order="2" data-status="building">
+					<li data-status="building">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -831,7 +806,48 @@ Confirm that the options you have selected are correct</p>
 							</div>
 						</div>
 					</li>
-					<li  data-order="3" data-status="off">
+					<li data-status="error">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Option i</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Connect</a></li>
+										<li><a href="">Details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="vm-name">short name</div>
+						</div>
+						<div class="container">
+							<div class="img-wrap">
+								<div class="img running">
+									<span class="snf-PC_fill" data-reveal-id="vm-connect"></span>
+									<span class="os" data-reveal-id="vm-connect">unknown</span>
+								</div>
+							</div>
+							<p class="visible-info">
+								<span class="title">
+									<a href="vm_details.html"><em>short name</em></a>
+								</span>
+							</p>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state"><a href="">ERROR</a></span>
+								<span class="logs">Image customization failed.<br>Did not finish on time.</span>
+							</div>
+						</div>
+					</li>
+					<li data-status="running">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -854,9 +870,9 @@ Confirm that the options you have selected are correct</p>
 						</div>
 						<div class="container">
 							<div class="img-wrap">
-								<div class="img off">
-									<span class="snf-PC_fill"></span>
-									<span class="os fedora">fedora</span>
+								<div class="img running">
+									<span class="snf-PC_fill" data-reveal-id="vm-connect"></span>
+									<span class="os fedora" data-reveal-id="vm-connect">fedora</span>
 								</div>
 							</div>
 							<p class="visible-info">
@@ -865,13 +881,12 @@ Confirm that the options you have selected are correct</p>
 								</span>
 							</p>
 							<div class="tags">
-								<a href="" class="tag1">&nbsp;</a>
-								<a href="" class="tag2">&nbsp;</a>
-								<a href="" class="tag3">&nbsp;</a>
+							</div>
+							<div class= "status">
 							</div>
 						</div>
 					</li>
-					<li  data-order="4" data-status="rebooting">
+					<li data-status="rebooting">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -913,7 +928,7 @@ Confirm that the options you have selected are correct</p>
 							</div>
 						</div>
 					</li>
-					 <li  data-order="5" data-status="starting">
+					<li data-status="starting">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -953,127 +968,7 @@ Confirm that the options you have selected are correct</p>
 							</div>
 						</div>
 					</li>
-					<li data-order="6" data-status="off">
-						<div class="more">
-							<div class="clearfix">
-								<div class="col lt">
-									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
-									</ul>
-								</div>
-								<div class="col rt">
-									<ul>
-										<li><a href="">Connect</a></li>
-										<li><a href="">Details</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="vm-name">short name</div>
-						</div>
-						<div class="container">
-							<div class="img-wrap">
-								<div class="img running">
-									<span class="snf-PC_fill" data-reveal-id="vm-connect"></span>
-									<span class="os fedora" data-reveal-id="vm-connect">fedora</span>
-								</div>
-							</div>
-							<p class="visible-info">
-								<span class="title">
-									<a href="vm_details.html"><em>short name</em></a>
-								</span>
-							</p>
-							<div class="tags">
-							</div>
-							<div class= "status">
-							</div>
-						</div>
-					</li>
-					<li data-order="7" data-status="error">
-						<div class="more">
-							<div class="clearfix">
-								<div class="col lt">
-									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
-									</ul>
-								</div>
-								<div class="col rt">
-									<ul>
-										<li><a href="">Connect</a></li>
-										<li><a href="">Details</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="vm-name">short name</div>
-						</div>
-						<div class="container">
-							<div class="img-wrap">
-								<div class="img running">
-									<span class="snf-PC_fill" data-reveal-id="vm-connect"></span>
-									<span class="os" data-reveal-id="vm-connect">unknown</span>
-								</div>
-							</div>
-							<p class="visible-info">
-								<span class="title">
-									<a href="vm_details.html"><em>short name</em></a>
-								</span>
-							</p>
-							<div class="tags">
-							</div>
-							<div class= "status">
-								<span class="state"><a href="">ERROR</a></span>
-								<span class="logs">Image customization failed.<br>Did not finish on time.</span>
-							</div>
-						</div>
-					</li>
-					<li  data-order="8" data-status="off">
-						<div class="more">
-							<div class="clearfix">
-								<div class="col lt">
-									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
-									</ul>
-								</div>
-								<div class="col rt">
-									<ul>
-										<li><a href="">Connect</a></li>
-										<li><a href="">Details</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="vm-name">short name</div>
-						</div>
-						<div class="container">
-							<div class="img-wrap">
-								<div class="img">
-									<span class="snf-PC_fill"></span>
-									<span class="os fedora">fedora</span>
-								</div>
-							</div>
-							<p class="visible-info">
-								<span class="title">
-									<a href="vm_details.html"><em>short name</em></a>
-								</span>
-							</p>
-							<div class="tags">
-								<a href="" class="tag1">&nbsp;</a>
-								<a href="" class="tag2">&nbsp;</a>
-								<a href="" class="tag3">&nbsp;</a>
-							</div>
-						</div>
-					</li>
-					<li  data-order="9" data-status="shutting">
+					<li  data-status="shutting">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -1115,7 +1010,7 @@ Confirm that the options you have selected are correct</p>
 							</div>
 						</div>
 					</li>
-					 <li  data-order="10" data-status="running">
+					 <li data-status="running">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -1150,6 +1045,125 @@ Confirm that the options you have selected are correct</p>
 							</p>
 							<div class= "status">
 								<span class="state"><a href="">RUNNING</a></span>
+							</div>
+						</div>
+					</li>
+					<li data-status="off">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Option i</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Connect</a></li>
+										<li><a href="">Details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="vm-name">short name</div>
+						</div>
+						<div class="container">
+							<div class="img-wrap">
+								<div class="img running">
+									<span class="snf-PC_fill" data-reveal-id="vm-connect"></span>
+									<span class="os fedora" data-reveal-id="vm-connect">fedora</span>
+								</div>
+							</div>
+							<p class="visible-info">
+								<span class="title">
+									<a href="vm_details.html"><em>short name</em></a>
+								</span>
+							</p>
+							<div class="tags">
+							</div>
+							<div class= "status">
+							</div>
+						</div>
+					</li>
+					<li data-status="off">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Option i</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Connect</a></li>
+										<li><a href="">Details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="vm-name">vm name 1 really large name vm name vm 1 really large name vm</div>
+						</div>
+						<div class="container">
+							<div class="img-wrap">
+								<div class="img off">
+									<span class="snf-PC_fill"></span>
+									<span class="os fedora">fedora</span>
+								</div>
+							</div>
+							<p class="visible-info">
+								<span class="title">
+									<a href="vm_details.html"><em>vm name 1 really large name vm name vm 1 really large name vm</em></a>
+								</span>
+							</p>
+							<div class="tags">
+								<a href="" class="tag1">&nbsp;</a>
+								<a href="" class="tag2">&nbsp;</a>
+								<a href="" class="tag3">&nbsp;</a>
+							</div>
+						</div>
+					</li>
+					<li data-status="off">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Option i</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Connect</a></li>
+										<li><a href="">Details</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="vm-name">short name</div>
+						</div>
+						<div class="container">
+							<div class="img-wrap">
+								<div class="img">
+									<span class="snf-PC_fill"></span>
+									<span class="os fedora">fedora</span>
+								</div>
+							</div>
+							<p class="visible-info">
+								<span class="title">
+									<a href="vm_details.html"><em>short name</em></a>
+								</span>
+							</p>
+							<div class="tags">
+								<a href="" class="tag1">&nbsp;</a>
+								<a href="" class="tag2">&nbsp;</a>
+								<a href="" class="tag3">&nbsp;</a>
 							</div>
 						</div>
 					</li>

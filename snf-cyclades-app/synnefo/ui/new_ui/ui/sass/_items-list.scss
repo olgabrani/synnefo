@@ -13,19 +13,7 @@
 		list-style:none;
 		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
 		height: 215px;
-		.add-new {
-			a {
-				margin:0 20px;
-				display: block;
-				font-weight: bold;
-				height: 100%;
-				width:100%;
-				&:hover {
-					border-color:$third-color;
-				}
-			}			
-		}
-		.img-wrap {
+				.img-wrap {
 			// height: 78px;
 			// margin: 0 60px;
 			text-align: center;
@@ -145,7 +133,6 @@
 			}
 		}
 		.visible-info {
-			// margin: 0 25px;
 			text-align: center;
 			font-size: 12px;
 			position:relative;
@@ -154,7 +141,6 @@
 			margin-bottom: 4px;
 			span {
 				&.title {
-					// white-space: nowrap;
 					height: 3em;
 					overflow: hidden;
 				}
@@ -164,6 +150,65 @@
 					font-style:normal;
 					position: relative;
 				}
+			}
+		}
+		&[data-status="add-new"] {
+			background-color: $secondary-color;
+			-webkit-transition: background-color 300ms linear;
+			-moz-transition: background-color 300ms linear;
+			-o-transition: background-color 300ms linear;
+			-ms-transition: background-color 300ms linear;
+			transition: background-color 300ms linear;
+			.container {
+				.img-wrap {
+					.img {
+						a {
+							span:first-child {
+								color: white;
+
+							}
+							.symbol {
+								background-image: none;
+								color: $secondary-color;
+								font-size: 30px;
+								text-indent: 0;
+							}
+						}
+					}
+				}
+				.visible-info a{
+					color: white;
+				}
+			}
+			&:hover {
+			background-color: white;
+			-webkit-transition: background-color 300ms linear;
+			-moz-transition: background-color 300ms linear;
+			-o-transition: background-color 300ms linear;
+			-ms-transition: background-color 300ms linear;
+			transition: background-color 300ms linear;
+			.container {
+				.img-wrap {
+					.img {
+						a {
+							span:first-child {
+								color: $secondary-color;
+								-webkit-transition: color 300ms linear;
+								-moz-transition: color 300ms linear;
+								-o-transition: color 300ms linear;
+								-ms-transition: color 300ms linear;
+								transition: color 300ms linear;
+							}
+							.symbol {
+								color: white;
+							}
+						}
+					}
+				}
+				.visible-info a{
+					color: $secondary-color;
+				}
+			}
 			}
 		}
 	}
