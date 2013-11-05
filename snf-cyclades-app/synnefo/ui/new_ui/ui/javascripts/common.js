@@ -402,6 +402,12 @@ $(document).ready(function(){
     $('.filter-menu .filter').click(function(e) {
         e.preventDefault();
         $(this).parents('.filter-menu').toggleClass('current');
+    });
+
+    // temp function used to demonstrate the visual effect of the building state of vm
+    $('.btn5.temp').click(function(e) {
+        e.preventDefault();
+        $(this).siblings('.container').find('.complete').toggleClass('build-progress');
     })
 })
 
