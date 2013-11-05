@@ -13,11 +13,6 @@
 		list-style:none;
 		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
 		height: 215px;
-				.img-wrap {
-			// height: 78px;
-			// margin: 0 60px;
-			text-align: center;
-		}
 		.img {
 			margin-bottom: 16px;
 			position: relative;
@@ -25,10 +20,7 @@
 			display: inline-block;
 		}
 		.container {
-			&.set-bg {	background:lighten($primary-color,38%); }
-			&.set-border {	border-color:$secondary-color; }
 			height:160px;
-			border:1px solid transparent;
 			margin: 16px 20px 20px;
 			position: relative;
 			line-height:120%;
@@ -37,14 +29,11 @@
 				min-height: 12px;
 				position: absolute;
 				bottom: 6px;
-				// margin-top: 16px;
 			}
 			.status {
-				font-size: 12px;
-				text-align: center;
+				font-size: emCalc(12px);
 				a {
 					color: $secondary-color;
-					
 				}
 				span {
 					color: $secondary-color;
@@ -55,16 +44,13 @@
 		.more {
 			$col-height: 200px;
 			display: none;
-			// height:180px;
 			background: #fff;
-			margin: -30px;
-			height: 100%;
+			left:-10px;
+			top: -10px;
 			z-index:101;
-			position: relative;
+			position: absolute;
 			@include clearfix;
-			-moz-box-shadow: -5px 5px 5px #ccc;
-			-webkit-box-shadow: -5px 5px 5px #ccc;
-			box-shadow: -5px 5px 5px #ccc;
+			@include box-shadow(-5px 5px 5px #ccc);
 			.col {
 				width: 50%;
 				float: left;
@@ -81,6 +67,7 @@
 							color: $body-font-color;
 							display: block;
 							width:100%;
+							padding: 5px 5px 5px 30px;
 							&:hover {
 								background-color: $secondary-color;
 								color:  #fff;
@@ -91,11 +78,6 @@
 				&.lt {
 					ul {
 						padding-top:10px;
-						li {
-							a {
-								padding: 5px 5px 5px 30px;
-							}
-						}
 					}
 				}
 				&.rt {
@@ -104,7 +86,7 @@
 							height: $col-height/2;
 							a {
 								height: 100%;
-								padding: 5px 5px 5px 30px;
+								padding:0 0 0 30px;
 								line-height: $col-height/2;
 							}
 						}
@@ -117,55 +99,23 @@
 				font-size: emCalc(10px);
 			}
 		}
-		.check {
-			position:absolute;
-			right:10px;
-			top:5px;
-
-			color:lighten($primary-color,35%);
-			font-weight: bold;
-			font-size:emCalc(27px);
-			cursor: pointer;
-			z-index: 10;
-			span { position:relative; z-index:10;}
-			&.active {
-				color:$secondary-color;
-			}
-		}
-		.visible-info {
-			text-align: center;
-			font-size: 12px;
-			position:relative;
+		h4 {
+			font-size: emCalc(12px);
 			color:$primary-color;
 			overflow: hidden;
 			margin-bottom: 4px;
-			span {
-				&.title {
-					height: 3em;
-					overflow: hidden;
-				}
-				display: block;
-				position: relative;
-				em {
-					font-style:normal;
-					position: relative;
-				}
-			}
+			height: 30px;
+			font-weight: normal;
 		}
 		&[data-status="add-new"] {
 			background-color: $secondary-color;
-			-webkit-transition: background-color 300ms linear;
-			-moz-transition: background-color 300ms linear;
-			-o-transition: background-color 300ms linear;
-			-ms-transition: background-color 300ms linear;
-			transition: background-color 300ms linear;
+			@include transition(background-color, 300ms, linear);
 			.container {
 				.img-wrap {
 					.img {
 						a {
 							span:first-child {
 								color: white;
-
 							}
 							.symbol {
 								background-image: none;
@@ -176,39 +126,31 @@
 						}
 					}
 				}
-				.visible-info a{
+				h4 a{
 					color: white;
 				}
 			}
 			&:hover {
-			background-color: white;
-			-webkit-transition: background-color 300ms linear;
-			-moz-transition: background-color 300ms linear;
-			-o-transition: background-color 300ms linear;
-			-ms-transition: background-color 300ms linear;
-			transition: background-color 300ms linear;
-			.container {
-				.img-wrap {
-					.img {
-						a {
-							span:first-child {
-								color: $secondary-color;
-								-webkit-transition: color 300ms linear;
-								-moz-transition: color 300ms linear;
-								-o-transition: color 300ms linear;
-								-ms-transition: color 300ms linear;
-								transition: color 300ms linear;
-							}
-							.symbol {
-								color: white;
+				background-color: white;
+				@include transition(background-color, 300ms, linear);
+				.container {
+					.img-wrap {
+						.img {
+							a {
+								span:first-child {
+									color: $secondary-color;
+									@include transition(color, 300ms, linear);
+								}
+								.symbol {
+									color: white;
+								}
 							}
 						}
 					}
+					h4 a{
+						color: $secondary-color;
+					}
 				}
-				.visible-info a{
-					color: $secondary-color;
-				}
-			}
 			}
 		}
 	}
@@ -217,16 +159,4 @@
 			width:100%;
 		}
 	}
-}
-
-@media #{$entities-large} {
-	.entities {
-		.items-list {
-			&.list-view	{
-				li {
-					width:100%;
-				}
-			}
-		}
-	} 
 }
