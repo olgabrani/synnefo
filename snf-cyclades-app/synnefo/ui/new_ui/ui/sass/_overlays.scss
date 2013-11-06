@@ -4,7 +4,10 @@ Overlays (Todo: clean up)
 
 */
 body.with-overlay {
-     background:$overlay-color;
+	background:$overlay-color;
+	.main {
+		opacity:0;
+	}
 }
 
 .reveal-modal {
@@ -172,7 +175,7 @@ body.with-overlay {
 	color:white;
 	.top {
 		background:$overlay-color-top;
-		height:90px; // numbers height+menus height-10px
+		height:$bar-menu-height + $bar-submenu-height;
 		position:fixed;
 		left:0;
 		right:0;
@@ -183,15 +186,14 @@ body.with-overlay {
 		.numbers {
 			.row {
 				max-width: 100%;
-				padding:0 $header-padding-horizontal
-
+				padding:0 $header-padding-horizontal;
 			}
-			height: 50px;
+			height: $bar-menu-height;
 			line-height: 50px;
 			background:$overlay-darker-color;
 		}
 		.menus {
-			height: 50px;
+			height: $bar-submenu-height;
 			.sub-menu {
 				display: none;
 				&[data-step="1"] {
@@ -339,7 +341,7 @@ body.with-overlay {
 					&.system-images {
 						display: list-item;
 					}
-					.img-wrap-col {
+					.img-col {
 						float:left;
 						width:50px;
 						line-height: $btn-height;
@@ -786,17 +788,17 @@ body.with-overlay {
         border-top:1px solid $overlay-color-top;
         background:$overlay-color;
         .row {
-            height: $bar-height;
-            line-height: $bar-height;
+            height: $bar-submenu-height;
+            line-height: $bar-submenu-height;
         }
         .nav {
-            height: $bar-height;
-            line-height: $bar-height;
+            height: $bar-submenu-height;
+            line-height: $bar-submenu-height;
             color:white;
             display: inline-block;
             position: relative;
             font-size: emCalc(12px);
-            top:($bar-height - 30px)/2;
+            top:($bar-submenu-height - 30px)/2;
             width: 100px;
             &:hover,
             &:focus {
