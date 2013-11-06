@@ -49,65 +49,65 @@ to {width: 100%}
 			&.fedora { background-image:url('../images/os-fedora.png'); }
 		}
 	}
-	[data-status="add-new"] {
-			background-color: $secondary-color;
-			-webkit-transition: background-color 300ms linear;
-			-moz-transition: background-color 300ms linear;
-			-o-transition: background-color 300ms linear;
-			-ms-transition: background-color 300ms linear;
-			transition: background-color 300ms linear;
-			.container {
-				.img-wrap {
-					.img {
-						a {
-							span:first-child {
-								color: white;
+	// [data-status="add-new"] {
+	// 		background-color: $secondary-color;
+	// 		-webkit-transition: background-color 300ms linear;
+	// 		-moz-transition: background-color 300ms linear;
+	// 		-o-transition: background-color 300ms linear;
+	// 		-ms-transition: background-color 300ms linear;
+	// 		transition: background-color 300ms linear;
+	// 		.container {
+	// 			.img-wrap {
+	// 				.img {
+	// 					a {
+	// 						span:first-child {
+	// 							color: white;
 
-							}
-							.symbol {
-								background-image: none;
-								color: $secondary-color;
-								font-size: 30px;
-								text-indent: 0;
-							}
-						}
-					}
-				}
-				.visible-info a{
-					color: white;
-				}
-			}
-			&:hover {
-			background-color: white;
-			-webkit-transition: background-color 300ms linear;
-			-moz-transition: background-color 300ms linear;
-			-o-transition: background-color 300ms linear;
-			-ms-transition: background-color 300ms linear;
-			transition: background-color 300ms linear;
-			.container {
-				.img-wrap {
-					.img {
-						a {
-							span:first-child {
-								color: $secondary-color;
-								-webkit-transition: color 300ms linear;
-								-moz-transition: color 300ms linear;
-								-o-transition: color 300ms linear;
-								-ms-transition: color 300ms linear;
-								transition: color 300ms linear;
-							}
-							.symbol {
-								color: white;
-							}
-						}
-					}
-				}
-				.visible-info a{
-					color: $secondary-color;
-				}
-			}
-			}
-	}
+	// 						}
+	// 						.symbol {
+	// 							background-image: none;
+	// 							color: $secondary-color;
+	// 							font-size: 30px;
+	// 							text-indent: 0;
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	// 			.visible-info a{
+	// 				color: white;
+	// 			}
+	// 		}
+	// 		&:hover {
+	// 		background-color: white;
+	// 		-webkit-transition: background-color 300ms linear;
+	// 		-moz-transition: background-color 300ms linear;
+	// 		-o-transition: background-color 300ms linear;
+	// 		-ms-transition: background-color 300ms linear;
+	// 		transition: background-color 300ms linear;
+	// 		.container {
+	// 			.img-wrap {
+	// 				.img {
+	// 					a {
+	// 						span:first-child {
+	// 							color: $secondary-color;
+	// 							-webkit-transition: color 300ms linear;
+	// 							-moz-transition: color 300ms linear;
+	// 							-o-transition: color 300ms linear;
+	// 							-ms-transition: color 300ms linear;
+	// 							transition: color 300ms linear;
+	// 						}
+	// 						.symbol {
+	// 							color: white;
+	// 						}
+	// 					}
+	// 				}
+	// 			}
+	// 			.visible-info a{
+	// 				color: $secondary-color;
+	// 			}
+	// 		}
+	// 		}
+	// }
 	[data-status="off"] {
 		.img {
 			.snf-PC_fill {

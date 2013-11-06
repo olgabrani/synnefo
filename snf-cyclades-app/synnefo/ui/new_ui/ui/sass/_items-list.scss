@@ -117,20 +117,18 @@
 			.container {
 				.img-wrap {
 					.img {
-						a {
-							span:first-child {
-								color: white;
-							}
-							.symbol {
-								background-image: none;
-								color: $secondary-color;
-								font-size: 30px;
-								text-indent: 0;
-							}
+						span:first-child {
+						color: white;
+						}
+						.symbol {
+							background-image: none;
+							color: $secondary-color;
+							font-size: 30px;
+							text-indent: 0;
 						}
 					}
 				}
-				h4 a{
+				h4 {
 					color: white;
 				}
 			}
@@ -140,18 +138,16 @@
 				.container {
 					.img-wrap {
 						.img {
-							a {
-								span:first-child {
-									color: $secondary-color;
-									@include transition(color, 300ms, linear);
-								}
-								.symbol {
-									color: white;
-								}
+							span:first-child {
+								color: $secondary-color;
+								@include transition(color, 300ms, linear);
+							}
+							.symbol {
+								color: white;
 							}
 						}
 					}
-					h4 a{
+					h4 {
 						color: $secondary-color;
 					}
 				}

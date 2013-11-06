@@ -364,8 +364,6 @@ $(document).ready(function(){
         }
     });
 
-    ui.placementByUser();
-
     if($('#picker').length>0) {
         $('#picker').farbtastic('#color');
     };
