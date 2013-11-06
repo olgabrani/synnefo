@@ -17,7 +17,7 @@ from {width: 0%}
 to {width: 100%}
 }
 .vms .items-list {
-	.img {
+	.img-wrap {
 		width: 60px;
 		span {
 			&:hover {
@@ -49,67 +49,8 @@ to {width: 100%}
 			&.fedora { background-image:url('../images/os-fedora.png'); }
 		}
 	}
-	// [data-status="add-new"] {
-	// 		background-color: $secondary-color;
-	// 		-webkit-transition: background-color 300ms linear;
-	// 		-moz-transition: background-color 300ms linear;
-	// 		-o-transition: background-color 300ms linear;
-	// 		-ms-transition: background-color 300ms linear;
-	// 		transition: background-color 300ms linear;
-	// 		.container {
-	// 			.img-wrap {
-	// 				.img {
-	// 					a {
-	// 						span:first-child {
-	// 							color: white;
-
-	// 						}
-	// 						.symbol {
-	// 							background-image: none;
-	// 							color: $secondary-color;
-	// 							font-size: 30px;
-	// 							text-indent: 0;
-	// 						}
-	// 					}
-	// 				}
-	// 			}
-	// 			.visible-info a{
-	// 				color: white;
-	// 			}
-	// 		}
-	// 		&:hover {
-	// 		background-color: white;
-	// 		-webkit-transition: background-color 300ms linear;
-	// 		-moz-transition: background-color 300ms linear;
-	// 		-o-transition: background-color 300ms linear;
-	// 		-ms-transition: background-color 300ms linear;
-	// 		transition: background-color 300ms linear;
-	// 		.container {
-	// 			.img-wrap {
-	// 				.img {
-	// 					a {
-	// 						span:first-child {
-	// 							color: $secondary-color;
-	// 							-webkit-transition: color 300ms linear;
-	// 							-moz-transition: color 300ms linear;
-	// 							-o-transition: color 300ms linear;
-	// 							-ms-transition: color 300ms linear;
-	// 							transition: color 300ms linear;
-	// 						}
-	// 						.symbol {
-	// 							color: white;
-	// 						}
-	// 					}
-	// 				}
-	// 			}
-	// 			.visible-info a{
-	// 				color: $secondary-color;
-	// 			}
-	// 		}
-	// 		}
-	// }
 	[data-status="off"] {
-		.img {
+		.img-wrap {
 			.snf-PC_fill {
 				color: $vm-off-color;
 			}
@@ -119,7 +60,7 @@ to {width: 100%}
 		}
 	}
 	[data-status="error"] {
-		.img {
+		.img-wrap {
 			.snf-PC_fill {
 				color: $vm-error-color;
 			}
@@ -129,7 +70,7 @@ to {width: 100%}
 		}
 	}
 	[data-status="shutting"] {
-		.img {
+		.img-wrap {
 			.snf-PC_fill {
 				color: $vm-shutting-color;
 			}
@@ -139,7 +80,7 @@ to {width: 100%}
 		}
 	}
 	[data-status="starting"] {
-		.img {
+		.img-wrap {
 			.snf-PC_fill {
 				color: $vm-starting-color;
 			}
@@ -149,7 +90,7 @@ to {width: 100%}
 		}
 	}
 	[data-status="rebooting"] {
-		.img {
+		.img-wrap {
 			.snf-PC_fill {
 				color: $vm-rebooting-color;
 			}
@@ -166,7 +107,7 @@ to {width: 100%}
 			position: absolute;
 			right: 0;
 		}
-		.img {
+		.img-wrap {
 			.snf-PC_fill {
 				display: block;
 				overflow: hidden;
@@ -187,7 +128,7 @@ to {width: 100%}
 
 .vm {
 	.top {
-		.img {
+		.img-wrap {
 			//@include sprite('../images/vm-on.png', 112px, 116px);
 			display: inline-block;
 			height: 112px;

@@ -16,7 +16,7 @@
 		list-style:none;
 		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
 		height: 215px;
-		.img {
+		.img-wrap {
 			margin-bottom: 16px;
 			position: relative;
 			height:58px;
@@ -115,8 +115,7 @@
 			background-color: $secondary-color;
 			@include transition(background-color, 300ms, linear);
 			.container {
-				.img-wrap {
-					.img {
+					.img-wrap {
 						span:first-child {
 						color: white;
 						}
@@ -126,7 +125,6 @@
 							font-size: 30px;
 							text-indent: 0;
 						}
-					}
 				}
 				h4 {
 					color: white;
@@ -136,8 +134,7 @@
 				background-color: white;
 				@include transition(background-color, 300ms, linear);
 				.container {
-					.img-wrap {
-						.img {
+						.img-wrap {
 							span:first-child {
 								color: $secondary-color;
 								@include transition(color, 300ms, linear);
@@ -146,7 +143,6 @@
 								color: white;
 							}
 						}
-					}
 					h4 {
 						color: $secondary-color;
 					}

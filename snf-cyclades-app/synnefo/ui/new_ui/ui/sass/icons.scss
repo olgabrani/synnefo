@@ -65,23 +65,23 @@
 
 
 
-body .items-list .img.running, body .vms .items-list .img.stopped{
+body .items-list .img-wrap.running, body .vms .items-list .img-wrap.stopped{
 	background: none;
 	text-indent: 0;
 	width: 60px;
 	height: 60px;
 }
 
-body .img  .snf-font {
+body .img-wrap  .snf-font {
 	font-size: 60px;
 }
 
-body .networks .img  .snf-font.bolding {
+body .networks .img-wrap  .snf-font.bolding {
 	font-weight: bold;
 	font-size: 57px;
 	top: 6px;
 }
-body .networks .img  .snf-font {
+body .networks .img-wrap  .snf-font {
 	position: relative;
 	top: 2px;
 }
@@ -100,6 +100,6 @@ body .stopped  .snf-font {
 }
 
 
-body .vms .items-list .img .os {
+body .vms .items-list .img-wrap .os {
 	left:19px;
 }

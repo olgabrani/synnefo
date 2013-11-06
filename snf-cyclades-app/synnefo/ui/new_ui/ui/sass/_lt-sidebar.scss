@@ -17,16 +17,16 @@
 
 	.items-list {
 		padding:0;
-	 li .img .snf-PC_fill {
+	 li .img-wrap .snf-PC_fill {
 		font-size: 54px;
 	}
 	}
 
-	.items-list li .img,
+	.items-list li .img-wrap,
 	.items-list li .os {
 		background-size:80%;
 	}
-	.items-list li .img .os {
+	.items-list li .img-wrap .os {
 		top:6px;
 	}
 	li:hover {

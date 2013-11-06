@@ -1,22 +1,12 @@
 /* Networks related styles  */
 
 .networks .items-list {
-	.img {
-		@include sprite('../images/network-green102x116.png', 51px, 58px);
-		background-size:100%;
-	}
-}
-
-.network {
-	.top {
-		.img {
-			@include sprite('../images/network-green102x116.png', 102px, 116px);
-		}
+	.img-wrap {
 	}
 }
 
 
-
+// for network creation wizard
 #network-wizard {
 
 	a {
@@ -89,7 +79,4 @@
 			}
 		}
 	}
-
-// for network creation wizard
-
 }
