@@ -28,7 +28,13 @@
 			</ul>
 		</nav>
 		<div class="login">
-			<a href=""><span class="snf-lock_open"></span></a>
+			<div class="wrap">
+				<a href="">user1@synnefo.org</a>
+				<ul>
+					<li><a href="">dashboard</a></li>
+					<li><a href="">sign out</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
@@ -149,77 +155,143 @@
 	</div>
 	<!-- overlays end -->
 	
-<section class="actions-bar clearfix">
+		<section class="actions-bar clearfix">
 			<h2>Virtual Machine Overview</h2>
-				<div class="view-type">
-					<a href="" class="list"><span class="snf-list"></span></a>
-					<a href="" class="grid"><span class="snf-layout current"></span></a>
-				</div>
-				<div class="filter-menu">
-					<a class="filter" href="">Filter</a>
-					<ul class="options">
-						<li><a href=""> set an option</a></li>
-						<li><a href=""> set an option</a></li>
-						<li><a href=""> set an option</a></li>
-						<li><a href=""> set an option</a></li>
-					</ul>
-				</div>
-				<div id="search-utility" class="search">
-					<span class="snf-search"></span>
-					<form>
-						<input class="snf-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
-					</form>
-				</div>
+			<div class="view-type">
+				<a href="" class="list"><span class="snf-list"></span></a>
+				<a href="" class="grid"><span class="snf-layout current"></span></a>
+			</div>
+			<div class="filter-menu">
+				<a class="filter" href="">Filter</a>
+				<ul class="options">
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+				</ul>
+			</div>
+			<div id="hd-search" class="hd-search">
+			    <form>
+					<span class="hd-icon-search snf-search"></span>
+			        <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			    </form>
+			</div>
 		</section>
 		<section class="main row">
 			<div class="networks entities">
-				<ul class="items-list small-block-grid-2 large-block-grid-3">
-					<li>
-						<div class="add-new"><a data-overlay-id="#network-wizard" href="#">NEW<br>NETWORK</a></div>
-					</li>
-					<li>
-						<div class="container">
+				<ul class="items-list">
+					<li data-status="add-new">
+						<div class="container" data-overlay-id="#network-wizard">
 							<div class="img-wrap">
-								<div class="img running">
-									Network
-								</div>
+									<span class="snf-network_full"></span>
 							</div>
-							<p class="visible-info">
-								<span><em>IPv4 83.212.97.127</em></span>
-								<span class="title">
-									<a href="network_details.html"><em>Network name</em></a>
-								</span>
-							</p>
+							<h4 tilte="create new network">New Network</h4>
+						</div>
+						<div class="tags">
+						</div>
+						<div class= "status">
 						</div>
 					</li>
-					<li>
+					<li data-status="active">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+										<li><a href="">Option k</a></li>
+										<li><a href="">Option l</a></li>
+										<li><a href="">Option m</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+									</ul>
+							</div>
+						</div>
+						<div class="name">Network Name</div>
+					</div>
 						<div class="container">
 							<div class="img-wrap">
-								<div class="img running">
-									Network
-								</div>
+								<span class="snf-network_full"></span>
 							</div>
-							<p class="visible-info">
-								<span><em>IPv4 83.212.97.127</em></span>
-								<span class="title">
-									<a href="network_details.html"><em>Network name</em></a>
-								</span>
-							</p>
+							<h4>Network Name</h4>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state"></span>
+								<span class="logs"></span>
+							</div>
 						</div>
 					</li>
-					<li>
+					<li data-status="active">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+										<li><a href="">Option k</a></li>
+										<li><a href="">Option l</a></li>
+										<li><a href="">Option m</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+									</ul>
+							</div>
+						</div>
+						<div class="name">Network Name</div>
+					</div>
 						<div class="container">
 							<div class="img-wrap">
-								<div class="img running">
-									Network
-								</div>
+								<span class="snf-network_full"></span>
 							</div>
-							<p class="visible-info">
-								<span><em>IPv4 83.212.97.127</em></span>
-								<span class="title">
-									<a href="network_details.html"><em>Network name</em></a>
-								</span>
-							</p>
+							<h4>Network Name</h4>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state"></span>
+								<span class="logs"></span>
+							</div>
+						</div>
+					</li>
+					<li data-status="active">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+										<li><a href="">Option k</a></li>
+										<li><a href="">Option l</a></li>
+										<li><a href="">Option m</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+									</ul>
+							</div>
+						</div>
+						<div class="name">Network Name</div>
+					</div>
+						<div class="container">
+							<div class="img-wrap">
+								<span class="snf-network_full"></span>
+							</div>
+							<h4>Network Name</h4>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state"></span>
+								<span class="logs"></span>
+							</div>
 						</div>
 					</li>
 				</ul>

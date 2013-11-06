@@ -1,10 +1,21 @@
 /* Networks related styles  */
 
-.networks .items-list {
-	.img-wrap {
+.networks {
+	.items-list {
+		.img-wrap {
+			.snf-network_full {
+				font-size: 60px;
+			}
+		}
+		[data-status="active"] {
+			.img-wrap {
+				.snf-network_full {
+					color: $secondary-color;
+				}
+			}
+		}
 	}
 }
-
 
 // for network creation wizard
 #network-wizard {
