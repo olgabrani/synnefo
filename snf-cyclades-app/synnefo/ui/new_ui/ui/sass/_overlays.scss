@@ -103,13 +103,13 @@ body.with-overlay {
 		display:none;
 	}
 	&.no-vm {
-		background:url(../images/draw-welcome.png) no-repeat center 80px $secondary-color;
+		background:url(../images/draw-welcome.png) no-repeat center 50px $secondary-color;
 		.welcome {
 			display:none;
 			color:#fff;
 			text-align:center;
 			position: relative;
-			top:10px;
+			top:-15px;
 			left:75px;
 			display:block;
 		}
