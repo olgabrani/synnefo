@@ -205,16 +205,11 @@ ui.overlay = function() {
     $('[data-overlay-id]').click(function(e){
         e.preventDefault();
         var el = $(this);
-        // main-actions a need to be active to trigger overlay
-        if ( (el.parents('.main-actions').find('li a.active').length == 0) && (el.parents('.main-actions').length > 0) ) {
-            return false;
-        }
         var id = el.data('overlay-id');
 
         $('.overlay-area').fadeIn(100);
         $('body').addClass('with-overlay');
         $(id).fadeIn('slow');
-        console.log(id);
         if (id=='#network-wizard') {
             $(id).find('input').first().focus();
             return false;

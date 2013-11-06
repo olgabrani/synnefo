@@ -19,7 +19,7 @@
 		.img-wrap {
 			margin-bottom: 16px;
 			position: relative;
-			height:58px;
+			height:60px;
 			display: inline-block;
 			overflow: hidden;
 		}
@@ -115,36 +115,30 @@
 			background-color: $secondary-color;
 			@include transition(background-color, 300ms, linear);
 			.container {
-					.img-wrap {
-						span:first-child {
-						color: white;
-						}
-						.symbol {
-							background-image: none;
-							color: $secondary-color;
-							font-size: 30px;
-							text-indent: 0;
-						}
+				.img-wrap {
+					span:first-child {
+					color: white;
+					}
+					.symbol {
+						background-image: none;
+						color: $secondary-color;
+						font-size: 30px;
+						text-indent: 0;
+					}
 				}
 				h4 {
 					color: white;
 				}
 			}
 			&:hover {
-				background-color: white;
+				background-color: $overlay-color;
 				@include transition(background-color, 300ms, linear);
+				cursor: pointer;
 				.container {
-						.img-wrap {
-							span:first-child {
-								color: $secondary-color;
-								@include transition(color, 300ms, linear);
-							}
-							.symbol {
-								color: white;
-							}
+					.img-wrap {
+						.symbol {
+							color: $overlay-color;
 						}
-					h4 {
-						color: $secondary-color;
 					}
 				}
 			}
