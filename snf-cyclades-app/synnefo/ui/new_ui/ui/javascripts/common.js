@@ -213,22 +213,6 @@ ui.overlay = function() {
     });
 }
 
-// when user moves a vm or network icon (list view)
-ui.placementByUser = function() {
-    if($('.sortable').length != 0) {
-        $( ".sortable" ).sortable({
-            items: "> li:not(:last)",
-            stop: function(event, ui) {
-                $.map($(this).find('li'), function(el) {
-                            return $(el).attr('data-order', $(el).index());
-                        });
-            }
-        });
-
-        $( ".sortable" ).disableSelection(); //i think unnecessary
-    }
-}
-
 function goToByScroll(id){
       // Remove "link" from the ID
     id = id.replace("link", "");
