@@ -265,8 +265,15 @@ $(document).ready(function(){
 
 
     $('#hd-search .hd-icon-search').click(function(e){
+        var that = this;
         $(this).parents('.hd-search').toggleClass('hd-open');
+        if ($(this).parents('.hd-search').hasClass('hd-open')) {
+            $(that).parents('.hd-search').find('input[type="search"]').focus();
+        } else {
+            $(that).parents('.hd-search').find('input[type="search"]').val('');
+        }
     })
+
 
     ui.setSidebarHeight();
     ui.closeDiv($('.info .close'), '.info');
