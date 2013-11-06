@@ -78,7 +78,21 @@
 	&::-webkit-input-placeholder { @content; }
 }
 
-
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
 /* Circle and Tags ----------------------------------------------- */
 .circle {
 	display:inline-block;

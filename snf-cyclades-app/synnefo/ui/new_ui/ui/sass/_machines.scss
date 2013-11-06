@@ -1,21 +1,32 @@
 /* Machines (VMs)  related styles  */
 
 .build-progress {
-	animation: progress_animation 5s infinite;
-	-webkit-animation: progress_animation 5s infinite;
+	animation:
+		progress_animation 5s infinite,
+		pulse 1s infinite;
+	-webkit-animation:
+		progress_animation 5s infinite,
+		pulse 1s infinite;
 }
 
-@keyframes progress_animation
-{
-from {width: 0%}
-to {width: 100%}
+@include keyframes( progress_animation) {
+	from {
+		width: 0%
+	}
+	to {
+		width: 100%
+	}
 }
 
-@-webkit-keyframes progress_animation /* Safari and Chrome */
-{
-from {width: 0%}
-to {width: 100%}
+@include keyframes( pulse) {
+	from {
+		color: $secondary-color
+	}
+	to {
+		color: darken($secondary-color,10%)
+	}
 }
+
 .vms .items-list {
 	.img-wrap {
 		width: 60px;
