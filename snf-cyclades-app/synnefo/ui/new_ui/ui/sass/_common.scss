@@ -423,10 +423,13 @@ body {
 			width: $bar-height;
 			height: $bar-height;
 			line-height: $bar-height;
-			float: left;
+			float: right;
 			&:hover {
 				cursor:pointer;
 			}
+			z-index:1;
+			position: relative;
+			background: lighten($primary-color,35%);
 		}
 		.hd-search-input {
 			border: transparent;
@@ -440,7 +443,7 @@ body {
 			line-height: 0.7* $bar-height;
 			position: absolute;
 			top:4px;
-			left:$bar-height;
+			left:0;
 			@include placeholder {
 				color:$overlay-color;
 			}
