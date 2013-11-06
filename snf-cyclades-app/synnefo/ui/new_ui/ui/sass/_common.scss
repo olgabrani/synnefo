@@ -426,6 +426,7 @@ body {
 			float: right;
 			&:hover {
 				cursor:pointer;
+				color:$secondary-color;
 			}
 			z-index:1;
 			position: relative;
