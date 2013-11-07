@@ -288,7 +288,7 @@ body {
 	z-index:100;
 	.icons-nav {
 		position:absolute;
-		left:$header-padding-horizontal - $icons-nav-margin-horizontal;
+		left:$header-padding-horizontal;
 		height:$header-height;
 		line-height:$header-height;
 		top:0;
@@ -509,17 +509,12 @@ body {
 	@include marginPaddingZero();
 	li {
 		display: inline-block;
-		margin:0 $icons-nav-margin-horizontal;
+		margin-right:$icons-nav-margin-horizontal;
 		font-size: emCalc(26px);
 		line-height: 1em;
-		padding-bottom:5px;
-		width: 30px;
-		text-align:center;
-		overflow: hidden;
 		a {
 			color:$black;
 			&:hover,&.current {
-				// font-size:30px;
 				color:$third-color;
 			}
 		}
