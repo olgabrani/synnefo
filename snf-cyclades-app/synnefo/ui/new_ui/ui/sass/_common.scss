@@ -376,11 +376,12 @@ body {
 	}
 	h2 {
 		float: left;
-		margin-left: 15px;
+		margin:0 0 0 15px;
 		color: $overlay-color;
 		font-size: emCalc(12px);
 		line-height: $bar-height;
 		font-weight: normal;
+
 	}
 	.filter-menu {
 		float:right;

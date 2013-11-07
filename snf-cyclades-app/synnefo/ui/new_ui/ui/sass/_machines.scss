@@ -45,12 +45,6 @@
 			font-size: 60px;
 			color: $vm-active-color;
 		}
-		// &.off {
-		// 	.snf-PC_fill {
-		// 		color: $vm-off-color;
-		// 	}
-		// }
-		// }
 		.os {
 			@include sprite('../images/os-unknown.png', 22px, 22px);
 			position: absolute;
@@ -67,7 +61,7 @@
 				color: $vm-off-color;
 			}
 		}
-		.status .logs, .status .state a{
+		.status .logs, .status .state {
 			color: $vm-off-color;
 		}
 	}
@@ -87,7 +81,7 @@
 				color: $vm-shutting-color;
 			}
 		}
-		.status .logs, .status .state a{
+		.status .logs, .status .state {
 			color: $vm-shutting-color;
 		}
 	}
@@ -97,7 +91,7 @@
 				color: $vm-starting-color;
 			}
 		}
-		.status .logs, .status .state a{
+		.status .logs, .status .state {
 			color: $vm-starting-color;
 		}
 	}
@@ -107,7 +101,7 @@
 				color: $vm-rebooting-color;
 			}
 		}
-		.status .logs, .status .state a{
+		.status .logs, .status .state {
 			color: $vm-rebooting-color;
 		}
 	}
