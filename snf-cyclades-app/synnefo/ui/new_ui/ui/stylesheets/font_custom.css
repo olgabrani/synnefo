@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
-.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-ok, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit-1, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-cpu, .snf-lock_closed, .snf-lock_open, .snf-modem, .snf-www, .snf-ram, .snf-network_full, .snf-arrow-up, .snf-arrow-down, .snf-list, .snf-layout, .snf-search{
+.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-ok, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit-1, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-cpu, .snf-lock_closed, .snf-lock_open, .snf-modem, .snf-www, .snf-ram, .snf-network_full, .snf-arrow-up, .snf-arrow-down, .snf-gridview, .snf-images, .snf-listview, .snf-plus, .snf-search, .snf-snapshot{
 	font-family: "snf-font";
 	speak: none;
 	font-style: normal;
@@ -122,12 +122,21 @@ you can use the generic selector below, but it"s slower:
 .snf-arrow-down:before {
 	content: "\4d";
 }
-.snf-list:before {
-	content: "\52";
+.snf-gridview:before {
+	content: "\74";
 }
-.snf-layout:before {
-	content: "\51";
+.snf-images:before {
+	content: "\66";
+}
+.snf-listview:before {
+	content: "\73";
+}
+.snf-plus:before {
+	content: "\6d";
 }
 .snf-search:before {
-	content: "\50";
+	content: "\64";
+}
+.snf-snapshot:before {
+	content: "\65";
 }
