@@ -428,6 +428,7 @@ body {
 		position:relative;
 		float: right;
 		height: $bar-height;
+		margin-right: -6px;
 		-webkit-transition: width 0.3s;
 	    -moz-transition: width 0.3s;
 	    transition: width 0.3s;
@@ -468,60 +469,23 @@ body {
 			width: 190px;
 		}
 	}
-
-	.sb-search {
-		$icon-dim :24px;
-		float: right;
-		margin-top:3px;
-		min-width: $icon-dim;
-		height: $icon-dim;
-		.sb-icon-search {
-			height: $icon-dim;
-			width: $icon-dim;
-			color: $primary-color;
-		}
-		form {
-			display: inline-block;
-			margin:0;
-			.input-wrap {
-				width:180px;
-				overflow: hidden;
-			}
-			input {
-				border: transparent;
-				background-color: white;
-				color: $overlay-color;
-				padding: 0 10px;
-				width: 160px;
-				font-size: emCalc(10px);
-				box-shadow: none;
-				height:0.7* $bar-height;
-				line-height: 0.7* $bar-height;
-				position: relative;
-				top:-3px;
-				@include placeholder {
-					color:$overlay-color;
-				}
-			}
-		}
-		&.sb-search-open {
-			width:220px;
-		}
-	}
-
 	.view-type {
 		float: right;
 		margin-right:15px;
-		.current,
-		a:hover {
+		.current, a:hover {
 			color: $secondary-color;
 		}
-		.snf-list {
-				margin-right: 6px;
-				font-size: 17px;
+		.snf-listview {
+			position: relative;
+			top: 3px;
+			margin-right: 3px;
+			font-size: 22px;
 		}
-		.snf-layout {
-				font-size: 1.1em;
+		.snf-gridview {
+				font-size: 22px;
+				position: relative;
+				top: 3px;
+				margin-right: 3px;
 		}
 		
 	}
