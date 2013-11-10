@@ -1,79 +1,81 @@
-/*
-Syntax error: Undefined variable: "$vm-stopped-color".
-        on line 99 of /Users/olgabrani/projects/synnefo/synnefo/snf-cyclades-app/synnefo/ui/new_ui/ui/sass/icons.scss
+/* line 7, ../sass/icons.scss */
+.menu1 ul li {
+  margin-right: 9px;
+}
+/* line 10, ../sass/icons.scss */
+.menu1 ul li a .snf-font {
+  font-size: 25px;
+  color: #1a1a1a;
+}
+/* line 15, ../sass/icons.scss */
+.menu1 ul li a:hover span {
+  color: #30c79e;
+}
 
-Backtrace:
-/Users/olgabrani/projects/synnefo/synnefo/snf-cyclades-app/synnefo/ui/new_ui/ui/sass/icons.scss:99
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/script/variable.rb:49:in `_perform'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/script/node.rb:40:in `perform'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/tree/root_node.rb:20:in `render'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/engine.rb:315:in `_render'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/sass-3.2.9/lib/sass/engine.rb:262:in `render'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `block in modified'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `block in run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/bin/compass:44:in `call'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/bin/compass:23:in `load'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247@global/bin/compass:23:in `<main>'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `eval'
-/Users/olgabrani/.rvm/gems/ruby-2.0.0-p247/bin/ruby_noexec_wrapper:14:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$vm-stopped-color\".\A         on line 99 of /Users/olgabrani/projects/synnefo/synnefo/snf-cyclades-app/synnefo/ui/new_ui/ui/sass/icons.scss"; }
+/* line 30, ../sass/icons.scss */
+.menu2 ul li {
+  margin-right: 9px;
+}
+/* line 33, ../sass/icons.scss */
+.menu2 ul li a .snf-font {
+  font-size: 25px;
+  font-weight: bold;
+  color: #919194;
+}
+/* line 39, ../sass/icons.scss */
+.menu2 ul li a:hover span {
+  color: #30c79e;
+}
+
+/* line 54, ../sass/icons.scss */
+.menu3 ul li a .snf-font {
+  font-size: 25px;
+  color: #919194;
+}
+
+/* line 68, ../sass/icons.scss */
+body .items-list .img-wrap.running, body .vms .items-list .img-wrap.stopped {
+  background: none;
+  text-indent: 0;
+  width: 60px;
+  height: 60px;
+}
+
+/* line 75, ../sass/icons.scss */
+body .img-wrap .snf-font {
+  font-size: 60px;
+}
+
+/* line 79, ../sass/icons.scss */
+dd
+body .networks .img-wrap .snf-font.bolding {
+  font-weight: bold;
+  font-size: 57px;
+  top: 6px;
+}
+
+/* line 84, ../sass/icons.scss */
+body .networks .img-wrap .snf-font {
+  position: relative;
+  top: 2px;
+}
+
+/* line 89, ../sass/icons.scss */
+body .networks .running .snf-font {
+  color: #79c79e;
+}
+
+/* line 93, ../sass/icons.scss */
+body .running .snf-font {
+  color: #30c79e;
+}
+
+/* line 98, ../sass/icons.scss */
+body .stopped .snf-font {
+  color: #e00e63;
+}
+
+/* line 103, ../sass/icons.scss */
+body .vms .items-list .img-wrap .os {
+  left: 19px;
+}
