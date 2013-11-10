@@ -1,11 +1,20 @@
 /* Machines (VMs)  related styles  */
 
-.build-progress {
+.grid-view .build-progress {
 	animation:
 		progress_animation 5s infinite,
 		pulse 1s infinite;
 	-webkit-animation:
 		progress_animation 5s infinite,
+		pulse 1s infinite;
+}
+
+.list-view .build-progress {
+	animation:
+		progress_animation_list 5s infinite,
+		pulse 1s infinite;
+	-webkit-animation:
+		progress_animation_list 5s infinite,
 		pulse 1s infinite;
 }
 
@@ -15,6 +24,15 @@
 	}
 	to {
 		width: 100%
+	}
+}
+
+@include keyframes( progress_animation_list) {
+	from {
+		width: 0%
+	}
+	to {
+		width: $list-vm-height;
 	}
 }
 
@@ -34,11 +52,6 @@
 			&:hover {
 				cursor: pointer;
 				opacity:0.8;
-			}
-		}
-		&:hover {
-			.snf-PC_fill {
-				color: darken($vm-active-color,10%);
 			}
 		}
 		.snf-PC_fill {

@@ -12,6 +12,7 @@
       selector : '.has-tip',
       additionalInheritableClasses : [],
       tooltipClass : '.tooltip',
+      posBottom: 10,
       tipTemplate : function (selector, content) {
         return '<span data-selector="' + selector + '" class="' 
           + Foundation.libs.tooltips.settings.tooltipClass.substring(1) 
@@ -111,6 +112,7 @@
 
     reposition : function (target, tip, classes) {
       var width, nub, nubHeight, nubWidth, column, objPos;
+      var self = this;
 
       tip.css('visibility', 'hidden').show();
 
@@ -129,14 +131,14 @@
         }).end();
       };
 
-      objPos(tip, (target.offset().top + this.outerHeight(target) + 10), 'auto', 'auto', target.offset().left, width);
+      objPos(tip, (target.offset().top + this.outerHeight(target) + self.settings.posBottom), 'auto', 'auto', target.offset().left, width);
 
       if ($(window).width() < 767) {
-        objPos(tip, (target.offset().top + this.outerHeight(target) + 10), 'auto', 'auto', 12.5, $(this.scope).width());
+        objPos(tip, (target.offset().top + this.outerHeight(target) + self.settings.posBottom), 'auto', 'auto', 12.5, $(this.scope).width());
         tip.addClass('tip-override');
         objPos(nub, -nubHeight, 'auto', 'auto', target.offset().left);
       } else {
-        objPos(tip, (target.offset().top + this.outerHeight(target) + 10), 'auto', 'auto', target.offset().left, width);
+        objPos(tip, (target.offset().top + this.outerHeight(target) + self.settings.posBottom), 'auto', 'auto', target.offset().left, width);
         tip.removeClass('tip-override');
         if (classes && classes.indexOf('tip-top') > -1) {
           objPos(tip, (target.offset().top - this.outerHeight(tip)), 'auto', 'auto', target.offset().left, width)
