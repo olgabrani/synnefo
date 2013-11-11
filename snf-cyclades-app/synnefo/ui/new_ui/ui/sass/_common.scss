@@ -336,21 +336,14 @@ body {
 			padding:$wr-padd-top 30px;
 			line-height:100%;
 			ul {
-				display: none;
 				padding:0;
 				margin:0;
 				list-style: none outside none;
+				display: none;
 				li {
 					list-style: none outside none;
 					padding:0;
 					padding-top:$wr-padd-top;
-
-
-				}
-			}
-			&:hover {
-				ul {
-					display: block;
 				}
 			}
 		}
@@ -429,10 +422,8 @@ body {
 		float: right;
 		height: $bar-height;
 		margin-right: -6px;
-		-webkit-transition: width 0.3s;
-	    -moz-transition: width 0.3s;
-	    transition: width 0.3s;
-	    -webkit-backface-visibility: hidden;
+		@include transition(width, 0.3s, linear);
+		-webkit-backface-visibility: hidden;
 		.hd-icon-search {
 			color: $primary-color;
 			display: block;

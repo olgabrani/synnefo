@@ -25,19 +25,19 @@
 				display: none;
 			}
 			.img-wrap {
-				margin-bottom: 16px;
+				margin-bottom: 6px;
 				height:60px;
 			}
 			.container {
 				height:160px;
-				margin: 16px 20px 20px;
+				margin: 40px 20px 20px;
 				position: relative;
 				line-height:120%;
 				.tags {
 					width: 100%;
 					min-height: 12px;
 					position: absolute;
-					bottom: 6px;
+					bottom: 12px;
 				}
 			}
 		}
@@ -58,6 +58,7 @@
 		}
 		.status {
 			font-size: emCalc(12px);
+			line-height:140%;
 			a {
 				color: $secondary-color;
 			}
@@ -129,7 +130,7 @@
 			color:$body-font-color;
 			overflow: hidden;
 			margin-bottom: 4px;
-			height: 30px;
+			height: 32px;
 			font-weight: normal;
 		}
 		&.add-new {
@@ -231,6 +232,8 @@
 			}
 			.check {
 				width:$check-w;
+				height: $list-vm-height;
+				line-height: $list-vm-height;
 				text-align: center;
 				float:left;
 				&:hover {
@@ -345,4 +348,8 @@
 			}
 		}
 	}
+}
+
+#temp {
+	background:url(../images/temp.png) no-repeat left top;
 }

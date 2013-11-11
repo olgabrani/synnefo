@@ -21,7 +21,7 @@
 		<header class="header">
 		<nav>
 			<ul class="icons-nav">
-				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC_fill"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip current" title="Networks"><span class="snf-network_full"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
 				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
@@ -47,7 +47,7 @@
 	<div class="overlay-wrapper">
 
 	<!-- overlays start -->
-	<div class="overlay-area">
+	<div class="overlay-area-custom">
 		
 		<div id="overlay1" class="overlay-div">
 			<a href="" class="close"><span class="snf-close"></span></a>
@@ -181,10 +181,10 @@
 			</div>
 		</section>
 		<section class="main row">
-			<div class="networks entities">
+			<div class="networks entities grid-view">
 				<ul class="items-list">
-					<li data-status="add-new">
-						<div class="container" data-overlay-id="#network-wizard">
+					<li data-status="add-new" class="add-new">
+						<div class="container" data-overlay-id="network-wizard">
 							<div class="img-wrap">
 									<span class="snf-network_full"></span>
 							</div>
@@ -212,11 +212,14 @@
 										<li><a href="">Option i</a></li>
 										<li><a href="">Option j</a></li>
 									</ul>
+								</div>
 							</div>
+							<div class="name">Network Name</div>
 						</div>
-						<div class="name">Network Name</div>
-					</div>
 						<div class="container">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
 							<div class="img-wrap">
 								<span class="snf-network_full"></span>
 							</div>
@@ -246,11 +249,14 @@
 										<li><a href="">Option i</a></li>
 										<li><a href="">Option j</a></li>
 									</ul>
+								</div>
 							</div>
+							<div class="name">Network Name</div>
 						</div>
-						<div class="name">Network Name</div>
-					</div>
 						<div class="container">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
 							<div class="img-wrap">
 								<span class="snf-network_full"></span>
 							</div>
@@ -280,11 +286,14 @@
 										<li><a href="">Option i</a></li>
 										<li><a href="">Option j</a></li>
 									</ul>
+								</div>
 							</div>
+							<div class="name">Network Name</div>
 						</div>
-						<div class="name">Network Name</div>
-					</div>
 						<div class="container">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
 							<div class="img-wrap">
 								<span class="snf-network_full"></span>
 							</div>
@@ -298,6 +307,18 @@
 						</div>
 					</li>
 				</ul>
+				<div class="lt-bar">
+					<ul>
+						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
+						<li class="running"><a href="#" title="">Action 1</a></li>
+						<li class="running"><a href="#" title="">Action 2</a></li>
+						<li class="both"><a href="#">Destroy</a></li>
+						<li class="stopped"><a href="#">Start</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+				<div class="welcome">It seems you have not yet created a VM! Go ahead!</div>
 			</div>
 		</section>
 	</div>
