@@ -45,66 +45,7 @@
 		</div>
 	</header>
 	<div class="overlay-wrapper">
-		<div class="overlay-area">
-			<div id="overlay1" class="overlay-div">
-				<a href="" class="close"><span class="snf-close"></span></a>
-				<p>Are you sure you want to reboot your machine?</p>
-				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
-			</div>
-			<div id="overlay2" class="overlay-div">
-				<a href="" class="close"><span class="snf-close"></span></a>
-				<p>Are you sure you want to shutdown your machine?</p>
-				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
-			</div>
-			<div id="overlay3" class="reveal-modal medium secondary-wizard">
-				<div></div>
-				<h2>SSH keys</h2>
-				<a class="close-reveal-modal close" title="close"><span class="snf-close"></span></a>
-				<p>You can use SSH keys to establish a secure connection between your computer and your virtual machines.<br>
-				Note: SSH keys are supported only for Linux machines.</p>
-				<p>Click "generate new" to create a new SSH key pair.</p>
-				<p>Click "import/add" to import your public key from your home machine or to copy/paste its contents to ~okeanos.</p>
-				<p class="buttons"><a href="" class="btn4 generate-key-btn">generate</a><a href="" class="btn4 import-key-btn">add/import</a></p>
-				<div class="generate-key-area">
-					<p>clock tba</p>
-					<p>
-						Your new public key has been added.<br>
-						To download your *private key* click here.
-					</p>
-					<p>
-						Note: We do not keep it! I f you don't download now you cannot access it in the future.
-					</p>
-				</div>
-				<div class="import-key-area">
-					<div class="key-name">
-						<label>Key name</label>
-						<input>
-						<div class="error-msg"></div>
-					</div>
-					<div class="key-content">
-						<label>Key content</label>
-						<div class="error-msg"></div>
-						<input>
-					</div>
-					<div class="upload-key">
-						<label>Import from file (header maybe?)</label>
-							<p class="buttons">
-								<a href="" class="browse-files dz-clickable">browse files</a>
-							</p>
-						<form action="#" class="dropzone" id="files-dropzone">
-							<p>sto plai?</p>
-							<ul class="files dropzone-files"></ul>
-							<div class="dz-default dz-message"><span></span></div>
-						</form>
-						<p class="buttons"><a href="" class="btn4">Cancel</a><a href="" class="btn4">Submit</a></p>
-					</div>
-				</div>
-				<h3>Your SSH public keys</h3>
-				<ul>
-					<li><div>key name</div><div><a href="">show key</a><a href="">edit</a><a href="">remove</a></div></li>
-				</ul>
-				<p class="buttons"><a href="" class="btn4">OK</a></p>
-			</div>
+		<section class="overlay-area-custom">
 			<div id="vm-wizard" class="overlay-div wizard">
 				<div class="top">
 					<div class="numbers">
@@ -516,7 +457,7 @@ Confirm that the options you have selected are correct</p>
 													</li>
 												</ul>
 												<div>
-													<a href="" class="btn5" data-reveal-id="overlay3" title="set data-reveal-id: overlay3">manage ssh keys</a>
+													<a href="" class="btn5" data-reveal-id="sshkeys-wizard" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
 												</div>
 											</div>
 										</div>
@@ -724,8 +665,86 @@ Confirm that the options you have selected are correct</p>
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		</section>
+		<section class="overlay-area-reveal">
+			<div id="sshkeys-wizard" class="reveal-modal medium secondary-wizard">
+				<div></div>
+				<h2>SSH keys</h2>
+				<a class="close-reveal-modal close" title="close"><span class="snf-close"></span></a>
+				<p>You can use SSH keys to establish a secure connection between your computer and your virtual machines.<br>
+				Note: SSH keys are supported only for Linux machines.</p>
+				<p>Click "generate new" to create a new SSH key pair.</p>
+				<p>Click "import/add" to import your public key from your home machine or to copy/paste its contents to ~okeanos.</p>
+				<p class="buttons"><a href="" class="btn4 generate-key-btn">generate</a><a href="" class="btn4 import-key-btn">add/import</a></p>
+				<div class="generate-key-area">
+					<p>clock tba</p>
+					<p>
+						Your new public key has been added.<br>
+						To download your *private key* click here.
+					</p>
+					<p>
+						Note: We do not keep it! I f you don't download now you cannot access it in the future.
+					</p>
+				</div>
+				<div class="import-key-area">
+					<div class="key-name">
+						<label>Key name</label>
+						<input>
+						<div class="error-msg"></div>
+					</div>
+					<div class="key-content">
+						<label>Key content</label>
+						<div class="error-msg"></div>
+						<input>
+					</div>
+					<div class="upload-key">
+						<label>Import from file (header maybe?)</label>
+							<p class="buttons">
+								<a href="" class="browse-files dz-clickable">browse files</a>
+							</p>
+						<form action="#" class="dropzone" id="files-dropzone">
+							<p>sto plai?</p>
+							<ul class="files dropzone-files"></ul>
+							<div class="dz-default dz-message"><span></span></div>
+						</form>
+						<p class="buttons"><a href="" class="btn4">Cancel</a><a href="" class="btn4">Submit</a></p>
+					</div>
+				</div>
+				<h3>Your SSH public keys</h3>
+				<ul>
+					<li><div>key name</div><div><a href="">show key</a><a href="">edit</a><a href="">remove</a></div></li>
+				</ul>
+				<p class="buttons"><a href="" class="btn4">OK</a></p>
+			</div>
+			<div id="vm-connect" class="reveal-modal medium">
+				<p>A direct connection to this machine can be established using the<a href="http://en.wikipedia.org/wiki/Secure_Shell" title=""> SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
+				
+				<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+				<p>Alternatively you can connect to your VM via <a href="#" title="">Console</a> (slow connection - meant only for troubleshooting.</p>
+		  		<a class="close-reveal-modal" title="close window">&#215;</a>
+			</div>
+			<div id="start-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="reboot-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to reboot your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="shutdown-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to shutdown your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="destroy-vm-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to destroy your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+		</section>
 		<section class="actions-bar clearfix">
 			<h2>Virtual Machines</h2>
 			<div class="view-type">
@@ -752,7 +771,7 @@ Confirm that the options you have selected are correct</p>
 			<div class="vms entities grid-view">
 				<ul class="items-list">
 					<li data-status="add-new" class="add-new">
-						<div class="container" data-overlay-id="#vm-wizard">
+						<div class="container" data-overlay-id="vm-wizard">
 							<div class="check">
 								<span class="snf-checkbox-unchecked"></span>
 							</div>
@@ -769,11 +788,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -809,11 +828,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -823,7 +842,7 @@ Confirm that the options you have selected are correct</p>
 									</ul>
 								</div>
 							</div>
-							<div class="name">short name</div>
+							<div class="name">vm name 1 really large name vm name vm 1 really large name vm</div>
 						</div>
 						<div class="container">
 							<div class="check">
@@ -848,11 +867,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -885,11 +904,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -925,11 +944,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -963,11 +982,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -977,7 +996,7 @@ Confirm that the options you have selected are correct</p>
 									</ul>
 								</div>
 							</div>
-							<div class="name">short name</div>
+							<div class="name">vm name 1 really large name vm name vm 1 really large name vm</div>
 						</div>
 						<div class="container">
 							<div class="check">
@@ -1005,11 +1024,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -1019,7 +1038,7 @@ Confirm that the options you have selected are correct</p>
 									</ul>
 								</div>
 							</div>
-							<div class="name">short name</div>
+							<div class="name">vm name 1 really large name vm name vm 1 really large name vm</div>
 						</div>
 						<div class="container">
 							<div class="check">
@@ -1047,11 +1066,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -1061,7 +1080,7 @@ Confirm that the options you have selected are correct</p>
 									</ul>
 								</div>
 							</div>
-							<div class="name">short name</div>
+							<div class="name">vm name 1 really large name vm name vm 1 really large name vm</div>
 						</div>
 						<div class="container">
 							<div class="check">
@@ -1084,11 +1103,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -1122,11 +1141,11 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Start</a></li>
-										<li><a href="">Shutdown</a></li>
-										<li><a href="">Reboot</a></li>
-										<li><a href="">Destroy</a></li>
-										<li><a href="">Option i</a></li>
+										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+										<li><a href="" data-reveal-id="tba">Option i</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
@@ -1136,7 +1155,7 @@ Confirm that the options you have selected are correct</p>
 									</ul>
 								</div>
 							</div>
-							<div class="name">short name</div>
+							<div class="name">vm name 1 really large name vm name vm 1 really large name vm</div>
 						</div>
 						<div class="container">
 							<div class="check">
@@ -1170,15 +1189,6 @@ Confirm that the options you have selected are correct</p>
 				<div class="welcome">It seems you have not yet created a VM! Go ahead!</div>
 			</div>
 		</section>
-		</div>
-	
-	<div id="vm-connect" class="reveal-modal medium">
-		<p>A direct connection to this machine can be established using the<a href="http://en.wikipedia.org/wiki/Secure_Shell" title=""> SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
-		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
-		
-		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
-		<p>Alternatively you can connect to your VM via <a href="#" title="">Console</a> (slow connection - meant only for troubleshooting.</p>
-  		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
 
 	<script src="javascripts/vendor/jquery.js"></script>

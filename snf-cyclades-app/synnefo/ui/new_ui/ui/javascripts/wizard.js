@@ -158,8 +158,9 @@ ui.wizard = {
 		}
 	},
 	close: function() {
+		console.log('1');
 		$('body').removeClass('with-overlay');
-		$('.overlay-area').fadeOut(400, function() {
+		$('.overlay-area-custom').fadeOut(400, function() {
 			$('.overlay-div').hide();
 			ui.wizard.reset();
 		});

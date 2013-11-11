@@ -166,9 +166,9 @@ ui.overlay = function() {
     $('[data-overlay-id]').click(function(e){
         e.preventDefault();
         var el = $(this);
-        var id = el.data('overlay-id');
+        var id = '#'+el.data('overlay-id');
 
-        $('.overlay-area').fadeIn(100);
+        $('.overlay-area-custom').fadeIn(100);
         $('body').addClass('with-overlay');
         $(id).fadeIn('slow');
         if (id=='#network-wizard') {
@@ -332,11 +332,12 @@ $(document).ready(function(){
             e.preventDefault();
         }
     })
-    $('.overlay-area').children('.close').click(function(e){
+    $('.overlay-area-custom').children('.close').click(function(e){
         e.preventDefault();
         e.stopPropagation();
-        $(this).parents('.overlay-area').hide();
-        $(this).parents('.overlay-area').find($('.overlay-div')).hide();
+        console.log('blah')
+        $(this).parents('.overlay-area-custom').hide();
+        $(this).parents('.overlay-area-custom').find($('.overlay-div')).hide();
         $('body').removeClass('with-overlay');
     })
 
