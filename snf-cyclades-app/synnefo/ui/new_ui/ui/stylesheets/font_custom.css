@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
-.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-ok, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit-1, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-cpu, .snf-lock_closed, .snf-lock_open, .snf-modem, .snf-www, .snf-ram, .snf-network_full, .snf-arrow-up, .snf-arrow-down, .snf-gridview, .snf-images, .snf-listview, .snf-plus, .snf-search, .snf-snapshot{
+.snf-font, .snf-custom-checkbox, .snf-twitter-off-black, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-ok, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit-1, .snf-HDD, .snf-network, .snf-PC, .snf-PC_fill, .snf-Pithos, .snf-DASHboard, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-cpu, .snf-lock_closed, .snf-lock_open, .snf-modem, .snf-www, .snf-ram, .snf-network_full, .snf-arrow-up, .snf-arrow-down, .snf-gridview, .snf-images, .snf-listview, .snf-plus, .snf-search, .snf-snapshot, .snf-switch, .snf-lightning, .snf-info_outline, .snf-info_filled{
 	font-family: "snf-font";
 	speak: none;
 	font-style: normal;
@@ -139,4 +139,17 @@ you can use the generic selector below, but it"s slower:
 }
 .snf-snapshot:before {
 	content: "\65";
+}
+
+.snf-switch:before {
+	content: "\69";
+}
+.snf-lightning:before {
+	content: "\6b";
+}
+.snf-info_outline:before {
+	content: "\6f";
+}
+.snf-info_filled:before {
+	content: "\70";
 }
