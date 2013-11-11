@@ -427,9 +427,14 @@ $(document).ready(function(){
     });
 
     // temp function used to demonstrate the visual effect of the building state of vm
-    $('.btn5.temp').click(function(e) {
+    $('[data-status="building"] .btn5.temp').click(function(e) {
         e.preventDefault();
         $(this).siblings('.container').find('.complete').toggleClass('build-progress');
+    });
+
+    $('[data-status="rebooting"] .btn5.temp').click(function(e) {
+        e.preventDefault();
+        $(this).siblings('.container').find('.snf-PC_fill').toggleClass('reboot-progress');
     })
 
     //temp function to preventDefault of links in modal
