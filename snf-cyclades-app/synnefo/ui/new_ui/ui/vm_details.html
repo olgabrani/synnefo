@@ -16,17 +16,26 @@
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-	<header class="header">
+		<header class="header">
 		<nav>
 			<ul class="icons-nav">
 				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC_fill"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
 				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Images" ><span class="snf-images"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Snapshots" ><span class="snf-snapshot"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="More" ><span class="snf-plus"></span></a></li>
 			</ul>
 		</nav>
 		<div class="login">
-			<a href=""><span class="snf-lock_open"></span></a>
+			<div class="wrap">
+				<a href="">user1@synnefo.org</a>
+				<ul>
+					<li><a href="">dashboard</a></li>
+					<li><a href="">sign out</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
@@ -41,12 +50,26 @@
 	</div>
 	<div class="overlay-wrapper">
 		<section class="actions-bar clearfix">
-			<div class="row">
-				<div class="new-btn"><a href="" data-overlay-id="#vm-wizard"><span>+</span> NEW MACHINE </a></div>
-				<div class="main-actions">
-				</div>
+			<h2><a href="vm_list.html">Virtual Machines</a> > My Awesome machine</h2>
+			<div class="view-type">
+				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
+				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
 			</div>
-			<div class="border-dashed"></div>
+			<div class="filter-menu">
+				<a class="filter" href="">Filter</a>
+				<ul class="options">
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+				</ul>
+			</div>
+			<div id="hd-search" class="hd-search">
+			    <form>
+					<span class="hd-icon-search snf-search"></span>
+			        <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			    </form>
+			</div>
 		</section>
 		<div class="lt-sidebar vms scroll-pane">
 			<ul class="items-list">

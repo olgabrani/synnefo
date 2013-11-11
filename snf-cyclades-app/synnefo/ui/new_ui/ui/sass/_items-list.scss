@@ -18,10 +18,7 @@
 
 		&>li {
 			height:215px;
-			.check {
-				display: none;
-			}
-			.info {
+			.check, .info, .actions {
 				display: none;
 			}
 			.img-wrap {
@@ -89,13 +86,12 @@
 					li {
 						padding: 0;
 						text-align: left;
+						padding: 5px 5px 5px 30px;
 						a {
 							color: $body-font-color;
 							display: block;
 							width:100%;
-							padding: 5px 5px 5px 30px;
 							&:hover {
-								//background-color: $secondary-color;
 								color:  $secondary-color;
 							}
 						}
@@ -110,9 +106,9 @@
 					ul {
 						li {
 							height: $col-height/2;
+							padding:0 0 0 30px;
 							a {
 								height: 100%;
-								padding:0 0 0 30px;
 								line-height: $col-height/2;
 							}
 						}
@@ -211,6 +207,20 @@
 						cursor: pointer;
 					}
 				}
+				a {
+					color:$primary-color;
+					&:hover {
+						color:$primary-color;
+						cursor:default;
+					}
+					&.active {
+						color:$body-font-color;
+						&:hover {
+							color:$secondary-color;
+							cursor: pointer;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -219,7 +229,7 @@
 		$img-wrap-w : 70px;
 		$h4-w :40%;
 		$tags-w :8%;
-		$info-w: 30%;
+		$info-w: 25%;
 		overflow:hidden;
 		& >li {
 			@extend .clearfix;
@@ -271,7 +281,6 @@
 			.tags {
 				float:left;
 				width:$tags-w;
-				min-height: 1px;
 				height:$list-vm-height;
 				line-height: $list-vm-height;
 				a {
@@ -300,38 +309,39 @@
 					}
 				}
 			}
+			.actions {
+				float: left;
+				height:$list-vm-height;
+				line-height: $list-vm-height;
+				position: relative;
+				top:-4px;
+				margin:0 10px;
+				a {
+					color:$secondary-color;
+					&:hover {
+						color:$overlay-color;
+					}
+					&:first-child {
+						margin-right:5px;
+					}
+				}
+			}
 			&.add-new {
-				height: $bar-height;
-				line-height: $bar-height;
-				padding:0 0 0 $lt-bar-width;
 				&:hover {
 					background: $overlay-color;
 				}
 				.check {
 					visibility: hidden;
 				}
-				.img-wrap {
-					margin: 0;
-					height:$bar-height;
-					line-height: $bar-height;
-					.symbol {
-						font-size:emCalc(16px);
-						position: absolute;
-						left:0;
-						top:-3px;
-						width: 100%;
-						height: 100%;
-						margin: 0 auto;
-					}
-					span {
-						font-size:20px;
-						line-height: 30px;
-					}
-				}
 				h4 {
 					height:auto;
 					line-height: $bar-height;
 					margin:0;
+				}
+				.img-wrap {
+					.symbol {
+						font-size:24px;
+					}
 				}
 			}
 			&[data-status="building"] {

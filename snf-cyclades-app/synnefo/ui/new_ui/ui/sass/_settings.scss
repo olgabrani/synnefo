@@ -30,7 +30,7 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // We use these as default colors throughout
 $primary-color: #919194;
 $secondary-color: #30c79e;
-$third-color: #30c79e;
+$third-color: #d7145a;
 $overlay-color: #485057;
 $overlay-color-top:#636a70;
 $overlay-darker-color:#33383D;
@@ -831,26 +831,26 @@ $progress-bar-height: emCalc(15px);
 //
 
 // We use these to control the style of the reveal overlay.
-$reveal-overlay-bg: rgba(#000, .80);
+$reveal-overlay-bg: rgba(#fff, .80);
 // $reveal-overlay-bg-old: #000;
 
 // We use these to control the style of the modal itself.
 // $reveal-modal-bg: #fff;
 // $reveal-position-top: 50px;
 // $reveal-default-width: 80%;
-// $reveal-modal-padding: emCalc(20px);
+$reveal-modal-padding: emCalc(50px) emCalc(100px) emCalc(20px);
 // $reveal-box-shadow: 0 0 10px rgba(#000,.4);
 
 // We use these to style the reveal close button
-// $reveal-close-font-size: emCalc(22px);
-// $reveal-close-top: emCalc(8px);
-// $reveal-close-side: emCalc(11px);
-// $reveal-close-color: #aaa;
+$reveal-close-font-size: emCalc(18px);
+$reveal-close-top: emCalc(40px);
+$reveal-close-side: emCalc(40px);
+$reveal-close-color: #fff;
 // $reveal-close-weight: bold;
 
 // We use these to control the modal border
 // $reveal-border-style: solid;
-// $reveal-border-width: 1px;
+$reveal-border-width: 0px;
 // $reveal-border-color: #666;
 
 //

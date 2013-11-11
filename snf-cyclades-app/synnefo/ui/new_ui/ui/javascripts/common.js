@@ -41,28 +41,28 @@ ui.setSidebarHeight = function(){
 * Logic for Entities actions. Present in items_list pages
 * Available categories are :
 *  - both/single ( for multiple entities/single entities)
-*  - running/stopped ( for running/stopped entities)
+*  - running/off ( for running/off entities)
 *  - permanent ( for entities always active )
 */
 ui.entitiesActionsEnabled = function(){
     var all = $('.snf-checkbox-checked').length;
-    var running = $('.snf-checkbox-checked').parents('li').find('.running').length;
-    var stopped = $('.snf-checkbox-checked').parents('li.off').length;
-    console.log(stopped, 'actions here');
-    $('.header .main-actions li:not(.permanent) a').removeClass('active');  
-    if ( (running*stopped) > 0 ){          
-         $('.main-actions li.both a').addClass('active');
-         $('.main-actions li.single a').removeClass('active');
+    var running = $('.snf-checkbox-checked').parents('li.running').length;
+    var off = $('.snf-checkbox-checked').parents('li.off').length;
+    console.log(off, 'actions here');
+    $('.lt-bar .lt-actions li:not(.permanent) a').removeClass('active');
+    if ( (running*off) > 0 ){
+         $('.lt-actions li.both a').addClass('active');
+         $('.lt-actions li.single a').removeClass('active');
     } else {
         if (running > 0) {
-            $('.main-actions li.both a').addClass('active');
-            $('.main-actions li.running a').addClass('active');
-        } else if (stopped>0) {
-            $('.main-actions li.both a').addClass('active');
-            $('.main-actions li.stopped a').addClass('active');
+            $('.lt-actions li.both a').addClass('active');
+            $('.lt-actions li.running a').addClass('active');
+        } else if (off>0) {
+            $('.lt-actions li.both a').addClass('active');
+            $('.lt-actions li.off a').addClass('active');
         }
         if ( all > 1 ) {
-            $('.main-actions li.single a').removeClass('active');
+            $('.lt-actions li.single a').removeClass('active');
         }
     }
 }
@@ -239,10 +239,10 @@ $(document).ready(function(){
     })
 
     $('.header .login').mouseenter(function(e){
-        $(this).find('ul').stop().slideDown(200);
+        $(this).find('ul').stop(true, true).slideDown(200);
     });
     $('.header .login').mouseleave(function(e){
-        $(this).find('ul').stop().slideUp(200);
+        $(this).find('ul').stop(true, true).slideUp(200);
     });
 
     $('.entities a').click(function(){
@@ -250,6 +250,10 @@ $(document).ready(function(){
             $('.entities li .more').hide();
         }
     });
+
+    $('.lt-actions a:not(.active)').click(function(e){
+        e.preventDefault();
+    })
 
     if ($('.entities .items-list >li').length == 1) {
         $('.overlay-wrapper').addClass('no-vm');
@@ -318,10 +322,6 @@ $(document).ready(function(){
             ui.checkOneRadioButton(this);
             ui.changeRadiobuttonState(this);
         }
-    })
-
-    $('.new-btn a.current').click(function(e){
-        e.preventDefault();
     })
 
     $('.main-actions li a').click(function(e){
@@ -431,6 +431,12 @@ $(document).ready(function(){
         e.preventDefault();
         $(this).siblings('.container').find('.complete').toggleClass('build-progress');
     })
+
+    //temp function to preventDefault of links in modal
+    $('.reveal-modal a:not(".close-reveal-modal")').click(function(e){
+        e.preventDefault();
+        $('a.close-reveal-modal').trigger('click');
+    });
 })
 
 

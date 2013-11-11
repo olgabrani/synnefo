@@ -33,6 +33,7 @@ body.with-overlay {
 
 	.overlay-area-reveal {
 		.reveal-modal {
+			padding:65px 140px 40px;
 		    h3 {
 		        font-size:1em;
 		    }
@@ -40,32 +41,26 @@ body.with-overlay {
 				color: white;
 				text-align: center;
 				&.message-forimg {
-					margin-top:152px;
+					margin-top:132px;
 					margin-bottom: 35px; // 20px from background icon
 				}
 				&.buttons {
 					a:first-child {
-						margin-right:16px;
+						margin-right:25px;
 					}
 				}
 			}
 			a {
-		        &.close-reveal-modal {
-			        color: white;
-		            font-size: 18px;
-		            top: 42px;
-		            right: 42px;
-		        }
 		        &.close-reveal-modal:hover {
 		            text-decoration: none;
-		            // color:$secondary-color;
+					color: $black;
 		        }
 		    }
 		    &#start-confirm {
 				background: $secondary-color url('../images/shutdown.png') no-repeat center 50px;	//55px from top
 		    }
 		    &#reboot-confirm {
-				background: #ff7049 url('../images/restart.png') no-repeat center 46px;
+				background: #ff7049 url('../images/restart.png') no-repeat center 50px;
 				.btn4 {
 				background-color: #ff7049;
 				border-color: white;
@@ -127,23 +122,26 @@ body.with-overlay {
 			}
 			&#vm-connect {
 				p {
+					text-align:left;
 					color: black;
 					&.info {
 						font-style: italic;
 						font-size: 0.8125em;
 						color: #9e9ea1;
 					}
+					&.ssh {
+						text-align: center;
+						span {
+							display: inline;
+						}
+					}
 				}
-				a {
-		        color: $secondary-color;
-		        &:hover {
-		            text-decoration: underline;
-		        }
-		        &.close-reveal-modal:hover {
-		            text-decoration: none;
-		            color:$secondary-color;
-		        }
-		    }
+				a.close-reveal-modal {
+					color:$secondary-color;
+					&:hover {
+						color:$black;
+					}
+				}
 			}
 
 		}
@@ -441,7 +439,7 @@ body.with-overlay {
 									.icon {
 										display: block;
 										width:60px;
-										font-size:emCalc(40px);
+										font-size:38px;
 										float: left;
 									}
 									h2 {

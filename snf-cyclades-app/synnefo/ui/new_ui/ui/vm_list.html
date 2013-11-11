@@ -126,7 +126,7 @@ Confirm that the options you have selected are correct</p>
 									<li class="public-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
-											<a href="" class="name-col">Kubuntu LTS</a>
+											<a href="" class="name-col">Kubuntu LTS (by Kpal)</a>
 											<div class="size-col">10GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
@@ -153,7 +153,7 @@ Confirm that the options you have selected are correct</p>
 									<li class="public-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Fedora</a>
+											<a href="" class="name-col">Fedora (by Athina)</a>
 											<div class="size-col">10GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
@@ -180,7 +180,7 @@ Confirm that the options you have selected are correct</p>
 									<li class="shared-images">
 										<div class="row">
 											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
-											<a href="" class="name-col">Fedora</a>
+											<a href="" class="name-col">Fedora (by Athina)</a>
 											<div class="size-col">3.67 GB</div>
 											<div class="btn-col"><a href="">details</a></div>
 										</div>
@@ -719,10 +719,9 @@ Confirm that the options you have selected are correct</p>
 			<div id="vm-connect" class="reveal-modal medium">
 				<p>A direct connection to this machine can be established using the<a href="http://en.wikipedia.org/wiki/Secure_Shell" title=""> SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
 				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
-				
 				<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
 				<p>Alternatively you can connect to your VM via <a href="#" title="">Console</a> (slow connection - meant only for troubleshooting.</p>
-		  		<a class="close-reveal-modal" title="close window">&#215;</a>
+				<a class="close-reveal-modal" title="close window">X</a>
 			</div>
 			<div id="start-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
@@ -748,8 +747,8 @@ Confirm that the options you have selected are correct</p>
 		<section class="actions-bar clearfix">
 			<h2>Virtual Machines</h2>
 			<div class="view-type">
-				<a href="" class="list"><span class="snf-listview "></span></a>
-				<a href="" class="grid"><span class="snf-gridview current"></span></a>
+				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
+				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
 			</div>
 			<div class="filter-menu">
 				<a class="filter" href="">Filter</a>
@@ -788,8 +787,8 @@ Confirm that the options you have selected are correct</p>
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="" data-reveal-id="start-confirm">Start</a></li>
-										<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+										<li><a href="" class="temp-build">Start</a></li>
+										<li><a href="" data-reveal-id="shutdown-confirm" data-animation="fade">Shutdown</a></li>
 										<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
 										<li><a href=""data-reveal-id="destroy-vm-confirm">Destroy</a></li>
 										<li><a href="" data-reveal-id="tba">Option i</a></li>
@@ -814,6 +813,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os">unknown</span>
 							</div>
 							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class= "status">
 								<span class="state"><a href="" >BUILDING</a></span>
 								<span class="logs">798.56 MB of 4.33 GB (18%)</span>
@@ -853,6 +856,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os">unknown</span>
 							</div>
 							<h4>short name</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class="tags">
 							</div>
 							<div class= "status">
@@ -892,6 +899,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os fedora">fedora</span>
 							</div>
 							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class= "status">
 							</div>
 							<div class="tags">
@@ -929,6 +940,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os kubuntu">kubuntu</span>
 							</div>
 							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class= "status">
 								<span class="state">REBOOTING</span>
 							</div>
@@ -969,6 +984,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os kubuntu">kubuntu</span>
 							</div>
 							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class= "status">
 								<span class="state">STARTING</span>
 							</div>
@@ -1009,6 +1028,10 @@ Confirm that the options you have selected are correct</p>
 								</div>
 							</div>
 							<h4>short name</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class= "status">
 								<span class="state">SHUTTING DOWN</span>
 							</div>
@@ -1049,6 +1072,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os kubuntu">kubuntu</span>
 							</div>
 							<h4>short name</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 
 							<div class= "status">
 								<span class="state">RUNNING</span>
@@ -1091,6 +1118,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os fedora">fedora</span>
 							</div>
 							<h4>short name</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class= "status">
 							</div>
 							<div class="tags">
@@ -1128,6 +1159,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os fedora">fedora</span>
 							</div>
 							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class="tags">
 								<a href="" class="tag1 has-tip" data-tooltip title="Tooltip1">&nbsp;</a>
 								<a href="" class="tag2 has-tip" data-tooltip title="Tooltip2">&nbsp;</a>
@@ -1166,6 +1201,10 @@ Confirm that the options you have selected are correct</p>
 								<span class="os fedora">fedora</span>
 							</div>
 							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" title="connect"><span class="snf-lightning"></span></a>
+								<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+							</div>
 							<div class="tags">
 								<a href="" class="tag1 has-tip" data-tooltip title="Tooltip1">&nbsp;</a>
 								<a href="" class="tag2 has-tip" data-tooltip title="Tooltip2">&nbsp;</a>
@@ -1176,11 +1215,11 @@ Confirm that the options you have selected are correct</p>
 					</li>
 				</ul>
 				<div class="lt-bar">
-					<ul>
+					<ul class="lt-actions">
 						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
-						<li class="running"><a href="#" title="">Reboot</a></li>
-						<li class="running"><a href="#" title="">Shutdown</a></li>
-						<li class="both"><a href="#">Destroy</a></li>
+						<li class="running"><a href="#" title="" data-reveal-id="reboot-confirm">Reboot</a></li>
+						<li class="running"><a href="#" title="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+						<li class="both"><a href="#" data-reveal-id="destroy-vm-confirm">Destroy</a></li>
 						<li class="off"><a href="#">Start</a></li>
 						 <!-- in case we want an action always activated
 						<li class="pernament"><a href="" class="active">Action</a></li> -->

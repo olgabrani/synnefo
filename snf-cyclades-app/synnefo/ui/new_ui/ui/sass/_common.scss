@@ -109,9 +109,9 @@
 		width:12px;
 		height:12px;
 		margin:0 3px;
-		&.tag1 { background-color:$secondary-color;}
-		&.tag2 { background-color:$third-color;}
-		&.tag3 { background-color:$success-color;}
+		&.tag1 { background-color:$error-color;}
+		&.tag2 { background-color:$success-color;}
+		&.tag3 { background-color:#25bfda;}
 	}
 }
 
