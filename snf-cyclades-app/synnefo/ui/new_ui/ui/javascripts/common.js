@@ -250,7 +250,9 @@ ui.expandDownArea = function(arrow_link, area) {
 
 $(document).ready(function(){
 
-    ui.inactiveActions();
+    if($('.vms.entities').length!=0){
+        ui.inactiveActions();
+    };
     ui.setSidebarHeight();
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;
@@ -469,7 +471,7 @@ $(document).ready(function(){
     })
 
     //temp function to preventDefault of links in modal
-    $('.reveal-modal a:not(".close-reveal-modal")').click(function(e){
+     $('.reveal-modal a:not(".close-reveal-modal, .generate-key-btn, .import-key-btn")').click(function(e){
         e.preventDefault();
         $('a.close-reveal-modal').trigger('click');
     });

@@ -668,54 +668,90 @@ Confirm that the options you have selected are correct</p>
 		</section>
 		<section class="overlay-area-reveal">
 			<div id="sshkeys-wizard" class="reveal-modal medium secondary-wizard">
-				<div></div>
-				<h2>SSH keys</h2>
-				<a class="close-reveal-modal close" title="close"><span class="snf-close"></span></a>
-				<p>You can use SSH keys to establish a secure connection between your computer and your virtual machines.<br>
-				Note: SSH keys are supported only for Linux machines.</p>
-				<p>Click "generate new" to create a new SSH key pair.</p>
-				<p>Click "import/add" to import your public key from your home machine or to copy/paste its contents to ~okeanos.</p>
-				<p class="buttons"><a href="" class="btn4 generate-key-btn">generate</a><a href="" class="btn4 import-key-btn">add/import</a></p>
-				<div class="generate-key-area">
-					<p>clock tba</p>
-					<p>
-						Your new public key has been added.<br>
-						To download your *private key* click here.
-					</p>
-					<p>
-						Note: We do not keep it! I f you don't download now you cannot access it in the future.
-					</p>
-				</div>
-				<div class="import-key-area">
-					<div class="key-name">
-						<label>Key name</label>
-						<input>
-						<div class="error-msg"></div>
-					</div>
-					<div class="key-content">
-						<label>Key content</label>
-						<div class="error-msg"></div>
-						<input>
-					</div>
-					<div class="upload-key">
-						<label>Import from file (header maybe?)</label>
-							<p class="buttons">
-								<a href="" class="browse-files dz-clickable">browse files</a>
-							</p>
-						<form action="#" class="dropzone" id="files-dropzone">
-							<p>sto plai?</p>
-							<ul class="files dropzone-files"></ul>
-							<div class="dz-default dz-message"><span></span></div>
-						</form>
-						<p class="buttons"><a href="" class="btn4">Cancel</a><a href="" class="btn4">Submit</a></p>
-					</div>
-				</div>
-				<h3>Your SSH public keys</h3>
-				<ul>
-					<li><div>key name</div><div><a href="">show key</a><a href="">edit</a><a href="">remove</a></div></li>
-				</ul>
-				<p class="buttons"><a href="" class="btn4">OK</a></p>
-			</div>
+                <h2>SSH keys</h2>
+                <a class="close-reveal-modal close" title="close">X</a>
+                <p>You can use SSH keys to establish a secure connection between your computer and your virtual machines.<br>
+                Note: SSH keys are supported only for Linux machines.</p>
+                <p>Click "generate new" to create a new SSH key pair.</p>
+                <p>Click "import/add" to import your public key from your home machine or to copy/paste its contents to ~okeanos.</p>
+                <p class="buttons"><a href="" class="btn4 generate-key-btn">generate</a><a href="" class="btn4 import-key-btn">add/import</a></p>
+                <div class="generate-key-area">
+                    <p>clock tba</p>
+                    <p>
+                        Your new public key has been added.<br>
+                        To download your *private key* click here.
+                    </p>
+                    <p>
+                        Note: We do not keep it! I f you don't download now you cannot access it in the future.
+                    </p>
+                </div>
+                <div class="import-key-area">
+                    <div class="key-name">
+                    <h4>Key name</h4>
+                        <span class="input"><input class="tag_name" type="text" placeholder="my key"></span>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="key-content">
+                        <h4>Key content</h4>
+                        <div class="error-msg"></div>
+                        <textarea></textarea>
+                    </div>
+                    <div class="upload-key">
+                        <label>Import from file (header maybe?)</label>
+                            <p class="buttons">
+                                <a href="" class="browse-files dz-clickable">browse files</a>
+                            </p>
+                        <form action="#" class="dropzone" id="files-dropzone">
+                            <p>sto plai?</p>
+                            <ul class="files dropzone-files"></ul>
+                            <div class="dz-default dz-message"><span></span></div>
+                        </form>
+                        <p class="buttons"><a href="" class="btn4">Cancel</a><a href="" class="btn4">Submit</a></p>
+                    </div>
+                </div>
+                <h3>Your SSH public keys</h3>
+                <ul>
+                    <li>
+                        <div class="name-col">key name 1</div>
+                        <div class="actions-col">
+                            <a href="" class="show-key">key</a>
+                            <a href="" class="show-fingerprint">fingerprint</a>
+                            <a href="" class="edit">edit</a>
+                            <a href="">remove</a>
+                        </div>
+                        <div class="import-key-area">
+                            <div class="key-name">
+                                <label>key name 1</label>
+                                <span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
+                            </div>
+                            <div class="error-msg"></div>
+                            <div class="key-content">
+                            <textarea></textarea>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="name-col">key name 2</div>
+                        <div class="actions-col">
+                            <a href="" class="show-key">key</a>
+                            <a href="" class="show-fingerprint">fingerprint</a>
+                            <a href="" class="edit">edit</a>
+                            <a href="">remove</a>
+                        </div>
+                        <div class="import-key-area">
+                            <div class="key-name">
+                                <label>key name 2</label>
+                                <span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
+                            </div>
+                            <div class="error-msg"></div>
+                            <div class="key-content">
+                                <label>Key name</label>
+                                <textarea></textarea>
+                            </div>
+                    </li>
+                </ul>
+                <p class="buttons"><a href="" class="btn4">OK</a></p>
+            </div>
+
 			<div id="vm-connect" class="reveal-modal medium">
 				<p>A direct connection to this machine can be established using the<a href="http://en.wikipedia.org/wiki/Secure_Shell" title=""> SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
 				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
@@ -751,12 +787,12 @@ Confirm that the options you have selected are correct</p>
 				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
 			</div>
 			<div class="filter-menu">
-				<a class="filter" href="">Filter</a>
+				<div><a class="filter" href="">Filter</a></div>
 				<ul class="options">
-					<li><a href=""> set an option</a></li>
-					<li><a href=""> set an option</a></li>
-					<li><a href=""> set an option</a></li>
-					<li><a href=""> set an option</a></li>
+					<li><a href="">option 1</a></li>
+					<li><a href="">option 2</a></li>
+					<li><a href="">option 3</a></li>
+					<li><a href="">option 4</a></li>
 				</ul>
 			</div>
 			<div id="hd-search" class="hd-search">
@@ -911,6 +947,7 @@ Confirm that the options you have selected are correct</p>
 						</div>
 					</li>
 					<li data-status="rebooting" class="rebooting">
+						<a href="" class="btn5 temp">animation</a>
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">

@@ -77,6 +77,13 @@
 			&.fedora { background-image:url('../images/os-fedora.png'); }
 		}
 	}
+	// temp 
+	.btn5.temp {
+			color:blue;
+			padding: 0 4px;
+			position: absolute;
+			right: 0;
+		}
 	.off {
 		@include stateColor($vm-off-color);
 	}
@@ -91,23 +98,8 @@
 	}
 	.rebooting {
 		@include stateColor($vm-rebooting-color);
-		// temp
-		.btn5.temp {
-			color: #5c8fe1;
-			border-color: #5c8fe1;
-			padding: 0 4px;
-			position: absolute;
-			right: 0;
-		}
 	}
 	.building {
-		// temp 
-		.btn5.temp {
-			color:blue;
-			padding: 0 4px;
-			position: absolute;
-			right: 0;
-		}
 		.img-wrap {
 			.snf-PC_fill {
 				display: block;
