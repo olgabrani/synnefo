@@ -30,7 +30,7 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // We use these as default colors throughout
 $primary-color: #919194;
 $secondary-color: #30c79e;
-$third-color: #d7145a;
+$third-color: #30c79e;
 $overlay-color: #485057;
 $overlay-color-top:#636a70;
 $overlay-darker-color:#33383D;
@@ -843,8 +843,8 @@ $reveal-modal-padding: emCalc(50px) emCalc(100px) emCalc(20px);
 
 // We use these to style the reveal close button
 $reveal-close-font-size: emCalc(18px);
-$reveal-close-top: emCalc(40px);
-$reveal-close-side: emCalc(40px);
+$reveal-close-top: emCalc(50px);
+$reveal-close-side: emCalc(50px);
 $reveal-close-color: #fff;
 // $reveal-close-weight: bold;
 

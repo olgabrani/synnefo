@@ -67,6 +67,29 @@ ui.entitiesActionsEnabled = function(){
     }
 }
 
+ui.inactiveActions = function() {
+
+    // Availble actions: connect, reboot, shut, destroy, start
+    // These actions will be DISABLED
+    var statesActions ={
+        'off'      : ['connect', 'reboot', 'shut'],
+        'error'    : ['connect', 'reboot', 'shut', 'start'],
+        'building' : ['reboot', 'start'],
+        'running'  : ['start'],
+        'rebooting': ['start'],
+        'starting' : ['start'],
+        'shutting' : ['connect', 'reboot', 'shut']
+    } ;
+
+    _.each (statesActions, function(val, key) {
+        _.each(val, function(value) {
+            var el = '.' + key + ' .' + value;
+            $(el).addClass('inactive');
+        });
+    })
+}
+
+
 /*
 * In order for the editable value functionality to work, the html markup
 * should be:
@@ -227,6 +250,7 @@ ui.expandDownArea = function(arrow_link, area) {
 
 $(document).ready(function(){
 
+    ui.inactiveActions();
     ui.setSidebarHeight();
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;
@@ -246,10 +270,16 @@ $(document).ready(function(){
     });
 
     $('.entities a').click(function(){
-        if ($(this).attr('data-reveal-id')) {
+        if ($(this).attr('data-reveal-id') && !($(this).hasClass('inactive'))) {
             $('.entities li .more').hide();
         }
     });
+
+    $('.inactive').click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+     })
+
 
     $('.lt-actions a:not(.active)').click(function(e){
         e.preventDefault();
@@ -419,6 +449,7 @@ $(document).ready(function(){
         }
         ui.entitiesActionsEnabled();
      });
+
 
     // set filter visible
     $('.filter-menu .filter').click(function(e) {

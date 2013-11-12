@@ -360,6 +360,10 @@
 	}
 }
 
-#temp {
-	background:url(../images/temp.png) no-repeat left top;
+.inactive {
+	color:$primary-color!important;
+	&:hover {
+		color:$primary-color;
+		cursor:default;
+	}
 }
