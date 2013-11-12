@@ -56,11 +56,8 @@
 		.status {
 			font-size: emCalc(12px);
 			line-height:140%;
-			a {
-				color: $secondary-color;
-			}
 			span {
-				color: $secondary-color;
+				color: $vm-active-color;
 				display: block;
 			}
 		}
@@ -88,12 +85,8 @@
 						text-align: left;
 						padding: 5px 5px 5px 30px;
 						a {
-							color: $body-font-color;
 							display: block;
 							width:100%;
-							&:hover {
-								color:  $secondary-color;
-							}
 						}
 					}
 				}
@@ -123,14 +116,13 @@
 		}
 		h4 {
 			font-size: emCalc(12px);
-			color:$body-font-color;
 			overflow: hidden;
 			margin-bottom: 4px;
 			height: 32px;
 			font-weight: normal;
 		}
 		&.add-new {
-			background-color: $secondary-color;
+			background-color: $link-color-hover;
 			@include transition(background-color, 300ms, linear);
 			.container {
 				.img-wrap {
@@ -139,7 +131,7 @@
 					}
 					.symbol {
 						background-image: none;
-						color: $secondary-color;
+						color: $link-color-hover;
 						font-size: 30px;
 						text-indent: 0;
 					}
@@ -149,13 +141,13 @@
 				}
 			}
 			&:hover {
-				background-color: $overlay-color;
+				background-color: $link-color;
 				@include transition(background-color, 300ms, linear);
 				cursor: pointer;
 				.container {
 					.img-wrap {
 						.symbol {
-							color: $overlay-color;
+							color: $link-color;
 						}
 					}
 				}
@@ -177,12 +169,6 @@
 		margin-left:-($row-width - 2*$main-padding-horizontal)/2;
 		@include box-shadow(3px -2px 8px #ccc);
 		background:#fff;
-		a {
-			color:$overlay-color;
-			&:hover{
-				color:$secondary-color;
-			}
-		}
 		ul {
 			list-style: none outside none;
 			font-size:emCalc(12px);
@@ -195,28 +181,26 @@
 						margin-right: 5px;
 						position: relative;
 						top: 2px;
-						&.snf-checkbox-checked {
-							color:$secondary-color;
-						}
 					}
 					em {
 						display: none;
 						font-style: normal;
 					}
 					&:hover {
+						color: $link-color-hover;
 						cursor: pointer;
 					}
 				}
 				a {
-					color:$primary-color;
+					color:$inactive-color;
 					&:hover {
-						color:$primary-color;
+						color:$inactive-color;
 						cursor:default;
 					}
 					&.active {
-						color:$body-font-color;
+						color:$link-color;
 						&:hover {
-							color:$secondary-color;
+							color:$link-color-hover;
 							cursor: pointer;
 						}
 					}
@@ -248,7 +232,7 @@
 				float:left;
 				&:hover {
 					cursor: pointer;
-					color:$secondary-color;
+					color:$link-color-hover;
 				}
 			}
 			.img-wrap {
@@ -301,13 +285,6 @@
 				float: left;
 				width: $info-w;
 				font-size: emCalc(12px);
-				color:$overlay-color;
-				a {
-					color: $overlay-color;
-					&:hover {
-						color:$secondary-color;
-					}
-				}
 			}
 			.actions {
 				float: left;
@@ -317,10 +294,6 @@
 				top:-4px;
 				margin:0 10px;
 				a {
-					color:$secondary-color;
-					&:hover {
-						color:$overlay-color;
-					}
 					&:first-child {
 						margin-right:5px;
 					}
@@ -328,7 +301,7 @@
 			}
 			&.add-new {
 				&:hover {
-					background: $overlay-color;
+					background: $link-color-hover;
 				}
 				.check {
 					visibility: hidden;
@@ -344,7 +317,7 @@
 					}
 				}
 			}
-			&[data-status="building"] {
+			&.building {
 				.img-wrap {
 					.incomplete {
 						width:$list-vm-height;
@@ -357,13 +330,5 @@
 				}
 			}
 		}
-	}
-}
-
-.inactive {
-	color:$primary-color!important;
-	&:hover {
-		color:$primary-color;
-		cursor:default;
 	}
 }

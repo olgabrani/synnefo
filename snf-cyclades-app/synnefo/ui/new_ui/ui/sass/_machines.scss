@@ -9,15 +9,6 @@
 		pulse 1s infinite;
 }
 
-.list-view .build-progress {
-	animation:
-		progress_animation_list 5s infinite,
-		pulse 1s infinite;
-	-webkit-animation:
-		progress_animation_list 5s infinite,
-		pulse 1s infinite;
-}
-
 .reboot-progress {
 	animation: 
 		reboot_pulse 1s infinite;
@@ -34,21 +25,12 @@
 	}
 }
 
-@include keyframes( progress_animation_list) {
-	from {
-		width: 0%
-	}
-	to {
-		width: $list-vm-height;
-	}
-}
-
 @include keyframes( pulse) {
 	from {
-		color: $secondary-color
+		color: $vm-active-color
 	}
 	to {
-		color: darken($secondary-color,10%)
+		color: darken($vm-active-color,10%)
 	}
 }
 
@@ -59,6 +41,17 @@
 	}
 	to {
 		color: darken($vm-rebooting-color,10%)
+	}
+}
+
+@mixin stateColor($color) {
+	.img-wrap {
+		.snf-PC_fill {
+			color:$color;
+		}
+	}
+	.status .logs, .status .state {
+		color: $color;
 	}
 }
 
@@ -84,47 +77,21 @@
 			&.fedora { background-image:url('../images/os-fedora.png'); }
 		}
 	}
-	[data-status="off"] {
-		.img-wrap {
-			.snf-PC_fill {
-				color: $vm-off-color;
-			}
-		}
-		.status .logs, .status .state {
-			color: $vm-off-color;
-		}
+	.off {
+		@include stateColor($vm-off-color);
 	}
-	[data-status="error"] {
-		.img-wrap {
-			.snf-PC_fill {
-				color: $vm-error-color;
-			}
-		}
-		.status .logs, .status .state a{
-			color: $vm-error-color;
-		}
+	.error {
+		@include stateColor($vm-error-color);
 	}
-	[data-status="shutting"] {
-		.img-wrap {
-			.snf-PC_fill {
-				color: $vm-shutting-color;
-			}
-		}
-		.status .logs, .status .state {
-			color: $vm-shutting-color;
-		}
+	.shutting {
+		@include stateColor($vm-shutting-color);
 	}
-	[data-status="starting"] {
-		.img-wrap {
-			.snf-PC_fill {
-				color: $vm-starting-color;
-			}
-		}
-		.status .logs, .status .state {
-			color: $vm-starting-color;
-		}
+	.starting {
+		@include stateColor($vm-starting-color);
 	}
-	[data-status="rebooting"] {
+	.rebooting {
+		@include stateColor($vm-rebooting-color);
+		// temp
 		.btn5.temp {
 			color: #5c8fe1;
 			border-color: #5c8fe1;
@@ -132,19 +99,11 @@
 			position: absolute;
 			right: 0;
 		}
-		.img-wrap {
-			.snf-PC_fill {
-				color: $vm-rebooting-color;
-			}
-		}
-		.status .logs, .status .state {
-			color: $vm-rebooting-color;
-		}
 	}
-	[data-status="building"] {
+	.building {
+		// temp 
 		.btn5.temp {
-			color: #5c8fe1;
-			border-color: #5c8fe1;
+			color:blue;
 			padding: 0 4px;
 			position: absolute;
 			right: 0;
@@ -155,7 +114,7 @@
 				overflow: hidden;
 			}
 			.incomplete {
-				color: #c7eae0;
+				color: $vm-building-color;
 				width:60px;
 			}
 			.complete {
@@ -165,13 +124,11 @@
 			}
 		}
 	}
-	 // there's no running
 }
 
 .vm {
 	.top {
 		.img-wrap {
-			//@include sprite('../images/vm-on.png', 112px, 116px);
 			display: inline-block;
 			height: 112px;
 			.snf-PC_fill {

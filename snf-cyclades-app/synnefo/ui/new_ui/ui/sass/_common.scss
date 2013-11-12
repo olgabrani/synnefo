@@ -66,11 +66,6 @@
   box-shadow: $shadows;
 }
 
-@mixin padding1-0 {
-	padding: 1px 0;
-}
-
-
 @mixin placeholder {
 	&.placeholder { @content; }
 	&:-moz-placeholder { @content; }
@@ -111,7 +106,7 @@
 		margin:0 3px;
 		&.tag1 { background-color:$error-color;}
 		&.tag2 { background-color:$success-color;}
-		&.tag3 { background-color:#25bfda;}
+		&.tag3 { background-color:$alert-color;}
 	}
 }
 
@@ -122,6 +117,8 @@
 	position: relative;
 	bottom: -5px;
 	margin-right: 20px;
+
+	//temp
 	&.tag4 { background-color: #ff5e4d;}
 	&.tag5 { background-color: #25bfda;}
 	&.tag6 { background-color: #fbf7c5;}
@@ -134,18 +131,23 @@
 
 
 a {
-	color:$primary-color;
-	&:hover {
-		color:$third-color;
+	color:$link-color;
+	&:hover, &.current, &.active  {
+		color:$link-color-hover;
 		@include transition(background, 300ms, ease-out);
 	}
 
 	
 }
 
-.more a .snf-checkbox-checked, .more a .snf-checkbox-unchecked{
-	color: $net-opt-area-color;
+.inactive {
+	color:$inactive-color!important;
+	&:hover {
+		color:$inactive-color;
+		cursor:default;
+	}
 }
+
 
 .btn1 {
 	border:1px solid $primary-color;
@@ -301,10 +303,6 @@ body {
 		a {
 			position: relative;
 			top:-5px;
-			&:focus {
-				border: 1px solid $secondary-color;
-				padding: 10px;
-			}
 		}
 		img {
 			max-height: 30px;			
@@ -321,17 +319,11 @@ body {
 		position:absolute;
 		top:25px;
 		right:$header-padding-horizontal;
-		a {
-			color:$overlay-color;
-			&:hover {
-				color:$secondary-color;
-			}
-		}
+
 		.wrap {
 			$wr-padd-top:12px;
-			border:1px solid $overlay-color;
+			border:1px solid $body-font-color;
 			background: white;
-			color:$overlay-color;
 			font-size:emCalc(12px);
 			padding:$wr-padd-top 30px;
 			line-height:100%;
@@ -362,15 +354,10 @@ body {
 	text-align:center;
 	height:$bar-height;
 	line-height:$bar-height;
-	color:$overlay-color;
 	background-color: lighten($primary-color,35%);
-	a {
-		color:$overlay-color;
-	}
 	h2 {
 		float: left;
 		margin:0 0 0 15px;
-		color: $overlay-color;
 		font-size: emCalc(12px);
 		line-height: $bar-height;
 		font-weight: normal;
@@ -425,15 +412,15 @@ body {
 		@include transition(width, 0.3s, linear);
 		-webkit-backface-visibility: hidden;
 		.hd-icon-search {
-			color: $primary-color;
 			display: block;
 			width: $bar-height;
 			height: $bar-height;
 			line-height: $bar-height;
 			float: right;
+			color: $link-color;
 			&:hover {
+				color: $link-color-hover;
 				cursor:pointer;
-				color:$secondary-color;
 			}
 			z-index:1;
 			position: relative;
@@ -442,7 +429,6 @@ body {
 		.hd-search-input {
 			border: transparent;
 			background-color: white;
-			color: $overlay-color;
 			padding: 0 10px;
 			width: 160px;
 			font-size: emCalc(10px);
@@ -452,9 +438,6 @@ body {
 			position: absolute;
 			top:4px;
 			left:0;
-			@include placeholder {
-				color:$overlay-color;
-			}
 		}
 		&.hd-open {
 			width: 190px;
@@ -481,18 +464,6 @@ body {
 		
 	}
 }
-.new-btn {
-	position: absolute;
-	left:$header-padding-horizontal;
-	bottom:0;
-	height:$bar-height;
-	a {
-		@extend .btn1;
-		span {
-			font-size:emCalc(20px);
-		}
-	}
-}
 
 /* Icons Navigation ----------------------------------------------- */
 
@@ -503,12 +474,6 @@ body {
 		margin-right:$icons-nav-margin-horizontal;
 		font-size: emCalc(26px);
 		line-height: 1em;
-		a {
-			color:$black;
-			&:hover,&.current {
-				color:$secondary-color;
-			}
-		}
 	}
 }
 

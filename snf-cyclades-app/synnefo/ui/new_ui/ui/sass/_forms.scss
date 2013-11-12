@@ -45,7 +45,7 @@
 		color: $wizard-base-font-color;
 		@include box-shadow(none);
 		@include placeholder {
-			color:$black;
+			color:$body-font-color;
 		}
 	}
 }
@@ -71,7 +71,7 @@
 }
 .wizard {
 	form.custom .custom.dropdown.medium {
-		background:$overlay-color;
+		background:$overlay-bg-color;
 		color:white;
 	}
 	form.custom .custom.dropdown .current {
@@ -82,7 +82,7 @@
 		height: 30px;
 	}
 	form.custom .custom.dropdown.open ul {
-		background:$overlay-color;
+		background:$overlay-bg-color;
 		color:white;
 	}
 	form.custom .custom.dropdown ul li {
@@ -90,10 +90,10 @@
 	}
 	form.custom .custom.dropdown ul li.selected {
 		color:white;
-		background:lighten($overlay-color,10%);
+		background:lighten($overlay-bg-color,10%);
 	}
 	form.custom .custom.dropdown ul li:hover {
-		background:lighten($overlay-color,20%);
+		background:lighten($overlay-bg-color,20%);
 		color:white;
 	}
 }

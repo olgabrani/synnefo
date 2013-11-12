@@ -27,14 +27,23 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // We use these to control text direction settings
 // $text-direction: ltr;
 
+// PALETTE
 // We use these as default colors throughout
-$primary-color: #919194;
-$secondary-color: #30c79e;
-$third-color: #30c79e;
-$overlay-color: #485057;
-$overlay-color-top:#636a70;
-$overlay-darker-color:#33383D;
-$black:#1a1a1a;
+$primary-color: #919194; // inactive grey
+$secondary-color: #30c79e; // green
+$third-color: #485057; // charbon black
+$color-1 : #25bfda; // light blue
+
+
+$overlay-bg-color: $third-color;
+$overlay-color-top: #636a70;
+$overlay-darker-color: #33383D;
+
+
+// color usage
+$inactive-color: $primary-color;
+$link-color: $third-color;
+$link-color-hover : $secondary-color;
 
 $alert-color: $secondary-color;
 $success-color: #00a551;
@@ -53,11 +62,11 @@ $vm-off-color: #4a5158;
 $vm-shutting-color: #666c6b;
 $vm-starting-color: #566db1;
 $vm-rebooting-color: #ffc54a;
+$vm-building-color: #c7eae0;
 $network-color: #79c79e;
 
 // wizard step2 colors
 $disabled-resource-color: #3a4046;
-$disabled-flavor-color: #495561;
 
 // wizard step3 colors
 $ssh-opt-area-color: #ff7049;
@@ -509,8 +518,8 @@ $crumb-slash: ">";
 // $custom-form-check-color: #222;
 
 // We use these to style the custom select form element.
-$custom-select-bg: $overlay-color;
-$custom-select-fade-to-color: $overlay-color;
+$custom-select-bg: $overlay-bg-color;
+$custom-select-fade-to-color: $overlay-bg-color;
 $custom-select-border-color: white;
 $custom-select-triangle-color: white;
 $custom-select-triangle-color-open: white;
@@ -1012,14 +1021,14 @@ $has-tip-border-bottom: 0 none;
 // $has-tip-font-weight: bold;
 // $has-tip-font-color: #333;
 $has-tip-border-bottom-hover: none;
-// $has-tip-font-color-hover: $primary-color;
+$has-tip-font-color-hover: $link-color-hover;
 $has-tip-cursor-type: inherit;
 
 $tooltip-padding: emCalc(2px) emCalc(12px);
 $tooltip-bg: #cecece;
 $tooltip-font-size: emCalc(12px);
 $tooltip-font-weight: normal;
-$tooltip-font-color: $black;
+$tooltip-font-color: $body-font-color;
 // $tooltip-line-height: 1.3;
 // $tooltip-close-font-size: emCalc(10px);
 // $tooltip-close-font-weight: normal;

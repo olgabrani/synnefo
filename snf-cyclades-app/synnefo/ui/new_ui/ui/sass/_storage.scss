@@ -83,20 +83,6 @@
 			}
 		}
 	}
-	.breadcrumbs {
-		li:first-child {
-			font-weight:bold;
-			a {
-				color:$black;
-				&:hover {
-					color:$secondary-color;
-				}
-			}
-		}
-		a:hover {
-			color: $secondary-color;
-		}
-	}
 }
 
 
