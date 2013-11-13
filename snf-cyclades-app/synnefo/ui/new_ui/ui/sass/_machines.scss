@@ -84,6 +84,12 @@
 			position: absolute;
 			right: 0;
 		}
+	// li for btns used to demonstrate general animations
+	.temp-for-btns {
+		.btn5.temp {
+			position: static;
+		}
+	}
 	.off {
 		@include stateColor($vm-off-color);
 	}

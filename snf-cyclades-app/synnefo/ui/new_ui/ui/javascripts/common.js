@@ -475,6 +475,28 @@ $(document).ready(function(){
         e.preventDefault();
         $('a.close-reveal-modal').trigger('click');
     });
+
+     // temp btn to show communication error message
+     $('.temp-for-btns .communication-error-btn').click(function(e) {
+         e.preventDefault();
+         e.stopPropagation();
+         console.log('hi');
+         $('.communication-error').animate({bottom: "30px"});
+     });
+
+     $('.communication-error a').click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('.communication-error').animate({bottom: "-150px"});
+     });
+
+     // $('body *:not(".communication-error, .communication-error *:not(a), .communication-error-btn")').click(function(e) {
+     //    e.stopPropagation();
+     //    console.log('t')
+     //    if($('.communication-error').css('bottom') == "30px") {
+     //        $('.communication-error').animate({bottom: "-150px"});
+     //    };
+     // })
 })
 
 

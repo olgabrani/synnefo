@@ -451,7 +451,7 @@ body.with-overlay {
 											font-style:normal;
 											font-weight:normal;
 											white-space: nowrap;
-											line-height: 14px;
+											line-height: 13px;
 										}
 									}
 									p {
@@ -459,6 +459,7 @@ body.with-overlay {
 										overflow:hidden;
 										min-height:40px;
 										font-size:11px;
+										line-height:11px;
 									}
 								}
 								.options-bar {
@@ -860,6 +861,29 @@ body.with-overlay {
 
 }
 
+.communication-error {
+	// display: none;
+	background-color: $error-color;
+	color: $wizard-base-font-color;
+	position: fixed;
+	bottom: -150px;
+	width: 100%;
+	// padding: 65px 140px 40px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	p {
+		text-align: center;
+		line-height: 2em;
+		margin: 0 auto;
+		max-width: 800px;
+		&.buttons {
+			margin-top:10px;
+			a:not(:first-child) {
+				margin-left: 15px;
+			} 
+		}
+	}
+}
 
 /* Responive ------------------------------------------------ */
 @media only screen and (max-width: $small-mobile) {
