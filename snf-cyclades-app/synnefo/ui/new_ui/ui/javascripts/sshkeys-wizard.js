@@ -1,4 +1,4 @@
-var wizard = $('#overlay3');
+var wizard = $('#sshkeys-wizard');
 $(document).ready(function(){
 	generateArea =wizard.find('.generate-key-area');
 	generateBtn =wizard.find('.generate-key-btn');
