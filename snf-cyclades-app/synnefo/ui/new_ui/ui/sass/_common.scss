@@ -465,6 +465,14 @@ body {
 	}
 }
 
+.no-vm {
+	.actions-bar {
+		.view-type, .hd-search, .filter {
+			display: none;
+		}
+	}
+}
+
 /* Icons Navigation ----------------------------------------------- */
 
 .icons-nav {
