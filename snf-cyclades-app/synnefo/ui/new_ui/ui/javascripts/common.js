@@ -181,6 +181,10 @@ Ajax request to submit form
 
     $('html').click(function(e) {
         resetForm(e, $('.editable a.cancel'));
+        // not sure if we want to hide the error window after every click in the ui
+        if($('.communication-error').css('bottom') == '0px') {
+            $('.communication-error').animate({bottom: "-151px"});
+        }
     });
 
 }
@@ -376,7 +380,6 @@ $(document).ready(function(){
     $('.overlay-area-custom').children('.close').click(function(e){
         e.preventDefault();
         e.stopPropagation();
-        console.log('blah')
         $(this).parents('.overlay-area-custom').hide();
         $(this).parents('.overlay-area-custom').find($('.overlay-div')).hide();
         $('body').removeClass('with-overlay');
@@ -470,33 +473,30 @@ $(document).ready(function(){
         $(this).siblings('.container').find('.snf-PC_fill').toggleClass('reboot-progress');
     })
 
-    //temp function to preventDefault of links in modal
-     $('.reveal-modal a:not(".close-reveal-modal, .generate-key-btn, .import-key-btn")').click(function(e){
-        e.preventDefault();
-        $('a.close-reveal-modal').trigger('click');
-    });
+    // //temp function to preventDefault of links in modal
+    // $('.reveal-modal a:not(".close-reveal-modal, .generate-key-btn, .import-key-btn")').click(function(e){
+    //     e.preventDefault();
+    //     $('a.close-reveal-modal').trigger('click');
+    // });
 
      // temp btn to show communication error message
-     $('.temp-for-btns .communication-error-btn').click(function(e) {
+    $('.temp-for-btns .communication-error-btn').click(function(e) {
          e.preventDefault();
          e.stopPropagation();
          console.log('hi');
-         $('.communication-error').animate({bottom: "30px"});
+         $('.communication-error').animate({bottom: "0px"});
      });
 
-     $('.communication-error a').click(function(e) {
+    $('.communication-error a').click(function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $('.communication-error').animate({bottom: "-150px"});
-     });
+        $('.communication-error').animate({bottom: "-151px"});
 
-     // $('body *:not(".communication-error, .communication-error *:not(a), .communication-error-btn")').click(function(e) {
-     //    e.stopPropagation();
-     //    console.log('t')
-     //    if($('.communication-error').css('bottom') == "30px") {
-     //        $('.communication-error').animate({bottom: "-150px"});
-     //    };
-     // })
+    });
+    $('.communication-error').click(function(e) {
+        e.stopPropagation();
+        console.log('1')
+    });
 })
 
 

@@ -14,17 +14,26 @@ body .overlay-wrapper {
 				&.buttons {
 					text-align: center;
 					a {
+						background-color: white;
 						text-decoration: none;
-						color: white;
+						color: $secondary-color;
+						border-color: $secondary-color;
 						&:first-child {
 							margin-right:20px;
 						}
 						&:hover {
-							color: $secondary-color;
-							text-decoration: none;
+							// color: $secondary-color;
+							// border-color: $secondary-color;
+							// background-color: white;
+							// text-decoration: none;
 						}
 						&.current {
-							color: $secondary-color;
+							color: white;
+							background-color: $secondary-color;
+							border-color: white;
+						}
+						&.close-reveal-modal {
+							position: initial;
 						}
 					}
 				}

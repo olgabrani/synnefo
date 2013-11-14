@@ -866,11 +866,12 @@ body.with-overlay {
 	background-color: $error-color;
 	color: $wizard-base-font-color;
 	position: fixed;
-	bottom: -150px;
+	bottom: -151px;
+	left: 0px;
 	width: 100%;
-	// padding: 65px 140px 40px;
 	padding-top: 30px;
 	padding-bottom: 15px;
+	z-index: 10;
 	p {
 		text-align: center;
 		line-height: 2em;

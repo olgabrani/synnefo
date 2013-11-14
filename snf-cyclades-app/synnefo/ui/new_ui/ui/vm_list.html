@@ -457,7 +457,7 @@ Confirm that the options you have selected are correct</p>
 													</li>
 												</ul>
 												<div>
-													<a href="" class="btn5" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
+													<a href="" class="btn5" data-reveal-id="sshkeys-wizard" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
 												</div>
 											</div>
 										</div>
@@ -684,6 +684,7 @@ Confirm that the options you have selected are correct</p>
                     <p>
                         Note: We do not keep it! I f you don't download now you cannot access it in the future.
                     </p>
+                <p class="buttons"><a href="" class="btn4">ok</a></p>
                 </div>
                 <div class="import-key-area">
                     <div class="key-name">
@@ -719,16 +720,6 @@ Confirm that the options you have selected are correct</p>
                             <a href="" class="edit">edit</a>
                             <a href="">remove</a>
                         </div>
-                        <div class="import-key-area">
-                            <div class="key-name">
-                                <label>key name 1</label>
-                                <span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
-                            </div>
-                            <div class="error-msg"></div>
-                            <div class="key-content">
-	                            <textarea></textarea>
-                        	</div>
-                    	</div>
                     </li>
                     <li>
                         <div class="name-col">key name 2</div>
@@ -738,20 +729,9 @@ Confirm that the options you have selected are correct</p>
                             <a href="" class="edit">edit</a>
                             <a href="">remove</a>
                         </div>
-                        <div class="import-key-area">
-                            <div class="key-name">
-                                <label>key name 2</label>
-                                <span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
-                            </div>
-                            <div class="error-msg"></div>
-                            <div class="key-content">
-                                <label>Key name</label>
-                                <textarea></textarea>
-                            </div>
-                        </div>
-	                </li>
+                    </li>
                 </ul>
-                <p class="buttons"><a href="" class="btn4">OK</a></p>
+                <p class="buttons"><a href="" class="btn4 close-reveal-modal">close</a></p>
             </div>
 
 			<div id="vm-connect" class="reveal-modal medium">
