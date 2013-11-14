@@ -45,6 +45,8 @@ $inactive-color: $primary-color;
 $link-color: $third-color;
 $link-color-hover : $secondary-color;
 
+$border-color-1 : lighten($primary-color,10%);
+
 $alert-color: $secondary-color;
 $success-color: #00a551;
 $warning-color: #49DDC5;
@@ -99,6 +101,10 @@ $btn-height: 30px;
 // list-view 
 $lt-bar-width: 110px;
 $list-vm-height: 34px;
+
+// details view
+$details-top-height: 160px;
+$details-lt-width: 290px;
 
 
 // We use these to control inset shadow shiny edges and depressions.

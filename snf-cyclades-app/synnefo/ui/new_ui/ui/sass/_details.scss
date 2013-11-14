@@ -1,109 +1,83 @@
 /* Detailed view for VMs, networks  */
 
 .details {
+	$details-top-title-h : 0.4 * $details-top-height;
+	$details-top-more-h : ( $details-top-height - $details-top-title-h )/2;
+	$details-top-more-padding-lt : 20px;
 	position:relative;
-	.top {
-		padding:70px $header-padding-horizontal;
+	.lt {
+		width: $details-lt-width;
+		float: left;
 		text-align: center;
+		padding:20px 0;
+		border-right: 1px solid $border-color-1;
+		height: $details-top-height;
+	}
+	.rt {
+		overflow: hidden;
+	}
+	.top {
+		@extend .clearfix;
+		border-bottom:1px solid $border-color-1;
 		.img-wrap {
-			margin-bottom: 20px;
 			position: relative;
+			display: inline-block;
+			width:90px;
+			.snf-PC_fill {
+				font-size:90px;
+			}
+			.os {
+				top:12px;
+			}
+		}
+		.title {
+			height: $details-top-title-h;
+			padding: 0 0 0 $details-top-more-padding-lt; 
+		}
+		.actions, .tabs {
+			border-top: 1px solid $border-color-1;
+			height: $details-top-more-h;
+			line-height: $details-top-more-h;
+			padding: 0 0 0 $details-top-more-padding-lt; 
 		}
 		.actions {
-			ul {
-				padding:1em 1em 0;
-				margin:0;
-				text-align:center;
-				li {
-					list-style: none outside none;
-					display: inline-block;
-					margin:0 30px;
-					min-width: 112px;
-					a {
-						@extend .btn1;
-					}
-
-				}
-			}
+			font-size: emCalc(14px);
 		}
-	}
-	.info {
-		position: relative;
-		.section_header {
-			float: left;
-			width:22%;
-			margin-right: 2%;
-			font-weight: bold;
+		.tabs {
+			font-size: emCalc(22px);
 		}
-		.right_side {
-			overflow: hidden;
-			width: 76%;
-			.middle_side {
-				float:left;
-				min-width:70%;
-				.action_links {
-					display: inline-block;
-					a {
-						margin-right:5px;
-					}
-				}
-				p {
-					margin-bottom:0;
-				}
-				.info_simple {
-					display: inline-block;
-					margin-right: 10px;
-					width:40%;
-				}
-			}
-			.btn-img {
-				float:right;
-				min-width: 180px;
-				text-align: center;
-			}
-			.set {
-				margin-bottom:1em;
-			}
-
-			
-		}
-		.btn-img {
-			float:right;
-		}
-		
-
-		dl {
-			margin:0;
-			dt {
+		ul {
+			list-style: none outside none;
+			padding:0;
+			margin: 0;
+			li {
 				display: inline-block;
-				width:25%;
-
-			}
-			dd {
-				width:74%;
-				display: inline-block;
-				.os {
-					height:16px;
-					vertical-align: baseline;
-				}
+				padding: 0 20px 0 0 ;
+				margin: 0;
+				line-height: $details-top-more-h;
 			}
 		}
-	}
-	.close {
-		position: absolute;
-		right:$header-padding-horizontal;
-		top:$header-padding-horizontal + 43px;
-		span {
-			font-size:32px;
-		}	
-		&:hover {
+		h1 {
+			font-size: emCalc(16px);
+			margin: 0;
+			padding-top: 16px;
 			span {
-				color:darken($primary-color,10%);
+				font-size: emCalc(12px);
+				display: block;
+				font-weight: normal;
 			}
 		}
 	}
-	.graph_container {
-		padding-bottom: 2em;
+	.info-simple {
+		padding: 20px 0 0 $details-lt-width;
+		.info-block {
+			padding:$details-top-more-padding-lt;
+		}
+	}
+	.content {
+		h2 {
+			font-size: emCalc(16px);
+		}
 	}
 }
 

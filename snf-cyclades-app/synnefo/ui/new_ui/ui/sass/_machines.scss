@@ -50,76 +50,83 @@
 			color:$color;
 		}
 	}
-	.status .logs, .status .state {
+	.status {
 		color: $color;
 	}
 }
 
-.vms .items-list {
-	.img-wrap {
-		width: 60px;
-		span {
-			&:hover {
-				cursor: pointer;
-			}
-		}
-		.snf-PC_fill {
-			font-size: 60px;
-			color: $vm-active-color;
-		}
-		.os {
-			@include sprite('../images/os-unknown.png', 22px, 22px);
-			position: absolute;
-			top:8px;
-			left:19px;
-			&.windows { background-image:url('../images/os-windows.png'); }
-			&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
-			&.fedora { background-image:url('../images/os-fedora.png'); }
+.img-wrap {
+	width: 60px;
+	span {
+		&:hover {
+			cursor: pointer;
 		}
 	}
-	// temp 
+	.snf-PC_fill {
+		font-size: 60px;
+		color: $vm-active-color;
+	}
+	.os {
+		@include sprite('../images/os-unknown.png', 22px, 22px);
+		position: absolute;
+		top:8px;
+		left:50%;
+		margin-left:-11px;
+		&.windows { background-image:url('../images/os-windows.png'); }
+		&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+		&.fedora { background-image:url('../images/os-fedora.png'); }
+	}
+}
+// temp 
+.btn5.temp {
+		color:blue;
+		padding: 0 4px;
+		position: absolute;
+		right: 0;
+	}
+// li for btns used to demonstrate general animations
+.temp-for-btns {
 	.btn5.temp {
-			color:blue;
-			padding: 0 4px;
-			position: absolute;
-			right: 0;
+		position: static;
+	}
+}
+.running {
+	@include stateColor($vm-active-color);
+}
+.off {
+	@include stateColor($vm-off-color);
+}
+.error {
+	@include stateColor($vm-error-color);
+}
+.shutting {
+	@include stateColor($vm-shutting-color);
+}
+.starting {
+	@include stateColor($vm-starting-color);
+}
+.rebooting {
+	@include stateColor($vm-rebooting-color);
+}
+
+.building {
+	@include stateColor($vm-active-color);
+}
+
+.building {
+	.img-wrap {
+		.snf-PC_fill {
+			display: block;
+			overflow: hidden;
 		}
-	// li for btns used to demonstrate general animations
-	.temp-for-btns {
-		.btn5.temp {
-			position: static;
+		.incomplete {
+			color: $vm-building-color;
+			width:60px;
 		}
-	}
-	.off {
-		@include stateColor($vm-off-color);
-	}
-	.error {
-		@include stateColor($vm-error-color);
-	}
-	.shutting {
-		@include stateColor($vm-shutting-color);
-	}
-	.starting {
-		@include stateColor($vm-starting-color);
-	}
-	.rebooting {
-		@include stateColor($vm-rebooting-color);
-	}
-	.building {
-		.img-wrap {
-			.snf-PC_fill {
-				display: block;
-				overflow: hidden;
-			}
-			.incomplete {
-				color: $vm-building-color;
-				width:60px;
-			}
-			.complete {
-				width: 0%;
-				position: relative;
-				top: -60px;
-			}
+		.complete {
+			width: 0%;
+			position: relative;
+			top: -60px;
 		}
 	}
 }
