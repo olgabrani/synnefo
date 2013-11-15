@@ -72,6 +72,48 @@
 		padding: 20px 0 0 $details-lt-width;
 		.info-block {
 			padding:$details-top-more-padding-lt;
+			background: url('../images/dashed_atom-x.png') repeat-x bottom;
+			dl {
+				margin-bottom: 0;
+				font-size: 14px;
+				dt {
+					display: inline-block;
+					width: 42%;
+					vertical-align: top;
+					font-weight: normal;
+					.icon {
+						width: 40px;
+						display: inline-block;
+						font-size: 24px;
+					}
+				}
+				dd {
+					display: inline-block;
+					width: 45%;
+					margin-bottom: 1em;
+				}
+			}
+			&.tags {
+				text-align:left;
+				.editable {
+					min-width: 30%;
+					display: inline-block;
+					input[type="text"] {
+						width: 100px;
+					}
+				}
+				.buttons {
+					margin-top: 50px;
+					*:first-child {
+						margin-right: 15px;
+					}
+				}
+			}
+			&.charts {
+				.graph_container {
+					margin-bottom: 30px;
+				}
+			}
 		}
 	}
 	.content {

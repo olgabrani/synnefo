@@ -9,6 +9,7 @@
     <title>Synnefo | VM details</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/farbtastic.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
@@ -103,9 +104,108 @@
 				</section>
 				<section class="content info-simple">
 					<section class="info-block">
-						<h2>Header 2</h2>
-						<p>whatever</p>
+						<h2>info</h2>
+						<dl>
+							<dt><span class="snf-cpu icon"></span>CPUs</dt>
+							<dd>4</dd>
+							<dt><span class="snf-ram icon"></span>RAM</dt>
+							<dd>512 MB</dd>
+							<dt><span class="snf-HDD icon"></span>System Disk Size</dt>
+							<dd>4GB</dd>
+							<dt><span class="snf-HDD icon"></span>Storage Type</dt>
+							<dd>Archipelago</dd>
+							<dt><span class="snf-images icon"></span>Image Name</dt>
+							<dd>Fedora</dd>
+							<dt><span class="snf-images icon"></span>Image Size</dt>
+							<dd>3.68 GB</dd>
+							<dt><span class="snf-ram icon"></span>IPv4</dt>
+							<dd>83.212.96.152</dd>
+							<dt><span class="snf-ram icon"></span>IPv4</dt>
+							<dd>83.212.96.153</dd>
+							<dt><span class="snf-ram icon"></span>IPv6</dt>
+							<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
+						</dl>
 					</section>
+				<section class="info-block tags">
+						<h2>tags</h2>
+						<div class="editable">
+							<a href="" class="tag tag1 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
+							<span class="input-txt">Tag Name</span>
+							<input type="text">
+							<span class="editbuttons">
+								<a href="#" class="edit"><span class="snf-edit-1"></span></a>
+								<a href="#" class="save"><span class="snf-ok-sign"></span></a>
+								<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
+							</span>
+							<a class="delete"><span>X</span></a>
+						</div>
+						<div class="editable">
+							<a href="" class="tag tag2 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
+							<span class="input-txt">Tag Name</span>
+							<input type="text">
+							<span class="editbuttons">
+								<a href="#" class="edit"><span class="snf-edit-1"></span></a>
+								<a href="#" class="save"><span class="snf-ok-sign"></span></a>
+								<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
+							<a class="delete"><span>X</span></a>
+							</span>
+						</div>
+						<div class="editable">
+							<a href="" class="tag tag3 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
+							<span class="input-txt">Tag Name</span>
+							<input type="text">
+							<span class="editbuttons">
+								<a href="#" class="edit"><span class="snf-edit-1"></span></a>
+								<a href="#" class="save"><span class="snf-ok-sign"></span></a>
+								<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
+							</span>
+							<a class="delete"><span>X</span></a>
+						</div>
+						<div class="buttons">
+							<a href="" class="btn1 show-add-tag id="show-add-tag"">add new tag</a>
+						</div>
+
+
+												<div class="snf-color-picker">
+													<form action="#" method="post">
+														<div id="picker">
+															<div class="farbtastic">
+																<div class="color" style="background-color: rgb(255, 0, 21);"></div>
+																<div class="wheel"></div>
+																<div class="overlay"></div>
+																<div class="h-marker marker" style="left: 90px; top: 13px;"></div>
+																<div class="sl-marker marker" style="left: 87px; top: 114px;"></div>
+															</div>
+														</div>
+														<div class="form-item">
+															<input type="text" id="color" name="color" value="#16C1E9" disabled>
+															<span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
+														</div>
+													</form>									
+													<div class="buttons">
+														<a class="btn1" href="">OK</a>
+														<a class="btn1 hide-add-tag" href="">CANCEL</a>
+													</div>
+													<a href="" id="hide-add-tag-dummy" style="position:relative;top:50px">&nbsp;</a>
+												</div>
+
+
+
+				</section>
+				<section class="info-block charts">
+					<div>
+						<h2>CPU utilization</h2>
+						<div class="graph_container">
+							<img src="images/cpu-ts.png" alt="CPU utilization graph">
+						</div>		
+					</div>
+					<div>
+						<h2>Network utilization</h2>
+						<div class="graph_container">
+							<img src="images/net-ts.png" alt="network utilization graph">
+						</div>		
+					</div>
+				</section>
 				</section>
 			</div>
 		</div>
@@ -150,7 +250,8 @@
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
-	
+	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>	
 	<script src="javascripts/common.js"></script>
 	
   

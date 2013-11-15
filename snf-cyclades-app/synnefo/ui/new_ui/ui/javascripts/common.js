@@ -100,6 +100,7 @@ ui.inactiveActions = function() {
         <a href="#" class="save">save</a>
         <a href="#" class="cancel">cancel</a>
     </div>
+    <a href="#" class="delete">delete</a>
 */
 ui.editable = function(){
 
@@ -114,6 +115,7 @@ ui.editable = function(){
         el.find('input[type="text"]').hide();
         el.find('a.cancel, a.save').hide();
         el.find('a.edit, .input-txt').show();
+        el.find('.delete').show();
     }
 
 /* 
@@ -129,6 +131,9 @@ ui.editable = function(){
         el.find('a.cancel, a.save').show();
         elem.hide();
         el.find('.input-txt').hide();
+        if(el.find('.delete').length != 0) {
+            el.find('.delete').hide();
+        }
 
     }
 
@@ -483,7 +488,6 @@ $(document).ready(function(){
     $('.temp-for-btns .communication-error-btn').click(function(e) {
          e.preventDefault();
          e.stopPropagation();
-         console.log('hi');
          $('.communication-error').animate({bottom: "0px"});
      });
 
@@ -495,7 +499,26 @@ $(document).ready(function(){
     });
     $('.communication-error').click(function(e) {
         e.stopPropagation();
-        console.log('1')
+    });
+
+    $('.show-add-tag').click(function(e) {
+    e.preventDefault();
+    $(this).parents('.tags-area, .tags').find('.snf-color-picker').slideDown('slow', function() {
+        $('#hide-add-tag-dummy').scrollintoview({
+            'duration': 'slow'
+        });
+    });
+    ui.colorPickerVisible = 1;
+    });
+
+    $('.hide-add-tag').click(function(e) {
+    e.preventDefault();
+    $(this).parents('.tags-area, .tags').find('.snf-color-picker').slideUp(400, function() {
+        $('.show-add-tag').first().scrollintoview({
+            'duration': 'slow'
+        });
+        ui.colorPickerVisible = 0;
+    });
     });
 })
 
