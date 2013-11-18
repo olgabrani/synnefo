@@ -89,6 +89,37 @@ ui.inactiveActions = function() {
     })
 }
 
+ui.detailsLastCustom = function() {
+
+    // details connected related js
+    var el = $('.connected .item').last();
+    // -2 is the border width;
+    var moveY = el.find('.connections >li').last().outerHeight(true) -2;
+    el.css('top',moveY);
+    el.css('marginTop', -moveY);
+    //el.css('margin-top')
+}
+
+ui.firewallSetup = function(){
+    $('.firewall').each(function(){
+        $(this).removeClass('fully unprotected basic');
+        $(this).addClass($(this).data('firewall'));
+        if($(this).hasClass('unprotected')){
+            $(this).find('p').first().find('em').html('off');
+        } else {
+            $(this).find('p').first().find('em').html('on');
+        }
+    });
+    $('.firewall .more span').each(function(e){
+        var that = this;
+        if ($(this).hasClass('snf-radio-checked')){
+            $(that).siblings('em').html('on');
+        } else {
+            $(that).siblings('em').html('off');
+        }
+    })
+}
+
 
 /*
 * In order for the editable value functionality to work, the html markup
@@ -520,6 +551,29 @@ $(document).ready(function(){
         ui.colorPickerVisible = 0;
     });
     });
+
+    // connected details js
+    ui.detailsLastCustom();
+    ui.firewallSetup();
+    $('.firewall .more  a').click(function(e){
+        e.preventDefault();
+        if ($(this).find('span').hasClass('snf-radio-checked')) {
+            return false;
+        }
+        $(this).parents('.firewall').removeAttr('data-firewall');
+        $(this).parents('.firewall').data('firewall', $(this).parent().attr('class'));
+        $(this).find('span').toggleClass('snf-radio-unchecked snf-radio-checked');
+        $(this).parent('p').siblings('p').find('span').removeClass('snf-radio-checked');
+        $(this).parent('p').siblings('p').find('span').addClass('snf-radio-unchecked');
+         ui.firewallSetup();
+    });
+    $('.firewall').mouseenter(function(e){
+        $(this).find('.more').stop(true, true).slideDown(200);
+    });
+    $('.firewall').mouseleave(function(e){
+        $(this).find('.more').stop(true, true).slideUp(200);
+    });
+    // end of connected details js
 })
 
 

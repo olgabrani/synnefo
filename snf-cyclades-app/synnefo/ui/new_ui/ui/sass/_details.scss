@@ -3,8 +3,9 @@
 .details {
 	$details-top-title-h : 0.4 * $details-top-height;
 	$details-top-more-h : ( $details-top-height - $details-top-title-h )/2;
-	$details-top-more-padding-lt : 20px;
 	position:relative;
+	border-left: 1px solid $border-color-1;
+	border-right: 1px solid $border-color-1;
 	.lt {
 		width: $details-lt-width;
 		float: left;
@@ -19,11 +20,14 @@
 	.top {
 		@extend .clearfix;
 		border-bottom:1px solid $border-color-1;
+		position: relative;
+		z-index: 1;
 		.img-wrap {
 			position: relative;
 			display: inline-block;
 			width:90px;
-			.snf-PC_fill {
+			.snf-PC_fill,
+			.snf-network_full {
 				font-size:90px;
 			}
 			.os {

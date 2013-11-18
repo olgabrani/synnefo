@@ -39,6 +39,7 @@ $overlay-bg-color: $third-color;
 $overlay-color-top: #636a70;
 $overlay-darker-color: #33383D;
 
+$light-bg: lighten($primary-color,35%); // common light grey bg
 
 // color usage
 $inactive-color: $primary-color;
@@ -105,6 +106,7 @@ $list-vm-height: 34px;
 // details view
 $details-top-height: 160px;
 $details-lt-width: 290px;
+$details-top-more-padding-lt : 20px;
 
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -136,7 +138,7 @@ $details-lt-width: 290px;
 //
 
 $row-full-width:100%;
-$row-width: emCalc(960px);
+//$row-width: emCalc(960px);
 $row-small: emCalc(580px);
 $main-padding-horizontal: emCalc(10px);
 

@@ -1,13 +1,12 @@
 
 <!DOCTYPE html>
-  <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | Νetwork details</title>
+    <title>Synnefo | VM details</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
@@ -20,14 +19,23 @@
 		<header class="header">
 		<nav>
 			<ul class="icons-nav">
-				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
-				<li><a href="network_list.html" data-tooltip class="has-tip current" title="Networks"><span class="snf-network_full"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC_fill"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
 				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Images" ><span class="snf-images"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Snapshots" ><span class="snf-snapshot"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="More" ><span class="snf-plus"></span></a></li>
 			</ul>
 		</nav>
 		<div class="login">
-			<a href=""><span class="snf-lock_open"></span></a>
+			<div class="wrap">
+				<a href="">user1@synnefo.org</a>
+				<ul>
+					<li><a href="">dashboard</a></li>
+					<li><a href="">sign out</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="logo">
 			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
@@ -35,110 +43,223 @@
 	</header>
 	<div class="overlay-wrapper">
 		<section class="actions-bar clearfix">
-			<div class="row">
-				<div class="new-btn"><a href="network_create.html"><span>+</span> NEW NETWORK </a></div>
-				<div class="main-actions">
-				</div>
+			<h2><a href="vm_list.html">Networks</a> > My Awesome network</h2>
+			<div class="view-type">
+				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
+				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
 			</div>
-			<div class="border-dashed"></div>
+			<div class="filter-menu">
+				<a class="filter" href="">Filter</a>
+				<ul class="options">
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+				</ul>
+			</div>
+			<div id="hd-search" class="hd-search">
+			    <form>
+					<span class="hd-icon-search snf-search"></span>
+			        <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			    </form>
+			</div>
 		</section>
-		<div class="lt-sidebar networks scroll-pane">
-
-			<ul class="items-list">
-				<li>
-					<div class="img">
-						<span>Network</span>
+		<div class="main row">
+			<div class="network details running">
+				<section class="top">
+					<div class="lt">
+						<div class="img-wrap">
+							<span class="snf-network_full"></span>
+						</div>
 					</div>
-					<p class="visible-info">
-						<span>IPv4 83.212.97.127</span>
-						<span>Network name</span>
-					</p>
-				</li>
-				<li>
-					<div class="img">
-						<span>Network</span>
+					<div class="rt">
+						<div class="title">
+							<h1>Internet access 001:648:2ffc:1112:a80c:eaff:fe15:baee</h1>
+						</div>
+						<div class="actions">
+							<ul>
+								<li><a href="">Start</a></li>
+								<li><a href="">Shutdown</a></li>
+							</ul>
+						</div>
+						<div class="tabs">
+							<ul>
+								<li><a href=""><span class="snf-info_outline"></span></a></li>
+								<li><a href="" class="current"><span class="snf-PC_fill"></span></a></li>
+							</ul>
+						</div>
 					</div>
-					<p class="visible-info">
-						<span>IPv4 83.212.97.127</span>
-						<span>Network name</span>
-					</p>
-				</li>
-				<li class="current">
-					<div class="img">
-						<span>Network</span>
-					</div>
-					<p class="visible-info">
-						<span>IPv4 83.212.97.127</span>
-						<span>Network name</span>
-					</p>
-				</li>
-				
-			</ul>
-		</div>
-		<div class="main details network">
-			<a href="network_list.html" class="close" title="back to network list"><span class="snf-font">c</span></a>
-			<div class="top border-bottom-style1">
-				<div class="img">
-					<span>Network</span>					
-				</div>
-				<div class="actions">
-					<ul>
-						<li><a href="#" data-reveal-id="network-add-vms">+ machine</a></li>
-						<li><a href="">destroy</a></li>
-					</ul>
-				</div>
+				</section>
+				<section class="content connected">
+					<section class="item error">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-PC_fill"></span>
+								<span class="os fedora">fedora</span>
+							</div>
+							<h4>My Awesome Machine<span class="status">BUILDING 798.56 MB of 4.33 GB (18%)</span></h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="firewall" data-firewall="fully">
+								<p>Firewall <em>on</em></p>
+								<div class="more">
+									<p class="fully">
+										<a href="">Fully protected mode<span class="snf-radio-checked"></span><em>on</em></a>
+									</p>
+									<p class="basic">
+										<a href="">Basically protected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+									<p class="unprotected">
+										<a href="">Unprotected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="item running">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-PC_fill"></span>
+								<span class="os fedora">fedora</span>
+							</div>
+							<h4>My Awesome Machine</h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+											<li>
+												<h5>ipv4</h5>
+												<p>001:648:2ffc</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="firewall" data-firewall="basic">
+								<p>Firewall <em>on</em></p>
+								<div class="more">
+									<p class="fully">
+										<a href="">Fully protected mode<span class="snf-radio-unchecked"></span><em>on</em></a>
+									</p>
+									<p class="basic">
+										<a href="">Basically protected mode<span class="snf-radio-checked"></span><em>off</em></a>
+									</p>
+									<p class="unprotected">
+										<a href="">Unprotected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="item running">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-PC_fill"></span>
+								<span class="os fedora">fedora</span>
+							</div>
+							<h4>My Awesome Machine<span class="status">BUILDING 798.56 MB of 4.33 GB (18%)</span></h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="firewall" data-firewall="unprotected">
+								<p>Firewall <em>on</em></p>
+								<div class="more">
+									<p class="fully">
+										<a href="">Fully protected mode<span class="snf-radio-unchecked"></span><em>on</em></a>
+									</p>
+									<p class="basic">
+										<a href="">Basically protected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+									<p class="unprotected">
+										<a href="">Unprotected mode<span class="snf-radio-checked"></span><em>off</em></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="connect-new">
+						<div class="img-wrap">
+							<a href="">
+								<span class="snf-PC_fill"></span>
+								<span class="symbol">+</span>
+							</a>
+						</div>
+						<p><a href="">Connect Machine</a></p>
+					</section>
+				</section>
+				<div class="placeholder"></div>
 			</div>
-			<section class="border-bottom-style1 info">
-				<dl>
-					<dt>Name</dt><dd>My Crazy Network</dd>
-					<dt>Status</dt><dd>running</dd>
-					<dt>Machines</dt><dd >2 x Machines</dd>
-					<dt>IPv6</dt><dd>2001:648:2ffc:1222:a800:ff:fe3f:98fe </dd>
-				</dl>
-			</section>
-			<section class="wrap info">
-				<div class="section_header">
-					machines
-				</div>
-				<div class="right_side">
-					<div class="middle_side">
-						<div class="set">
-							<p>
-								<span class="info_simple">My Windows Server 2012</span>
-								<span class="action_links">
-									<a href="">remove</a>
-								</span>
-							</p>
-							<p>IPv6: 2001:648:2ffc:1222:a800:ff:fe3f:98fe </p>
-						</div>
-						<div class="set">
-							<p>
-								<span class="info_simple">My Windows Server 2012</span>
-								<span class="action_links">
-									<a href="">remove</a>
-								</span>
-							</p>
-							<p>IPv6: 2001:648:2ffc:1222:a800:ff:fe3f:98fe </p>
-						</div>
-					</div>
-					<div class="btn-img">
-						<a href="">
-							add machine
-							<img src="images/menu-icon-compute.png" alt="Disk Image">
-						</a>
-					</div>
-				</div>
-			</section>
 		</div>
 	</div>
- 	<div id="network-add-vms" class="reveal-modal medium">
-  		<p>A widget to add vms</p>
-  		<a class="close-reveal-modal" title="close window">&#215;</a>
-	</div>
- 
-  <script src="javascripts/vendor/jquery.js"></script>
-  <script src="javascripts/foundation/foundation.js"></script>
-	
+	<script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
 	
 	<script src="javascripts/foundation/foundation.clearing.js"></script>
