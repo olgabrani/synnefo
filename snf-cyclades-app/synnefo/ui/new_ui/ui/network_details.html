@@ -19,8 +19,8 @@
 		<header class="header">
 		<nav>
 			<ul class="icons-nav">
-				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC_fill"></span></a></li>
-				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip current" title="Networks"><span class="snf-network_full"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
 				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Images" ><span class="snf-images"></span></a></li>
@@ -84,13 +84,38 @@
 						</div>
 						<div class="tabs">
 							<ul>
-								<li><a href=""><span class="snf-info_outline"></span></a></li>
-								<li><a href="" class="current"><span class="snf-PC_fill"></span></a></li>
+								<li><a href="#info"><span class="snf-info_outline"></span></a></li>
+								<li><a href="#vm-connected" class="active"><span class="snf-PC_fill"></span></a></li>
 							</ul>
 						</div>
 					</div>
 				</section>
-				<section class="content connected">
+				<section class="content info-simple" id="info" style="display:none;">
+					<section class="info-block">
+						<h2>info</h2>
+						<dl>
+							<dt><span class="snf-cpu icon"></span>CPUs</dt>
+							<dd>4</dd>
+							<dt><span class="snf-ram icon"></span>RAM</dt>
+							<dd>512 MB</dd>
+							<dt><span class="snf-HDD icon"></span>System Disk Size</dt>
+							<dd>4GB</dd>
+							<dt><span class="snf-HDD icon"></span>Storage Type</dt>
+							<dd>Archipelago</dd>
+							<dt><span class="snf-images icon"></span>Image Name</dt>
+							<dd>Fedora</dd>
+							<dt><span class="snf-images icon"></span>Image Size</dt>
+							<dd>3.68 GB</dd>
+							<dt><span class="snf-ram icon"></span>IPv4</dt>
+							<dd>83.212.96.152</dd>
+							<dt><span class="snf-ram icon"></span>IPv4</dt>
+							<dd>83.212.96.153</dd>
+							<dt><span class="snf-ram icon"></span>IPv6</dt>
+							<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
+						</dl>
+					</section>
+				</section>
+				<section class="content connected" id="vm-connected" style="display:block">
 					<section class="item error">
 						<div class="what">
 							<div class="img-wrap">

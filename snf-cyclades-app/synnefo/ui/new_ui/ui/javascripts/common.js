@@ -27,13 +27,15 @@ ui.trimChars = function( str, chars) {
     }
 }
 
-/* sets lt-sidebar height. Useful for jscrollpane scrollbar */
-ui.setSidebarHeight = function(){
+/* Sets mainArea min-height
+* Used for .details div
+*/
+ui.setElminHeight = function(el){
     var WindowHeight = $(window).height();
-    var h1= WindowHeight - $('.header').outerHeight();
-    var h2= $('.main').outerHeight();
-    $('.lt-sidebar').height((h2>h1) ? h2 : h1);
-    $('.lt-bar').height((h2>h1) ? h2 : h1);
+    var header = $('.header').outerHeight();
+    var actions = $('.actions').outerHeight();
+    var h1= WindowHeight - (header+actions);
+    el.css('min-height', h1);
 }
 
 
@@ -89,15 +91,13 @@ ui.inactiveActions = function() {
     })
 }
 
-ui.detailsLastCustom = function() {
-
-    // details connected related js
+ui.detailsCustom = function() {
+    // position last connected item
     var el = $('.connected .item').last();
     // -2 is the border width;
     var moveY = el.find('.connections >li').last().outerHeight(true) -2;
     el.css('top',moveY);
     el.css('marginTop', -moveY);
-    //el.css('margin-top')
 }
 
 ui.firewallSetup = function(){
@@ -288,12 +288,37 @@ ui.expandDownArea = function(arrow_link, area) {
             });
 }
 
+
+/* Tabs functionality
+* tabsEl is the div/ul with the links to the sections and the sections that
+* with toggle have class sectionEl.
+* Markup needed is an href to each a with the id of the relative section.
+*/
+ui.tabs = function(tabsEl, sectionEl) {
+    var tabLink = tabsEl.find('a');
+    function href(a) {
+        return a.attr('href');
+    }
+    tabLink.click(function(e){
+        e.preventDefault();
+        if ( $(this).hasClass('active')){
+             return false;
+        } else {
+            $(this).parents(tabsEl).find('a').removeClass('active');
+            $(this).addClass('active');
+            $(sectionEl).hide();
+            $(href($(this))).stop(true,true).slideDown(500);
+        }
+
+    })
+}
+
 $(document).ready(function(){
 
     if($('.vms.entities').length!=0){
         ui.inactiveActions();
     };
-    ui.setSidebarHeight();
+    ui.setElminHeight($('.details'));
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;
         $(this).parents('.hd-search').toggleClass('hd-open');
@@ -553,7 +578,7 @@ $(document).ready(function(){
     });
 
     // connected details js
-    ui.detailsLastCustom();
+    ui.detailsCustom();
     ui.firewallSetup();
     $('.firewall .more  a').click(function(e){
         e.preventDefault();
@@ -573,11 +598,12 @@ $(document).ready(function(){
     $('.firewall').mouseleave(function(e){
         $(this).find('.more').stop(true, true).slideUp(200);
     });
+    ui.tabs($('.tabs'), $('.content'));
     // end of connected details js
 })
 
 
 $(window).resize(function(e){
-    ui.setSidebarHeight();
+    ui.setElminHeight($('.details'));
     $('.scroll-pane').jScrollPane();
 })
