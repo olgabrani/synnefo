@@ -50,6 +50,33 @@
 		<a href="#" class="close" title="hide message">close</a>
 	</div>
 	<div class="overlay-wrapper">
+		<div id="start-confirm" class="reveal-modal medium">
+			<p class="message-forimg">Are you sure you want to turn on your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			<a class="close-reveal-modal" title="close window">X</a>
+		</div>
+		<div id="reboot-confirm" class="reveal-modal medium">
+			<p class="message-forimg">Are you sure you want to reboot your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			<a class="close-reveal-modal" title="close window">X</a>
+		</div>
+		<div id="shutdown-confirm" class="reveal-modal medium">
+			<p class="message-forimg">Are you sure you want to shutdown your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			<a class="close-reveal-modal" title="close window">X</a>
+		</div>
+		<div id="destroy-vm-confirm" class="reveal-modal medium">
+			<p class="message-forimg">Are you sure you want to destroy your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+			<a class="close-reveal-modal" title="close window">X</a>
+		</div>
+	 	<div id="vm-connect" class="reveal-modal medium">
+	  		<p>A direct connection to this machine can be established using the <a href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell" target=​"_blank" >​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+			<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
+
+			<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+	  		<a class="close-reveal-modal" title="close window">&#215;</a>
+		</div>
 		<section class="actions-bar clearfix">
 			<h2><a href="vm_list.html">Virtual Machines</a> > My Awesome machine</h2>
 			<div class="view-type">
@@ -73,7 +100,7 @@
 			</div>
 		</section>
 		<div class="main row">
-			<div class="details running">
+			<div class="vm details running">
 				<section class="top">
 					<div class="lt">
 						<div class="img-wrap">
@@ -87,22 +114,22 @@
 						</div>
 						<div class="actions">
 							<ul>
-								<li><a href="">Start</a></li>
-								<li><a href="">Shutdown</a></li>
-								<li><a href="">Reboot</a></li>
-								<li><a href="">Destroy</a></li>
+								<li><a href="" data-reveal-id="start-confirm">Start</a></li>
+								<li><a href="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+								<li><a href="" data-reveal-id="reboot-confirm">Reboot</a></li>
+								<li><a href="" data-reveal-id="destroy-vm-confirm">Destroy</a></li>
 							</ul>
 						</div>
 						<div class="tabs">
 							<ul>
-								<li><a href="" class="current"><span class="snf-info_outline"></span></a></li>
-								<li><a href=""><span class="snf-HDD"></span></a></li>
-								<li><a href=""><span class="snf-network_full"></span></a></li>
+								<li><a href="#info" class="active"><span class="snf-info_outline"></span></a></li>
+								<li><a href="#disk-connected"><span class="snf-HDD"></span></a></li>
+								<li><a href="#network-connected"><span class="snf-network_full"></span></a></li>
 							</ul>
 						</div>
 					</div>
 				</section>
-				<section class="content info-simple">
+				<section class="content info-simple" id="info">
 					<section class="info-block">
 						<h2>info</h2>
 						<dl>
@@ -126,7 +153,7 @@
 							<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
 						</dl>
 					</section>
-				<section class="info-block tags">
+					<section class="info-block tags">
 						<h2>tags</h2>
 						<div class="editable">
 							<a href="" class="tag tag1 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
@@ -186,32 +213,188 @@
 								<a class="btn1 hide-add-tag" href="">CANCEL</a>
 							</div>
 						</div>
+					</section>
+					<section class="info-block charts">
+						<div>
+							<h2>CPU utilization</h2>
+							<div class="graph_container">
+								<img src="images/cpu-ts.png" alt="CPU utilization graph">
+							</div>
+						</div>
+						<div>
+							<h2>Network utilization</h2>
+							<div class="graph_container">
+								<img src="images/net-ts.png" alt="network utilization graph">
+							</div>
+						</div>
+					</section>
 				</section>
-				<section class="info-block charts">
-					<div>
-						<h2>CPU utilization</h2>
-						<div class="graph_container">
-							<img src="images/cpu-ts.png" alt="CPU utilization graph">
-						</div>		
-					</div>
-					<div>
-						<h2>Network utilization</h2>
-						<div class="graph_container">
-							<img src="images/net-ts.png" alt="network utilization graph">
-						</div>		
-					</div>
+				<section class="content connected" id="network-connected" style="display:block">
+					<section class="item error">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-PC_fill"></span>
+								<span class="os fedora">fedora</span>
+							</div>
+							<h4>My Awesome Machine<span class="status">BUILDING 798.56 MB of 4.33 GB (18%)</span></h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="firewall" data-firewall="fully">
+								<p>Firewall <em>on</em></p>
+								<div class="more">
+									<p class="fully">
+										<a href="">Fully protected mode<span class="snf-radio-checked"></span><em>on</em></a>
+									</p>
+									<p class="basic">
+										<a href="">Basically protected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+									<p class="unprotected">
+										<a href="">Unprotected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="item running">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-network_full"></span>
+							</div>
+							<h4>My Awesome Network</h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+											<li>
+												<h5>ipv4</h5>
+												<p>001:648:2ffc</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="firewall" data-firewall="basic">
+								<p>Firewall <em>on</em></p>
+								<div class="more">
+									<p class="fully">
+										<a href="">Fully protected mode<span class="snf-radio-unchecked"></span><em>on</em></a>
+									</p>
+									<p class="basic">
+										<a href="">Basically protected mode<span class="snf-radio-checked"></span><em>off</em></a>
+									</p>
+									<p class="unprotected">
+										<a href="">Unprotected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="item running">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-PC_fill"></span>
+								<span class="os fedora">fedora</span>
+							</div>
+							<h4>My Awesome Machine<span class="status">BUILDING 798.56 MB of 4.33 GB (18%)</span></h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5>ipv6</h5>
+												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<div class="firewall" data-firewall="unprotected">
+								<p>Firewall <em>on</em></p>
+								<div class="more">
+									<p class="fully">
+										<a href="">Fully protected mode<span class="snf-radio-unchecked"></span><em>on</em></a>
+									</p>
+									<p class="basic">
+										<a href="">Basically protected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
+									</p>
+									<p class="unprotected">
+										<a href="">Unprotected mode<span class="snf-radio-checked"></span><em>off</em></a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="connect-new">
+						<div class="img-wrap">
+							<a href="">
+								<span class="snf-PC_fill"></span>
+								<span class="symbol">+</span>
+							</a>
+						</div>
+						<p><a href="">Connect Machine</a></p>
+					</section>
 				</section>
-				</section>
+				<div class="placeholder"></div>
 			</div>
 		</div>
-
-	</div>
- 	<div id="vm-connect" class="reveal-modal medium">
-  		<p>A direct connection to this machine can be established using the <a href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell" target=​"_blank" >​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
-		<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
-
-		<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
-  		<a class="close-reveal-modal" title="close window">&#215;</a>
 	</div>
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/foundation/foundation.js"></script>

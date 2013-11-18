@@ -156,6 +156,10 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	@include position-connected( 142px, -94px );
 }
 
+.vm .connected {
+	@include position-connected( 142px, -94px );
+}
+
 .firewall {
 	float: left;
 	margin-left:20px;

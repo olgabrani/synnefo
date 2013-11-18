@@ -18,129 +18,124 @@ body.with-overlay {
 	.welcome {
 		display:none;
 		}
-		&.no-vm {
-			background:url(../images/draw-welcome.png) no-repeat center 50px $secondary-color;
-			.welcome {
-				display:none;
-				color:#fff;
-				text-align:center;
-				position: relative;
-				top:-15px;
-				left:75px;
-				display:block;
+	&.no-vm {
+		background:url(../images/draw-welcome.png) no-repeat center 50px $secondary-color;
+		.welcome {
+			display:none;
+			color:#fff;
+			text-align:center;
+			position: relative;
+			top:-15px;
+			left:75px;
+			display:block;
+		}
+	}
+	.reveal-modal {
+		padding:65px 140px 40px;
+	    h3 {
+	        font-size:1em;
+	    }
+	    p {
+			color: white;
+			text-align: center;
+			&.message-forimg {
+				margin-top:132px;
+				margin-bottom: 35px; // 20px from background icon
+			}
+			&.buttons {
+				a:first-child {
+					margin-right:25px;
+				}
 			}
 		}
-
-	.overlay-area-reveal {
-		.reveal-modal {
-			padding:65px 140px 40px;
-		    h3 {
-		        font-size:1em;
-		    }
-		    p {
-				color: white;
-				text-align: center;
-				&.message-forimg {
-					margin-top:132px;
-					margin-bottom: 35px; // 20px from background icon
-				}
-				&.buttons {
-					a:first-child {
-						margin-right:25px;
-					}
+		&#start-confirm {
+			background: $secondary-color url('../images/shutdown.png') no-repeat center 50px;	//55px from top
+	    }
+	    &#reboot-confirm {
+			background: #ff7049 url('../images/restart.png') no-repeat center 50px;
+			.btn4 {
+			background-color: #ff7049;
+			border-color: white;
+			&:hover {
+					color: #ff7049;
+					background-color: white;
+					border-color: #ff7049;
 				}
 			}
-			&#start-confirm {
-				background: $secondary-color url('../images/shutdown.png') no-repeat center 50px;	//55px from top
-		    }
-		    &#reboot-confirm {
-				background: #ff7049 url('../images/restart.png') no-repeat center 50px;
-				.btn4 {
+		}
+		&#shutdown-confirm {
+		background: #ff7049 url('../images/shutdown.png') no-repeat center 50px;	//55px from top
+			.btn4 {
 				background-color: #ff7049;
 				border-color: white;
 				&:hover {
-						color: #ff7049;
-						background-color: white;
-						border-color: #ff7049;
-					}
+					color: #ff7049;
+					background-color: white;
+					border-color: #ff7049;
 				}
 			}
-			&#shutdown-confirm {
-			background: #ff7049 url('../images/shutdown.png') no-repeat center 50px;	//55px from top
-				.btn4 {
-					background-color: #ff7049;
-					border-color: white;
-					&:hover {
-						color: #ff7049;
-						background-color: white;
-						border-color: #ff7049;
-					}
+		}
+		&#destroy-vm-confirm {
+		background: #d7145a url('../images/destroy-vm.png') no-repeat center 46px;	//55px from top
+			.btn4 {
+				background-color: #d7145a;
+				border-color: white;
+				&:hover {
+					color: #d7145a;
+					background-color: white;
+					border-color: #d7145a;
 				}
 			}
-			&#destroy-vm-confirm {
-			background: #d7145a url('../images/destroy-vm.png') no-repeat center 46px;	//55px from top
-				.btn4 {
-					background-color: #d7145a;
-					border-color: white;
-					&:hover {
-						color: #d7145a;
-						background-color: white;
-						border-color: #d7145a;
-					}
+		}
+		&#destroy-network-confirm {
+			background: #d7145a url('../images/destroy-network-1.png') no-repeat center 50px;	//55px from top
+			.btn4 {
+				background-color: #d7145a;
+				border-color: white;
+				&:hover {
+					color: #d7145a;
+					background-color: white;
+					border-color: #d7145a;
 				}
 			}
-			&#destroy-network-confirm {
-				background: #d7145a url('../images/destroy-network-1.png') no-repeat center 50px;	//55px from top
-				.btn4 {
-					background-color: #d7145a;
-					border-color: white;
-					&:hover {
-						color: #d7145a;
-						background-color: white;
-						border-color: #d7145a;
-					}
-				}
-			}
-			&#destroy-disk-confirm {
-				background: #d7145a url('../images/destroy-disk.png') no-repeat center 50px;	//55px from top
-				.btn4 {
-					background-color: #d7145a;
-					border-color: white;
-					&:hover {
-						color: #d7145a;
-						background-color: white;
-						border-color: #d7145a;
-					}
-				}
-
-			}
-			&#vm-connect {
-				p {
-					text-align:left;
-					color: black;
-					&.info {
-						font-style: italic;
-						font-size: 0.8125em;
-						color: #9e9ea1;
-					}
-					&.ssh {
-						text-align: center;
-						span {
-							display: inline;
-						}
-					}
-				}
-				.close-reveal-modal {
-					color: $link-color;
-					&:hover {
-						color: $link-color-hover;
-					}
+		}
+		&#destroy-disk-confirm {
+			background: #d7145a url('../images/destroy-disk.png') no-repeat center 50px;	//55px from top
+			.btn4 {
+				background-color: #d7145a;
+				border-color: white;
+				&:hover {
+					color: #d7145a;
+					background-color: white;
+					border-color: #d7145a;
 				}
 			}
 
 		}
+		&#vm-connect {
+			p {
+				text-align:left;
+				color: black;
+				&.info {
+					font-style: italic;
+					font-size: 0.8125em;
+					color: #9e9ea1;
+				}
+				&.ssh {
+					text-align: center;
+					span {
+						display: inline;
+					}
+				}
+			}
+			.close-reveal-modal {
+				color: $link-color;
+				&:hover {
+					color: $link-color-hover;
+				}
+			}
+		}
 	}
-
 	.overlay-area-custom {
 		display:none;
 		position:absolute;
