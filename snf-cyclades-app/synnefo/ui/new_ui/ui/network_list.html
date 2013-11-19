@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | Network list</title>
+    <title>Networks list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
@@ -185,6 +185,9 @@
 				<ul class="items-list">
 					<li data-status="add-new" class="add-new">
 						<div class="container" data-overlay-id="network-wizard">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
 							<div class="img-wrap">
 									<span class="snf-network_full"></span>
 							</div>
@@ -310,11 +313,10 @@
 				<div class="lt-bar">
 					<ul>
 						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
-						<li class="running"><a href="#" title="">Action 1</a></li>
-						<li class="running"><a href="#" title="">Action 2</a></li>
-						<li class="both"><a href="#">Destroy</a></li>
-						<li class="stopped"><a href="#">Start</a></li>
-						 <!-- in case we want an action always activated
+						<li class="running"><a href="#" title="">Connect VM</a></li>
+						<li class="permanent"><a href="#" class="active">Destroy</a></li>
+						<li class="both"><a href="#" >Option i</a></li>
+						<!-- in case we want an action always activated
 						<li class="pernament"><a href="" class="active">Action</a></li> -->
 					</ul>
 				</div>

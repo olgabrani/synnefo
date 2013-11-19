@@ -47,7 +47,7 @@
 @mixin stateColor($color) {
 	.img-wrap {
 		.snf-PC_fill,
-		.snf-network_full {
+		.snf-network_full, .icon {
 			color:$color;
 		}
 	}
