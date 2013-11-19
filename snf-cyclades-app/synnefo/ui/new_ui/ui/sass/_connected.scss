@@ -72,9 +72,18 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 					top:-9px;
 					display: block;
 					height: 20px;
-					width:$lt-width/2;
-					background: url(../images/connected.png) no-repeat 28px center;
+					width:65px;
+					background: url(../images/connected.png) no-repeat 25px center;
 					z-index: 2;
+					-moz-transition: none;
+					-webkit-transition: none;
+					transition: none;
+					&.open {
+						background:url(../images/disconnected.png) no-repeat 0 0 #fff;
+						-moz-transition: none;
+						-webkit-transition: none;
+						transition: none;
+					}
 				}
 				.data {
 					float: left;

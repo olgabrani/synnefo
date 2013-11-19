@@ -612,7 +612,13 @@ $(document).ready(function(){
     $('.toggle-lt-bar').click(function(e){
         e.preventDefault();
         $('.lt-bar').animate({ width: 'toggle' });
+    });
+
+    $('.act').click(function(e){
+        e.preventDefault();
+        $(this).toggleClass('open',0);
     })
+
     // end of connected details js
 })
 
