@@ -166,14 +166,7 @@
 		display: none;
 	}
 	.lt-bar {
-		position: fixed;
-		width: $lt-bar-width;
-		left:50%;
-		top:$header-height + $bar-height;
-		padding:8px 10px;
-		margin-left:-($row-width - 2*$main-padding-horizontal)/2;
-		@include box-shadow(3px -2px 8px #ccc);
-		background:#fff;
+		@include ltbar;
 		ul {
 			list-style: none outside none;
 			font-size:emCalc(12px);
@@ -335,5 +328,32 @@
 				}
 			}
 		}
+	}
+}
+
+.lt-bar {
+	.items-list {
+		.check, .actions, .info {
+			display: none;
+		}
+		&> li {
+			background: url(../images/dashed_atom-x.png) repeat-x center bottom;
+			padding: 40px;
+			height: auto;
+			&:hover {
+				background-color: $light-bg;
+			}
+		}
+		.container {
+				height:160px;
+				position: relative;
+				line-height:120%;
+				.tags {
+					width: 100%;
+					min-height: 12px;
+					position: absolute;
+					bottom: 12px;
+				}
+			}
 	}
 }

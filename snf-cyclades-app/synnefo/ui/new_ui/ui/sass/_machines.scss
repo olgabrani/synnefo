@@ -58,6 +58,7 @@
 
 .img-wrap {
 	width: 60px;
+	display: inline-block;
 	span {
 		&:hover {
 			cursor: pointer;
@@ -132,36 +133,6 @@
 		}
 	}
 }
-
-.vm {
-	.top {
-		.img-wrap {
-			display: inline-block;
-			height: 112px;
-			.snf-PC_fill {
-				font-size: 112px;
-				color: $vm-active-color;
-			}
-			&.off {
-				.snf-PC_fill {
-					color: $vm-off-color;
-				}
-			}
-		}
-		.os {
-			@include sprite('../images/os-unknown.png', 44px, 44px);
-			position: absolute;
-			background-size:100%;
-			
-			left:34px;
-			top:11px;
-			&.windows { background-image:url('../images/os-windows.png'); }
-			&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
-			&.fedora { background-image:url('../images/os-fedora.png'); }
-		}
-	}
-}
-
 
 #vm-connect {
 	.info {

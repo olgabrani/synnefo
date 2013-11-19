@@ -1,3 +1,5 @@
+$details-icon-large : 90px;
+
 .details {
 	$details-top-title-h : 0.4 * $details-top-height;
 	$details-top-more-h : ( $details-top-height - $details-top-title-h )/2;
@@ -8,9 +10,9 @@
 		width: $details-lt-width;
 		float: left;
 		text-align: center;
-		padding:20px 0;
 		border-right: 1px solid $border-color-1;
 		height: $details-top-height;
+		line-height: $details-top-height;
 	}
 	.rt {
 		overflow: hidden;
@@ -22,14 +24,22 @@
 		z-index: 1;
 		.img-wrap {
 			position: relative;
-			display: inline-block;
+			vertical-align: middle;
 			width: auto;
+			height: $details-icon-large;
 			.snf-PC_fill,
 			.snf-network_full {
-				font-size:90px;
+				font-size: $details-icon-large;
 			}
 			.os {
-				top:12px;
+				@include sprite('../images/os-unknown.png', 30px, 30px);
+				position: absolute;
+				background-size:100%;
+				left:44px;
+				top:14px;
+				&.windows { background-image:url('../images/os-windows.png'); }
+				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+				&.fedora { background-image:url('../images/os-fedora.png'); }
 			}
 		}
 		.title {
@@ -134,5 +144,32 @@
 			line-height: 1;
 			margin-bottom: 40px;
 		}
+	}
+	.lt-bar {
+		@include ltbar($details-lt-width);
+		padding: 0;
+		display: none;
+	}
+}
+
+.scroll-wrap {
+	overflow: auto;
+	position: relative;
+}
+
+.toggle-lt-bar {
+	position: absolute;
+	left:0;
+	top: 35px;
+	background: $link-color;
+	z-index: 4;
+	color: #fff;
+	display: block;
+	height: 100px;
+	line-height: 85px;
+	padding: 0 5px;
+	&:hover {
+		background: $link-color-hover;
+		color: #fff;
 	}
 }

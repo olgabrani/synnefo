@@ -88,6 +88,22 @@
     @content;
   }
 }
+
+
+// style .lt-bar
+
+@mixin ltbar($width:$lt-bar-width, $bgcolor: #fff ){
+	position: fixed;
+	width: $width;
+	left:50%;
+	top:$header-height + $bar-height;
+	padding:8px 10px;
+	margin-left:-($row-width - 2*$main-padding-horizontal)/2;
+	@include box-shadow(3px -2px 8px #ccc);
+	background: $bgcolor;
+	z-index: 3;
+}
+
 /* Circle and Tags ----------------------------------------------- */
 .circle {
 	display:inline-block;
@@ -256,19 +272,6 @@ body {
 
 .overlay-wrapper {
 	min-height:100%;
-}
-
-.lt-sidebar {
-	width:250px;
-	float:left;
-	&.nav {
-		margin-top:0;
-		font-size:1em;
-		overflow: auto;
-	}
-	&+.main {
-		overflow:hidden;
-	}
 }
 
 .main {

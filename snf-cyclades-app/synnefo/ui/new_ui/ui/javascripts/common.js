@@ -27,17 +27,28 @@ ui.trimChars = function( str, chars) {
     }
 }
 
-/* Sets mainArea min-height
-* Used for .details div
+
+/* Sets element min-height
+* Used for .details, .lt-bar divs
 */
 ui.setElminHeight = function(el){
     var WindowHeight = $(window).height();
     var header = $('.header').outerHeight();
-    var actions = $('.actions').outerHeight();
+    var actions = $('.actions-bar').height();
     var h1= WindowHeight - (header+actions);
     el.css('min-height', h1);
 }
 
+/* Sets element height
+* Used for .details, .lt-bar divs
+*/
+ui.setElHeight = function(el){
+    var WindowHeight = $(window).height();
+    var header = $('.header').outerHeight();
+    var actions = $('.actions-bar').height();
+    var h1= WindowHeight - (header+actions);
+    el.css('height', h1);
+}
 
 /* 
 * Logic for Entities actions. Present in items_list pages
@@ -95,8 +106,9 @@ ui.detailsCustom = function() {
     // position last connected item
     var el = $('.connected .item').last();
     // -2 is the border width;
-    var moveY = el.find('.connections >li').last().outerHeight(true) -2;
+    var moveY = el.find('.connections >li').last().outerHeight(true) - 2;
     el.css('top',moveY);
+    console.log(moveY);
     el.css('marginTop', -moveY);
 }
 
@@ -307,9 +319,10 @@ ui.tabs = function(tabsEl, sectionEl) {
             $(this).parents(tabsEl).find('a').removeClass('active');
             $(this).addClass('active');
             $(sectionEl).hide();
-            $(href($(this))).stop(true,true).slideDown(500);
+            $(href($(this))).stop(true,true).fadeIn(500, function(){
+                ui.detailsCustom();
+            });
         }
-
     })
 }
 
@@ -319,6 +332,8 @@ $(document).ready(function(){
         ui.inactiveActions();
     };
     ui.setElminHeight($('.details'));
+    ui.setElminHeight($('.lt-bar'));
+    ui.setElHeight($('.scroll-wrap'));
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;
         $(this).parents('.hd-search').toggleClass('hd-open');
@@ -419,25 +434,19 @@ $(document).ready(function(){
             ui.checkOneRadioButton(this);
             ui.changeRadiobuttonState(this);
         }
-    })
+    });
 
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
             e.preventDefault();
         }
-    })
-    $('.scroll-pane').jScrollPane();
-
-    // $('.main .items-list .title em').each(function(){
-    //     $(this).html( ui.trimChars($(this).html(), 20) );
-
-    // })
+    });
 
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
             e.preventDefault();
         }
-    })
+    });
     $('.overlay-area-custom').children('.close').click(function(e){
         e.preventDefault();
         e.stopPropagation();
@@ -599,11 +608,17 @@ $(document).ready(function(){
         $(this).find('.more').stop(true, true).slideUp(200);
     });
     ui.tabs($('.tabs'), $('.content'));
+
+    $('.toggle-lt-bar').click(function(e){
+        e.preventDefault();
+        $('.lt-bar').animate({ width: 'toggle' });
+    })
     // end of connected details js
 })
 
 
 $(window).resize(function(e){
     ui.setElminHeight($('.details'));
-    $('.scroll-pane').jScrollPane();
+    ui.setElminHeight($('.lt-bar'));
+    ui.setElHeight($('.scroll-wrap'));
 })
