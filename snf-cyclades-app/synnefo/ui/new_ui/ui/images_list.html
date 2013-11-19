@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+    <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Images list</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
+    <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
+    <script src="javascripts/vendor/custom.modernizr.js"></script>
+</head>
+<body>
+		<header class="header">
+		<nav>
+			<ul class="icons-nav">
+				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Volumes"><span class="snf-HDD"></span></a></li>
+				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip current" title="Images" ><span class="snf-images"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Snapshots" ><span class="snf-snapshot"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="More" ><span class="snf-plus"></span></a></li>
+			</ul>
+		</nav>
+		<div class="login">
+			<div class="wrap">
+				<a href="">user1@synnefo.org</a>
+				<ul>
+					<li><a href="">dashboard</a></li>
+					<li><a href="">sign out</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="logo">
+			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+		</div>
+	</header>
+	
+	<div class="overlay-wrapper">
+
+	<!-- overlays start -->
+	<div class="overlay-area-custom">
+		
+		<div id="overlay1" class="overlay-div">
+			<a href="" class="close"><span class="snf-close"></span></a>
+			<p>Are you sure you want to reboot your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+		</div>
+		<div id="overlay2" class="overlay-div">
+			<p>Are you sure you want to shutdown your machine?</p>
+			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+		</div>
+			<div id="image-wizard" class="overlay-div wizard">
+				<div class="top">
+					<div class="numbers">
+						<div class="menus row">
+							<a href="" class="close"><span class="snf-close"></span></a>
+							<ul class="nums">
+								<li class="preselected current">
+									<em><span>1</span></em>
+									<p><strong>To be added...</strong></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<nav class="sub-menu" data-step=1>
+						</nav>
+					</div>
+				</div>
+				<div class="middle">
+				<div class="steps">
+					<div class="step step-1 preselected current">
+						</div>
+					</div>
+				</div>
+<!-- new tba start -->
+				<div class="bottom">
+					<div class="row">
+						<a href="" class="nav prev"><span>CANCEL</span></a>
+						<a href="" class="nav next" data-next="el1"><span>CREATE</span></a>
+						
+					</div>
+				</div>
+<!-- new tba end -->
+
+			</div>
+
+	</div>
+	<!-- overlays end -->
+	
+		<section class="actions-bar clearfix">
+			<h2>Images</h2>
+			<div class="view-type">
+				<a href="" class="list"><span class="snf-listview "></span></a>
+				<a href="" class="grid"><span class="snf-gridview current"></span></a>
+			</div>
+			<div class="filter-menu">
+				<a class="filter" href="">Filter</a>
+				<ul class="options">
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+					<li><a href=""> set an option</a></li>
+				</ul>
+			</div>
+			<div id="hd-search" class="hd-search">
+			    <form>
+					<span class="hd-icon-search snf-search"></span>
+			        <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			    </form>
+			</div>
+		</section>
+		<section class="main row">
+			<div class="images entities grid-view">
+				<ul class="items-list">
+					<li data-status="add-new" class="add-new">
+						<div class="container" data-overlay-id="image-wizard">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
+							<div class="img-wrap">
+									<span class="snf-images icon"></span>
+							</div>
+							<h4>New Image</h4>
+						</div>
+						<div class="tags">
+						</div>
+						<div class= "status">
+						</div>
+					</li>
+					<li data-status="available" class="running">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+										<li><a href="">Option k</a></li>
+										<li><a href="">Option l</a></li>
+										<li><a href="">Option m</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="name">Image Name</div>
+						</div>
+						<div class="container">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
+							<div class="img-wrap">
+								<span class="icon snf-images"></span>
+							</div>
+							<h4>Image Name</h4>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state"></span>
+								<span class="logs"></span>
+							</div>
+						</div>
+					</li>
+					<li data-status="active" class="running">
+						<div class="more">
+							<div class="clearfix">
+								<div class="col lt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+										<li><a href="">Option k</a></li>
+										<li><a href="">Option l</a></li>
+										<li><a href="">Option m</a></li>
+									</ul>
+								</div>
+								<div class="col rt">
+									<ul>
+										<li><a href="">Option i</a></li>
+										<li><a href="">Option j</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="name">Image Name</div>
+						</div>
+						<div class="container">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
+							<div class="img-wrap">
+								<span class="icon snf-images"></span>
+							</div>
+							<h4>Image Name</h4>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state"></span>
+								<span class="logs"></span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="lt-bar">
+					<ul>
+						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
+						<li class="running"><a href="#" title="">Destroy</a></li>
+						<!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+				<div class="welcome">It seems you have not yet created a VM! Go ahead!</div>
+			</div>
+		</section>
+	</div>
+	
+
+  <script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
+	<script src="javascripts/foundation/foundation.alerts.js"></script>
+	
+	<script src="javascripts/foundation/foundation.clearing.js"></script>
+	
+	<script src="javascripts/foundation/foundation.cookie.js"></script>
+	
+	<script src="javascripts/foundation/foundation.dropdown.js"></script>
+	
+	<script src="javascripts/foundation/foundation.forms.js"></script>
+	
+	<script src="javascripts/foundation/foundation.joyride.js"></script>
+	
+	<script src="javascripts/foundation/foundation.magellan.js"></script>
+	
+	<script src="javascripts/foundation/foundation.orbit.js"></script>
+	
+	<script src="javascripts/foundation/foundation.placeholder.js"></script>
+	
+	<script src="javascripts/foundation/foundation.reveal.js"></script>
+	
+	<script src="javascripts/foundation/foundation.section.js"></script>
+	
+	<script src="javascripts/foundation/foundation.tooltips.js"></script>
+	
+	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
+	<!-- dropzone.js used for drag and drop files to upload them --> 
+	<script type="text/javascript" src="javascripts/dropzone.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
+	
+
+	<script type="text/javascript" src="javascripts/ExpandingSearchBar/modernizr.custom.js"></script>
+	<script type="text/javascript" src="javascripts/ExpandingSearchBar/classie.js"></script>
+	<script type="text/javascript" src="javascripts/ExpandingSearchBar/uisearch.js"></script>
+	<script src="javascripts/common.js"></script>
+	<script src="javascripts/wizard.js"></script>
+	
+
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
