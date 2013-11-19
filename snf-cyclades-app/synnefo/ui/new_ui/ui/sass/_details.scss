@@ -110,6 +110,9 @@ $details-icon-large : 90px;
 				.editable {
 					min-width: 30%;
 					display: inline-block;
+					.input-txt {
+						font-size: 14px;
+					}
 					input[type="text"] {
 						width: 100px;
 					}

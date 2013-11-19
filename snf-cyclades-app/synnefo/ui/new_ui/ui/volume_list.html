@@ -8,7 +8,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | Network list</title>
+    <title>Volumes list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
@@ -23,7 +23,7 @@
 			<ul class="icons-nav">
 				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-PC"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip current" title="Volumes"><span class="snf-HDD"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip current" title="Volumes"><span class="snf-HDD-full"></span></a></li>
 				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Images" ><span class="snf-images"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Snapshots" ><span class="snf-snapshot"></span></a></li>
@@ -58,7 +58,7 @@
 			<p>Are you sure you want to shutdown your machine?</p>
 			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
 		</div>
-			<div id="network-wizard" class="overlay-div wizard">
+			<div id="volume-wizard" class="overlay-div wizard">
 				<div class="top">
 					<div class="numbers">
 						<div class="menus row">
@@ -79,7 +79,7 @@
 				<div class="middle">
 				<div class="steps">
 					<div class="step step-1 preselected current">
-						<ul class="row network_options">
+						<ul class="row volume_options">
 								<li class="project-selection">
 									<form class="custom">
 									  <select class="medium">
@@ -89,13 +89,38 @@
 									  </select>
 									</form>
 								</li>
-								<li>
-									<div class="network-name">
-										<h2>Volume name</h2>
-										<span class="input"><input class="el1" type="text" placeholder="My Network"></span>
-									</div>
+								<li  class="volume-name">
+									<h2>Volume name</h2>
+									<span class="input"><input class="el1" type="text" placeholder="My Volume"></span>
 								</li>
-								<li class="dhcp_option">
+								<li class="volume-size">
+									<div class="title">
+												<span class="snf-HDD icon"></span>
+												<h2>
+													Disk Size<span> (GB)</span>
+													<em>Choose disk size</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total low" style="width:40%">
+																<div class="current" style="width:80%"></div>
+																<span>40%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected">10</a></li>
+													<li><a href="" class="medium">20</a></li>
+													<li><a href="" class="large">30</a></li>
+													<li><a href="">40</a></li>
+												</ul>
+											</div>
 								</li>	
 							</ul>
 						</div>
@@ -139,12 +164,15 @@
 			</div>
 		</section>
 		<section class="main row">
-			<div class="networks entities grid-view">
+			<div class="volumes entities grid-view">
 				<ul class="items-list">
 					<li data-status="add-new" class="add-new">
-						<div class="container" data-overlay-id="network-wizard">
+						<div class="container" data-overlay-id="volume-wizard">
+							<div class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</div>
 							<div class="img-wrap">
-									<span class="snf-HDD"></span>
+									<span class="snf-HDD-full icon"></span>
 							</div>
 							<h4>New Volume</h4>
 						</div>
@@ -153,23 +181,19 @@
 						<div class= "status">
 						</div>
 					</li>
-					<li data-status="active">
+					<li data-status="available" class="running">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
 									<ul>
-										<li><a href="">Option i</a></li>
-										<li><a href="">Option j</a></li>
-										<li><a href="">Option k</a></li>
+										<li><a href="">Attach to Machine</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Details</a></li>
 										<li><a href="">Option l</a></li>
 										<li><a href="">Option m</a></li>
 									</ul>
 								</div>
 								<div class="col rt">
-									<ul>
-										<li><a href="">Option i</a></li>
-										<li><a href="">Option j</a></li>
-									</ul>
 								</div>
 							</div>
 							<div class="name">Volume Name</div>
@@ -179,18 +203,18 @@
 								<span class="snf-checkbox-unchecked"></span>
 							</div>
 							<div class="img-wrap">
-								<span class="snf-HDD"></span>
+								<span class="icon snf-HDD-full"></span>
 							</div>
-							<h4>Network Name</h4>
+							<h4>Volume Name</h4>
 							<div class="tags">
 							</div>
 							<div class= "status">
-								<span class="state"></span>
+								<span class="state">Connected to Machine-i (img? what data?)</span>
 								<span class="logs"></span>
 							</div>
 						</div>
 					</li>
-					<li data-status="active">
+					<li data-status="active" class="off">
 						<div class="more">
 							<div class="clearfix">
 								<div class="col lt">
@@ -216,13 +240,13 @@
 								<span class="snf-checkbox-unchecked"></span>
 							</div>
 							<div class="img-wrap">
-								<span class="snf-HDD"></span>
+								<span class="icon snf-HDD-full"></span>
 							</div>
-							<h4>Network Name</h4>
+							<h4>Volume Name</h4>
 							<div class="tags">
 							</div>
 							<div class= "status">
-								<span class="state"></span>
+								<span class="state">Not in use -Available</span>
 								<span class="logs"></span>
 							</div>
 						</div>
@@ -231,11 +255,9 @@
 				<div class="lt-bar">
 					<ul>
 						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
-						<li class="running"><a href="#" title="">Action 1</a></li>
-						<li class="running"><a href="#" title="">Action 2</a></li>
-						<li class="both"><a href="#">Destroy</a></li>
-						<li class="stopped"><a href="#">Start</a></li>
-						 <!-- in case we want an action always activated
+						<li class="running pernament"><a href="#" title="" class="active">Destroy</a></li>
+						<li class="running"><a href="#" title="">Detach from Machine</a></li>
+						<!-- in case we want an action always activated
 						<li class="pernament"><a href="" class="active">Action</a></li> -->
 					</ul>
 				</div>

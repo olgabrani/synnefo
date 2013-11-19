@@ -470,27 +470,6 @@ $(document).ready(function() {
 					});
 				}
 			});
-
-			$('.show-add-tag').click(function(e) {
-				e.preventDefault();
-				$(this).parents('.tags-area').find('.snf-color-picker').slideDown('slow', function() {
-					$('#hide-add-tag-dummy').scrollintoview({
-						'duration': 'slow'
-					});
-				});
-				ui.colorPickerVisible = 1;
-			});
-
-			$('.hide-add-tag').click(function(e) {
-				e.preventDefault();
-				$(this).parents('.tags-area').find('.snf-color-picker').slideUp(400, function() {
-					$('.show-add-tag').first().scrollintoview({
-						'duration': 'slow'
-					});
-					ui.colorPickerVisible = 0;
-				});
-			});
-
 		}
 		else if (wizardType == 'network-wizard') {
 
