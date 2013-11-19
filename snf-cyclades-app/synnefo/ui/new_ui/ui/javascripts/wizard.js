@@ -504,6 +504,21 @@ $(document).ready(function() {
 				$(this).find('.radio_btn').trigger('click');
 			})
 		}
+		else if (wizardType == 'volume-wizard') {
+			// same with vm wizard -> make function
+			wizard.find('.volume_options .options a').hover(
+				function() {
+					console.log('hi-2')
+					var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
+					var text = $(this).data('help');
+					paragraph.html(text);
+					paragraph.css('visibility', 'visible');
+				}, function() {
+					var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
+					paragraph.css('visibility', 'hidden');
+				}
+			);
+		}
 	}
 
 })

@@ -12,9 +12,11 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/farbtastic.css" />
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
+
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
 <body>
@@ -66,7 +68,15 @@
 							<ul class="nums">
 								<li class="preselected current">
 									<em><span>1</span></em>
-									<p><strong>Create new volume</strong></p>
+									<p><strong>New Volume: Choose your configuration </strong></p>
+								</li>
+								<li>
+									<em><span>2</span></em>
+									<p><strong>New Volume: Connect to vm</strong></p>
+								</li>
+								<li>
+									<em><span>3</span></em>
+									<p><strong>New Volume: Summary</strong></p>
 								</li>
 							</ul>
 						</div>
@@ -114,19 +124,99 @@
 														</div>
 													</div>
 												</div>
-												<ul class="options with-flavor">
+												<ul class="options">
 													<li><a href="" class="small current preselected">10</a></li>
 													<li><a href="" class="medium">20</a></li>
 													<li><a href="" class="large">30</a></li>
 													<li><a href="">40</a></li>
 												</ul>
 											</div>
-								</li>	
+								</li>
+								<li class="volume-type">
+									<div class="title">
+										<span class="snf-HDD icon"></span>
+										<h2>
+											Storage
+											<em>Select storage type</em>
+										</h2>
+										<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+									</div>
+									<div class="options-bar">
+										<div class="bar">
+											<div class="wrap  disabled-progress-bar">
+												<div class="container">
+													<!-- width percentages do not correspond to actual mesurements -->
+													<div class="total" style="width:100%">
+														<div class="current" style="width:0%"></div>
+														<span></span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="options vm-storage-selection">
+											<li><a href="" class="current preselected">DRBD</a></li>
+											<li><a href="" data-next="el3">Archipelago</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="step step-2">
+						<div class="explain row">
+							<p>In order to use your volume you need to attach it to a vm.</p>
+							<p>Choose a machine and after the creation of the volume it will be attached automatically to this machine.</p>
+							<p>If you don't attach it now, you will be able to do that in the future.</p>
+							<p>Remember, you can always move your volume from one machine to another.</p>
+						</div>
+							<ul class="row">
+								<li>
+									<a href=""><span class="snf-radio-unchecked"></span></a>
+									<span>Do not attach the volume to a machine now.</span>
+								</li>
+								<li>
+									<a href=""><span class="snf-radio-checked"></span></a>
+									<span>Attach the volume to:</span>
+									<ul class="vms-list">
+										<li><a href=""><span class="snf-radio-checked"></span></a>
+											<div class="img-wrap">
+												<span class="snf-PC_fill icon"></span>
+												<span class="os">unknown</span>
+											</div>
+											<div>Machine Name</div>
+											<div>Machine ID</div>
+											<div>Created: 12/12/12</div>
+											<div>Other data</div>
+										</li>
+										<li><a href=""><span class="snf-radio-unchecked"></span></a>
+											<div class="img-wrap">
+												<span class="snf-PC_fill icon"></span>
+												<span class="os">unknown</span>
+											</div>
+											<div>Machine Name</div>
+											<div>Machine ID</div>
+											<div>Created: 12/12/12</div>
+											<div>Other data</div>
+										</li>
+										<li><a href=""><span class="snf-radio-unchecked"></span></a>
+											<div class="img-wrap">
+												<span class="snf-PC_fill icon"></span>
+												<span class="os">unknown</span>
+											</div>
+											<div>Machine Name</div>
+											<div>Machine ID</div>
+											<div>Created: 12/12/12</div>
+											<div>Other data</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="step step-3">
+							<ul class="row">
 							</ul>
 						</div>
 					</div>
 				</div>
-<!-- new tba start -->
 				<div class="bottom">
 					<div class="row">
 						<a href="" class="nav prev"><span>CANCEL</span></a>
@@ -134,13 +224,8 @@
 						
 					</div>
 				</div>
-<!-- new tba end -->
-
 			</div>
-
-	</div>
-	<!-- overlays end -->
-	
+		</div>
 		<section class="actions-bar clearfix">
 			<h2>Volumes</h2>
 			<div class="view-type">
@@ -266,9 +351,9 @@
 		</section>
 	</div>
 	
-
-  <script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/vendor/jquery.js"></script>
 	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="javascripts/underscore-min.js"></script>
 	<script src="javascripts/foundation/foundation.js"></script>
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
 	
@@ -293,24 +378,26 @@
 	<script src="javascripts/foundation/foundation.section.js"></script>
 	
 	<script src="javascripts/foundation/foundation.tooltips.js"></script>
-	
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
 	<!-- dropzone.js used for drag and drop files to upload them --> 
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
-	
-
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/modernizr.custom.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/classie.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/uisearch.js"></script>
+	<!-- fabrastic.js used for the color picker --> 
+	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>
 	<script src="javascripts/common.js"></script>
-	<script src="javascripts/wizard.js"></script>
 	
-
+	<script type="text/javascript" src="javascripts/wizard.js"></script>
+	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
   <script>
     $(document).foundation();
+    $(document).ready(function() {
+
+    })
   </script>
 </body>
 </html>

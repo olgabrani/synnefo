@@ -5,3 +5,29 @@
   font-size: 34px;
   color: #30c79e;
 }
+
+.step-2>ul>li {
+	margin-bottom: 0.5em;
+}
+
+.wizard .vms-list {
+	margin-top: 1em;
+	&>li {
+		margin-bottom: 0.5em;
+		&>div, &>a {
+			display: inline-block;
+			margin-right: 15px;
+		}
+		.img-wrap {
+			position: relative;
+			width: 30px;
+			.icon {
+				font-size: 30px;
+			}
+			.os{
+				background-size: 14px;
+				top: -2px;
+			}
+		}
+	}
+}
