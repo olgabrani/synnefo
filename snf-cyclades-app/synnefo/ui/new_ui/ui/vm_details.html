@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | VM details</title>
+    <title>VM details</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/farbtastic.css" />
@@ -23,10 +23,10 @@
 				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-PC_fill"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network"></span></a></li>
 				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-HDD"></span></a></li>
-				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-Pithos"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Images" ><span class="snf-images"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Snapshots" ><span class="snf-snapshot"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="More" ><span class="snf-plus"></span></a></li>
+				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage"><span class="snf-Pithos"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Images"><span class="snf-images"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="Snapshots"><span class="snf-snapshot"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="More"><span class="snf-plus"></span></a></li>
 			</ul>
 		</nav>
 		<div class="login">
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<div class="logo">
-			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+			<a href="index.html"><img src="images/synnefo-logo.png" alt="software logo"></a>
 		</div>
 	</header>
 	<div class="info top-info alert">
@@ -71,14 +71,14 @@
 			<a class="close-reveal-modal" title="close window">X</a>
 		</div>
 	 	<div id="vm-connect" class="reveal-modal medium">
-	  		<p>A direct connection to this machine can be established using the <a href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell" target=​"_blank" >​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+	  		<p>A direct connection to this machine can be established using the <a href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell" target=​"_blank">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
 			<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
 
 			<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
 	  		<a class="close-reveal-modal" title="close window">&#215;</a>
 		</div>
 		<section class="actions-bar clearfix">
-			<h2><a href="vm_list.html">Virtual Machines</a> > My Awesome machine</h2>
+			<h2><a href="vm_list.html">Virtual Machines</a> > My Awesome Network</h2>
 			<div class="view-type">
 				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
 				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
@@ -444,59 +444,55 @@
 					<section class="info-block">
 						<h2>info</h2>
 						<dl>
-							<dt><span class="snf-cpu icon"></span>CPUs</dt>
+							<dt><span class="font-icon"></span>Project</dt>
+							<dd>Basic Project</dd>
+							<dt><span class="font-icon snf-PC_fill"></span>Name</dt>
+							<dd>
+								<div class="editable">
+							        <span class="input-txt">My Opensuse Desktop Server 1</span>
+							        <input type="text">
+							        <span class="editbuttons">
+										<a href="#" class="edit"><span class="snf-edit-1"></span></a>
+										<a href="#" class="save"><span class="snf-ok-sign"></span></a>
+										<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
+									</span>
+							    </div>
+							</dd>
+							<dt><span class="snf-cpu font-icon"></span>CPUs</dt>
 							<dd>4</dd>
-							<dt><span class="snf-ram icon"></span>RAM</dt>
+							<dt><span class="snf-ram-full font-icon"></span>RAM</dt>
 							<dd>512 MB</dd>
-							<dt><span class="snf-HDD icon"></span>System Disk Size</dt>
+							<dt><span class="snf-HDD-full font-icon"></span>System Disk Size</dt>
 							<dd>4GB</dd>
-							<dt><span class="snf-HDD icon"></span>Storage Type</dt>
+							<dt><span class="snf-HDD-full font-icon"></span>Storage Type</dt>
 							<dd>Archipelago</dd>
-							<dt><span class="snf-images icon"></span>Image Name</dt>
+							<dt><span class="snf-images font-icon"></span>Image Name</dt>
 							<dd>Fedora</dd>
-							<dt><span class="snf-images icon"></span>Image Size</dt>
+							<dt><span class="snf-images font-icon"></span>Image Size</dt>
 							<dd>3.68 GB</dd>
-							<dt><span class="snf-ram icon"></span>IPv4</dt>
+							<dt><span class="snf-nic-full font-icon"></span>IPv4</dt>
 							<dd>83.212.96.152</dd>
-							<dt><span class="snf-ram icon"></span>IPv4</dt>
+							<dt><span class="snf-nic-full font-icon"></span>IPv4</dt>
 							<dd>83.212.96.153</dd>
-							<dt><span class="snf-ram icon"></span>IPv6</dt>
+							<dt><span class="snf-nic-full font-icon"></span>IPv6</dt>
 							<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
 						</dl>
 					</section>
 					<section class="info-block tags">
 						<h2>tags</h2>
-						<div class="editable">
+						<div class="tag-data">
 							<a href="" class="tag tag1 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
-							<span class="input-txt">Tag Name</span>
-							<input type="text">
-							<span class="editbuttons">
-								<a href="#" class="edit"><span class="snf-edit-1"></span></a>
-								<a href="#" class="save"><span class="snf-ok-sign"></span></a>
-								<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
-							</span>
+							<span>Tag Name</span>
 							<a class="delete"><span>X</span></a>
 						</div>
-						<div class="editable">
+						<div class="tag-data">
 							<a href="" class="tag tag2 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
-							<span class="input-txt">Tag Name</span>
-							<input type="text">
-							<span class="editbuttons">
-								<a href="#" class="edit"><span class="snf-edit-1"></span></a>
-								<a href="#" class="save"><span class="snf-ok-sign"></span></a>
-								<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
+							<span>Tag Name</span>
 							<a class="delete"><span>X</span></a>
-							</span>
 						</div>
-						<div class="editable">
+						<div class="tag-data">
 							<a href="" class="tag tag3 has-tip" data-tooltip="" title="Tooltip1">&nbsp;</a>
-							<span class="input-txt">Tag Name</span>
-							<input type="text">
-							<span class="editbuttons">
-								<a href="#" class="edit"><span class="snf-edit-1"></span></a>
-								<a href="#" class="save"><span class="snf-ok-sign"></span></a>
-								<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
-							</span>
+							<span>Tag Name</span>
 							<a class="delete"><span>X</span></a>
 						</div>
 						<div class="buttons">
@@ -541,28 +537,46 @@
 					</section>
 				</section>
 				<section class="content connected" id="network-connected" style="display:none">
-					<section class="item error">
+					<section class="item running">
 						<div class="what">
 							<div class="img-wrap">
-								<span class="snf-PC_fill"></span>
-								<span class="os fedora">fedora</span>
+								<span class="snf-network_full"></span>
 							</div>
-							<h4>My Awesome Machine<span class="status">BUILDING 798.56 MB of 4.33 GB (18%)</span></h4>
+							<h4>Public Network</h4>
 						</div>
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
 									<a href="#" class="act">act</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
-												<h5>ipv6</h5>
-												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
+												<h5 class="ip-data">IPv4</h5>
+												<p>83.212.96.12</p>
 											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span class="snf-nic-full"></span></div>
+									<div class="data">
+										<ul>
 											<li>
-												<h5>ipv6</h5>
-												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee</p>
+												<h5 class="ip-data">IPv4</h5>
+												<p>83.212.96.12</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="icon"><span class="snf-nic-full"></span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5 class="ip-data">IPv6</h5>
+												<p>2001:648:2ffc:1112:a80c:eaff:fe34:1234</p>
 											</li>
 										</ul>
 									</div>
@@ -584,26 +598,26 @@
 							</div>
 						</div>
 					</section>
-					<section class="item running">
+					<section class="item error">
 						<div class="what">
 							<div class="img-wrap">
 								<span class="snf-network_full"></span>
 							</div>
-							<h4>My Awesome Network</h4>
+							<h4>My Awesome Network<span class="status">Error</span></h4>
 						</div>
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
 									<a href="#" class="act">act</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
-												<h5>ipv6</h5>
+												<h5 class="ip-data">ipv6</h5>
 												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
 											</li>
 											<li>
-												<h5>ipv4</h5>
+												<h5 class="ip-data">ipv4</h5>
 												<p>001:648:2ffc</p>
 											</li>
 										</ul>
@@ -611,11 +625,11 @@
 								</li>
 								<li>
 									<a href="#" class="act">act</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
-												<h5>ipv6</h5>
+												<h5 class="ip-data">ipv6</h5>
 												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
 											</li>
 										</ul>
@@ -623,74 +637,47 @@
 								</li>
 								<li>
 									<a href="#" class="act">act</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
-												<h5>ipv6</h5>
+												<h5 class="ip-data">ipv6</h5>
 												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
 											</li>
 											<li>
-												<h5>ipv6</h5>
+												<h5 class="ip-data">ipv6</h5>
 												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee</p>
 											</li>
 										</ul>
 									</div>
 								</li>
 							</ul>
-							<div class="firewall" data-firewall="basic">
-								<p>Firewall <em>on</em></p>
-								<div class="more">
-									<p class="fully">
-										<a href="">Fully protected mode<span class="snf-radio-unchecked"></span><em>on</em></a>
-									</p>
-									<p class="basic">
-										<a href="">Basically protected mode<span class="snf-radio-checked"></span><em>off</em></a>
-									</p>
-									<p class="unprotected">
-										<a href="">Unprotected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
-									</p>
-								</div>
-							</div>
+
 						</div>
 					</section>
 					<section class="item running">
 						<div class="what">
 							<div class="img-wrap">
-								<span class="snf-PC_fill"></span>
-								<span class="os fedora">fedora</span>
+								<span class="snf-network_full"></span>
 							</div>
-							<h4>My Awesome Machine<span class="status">BUILDING 798.56 MB of 4.33 GB (18%)</span></h4>
+							<h4>My Private Network</h4>
 						</div>
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
 									<a href="#" class="act">act</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
-												<h5>ipv6</h5>
+												<h5 class="ip-data">ipv6</h5>
 												<p>001:648:2ffc:1112:a80c:eaff:fe15:baee </p>
 											</li>
 										</ul>
 									</div>
 								</li>
 							</ul>
-							<div class="firewall" data-firewall="unprotected">
-								<p>Firewall <em>on</em></p>
-								<div class="more">
-									<p class="fully">
-										<a href="">Fully protected mode<span class="snf-radio-unchecked"></span><em>on</em></a>
-									</p>
-									<p class="basic">
-										<a href="">Basically protected mode<span class="snf-radio-unchecked"></span><em>off</em></a>
-									</p>
-									<p class="unprotected">
-										<a href="">Unprotected mode<span class="snf-radio-checked"></span><em>off</em></a>
-									</p>
-								</div>
-							</div>
+
 						</div>
 					</section>
 					<section class="connect-new">
@@ -700,6 +687,73 @@
 							</a>
 						</div>
 						<p><a href="">Connect to Network</a></p>
+					</section>
+				</section>
+				<section class="content connected" id="disk-connected" style="display:none">
+					<section class="item running">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-HDD-full font-icon"></span>
+							</div>
+							<h4>Volume Name</h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span>?</span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5 class="volume-data">Size</h5>
+												<p>10 GB</p>
+											</li>
+											<li>
+												<h5 class="volume-data">Storage Type</h5>
+												<p>Archipelago</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section class="item error">
+						<div class="what">
+							<div class="img-wrap">
+								<span class="snf-HDD-full font-icon"></span>
+							</div>
+							<h4>Another Volume<span class="status">Error</span></h4>
+						</div>
+						<div class="clearfix">
+							<ul class="connections">
+								<li>
+									<a href="#" class="act">act</a>
+									<div class="icon"><span>?</span></div>
+									<div class="data">
+										<ul>
+											<li>
+												<h5 class="volume-data">Size</h5>
+												<p>20 GB</p>
+											</li>
+											<li>
+												<h5 class="volume-data">Storage Type</h5>
+												<p>Archipelago</p>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+
+						</div>
+					</section>
+					<section class="connect-new">
+						<div class="img-wrap">
+							<a href="">
+								<span class="snf-HDD-full font-icon"></span>
+							</a>
+						</div>
+						<p><a href="">Attach Volume</a></p>
 					</section>
 				</section>
 				<div class="placeholder"></div>

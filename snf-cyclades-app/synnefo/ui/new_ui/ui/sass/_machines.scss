@@ -47,7 +47,7 @@
 @mixin stateColor($color) {
 	.img-wrap {
 		.snf-PC_fill,
-		.snf-network_full, .icon {
+		.snf-network_full, .font-icon {
 			color:$color;
 		}
 	}
@@ -66,7 +66,7 @@
 	}
 	.snf-PC_fill,
 	.snf-network_full {
-		font-size: 60px;
+		font-size: $font-icon-size-medium;
 		color: $vm-active-color;
 	}
 	.os {

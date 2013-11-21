@@ -102,9 +102,9 @@ ui.inactiveActions = function() {
     })
 }
 
-ui.detailsCustom = function() {
+ui.detailsCustom = function(id) {
     // position last connected item
-    var el = $('.connected .item').last();
+    var el = $('#'+id+'.connected .item').last();
     // -2 is the border width;
     var moveY = el.find('.connections >li').last().outerHeight(true) - 2;
     el.css('top',moveY);
@@ -143,7 +143,6 @@ ui.firewallSetup = function(){
         <a href="#" class="save">save</a>
         <a href="#" class="cancel">cancel</a>
     </div>
-    <a href="#" class="delete">delete</a>
 */
 ui.editable = function(){
 
@@ -319,8 +318,10 @@ ui.tabs = function(tabsEl, sectionEl) {
             $(this).parents(tabsEl).find('a').removeClass('active');
             $(this).addClass('active');
             $(sectionEl).hide();
+            sectionVis = $(href($(this)));
+            sectionVisID = sectionVis.attr('id');
             $(href($(this))).stop(true,true).fadeIn(500, function(){
-                ui.detailsCustom();
+                ui.detailsCustom(sectionVisID);
             });
         }
     })
@@ -587,7 +588,9 @@ $(document).ready(function(){
     });
 
     // connected details js
-    ui.detailsCustom();
+    ui.detailsCustom('disk-connected');
+    ui.detailsCustom('network-connected');
+    ui.detailsCustom('vm-connected');
     ui.firewallSetup();
     $('.firewall .more  a').click(function(e){
         e.preventDefault();

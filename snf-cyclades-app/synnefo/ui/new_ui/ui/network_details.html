@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | Network details</title>
+    <title>Network details</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
@@ -38,15 +38,16 @@
 			</div>
 		</div>
 		<div class="logo">
-			<a href="index.html"><img src="images/logo_01.png" alt="software logo"></a>
+			<a href="index.html"><img src="images/synnefo-logo.png" alt="software logo"></a>
 		</div>
 	</header>
 	<div class="overlay-wrapper">
 		<section class="actions-bar clearfix">
 			<h2><a href="vm_list.html">Networks</a> > My Awesome network</h2>
 			<div class="view-type">
+				<a href="" class="list" title="list view"><span class="snf-singleview current"></span></a>
+				<a href="" class="grid" title="grid view"><span class="snf-gridview"></span></a>
 				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
-				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
 			</div>
 			<div class="filter-menu">
 				<a class="filter" href="">Filter</a>
@@ -66,6 +67,62 @@
 		</section>
 		<div class="main row">
 			<div class="network details running">
+			<a href="" class="toggle-lt-bar">...</a>
+				<div class="lt-bar">
+					<div class="scroll-wrap">
+						<ul class="items-list">
+							<li data-status="running" class="running">
+								<div class="more">
+								</div>
+								<div class="container">
+									<div class="check">
+										<span class="snf-checkbox-unchecked"></span>
+									</div>
+									<div class="img-wrap">
+										<span class="snf-network_full font-icon"></span>
+									</div>
+									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+									<div class="actions">
+										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-lightning"></span></a>
+										<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+									</div>
+									<div class= "status">
+										<span class="state"></span>
+									</div>
+									<div class="tags">
+										<a href="" class="tag tag1 has-tip" data-tooltip title="Tooltip1">&nbsp;</a>
+										<a href="" class="tag tag2 has-tip" data-tooltip title="Tooltip2">&nbsp;</a>
+									</div>
+									<div class="info"></div>
+								</div>
+							</li>
+							<li data-status="error" class="error">
+								<div class="more">
+								</div>
+								<div class="container">
+									<div class="check">
+										<span class="snf-checkbox-unchecked"></span>
+									</div>
+									<div class="img-wrap">
+										<span class="snf-network_full font-icon"></span>
+									</div>
+									<h4>Private Network</h4>
+									<div class="actions">
+										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-lightning"></span></a>
+										<a href="vm_details.html" title="view vm details" class="snf-info_outline"></a>
+									</div>
+									<div class= "status">
+										<span class="state">Error</span>
+									</div>
+									<div class="tags">
+									</div>
+									<div class="info"><a href="snf-9733.vm.okeanos.grnet.gr" title="">snf-9733.vm.okeanos.grnet.gr</a></div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
 				<section class="top">
 					<div class="lt">
 						<div class="img-wrap">
@@ -74,12 +131,12 @@
 					</div>
 					<div class="rt">
 						<div class="title">
-							<h1>Internet access 001:648:2ffc:1112:a80c:eaff:fe15:baee</h1>
+							<h1>Public Network</h1>
 						</div>
 						<div class="actions">
 							<ul>
-								<li><a href="">Start</a></li>
-								<li><a href="">Shutdown</a></li>
+								<li><a href="">Add Machine</a></li>
+								<li><a href="">Destroy</a></li>
 							</ul>
 						</div>
 						<div class="tabs">
@@ -94,24 +151,12 @@
 					<section class="info-block">
 						<h2>info</h2>
 						<dl>
-							<dt><span class="snf-cpu icon"></span>CPUs</dt>
+							<dt><span class="font-icon"></span>Project</dt>
+							<dd>Basic Project</dd>
+							<dt><span class="font-icon"></span>Name</dt>
+							<dd>Public Network</dd>
+							<dt><span class="snf-PC_fill font-icon"></span>Connected Machines</dt>
 							<dd>4</dd>
-							<dt><span class="snf-ram icon"></span>RAM</dt>
-							<dd>512 MB</dd>
-							<dt><span class="snf-HDD icon"></span>System Disk Size</dt>
-							<dd>4GB</dd>
-							<dt><span class="snf-HDD icon"></span>Storage Type</dt>
-							<dd>Archipelago</dd>
-							<dt><span class="snf-images icon"></span>Image Name</dt>
-							<dd>Fedora</dd>
-							<dt><span class="snf-images icon"></span>Image Size</dt>
-							<dd>3.68 GB</dd>
-							<dt><span class="snf-ram icon"></span>IPv4</dt>
-							<dd>83.212.96.152</dd>
-							<dt><span class="snf-ram icon"></span>IPv4</dt>
-							<dd>83.212.96.153</dd>
-							<dt><span class="snf-ram icon"></span>IPv6</dt>
-							<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
 						</dl>
 					</section>
 				</section>
@@ -128,7 +173,7 @@
 							<ul class="connections">
 								<li>
 									<a href="#" class="act">&nbsp;</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
@@ -171,7 +216,7 @@
 							<ul class="connections">
 								<li>
 									<a href="#" class="act">&nbsp;</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
@@ -187,7 +232,7 @@
 								</li>
 								<li>
 									<a href="#" class="act">&nbsp;</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
@@ -199,7 +244,7 @@
 								</li>
 								<li>
 									<a href="#" class="act">&nbsp;</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>
@@ -242,7 +287,7 @@
 							<ul class="connections">
 								<li>
 									<a href="#" class="act">&nbsp;</a>
-									<div class="icon"><span class="snf-info_outline"></span></div>
+									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
 											<li>

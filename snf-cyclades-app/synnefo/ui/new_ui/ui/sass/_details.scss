@@ -93,7 +93,7 @@ $details-icon-large : 90px;
 					width: 42%;
 					vertical-align: top;
 					font-weight: normal;
-					.icon {
+					.font-icon {
 						width: 40px;
 						display: inline-block;
 						font-size: emCalc(24px);
@@ -107,15 +107,9 @@ $details-icon-large : 90px;
 			}
 			&.tags {
 				text-align:left;
-				.editable {
+				.tag-data {
 					min-width: 30%;
 					display: inline-block;
-					.input-txt {
-						font-size: 14px;
-					}
-					input[type="text"] {
-						width: 100px;
-					}
 				}
 				.btns {
 					margin-top: 77px;
