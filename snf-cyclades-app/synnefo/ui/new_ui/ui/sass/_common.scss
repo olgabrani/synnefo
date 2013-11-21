@@ -104,6 +104,12 @@
 	z-index: 3;
 }
 
+@mixin square($side) {
+	width: $side;
+	height: $side;
+
+}
+
 /* Circle and Tags ----------------------------------------------- */
 .circle {
 	display:inline-block;
@@ -452,17 +458,30 @@ body {
 		.current, a:hover {
 			color: $secondary-color;
 		}
-		.snf-listview {
-			position: relative;
-			top: 3px;
+		.list {
 			margin-right: 3px;
-			font-size: 22px;
-		}
-		.snf-gridview {
-				font-size: 22px;
+			.snf-listview {
 				position: relative;
 				top: 3px;
-				margin-right: 3px;
+				font-size: 22px;
+			}
+		}
+		.grid {
+			margin-right: 7px;
+			.snf-gridview {
+					font-size: 22px;
+					position: relative;
+					top: 3px;
+			}
+		}
+		.single {
+			@include square(14px);
+			display: inline-block;
+			border: 1px solid;
+			background-color: transparent;
+			&.current {
+				background-color: $secondary-color;
+			}
 		}
 		
 	}
