@@ -124,6 +124,20 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 			}
 		}
 	}
+	&.network {
+		h4 {
+			position: absolute;
+			top: 25px;
+			left: $lt-width;
+		}
+	}
+	&.disk {
+		h4 {
+			position: absolute;
+			top: 20px;
+			left: $lt-width;
+		}
+	}
 }
 
 .connect-new {
@@ -172,6 +186,13 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 		font-size: emCalc(14px);
 		top: 90px;
 	}
+	&.network p {
+		top: 90px;
+	}
+	&.disk p {
+		top: 94px;
+	}
+
 }
 
 .network .connected {

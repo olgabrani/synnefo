@@ -170,3 +170,35 @@ $details-icon-large : 90px;
 		color: #fff;
 	}
 }
+
+.list-availables {
+	&>span{
+			margin-bottom: 1em;
+			display: inline-block;
+		}
+	ul {
+		list-style-type: none;
+		li {
+			line-height: 2.5em;
+			span {
+				display: inline-block;
+				&:not(:last-child), span:not(:first-child) {
+					margin-right: 20px;
+				}
+				&:first-child {
+					margin-right: 30px;
+				}
+				&.font-icon{
+					vertical-align: middle;
+					&.snf-network_full, &.snf-HDD-full {
+						font-size: 24px;
+						color: $secondary-color;
+					}
+				}
+				&.name {
+					width: 30%;
+				}
+			}
+		}
+	}
+}
