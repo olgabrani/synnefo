@@ -617,9 +617,34 @@ $(document).ready(function(){
         $('.lt-bar').animate({ width: 'toggle' });
     });
 
+    // to remove the visual effect that shows that the process of disconnect is in progress
+    // we must not have pending clicks (incomplite hide process)
+    var countClicks = 0;
     $('.act').click(function(e){
         e.preventDefault();
+        countClicks++;
         $(this).toggleClass('open',0);
+        var img = $(this).closest('.item').find('.img-wrap .font-icon');
+        img.addClass('reboot-progress');
+        var self = this;
+        setTimeout(function() {
+            countClicks--;
+            var connections_list = $(self).closest('.connections').children('li:not(".hidden")');
+            if(connections_list.length>1) {
+                $(self).closest('li').slideUp(function(){
+                    console.log(img)
+                    $(self).closest('li').addClass('hidden');
+                    if(countClicks== 0) img.removeClass('reboot-progress');
+                });
+            }
+            else {
+            $(self).closest('.item').slideUp('slow', function(){
+                    img.removeClass('reboot-progress')
+                    $(self).closest('li').addClass('hidden');
+                    if(countClicks== 0) img.removeClass('reboot-progress');
+                });
+            }
+        }, 3000)
     })
 
     // end of connected details js
