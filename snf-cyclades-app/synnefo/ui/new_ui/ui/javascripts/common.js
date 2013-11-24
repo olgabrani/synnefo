@@ -614,22 +614,23 @@ $(document).ready(function(){
 
     $('.toggle-lt-bar').click(function(e){
         e.preventDefault();
-        var self =this;
-        if($(this).hasClass('fix-position')) {
-            $(this).fadeOut({
-                complete: function() {
-                $(self).removeClass('fix-position');
-                $(self).fadeIn();
-                },
-                start: function() {
-                $('.lt-bar').animate({ width: 'toggle' });
-                }
-        });
-        }
-        else {
-            $(this).addClass('fix-position');
-            $('.lt-bar').animate({ width: 'toggle' });
-        }
+        $('.lt-bar').animate({ width: 'toggle' });
+        // var self =this;
+        // if($(this).hasClass('fix-position')) {
+        //     $(this).fadeOut({
+        //         complete: function() {
+        //         $(self).removeClass('fix-position');
+        //         $(self).fadeIn();
+        //         },
+        //         start: function() {
+        //         $('.lt-bar').animate({ width: 'toggle' });
+        //         }
+        // });
+        // }
+        // else {
+        //     $(this).addClass('fix-position');
+        //     $('.lt-bar').animate({ width: 'toggle' });
+        // }
     });
 
     // to remove the visual effect that shows that the process of disconnect is in progress
@@ -640,7 +641,7 @@ $(document).ready(function(){
     $('.act').click(function(e){
         e.preventDefault();
         countClicks++;
-        $(this).toggleClass('open',0);
+        $(this).addClass('open',0);
         var img = $(this).closest('.item').find('.img-wrap .snf-font');
         img.addClass('reboot-progress');
         var self = this;
