@@ -169,6 +169,11 @@ $details-icon-large : 90px;
 		background: $link-color-hover;
 		color: #fff;
 	}
+	&.fix-position {
+		position: fixed;
+		top: $header-height + $bar-height + 35px;
+		left: $main-padding-horizontal + emCalc(1px)
+	}
 }
 
 .list-availables {
