@@ -250,7 +250,7 @@
 									margin-bottom:emCalc(8px);
 									color:white;
 									vertical-align: top;
-									.font-icon {
+									.snf-font {
 										display: block;
 										width:60px;
 										font-size:38px;
@@ -509,13 +509,13 @@
 			                                position: relative;
 			                                span {
 												position: relative;
-												&.snf-modem {
+												&.snf-router-outline {
 													top:-1px;
 			                                    }
 			                                    &.snf-www {
 			                                        top:6px;
 			                                    }
-			                                    &.snf-network_full {
+			                                    &.snf-network-full {
 			                                        top:5px;
 			                                    }
 			                                    &.temp-line {
@@ -806,7 +806,7 @@
 					margin-bottom:emCalc(8px);
 					color:white;
 					vertical-align: top;
-					.font-icon {
+					.snf-font {
 						display: block;
 						width:60px;
 						font-size:38px;

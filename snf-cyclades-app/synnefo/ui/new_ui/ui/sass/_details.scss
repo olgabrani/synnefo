@@ -27,8 +27,8 @@ $details-icon-large : 90px;
 			vertical-align: middle;
 			width: auto;
 			height: $details-icon-large;
-			.snf-PC_fill,
-			.snf-network_full {
+			.snf-pc-full,
+			.snf-network-full {
 				font-size: $details-icon-large;
 			}
 			.os {
@@ -93,7 +93,7 @@ $details-icon-large : 90px;
 					width: 42%;
 					vertical-align: top;
 					font-weight: normal;
-					.font-icon {
+					.snf-font {
 						width: 40px;
 						display: inline-block;
 						font-size: emCalc(24px);
@@ -193,9 +193,9 @@ $details-icon-large : 90px;
 				&:first-child {
 					margin-right: 30px;
 				}
-				&.font-icon{
+				&.snf-font{
 					vertical-align: middle;
-					&.snf-network_full, &.snf-HDD-full {
+					&.snf-network-full, &.snf-volume-full {
 						font-size: 24px;
 						color: $secondary-color;
 					}

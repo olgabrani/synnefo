@@ -6,7 +6,7 @@ window.onload = function() {
 		el.innerHTML = '<span style="font-family: \'snf-font\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-			'snf-twitter-off-black' : '&#x67;',
+			'snf-twitter-logo' : '&#x67;',
 			'snf-cancel-circled' : '&#x63;',
 			'snf-checkbox-checked' : '&#x62;',
 			'snf-checkbox-unchecked' : '&#x61;',
@@ -14,24 +14,24 @@ window.onload = function() {
 			'snf-ban-circle' : '&#x6a;',
 			'snf-ok-sign' : '&#x6c;',
 			'snf-minus-sign' : '&#x6e;',
-			'snf-edit-1' : '&#x71;',
+			'snf-edit' : '&#x71;',
 			'snf-HDD' : '&#x75;',
 			'snf-network' : '&#x76;',
 			'snf-PC' : '&#x77;',
-			'snf-PC_fill' : '&#x78;',
-			'snf-Pithos' : '&#x79;',
-			'snf-DASHboard' : '&#x7a;',
+			'snf-pc-full' : '&#x78;',
+			'snf-pithos-outline' : '&#x79;',
+			'snf-dashboard-outline' : '&#x7a;',
 			'snf-eye' : '&#x41;',
 			'snf-radio-checked' : '&#x42;',
 			'snf-radio-unchecked' : '&#x43;',
 			'snf-close' : '&#x44;',
-			'snf-cpu' : '&#x45;',
+			'snf-chip-outline' : '&#x45;',
 			'snf-lock_closed' : '&#x46;',
 			'snf-lock_open' : '&#x47;',
-			'snf-modem' : '&#x48;',
+			'snf-router-outline' : '&#x48;',
 			'snf-www' : '&#x49;',
 			'snf-ram' : '&#x4a;',
-			'snf-network_full' : '&#x4b;'
+			'snf-network-full' : '&#x4b;'
 			'snf-arrow-up' : '&#x4c;',
 			'snf-arrow-down' : '&#x4d;' /* rename of snf-arrow-right */
 			'snf-list' : '&#x51;',

@@ -46,8 +46,8 @@
 
 @mixin stateColor($color) {
 	.img-wrap {
-		.snf-PC_fill,
-		.snf-network_full, .font-icon {
+		.snf-pc-full,
+		.snf-network-full, .snf-font {
 			color:$color;
 		}
 	}
@@ -64,9 +64,9 @@
 			cursor: pointer;
 		}
 	}
-	.snf-PC_fill,
-	.snf-network_full {
-		font-size: $font-icon-size-medium;
+	.snf-pc-full,
+	.snf-network-full {
+		font-size: $snf-font-size-medium;
 		color: $vm-active-color;
 	}
 	.os {
@@ -118,7 +118,7 @@
 
 .building {
 	.img-wrap {
-		.snf-PC_fill {
+		.snf-pc-full {
 			display: block;
 			overflow: hidden;
 		}

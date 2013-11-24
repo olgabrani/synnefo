@@ -541,7 +541,7 @@ $(document).ready(function(){
 
     $('[data-status="rebooting"] .btn5.temp').click(function(e) {
         e.preventDefault();
-        $(this).siblings('.container').find('.snf-PC_fill').toggleClass('reboot-progress');
+        $(this).siblings('.container').find('.snf-pc-full').toggleClass('reboot-progress');
     })
 
     // //temp function to preventDefault of links in modal
@@ -641,7 +641,7 @@ $(document).ready(function(){
         e.preventDefault();
         countClicks++;
         $(this).toggleClass('open',0);
-        var img = $(this).closest('.item').find('.img-wrap .font-icon');
+        var img = $(this).closest('.item').find('.img-wrap .snf-font');
         img.addClass('reboot-progress');
         var self = this;
         setTimeout(function() {

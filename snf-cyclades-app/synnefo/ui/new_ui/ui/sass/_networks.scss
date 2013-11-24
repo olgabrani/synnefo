@@ -3,13 +3,13 @@
 .networks {
 	.items-list {
 		.img-wrap {
-			.snf-network_full {
+			.snf-network-full {
 				font-size: 60px;
 			}
 		}
 		[data-status="active"] {
 			.img-wrap {
-				.snf-network_full {
+				.snf-network-full {
 					color: $secondary-color;
 				}
 			}
@@ -20,7 +20,7 @@
 .list-view {
 	.items-list {
 		.img-wrap {
-			.snf-network_full {
+			.snf-network-full {
 				font-size: 32px;
 			}
 		}
