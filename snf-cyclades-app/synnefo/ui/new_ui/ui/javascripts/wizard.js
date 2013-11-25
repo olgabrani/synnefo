@@ -132,7 +132,7 @@ ui.wizard = {
 
 	// changes the text of next and previous buttons
 	setMovementTags: function() {
-		var step =ui.wizard.currentStep;
+		var step = ui.wizard.currentStep;
 		var totalStep = ui.wizard.totalStep;
 		var prevBtnLabel = ui.wizard.btns.previous.find('span');
 		var nextBtnLabel = ui.wizard.btns.next.find('span');

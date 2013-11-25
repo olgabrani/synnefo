@@ -332,7 +332,7 @@ $(document).ready(function(){
     if($('.vms.entities').length!=0){
         ui.inactiveActions();
     };
-    ui.setElminHeight($('.details'));
+    ui.setElminHeight($('.main > .details'));
     ui.setElminHeight($('.lt-bar'));
     ui.setElHeight($('.scroll-wrap'));
     $('#hd-search .hd-icon-search').click(function(e){
@@ -669,7 +669,7 @@ $(document).ready(function(){
 
 
 $(window).resize(function(e){
-    ui.setElminHeight($('.details'));
+    ui.setElminHeight($('.main > .details'));
     ui.setElminHeight($('.lt-bar'));
     ui.setElHeight($('.scroll-wrap'));
 })
