@@ -614,23 +614,22 @@ $(document).ready(function(){
 
     $('.toggle-lt-bar').click(function(e){
         e.preventDefault();
-        $('.lt-bar').animate({ width: 'toggle' });
-        // var self =this;
-        // if($(this).hasClass('fix-position')) {
-        //     $(this).fadeOut({
-        //         complete: function() {
-        //         $(self).removeClass('fix-position');
-        //         $(self).fadeIn();
-        //         },
-        //         start: function() {
-        //         $('.lt-bar').animate({ width: 'toggle' });
-        //         }
-        // });
-        // }
-        // else {
-        //     $(this).addClass('fix-position');
-        //     $('.lt-bar').animate({ width: 'toggle' });
-        // }
+        var self =this;
+        if($(this).hasClass('fix-position')) {
+            $(this).fadeOut({
+                complete: function() {
+                $(self).removeClass('fix-position');
+                $(self).fadeIn();
+                },
+                start: function() {
+                $('.lt-bar').animate({ width: 'toggle' });
+                }
+        });
+        }
+        else {
+            $(this).addClass('fix-position');
+            $('.lt-bar').animate({ width: 'toggle' });
+        }
     });
 
     // to remove the visual effect that shows that the process of disconnect is in progress

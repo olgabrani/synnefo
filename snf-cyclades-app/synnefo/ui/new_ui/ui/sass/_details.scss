@@ -172,7 +172,9 @@ $details-icon-large : 90px;
 	&.fix-position {
 		position: fixed;
 		top: $header-height + $bar-height + 35px;
-		left: $main-padding-horizontal + emCalc(1px)
+		left: 50%;
+		margin-left: - ($row-width/2 - emCalc(10px));
+
 	}
 }
 
