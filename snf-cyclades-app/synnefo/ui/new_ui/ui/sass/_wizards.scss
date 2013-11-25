@@ -255,6 +255,8 @@
 										width:60px;
 										font-size:38px;
 										float: left;
+										position: relative;
+										bottom: -3px;
 									}
 									h2 {
 										font-size:emCalc(14px);
@@ -396,6 +398,8 @@
 									width:40px;
 									display: inline-block;
 									font-size:20px;
+									position: relative;
+									bottom: -2px;
 								}
 								dt {
 									display: inline-block;
@@ -513,7 +517,7 @@
 													top:-1px;
 			                                    }
 			                                    &.snf-www {
-			                                        top:6px;
+			                                        top:5px;
 			                                    }
 			                                    &.snf-network-full {
 			                                        top:5px;
@@ -811,6 +815,8 @@
 						width:60px;
 						font-size:38px;
 						float: left;
+						position: relative;
+						bottom: -3px;
 					}
 					h2 {
 						font-size:emCalc(14px);

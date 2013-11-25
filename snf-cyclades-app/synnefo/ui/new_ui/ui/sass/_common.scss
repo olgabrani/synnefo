@@ -461,8 +461,6 @@ body {
 		.list {
 			margin-right: 3px;
 			.snf-listview {
-				position: relative;
-				top: 3px;
 				font-size: 22px;
 			}
 		}
@@ -470,13 +468,13 @@ body {
 			margin-right: 7px;
 			.snf-gridview {
 					font-size: 22px;
-					position: relative;
-					top: 3px;
 			}
 		}
 		.single {
 			@include square(14px);
 			display: inline-block;
+			position: relative;
+			bottom: 1px;
 			border: 1px solid;
 			background-color: transparent;
 			&.current {

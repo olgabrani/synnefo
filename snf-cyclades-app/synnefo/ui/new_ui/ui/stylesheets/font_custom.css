@@ -28,32 +28,6 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
-.snf-font, .snf-custom-checkbox, .snf-twitter-logo, .snf-cancel-circled, .snf-checkbox-checked, .snf-checkbox-unchecked, .snf-ok, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit, .snf-HDD, .snf-network, .snf-PC, .snf-pc-full, .snf-pithos-outline, .snf-dashboard-outline, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-chip-outline, .snf-lock_closed, .snf-lock_open, .snf-router-outline, .snf-www, .snf-ram, .snf-network-full, .snf-arrow-up, .snf-arrow-down, .snf-gridview, .snf-image-outline, .snf-listview, .snf-plus, .snf-search, .snf-snapshot, .snf-switch, .snf-thunder-full, .snf-info-outline, .snf-info-full, .snf-nic-outline, .snf-ram-full, .snf-nic-full, .snf-snapshot-full, .snf-image-outline, .snf-volume-full{
-	font-family: "snf-font";
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-
-.snf-HDD:before {
-	content: "\75";
-}
-.snf-network:before {
-	content: "\76";
-}
-.snf-PC:before {
-	content: "\77";
-}
-.snf-snapshot:before {
-	content: "\65";
-}
-
-
-/* new classes */
 .snf-font,.snf-trash, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-www, .snf-arrow-up, .snf-arrow-down, .snf-checkbox-unchecked, .snf-checkbox-checked, .snf-cancel-circled, .snf-search, .snf-twitter-logo, .snf-ok, .snf-switch, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit, .snf-listview, .snf-gridview, .snf-dashboard-outline, .snf-pithos-outline, .snf-info-full, .snf-volume-create-full, .snf-image-full, .snf-pc-create-full, .snf-network-create-outline, .snf-network-create-full, .snf-ram-outline, .snf-nic-outline, .snf-ram-full, .snf-nic-full, .snf-network-broken-1-full, .snf-network-broken-2-full, .snf-pc-broken-full, .snf-pc-reboot-full, .snf-pc-switch-full, .snf-key-full, .snf-router-full, .snf-chip-full, .snf-plus-full, .snf-snapshot-full, .snf-pithos-full, .snf-volume-full, .snf-network-full, .snf-pc-full, .snf-network-broken-1-outline, .snf-network-broken-2-outline, .snf-pc-broken-outline, .snf-volume-broken-outline, .snf-pc-reboot-outline, .snf-pc-switch-outline, .snf-key-outline, .snf-router-outline, .snf-chip-outline, .snf-image-outline, .snf-plus-outilne, .snf-snapshot-outline, .snf-volume-outline, .snf-network-outline, .snf-pc-outline, .snf-info-outline, .snf-thunder-full, .snf-lock-closed, .snf-lock-open {
 	font-family: 'snf-font';
 	speak: none;
@@ -256,9 +230,9 @@ you can use the generic selector below, but it"s slower:
 .snf-thunder-full:before {
 	content: "\6b";
 }
-.snf-lock-closed:before {
+.snf-lock-closed-full:before {
 	content: "\46";
 }
-.snf-lock-open:before {
+.snf-lock-open-full:before {
 	content: "\47";
 }

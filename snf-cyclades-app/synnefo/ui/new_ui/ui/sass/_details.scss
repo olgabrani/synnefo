@@ -35,8 +35,8 @@ $details-icon-large : 90px;
 				@include sprite('../images/os-unknown.png', 30px, 30px);
 				position: absolute;
 				background-size:100%;
-				left:44px;
-				top:14px;
+				left: 42px;
+				top: 24px;
 				&.windows { background-image:url('../images/os-windows.png'); }
 				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
 				&.fedora { background-image:url('../images/os-fedora.png'); }
@@ -97,6 +97,8 @@ $details-icon-large : 90px;
 						width: 40px;
 						display: inline-block;
 						font-size: emCalc(24px);
+						position: relative;
+						bottom: -2px;
 					}
 				}
 				dd {
