@@ -200,8 +200,6 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	@include position-connected( $details-lt-width/2 - 2px , -$details-top-height/2 );
 }
 
-
-
 .firewall {
 	float: left;
 	margin-left:20px;
@@ -211,7 +209,8 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	left:$data-width + $lt-width;
 	top: $rel-top - 5px;
 	font-size: emCalc(12px);
-	z-index:2;
+	white-space: nowrap;
+	background-color: #fff;
 	p {
 		margin: 0;
 		em {
@@ -222,6 +221,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 		margin-top: 10px;
 		display: none;
 		p {
+			min-width: 200px;
 			span {
 				float: right;
 				font-size: emCalc(14px);

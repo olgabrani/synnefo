@@ -613,9 +613,11 @@ $(document).ready(function(){
          ui.firewallSetup();
     });
     $('.firewall').mouseenter(function(e){
+        $(this).css('z-index',2);
         $(this).find('.more').stop(true, true).slideDown(200);
     });
     $('.firewall').mouseleave(function(e){
+        $(this).css('z-index',1);
         $(this).find('.more').stop(true, true).slideUp(200);
     });
     ui.tabs($('.tabs'), $('.content'));
