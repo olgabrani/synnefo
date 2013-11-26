@@ -328,6 +328,18 @@ ui.tabs = function(tabsEl, sectionEl) {
     })
 }
 
+// the function replaces part of the class of a span that is placed inside an a element
+ui.replaceClass = function(elements, str1, str2) {
+    $.each($(elements), function() {
+        var classOld = $(this).find('span').attr('class');
+        if(classOld != undefined && classOld.indexOf(str1) != -1) {
+            var classNew =classOld.replace(str1, str2);
+            $(this).find('.'+classOld).removeClass(classOld).addClass(classNew);
+        }
+    });
+}
+
+
 $(document).ready(function(){
 
     if($('.vms.entities').length!=0){
@@ -665,16 +677,17 @@ $(document).ready(function(){
             }
             else {
                 connection_img.closest('.item').slideUp(function(){
-                    img.removeClass('reboot-progress');
                     img.closest('li').addClass('hidden');
+                    img.removeClass('reboot-progress');
                     img.removeClass('reboot-progress');
                 });
             }
             connection_img.removeClass('pending');
         }, 3000)
     });
-
     // end of connected details js
+
+    ui.replaceClass($('a.current, a.active'), 'outline', 'full');
 })
 
 
