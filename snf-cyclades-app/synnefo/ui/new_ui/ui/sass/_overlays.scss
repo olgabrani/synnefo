@@ -112,7 +112,7 @@ body.with-overlay {
 			}
 
 		}
-		&#vm-connect {
+		&#vm-connect, &.remove {
 			p {
 				text-align:left;
 				color: black;
@@ -126,6 +126,9 @@ body.with-overlay {
 					span {
 						display: inline;
 					}
+				}
+				&.buttons {
+					text-align: center;
 				}
 			}
 			.close-reveal-modal {

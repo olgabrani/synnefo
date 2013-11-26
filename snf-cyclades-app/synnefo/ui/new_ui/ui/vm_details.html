@@ -76,7 +76,7 @@
 				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
 
 				<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
-				<a class="close-reveal-modal" title="close window">&#215;</a>
+				<a class="close-reveal-modal" title="close window">X</a>
 			</div>
 			<div id="attach-volume" class="reveal-modal medium list-availables">
 				<span>Available volumes:</span>
@@ -89,12 +89,13 @@
 					<a href="" class="btn1">Cancel</a>
 				</p>
 			</div>
-			<div id="detach-volume" class="reveal-modal medium list-availables">
+			<div id="detach-volume" class="reveal-modal medium list-availables remove">
 				<p>Are you sure you want to detach this volume from your machine</p>
 				<p class="buttons">
-					<a href="" class="btn1">OK</a>
-					<a href="" class="btn1">Cancel</a>
+					<a href="" class="btn1 ok">OK</a>
+					<a href="" class="btn1 cancel">Cancel</a>
 				</p>
+				<a class="close-reveal-modal" title="close window">X</a>
 			</div>
 			<div id="connect-to-network" class="reveal-modal medium list-availables">
 				<span>Available networks:</span>
@@ -107,12 +108,13 @@
 					<a href="" class="btn1">Cancel</a>
 				</p>
 			</div>
-			<div id="disconnect-from-network" class="reveal-modal medium list-availables">
+			<div id="disconnect-from-network" class="reveal-modal medium list-availables remove">
 				<p>Are you sure you want to disconnect this IP from your machine?</p>
 				<p class="buttons">
-					<a href="" class="btn1 disconnect">OK</a>
-					<a href="" class="btn1">Cancel</a>
+					<a href="" class="btn1 ok">OK</a>
+					<a href="" class="btn1 cancel">Cancel</a>
 				</p>
+				<a class="close-reveal-modal" title="close window">X</a>
 			</div>
 		</section>
 		<section class="actions-bar clearfix">
@@ -535,7 +537,7 @@
 							<a class="delete"><span>X</span></a>
 						</div>
 						<div class="buttons">
-							<a href="" class="btn1 show-add-tag id="show-add-tag"">add new tag</a>
+							<a href="" class="btn1 show-add-tag" id="show-add-tag">add new tag</a>
 						</div>
 						<div class="snf-color-picker">
 						<h3>Select color:</h3>
@@ -586,7 +588,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">act</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -598,7 +600,7 @@
 									</div>
 								</li>
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">act</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -647,7 +649,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">act</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -659,7 +661,7 @@
 									</div>
 								</li>
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">act</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -671,7 +673,7 @@
 									</div>
 								</li>
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">act</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -696,7 +698,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">act</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -731,7 +733,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="detach-volume">act</a>
 									<div class="icon"></div>
 									<div class="data">
 										<ul>
@@ -759,7 +761,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">act</a>
+									<a href="#" class="act" data-reveal-id="detach-volume">act</a>
 									<div class="icon"></div>
 									<div class="data">
 										<ul>

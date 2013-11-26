@@ -206,7 +206,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	float: left;
 	margin-left:20px;
 	border: 1px solid $primary-color;
-	padding: 10px 20px;
+	padding: 5px 20px;
 	position: absolute;
 	left:$data-width + $lt-width;
 	top: $rel-top - 5px;
@@ -219,7 +219,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 		}
 	}
 	.more {
-		margin-top:20px;
+		margin-top: 10px;
 		display: none;
 		p {
 			span {

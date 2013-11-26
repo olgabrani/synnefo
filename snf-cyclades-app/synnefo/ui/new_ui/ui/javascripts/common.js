@@ -273,13 +273,14 @@ ui.changeCheckboxState =function(checkbox_link) {
     ui.entitiesActionsEnabled();
 }
 
+// to use the above functions use first the ui.checkOneRadioButton and then ui.changeRadiobuttonState
+ui.checkOneRadioButton = function(radiobtn_link) {
+    $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
+}
 ui.changeRadiobuttonState = function(radiobtn_link) {
     $(radiobtn_link).find('span.snf-radio-unchecked, span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
 }
 
-ui.checkOneRadioButton = function(radiobtn_link) {
-    $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
-}
 
 
 // toggle expand arrrow  and corresponding area
@@ -632,37 +633,46 @@ $(document).ready(function(){
         }
     });
 
-    // to remove the visual effect that shows that the process of disconnect is in progress
-    // we must not have pending clicks (incomplite hide process)
-    var countClicks = 0;
 
-    // normally there's a confirmation window before you disconnect
-    $('.act').click(function(e){
+    $('.act').click(function(e) {
+        $(this).addClass('pending last');
+    });
+
+    $('.remove .cancel').click(function(e) {
         e.preventDefault();
-        countClicks++;
-        $(this).addClass('open',0);
-        var img = $(this).closest('.item').find('.img-wrap .snf-font');
+        $('a.close-reveal-modal').trigger('click');
+        $('.last').removeClass('pending last');
+    });
+
+    $('.remove .ok').click(function(e) {
+        e.preventDefault();
+        $('a.close-reveal-modal').trigger('click');
+        var connection_img = $('.connections').find('.last');
+        connection_img.addClass('open', 0);
+        connection_img.removeClass('last');;
+        var img = connection_img.closest('.item').find('.img-wrap .snf-font');
         img.addClass('reboot-progress');
-        var self = this;
         setTimeout(function() {
-            countClicks--;
-            var connections_list = $(self).closest('.connections').children('li:not(".hidden")');
+            var connections_list = connection_img.closest('.connections').children('li:not(".hidden")');
             if(connections_list.length>1) {
-                $(self).closest('li').slideUp(function(){
+                connection_img.closest('li').slideUp(function(){
                     console.log(img)
-                    $(self).closest('li').addClass('hidden');
-                    if(countClicks== 0) img.removeClass('reboot-progress');
+                    connection_img.closest('li').addClass('hidden');
+                    if(connections_list.find('.pending').length == 0) {
+                      img.removeClass('reboot-progress');
+                    }
                 });
             }
             else {
-            $(self).closest('.item').slideUp('slow', function(){
-                    img.removeClass('reboot-progress')
-                    $(self).closest('li').addClass('hidden');
-                    if(countClicks== 0) img.removeClass('reboot-progress');
+                connection_img.closest('.item').slideUp(function(){
+                    img.removeClass('reboot-progress');
+                    img.closest('li').addClass('hidden');
+                    img.removeClass('reboot-progress');
                 });
             }
+            connection_img.removeClass('pending');
         }, 3000)
-    })
+    });
 
     // end of connected details js
 })
