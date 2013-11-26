@@ -209,6 +209,28 @@ ui.wizard = {
 		}
 	},
 
+	// use the showExplanatory and hideExplanatory functions
+	// when there's html structure as the following:
+	// 	<div class="title">
+	// 		<p>EXPLANATORY TEXT</p>
+	// 	</div>
+	// 	<div class="options-bar">
+	// 		<div>
+	//			<a href="">link</a><
+	// 		</div>
+	// 	</div>
+	showExplanatoryText: function(link) {
+		var paragraph = $(link).parents('.options-bar').siblings('.title').find('p');
+		// var text = $(link).data('help');
+		// paragraph.html(text);
+		paragraph.css('visibility', 'visible');
+	},
+
+	hideExplanatoryText: function(link) {
+		var paragraph = $(link).parents('.options-bar').siblings('.title').find('p');
+		paragraph.css('visibility', 'hidden');
+	},
+
 	vm: {
 		hideNext: function() {
 			if(ui.wizard.currentStep == 2 && $('.flavor a.disabled').hasClass('small')) {
@@ -428,15 +450,10 @@ $(document).ready(function() {
 
 			wizard.find('.flavor .options a').hover(
 				function() {
-					var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
-					var text = $(this).data('help');
-					paragraph.html(text);
-					paragraph.css('visibility', 'visible');
+					ui.wizard.showExplanatoryText($(this))
 				}, function() {
-					var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
-					paragraph.css('visibility', 'hidden');
-				}
-			);
+					ui.wizard.hideExplanatoryText($(this))
+				});
 
 			wizard.find('.sub-menu[data-step=2] li:last').find('a').focusout(function(e) {
 				$('.step-2').find('.dropdown a:first').focus();
@@ -505,19 +522,34 @@ $(document).ready(function() {
 			})
 		}
 		else if (wizardType == 'volume-wizard') {
-			// same with vm wizard -> make function
+			// step-1
 			wizard.find('.volume_options .options a').hover(
 				function() {
-					console.log('hi-2')
-					var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
-					var text = $(this).data('help');
-					paragraph.html(text);
-					paragraph.css('visibility', 'visible');
+					ui.wizard.showExplanatoryText($(this))
 				}, function() {
-					var paragraph = $(this).parents('.options-bar').siblings('.title').find('p');
-					paragraph.css('visibility', 'hidden');
+					ui.wizard.hideExplanatoryText($(this))
+				});
+			wizard.find('.volume_options .options a:not(.disabled)').click(function(e) {
+				e.preventDefault();
+				if(!$(this).hasClass('current')) {
+					$(this).closest('.options').find('.current').removeClass('current');
+					$(this).addClass('current');
 				}
-			);
+			});
+
+			//step-2
+			wizard.find('.vms-list a').click(function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				ui.checkOneRadioButton(this);
+				ui.changeRadiobuttonState(this);
+			});
+
+			wizard.find('.vms-list li').click(function(e) {
+				e.preventDefault();
+				$(this).find('a').trigger('click');
+			});
+
 		}
 	}
 
