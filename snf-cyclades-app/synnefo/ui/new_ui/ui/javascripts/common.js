@@ -157,7 +157,6 @@ ui.editable = function(){
         el.find('input[type="text"]').hide();
         el.find('a.cancel, a.save').hide();
         el.find('a.edit, .input-txt').show();
-        el.find('.delete').show();
     }
 
 /* 
@@ -173,10 +172,6 @@ ui.editable = function(){
         el.find('a.cancel, a.save').show();
         elem.hide();
         el.find('.input-txt').hide();
-        if(el.find('.delete').length != 0) {
-            el.find('.delete').hide();
-        }
-
     }
 
 /*
@@ -688,6 +683,11 @@ $(document).ready(function(){
     // end of connected details js
 
     ui.replaceClass($('a.current, a.active'), 'outline', 'full');
+
+    $('.delete').click(function(e) {
+        e.preventDefault();
+        $(this).closest('div').fadeOut('slow');
+    })
 })
 
 
