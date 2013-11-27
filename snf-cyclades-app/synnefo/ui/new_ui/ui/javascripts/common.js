@@ -367,8 +367,12 @@ ui.hashTabs = function(tabsEl, sectionEl){
 
 }
 
-ui.ltBarToggle = function(){
+ui.ltBarToggle = function(speed){
+
     var cmarg = parseInt($('.lt-bar').width()) - parseInt($('.toggle-lt-bar').outerWidth(true));        
+    var ctemp = cmarg / parseInt($('.lt-bar').width());
+    var cvelocity = parseInt($('.lt-bar').width())/speed;
+    var cdelay = parseInt($('.toggle-lt-bar').outerWidth(true))/cvelocity;
 
     $('.toggle-lt-bar').click(function(e){
         e.preventDefault();
@@ -377,23 +381,25 @@ ui.ltBarToggle = function(){
             var marg = parseInt($(self).css('marginLeft')) - cmarg;
             $(this).animate({
                 'margin-left': marg,
-            }, 300, 'linear', function(){
+            }, ctemp * speed, 'linear', function(){
                 $(self).removeAttr('style');
                 $(self).removeClass('fix-position');
             });
             $('.lt-bar').animate({
                 width: 'toggle'
-            }, 400, 'linear');
+            }, speed, 'linear');
         }
         else {
             $(this).addClass('fix-position');
             var marg = parseInt($(self).css('marginLeft')) + cmarg;
-            $(this).animate({q
-                'margin-left': marg,
-            }, 500, 'linear')
+            setTimeout(function(){
+                $(self).animate({
+                    'margin-left': marg,
+                }, speed, 'linear')
+            }, cdelay);
             $('.lt-bar').animate({
                 width: 'toggle'
-            }, 400, 'linear');
+            }, speed, 'linear');
         }
     });
 }
@@ -567,7 +573,7 @@ $(document).ready(function(){
     }
 
     if ($('.toggle-lt-bar').length>0) {
-        ui.ltBarToggle();
+        ui.ltBarToggle(400);
     }
 
     /* grid/list view for items-list */
