@@ -335,10 +335,28 @@ ui.tabs = function(tabsEl, sectionEl) {
 // the function replaces part of the class of a span that is placed inside an a element
 ui.replaceClass = function(elements, str1, str2) {
     $.each($(elements), function() {
-        var classOld = $(this).find('span').attr('class');
+        classOld = $(this).find('span').attr('class');
         if(classOld != undefined && classOld.indexOf(str1) != -1) {
             var classNew =classOld.replace(str1, str2);
-            $(this).find('.'+classOld).removeClass(classOld).addClass(classNew);
+            if(classOld.indexOf(' ') == -1) {
+                $(this).find('.'+classOld).removeClass(classOld).addClass(classNew);
+            }
+            else {
+                var classToReplace;
+                if(classOld.indexOf(' ') > classOld.indexOf(str1)) {
+                    classToReplace = classOld.substring(0,classOld.indexOf(' '));
+
+                }
+                else {
+
+                    classToReplace = classOld.substring(classOld.indexOf(' ')+1, classOld.indexOf(str1)+str1.length);
+                }
+
+                if($(this).find('.'+classToReplace).hasClass(classOld)) {
+                    console.log('classToReplace ', classToReplace)
+                       $(this).find('.'+classToReplace).removeClass(classToReplace).addClass(classNew);
+                }
+            }
         }
     });
 }
@@ -680,14 +698,13 @@ $(document).ready(function(){
         $('a.close-reveal-modal').trigger('click');
         var connection_img = $('.connections').find('.last');
         connection_img.addClass('open', 0);
-        connection_img.removeClass('last');;
+        connection_img.removeClass('last');
         var img = connection_img.closest('.item').find('.img-wrap .snf-font');
         img.addClass('reboot-progress');
         setTimeout(function() {
             var connections_list = connection_img.closest('.connections').children('li:not(".hidden")');
             if(connections_list.length>1) {
                 connection_img.closest('li').slideUp(function(){
-                    console.log(img)
                     connection_img.closest('li').addClass('hidden');
                     if(connections_list.find('.pending').length == 0) {
                       img.removeClass('reboot-progress');
