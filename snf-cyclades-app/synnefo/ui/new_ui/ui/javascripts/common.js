@@ -300,8 +300,21 @@ ui.expandDownArea = function(arrow_link, area) {
 * with toggle have class sectionEl.
 * Markup needed is an href to each a with the id of the relative section.
 */
+
+ui.tabsSection = function(link, sectionEl) {
+    $(sectionEl).hide();
+    var el = $(link.attr('href'));
+    el.stop(true, true).show(0);
+    el.css('opacity',0);
+    ui.detailsCustom(el);
+    el.animate({
+        'opacity':1,
+    }, 500)
+}
+
 ui.tabs = function(tabsEl, sectionEl) {
     var tabLink = tabsEl.find('a');
+    ui.replaceClass(tabLink.find('.active'), 'outline', 'full');
     function href(a) {
         return a.attr('href');
     }
@@ -310,17 +323,11 @@ ui.tabs = function(tabsEl, sectionEl) {
         if ( $(this).hasClass('active')){
              return false;
         } else {
+            ui.replaceClass($(this).parents(tabsEl).find('.active'), 'full', 'outline');
             $(this).parents(tabsEl).find('a').removeClass('active');
             $(this).addClass('active');
-            $(sectionEl).hide();
-            var el = $(href($(this)));
-            el.stop(true, true).show(0);
-            el.css('opacity',0);
-            ui.detailsCustom(el);
-
-            el.animate({
-                'opacity':1,
-            }, 500)
+            ui.replaceClass($(this), 'outline', 'full');
+            ui.tabsSection( $(this), sectionEl);
         }
     })
 }
@@ -336,6 +343,18 @@ ui.replaceClass = function(elements, str1, str2) {
     });
 }
 
+// in a page with tabs, allow navigation with hash tags
+ui.hashTabs = function(tabsEl, sectionEl){
+    var hash = window.location.hash;
+    if ($(hash).length<=0){
+        return;
+    }
+    tabsEl.find('a').removeClass('active');
+    var link = tabsEl.find('a[href="'+hash+'"]');
+    link.addClass('active');
+    ui.tabsSection(link, sectionEl);
+
+}
 
 $(document).ready(function(){
 
@@ -623,6 +642,7 @@ $(document).ready(function(){
         $(this).find('.more').stop(true, true).slideUp(200);
     });
     ui.tabs($('.tabs'), $('.content'));
+    ui.hashTabs($('.tabs'), $('.content'));
 
     $('.toggle-lt-bar').click(function(e){
         e.preventDefault();

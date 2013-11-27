@@ -33,7 +33,9 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 				}
 			}
 			h4 {
-				overflow: hidden;
+				position: absolute;
+				top: 20px;
+				left: $lt-width;
 				font-size: emCalc(16px);
 				.status {
 					font-weight: normal;
@@ -122,20 +124,6 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 					}
 				}
 			}
-		}
-	}
-	&.network {
-		h4 {
-			position: absolute;
-			top: 25px;
-			left: $lt-width;
-		}
-	}
-	&.disk {
-		h4 {
-			position: absolute;
-			top: 20px;
-			left: $lt-width;
 		}
 	}
 }
