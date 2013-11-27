@@ -26,8 +26,8 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 			.img-wrap {
 				width: $lt-width;
 				text-align: center;
-				float:left;
 				position: relative;
+				display: block;
 				.snf-font {
 					font-size: 60px;
 				}
