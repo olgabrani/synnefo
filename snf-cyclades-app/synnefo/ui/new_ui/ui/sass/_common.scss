@@ -104,10 +104,11 @@
 	z-index: 3;
 }
 
-@mixin square($side) {
+@mixin square($side, $bgcolor) {
 	width: $side;
 	height: $side;
-
+	background-color: $bgcolor;
+	display: inline-block;
 }
 
 /* Circle and Tags ----------------------------------------------- */
@@ -471,13 +472,9 @@ body {
 			}
 		}
 		.single {
-			@include square(14px);
-			display: inline-block;
-			position: relative;
-			bottom: 1px;
-			border: 1px solid;
-			background-color: transparent;
-			&.current {
+			@include square(14px , $link-color);
+			&.current,
+			&:hover {
 				background-color: $secondary-color;
 			}
 		}
