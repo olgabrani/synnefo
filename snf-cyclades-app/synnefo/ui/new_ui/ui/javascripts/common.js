@@ -367,6 +367,38 @@ ui.hashTabs = function(tabsEl, sectionEl){
 
 }
 
+ui.ltBarToggle = function(){
+    var cmarg = parseInt($('.lt-bar').width()) - parseInt($('.toggle-lt-bar').outerWidth(true));        
+
+    $('.toggle-lt-bar').click(function(e){
+        e.preventDefault();
+        var self =this;
+        if($(this).hasClass('fix-position')) {
+            var marg = parseInt($(self).css('marginLeft')) - cmarg;
+            $(this).animate({
+                'margin-left': marg,
+            }, 300, 'linear', function(){
+                $(self).removeAttr('style');
+                $(self).removeClass('fix-position');
+            });
+            $('.lt-bar').animate({
+                width: 'toggle'
+            }, 400, 'linear');
+        }
+        else {
+            $(this).addClass('fix-position');
+            var marg = parseInt($(self).css('marginLeft')) + cmarg;
+            $(this).animate({q
+                'margin-left': marg,
+            }, 500, 'linear')
+            $('.lt-bar').animate({
+                width: 'toggle'
+            }, 400, 'linear');
+        }
+    });
+}
+
+
 $(document).ready(function(){
 
     if($('.vms.entities').length!=0){
@@ -534,6 +566,9 @@ $(document).ready(function(){
         new UISearch( document.getElementById( 'sb-search' ) );
     }
 
+    if ($('.toggle-lt-bar').length>0) {
+        ui.ltBarToggle();
+    }
 
     /* grid/list view for items-list */
 
@@ -565,7 +600,6 @@ $(document).ready(function(){
         }
         ui.entitiesActionsEnabled();
      });
-
 
     // set filter visible
     $('.filter-menu .filter').click(function(e) {
@@ -654,27 +688,6 @@ $(document).ready(function(){
     });
     ui.tabs($('.tabs'), $('.content'));
     ui.hashTabs($('.tabs'), $('.content'));
-
-    $('.toggle-lt-bar').click(function(e){
-        e.preventDefault();
-        var self =this;
-        if($(this).hasClass('fix-position')) {
-            $(this).fadeOut({
-                complete: function() {
-                $(self).removeClass('fix-position');
-                $(self).fadeIn();
-                },
-                start: function() {
-                $('.lt-bar').animate({ width: 'toggle' });
-                }
-        });
-        }
-        else {
-            $(this).addClass('fix-position');
-            $('.lt-bar').animate({ width: 'toggle' });
-        }
-    });
-
 
     $('.act').click(function(e) {
         $(this).addClass('pending last');
