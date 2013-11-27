@@ -102,13 +102,12 @@ ui.inactiveActions = function() {
     })
 }
 
-ui.detailsCustom = function(id) {
+ui.detailsCustom = function(area) {
     // position last connected item
-    var el = $('#'+id+'.connected .item').last();
+    var el = area.find('.item').last();
     // -2 is the border width;
     var moveY = el.find('.connections >li').last().outerHeight(true) - 2;
     el.css('top',moveY);
-    console.log(moveY);
     el.css('marginTop', -moveY);
 }
 
@@ -314,11 +313,14 @@ ui.tabs = function(tabsEl, sectionEl) {
             $(this).parents(tabsEl).find('a').removeClass('active');
             $(this).addClass('active');
             $(sectionEl).hide();
-            sectionVis = $(href($(this)));
-            sectionVisID = sectionVis.attr('id');
-            $(href($(this))).stop(true,true).fadeIn(500, function(){
-                ui.detailsCustom(sectionVisID);
-            });
+            var el = $(href($(this)));
+            el.stop(true, true).show(0);
+            el.css('opacity',0);
+            ui.detailsCustom(el);
+
+            el.animate({
+                'opacity':1,
+            }, 500)
         }
     })
 }
@@ -596,9 +598,9 @@ $(document).ready(function(){
     });
 
     // connected details js
-    ui.detailsCustom('disk-connected');
-    ui.detailsCustom('network-connected');
-    ui.detailsCustom('vm-connected');
+    ui.detailsCustom($('#disk-connected'));
+    ui.detailsCustom($('#network-connected'));
+    ui.detailsCustom($('#vm-connected'));
     ui.firewallSetup();
     $('.firewall .more  a').click(function(e){
         e.preventDefault();
