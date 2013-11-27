@@ -323,6 +323,7 @@ ui.tabs = function(tabsEl, sectionEl) {
         if ( $(this).hasClass('active')){
              return false;
         } else {
+            window.location.hash = $(this).attr('href');
             ui.replaceClass($(this).parents(tabsEl).find('.active'), 'full', 'outline');
             $(this).parents(tabsEl).find('a').removeClass('active');
             $(this).addClass('active');
