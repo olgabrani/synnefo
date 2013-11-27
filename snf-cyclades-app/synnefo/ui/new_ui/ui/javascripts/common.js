@@ -121,14 +121,6 @@ ui.firewallSetup = function(){
             $(this).find('p').first().find('em').html('on');
         }
     });
-    $('.firewall .more span').each(function(e){
-        var that = this;
-        if ($(this).hasClass('snf-radio-checked')){
-            $(that).siblings('em').html('on');
-        } else {
-            $(that).siblings('em').html('off');
-        }
-    })
 }
 
 
