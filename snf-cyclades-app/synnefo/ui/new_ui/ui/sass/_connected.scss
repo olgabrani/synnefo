@@ -66,9 +66,11 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 					float: left;
 					span {
 						position: relative;
-						top:$rel-top - 3px;
+						top:$rel-top - 10px;
 						background-color: $light-bg;
-						padding:5px 10px;
+						padding:0px 10px;
+						font-size: 30px;
+						line-height: 120%;
 					}
 				}
 				.act {

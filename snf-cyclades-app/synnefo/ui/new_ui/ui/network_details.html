@@ -42,6 +42,54 @@
 		</div>
 	</header>
 	<div class="overlay-wrapper">
+	<section class="overlay-area-reveal">
+			<div id="start-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="reboot-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to reboot your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="shutdown-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to shutdown your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="destroy-vm-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to destroy your machine?</p>
+				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="vm-connect" class="reveal-modal medium">
+				<p>A direct connection to this machine can be established using the <a href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell" target=​"_blank">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
+
+				<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+			<div id="connect-vm-to-network" class="reveal-modal medium list-availables">
+				<span>Available networks:</span>
+				<ul>
+					<li><span class="snf-font snf-radio-unchecked"></span><span class="snf-font snf-network-full"></span><span class="name">network name</span><span>other data</span></li>
+					<li><span class="snf-font snf-radio-unchecked"></span><span class="snf-font snf-network-full"></span><span class="name">network name</span><span>connected machines: 10</span></li>
+				</ul>
+				<p class="buttons">
+					<a href="" class="btn1">OK</a>
+					<a href="" class="btn1">Cancel</a>
+				</p>
+			</div>
+			<div id="disconnect-from-network" class="reveal-modal medium list-availables remove">
+				<p>Are you sure you want to disconnect this machine?</p>
+				<p class="buttons">
+					<a href="" class="btn1 ok">OK</a>
+					<a href="" class="btn1 cancel">Cancel</a>
+				</p>
+				<a class="close-reveal-modal" title="close window">X</a>
+			</div>
+		</section>
 		<section class="actions-bar clearfix">
 			<h2><a href="vm_list.html">Networks</a> > My Awesome network</h2>
 			<div class="view-type">
@@ -150,9 +198,9 @@
 					<section class="info-block">
 						<h2>info</h2>
 						<dl>
-							<dt><span class="snf-font"></span>Project</dt>
+							<dt><span class="snf-font snf-dashboard-outline"></span>Project</dt>
 							<dd>Basic Project</dd>
-							<dt><span class="snf-font"></span>Name</dt>
+							<dt><span class="snf-font snf-network-full"></span>Name</dt>
 							<dd>Public Network</dd>
 							<dt><span class="snf-pc-full snf-font"></span>Connected Machines</dt>
 							<dd>4</dd>
@@ -171,7 +219,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">&nbsp;</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -210,7 +258,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">&nbsp;</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -236,7 +284,7 @@
 									</div>
 								</li>
 								<li>
-									<a href="#" class="act">&nbsp;</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -262,7 +310,7 @@
 									</div>
 								</li>
 								<li>
-									<a href="#" class="act">&nbsp;</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -287,7 +335,7 @@
 						<div class="clearfix">
 							<ul class="connections">
 								<li>
-									<a href="#" class="act">&nbsp;</a>
+									<a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
 									<div class="icon"><span class="snf-nic-full"></span></div>
 									<div class="data">
 										<ul>
@@ -303,11 +351,11 @@
 					</section>
 					<section class="connect-new">
 						<div class="img-wrap">
-							<a href="">
+							<a href="" data-reveal-id="connect-vm-to-network">
 								<span class="snf-pc-full snf-font"></span>
 							</a>
 						</div>
-						<p><a href="">Connect Machine</a></p>
+						<p><a href="" data-reveal-id="connect-vm-to-network">Connect Machine</a></p>
 					</section>
 				</section>
 				<div class="placeholder"></div>
