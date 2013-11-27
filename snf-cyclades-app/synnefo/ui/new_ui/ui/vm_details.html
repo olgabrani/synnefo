@@ -50,6 +50,627 @@
 		<a href="#" class="close" title="hide message">close</a>
 	</div>
 	<div class="overlay-wrapper">
+		<section class="overlay-area-custom">
+			<div id="vm-wizard" class="overlay-div wizard">
+				<div class="top">
+					<div class="numbers">
+						<div class="row">
+							<a href="" class="close"><span class="snf-close"></span></a>
+							<ul class="nums">
+								<li class="current preselected">
+									<em><span>1</span></em>
+									<p><strong>Select an OS</strong> Choose your preferred image</p>
+								</li>
+								<li>
+									<em><span>2</span></em>
+									<p><strong>Select CPUs, RAM and Disk Size </strong>
+Available options are filtered based on the selected image</p>
+								</li>
+								<li>
+									<em><span>3</span></em>
+									<p><strong>Virtual machine custom options</strong>
+Virtual machine custom options</p>
+								</li>
+								<li>
+									<em><span>4</span></em>
+									<p><strong>Confirm your settings</strong>
+Confirm that the options you have selected are correct</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row menus">
+						<nav class="sub-menu" data-step=1>
+							<ul>
+								<li><a href="" class="current preselected el2 firstfocus-1" data-img-type="system-images">System</a></li>
+								<li><a href="" data-img-type="my-images">My images</a></li>
+								<li><a href="" data-img-type="shared-images">Shared with me</a></li>
+								<li><a href="" data-next="el1" data-img-type="public-images">Public</a></li>
+							</ul>
+						</nav>
+						<nav class="sub-menu" data-step=2>
+							<ul>
+								<li><a href="" class="current preselected el4 firstfocus-2" data-size="small">Small</a></li>
+								<li><a href="" data-size="medium">Medium</a></li>
+								<li><a href="" data-size="large" data-next="el5">Large</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="middle">
+						<div class="steps">
+							<div class="step step-1 current preselected" id="step-1" data-step="1">
+								<ul class="os">
+									<li  class="current preselected system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
+											<a href="" class="name-col el1">Kubuntu</a>
+											<div class="size-col">3.13 GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="public-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
+											<a href="" class="name-col">Kubuntu LTS (by Kpal)</a>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="public-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<a href="" class="name-col">Fedora (by Athina)</a>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="shared-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<a href="" class="name-col">Fedora (by Athina)</a>
+											<div class="size-col">3.67 GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="my-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2012</a>
+											<div class="size-col">13.66 GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2012</a>
+											<div class="size-col">13.66 GB</div>
+											<div class="btn-col"><a href="">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2008</a>
+											<div class="size-col">10.79 GB</div>
+											<div class="btn-col"><a href="" data-next="el3">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+							<div class="step step-2" id="step-2" data-step=2>
+								<div class="row">
+									<form class="custom">
+									  <select class="medium">
+									    <option class="el5">Basic Project</option>
+									    <option>Project 2</option>
+									    <option>Project 3</option>
+									  </select>
+									</form>
+									<ul class="flavor">
+										<li>
+											<div class="title">
+												<span class="snf-chip-outline snf-font"></span>
+												<h2>
+													CPU<span> (x cores)</span>
+													<em>Choose number of CPU cores</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:60%">
+																<div class="current" style="width:30%"></div>
+																<span>60%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected " data-help="help text for 1">1</a></li>
+													<li><a href="" class="medium" data-help="help text for 2">2</a></li>
+													<li><a href="" class="large disabled" data-help="help text for 3">3</a></li>
+													<li><a href="" class="disabled" data-help="help text for 4">4</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<div class="title">
+												<span class="snf-ram-outline snf-font"></span>
+												<h2>
+													Memory Size 
+													<span> (MB)</span>
+													<em>Choose memory size</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:60%">
+																<div class="current" style="width:30%"></div>
+																<span>60%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected">1024</a></li>
+													<li><a href="" class="medium">2048</a></li>
+													<li><a href="" class="large">4096</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<div class="title">
+												<span class="snf-volume-outline snf-font"></span>
+												<h2>
+													Disk Size<span> (GB)</span>
+													<em>Choose disk size</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total low" style="width:40%">
+																<div class="current" style="width:80%"></div>
+																<span>40%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected">10</a></li>
+													<li><a href="" class="medium">20</a></li>
+													<li><a href="" class="large">30</a></li>
+													<li><a href="">40</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<div class="title">
+												<span class="snf-volume-outline snf-font"></span>
+												<h2>
+													Storage
+													<em>Select storage type</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap  disabled-progress-bar">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:100%">
+																<div class="current" style="width:0%"></div>
+																<span></span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options vm-storage-selection">
+													<li><a href="" class="current preselected">DRBD</a></li>
+													<li><a href="" data-next="el3">Archipelago</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="step step-3" id="step-3" data-step=3>
+								<div class="advanced-conf-step">
+									<div class="adv-main row">
+										<div class="name">
+											<h2>Machine name</h2>
+											<span class="input">
+												<input type="text" placeholder="My Ubuntu Server" class="el7">
+											</span>
+										</div>
+										<div class="expand-btn">
+											<a class="expand-arrow" href="">
+												Advanced Configuration
+												<span class="snf-arrow-down preselected"></span>
+											</a>
+										</div>
+									</div>
+									<div class="advanced-conf-options">
+										<div class="ssh-keys-area area">
+											<div class="row">
+												<h2>Public SSH keys</h2>
+												<p>Your account contains the following SSH public keys. Select one or more to activate in your new machine. You will then be able to ssh with the corresponding private key without a password."</p>
+												<ul>
+													<li class="with-checkbox">
+														<h3>My public key long name one </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+													<li class="with-checkbox">
+														<h3>Other public key </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+													<li class="with-checkbox">
+														<h3>My public key long name one </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+												</ul>
+												<div>
+													<a href="" class="btn5" data-reveal-id="sshkeys-wizard" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
+												</div>
+											</div>
+										</div>
+										<div class="networks-area area">
+											<h2 class="row">Networks</h2>
+											<ul>
+												<li class="with-checkbox row has-more select-net">
+													<h3 class="">	
+														<span class="net-icons">
+															<span class="temp-line line1"></span>
+															<span class="snf-www"></span>
+															<span class="snf-network-full"></span>
+														</span>
+														Public Network
+													</h3>
+													<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
+												</li>
+												<li class="more">
+													<div class="row">
+														<div class="with-checkbox clearfix">
+															<h3>192.168.2.3</h3>
+															<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
+														</div>
+														<div class="with-checkbox clearfix">
+															<h3>192.168.2.3</h3>
+															<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+														</div>
+														<div class="with-checkbox clearfix">
+															<h3>192.168.2.3</h3>
+															<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+														</div>
+														<div>
+															<a href="" class="btn5">allocate ip</a>
+														</div>
+													</div>
+												</li>
+												<li class="with-checkbox row select-net">
+													<h3 class="net-name">
+														<span class="net-icons">
+															<span class="temp-line line1"></span>
+															<span class="temp-line line2"></span>
+															<span class="snf-www"></span>
+															<span class="snf-router-outline"></span>
+															<span class="snf-network-full"></span>
+														</span>
+														Routed Network
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+												<li class="with-checkbox row select-net">
+													<h3 class="net-name">
+														<span class="net-icons">
+															<span class="snf-network-full"></span>
+														</span>
+														Private Network 1
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+												<li class="with-checkbox row select-net">
+													<h3 class="net-name">
+														<span class="net-icons">
+															<span class="snf-network-full"></span>
+														</span>
+														Private Network 2
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="tags-area area">
+											<div class="row">
+												<h2>Tags</h2>
+												<p>Dude use your tags like you eat your cereal.<br>You can color code them as well</p>
+												<ul>
+													<li>
+														<h3>My tags</h3>
+														<span>select</span>
+													</li>
+													<li class="with-checkbox">
+														<h3>
+															<span class="tag-demo tag4"></span>
+															Operating system
+														</h3>
+														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													</li>
+													<li class="with-checkbox">
+														<h3>
+															<span class="tag-demo tag5"></span>
+															Pirate PC1
+														</h3>
+														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													</li>
+													<li class="with-checkbox">
+														<h3>
+															<span class="tag-demo tag6"></span>
+															Pirate PC1
+														</h3>
+														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													</li>
+												</ul>
+												<div ><a class="btn5 show-add-tag" href="" id="show-add-tag">add new Tag</a></div>
+												<div class="snf-color-picker">
+													<form action="#" method="post">
+														<div id="picker">
+															<div class="farbtastic">
+																<div class="color" style="background-color: rgb(255, 0, 21);"></div>
+																<div class="wheel"></div>
+																<div class="overlay"></div>
+																<div class="h-marker marker" style="left: 90px; top: 13px;"></div>
+																<div class="sl-marker marker" style="left: 87px; top: 114px;"></div>
+															</div>
+														</div>
+														<div class="form-item">
+															<input type="text" id="color" name="color" value="#16C1E9" disabled>
+															<span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
+														</div>
+													</form>
+													<div class="btns">
+														<a class="btn5" href="">OK</a>
+														<a class="btn5 hide-add-tag" href="">CANCEL</a>
+													</div>
+													<a href="" id="hide-add-tag-dummy" style="position:relative;top:50px">&nbsp;</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+	<!-- end step 3 -->				</div>
+							<div class="step step-4" id="step-4" data-step=4>
+								<div class="summary">
+									<div class="row">
+										<div class="wrap">
+											<dl>
+												<dt><span class="snf-pc-full snf-font"></span>Machine name</dt>
+												<dd>handsome frank</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="wrap">
+											<dl>
+												<dt>Image</dt>
+												<dd>Fedora</dd>
+												<dt>Name</dt>
+												<dd>Debian Base</dd>
+												<dt>Desciption</dt>
+												<dd>open suse description open suse description open suse description open suse description open suse description</dd>
+												<dt>os</dt>
+												<dd>Debian</dd>
+												<dt>Size</dt>
+												<dd>10.4GB</dd>
+												<dt>GUI</dt>
+												<dd>No GUI</dd>
+												<dt>Kernel</dt>
+												<dd>2.3.4</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="wrap">
+											<h2>Flavor</h2>
+											<dl>
+												<dt><span class="snf-chip-outline snf-font"></span>CPUs</dt>
+												<dd>4x</dd>
+												<dt><span class="snf-ram-outline snf-font"></span>Memory</dt>
+												<dd>512 MB</dd>
+												<dt><span class="snf-volume-outline snf-font"></span>Disk</dt>
+												<dd>4GB</dd>
+												<dt><span class="snf-volume-outline snf-font"></span>Storage Type</dt>
+												<dd>DRBD</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="wrap">
+											<dl>
+												<dt>Machine Tags</dt>
+												<dd>Database server</dd>
+												<dt>SSH Keys</dt>
+												<dd>
+													my public key 1<br>
+													my public key 3<br>
+												</dd>
+												<dt>IPs</dt>
+												<dd>192.168.1.3<br>192.168.1.3</dd>
+												<dt>Private networks</dt>
+												<dd>No private networks selected</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="bottom">
+					<div class="row">
+						<a href="" class="nav prev el3"><span>CANCEL</span></a>
+						<a href="" class="nav next" data-step="1" data-next="el2"><span>NEXT</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="overlay-area-reveal">
 			<div id="start-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
@@ -146,6 +767,18 @@
 				<div class="lt-bar">
 					<div class="scroll-wrap">
 						<ul class="items-list">
+							<li data-status="add-new" class="add-new">
+								<div class="container" data-overlay-id="vm-wizard">
+									<div class="check">
+										<span class="snf-checkbox-unchecked"></span>
+									</div>
+									<div class="img-wrap">
+										<span class="snf-pc-full"></span>
+										<span class="os symbol">+</span>
+									</div>
+									<h4>New Machine</h4>
+								</div>
+							</li>
 							<li data-status="rebooting" class="rebooting">
 								<a href="" class="btn5 temp">animation</a>
 								<div class="more">

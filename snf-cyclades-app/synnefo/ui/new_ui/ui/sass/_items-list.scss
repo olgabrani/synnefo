@@ -343,6 +343,12 @@
 			&:hover {
 				background-color: $light-bg;
 			}
+			&.add-new {
+				background-color: $link-color-hover;
+				&:hover {
+					background-color: $link-color;
+				}
+			}
 		}
 		.container {
 				height:160px;
