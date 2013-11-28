@@ -23,7 +23,11 @@
 			}
 			.img-wrap {
 				margin-bottom: 6px;
-				height:60px;
+				height:$grid-icon-height;
+				.snf-font {
+					font-size: $grid-icon-height;
+					color: $vm-active-color;
+				}
 			}
 			.container {
 				height:160px;
@@ -224,8 +228,8 @@
 			}
 			.check {
 				width:$check-w;
-				height: $list-vm-height;
-				line-height: $list-vm-height;
+				height: $list-icon-height;
+				line-height: $list-icon-height;
 				text-align: center;
 				float:left;
 				&:hover {
@@ -237,7 +241,7 @@
 				width:$img-wrap-w;
 				float:left;
 				text-align: center;
-				height: $list-vm-height;
+				height: $list-icon-height;
 				.os {
 					@include sprite('../images/os-unknown.png', 16px, 16px);
 					background-size:100%;
@@ -249,8 +253,8 @@
 					margin-left:-8px;
 					top:3px;
 				}
-				.snf-pc-full {
-					font-size: $list-vm-height;
+				.snf-font {
+					font-size: $list-icon-height;
 				}
 			}
 			h4 {
@@ -263,8 +267,8 @@
 			.tags {
 				float:left;
 				width:$tags-w;
-				height:$list-vm-height;
-				line-height: $list-vm-height;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
 				a {
 					vertical-align: text-top;
 				}
@@ -286,8 +290,8 @@
 			}
 			.actions {
 				float: left;
-				height:$list-vm-height;
-				line-height: $list-vm-height;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
 				position: relative;
 				top:-4px;
 				margin:0 10px;
@@ -318,11 +322,11 @@
 			&.building {
 				.img-wrap {
 					.incomplete {
-						width:$list-vm-height;
+						width:$list-icon-height;
 						margin:0 auto;
 					}
 					.complete {
-						top:-$list-vm-height;
+						top:-$list-icon-height;
 						margin:0 auto;
 					}
 				}
@@ -344,7 +348,7 @@
 				background-color: $light-bg;
 			}
 			&.add-new {
-				background-color: $primary-color;
+				background-color: $link-color-hover;
 				&:hover {
 					background-color: $link-color;
 				}

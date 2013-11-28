@@ -78,6 +78,11 @@ $tag-opt-area-color: #4c71ff;
 $wizard-base-font-color: white;
 $net-more-opt-area-color:#ffb5af;
 
+// icon-font sizes
+$snf-font-size-medium: emCalc(60px);
+$snf-font-size-small: emCalc(34px);
+
+
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 1px;
 // $global-rounded: 1000px;
@@ -101,7 +106,10 @@ $btn-height: 30px;
 
 // list-view 
 $lt-bar-width: 110px;
-$list-vm-height: 34px;
+$list-icon-height: $snf-font-size-small;
+
+// grid-view
+$grid-icon-height: $snf-font-size-medium;
 
 // details view
 $details-top-height: 160px;
@@ -164,9 +172,6 @@ $small-mobile:emCalc(480px);
 //
 // Typography Variables
 //
-
-// icon-font sizes
-$snf-font-size-medium: emCalc(60px);
 
 $wizard-paragraph-font-size: 10px;
 $wizard-paragraph-font-size-custom: 14px;

@@ -64,11 +64,6 @@
 			cursor: pointer;
 		}
 	}
-	.snf-pc-full,
-	.snf-network-full {
-		font-size: $snf-font-size-medium;
-		color: $vm-active-color;
-	}
 	.os {
 		@include sprite('../images/os-unknown.png', 22px, 22px);
 		position: absolute;
