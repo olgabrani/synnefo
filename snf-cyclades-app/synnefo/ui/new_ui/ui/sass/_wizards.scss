@@ -791,15 +791,15 @@
 			font-size: $wizard-paragraph-font-size-custom;
 			line-height: 1;
 		}
+		h2 {
+			color:white;
+			font-size: emCalc(16px);
+		}
 		.volume_options {
 			&>li{
 				display: block;
 				&.volume-name { //same with network-name and vm-name
 					margin: 40px 0;
-					h2 {
-						color:white;
-						font-size: emCalc(16px);
-					}
 				}
 				list-style: none outside none;
 				margin-bottom:30px;
@@ -927,6 +927,38 @@
 		}
 		.explain {
 			margin-bottom: 1em;
+		}
+
+		.vms-list {
+			margin-top: emCalc(16px);
+			&>li {
+				margin-bottom: emCalc(8px);
+				margin-left: emCalc(24px);
+				&:first-child {
+					.img-wrap .snf-font{
+						color: white;
+					}
+				}
+				&>div, &>a {
+					display: inline-block;
+					margin-right: 15px;
+				}
+				.img-wrap {
+					position: relative;
+					width: emCalc(30px);
+					.snf-font {
+						font-size: emCalc(30px);
+						color: $vm-active-color;
+					}
+					.os{
+						background-size: emCalc(14px);
+						top: -2px;
+					}
+				}
+				.name {
+					width: $conf-area-h-width;
+				}
+			}
 		}
 	}
 }
