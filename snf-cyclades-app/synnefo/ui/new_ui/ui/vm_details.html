@@ -20,7 +20,7 @@
 		<header class="header">
 		<nav>
 			<ul class="icons-nav">
-				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-pc-full"></span></a></li>
+				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-pc-outline"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network-outline"></span></a></li>
 				<li><a href="volumes_list.html" data-tooltip class="has-tip" title="Disks"><span class="snf-volume-outline"></span></a></li>
 				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage"><span class="snf-pithos-outline"></span></a></li>
@@ -773,7 +773,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os symbol">+</span>
 									</div>
 									<h4>New Machine</h4>
@@ -806,7 +806,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os kubuntu">kubuntu</span>
 									</div>
 									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
@@ -850,7 +850,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os kubuntu">kubuntu</span>
 									</div>
 									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
@@ -893,7 +893,7 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<div class="img-wrap">
 										<div class="img running">
-											<span class="snf-pc-full"></span>
+											<span class="snf-pc-full snf-font"></span>
 											<span class="os kubuntu">kubuntu</span>
 										</div>
 									</div>
@@ -938,7 +938,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os kubuntu">kubuntu</span>
 									</div>
 									<h4>short name</h4>
@@ -984,7 +984,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os fedora">fedora</span>
 									</div>
 									<h4>short name</h4>
@@ -1025,7 +1025,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os">unknown</span>
 									</div>
 									<h4>short name</h4>
@@ -1068,7 +1068,7 @@ Confirm that the options you have selected are correct</p>
 										<span class="snf-checkbox-unchecked"></span>
 									</div>
 									<div class="img-wrap">
-										<span class="snf-pc-full"></span>
+										<span class="snf-pc-full snf-font"></span>
 										<span class="os fedora">fedora</span>
 									</div>
 									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
@@ -1118,8 +1118,6 @@ Confirm that the options you have selected are correct</p>
 					<section class="info-block">
 						<h2>info</h2>
 						<dl>
-							<dt><span class="snf-font snf-dashboard-outline"></span>Project</dt>
-							<dd>Basic Project</dd>
 							<dt><span class="snf-font snf-pc-full"></span>Name</dt>
 							<dd>
 								<div class="editable">
@@ -1132,6 +1130,8 @@ Confirm that the options you have selected are correct</p>
 									</span>
 							    </div>
 							</dd>
+							<dt><span class="snf-font snf-dashboard-outline"></span>Assigned Project</dt>
+							<dd>Basic Project</dd>
 							<dt><span class="snf-chip-outline snf-font"></span>CPUs</dt>
 							<dd>4</dd>
 							<dt><span class="snf-ram-full snf-font"></span>RAM</dt>
@@ -1426,9 +1426,10 @@ Confirm that the options you have selected are correct</p>
 			</div>
 		</div>
 	</div>
-  <script src="javascripts/vendor/jquery.js"></script>
-  <script src="javascripts/foundation/foundation.js"></script>
-	
+ <script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="javascripts/underscore-min.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
 	
 	<script src="javascripts/foundation/foundation.clearing.js"></script>
@@ -1452,16 +1453,21 @@ Confirm that the options you have selected are correct</p>
 	<script src="javascripts/foundation/foundation.section.js"></script>
 	
 	<script src="javascripts/foundation/foundation.tooltips.js"></script>
-	
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
+	<!-- dropzone.js used for drag and drop files to upload them -->
 	<script type="text/javascript" src="javascripts/dropzone.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
+	<!-- fabrastic.js used for the color picker -->
 	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>	
+	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>
 	<script src="javascripts/common.js"></script>
 	
+	<script type="text/javascript" src="javascripts/wizard.js"></script>
+	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
   
   <script>
     $(document).foundation();

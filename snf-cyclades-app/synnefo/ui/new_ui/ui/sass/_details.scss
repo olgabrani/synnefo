@@ -81,7 +81,7 @@ $details-icon-large : 90px;
 		}
 	}
 	.info-simple {
-		padding: 20px 0 0 $details-lt-width;
+		padding: 0 0 0 $details-lt-width;
 		.info-block {
 			padding:$details-top-more-padding-lt;
 			background: url('../images/dashed_atom-x.png') repeat-x bottom;
@@ -148,6 +148,13 @@ $details-icon-large : 90px;
 		@include ltbar($details-lt-width);
 		padding: 0;
 		display: none;
+		.items-list {
+			.img-wrap {
+				.snf-font {
+					font-size: $snf-font-size-medium;;
+				}
+			}
+		}
 	}
 }
 
