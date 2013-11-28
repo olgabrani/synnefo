@@ -290,7 +290,7 @@ ui.expandDownArea = function(arrow_link, area) {
 */
 
 ui.tabsSection = function(link, sectionEl) {
-    $(sectionEl).hide();
+    sectionEl.hide();
     var el = $(link.attr('href'));
     el.stop(true, true).show(0);
     el.css('opacity',0);
