@@ -42,7 +42,101 @@
 		</div>
 	</header>
 	<div class="overlay-wrapper">
-	<section class="overlay-area-reveal">
+		<section class="overlay-area-custom">
+			<div id="network-wizard" class="overlay-div wizard">
+				<div class="top">
+					<div class="numbers">
+						<div class="menus row">
+							<a href="" class="close"><span class="snf-close"></span></a>
+							<ul class="nums">
+								<li class="preselected current">
+									<em><span>1</span></em>
+									<p><strong>Create new private network</strong></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<nav class="sub-menu" data-step=1>
+						</nav>
+					</div>
+				</div>
+				<div class="middle">
+					<div class="steps">
+						<div class="step step-1 preselected current">
+							<ul class="row network_options">
+								<li class="project-selection">
+									<form class="custom">
+									  <select class="medium">
+									    <option class="el5">Basic Project</option>
+									    <option>Project 2</option>
+									    <option>Project 3</option>
+									  </select>
+									</form>
+								</li>
+								<li>
+									<div class="network-name">
+										<h2>Network name</h2>
+										<span class="input"><input class="el1" type="text" placeholder="My Network"></span>
+									</div>
+								</li>
+								<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
+									<a href="" class="check">
+										<span class="snf-checkbox-checked prechecked"></span>
+									</a>
+								</li>
+								<li class="explanatory">
+									If you enable DHCP on the private network, connected virtual machines will automatically be assigned an IP address based on the given subnet. You may disable this option if you want to assign IP addresses to the connected virtual machines manually.
+								</li>
+								<li>
+									<span class="sub_title">Network subnet:</span>
+									<ul class="subnet_options">
+										<li>
+											<span>Auto
+												<a href="" class="radio_btn">
+													<span class="snf-radio-checked prechecked"></span>
+												</a>
+											</span>
+										</li>
+										<li class="manual">
+											<form>
+												<span>Manual
+													<a href="" class="radio_btn manual">
+														<span class="snf-radio-unchecked"></span>
+													</a>
+													<span class="input"><input type="text" placeholder="192.168.32.0/24"></span>
+												</span>
+											</form>
+										</li>
+										<li>
+											<span>10.0.0.0/24
+												<a href="" class="radio_btn">
+													<span class="snf-radio-unchecked"></span>
+												</a>
+											</span>
+										</li>
+										<li>
+											<span>192.168.0.0/24
+												<a href="" class="radio_btn">
+													<span class="snf-radio-unchecked"></span>
+												</a>
+											</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div class="row">
+						<a href="" class="nav prev"><span>CANCEL</span></a>
+						<a href="" class="nav next" data-next="el1"><span>CREATE</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="overlay-area-reveal">
 			<div id="start-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
 				<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
@@ -115,7 +209,7 @@
 		</section>
 		<div class="main row">
 			<div class="network details running">
-			<a href="" class="toggle-lt-bar">...</a>
+				<a href="" class="toggle-lt-bar">...</a>
 				<div class="lt-bar">
 					<div class="scroll-wrap">
 						<ul class="items-list">
@@ -213,10 +307,20 @@
 					<section class="info-block">
 						<h2>info</h2>
 						<dl>
-							<dt><span class="snf-font snf-dashboard-outline"></span>Project</dt>
-							<dd>Basic Project</dd>
 							<dt><span class="snf-font snf-network-full"></span>Name</dt>
-							<dd>Public Network</dd>
+							<dd>
+								<div class="editable">
+							        <span class="input-txt">Public Network</span>
+							        <input type="text">
+							        <span class="editbuttons">
+										<a href="#" class="edit"><span class="snf-edit"></span></a>
+										<a href="#" class="save"><span class="snf-ok-sign"></span></a>
+										<a href="#" class="cancel"><span class="snf-cancel-circled"></span></a>
+									</span>
+							    </div>
+							</dd>
+							<dt><span class="snf-font snf-dashboard-outline"></span>Assigned Project</dt>
+							<dd>Basic Project</dd>
 							<dt><span class="snf-pc-full snf-font"></span>Connected Machines</dt>
 							<dd>4</dd>
 						</dl>

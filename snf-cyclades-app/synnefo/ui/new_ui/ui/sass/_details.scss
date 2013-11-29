@@ -112,6 +112,11 @@ $details-icon-large : 90px;
 				.tag-data {
 					min-width: 30%;
 					display: inline-block;
+					padding: 4px 0;
+					.delete {
+						margin-left: 10px;
+						visibility: hidden;
+					}
 				}
 				.btns {
 					margin-top: 77px;

@@ -20,7 +20,7 @@
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-		<header class="header">
+	<header class="header">
 		<nav>
 			<ul class="icons-nav">
 				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-pc-outline"></span></a></li>
@@ -49,44 +49,34 @@
 	<div class="overlay-wrapper">
 
 	<!-- overlays start -->
-	<div class="overlay-area-custom">
-		
-		<div id="overlay1" class="overlay-div">
-			<a href="" class="close"><span class="snf-close"></span></a>
-			<p>Are you sure you want to reboot your machine?</p>
-			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
-		</div>
-		<div id="overlay2" class="overlay-div">
-			<p>Are you sure you want to shutdown your machine?</p>
-			<p class="buttons"><a href="" class="btn4">YES</a><a href="" class="btn4">NO</a></p>
-		</div>
-			<div id="volume-wizard" class="overlay-div wizard">
-				<div class="top">
-					<div class="numbers">
-						<div class="menus row">
-							<a href="" class="close"><span class="snf-close"></span></a>
-							<ul class="nums">
-								<li class="preselected current">
-									<em><span>1</span></em>
-									<p><strong>New Volume: Choose your configuration </strong></p>
-								</li>
-								<li>
-									<em><span>2</span></em>
-									<p><strong>New Volume: Attach to vm</strong></p>
-								</li>
-								<li>
-									<em><span>3</span></em>
-									<p><strong>New Volume: Summary</strong></p>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="row">
-						<nav class="sub-menu" data-step=1>
-						</nav>
+	<section class="overlay-area-custom">
+		<div id="volume-wizard" class="overlay-div wizard">
+			<div class="top">
+				<div class="numbers">
+					<div class="menus row">
+						<a href="" class="close"><span class="snf-close"></span></a>
+						<ul class="nums">
+							<li class="preselected current">
+								<em><span>1</span></em>
+								<p><strong>New Volume: Choose your configuration </strong></p>
+							</li>
+							<li>
+								<em><span>2</span></em>
+								<p><strong>New Volume: Attach to vm</strong></p>
+							</li>
+							<li>
+								<em><span>3</span></em>
+								<p><strong>New Volume: Summary</strong></p>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<div class="middle">
+				<div class="row">
+					<nav class="sub-menu" data-step=1>
+					</nav>
+				</div>
+			</div>
+			<div class="middle">
 				<div class="steps">
 					<div class="step step-1 preselected current">
 						<ul class="row volume_options">
@@ -105,32 +95,32 @@
 								</li>
 								<li class="volume-size">
 									<div class="title">
-												<span class="snf-volume-outline snf-font"></span>
-												<h2>
-													Disk Size<span> (GB)</span>
-													<em>Choose disk size</em>
-												</h2>
-												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
-											</div>
-											<div class="options-bar">
-												<div class="bar">
-													<div class="wrap">
-														<div class="container">
-															<!-- width percentages do not correspond to actual mesurements -->
-															<div class="total low" style="width:40%">
-																<div class="current" style="width:80%"></div>
-																<span>40%</span>
-															</div>
-														</div>
+										<span class="snf-volume-outline snf-font"></span>
+										<h2>
+											Disk Size<span> (GB)</span>
+											<em>Choose disk size</em>
+										</h2>
+										<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+									</div>
+									<div class="options-bar">
+										<div class="bar">
+											<div class="wrap">
+												<div class="container">
+													<!-- width percentages do not correspond to actual mesurements -->
+													<div class="total low" style="width:40%">
+														<div class="current" style="width:80%"></div>
+														<span>40%</span>
 													</div>
 												</div>
-												<ul class="options">
-													<li><a href="" class="small current preselected">10</a></li>
-													<li><a href="" class="medium">20</a></li>
-													<li><a href="" class="large">30</a></li>
-													<li><a href="">40</a></li>
-												</ul>
 											</div>
+										</div>
+										<ul class="options">
+											<li><a href="" class="small current preselected">10</a></li>
+											<li><a href="" class="medium">20</a></li>
+											<li><a href="" class="large">30</a></li>
+											<li><a href="">40</a></li>
+										</ul>
+									</div>
 								</li>
 								<li class="volume-type">
 									<div class="title">
@@ -233,21 +223,18 @@
 										</dl>
 									</div>
 								</div>
+							</div>
 						</div>
 					</div>
-
-
-				</div>
 				</div>
 				<div class="bottom">
 					<div class="row">
 						<a href="" class="nav prev"><span>CANCEL</span></a>
 						<a href="" class="nav next" data-next="el1"><span>NEXT</span></a>
-						
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<section class="actions-bar clearfix">
 			<h2>Volumes</h2>
 			<div class="view-type">
@@ -383,27 +370,16 @@
 	<script src="javascripts/underscore-min.js"></script>
 	<script src="javascripts/foundation/foundation.js"></script>
 	<script src="javascripts/foundation/foundation.alerts.js"></script>
-	
 	<script src="javascripts/foundation/foundation.clearing.js"></script>
-	
 	<script src="javascripts/foundation/foundation.cookie.js"></script>
-	
 	<script src="javascripts/foundation/foundation.dropdown.js"></script>
-	
 	<script src="javascripts/foundation/foundation.forms.js"></script>
-	
 	<script src="javascripts/foundation/foundation.joyride.js"></script>
-	
 	<script src="javascripts/foundation/foundation.magellan.js"></script>
-	
 	<script src="javascripts/foundation/foundation.orbit.js"></script>
-	
 	<script src="javascripts/foundation/foundation.placeholder.js"></script>
-	
 	<script src="javascripts/foundation/foundation.reveal.js"></script>
-	
 	<script src="javascripts/foundation/foundation.section.js"></script>
-	
 	<script src="javascripts/foundation/foundation.tooltips.js"></script>
 	<script src="javascripts/foundation/foundation.topbar.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.scrollTo.js"></script>
@@ -417,14 +393,11 @@
 	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
 	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>
 	<script src="javascripts/common.js"></script>
-	
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
 	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
-  <script>
-    $(document).foundation();
-    $(document).ready(function() {
-
-    })
-  </script>
+	<script>
+		$(document).foundation();
+		$(document).ready(function() {})
+	</script>
 </body>
 </html>
