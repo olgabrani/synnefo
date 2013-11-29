@@ -1,0 +1,61 @@
+/* Animations  */
+
+.grid-view .build-progress {
+	animation:
+		progress_animation 5s infinite,
+		pulse 1s infinite;
+	-webkit-animation:
+		progress_animation 5s infinite,
+		pulse 1s infinite;
+}
+
+.reboot-progress {
+	animation: 
+		reboot_pulse 1s infinite;
+	-webkit-animation:
+		reboot_pulse 1s infinite;
+}
+
+@include keyframes( progress_animation) {
+	from {
+		width: 0%
+	}
+	to {
+		width: 100%
+	}
+}
+
+@include keyframes( pulse) {
+	from {
+		color: $vm-active-color
+	}
+	to {
+		color: darken($vm-active-color,10%)
+	}
+}
+
+
+@include keyframes( reboot_pulse) {
+	from {
+		color: $vm-rebooting-color
+	}
+	to {
+		color: darken($vm-rebooting-color,10%)
+	}
+}
+
+
+
+// temp 
+.btn5.temp {
+		color:blue;
+		padding: 0 4px;
+		position: absolute;
+		right: 0;
+	}
+// li for btns used to demonstrate general animations
+.temp-for-btns {
+	.btn5.temp {
+		position: static;
+	}
+}

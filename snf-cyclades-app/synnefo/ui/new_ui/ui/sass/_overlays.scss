@@ -118,13 +118,16 @@ body.with-overlay {
 				color: black;
 				&.info {
 					font-style: italic;
-					font-size: 0.8125em;
+					font-size:emCalc(13px);
 					color: #9e9ea1;
 				}
 				&.ssh {
 					text-align: center;
 					span {
 						display: inline;
+						padding: 10px 30px;
+						background:$secondary-color;
+						color:#fff;
 					}
 				}
 				&.buttons {

@@ -1,61 +1,16 @@
 /* List view for VMs, networks  */
+
 .entities {
 	position:relative;
 }
 
-.grid-view {
-	.lt-bar {
-		display: none;
-	}
-	.items-list {
-		@include block-grid(2, 0, true);
-		padding-left:1px;
-		@media #{$small} {
-			@include block-grid(4, 0, true);
-			padding-left:1px;
-		};
-		background:url(../images/dashed_atom.png) repeat-y left center;
-
-		&>li {
-			height:215px;
-			.check, .info, .actions {
-				display: none;
-			}
-			.img-wrap {
-				margin-bottom: 6px;
-				height:$grid-icon-height;
-				.snf-font {
-					font-size: $grid-icon-height;
-				}
-			}
-			.container {
-				height:160px;
-				margin: 40px 20px 20px;
-				position: relative;
-				line-height:120%;
-				.tags {
-					width: 100%;
-					min-height: 12px;
-					position: absolute;
-					bottom: 12px;
-				}
-			}
-		}
-	}
-}
 .items-list {
 	&>li {
 		text-align:center;
-		padding:20px;
 		position: relative;
-		list-style:none;
+		list-style: none;
 		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
 		height: 215px;
-		.img-wrap {
-			position: relative;
-			display: inline-block;
-			overflow: hidden;
-		}
 		.status {
 			font-size: emCalc(12px);
 			line-height:140%;
@@ -164,6 +119,46 @@
 	}
 }
 
+.grid-view {
+	.lt-bar {
+		display: none;
+	}
+	.items-list {
+		@include block-grid(2, 0, true);
+		padding-left:1px;
+		@media #{$small} {
+			@include block-grid(4, 0, true);
+			padding-left:1px;
+		};
+		background:url(../images/dashed_atom.png) repeat-y left center;
+
+		&>li {
+			height:215px;
+			.check, .info, .actions {
+				display: none;
+			}
+			.img-wrap {
+				margin-bottom: 6px;
+				height:$grid-icon-height;
+				.snf-font {
+					font-size: $grid-icon-height;
+				}
+			}
+			.container {
+				height:160px;
+				margin: 40px 20px 20px;
+				position: relative;
+				line-height:120%;
+				.tags {
+					width: 100%;
+					min-height: 12px;
+					position: absolute;
+					bottom: 12px;
+				}
+			}
+		}
+	}
+}
 .list-view {
 	.btn5 {
 		display: none;
@@ -364,5 +359,72 @@
 					bottom: 12px;
 				}
 			}
+	}
+}
+
+
+/* img-wrap div ( colors & styles ) */
+
+.img-wrap {
+	width: 60px;
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	line-height: 100%;
+	span {
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.os {
+		@include sprite('../images/os-unknown.png', 22px, 22px);
+		position: absolute;
+		top:8px;
+		left:50%;
+		margin-left:-11px;
+		&.windows { background-image:url('../images/os-windows.png'); }
+		&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+		&.fedora { background-image:url('../images/os-fedora.png'); }
+	}
+}
+
+.running {
+	@include stateColor($vm-active-color);
+}
+.off {
+	@include stateColor($vm-off-color);
+}
+.error {
+	@include stateColor($vm-error-color);
+}
+.shutting {
+	@include stateColor($vm-shutting-color);
+}
+.starting {
+	@include stateColor($vm-starting-color);
+}
+.rebooting {
+	@include stateColor($vm-rebooting-color);
+}
+
+.building {
+	@include stateColor($vm-active-color);
+}
+
+.building {
+	.img-wrap {
+		.snf-pc-full {
+			display: block;
+			overflow: hidden;
+		}
+		.incomplete {
+			color: $vm-building-color;
+			width:60px;
+		}
+		.complete {
+			width: 0%;
+			position: relative;
+			top: -60px;
+		}
 	}
 }
