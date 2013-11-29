@@ -223,3 +223,12 @@ $details-icon-large : 90px;
 		}
 	}
 }
+
+// experiment with select lists
+.select-list {
+	border: 0 !important;  /*Removes border*/
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+	-moz-appearance: none;  /*Removes default style Firefox*/
+	background-color: transparent;
+
+}
