@@ -214,10 +214,6 @@ Ajax request to submit form
 
     $('html').click(function(e) {
         resetForm(e, $('.editable a.cancel'));
-        // not sure if we want to hide the error window after every click in the ui
-        if($('.communication-error').css('bottom') == '0px') {
-            $('.communication-error').animate({bottom: "-151px"});
-        }
     });
 
 }
@@ -374,8 +370,12 @@ ui.ltBarToggle = function(speed){
     var cvelocity = parseInt($('.lt-bar').width())/speed;
     var cdelay = parseInt($('.toggle-lt-bar').outerWidth(true))/cvelocity;
 
+    $('.lt-bar').click(function(e) {
+        e.stopPropagation();
+    })
     $('.toggle-lt-bar').click(function(e){
         e.preventDefault();
+        e.stopPropagation();
         var self =this;
         if($(this).hasClass('fix-position')) {
             var marg = parseInt($(self).css('marginLeft')) - cmarg;
@@ -406,6 +406,16 @@ ui.ltBarToggle = function(speed){
 
 
 $(document).ready(function(){
+
+    $('html').click(function(e) {
+        // not sure if we want to hide the error window after every click in the ui
+        if($('.communication-error').css('bottom') == '0px') {
+            $('.communication-error').animate({bottom: "-151px"});
+        }
+        if($('.details .lt-bar').is(':visible')) {
+            $('.toggle-lt-bar').trigger('click');
+        }
+    });
 
     if($('.vms.entities').length!=0){
         ui.inactiveActions();
@@ -737,10 +747,22 @@ $(document).ready(function(){
 
     ui.replaceClass($('a.current, a.active'), 'outline', 'full');
 
+    // with the function below the sidebar in detailed views
+    // will not hide if we click something in a wizard
+    $('.wizard').click(function(e) {
+        e.stopPropagation();
+    })
+
+    $('.tag-data').mouseover(function() {
+        $(this).find('.delete').css({visibility: 'visible'})
+    });
+    $('.tag-data').mouseleave(function(){
+        $(this).find('.delete').css({visibility: 'hidden'})
+    });
     $('.delete').click(function(e) {
         e.preventDefault();
         $(this).closest('div').fadeOut('slow');
-    })
+    });
 })
 
 
