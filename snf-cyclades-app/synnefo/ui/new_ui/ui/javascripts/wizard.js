@@ -551,6 +551,20 @@ $(document).ready(function() {
 			});
 
 		}
+
+		else if(wizardType == 'snapshot-wizard') {
+			wizard.find('.vms-list a').click(function(e) {
+				e.preventDefault();
+				e.stopPropagation();
+				ui.checkOneRadioButton(this);
+				ui.changeRadiobuttonState(this);
+			});
+
+			wizard.find('.vms-list li').click(function(e) {
+				e.preventDefault();
+				$(this).find('a').trigger('click');
+			});
+		}
 	}
 
 })

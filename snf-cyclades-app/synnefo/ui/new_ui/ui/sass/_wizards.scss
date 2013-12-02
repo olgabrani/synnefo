@@ -140,6 +140,18 @@
 						&.current {
 							display: block;
 						}
+						h2 {
+							color: white;
+							font-size: 1em;
+						}
+						li {
+							list-style: none outside none;
+							position: relative;
+						}
+
+						a {
+							color: white;
+						}
 						.vms-list {
 							margin-top: emCalc(16px);
 							&>li {
@@ -735,12 +747,6 @@
 				padding: 2px;
 			}
 	}
-
-	li {
-		list-style: none outside none;
-		position: relative;
-	}
-
 	.snf-checkbox-checked, .snf-checkbox-unchecked {
 		font-size: 1.3em;
 	}
@@ -809,12 +815,6 @@
 				padding: 2px;
 			}
 	}
-
-	li {
-		list-style: none outside none;
-		position: relative;
-	}
-
 	.snf-checkbox-checked, .snf-checkbox-unchecked {
 		font-size: 1.3em;
 	}
