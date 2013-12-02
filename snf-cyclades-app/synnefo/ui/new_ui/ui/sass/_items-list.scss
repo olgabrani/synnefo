@@ -79,7 +79,7 @@
 		}
 		h4 {
 			font-size: emCalc(12px);
-			overflow: hidden;
+			// overflow: hidden;
 			margin-bottom: 4px;
 			height: 32px;
 			font-weight: normal;
@@ -142,7 +142,7 @@
 				height:$grid-icon-height;
 				.snf-font {
 					font-size: $grid-icon-height;
-					line-height: 120%;
+					// line-height: 120%;
 				}
 			}
 			.container {
@@ -237,16 +237,17 @@
 				float:left;
 				text-align: center;
 				height: $list-icon-height;
+				top: -6px;
 				.os {
-					@include sprite('../images/os-unknown.png', 16px, 16px);
+					@include sprite('../images/os-unknown.png', 14px, 14px);
 					background-size:100%;
 					position: absolute;
 					display: block;
 					text-align: center;
-					line-height:18px;
+					// line-height:18px;
 					left:50%;
-					margin-left:-8px;
-					top:4px;
+					margin-left: -7px;
+					top: 6px;
 				}
 				.snf-font {
 					font-size: $list-icon-height;
@@ -254,8 +255,8 @@
 				}
 			}
 			h4 {
-				width:$h4-w
-				;
+				width:$h4-w;
+				overflow: hidden;
 				float:left;
 				text-align: left;
 				height:20px;
@@ -305,8 +306,8 @@
 					visibility: hidden;
 				}
 				h4 {
-					height:auto;
-					line-height: $bar-height;
+					// height:auto;
+					// line-height: $bar-height;
 					margin:0;
 				}
 				.img-wrap {
@@ -370,7 +371,7 @@
 .img-wrap {
 	width: 60px;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 	display: inline-block;
 	line-height: 100%;
 	span {
@@ -381,12 +382,21 @@
 	.os {
 		@include sprite('../images/os-unknown.png', 22px, 22px);
 		position: absolute;
-		top:12px;
+		top: 8px;
 		left:50%;
 		margin-left:-11px;
 		&.windows { background-image:url('../images/os-windows.png'); }
 		&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
 		&.fedora { background-image:url('../images/os-fedora.png'); }
+		&.symbol {
+			position: relative;
+			top: -50px;
+			left: 0;
+			margin-left: 0;
+			width: auto;
+			height: auto;
+			// top: 10px;
+		}
 	}
 }
 
@@ -417,7 +427,7 @@
 	.img-wrap {
 		.snf-pc-full {
 			display: block;
-			overflow: hidden;
+			// overflow: hidden;
 		}
 		.incomplete {
 			color: $vm-building-color;
@@ -425,8 +435,9 @@
 		}
 		.complete {
 			width: 0%;
-			position: relative;
-			top: -60px;
+			position: absolute;
+			top: 0;
+			overflow: hidden;
 		}
 	}
 }

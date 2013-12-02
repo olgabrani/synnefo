@@ -175,8 +175,10 @@
 										line-height: 120%
 									}
 									.os{
-										background-size: emCalc(14px);
-										top: 0px;
+										@include sprite('../images/os-unknown.png', 14px, 14px);
+										background-size: 14px;
+										top: 5px;
+										left: 18px;
 									}
 								}
 								.name {
