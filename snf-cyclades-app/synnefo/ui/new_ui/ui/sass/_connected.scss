@@ -146,6 +146,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 		width:$lt-width/2;
 		height: 2px;
 		background: url(../images/dashed_atom-x.png) repeat-x left top;
+		overflow: inherit;
 		&>a {
 			display:  block;
 			position: absolute;

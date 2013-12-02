@@ -28,20 +28,33 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $text-direction: ltr;
 
 // PALETTE
-// We use these as default colors throughout
-$primary-color: #919194; // inactive grey
-$secondary-color: #30c79e; // green
-$third-color: #485057; // charbon black
-$color-1 : #25bfda; // light blue
 
+$gray-1: #919194; // light
+$gray-2: #485057; // charbon
+$gray-3: #636a70; // medium
+$gray-4: #33383D; // dark
+$turquoise-1 : #30c79e;
+$green-1: #00a551;
+$red-1: #ff4040;
+$cobalt-1: #566db1;
+$cobalt-2: #4c71ff;
+$yellow-1: #ffc54a;
+$orange-1: #ff7049;
+$salmon-1: #ff948c;
+$salmon-2: #ffb5af;
+
+// We use these as default colors throughout
+$primary-color: $gray-1; // inactive gray
+$secondary-color: $turquoise-1; // green
+$third-color: $gray-2;
 
 $overlay-bg-color: $third-color;
-$overlay-color-top: #636a70;
-$overlay-darker-color: #33383D;
+$overlay-color-top: $gray-3;
+$overlay-darker-color: $gray-4;
 
 $light-bg: lighten($primary-color,35%); // common light grey bg
 
-// color usage
+// links color usage
 $inactive-color: $primary-color;
 $link-color: $third-color;
 $link-color-hover : $secondary-color;
@@ -49,34 +62,27 @@ $link-color-hover : $secondary-color;
 $border-color-1 : lighten($primary-color,10%);
 
 $alert-color: $secondary-color;
-$success-color: #00a551;
-$warning-color: #49DDC5;
-$error-color: #ff5c58;
+$success-color: $green-1;
+$error-color: $red-1;
 
-// //colors for main icons (icons of networks and vms)
-// $vm-active-color: #75c046;
-$vm-stopped-color: #e00e63;
-// $network-color: #79c79e;
-
-//colors for main icons (icons of networks and vms)
+// colors for main icons
 $vm-active-color: $secondary-color;
-$vm-error-color: #ff4040;
-$vm-off-color: #4a5158;
-$vm-shutting-color: #666c6b;
-$vm-starting-color: #566db1;
-$vm-rebooting-color: #ffc54a;
-$vm-building-color: #c7eae0;
-$network-color: #79c79e;
+$vm-error-color: $red-1;
+$vm-off-color: $gray-2;
+$vm-shutting-color: $gray-3;
+$vm-starting-color: $cobalt-1;
+$vm-rebooting-color: $yellow-1;
+$vm-building-color: lighten($vm-active-color, 10%);
 
 // wizard step2 colors
-$disabled-resource-color: #3a4046;
+$disabled-resource-color: $primary-color;
 
 // wizard step3 colors
-$ssh-opt-area-color: #ff7049;
-$net-opt-area-color: #ff948c;
-$tag-opt-area-color: #4c71ff;
+$ssh-opt-area-color: $orange-1;
+$net-opt-area-color: $salmon-1;
+$tag-opt-area-color: $cobalt-2;
 $wizard-base-font-color: white;
-$net-more-opt-area-color:#ffb5af;
+$net-more-opt-area-color: $salmon-2;
 
 // icon-font sizes
 $snf-font-size-medium: emCalc(60px);
