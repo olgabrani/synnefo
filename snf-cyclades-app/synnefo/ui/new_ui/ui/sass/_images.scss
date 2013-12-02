@@ -1,14 +1,27 @@
-body .images .items-list .add-new {
-  .img-wrap .os.symbol {
-        color: #fff;
-        top: 12px;
-    }
-}
-
-
-body .images.list-view .items-list .add-new {
-  .img-wrap .os.symbol {
-        top: 3px;
-        font-size: 16px;
-    }
+.images{
+	&.grid-view {
+		.items-list {
+			&>li {
+				.img-wrap {
+					.os.symbol {
+						top: 16px;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+	&.list-view {
+		.items-list {
+			&>li {
+				.img-wrap {
+					.os.symbol {
+						font-size: 16px;
+						top: 4px;
+						color: white;
+					}
+				}
+			}
+		}
+	}
 }

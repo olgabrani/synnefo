@@ -142,6 +142,7 @@
 				height:$grid-icon-height;
 				.snf-font {
 					font-size: $grid-icon-height;
+					line-height: 120%;
 				}
 			}
 			.container {
@@ -245,10 +246,11 @@
 					line-height:18px;
 					left:50%;
 					margin-left:-8px;
-					top:3px;
+					top:4px;
 				}
 				.snf-font {
 					font-size: $list-icon-height;
+					line-height: 120%;
 				}
 			}
 			h4 {
@@ -379,7 +381,7 @@
 	.os {
 		@include sprite('../images/os-unknown.png', 22px, 22px);
 		position: absolute;
-		top:8px;
+		top:12px;
 		left:50%;
 		margin-left:-11px;
 		&.windows { background-image:url('../images/os-windows.png'); }

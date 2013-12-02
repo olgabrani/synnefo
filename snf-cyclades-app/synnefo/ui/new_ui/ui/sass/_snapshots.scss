@@ -1,0 +1,25 @@
+.snapshots {
+	&.grid-view {
+		.items-list {	
+			&>li {		
+				.img-wrap {
+					.snf-font {
+						font-size: $grid-icon-height - 0.1em;
+					}
+				}
+			}
+		}
+	}
+
+	&.list-view {
+		.items-list {	
+			&>li {		
+				.img-wrap {
+					.snf-font {
+						font-size: $list-icon-height - 0.1em;
+					}
+				}
+			}
+		}
+	}
+}
