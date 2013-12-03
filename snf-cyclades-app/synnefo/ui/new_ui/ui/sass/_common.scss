@@ -10,6 +10,7 @@
   - Top Info
   - Progress Bar
   - Responsive
+  - Scroll Bar
 
  */
 
@@ -600,6 +601,37 @@ body {
 		line-height:50px;
 		.icons-nav {
 			position: static;
+		}
+	}
+}
+
+/* Scroll Bar  -------------------------------------------- */
+
+body .jspVerticalBar {
+	background-color: transparent;
+	width: 14px;
+	padding: 1px;
+	border-left: 1px solid #c2bebe;
+	border-right: 1px solid #c2bebe;
+	.jspTrack {
+		background-color: #e6e5e5;
+		.jspDrag {
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			background-color: #c2bebe;
+		}
+	}
+	.jspArrow {
+		background-color: transparent;
+		@include sprite('../images/arrows.png', 14px, 14px);
+		overflow: hidden;
+		&.jspArrowDown{
+			background-position: -18px;
+		}
+
+		&.jspArrowUp {
+			background-position: 0px;
 		}
 	}
 }

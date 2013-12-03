@@ -399,9 +399,20 @@ ui.ltBarToggle = function(speed){
             }, cdelay);
             $('.lt-bar').animate({
                 width: 'toggle'
-            }, speed, 'linear');
+            }, speed, 'linear', ui.setCustomScrollBar);
         }
     });
+}
+
+
+ui.setCustomScrollBar = function() {
+    $('.scroll-pane-arrows').jScrollPane({
+        showArrows: true,
+        horizontalGutter: 10,
+        verticalDragMinHeight: 300,
+        verticalDragMaxHeight: 300,
+        mouseWheelSpeed: 50
+});
 }
 
 
@@ -763,6 +774,9 @@ $(document).ready(function(){
         e.preventDefault();
         $(this).closest('div').fadeOut('slow');
     });
+
+
+
 })
 
 
@@ -770,4 +784,5 @@ $(window).resize(function(e){
     ui.setElminHeight($('.main > .details'));
     ui.setElminHeight($('.lt-bar'));
     ui.setElHeight($('.scroll-wrap'));
+    ui.setCustomScrollBar();
 })
