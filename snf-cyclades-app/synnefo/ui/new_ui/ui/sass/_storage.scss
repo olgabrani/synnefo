@@ -1,33 +1,22 @@
 /* Storage (pithos) related styles  */
 
 .storage {
-	padding:45px 0;
-	position:relative;
-	.lt-sidebar {
-		font-size: 1em;
-		padding:0 20px 40px 40px;
-		.sidenav {
-			font-size: inherit;
+	.rect-plus {
+		display: inline-block;
+		background-color: #fff;
+		color: $link-color-hover;
+		padding: 0 6px;
+		font-size: emCalc(26px);
+		&:hover {
+			color: $link-color;
 		}
-		ul {
-			list-style: none outside none;
-			li {
-				padding:5px 0;
-				&:hover {
-					background: transparent;
-					&>a {
-						color:$secondary-color;
-						&+span {
-							display: inline;
-						}
-					}
-				}
-				span {
-					float:right;
-					color:$secondary-color;
-					display: none;
-				}
+	}
 
+	&.list-view {
+		.items-list {
+			h4, .img-wrap {
+				height: $list-icon-height;
+				line-height: $list-icon-height;
 			}
 		}
 	}

@@ -56,13 +56,35 @@ ui.setElHeight = function(el){
 *  - both/single ( for multiple entities/single entities)
 *  - running/off ( for running/off entities)
 *  - permanent ( for entities always active )
+* Can be used for pithos as well
+* Available categories are :
+* - files ( for files only actions)
+* - folders ( for folders only actions)
+* - all ( for files/folders actions)
 */
 ui.entitiesActionsEnabled = function(){
     var all = $('.snf-checkbox-checked').length;
     var running = $('.snf-checkbox-checked').parents('li.running').length;
     var off = $('.snf-checkbox-checked').parents('li.off').length;
-    console.log(off, 'actions here');
+    var files = $('.snf-checkbox-checked').parents('li.file').length;
+    var folders = $('.snf-checkbox-checked').parents('li.folder').length;
+
+    console.log(files,'files');
+    console.log(folders,'folders');
+
     $('.lt-bar .lt-actions li:not(.permanent) a').removeClass('active');
+
+    if ( ( files * folders )>0 ) {
+        $('.lt-actions li.all a').addClass('active');
+    } else {
+        if ( files>0 ) {
+            $('.lt-actions li.files a').addClass('active');
+        }
+        if ( folders>0 ){
+            $('.lt-actions li.folders a').addClass('active');
+        }
+    }
+
     if ( (running*off) > 0 ){
          $('.lt-actions li.both a').addClass('active');
          $('.lt-actions li.single a').removeClass('active');
@@ -484,7 +506,7 @@ $(document).ready(function(){
     })
 
     if ($('.entities .items-list >li').length == 1) {
-        $('.overlay-wrapper').addClass('no-vm');
+        $('.body-wrapper').addClass('no-vm');
     };
     $('.entities li .more').each(function(){
         var width = $(this).parent('li').outerWidth()  + 20;
@@ -615,20 +637,13 @@ $(document).ready(function(){
 
     /* grid/list view for items-list */
 
-    $('.view-type .list').click(function(e){
+    $('.actions-bar .list, .actions-bar .grid').click(function(e){
         e.preventDefault();
-        $('.view-type .grid span').removeClass('current');
-        $(this).find('span').addClass('current');
-        $('.entities').removeClass('grid-view');
-        $('.entities').addClass('list-view');
-    });
-
-     $('.view-type .grid').click(function(e){
-        e.preventDefault();
-        $('.view-type .list span').removeClass('current');
-        $(this).find('span').addClass('current');
-        $('.entities').addClass('grid-view');
-        $('.entities').removeClass('list-view');
+        if (!($(this).find('span').hasClass('current'))) {
+            $('.actions-bar .grid span, .actions-bar .list span').removeClass('current');
+            $(this).find('span').addClass('current');
+            $('.entities').toggleClass('grid-view list-view');
+        }
     });
 
      $('.lt-bar .select').click(function(e){
