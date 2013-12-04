@@ -277,7 +277,7 @@ body {
 	padding-top:$header-height+$bar-height;
 }
 
-.overlay-wrapper {
+.body-wrapper {
 	min-height:100%;
 }
 
@@ -371,7 +371,11 @@ body {
 		font-size: emCalc(12px);
 		line-height: $bar-height;
 		font-weight: normal;
-
+		a {
+			&:after {
+				content: " >";
+			}
+		}
 	}
 	.filter-menu {
 		float:right;
@@ -453,22 +457,15 @@ body {
 			width: 190px;
 		}
 	}
-	.view-type {
+	.rt-actions {
 		float: right;
 		margin-right:15px;
 		.current, a:hover {
 			color: $secondary-color;
 		}
-		.list {
-			margin-right: 3px;
-			.snf-listview {
-				font-size: 22px;
-			}
-		}
-		.grid {
-			margin-right: 7px;
-			.snf-gridview {
-					font-size: 22px;
+		a {
+			span {
+				font-size: emCalc(20px);
 			}
 		}
 		.single {
@@ -484,7 +481,7 @@ body {
 
 .no-vm {
 	.actions-bar {
-		.view-type, .hd-search, .filter {
+		.rt-actions, .hd-search, .filter {
 			display: none;
 		}
 	}

@@ -89,8 +89,8 @@
 			@include transition(background-color, 300ms, linear);
 			.container {
 				.img-wrap {
-					span:first-child {
-					color: white;
+					span.snf-font {
+						color: white;
 					}
 					.symbol {
 						background-image: none;
@@ -188,17 +188,21 @@
 						cursor: pointer;
 					}
 				}
-				a {
-					color:$inactive-color;
-					&:hover {
+			}
+			&.lt-actions {
+				li {
+					a {
 						color:$inactive-color;
-						cursor:default;
-					}
-					&.active {
-						color:$link-color;
 						&:hover {
-							color:$link-color-hover;
-							cursor: pointer;
+							color:$inactive-color;
+							cursor:default;
+						}
+						&.active {
+							color:$link-color;
+							&:hover {
+								color:$link-color-hover;
+								cursor: pointer;
+							}
 						}
 					}
 				}
@@ -260,6 +264,7 @@
 				float:left;
 				text-align: left;
 				height:20px;
+				margin: 0;
 			}
 			.tags {
 				float:left;
@@ -269,6 +274,13 @@
 				a {
 					vertical-align: text-top;
 				}
+			}
+			.size {
+				float:left;
+				width:$tags-w;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				font-size: emCalc(12px);
 			}
 			.status {
 				position: absolute;
@@ -283,6 +295,8 @@
 			.info {
 				float: left;
 				width: $info-w;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
 				font-size: emCalc(12px);
 			}
 			.actions {
