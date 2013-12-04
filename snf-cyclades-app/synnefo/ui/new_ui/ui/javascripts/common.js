@@ -302,7 +302,7 @@ ui.tabsSection = function(link, sectionEl) {
 
 ui.tabs = function(tabsEl, sectionEl) {
     var tabLink = tabsEl.find('a');
-    ui.replaceClass(tabLink.find('.active'), 'outline', 'full');
+    ui.replaceClass(tabLink.find('.active'), 'outline', 'full', 'snf-');
     function href(a) {
         return a.attr('href');
     }
@@ -312,39 +312,53 @@ ui.tabs = function(tabsEl, sectionEl) {
              return false;
         } else {
             window.location.hash = $(this).attr('href');
-            ui.replaceClass($(this).parents(tabsEl).find('.active'), 'full', 'outline');
+            ui.replaceClass($(this).parents(tabsEl).find('.active'), 'full', 'outline', 'snf-');
             $(this).parents(tabsEl).find('a').removeClass('active');
             $(this).addClass('active');
-            ui.replaceClass($(this), 'outline', 'full');
+            ui.replaceClass($(this), 'outline', 'full', 'snf-');
             ui.tabsSection( $(this), sectionEl);
         }
     })
 }
 
 // the function replaces part of the class of a span that is placed inside an a element
-ui.replaceClass = function(elements, str1, str2) {
+// the class is a word with the form : firstSubStr+*+str1 and it will be converted to: firstSubStr+*+str2
+// it must be uniquely recognized by the firstSubStr and the str1.
+
+ui.replaceClass = function(elements, str1, str2, firstSubStr) {
     $.each($(elements), function() {
-        classOld = $(this).find('span').attr('class');
+        var classOld = $(this).find('span').attr('class');
+        var classNew;
         if(classOld != undefined && classOld.indexOf(str1) != -1) {
-            var classNew =classOld.replace(str1, str2);
             if(classOld.indexOf(' ') == -1) {
+                classNew = classOld.replace(str1, str2);
                 $(this).find('.'+classOld).removeClass(classOld).addClass(classNew);
             }
             else {
-                var classToReplace;
-                if(classOld.indexOf(' ') > classOld.indexOf(str1)) {
-                    classToReplace = classOld.substring(0,classOld.indexOf(' '));
+                // the string starts with the firstSubStr and after the end of the word there's a space
+                var expr1 = new RegExp('^'+firstSubStr+'+(\\S*)+'+str1+'+(\\s+)', 'g');
 
-                }
-                else {
+                // the word is between spaces
+                var expr2 = new RegExp('(\\s+)'+firstSubStr+'+(\\S*)+'+str1+'+(\\s+)', 'g');
 
-                    classToReplace = classOld.substring(classOld.indexOf(' ')+1, classOld.indexOf(str1)+str1.length);
-                }
+                // before the word there's at least one space and the string ends with this word
+                var expr3 = new RegExp('(\\s+)'+firstSubStr+'+(\\S*)+'+str1+'$', 'g');
 
-                if($(this).find('.'+classToReplace).hasClass(classOld)) {
-                    console.log('classToReplace ', classToReplace)
-                       $(this).find('.'+classToReplace).removeClass(classToReplace).addClass(classNew);
+                // spaces all over the string
+                var spacesExp = new RegExp('\\s+', 'g');
+
+                if(classOld.match(expr1) != null) {
+                    classToReplace = classOld.match(expr1);
                 }
+                else if(classOld.match(expr2) != null) {
+                    classToReplace = classOld.match(expr2);
+                }
+                else if (classOld.match(expr3) != null) {
+                    classToReplace = classOld.match(expr3);
+                }
+                classToReplace = classToReplace.toString().replace(spacesExp,"");
+                classNew = classToReplace.replace(str1, str2);
+                $(this).find('.'+classToReplace).removeClass(classToReplace).addClass(classNew);
             }
         }
     });
@@ -391,7 +405,9 @@ ui.ltBarToggle = function(speed){
         }
         else {
             $(this).addClass('fix-position');
-            var marg = parseInt($(self).css('marginLeft')) + cmarg;
+           var scrollBarWidth = 14;
+            var marg = parseInt($(self).css('marginLeft')) + cmarg - scrollBarWidth;
+            tt = marg;
             setTimeout(function(){
                 $(self).animate({
                     'margin-left': marg,
@@ -756,7 +772,7 @@ $(document).ready(function(){
     });
     // end of connected details js
 
-    ui.replaceClass($('a.current, a.active'), 'outline', 'full');
+    ui.replaceClass($('a.current, a.active'), 'outline', 'full', 'snf-');
 
     // with the function below the sidebar in detailed views
     // will not hide if we click something in a wizard
