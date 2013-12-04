@@ -30,8 +30,20 @@
 					visibility: visible;
 				}
 			}
+			.add-new {
+				position: relative;
+				input[type="file"] {
+					position: absolute;
+					left:$lt-bar-width;
+					top:0;
+					right: 0;
+					bottom: 0;
+					opacity: 0;
+				}
+			}
 		}
 	}
+
 	.files {
 		margin:1em 0;
 		padding:0;
