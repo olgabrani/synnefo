@@ -7,7 +7,7 @@
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | VM list</title>
+    <title>VMs list</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
@@ -24,11 +24,11 @@
 			<ul class="icons-nav">
 				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-pc-outline"></span></a></li>
 				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network-outline"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Disks"><span class="snf-volume-outline"></span></a></li>
-				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage" ><span class="snf-pithos-outline"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Images" ><span class="snf-image-outline"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="Snapshots" ><span class="snf-snapshot-outline"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="More" ><span class="snf-plus-outline"></span></a></li>
+				<li><a href="volumes_list.html" data-tooltip class="has-tip" title="Disks"><span class="snf-volume-outline"></span></a></li>
+				<li><a href="pithos_list.html" data-tooltip class="has-tip" title="Storage"><span class="snf-pithos-outline"></span></a></li>
+				<li><a href="images_list.html" data-tooltip class="has-tip" title="Images"><span class="snf-image-outline"></span></a></li>
+				<li><a href="snapshots_list.html" data-tooltip class="has-tip" title="Snapshots"><span class="snf-snapshot-outline"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="More"><span class="snf-plus-outline"></span></a></li>
 			</ul>
 		</nav>
 		<div class="login">
@@ -457,7 +457,7 @@ Confirm that the options you have selected are correct</p>
 													</li>
 												</ul>
 												<div>
-													<a href="" class="btn5" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
+													<a href="" class="btn5" data-reveal-id="sshkeys-wizard" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
 												</div>
 											</div>
 										</div>
@@ -684,6 +684,7 @@ Confirm that the options you have selected are correct</p>
                     <p>
                         Note: We do not keep it! I f you don't download now you cannot access it in the future.
                     </p>
+                <p class="buttons"><a href="" class="btn4">ok</a></p>
                 </div>
                 <div class="import-key-area">
                     <div class="key-name">
@@ -719,15 +720,6 @@ Confirm that the options you have selected are correct</p>
                             <a href="" class="edit">edit</a>
                             <a href="">remove</a>
                         </div>
-                        <div class="import-key-area">
-                            <div class="key-name">
-                                <label>key name 1</label>
-                                <span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
-                            </div>
-                            <div class="error-msg"></div>
-                            <div class="key-content">
-                            <textarea></textarea>
-                        </div>
                     </li>
                     <li>
                         <div class="name-col">key name 2</div>
@@ -737,19 +729,9 @@ Confirm that the options you have selected are correct</p>
                             <a href="" class="edit">edit</a>
                             <a href="">remove</a>
                         </div>
-                        <div class="import-key-area">
-                            <div class="key-name">
-                                <label>key name 2</label>
-                                <span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
-                            </div>
-                            <div class="error-msg"></div>
-                            <div class="key-content">
-                                <label>Key name</label>
-                                <textarea></textarea>
-                            </div>
                     </li>
                 </ul>
-                <p class="buttons"><a href="" class="btn4">OK</a></p>
+                <p class="buttons"><a href="" class="btn4 close-reveal-modal">close</a></p>
             </div>
 
 			<div id="vm-connect" class="reveal-modal medium">
@@ -782,9 +764,10 @@ Confirm that the options you have selected are correct</p>
 		</section>
 		<section class="actions-bar clearfix">
 			<h2>Virtual Machines</h2>
-			<div class="rt-actions">
-				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
+			<div class="view-type">
 				<a href="" class="grid" title="grid view"><span class="snf-gridview current"></span></a>
+				<a href="" class="list" title="list view"><span class="snf-listview "></span></a>
+				<a href="vm_details.html" class="single" title="single view"></a>
 			</div>
 			<div class="filter-menu">
 				<div><a class="filter" href="">Filter</a></div>
@@ -811,13 +794,19 @@ Confirm that the options you have selected are correct</p>
 								<span class="snf-checkbox-unchecked"></span>
 							</div>
 							<div class="img-wrap">
-								<span class="snf-pc-full"></span>
-								<span class="os symbol">+</span>
+								<span class="snf-pc-create-full snf-font"></span>
 							</div>
-							<h4 tilte="create new machine">New Machine</h4>
+							<h4>New Machine</h4>
 						</div>
 					</li>
 				</ul>
+				<div class="communication-error">
+					<p>Sorry! Something went wrong!<br>Try again, but if you keep seeing this message please contact us through the feedback form.</p>
+					<p class="buttons">
+						<a class="btn5" href="">feedback</a>
+						<a href="" class="btn5">close</a>
+					</p>
+				</div>
 				<div class="lt-bar">
 					<ul class="lt-actions">
 						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>

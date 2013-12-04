@@ -188,6 +188,7 @@ $details-icon-large : 90px;
 		top: $header-height + $bar-height + 35px;
 		left: 50%;
 		margin-left: - ($row-width/2 - emCalc(10px));
+		border: 1px solid white;
 
 	}
 }
