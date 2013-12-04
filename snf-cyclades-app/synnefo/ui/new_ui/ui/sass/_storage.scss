@@ -1,6 +1,7 @@
 /* Storage (pithos) related styles  */
 
 .storage {
+	$storage-h4-w: 25%;
 	.rect-plus {
 		display: inline-block;
 		background-color: #fff;
@@ -17,6 +18,17 @@
 			h4, .img-wrap {
 				height: $list-icon-height;
 				line-height: $list-icon-height;
+			}
+			h4 {
+				width: $storage-h4-w;
+			}
+			.info {
+				margin-right: 40px;
+			}
+			li:hover {
+				.actions-col {
+					visibility: visible;
+				}
 			}
 		}
 	}
@@ -50,15 +62,7 @@
 				float:left;
 				width:20%;
 			}
-			.actions-col {
-				float:left;
-				width:30%;
-				visibility: hidden;
-
-				a {
-					margin-right: 10px;
-				}
-			}
+			
 			&:hover {
 				border-color:$secondary-color;
 				.actions-col { visibility:visible;}

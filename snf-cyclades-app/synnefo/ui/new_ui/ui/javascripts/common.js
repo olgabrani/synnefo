@@ -806,8 +806,6 @@ $(document).ready(function(){
         $(this).closest('div').fadeOut('slow');
     });
 
-
-
 })
 
 

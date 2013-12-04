@@ -4,7 +4,7 @@
 			&>li {
 				.img-wrap {
 					.snf-font {
-						font-size: $grid-icon-height - 0.05em;
+						font-size: $grid-icon-height - pxCalc(0.05em);
 					}
 				}
 			}
@@ -16,7 +16,7 @@
 			&>li {
 				.img-wrap {
 					.snf-font {
-						font-size: $list-icon-height - 0.05em;
+						font-size: $list-icon-height - pxCalc(0.05em);
 					}
 				}
 			}

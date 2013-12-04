@@ -312,6 +312,15 @@
 					}
 				}
 			}
+			.actions-col {
+				visibility: hidden;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				text-align: left;
+				a {
+					margin-right: 10px;
+				}
+			}
 			&.add-new {
 				&:hover {
 					background: $link-color;
