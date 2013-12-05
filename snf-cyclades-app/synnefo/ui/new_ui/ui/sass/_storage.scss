@@ -2,6 +2,7 @@
 
 .storage {
 	$storage-h4-w: 25%;
+	height: 100%;
 	.rect-plus {
 		display: inline-block;
 		background-color: #fff;
@@ -15,6 +16,7 @@
 
 	&.list-view {
 		.items-list {
+			height: 100%;
 			h4, .img-wrap {
 				height: $list-icon-height;
 				line-height: $list-icon-height;
@@ -173,4 +175,8 @@
 
 .dz-success-mark, .dz-error-mark, .dz-error-message {
 	display: none;
+}
+
+.all-height {
+	height: 100%
 }

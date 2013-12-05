@@ -43,7 +43,7 @@
             <a href="index.html"><img src="images/synnefo-logo.png" alt="software logo"></a>
         </div>
     </header>
-    <div class="body-wrapper">
+    <div class="body-wrapper all-height">
         <section class="actions-bar clearfix">
                 <h2><a href="">root</a> <a href="">pithos</a> my folder</h2>
                 <div class="rt-actions">
@@ -65,9 +65,9 @@
                     </form>
                 </div>
             </section>
-            <section class="main row">
+            <section class="main row all-height">
             <div class="storage entities list-view">
-                <ul class="items-list">
+                <ul class="items-list" id="drop">
                     <li class="add-new">
                         <div class="container">
                             <div class="check">
@@ -195,6 +195,7 @@
   <script>
     $(document).foundation();
     $(document).ready(function() {
+         $("#drop").dropzone({ url: "/file/post", clickable: false});
 
     })
   </script>
