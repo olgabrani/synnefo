@@ -6,7 +6,6 @@ window.onload = function() {
 		el.innerHTML = '<span style="font-family: \'snf-font\'">' + entity + '</span>' + html;
 	}
 	var icons = {
-			'snf-trash' : '&#x24;',
 			'snf-eye' : '&#x41;',
 			'snf-radio-checked' : '&#x42;',
 			'snf-radio-unchecked' : '&#x43;',
@@ -24,7 +23,6 @@ window.onload = function() {
 			'snf-ban-circle' : '&#x6a;',
 			'snf-ok-sign' : '&#x6c;',
 			'snf-minus-sign' : '&#x6e;',
-			'snf-edit' : '&#x71;',
 			'snf-listview' : '&#x73;',
 			'snf-gridview' : '&#x74;',
 			'snf-dashboard-outline' : '&#x7a;',
@@ -63,15 +61,27 @@ window.onload = function() {
 			'snf-router-outline' : '&#x48;',
 			'snf-chip-outline' : '&#x45;',
 			'snf-image-outline' : '&#x66;',
-			'snf-plus-outilne' : '&#x6d;',
-			'snf-snapshot-outline' : '&#x65;',
+			'snf-plus-outline' : '&#x6d;',
 			'snf-volume-outline' : '&#x75;',
 			'snf-network-outline' : '&#x76;',
 			'snf-pc-outline' : '&#x77;',
 			'snf-info-outline' : '&#x6f;',
 			'snf-thunder-full' : '&#x6b;',
 			'snf-lock-closed-full' : '&#x46;',
-			'snf-lock-open-full' : '&#x47;'
+			'snf-lock-open-full' : '&#x47;',
+			'snf-snapshot-outline' : '&#x65;',
+			'snf-folder-outline' : '&#x5e;',
+			'snf-edit' : '&#x71;',
+			'snf-trash-outline' : '&#x24;',
+			'snf-link-outline' : '&#x26;',
+			'snf-refresh-outline' : '&#x29;',
+			'snf-download-full' : '&#x25;',
+			'snf-person-outline' : '&#x2a;',
+			'snf-upload-full' : '&#x28;',
+			'snf-arrow-right-small-full' : '&#x2d;',
+			'snf-copy-outline' : '&#x3f;',
+			'snf-arrow-left-small-full' : '&#x5f;',
+			'snf-folder-full' : '&#x3d;
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
