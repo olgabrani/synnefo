@@ -806,6 +806,17 @@ $(document).ready(function(){
         $(this).closest('div').fadeOut('slow');
     });
 
+    $('.strorage-progress').hover(
+        function(e){
+            $(this).find('.summary').stop(true,true).hide();
+            $(this).find('.details').stop(true,true).slideDown();
+        },
+        function(e){
+            $(this).find('.details').stop(true,true).slideUp();
+            $(this).find('.summary').stop(true,true).show();
+        }
+    );
+
 })
 
 

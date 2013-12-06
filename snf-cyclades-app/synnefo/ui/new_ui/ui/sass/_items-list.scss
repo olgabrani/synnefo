@@ -160,7 +160,7 @@
 		}
 	}
 }
-.list-view {
+.list-view, .strorage-progress {
 	.btn5 {
 		display: none;
 	}
@@ -210,11 +210,6 @@
 		}
 	}
 	.items-list {
-		$check-w : 60px;
-		$img-wrap-w : 70px;
-		$h4-w :40%;
-		$tags-w :8%;
-		$info-w: 25%;
 		overflow:hidden;
 		& >li {
 			@extend .clearfix;
@@ -265,6 +260,7 @@
 				text-align: left;
 				height:20px;
 				margin: 0;
+				color: inherit;
 			}
 			.tags {
 				float:left;
@@ -275,7 +271,7 @@
 					vertical-align: text-top;
 				}
 			}
-			.size {
+			.size, .remove {
 				float:left;
 				width:$tags-w;
 				height:$list-icon-height;
@@ -292,7 +288,7 @@
 					display: inline;
 				}
 			}
-			.info {
+			.info, .progress-col {
 				float: left;
 				width: $info-w;
 				height:$list-icon-height;
@@ -312,11 +308,13 @@
 					}
 				}
 			}
-			.actions-col {
+			.actions-col, .remove {
 				visibility: hidden;
 				height:$list-icon-height;
 				line-height: $list-icon-height;
 				text-align: left;
+				width: $actions-w;
+				float: left;
 				a {
 					margin-right: 10px;
 				}
