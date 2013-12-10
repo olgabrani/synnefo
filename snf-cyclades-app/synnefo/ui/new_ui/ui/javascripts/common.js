@@ -50,6 +50,17 @@ ui.setElHeight = function(el){
     el.css('height', h1);
 }
 
+/* Sets element max-height
+* Used for div.storage-progress
+*/
+ui.setElmaxHeight = function(el){
+    var WindowHeight = $(window).height();
+    var header = $('.header').outerHeight();
+    var actions = $('.actions-bar').height();
+    var h1= WindowHeight - (header+actions);
+    el.css('max-height', h1);
+}
+
 /* 
 * Logic for Entities actions. Present in items_list pages
 * Available categories are :
@@ -145,6 +156,14 @@ ui.firewallSetup = function(){
     });
 }
 
+ui.checkedListItems = function (){
+    $('.list-view .items-list').find('.snf-checkbox-checked').each(function(){
+        $(this).parents('li').addClass('selected');
+    });
+    $('.list-view .items-list').find('.snf-checkbox-unchecked').each(function(){
+        $(this).parents('li').removeClass('selected');
+    });
+};
 
 /*
 * In order for the editable value functionality to work, the html markup
@@ -275,6 +294,7 @@ function goToByScroll(id){
 ui.changeCheckboxState =function(checkbox_link) {
     $(checkbox_link).find('.snf-checkbox-unchecked, .snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
     ui.entitiesActionsEnabled();
+    ui.checkedListItems();
 }
 
 // to use the above functions use first the ui.checkOneRadioButton and then ui.changeRadiobuttonState
@@ -471,6 +491,7 @@ $(document).ready(function(){
     };
     ui.setElminHeight($('.main > .details'));
     ui.setElminHeight($('.lt-bar'));
+    ui.setElmaxHeight($('.storage-progress'));
     ui.setElHeight($('.scroll-wrap'));
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;
@@ -657,6 +678,7 @@ $(document).ready(function(){
             $('.list-view  li .check span').removeClass('snf-checkbox-unchecked');
         }
         ui.entitiesActionsEnabled();
+        ui.checkedListItems();
      });
 
     // set filter visible
@@ -806,16 +828,16 @@ $(document).ready(function(){
         $(this).closest('div').fadeOut('slow');
     });
 
-    $('.strorage-progress').hover(
+    $('.storage-progress').hover(
         function(e){
-            $(this).find('.summary').stop(true,true).hide();
-            $(this).find('.details').stop(true,true).slideDown();
+            $(this).find('.details').stop(false,true).slideDown();
         },
         function(e){
-            $(this).find('.details').stop(true,true).slideUp();
-            $(this).find('.summary').stop(true,true).show();
+            $(this).find('.details').stop(false,true).slideUp();
         }
     );
+
+
 
 })
 
@@ -825,4 +847,6 @@ $(window).resize(function(e){
     ui.setElminHeight($('.lt-bar'));
     ui.setElHeight($('.scroll-wrap'));
     ui.setCustomScrollBar();
+    ui.setElmaxHeight($('.storage-progress'));
+
 })
