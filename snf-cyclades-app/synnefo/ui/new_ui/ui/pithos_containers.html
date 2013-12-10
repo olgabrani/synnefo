@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
     <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 8]>               <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Pithos</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
@@ -44,10 +44,12 @@
         </div>
     </header>
     <div class="body-wrapper all-height">
-        <section class="actions-bar clearfix">
-            <h2><a href="pithos_containers.html">root</a> <a href="">pithos</a> my folder</h2>
+    <section class="actions-bar clearfix">
+            <h2>root</h2>
             <div class="rt-actions">
-                <a href=""><span class="snf-trash"></span></a>
+                <a href="" class="delete"><span class="snf-trash-outline"></span></a>
+                <a href="" class="add-new"><span class="snf-folder-outline"></span><span class="symbol">+</span></a>
+                <a href="" class="refresh"><span class="snf-refresh-outline"></span></a>
             </div>
             <div class="filter-menu">
                 <div><a class="filter" href="">Filter</a></div>
@@ -65,55 +67,120 @@
                 </form>
             </div>
         </section>
-        <section class="main row all-height">
-            <div class="storage entities list-view">
-                <ul class="items-list" id="drop">
-                    <li class="add-new">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
+        <section class="main row">
+            <div class="storage containers entities list-view">
+                <ul class="items-list">
+                    <li>
+                        <div class="basic-data">
+                            <div class="img-wrap">
+                                <span class="snf-folder-full"></span>
+                                <span class="snf-pithos-outline"></span>
+                            </div>
+                            <h4>Pithos</h4>                            
                         </div>
-                        <div class="img-wrap">
-                            <span class="rect-plus">+</span>
+                        <div class="size-data">
+                            <div class="progress-col">
+                                <div class="progress">
+                                    <span class="meter" style="width: 30%">30%</span>
+                                </div>
+                            </div>
+                            <span class="size">
+                                15 GB of 50 GB used
+                            </span>
+                            
                         </div>
-                        <h4>Upload file</h4>
-                        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
-                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-                        </form>
+                        
+                        <div class="project">
+                            <span class="selected name">Basic Project</span>
+                            <a class="btn-more">
+                                <span class="explain">reassign</span>
+                                <span class="snf-arrow-down"></span>
+                            </a>
+                            <ul class="available">
+                                <li>
+                                    <a href=""><span class="name">another.project.okeanos</span></a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="name">project i</span></a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="name">project k</span></a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li data-status="folder" class="folder">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
+                   <li>
+                        <div class="basic-data">
+                            <div class="img-wrap">
+                                <span class="snf-folder-full"></span>
+                                <span class="snf-image-outline"></span>
+                            </div>
+                            <h4>Images</h4>   
                         </div>
-                        <div class="img-wrap">
-                            <img src="images/icon-txt.png" alt="" />
+                        <div class="size-data">
+                            <div class="progress-col">
+                                <div class="progress">
+                                    <span class="meter" style="width: 30%">30%</span>
+                                </div>
+                            </div>
+                            <span class="size">
+                                2 GB of 50 GB used
+                            </span>                            
                         </div>
-                        <h4>file name.txt</h4>
-                        <div class="size">
-                            100KB
-                        </div>
-                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
-                        <div class="actions-col">
-                            <a href="" class="has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-                            <a href="" class="has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
+                        <div class="project">
+                           <span class="selected name">Basic Project</span>
+                            <a class="btn-more">
+                                <span class="explain">reassign</span>
+                                <span class="snf-arrow-down"></span>
+                            </a>
+                            <ul class="available">
+                                <li>
+                                    <a href=""><span class="name">another.project.okeanos</span></a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="name">project i</span></a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="name">project k</span></a>
+                                </li>
+                            </ul>
                         </div>
                     </li>
-                    <li data-status="file" class="file">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
+                   <li>
+                        <div class="basic-data">
+                            <div class="img-wrap">
+                                <span class="snf-folder-full"></span>
+                                <span class="snf-snapshot-outline"></span>
+                            </div>
+                            <h4>Snaphots</h4>   
                         </div>
-                        <div class="img-wrap">
-                            <img src="images/icon-pdf.png" alt="" />
+                        <div class="size-data">
+                            <div class="progress-col">
+                                <div class="progress">
+                                    <span class="meter" style="width: 30%">30%</span>
+                                </div>
+                            </div>
+                            <span class="size">
+                                2 GB of 50 GB used
+                            </span>                            
                         </div>
-                        <h4>supercool.mp4</h4>
-                        <div class="size">
-                            100KB
-                        </div>
-                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
-                        <div class="actions-col">
-                            <a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-                            <a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-                            <a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" class="show has-tip image"  data-tooltip title="Copy" data-title="my Image"><span class="snf-eye"></span></a>
+                        <div class="project">
+                           <span class="selected name">Basic Project</span>
+                            <a class="btn-more">
+                                <span class="explain">reassign</span>
+                                <span class="snf-arrow-down"></span>
+                            </a>
+                            <ul class="available">
+                                <li>
+                                    <a href=""><span class="name">another.project.okeanos</span></a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="name">project i</span></a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="name">project k</span></a>
+                                </li>
+                            </ul>
                         </div>
                     </li>
                 </ul>
@@ -123,22 +190,6 @@
                         <a class="btn5" href="">feedback</a>
                         <a href="" class="btn5">close</a>
                     </p>
-                </div>
-                <div class="lt-bar">
-                    <ul class="lt-actions">
-                        <li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
-                        <li class="files"><a href="#" title=""><span class="snf-eye"></span> Share</a></li>
-                        <li class="files"><a href="#" title=""><span class="snf-eye"></span> Download</a></li>
-                        <li class="files"><a href="#"><span class="snf-trash"></span> Delete</a></li>
-                        <li class="all"><a href="#"><span class="snf-eye"></span> Rename</a></li>
-                        <li class="all"><a href="#"><span class="snf-eye"></span> Move</a></li>
-                        <li class="all"><a href="#"><span class="snf-eye"></span> Copy</a></li>
-                        <li class="folders"><a href="#"><span class="snf-eye"></span> Version</a></li>
-                    </ul>
-                    <ul class="more">
-                        <li><a href="#"><span class="snf-eye"></span> Shared by me</a></li>
-                        <li><a href="#"><span class="snf-eye"></span> Shared to me</a></li>
-                    </ul>
                 </div>
             </div>
         </section>
