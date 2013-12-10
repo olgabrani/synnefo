@@ -45,10 +45,21 @@
 				bottom: 0;
 				opacity: 0;
 			}
+			h4 {
+				color: #fff;
+			}
+			&:hover {
+				.rect-plus	{
+					color: $link-color;
+				}
+			}
+		}
+		&.drag {
+			background-color: $light-bg;
 		}
 	}
 }
-.strorage-progress{
+.storage-progress{
 	.items-list {
 		li {
 			padding-left: $lt-bar-width + $check-w;
@@ -83,7 +94,7 @@
 				padding-top: 7px;
 			}
 			&:hover {
-				background-color: orange;
+				background-color: transparent;
 			}
 		}
 	}

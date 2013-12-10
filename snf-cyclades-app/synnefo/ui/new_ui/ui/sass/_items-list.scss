@@ -160,7 +160,7 @@
 		}
 	}
 }
-.list-view, .strorage-progress {
+.list-view, .storage-progress {
 	.btn5 {
 		display: none;
 	}
@@ -212,6 +212,9 @@
 	.items-list {
 		overflow:hidden;
 		& >li {
+			&.selected {
+				background-color: $light-bg;
+			}
 			@extend .clearfix;
 			height:auto;
 			width:100%;
@@ -258,7 +261,7 @@
 				overflow: hidden;
 				float:left;
 				text-align: left;
-				height:20px;
+				height:18px;
 				margin: 0;
 				color: inherit;
 			}

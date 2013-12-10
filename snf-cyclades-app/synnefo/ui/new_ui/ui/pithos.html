@@ -69,17 +69,16 @@
             <div class="storage entities list-view">
                 <ul class="items-list" id="drop">
                     <li class="add-new">
-                        <div class="container">
-                            <div class="check">
-                                <span class="snf-checkbox-unchecked"></span>
-                            </div>
-                            <div class="img-wrap">
-                                <span class="rect-plus">+</span>
-                            </div>
-                            <h4>Upload file</h4>
+                        <div class="check">
+                            <span class="snf-checkbox-unchecked"></span>
                         </div>
-                        <form action="" method="post">
-                            <input type="file" id="myfile" name="upload"/>
+                        <div class="img-wrap">
+                            <span class="rect-plus">+</span>
+                        </div>
+                        <h4>Upload file</h4>
+                        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
                         </form>
                     </li>
                     <li data-status="folder" class="folder">
@@ -142,13 +141,12 @@
                     </ul>
                 </div>
             </div>
-
         </section>
-        <div class="strorage-progress">
+        <div class="storage-progress">
+            <div class="loader" style="width: 60%;"></div>
             <div class="row">
                 <div class="wrap">
-                    <div class="loader" style="width: 60%;"></div>
-                    <p class="summary">5 files uploading</p>
+                    <p class="summary">some files uploading</p>
                     <div class="details">
                         <ul class="items-list">
                             <li>
@@ -233,13 +231,14 @@
     <script src="javascripts/common.js"></script>
     
     <script type="text/javascript" src="javascripts/wizard.js"></script>
+    <script type="text/javascript" src="javascripts/dragfiles.js"></script>
     <script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
   <script>
     $(document).foundation();
-    $(document).ready(function() {
+    /*$(document).ready(function() {
          $("#drop").dropzone({ url: "/file/post", clickable: false});
 
-    })
+    })*/
   </script>
 </body>
 </html>
