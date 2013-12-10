@@ -1,9 +1,3 @@
-function bytesToSize(bytes) {
-    var sizes = [ 'n/a', 'bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-    var i = +Math.floor(Math.log(bytes) / Math.log(1024));
-    return  (bytes / Math.pow(1024, i)).toFixed( 0 ) + sizes[ isNaN( bytes ) ? 0 : i+1 ];
-}
-
 ;(function( $, window, document, undefined ){
 
   // our constructor
@@ -16,8 +10,11 @@ function bytesToSize(bytes) {
   Dragfiles.prototype = {    
     defaults: {
       dictIntroMessage: 'Drag and Drop your files here',
-      dictRemoveFile: 'Remove File',
-      dictFilesUploading: ' file(s) uploading'
+      dictremoveFile: 'Remove File',
+      dictFilesUploading: ' file(s) uploading',
+      dictLastUpdated: 'Last updated: ',
+      dictAllFilesUploaded: 'All files have been successfully uploaded!',
+      dictNoFilesToUpload: 'No more files to upload',
     },
     
     files: [],
@@ -31,25 +28,24 @@ function bytesToSize(bytes) {
 
       // Sample usage:
       // Set the message per instance:
-      // $('#elem').dragfiles({ dictRemoveFile: 'Get it out!'});
+      // $('#elem').dragfiles({ dictremoveFile: 'Get it out!'});
       // or
       // var p = new Dragfiles(document.getElementById('elem'), 
-      // { dictRemoveFile: 'Get it out!'}).init()
+      // { dictremoveFile: 'Get it out!'}).init()
       // or, set the global default message:
-      // Dragfiles.defaults.dictRemoveFile = 'Get it out!'
+      // Dragfiles.defaults.dictremoveFile = 'Get it out!'
 
-      console.log('this.elem',this.elem);
       
       $(this.elem).on('dragenter',function(e){
-        self.dragenter(e);
+        self.dragEnter(e);
       });
 
       $(this.elem).on('dragleave',function(e){
-        self.dragleave(e);
+        self.dragLeave(e);
       });
 
       $(this.elem).on('dragover',function(e){
-        self.dragover(e);
+        self.dragOver(e);
       });
 
       $(this.elem).on('drop',function(e){
@@ -58,7 +54,7 @@ function bytesToSize(bytes) {
 
       $('input[type=file]').on('change',function (e) {
         window.test = e;
-        self.addfiles( e.originalEvent.target.files );
+        self.addFiles( e.originalEvent.target.files );
         self.fileSelectHandler(e);
       });
 
@@ -71,32 +67,36 @@ function bytesToSize(bytes) {
 
     },
 
-    dragenter: function(e){
+    dragEnter: function(e){
       console.log('Dragenter');
     },
 
-    dragleave: function(e){
+    dragLeave: function(e){
       console.log('Dragleave');
-      $(this.elem).removeClass('drag');
+      $(this.elem).find('#drop').removeClass('drag');
     },
 
-    dragover: function(e){
+    dragOver: function(e){
       e.stopPropagation();
       e.preventDefault();
       console.log('Dragover');
-      $(this.elem).addClass('drag');
+      $(this.elem).find('#drop').addClass('drag');
     },
 
     drop: function(e){
       e.stopPropagation();
       e.preventDefault();
-      $(this.elem).removeClass('drag');
-      this.addfiles(e.originalEvent.dataTransfer.files)
+      var self = this;
+      $(this.elem).find('#drop').removeClass('drag');
+      this.addFiles(e.originalEvent.dataTransfer.files)
       this.fileSelectHandler(e);
+      setTimeout( function(){
+        self.fileUploaded(self.files[0])
+        self.removeFile(self.files[0], $('.storage-progress .items-list li').first());
+      } ,1000);
     },
 
     fileSelectHandler: function (e){
-      $('.storage-progress .summary').html(this.files.length + this.config.dictFilesUploading);
       $('.storage-progress').slideDown();
       this.parseFiles(this.files);
     },
@@ -105,8 +105,17 @@ function bytesToSize(bytes) {
       var txt ='';
       var self = this;
       var list = $('.storage-progress .items-list');
+      var summary = $('.storage-progress .summary');
       list.find('li').remove();
-
+      if (this.files.length> 0 ) {
+        summary.html('<span>'+this.files.length +'</span>'+ this.config.dictFilesUploading);
+      } else {
+        summary.html(this.config.dictAllFilesUploaded);
+      }
+      summary.find('span').addClass('animated');
+      setTimeout(function(){
+        summary.find('span').removeClass('animated');
+      }, 500)
       _.map(files, function(f, index) {
         var txt = '';
         txt += '<li>';
@@ -118,34 +127,52 @@ function bytesToSize(bytes) {
         txt += '<div class="progress-col"><div class="progress">';
         txt += '<span class="meter" style="width: 30%">30%</span>';
         txt += '</div></div>';
-        txt += '<div class="remove"><a href="">X <em>Remove</em></a></div>';
+        txt += '<div class="remove"><a href="" title="'+this.config.dictremoveFile+'">X <em>Remove</em></a></div>';
         txt += '</li>';
         el = $(txt);
         el.find("a").on('click', _.bind(function(e) {
+          console.log(e,'e');
+          console.log(this, 'thisis');
           e.preventDefault();
-          console.log(index);
-          console.log("F", f);
-          this.removefile(f.name);       
+          this.removeFile(f, el);
         }, this));
-
         list.append(el);
       }, this);
-      this.listFiles();
-    },
 
-    removefile: function(file) {
-      console.log(file);
-      var index = this.files.indexOf(file);
-      if (index > -1) {
-        this.files.splice(index, 1);
+      if (this.files.length <= 0){
+        setTimeout( this.removeArea(), 1000);
       }
     },
 
-    addfile : function(file) {
+    removeArea: function(){
+      var el = $('.storage-progress');
+      el.addClass('ready');
+      setTimeout( function(){
+        el.fadeOut('slow', function(){
+          el.removeClass('ready');
+        });
+
+      } ,4000);
+    },
+
+    removeFile: function(file, el) {
+      var index = this.files.indexOf(file);
+      var self = this;
+      if (index > -1) {
+        this.files.splice(index, 1);
+      }
+      if (el) {
+        el.fadeOut(1000, function(){
+          self.parseFiles(self.files);
+        });
+      }
+    },
+
+    addFile : function(file) {
       this.files.push(files);
     },
 
-    addfiles: function(files) {
+    addFiles: function(files) {
       for (var i = 0, f; f = files[i]; i++) {
         this.files.push(f);
       }
@@ -155,6 +182,25 @@ function bytesToSize(bytes) {
       console.log(this.files);
     },
 
+    fileUploaded: function(file) {
+      var txt = '';
+      txt += '<li>';
+      txt += '<div class="check"><span class="snf-checkbox-unchecked"></span></div>';
+      txt += '<div class="img-wrap">';
+      txt += '<img src="images/icon-txt.png" alt="" />';
+      txt += '</div>';
+      txt += '<h4>'+ file.name +'</h4>';
+      txt += '<div class="size">'+ bytesToSize(file.size) +'</div>';
+      txt += '<div class="info">'+ this.config.dictLastUpdated + date_ddmmmyytime(file.lastModifiedDate) +'</div>';
+      txt += '<div class="actions-col"></div>';
+      txt += '</li>';
+      el = $(txt);
+      el.find("a").on('click', _.bind(function(e) {
+        e.preventDefault();
+        this.removeFile(f, el);
+      }, this));
+      $(this.elem).find('#drop').append(el);
+    },
   }
 
   Dragfiles.defaults = Dragfiles.prototype.defaults;
@@ -169,5 +215,5 @@ function bytesToSize(bytes) {
 
 
 $(document).ready(function(){
-  $('#drop').dragfiles();
+  $('.body-wrapper').dragfiles();
 })

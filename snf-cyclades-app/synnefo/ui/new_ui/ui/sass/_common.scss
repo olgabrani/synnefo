@@ -605,10 +605,14 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: $cobalt-1;
+	background: $red-1;
 	color: #fff;
 	z-index: 50;
 	overflow-y: auto;
+	@include transition(background-color, 500ms, linear);
+	&.ready {
+		background: $green-1;
+	}
 	.wrap {
 		position: relative;
 		padding: 10px;
@@ -625,6 +629,16 @@ body {
 		padding-left: $lt-bar-width + $check-w;
 		margin: 0;
 		font-size: emCalc(12px);
+		span {
+			background-color: #fff;
+			color: $red-1;
+			padding: 2px 6px;
+			margin-right: 10px;
+			@include transition(opacity, 500ms, linear);
+			&.animated {
+				opacity: 0;
+			}
+		}
 	}
 	.details {
 		display: none;

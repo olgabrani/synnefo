@@ -473,6 +473,43 @@ ui.setCustomScrollBar = function() {
 });
 }
 
+function bytesToSize(bytes) {
+    var sizes = [ 'n/a', 'bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    var i = +Math.floor(Math.log(bytes) / Math.log(1024));
+    return  (bytes / Math.pow(1024, i)).toFixed( 0 ) + sizes[ isNaN( bytes ) ? 0 : i+1 ];
+}
+function date_ddmmmyytime(date)
+{
+  var d = date.getDate();
+  var m = date.getMonth();
+  var y = date.getYear();
+  if(y >= 100)
+  {
+    y -= 100;
+    y += 2000;
+  }
+
+    var curr_hour = date.getHours();
+
+    if (curr_hour < 12){
+        a_p = "am";
+    } else {
+       a_p = "pm";
+    }
+
+    if (curr_hour == 0) {
+       curr_hour = 12;
+    }
+    if (curr_hour > 12){
+       curr_hour = curr_hour - 12;
+    }
+
+    var curr_min = date.getMinutes();
+
+  return "" +
+    (d<10?"0"+d:d) + "/" +m + "/" + y + ' '+curr_hour + ":" + curr_min + a_p;
+}
+
 
 $(document).ready(function(){
 
@@ -572,7 +609,8 @@ $(document).ready(function(){
 
     // checkbox: basic reaction on click (checked, unchecked)
     // see wizard
-    $('.check').click(function(e){
+    $('.check').on('click', function(e){
+        alert('skata');
         e.preventDefault();
         e.stopPropagation();
         ui.changeCheckboxState(this);
