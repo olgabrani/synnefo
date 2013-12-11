@@ -62,13 +62,14 @@
 		margin-right: 30px;
 		margin-left:30px;
 		.items-list {
+			overflow: visible;
 			&>li {
 				padding-right: 0;
 				padding-left: 0;
 				height:60px;
 				&>*	{
 					display: inline-block;
-					overflow: hidden;
+					// overflow: hidden;
 					// border: 1px solid pink;
 					height: 100%;
 					line-height: 100%;
@@ -104,22 +105,69 @@
 					}
 				}
 				.project {
-					position: relative;
-					width: 35%;
+					.style-1 {
+
+					}
+					position: absolute;
+					top: 14px;
+					right: -164px;
+					width: 300px;
 					font-size: emCalc(12px);
+					.name {
+						position: relative;
+						top: 5px;
+						width: 191px;
+						display: inline-block;
+						text-align: left;
+						padding-left: 10px;
+						padding-right: 10px;
+					}
 					.available {
 						list-style: none;
-						visibility: hidden;
+						display: none;
 						width: 100%;
+						background-color: white;
+						border: 1px solid $gray-2;
+						position: absolute;
+						right: 0px;
+						top: 24px;
+						padding-bottom: 10px;
+						li {
+							a{
+								display: inline-block;
+								width: 100%;
+								.name {
+									display: inline-block;
+									width: 100%;
+								}
+							}
+						}
 					}
 					.btn-more {
+						float: right;
 						display: inline-block;
-						margin-left: 5px;
-						border: 1px solid $gray-2;
+						margin-left: 16px;
+						border: 1px solid transparent;
+						padding: 4px;
+						padding-right: 0;
+						width: 90px;
+						&.style-1, .snf-arrow-down.style-1 {
+							border: 1px solid $gray-2;
+							}
+						&.style-2 {
+							background-color: $gray-2;
+							color: white;
+						}
 						.explain {
 								display: none;
+								margin-right: 12px;
 						}
 						.snf-arrow-down {
+							width: 20px;
+							height: 20px;
+							line-height: 20px;
+							border: 1px solid transparent;
+							display: inline-block;
 						}
 					}
 
