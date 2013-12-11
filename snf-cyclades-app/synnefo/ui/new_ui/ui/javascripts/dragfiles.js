@@ -13,8 +13,7 @@
       dictremoveFile: 'Remove File',
       dictFilesUploading: ' file(s) uploading',
       dictLastUpdated: 'Last updated: ',
-      dictAllFilesUploaded: 'All files have been successfully uploaded!',
-      dictNoFilesToUpload: 'No more files to upload',
+      dictAllFilesUploaded: 'No more files to upload!',
     },
     
     files: [],

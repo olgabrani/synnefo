@@ -610,11 +610,17 @@ $(document).ready(function(){
     // checkbox: basic reaction on click (checked, unchecked)
     // see wizard
     $('.check').on('click', function(e){
-        alert('skata');
         e.preventDefault();
         e.stopPropagation();
         ui.changeCheckboxState(this);
     });
+
+    // for checkboxes created after document.ready
+    $('.items-list').on('click','.check', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        ui.changeCheckboxState(this);
+    })
 
 
     $('.with-checkbox').click(function(e){
