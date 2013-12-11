@@ -130,6 +130,7 @@ $h4-w : 230px;
 $tags-w : 90px;
 $info-w: 200px;
 $actions-w: 140px;
+$three-col-w: 33%;
 
 // We use these to control inset shadow shiny edges and depressions.
 // $shiny-edge-size: 0 1px 0;
@@ -855,7 +856,7 @@ $progress-bar-height: emCalc(15px);
 // $progress-bar-border-radius: $global-radius;
 
 // We use these to control the margin & padding
-// $progress-bar-pad: emCalc(2px);
+$progress-bar-pad: 1px;
 // $progress-bar-margin-bottom: emCalc(10px);
 
 // We use these to set the meter colors
