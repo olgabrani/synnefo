@@ -30,6 +30,16 @@
 				margin-right: 40px;
 			}	
 		}
+		.folder {
+			.img-wrap {
+				background: url(../images/folder-closed.png) no-repeat center center;
+			}
+			&.draghover {
+				.img-wrap {
+					background-image: url(../images/folder-open.png);
+				}
+			}
+		}
 		li:hover {
 			.actions-col {
 				visibility: visible;

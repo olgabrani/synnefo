@@ -51,6 +51,19 @@
         self.drop(e);
       });
 
+      // folder specific events
+      $(this.elem).find('.folder').on('dragover', function(e){
+        $(this).addClass('draghover');
+      });
+
+      $(this.elem).find('.folder').on('dragleave', function(e){
+        $(this).removeClass('draghover');
+      });
+
+      $(this.elem).find('.folder').on('drop', function(e){
+         console.log($(this).data('path'), 'path');
+      });
+
       $('input[type=file]').on('change',function (e) {
         window.test = e;
         self.addFiles( e.originalEvent.target.files );
