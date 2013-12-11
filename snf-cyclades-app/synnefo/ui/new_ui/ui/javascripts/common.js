@@ -893,6 +893,10 @@ $(document).ready(function(){
         $(this).addClass('clicked');
         $(this).siblings('ul').stop(true, true).slideDown('slow');
     });
+    $('.containers .btn-more+ul').mouseleave(function(e){
+        $(this).hide();
+        $(this).siblings('.btn-more').removeClass('clicked');
+    })
 
     if ($('.containers .btn-more').length>0) {
         $('body').click(function(e){
