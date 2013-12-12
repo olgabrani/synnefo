@@ -420,6 +420,24 @@ ui.hashTabs = function(tabsEl, sectionEl){
 
 }
 
+// in a page with tabs, allow navigation with hash tags
+ui.hashViews = function(viewsEl, sectionEl){
+    var hash = window.location.hash;
+    if (!(hash)){
+        return;
+    }
+    var link = viewsEl.find('a[href="'+hash+'"]');
+    console.log('link', link);
+    if (link.length<=0){
+        return;
+    }
+    viewsEl.find('a span').removeClass('current');
+    link.find('span').addClass('current');
+    sectionEl.removeClass('grid-view list-view');
+    var sectionClass = hash.slice(1) + '-view';
+    sectionEl.addClass(sectionClass);
+}
+
 ui.ltBarToggle = function(speed){
 
     var cmarg = parseInt($('.lt-bar').width()) - parseInt($('.toggle-lt-bar').outerWidth(true));        
@@ -718,7 +736,7 @@ $(document).ready(function(){
     /* grid/list view for items-list */
 
     $('.actions-bar .list, .actions-bar .grid').click(function(e){
-        e.preventDefault();
+        //e.preventDefault();
         if (!($(this).find('span').hasClass('current'))) {
             $('.actions-bar .grid span, .actions-bar .list span').removeClass('current');
             $(this).find('span').addClass('current');
@@ -827,6 +845,7 @@ $(document).ready(function(){
     });
     ui.tabs($('.tabs'), $('.content'));
     ui.hashTabs($('.tabs'), $('.content'));
+    ui.hashViews($('.actions-bar .rt-actions'), $('.entities'));
 
     $('.act').click(function(e) {
         $(this).addClass('pending last');
