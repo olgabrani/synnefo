@@ -114,7 +114,7 @@ window.onload = function() {
 	var icons = {
 			'snf-folder-create-outline' : '&#x61;',
 			'snf-folder-create-full' : '&#x41;',
-			'snf-shared-by-me' : '&#x63;',
+			'snf-shared-by-me-outline' : '&#x63;',
 			'snf-shared-to-me-outline' : '&#x64;',
 			'snf-shared-by-me-full' : '&#x43;',
 			'snf-folder-move-full' : '&#x45;',

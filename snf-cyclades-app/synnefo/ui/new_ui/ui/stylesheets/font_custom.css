@@ -304,7 +304,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="snf-"] {
 */
-.snf-folder-create-outline, .snf-folder-create-full, .snf-shared-by-me, .snf-shared-to-me-outline, .snf-shared-by-me-full, .snf-folder-move-full, .snf-folder-move-outline, .snf-shared-to-me-full {
+.snf-folder-create-outline, .snf-folder-create-full, .snf-shared-by-me-outline, .snf-shared-to-me-outline, .snf-shared-by-me-full, .snf-folder-move-full, .snf-folder-move-outline, .snf-shared-to-me-full {
 	font-family: 'snf-font-auxiliary';
 	speak: none;
 	font-style: normal;
@@ -320,7 +320,7 @@ you can use the generic selector below, but it's slower:
 .snf-folder-create-full:before {
 	content: "\41";
 }
-.snf-shared-by-me:before {
+.snf-shared-by-me-outline:before {
 	content: "\63";
 }
 .snf-shared-to-me-outline:before {

@@ -208,7 +208,18 @@
 							margin-right: 6px;
 							&.snf-folder-move-outline {
 								font-size: 1.5em;
+								position: relative;
+								top: -2px;
 							}
+						}
+					}
+				}
+			}
+			&.more {
+				li {
+					a {
+						span {
+							font-size: 1.5em;
 						}
 					}
 				}
