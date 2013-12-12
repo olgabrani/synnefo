@@ -1,3 +1,4 @@
+/* snf-font */
 /* Load this script using conditional IE comments if you need to support IE 7 and IE 6. */
 
 window.onload = function() {
@@ -82,6 +83,43 @@ window.onload = function() {
 			'snf-copy-outline' : '&#x3f;',
 			'snf-arrow-left-small-full' : '&#x5f;',
 			'snf-folder-full' : '&#x3d;
+		},
+		els = document.getElementsByTagName('*'),
+		i, attr, c, el;
+	for (i = 0; ; i += 1) {
+		el = els[i];
+		if(!el) {
+			break;
+		}
+		attr = el.getAttribute('data-icon');
+		if (attr) {
+			addIcon(el, attr);
+		}
+		c = el.className;
+		c = c.match(/snf-[^\s'"]+/);
+		if (c && icons[c[0]]) {
+			addIcon(el, icons[c[0]]);
+		}
+	}
+};
+
+/* snf-font-auxiliary */
+/* Load this script using conditional IE comments if you need to support IE 7 and IE 6. */
+
+window.onload = function() {
+	function addIcon(el, entity) {
+		var html = el.innerHTML;
+		el.innerHTML = '<span style="font-family: \'snf-font-auxiliary\'">' + entity + '</span>' + html;
+	}
+	var icons = {
+			'snf-folder-create-outline' : '&#x61;',
+			'snf-folder-create-full' : '&#x41;',
+			'snf-shared-by-me' : '&#x63;',
+			'snf-shared-to-me-outline' : '&#x64;',
+			'snf-shared-by-me-full' : '&#x43;',
+			'snf-folder-move-full' : '&#x45;',
+			'snf-folder-move-outline' : '&#x65;',
+			'snf-shared-to-me-full' : '&#x44;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;

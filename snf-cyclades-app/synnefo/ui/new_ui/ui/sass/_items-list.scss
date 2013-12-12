@@ -204,6 +204,12 @@
 								cursor: pointer;
 							}
 						}
+						span {
+							margin-right: 6px;
+							&.snf-folder-move-outline {
+								font-size: 1.5em;
+							}
+						}
 					}
 				}
 			}

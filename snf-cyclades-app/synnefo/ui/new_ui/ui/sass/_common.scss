@@ -466,28 +466,15 @@ body {
 		a {
 			margin-right: 10px;
 			span {
-				font-size: emCalc(20px);
 				position: relative;
 				&.snf-trash-outline {
-					font-size: emCalc(16px);
-					bottom: 3px;
 				}
-				&.snf-folder-outline {
-					bottom: 0;
-				}
-				&.symbol {
-					font-size: emCalc(14px);
-					left: -14px;
-					bottom: 1px;
+				&.snf-folder-create-outline {
+					font-size: emCalc(19px)
 				}
 				&.snf-refresh-outline {
-					font-size: emCalc(16px);
-					left: -8px;
-					bottom: 2px;
+					font-size: emCalc(14px);
 				}
-			}
-			&.refresh {
-				margin-right:-8px;
 			}
 		}
 		.single {
