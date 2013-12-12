@@ -1,7 +1,6 @@
 /* Storage (pithos) related styles  */
 
 .storage {
-	$storage-h4-w: 25%;
 	height: 100%;
 	.rect-plus {
 		display: inline-block;
@@ -68,121 +67,123 @@
 			background-color: $light-bg;
 		}
 	}
-	&.containers {
-		.items-list {
-			overflow: visible;
-			&>li {
-				text-align: left;
-				padding-right: 0;
-				padding-left: 0;
-				.col {
-					float: left;
+}
+.containers {
+	.items-list {
+		overflow: visible;
+		&>li {
+			text-align: left;
+			padding-right: 0;
+			padding-left: 0;
+			.col {
+				float: left;
+			}
+			h4 {
+				font-size: emCalc(14px);
+				width: auto;
+			}
+			.basic-data {
+				width: 20%;
+			}
+			.size-data{
+				width: 40%;
+				.progress-col {
+					padding-top: 7px;
+					.progress {
+						border-color: $gray-2;
+						height: 20px;
+						.meter {
+							text-align: right;
+							font-size: 10px;
+							padding: 2px;
+							background-color: $gray-2;
+							color: white;
+							font-size: emCalc(14px);
+							line-height: 100%;
+						}
+					}
 				}
-				h4 {
-					font-size: emCalc(14px);
+				.size {
 					width: auto;
-				}
-				.basic-data {
-					width: 20%;
-				}
-				.size-data{
-					width: 40%;
-					.progress-col {
-						padding-top: 7px;
-						.progress {
-							border-color: $gray-2;
-							height: 20px;
-							.meter {
-								text-align: right;
-								font-size: 10px;
-								padding: 2px;
-								background-color: $gray-2;
-								color: white;
-								font-size: emCalc(14px);
-								line-height: 100%;
-							}
-						}
-					}
-					.size {
-						width: auto;
-						padding-left: 20px;
-						font-size: emCalc(14px);
-					}
-				}
-				h5 {
-					float: left;
-					width: 20%;
+					padding-left: 20px;
 					font-size: emCalc(14px);
-					font-weight: normal;
-					line-height: $list-icon-height;
-					height: $list-icon-height;
-					margin: 0;
 				}
-				.project {
-					line-height: $list-icon-height;
-					height: $list-icon-height;
-					width: 18%;
-					font-size: emCalc(14px);
-					position: relative;
+			}
+			h5 {
+				float: left;
+				width: 20%;
+				font-size: emCalc(14px);
+				font-weight: normal;
+				line-height: $list-icon-height;
+				height: $list-icon-height;
+				margin: 0;
+			}
+			.project {
+				line-height: $list-icon-height;
+				height: $list-icon-height;
+				width: 18%;
+				font-size: emCalc(14px);
+				position: relative;
+				right: 0;
+				ul {
+					position: absolute;
 					right: 0;
-					ul {
-						position: absolute;
-						right: 0;
-						top: $list-icon-height + 2px;
-						list-style: none outside none;
-						border: 1px solid $gray-2;
-						padding: 5px 15px;
-						display: none;
-						z-index: 1;
-						background: #fff;
-						li {
-							padding: 4px 0;
-						}
+					top: $list-icon-height + 2px;
+					list-style: none outside none;
+					border: 1px solid $gray-2;
+					padding: 5px 15px;
+					display: none;
+					z-index: 1;
+					background: #fff;
+					li {
+						padding: 4px 0;
 					}
-					.btn-more {
-						border: 1px solid $gray-2;
-						padding: 0 10px;
-						float: right;
-						em {
-							display: none;
-							opacity: 0;
-							font-style: normal;
-							color: $body-font-color;
-							@include transition(opacity, 300ms, linear);
-						}
-						&:hover {
-							em {
-								display: inline-block;
-								opacity: 1;
-							}
-						}
-						&.clicked {
-							background-color: $link-color;
-							color: #fff;
-							em {
-								display: inline-block;
-								opacity: 1;
-								color: #fff;
-							}
-						}
-					}
-
 				}
-				.img-wrap {
-					.snf-folder-full {
-						font-size: emCalc(34px);
-						color: $secondary-color;
+				.btn-more {
+					border: 1px solid $gray-2;
+					padding: 0 10px;
+					float: right;
+					em {
+						display: none;
+						opacity: 0;
+						font-style: normal;
+						color: $body-font-color;
+						@include transition(opacity, 300ms, linear);
 					}
-					span:not(.snf-folder-full) {
-						color: $gray-2;
-						font-size: emCalc(16px);
-						position: relative;
-						bottom: 5px;
-						left: -28px;
+					&:hover {
+						color: $link-color;
+						em {
+							display: inline-block;
+							opacity: 1;
+						}
+					}
+					&.clicked {
+						background-color: $link-color;
+						color: #fff;
+						em {
+							@include transition(opacity, 300ms, linear);
+							display: inline-block;
+							opacity: 1;
+							color: #fff;
+						}
 					}
 				}
 
 			}
+			.img-wrap {
+				.snf-folder-full {
+					font-size: emCalc(34px);
+					color: $secondary-color;
+				}
+				span:not(.snf-folder-full) {
+					color: $gray-2;
+					font-size: emCalc(16px);
+					position: relative;
+					bottom: 5px;
+					left: -28px;
+				}
+			}
+
 		}
 	}
 }
