@@ -292,6 +292,7 @@ function goToByScroll(id){
 */
 
 ui.changeCheckboxState =function(checkbox_link) {
+    console.log(checkbox_link);
     $(checkbox_link).find('.snf-checkbox-unchecked, .snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
     ui.entitiesActionsEnabled();
     ui.checkedListItems();
@@ -626,10 +627,13 @@ $(document).ready(function(){
     $('.with-checkbox').click(function(e){
         e.preventDefault();
         e.stopPropagation();
-        var checkbox = self.find('.check');
+        var checkbox = $(this).find('.check');
         ui.changeCheckboxState(checkbox);
     });
 
+    $('.with-checkbox').find('a').click(function(e){
+        e.stopPropagation();
+    })
     $('.radio_btn').click(function(e) {
         e.preventDefault();
          var state = $(this).find('span');

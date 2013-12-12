@@ -689,33 +689,30 @@ body .jspVerticalBar {
 	}
 }
 
-.ai {
-	background: url(file-types.png) no-repeat top left;
-	background-position: 0 0;
+@mixin files-icon($bg-position) {
+	background: url(../images/file-types.png) no-repeat top left;
+	background-position: $bg-position;
 	width: 30px;
 	height: 35px;
+	display: block;
+	margin: 0 auto;
+}
+
+.ai {
+	@include files-icon(0 0);
+}
+
+.pdf {
+	@include files-icon(0 -241px);
+}
+
+.txt {
+	@include files-icon(0 -326px);
 } 
+
 .folder {
 	background: url(file-types.png) no-repeat top left;
 	background-position: 0 -85px;
 	width: 35px;
 	height: 28px;
-} 
-.folder-open {
-	background: url(file-types.png) no-repeat top left;
-	background-position: 0 -163px;
-	width: 37px;
-	height: 28px;
-} 
-.pdf {
-	background: url(file-types.png) no-repeat top left;
-	background-position: 0 -241px;
-	width: 30px;
-	height: 35px;
-} 
-.txt{
-	background: url(file-types.png) no-repeat top left;
-	background-position: 0 -326px;
-	width: 30px;
-	height: 35px;
 } 

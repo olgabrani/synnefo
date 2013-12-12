@@ -132,7 +132,7 @@
         var txt = '';
         txt += '<li>';
         txt += '<div class="img-wrap">';
-        txt += '<img src="images/icon-txt.png" alt="" />';
+        txt += '<span class="ai"></span>';
         txt += '</div>';
         txt += '<h4>'+ f.name +'</h4>';
         txt += '<div class="size">'+ bytesToSize(f.size) +'</div>';
@@ -196,10 +196,10 @@
 
     fileUploaded: function(file) {
       var txt = '';
-      txt += '<li>';
+      txt += '<li class="with-checkbox">';
       txt += '<div class="check"><span class="snf-checkbox-unchecked"></span></div>';
       txt += '<div class="img-wrap">';
-      txt += '<img src="images/icon-txt.png" alt="" />';
+      txt += '<span class="ai"></span>';
       txt += '</div>';
       txt += '<h4>'+ file.name +'</h4>';
       txt += '<div class="size">'+ bytesToSize(file.size) +'</div>';
