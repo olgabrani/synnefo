@@ -511,6 +511,17 @@ function date_ddmmmyytime(date)
     (d<10?"0"+d:d) + "/" +m + "/" + y + ' '+curr_hour + ":" + curr_min + a_p;
 }
 
+ // returns the file class/extension of a file
+ui.mimeToExt = function( mimetype) {
+  var mimeExt = {
+    'image/jpeg': 'jpg',
+    'image/png': 'png',
+    'application/pdf': 'pdf',
+    'text/plain': 'txt',
+  };
+  console.log(mimetype);
+  return mimeExt[mimetype] || 'unknown';
+}
 
 $(document).ready(function(){
 

@@ -19,7 +19,6 @@
     files: [],
     
     init: function() {
-      
       var self = this;
       // Introduce defaults that can be extended either 
       // globally or using an object literal. 
@@ -132,7 +131,7 @@
         var txt = '';
         txt += '<li>';
         txt += '<div class="img-wrap">';
-        txt += '<span class="ai"></span>';
+        txt += '<span class="'+ ui.mimeToExt(f.type) +'"></span>';
         txt += '</div>';
         txt += '<h4>'+ f.name +'</h4>';
         txt += '<div class="size">'+ bytesToSize(f.size) +'</div>';
@@ -199,7 +198,7 @@
       txt += '<li class="with-checkbox">';
       txt += '<div class="check"><span class="snf-checkbox-unchecked"></span></div>';
       txt += '<div class="img-wrap">';
-      txt += '<span class="ai"></span>';
+      txt += '<span class='+ ui.mimeToExt(file.type) +'></span>';
       txt += '</div>';
       txt += '<h4>'+ file.name +'</h4>';
       txt += '<div class="size">'+ bytesToSize(file.size) +'</div>';
