@@ -1,11 +1,11 @@
 
 <!DOCTYPE html>
     <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 8]>               <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
 <head>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Pithos</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
@@ -44,9 +44,9 @@
         </div>
     </header>
     <div class="body-wrapper all-height">
-        <section class="actions-bar clearfix">
-            <h2><a href="pithos_containers.html">root</a> <a href="">pithos</a> my folder</h2>
-             <div class="rt-actions">
+    <section class="actions-bar clearfix">
+            <h2>root</h2>
+            <div class="rt-actions">
                 <a href="" class="delete"><span class="snf-trash-outline"></span></a>
                 <a href="" class="add-new"><span class="snf-folder-create-outline"></span></a>
                 <a href="" class="refresh"><span class="snf-refresh-outline"></span></a>
@@ -67,93 +67,91 @@
                 </form>
             </div>
         </section>
-        <section class="main row all-height">
+        <section class="main row containers">
             <div class="storage entities list-view">
-                <ul class="items-list" id="drop">
-                    <li class="add-new">
-                        <div class="check">
+                <ul class="items-list">
+                    <li class="folder">
+                        <div class="basic-data col">
+                            <div class="img-wrap">
+                                <a href="pithos_list.html" title=""><span class="snf-pithos-outline"></span></a>
+                            </div>
+                            <h4><a href="pithos_list.html" title="">Pithos</a></h4>
                         </div>
-                        <div class="img-wrap">
-                            <span class="rect-plus">+</span>
+                        <div class="size-data col">
+                            <div class="progress-col">
+                                <div class="progress">
+                                    <span class="meter" style="width: 30%">30%</span>
+                                </div>
+                            </div>
+                            <span class="size">2 GB of 50 GB used</span>
                         </div>
-                        <h4>Upload file</h4>
-                        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
-                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
-                        </form>
-                    </li>
-                    <li data-status="folder" class="folder with-checkbox" data-path="/folder1/temp/">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
-                        </div>
-                        <div class="img-wrap"></div>
-                        <h4>Folder 1</h4>
-                        <div class="size">
-                            100KB
-                        </div>
-                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
-                        <div class="actions-col">
-                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
-                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
-                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
-                        </div>
-                    </li>
-                    <li data-status="file" class="file with-checkbox">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
-                        </div>
-                        <div class="img-wrap">
-                            <span class="ai"></span>
-                        </div>
-                        <h4>supercool.ai</h4>
-                        <div class="size">
-                            100KB
-                        </div>
-                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
-                        <div class="actions-col">
-                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
-                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
-                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        <h5>mySuperProject.ece.ntua.gr</h5>
+                        <div class="project col">
+                            <a class="btn-more">
+                                <em>reassign</em>
+                                <span class="snf-arrow-down"></span>
+                            </a>
+                            <ul>
+                                <li><a href="">another.project.okeanos</a></li>
+                                <li><a href="">another.project.okeanos</a></li>
+                                <li><a href="">another.project.okeanos</a></li>
+                            </ul>
                         </div>
                     </li>
-                    <li data-status="file" class="file with-checkbox">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
+                   <li class="folder">
+                        <div class="basic-data col">
+                            <div class="img-wrap">
+                                <a href="pithos_list.html" title=""><span class="snf-image-outline"></span></a>
+                            </div>
+                            <h4><a href="pithos_list.html" title="">Images</a></h4>
                         </div>
-                        <div class="img-wrap">
-                            <span class="txt"></span>
+                        <div class="size-data col">
+                            <div class="progress-col">
+                                <div class="progress">
+                                    <span class="meter" style="width: 30%">30%</span>
+                                </div>
+                            </div>
+                            <span class="size">2 GB of 50 GB used</span>
                         </div>
-                        <h4>words.txt</h4>
-                        <div class="size">
-                            100KB
-                        </div>
-                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
-                        <div class="actions-col">
-                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
-                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
-                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        <h5>images.gr</h5>
+                        <div class="project col">
+                            <a class="btn-more">
+                                <em>reassign</em>
+                                <span class="snf-arrow-down"></span>
+                            </a>
+                            <ul>
+                                <li><a href="">another.project.okeanos</a></li>
+                                <li><a href="">project.okeanos.gr</a></li>
+                                <li><a href="">test.com</a></li>
+                            </ul>
                         </div>
                     </li>
-                    <li data-status="file" class="file with-checkbox">
-                        <div class="check">
-                            <span class="snf-checkbox-unchecked"></span>
+                   <li class="folder">
+                        <div class="basic-data col">
+                            <div class="img-wrap">
+                                <a href="pithos_list.html" title=""><span class="snf-snapshot-outline"></span></a>
+                            </div>
+                            <h4><a href="pithos_list.html" title="">Snapshots</a></h4>
                         </div>
-                        <div class="img-wrap">
-                            <span class="pdf"></span>
+                        <div class="size-data col">
+                            <div class="progress-col">
+                                <div class="progress">
+                                    <span class="meter" style="width: 80%">80%</span>
+                                </div>
+                            </div>
+                            <span class="size">40 GB of 50 GB used</span>
                         </div>
-                        <h4>presentation.pdf</h4>
-                        <div class="size">
-                            100KB
-                        </div>
-                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
-                        <div class="actions-col">
-                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
-                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
-                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        <h5>project1.gr oisdfu soidfusioduf sdiofusido </h5>
+                        <div class="project col">
+                            <a class="btn-more">
+                                <em>reassign</em>
+                                <span class="snf-arrow-down"></span>
+                            </a>
+                            <ul>
+                                <li><a href="">another.project.okeanos</a></li>
+                                <li><a href="">another.project.okeanos</a></li>
+                                <li><a href="">another.project.okeanos</a></li>
+                            </ul>
                         </div>
                     </li>
                 </ul>
@@ -163,22 +161,6 @@
                         <a class="btn5" href="">feedback</a>
                         <a href="" class="btn5">close</a>
                     </p>
-                </div>
-                <div class="lt-bar">
-                    <ul class="lt-actions">
-                        <li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
-                        <li class="files"><a href="#" title=""><span class="snf-link-outline"></span> Share</a></li>
-                        <li class="files"><a href="#" title=""><span class="snf-download-full"></span> Download</a></li>
-                        <li class="files"><a href="#"><span>X</span> Delete</a></li>
-                        <li class="all"><a href="#"><span class="snf-edit"></span> Rename</a></li>
-                        <li class="all"><a href="#"><span class="snf-folder-move-outline"></span> Move</a></li>
-                        <li class="all"><a href="#"><span class="snf-copy-outline"></span> Copy</a></li>
-                        <li class="folders"><a href="#"><span>...</span> Version</a></li>
-                    </ul>
-                    <ul class="more">
-                        <li><a href="#"><span class="snf-shared-by-me-outline"></span> Shared by me</a></li>
-                        <li><a href="#"><span class="snf-shared-to-me-outline"></span> Shared to me</a></li>
-                    </ul>
                 </div>
             </div>
         </section>

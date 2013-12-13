@@ -174,15 +174,17 @@
 				}
 
 			}
-			.img-wrap {
-				background-position: left center;
-				text-align: left;
-				span {
-					color: $gray-2;
-					font-size: emCalc(16px);
-					position: relative;
-					top: 1px;
-					left: 23px;
+			&.folder {
+				.img-wrap {
+					background-position: left center;
+					text-align: left;
+					span {
+						color: $gray-2;
+						font-size: emCalc(16px);
+						position: relative;
+						top: 1px;
+						left: 10px;
+					}
 				}
 			}
 		}

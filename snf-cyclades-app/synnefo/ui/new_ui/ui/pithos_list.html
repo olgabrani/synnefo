@@ -1,248 +1,269 @@
 
 <!DOCTYPE html>
- <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
+    <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
 <head>
 	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Synnefo | Pithos  list</title>
+    <title>Pithos</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/farbtastic.css" />
     <link rel="stylesheet" href="stylesheets/font_custom.css" />
     <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
     <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
     <script src="javascripts/vendor/custom.modernizr.js"></script>
 </head>
-<body>
-		<header class="header">
-		<nav>
-			<ul class="icons-nav">
-				<li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-pc-outline"></span></a></li>
-				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network-outline"></span></a></li>
-				<li><a href="volumes_list.html" data-tooltip class="has-tip" title="Disks"><span class="snf-volume-outline"></span></a></li>
-				<li><a href="pithos_list.html current" data-tooltip class="has-tip" title="Storage"><span class="snf-pithos-outline"></span></a></li>
-				<li><a href="images_list.html" data-tooltip class="has-tip" title="Images"><span class="snf-image-outline"></span></a></li>
-				<li><a href="snapshots_list.html" data-tooltip class="has-tip" title="Snapshots"><span class="snf-snapshot-outline"></span></a></li>
-				<li><a href="" data-tooltip class="has-tip" title="More"><span class="snf-plus-outline"></span></a></li>
-			</ul>
-		</nav>
-		<div class="login">
-			<a href=""><span class="snf-lock_open"></span></a>
-		</div>
-		<div class="logo">
-			<a href="index.html"><img src="images/synnefo-logo.png" alt="software logo"></a>
-		</div>
-	</header>
-	<div class="body-wrapper">
-		<div class="overlay-area-custom">
-			<a href="" class="close">close</a>
-			<div id="uploader" class="overlay-div upload-widget">
-				<form action="#" class="dropzone" id="files-dropzone">
+<body>  
+    <header class="header">
+        <nav>
+            <ul class="icons-nav">
+                <li><a href="vm_list.html" data-tooltip class="has-tip" title="Machines"><span class="snf-pc-outline"></span></a></li>
+                <li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network-outline"></span></a></li>
+                <li><a href="volumes_list.html" data-tooltip class="has-tip" title="Disks"><span class="snf-volume-outline"></span></a></li>
+                <li><a href="pithos.html" data-tooltip class="has-tip current" title="Storage"><span class="snf-pithos-outline"></span></a></li>
+                <li><a href="images_list.html" data-tooltip class="has-tip" title="Images"><span class="snf-image-outline"></span></a></li>
+                <li><a href="snapshots_list.html" data-tooltip class="has-tip" title="Snapshots"><span class="snf-snapshot-outline"></span></a></li>
+                <li><a href="" data-tooltip class="has-tip" title="More"><span class="snf-plus-outline"></span></a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <div class="wrap">
+                <a href="">user1@synnefo.org</a>
+                <ul>
+                    <li><a href="">dashboard</a></li>
+                    <li><a href="">sign out</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="logo">
+            <a href="index.html"><img src="images/synnefo-logo.png" alt="software logo"></a>
+        </div>
+    </header>
+    <div class="body-wrapper all-height">
+        <section class="actions-bar clearfix">
+            <h2><a href="pithos_containers.html">root</a> <a href="">pithos</a> my folder</h2>
+             <div class="rt-actions">
+                <a href="" class="delete"><span class="snf-trash-outline"></span></a>
+                <a href="" class="add-new"><span class="snf-folder-create-outline"></span></a>
+                <a href="" class="refresh"><span class="snf-refresh-outline"></span></a>
+            </div>
+            <div class="filter-menu">
+                <div><a class="filter" href="">Filter</a></div>
+                <ul class="options">
+                    <li><a href="">option 1</a></li>
+                    <li><a href="">option 2</a></li>
+                    <li><a href="">option 3</a></li>
+                    <li><a href="">option 4</a></li>
+                </ul>
+            </div>
+            <div id="hd-search" class="hd-search">
+                <form>
+                    <span class="hd-icon-search snf-search"></span>
+                    <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+                </form>
+            </div>
+        </section>
+        <section class="main row all-height">
+            <div class="storage entities list-view">
+                <ul class="items-list" id="drop">
+                    <li class="add-new">
+                        <div class="check">
+                        </div>
+                        <div class="img-wrap">
+                            <span class="rect-plus">+</span>
+                        </div>
+                        <h4>Upload file</h4>
+                        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                        </form>
+                    </li>
+                    <li data-status="folder" class="folder with-checkbox" data-path="/folder1/temp/">
+                        <div class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </div>
+                        <div class="img-wrap"></div>
+                        <h4>Folder 1</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                    <li data-status="file" class="file with-checkbox">
+                        <div class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </div>
+                        <div class="img-wrap">
+                            <span class="ai"></span>
+                        </div>
+                        <h4>supercool.ai</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                    <li data-status="file" class="file with-checkbox">
+                        <div class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </div>
+                        <div class="img-wrap">
+                            <span class="txt"></span>
+                        </div>
+                        <h4>words.txt</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                    <li data-status="file" class="file with-checkbox">
+                        <div class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </div>
+                        <div class="img-wrap">
+                            <span class="pdf"></span>
+                        </div>
+                        <h4>presentation.pdf</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="communication-error">
+                    <p>Sorry! Something went terribly wrong!<br>Try again, but if you keep seeing this message please contact us through the feedback form.</p>
+                    <p class="buttons">
+                        <a class="btn5" href="">feedback</a>
+                        <a href="" class="btn5">close</a>
+                    </p>
+                </div>
+                <div class="lt-bar">
+                    <ul class="lt-actions">
+                        <li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
+                        <li class="files"><a href="#" title=""><span class="snf-link-outline"></span> Share</a></li>
+                        <li class="files"><a href="#" title=""><span class="snf-download-full"></span> Download</a></li>
+                        <li class="files"><a href="#"><span>X</span> Delete</a></li>
+                        <li class="all"><a href="#"><span class="snf-edit"></span> Rename</a></li>
+                        <li class="all"><a href="#"><span class="snf-folder-move-outline"></span> Move</a></li>
+                        <li class="all"><a href="#"><span class="snf-copy-outline"></span> Copy</a></li>
+                        <li class="folders"><a href="#"><span>...</span> Version</a></li>
+                    </ul>
+                    <ul class="more">
+                        <li><a href="#"><span class="snf-shared-by-me-outline"></span> Shared by me</a></li>
+                        <li><a href="#"><span class="snf-shared-to-me-outline"></span> Shared to me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="storage-progress">
+            <div class="loader" style="width: 60%;"></div>
+            <div class="row">
+                <div class="wrap">
+                    <p class="summary">some files uploading</p>
+                    <div class="details">
+                        <ul class="items-list">
+                            <li>
+                                <div class="img-wrap">
+                                    <img src="images/icon-txt.png" alt="" />
+                                </div>
+                                <h4>file name.txt</h4>
+                                <div class="size">
+                                    100KB
+                                </div>
+                                <div class="progress-col">
+                                    <div class="progress">
+                                        <span class="meter" style="width: 30%">30%</span>
+                                    </div>
+                                </div>
+                                <div class="remove">
+                                    <a href="">X <em>Remove</em></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img-wrap">
+                                    <img src="images/icon-txt.png" alt="" />
+                                </div>
+                                <h4>file name.txt</h4>
+                                <div class="size">
+                                    100KB
+                                </div>
+                                <div class="progress-col">
+                                    <div class="progress">
+                                        <span class="meter" style="width: 80%">80%</span>
+                                    </div>
+                                </div>
+                                <div class="remove">
+                                    <a href="">X <em>Remove</em></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-					<h2>Drag and drop files here</h2>
-					<ul class="breadcrumbs">
-						<li><a href="">shared by me</a></li>
-						<li><a href="">folder 1</a></li>
-						<li>folder 2</li>
-					</ul>
-					<ul class="files dropzone-files"></ul>
-					
-				</form>
-				<div class="btns">
-						<a href="" class="browse-files">browse files</a>
-						<a href="">change folder</a>
-						<a href="">ok</a>
-					</div>
-			</div>
-		</div>
-		<section class="actions-bar clearfix">
-			<div class="row">
-				<div class="new-btn"><a href="" data-overlay-id="#uploader">UPLOAD FILE</a></div>
-				<div class="main-actions">
-				</div>
-			</div>
-			<div class="border-dashed"></div>
-		</section>
-
-		<div class="row storage">
-			<div class="lt-sidebar">
-				 <nav class="sidenav">
-				 	<ul>
-				 		<li><a href="">trash</a><span>></span></li>
-				 		<li><a href="">shared with me</a><span>></span></li>
-				 		<li><a href="">shared by me</a><span>></span></li>
-				 		<li><a href="">groups</a><span>></span></li>
-				 	</ul>
-				 </nav>
-				 <form action="" method="">
-				 	<input type="text" placeholder="search">
-				 </form>
-			</div>
-			<div class="main">
-				<div class="confirmation"></div>
-				<ul class="breadcrumbs">
-					<li><a href="">shared by me</a></li>
-					<li><a href="">folder 1</a></li>
-					<li>folder 2</li>
-				</ul>
-				<ul class="files">
-					<li class="titles">
-						<div class="name-col">name</div>
-						<div class="size-col">size</div>
-						<div class="date-col">last modified</div>
-						<div class="actions-col">&nbsp;</div>
-					</li>
-					<li>
-						<div class="name-col folder has-tip" data-tooltip title="metadata or info (ex. contains 3 files)">folder1</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col image">Image.png</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 4:23 pm</div>
-						<div class="actions-col">
-							<a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-							<a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" class="show has-tip image"  data-tooltip title="Copy" data-title="my Image"><span class="snf-eye"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col image has-tip"  data-tooltip title="metadata or info (ex. has been modified 3 times)">Myimage.jpg</div>
-						<div class="size-col">5MB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-							<a href="http://farm9.staticflickr.com/8235/8559402846_8b7f82e05d_b.jpg" class="show has-tip image"  data-tooltip title="Copy" data-title="yet another image"><span class="snf-eye"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col pdf">mypdfile.pdf</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col folder">folder1</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col image">cool.jpg</div>
-						<div class="size-col">5MB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-							<a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" class="show has-tip image"  data-tooltip title="Copy" data-title="love this pic"><span class="snf-eye"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col pdf">mypdfile.pdf</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="http://www.synnefo.org/images/synnefo-logo@2x.png" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col folder">folder1</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="http://www.synnefo.org/images/synnefo-logo@2x.png" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col txt">file1.txt</div>
-						<div class="size-col">5MB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="http://www.synnefo.org/images/synnefo-logo@2x.png" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-							<a href="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg" class="show has-tip txt"  data-tooltip title="Copy"><span class="snf-eye"></span></a>
-						</div>
-					</li>
-					<li>
-						<div class="name-col pdf">mypdfile.pdf</div>
-						<div class="size-col">123KB</div>
-						<div class="date-col">23/12/12 6:23 am</div>
-						<div class="actions-col">
-							<a href="http://www.synnefo.org/images/synnefo-logo@2x.png" class="delete has-tip" data-tooltip title="Delete"><span class="snf-minus-sign"></span></a>
-							<a href="" class="copy has-tip"  data-tooltip title="Copy"><span class="snf-edit"></span></a>
-						</div>
-					</li>
-				</ul>
-
-			</div>
-		</div>
-		<div class="progress-bar">
-			<div class="row">
-				<span class="counter">6 files uploading</span>
-				<div class="progress-wrap"><div class="progress"><span class="meter" style="width:25%"></span></div></div>
-				<span class="more"><a href="">details ></a></span>
-			</div>
-		</div>
-	</div>
-	
- 
-  <script src="javascripts/vendor/jquery.js"></script>
-  <script src="javascripts/foundation/foundation.js"></script>
-	
-	<script src="javascripts/foundation/foundation.alerts.js"></script>
-	
-	<script src="javascripts/foundation/foundation.clearing.js"></script>
-	
-	<script src="javascripts/foundation/foundation.cookie.js"></script>
-	
-	<script src="javascripts/foundation/foundation.dropdown.js"></script>
-	
-	<script src="javascripts/foundation/foundation.forms.js"></script>
-	
-	<script src="javascripts/foundation/foundation.joyride.js"></script>
-	
-	<script src="javascripts/foundation/foundation.magellan.js"></script>
-	
-	<script src="javascripts/foundation/foundation.orbit.js"></script>
-	
-	<script src="javascripts/foundation/foundation.placeholder.js"></script>
-	
-	<script src="javascripts/foundation/foundation.reveal.js"></script>
-	
-	<script src="javascripts/foundation/foundation.section.js"></script>
-	
-	<script src="javascripts/foundation/foundation.tooltips.js"></script>
-	
-	<script src="javascripts/foundation/foundation.topbar.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
-	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
-	<script type="text/javascript" src="javascripts/dropzone.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/modernizr.custom.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/classie.js"></script>
-	<script type="text/javascript" src="javascripts/ExpandingSearchBar/uisearch.js"></script>
-	
-	<script src="javascripts/common.js"></script>
-	
-  
+    <script src="javascripts/vendor/jquery.js"></script>
+    <script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="javascripts/underscore-min.js"></script>
+    <script src="javascripts/foundation/foundation.js"></script>
+    <script src="javascripts/foundation/foundation.alerts.js"></script>
+    <script src="javascripts/foundation/foundation.clearing.js"></script>
+    <script src="javascripts/foundation/foundation.cookie.js"></script>
+    <script src="javascripts/foundation/foundation.dropdown.js"></script>
+    <script src="javascripts/foundation/foundation.forms.js"></script>
+    <script src="javascripts/foundation/foundation.joyride.js"></script>
+    <script src="javascripts/foundation/foundation.magellan.js"></script>
+    <script src="javascripts/foundation/foundation.orbit.js"></script>
+    <script src="javascripts/foundation/foundation.placeholder.js"></script>
+    <script src="javascripts/foundation/foundation.reveal.js"></script>
+    <script src="javascripts/foundation/foundation.section.js"></script>
+    <script src="javascripts/foundation/foundation.tooltips.js"></script>
+    <script src="javascripts/foundation/foundation.topbar.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
+    <!-- dropzone.js used for drag and drop files to upload them --> 
+    <script type="text/javascript" src="javascripts/dropzone.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
+    <!-- fabrastic.js used for the color picker --> 
+    <script type="text/javascript" src="javascripts/farbtastic.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>
+    <script src="javascripts/common.js"></script>
+    <script type="text/javascript" src="javascripts/wizard.js"></script>
+    <script type="text/javascript" src="javascripts/dragfiles.js"></script>
+    <script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
   <script>
     $(document).foundation();
   </script>
 </body>
 </html>
+ 
