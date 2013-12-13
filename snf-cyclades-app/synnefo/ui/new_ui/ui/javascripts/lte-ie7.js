@@ -71,9 +71,7 @@ window.onload = function() {
 			'snf-lock-closed-full' : '&#x46;',
 			'snf-lock-open-full' : '&#x47;',
 			'snf-snapshot-outline' : '&#x65;',
-			'snf-folder-outline' : '&#x5e;',
 			'snf-edit' : '&#x71;',
-			'snf-trash-outline' : '&#x24;',
 			'snf-link-outline' : '&#x26;',
 			'snf-refresh-outline' : '&#x29;',
 			'snf-download-full' : '&#x25;',
@@ -81,8 +79,10 @@ window.onload = function() {
 			'snf-upload-full' : '&#x28;',
 			'snf-arrow-right-small-full' : '&#x2d;',
 			'snf-copy-outline' : '&#x3f;',
-			'snf-arrow-left-small-full' : '&#x5f;',
-			'snf-folder-full' : '&#x3d;
+			'snf-copy-full' : '&#x22;',
+			'snf-arrow-left-small-full' : '&#x5f;'
+			'snf-trash-full' : '&#x3d;',
+			'snf-trash-outline' : '&#x24;',
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
@@ -119,7 +119,9 @@ window.onload = function() {
 			'snf-shared-by-me-full' : '&#x43;',
 			'snf-folder-move-full' : '&#x45;',
 			'snf-folder-move-outline' : '&#x65;',
-			'snf-shared-to-me-full' : '&#x44;'
+			'snf-shared-to-me-full' : '&#x44;',
+			'snf-folder-outline' : '&#x66;',
+			'snf-folder-full' : '&#x46;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
@@ -128,7 +130,7 @@ window.onload = function() {
 		if(!el) {
 			break;
 		}
-		attr = el.getAttribute('data-icon');
+		attr = el.getAttribute('data-icon-aux');
 		if (attr) {
 			addIcon(el, attr);
 		}

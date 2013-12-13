@@ -30,7 +30,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it"s slower:
 [class*="snf-"] {
 */
-.snf-font, .snf-trash-outline, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-www, .snf-arrow-up, .snf-arrow-down, .snf-checkbox-unchecked, .snf-checkbox-checked, .snf-cancel-circled, .snf-search, .snf-twitter-logo, .snf-ok, .snf-switch, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit, .snf-listview, .snf-gridview, .snf-dashboard-outline, .snf-pithos-outline, .snf-info-full, .snf-volume-create-full, .snf-image-full, .snf-pc-create-full, .snf-network-create-outline, .snf-network-create-full, .snf-ram-outline, .snf-nic-outline, .snf-ram-full, .snf-nic-full, .snf-network-broken-1-full, .snf-network-broken-2-full, .snf-pc-broken-full, .snf-pc-reboot-full, .snf-pc-switch-full, .snf-key-full, .snf-router-full, .snf-chip-full, .snf-plus-full, .snf-snapshot-full, .snf-pithos-full, .snf-volume-full, .snf-network-full, .snf-pc-full, .snf-network-broken-1-outline, .snf-network-broken-2-outline, .snf-pc-broken-outline, .snf-volume-broken-outline, .snf-pc-reboot-outline, .snf-pc-switch-outline, .snf-key-outline, .snf-router-outline, .snf-chip-outline, .snf-image-outline, .snf-plus-outilne, .snf-snapshot-outline, .snf-volume-outline, .snf-network-outline, .snf-pc-outline, .snf-info-outline, .snf-thunder-full, .snf-lock-closed, .snf-lock-open, .snf-trash-outline, .snf-link-outline, .snf-refresh-outline, .snf-download-full, .snf-person-outline, .snf-upload-full, .snf-arrow-right-small-full, .snf-copy-outline, .snf-arrow-left-small-full, .snf-folder-full, .snf-folder-outline {
+.snf-font, .snf-trash-outline, .snf-eye, .snf-radio-checked, .snf-radio-unchecked, .snf-close, .snf-www, .snf-arrow-up, .snf-arrow-down, .snf-checkbox-unchecked, .snf-checkbox-checked, .snf-cancel-circled, .snf-search, .snf-twitter-logo, .snf-ok, .snf-switch, .snf-ban-circle, .snf-ok-sign, .snf-minus-sign, .snf-edit, .snf-listview, .snf-gridview, .snf-dashboard-outline, .snf-pithos-outline, .snf-info-full, .snf-volume-create-full, .snf-image-full, .snf-pc-create-full, .snf-network-create-outline, .snf-network-create-full, .snf-ram-outline, .snf-nic-outline, .snf-ram-full, .snf-nic-full, .snf-network-broken-1-full, .snf-network-broken-2-full, .snf-pc-broken-full, .snf-pc-reboot-full, .snf-pc-switch-full, .snf-key-full, .snf-router-full, .snf-chip-full, .snf-plus-full, .snf-snapshot-full, .snf-pithos-full, .snf-volume-full, .snf-network-full, .snf-pc-full, .snf-network-broken-1-outline, .snf-network-broken-2-outline, .snf-pc-broken-outline, .snf-volume-broken-outline, .snf-pc-reboot-outline, .snf-pc-switch-outline, .snf-key-outline, .snf-router-outline, .snf-chip-outline, .snf-image-outline, .snf-plus-outilne, .snf-snapshot-outline, .snf-volume-outline, .snf-network-outline, .snf-pc-outline, .snf-info-outline, .snf-thunder-full, .snf-lock-closed, .snf-lock-open, .snf-trash-full, .snf-link-outline, .snf-refresh-outline, .snf-download-full, .snf-person-outline, .snf-upload-full, .snf-arrow-right-small-full, .snf-copy-outline, .snf-copy-full, .snf-arrow-left-small-full {
 	font-family: 'snf-font';
 	speak: none;
 	font-style: normal;
@@ -39,9 +39,6 @@ you can use the generic selector below, but it"s slower:
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
-}
-.snf-trash-outline:before {
-	content: "\24";
 }
 .snf-eye:before {
 	content: "\41";
@@ -238,9 +235,7 @@ you can use the generic selector below, but it"s slower:
 .snf-lock-open-full:before {
 	content: "\47";
 }
-.snf-trash-outline:before {
-	content: "\24";
-}
+
 .snf-link-outline:before {
 	content: "\26";
 }
@@ -262,14 +257,17 @@ you can use the generic selector below, but it"s slower:
 .snf-copy-outline:before {
 	content: "\3f";
 }
+.snf-copy-full:before {
+	content: "\22";
+}
 .snf-arrow-left-small-full:before {
 	content: "\5f";
 }
-.snf-folder-full:before {
+.snf-trash-full:before {
 	content: "\3d";
 }
-.snf-folder-outline:before {
-	content: "\5e";
+.snf-trash-outline:before {
+	content: "\24";
 }
 
 
@@ -286,9 +284,9 @@ you can use the generic selector below, but it"s slower:
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
+[data-icon-aux]:before {
 	font-family: 'snf-font-auxiliary';
-	content: attr(data-icon);
+	content: attr(data-icon-aux);
 	speak: none;
 	font-weight: normal;
 	font-variant: normal;
@@ -304,7 +302,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="snf-"] {
 */
-.snf-folder-create-outline, .snf-folder-create-full, .snf-shared-by-me-outline, .snf-shared-to-me-outline, .snf-shared-by-me-full, .snf-folder-move-full, .snf-folder-move-outline, .snf-shared-to-me-full {
+.snf-font-aux, .snf-folder-create-outline, .snf-folder-create-full, .snf-shared-by-me-outline, .snf-shared-to-me-outline, .snf-shared-by-me-full, .snf-folder-move-full, .snf-folder-move-outline, .snf-shared-to-me-full {
 	font-family: 'snf-font-auxiliary';
 	speak: none;
 	font-style: normal;
@@ -320,20 +318,26 @@ you can use the generic selector below, but it's slower:
 .snf-folder-create-full:before {
 	content: "\41";
 }
-.snf-shared-by-me-outline:before {
-	content: "\63";
-}
-.snf-shared-to-me-outline:before {
-	content: "\64";
-}
-.snf-shared-by-me-full:before {
-	content: "\43";
+.snf-folder-move-outline:before {
+	content: "\65";
 }
 .snf-folder-move-full:before {
 	content: "\45";
 }
-.snf-folder-move-outline:before {
-	content: "\65";
+.snf-folder-outline:before {
+	content: "\66";
+}
+.snf-folder-full:before {
+	content: "\46";
+}
+.snf-shared-by-me-outline:before {
+	content: "\63";
+}
+.snf-shared-by-me-full:before {
+	content: "\43";
+}
+.snf-shared-to-me-outline:before {
+	content: "\64";
 }
 .snf-shared-to-me-full:before {
 	content: "\44";
