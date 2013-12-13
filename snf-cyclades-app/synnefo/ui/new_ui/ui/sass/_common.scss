@@ -464,18 +464,22 @@ body {
 		.current, a:hover {
 			color: $secondary-color;
 		}
-		a {
-			margin-right: 10px;
+		a {			
+			float: left;
 			span {
 				position: relative;
 				&.snf-trash-outline {
 				}
 				&.snf-folder-create-outline {
-					font-size: emCalc(19px)
+					font-size: emCalc(18px)
 				}
 				&.snf-refresh-outline {
 					font-size: emCalc(14px);
+					top: -2px;
 				}
+			}
+			&:not(:last-child) {
+				margin-right: 10px;
 			}
 		}
 		.single {
@@ -697,22 +701,35 @@ body .jspVerticalBar {
 	display: block;
 	margin: 0 auto;
 }
-
+.folder {
+	background: url(file-types.png) no-repeat top left;
+	background-position: 0 -165px;
+	width: 35px;
+	height: 28px;
+}
+/* to put in use
+.folder-open {
+	background: url(file-types.png) no-repeat top left;
+	background-position: 0 --243px;
+	width: 35px;
+	height: 28px;
+}
+*/
+.txt {
+	@include files-icon(0 -486px);
+}
+.pdf {
+	@include files-icon(0 -321px);
+}
+.excel {
+	@include files-icon(0 -85px);
+}
+.word {
+	@include files-icon(0 -571px);
+}
+.powerpoint {
+	@include files-icon(0 -406px);
+}
 .ai {
 	@include files-icon(0 0);
 }
-
-.pdf {
-	@include files-icon(0 -241px);
-}
-
-.txt {
-	@include files-icon(0 -326px);
-} 
-
-.folder {
-	background: url(file-types.png) no-repeat top left;
-	background-position: 0 -85px;
-	width: 35px;
-	height: 28px;
-} 
