@@ -73,8 +73,8 @@
 		overflow: visible;
 		&>li {
 			text-align: left;
-			padding-right: 0;
-			padding-left: 0;
+			padding-right: 15px;
+			padding-left: 15px;
 			.col {
 				float: left;
 			}
@@ -83,10 +83,10 @@
 				width: auto;
 			}
 			.basic-data {
-				width: 20%;
+				width: 250px;
 			}
 			.size-data{
-				width: 40%;
+				width: 400px;
 				.progress-col {
 					padding-top: 7px;
 					.progress {
@@ -111,17 +111,20 @@
 			}
 			h5 {
 				float: left;
-				width: 20%;
+				width: 200px;
 				font-size: emCalc(14px);
 				font-weight: normal;
 				line-height: $list-icon-height;
 				height: $list-icon-height;
 				margin: 0;
+				padding:0 20px;
+				overflow: hidden;
+				white-space: nowrap;
 			}
 			.project {
 				line-height: $list-icon-height;
 				height: $list-icon-height;
-				width: 18%;
+				width: 100px;
 				font-size: emCalc(14px);
 				position: relative;
 				right: 0;
@@ -135,8 +138,9 @@
 					display: none;
 					z-index: 1;
 					background: #fff;
+					min-width: 100px + 200px;
 					li {
-						padding: 4px 0;
+						padding: 6px 5px;
 					}
 				}
 				.btn-more {
@@ -171,19 +175,16 @@
 
 			}
 			.img-wrap {
-				.snf-folder-full {
-					font-size: emCalc(34px);
-					color: $secondary-color;
-				}
-				span:not(.snf-folder-full) {
+				background-position: left center;
+				text-align: left;
+				span {
 					color: $gray-2;
 					font-size: emCalc(16px);
 					position: relative;
-					bottom: 5px;
-					left: -28px;
+					top: 1px;
+					left: 23px;
 				}
 			}
-
 		}
 	}
 }
