@@ -901,7 +901,7 @@ $(document).ready(function(){
     $('.tag-data').mouseleave(function(){
         $(this).find('.delete').css({visibility: 'hidden'})
     });
-    $('.delete').click(function(e) {
+    $('.tag-data .delete').click(function(e) {
         e.preventDefault();
         $(this).closest('div').fadeOut('slow');
     });
