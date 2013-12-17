@@ -33,6 +33,11 @@
       // or, set the global default message:
       // Dragfiles.defaults.dictremoveFile = 'Get it out!'
 
+      // temporary
+      folders = new Array();
+      for(var i=0; i<$(this.elem).find('.storage.entities>.items-list>li').length ; i++) {
+        folders[i] = [];
+      }
       
       $(this.elem).on('dragenter',function(e){
         self.dragEnter(e);
@@ -59,8 +64,24 @@
         $(this).removeClass('draghover');
       });
 
-      $(this.elem).find('.folder').on('drop', function(e){
-         console.log($(this).data('path'), 'path');
+      $(this.elem).find('.folder').on('drop',function(e){
+        console.log($(this).data('path'), 'path');
+        $(this).removeClass('draghover');
+        var index = $(this).index();
+        if($(this).hasClass('updated')) {
+          if(folders[index].length > 1) {
+            clearTimeout(folders[index][1]);
+          }
+          clearTimeout(folders[index][0]);
+        }
+        else if($(this).hasClass('updating')) {
+          if(folders[index].length > 1) {
+            clearTimeout(folders[index][1]);
+          }
+          clearTimeout(folders[index][0]);
+        }
+        self.resetFolder(this);
+        self.updateFolder(this);
       });
 
       $('input[type=file]').on('change',function (e) {
@@ -77,6 +98,26 @@
       return this;
 
     },
+    // temporary
+    updateFolder: function(folder) {
+      var folderIndex = $(folder).index();
+      $(folder).find('.img-wrap span').hide();
+      $(folder).addClass('updating');
+      folders[folderIndex][0] = setTimeout(function() {
+        $(folder).removeClass('updating');
+        $(folder).addClass('updated');
+        folders[folderIndex][1] = setTimeout(function() {
+          $(folder).removeClass('updated');
+          $(folder).find('.img-wrap span').show();
+        }, 500);
+      }, 1000);
+    },
+    // temporary
+    resetFolder : function(folder) {
+      $(folder).find('.img-wrap span').hide();
+      $(folder).removeClass('updated');
+      $(folder).removeClass('updating');
+    },
 
     dragEnter: function(e){
       console.log('Dragenter');
@@ -90,7 +131,7 @@
     dragOver: function(e){
       e.stopPropagation();
       e.preventDefault();
-      console.log('Dragover');
+      // console.log('Dragover');
       $(this.elem).find('#drop').addClass('drag');
     },
 
@@ -105,6 +146,8 @@
         self.fileUploaded(self.files[0])
         self.removeFile(self.files[0], $('.storage-progress .items-list li').first());
       } ,1000);
+
+
     },
 
     fileSelectHandler: function (e){

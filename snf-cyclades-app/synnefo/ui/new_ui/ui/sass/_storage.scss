@@ -38,6 +38,16 @@
 					background-image: url(../images/folder-open.png);
 				}
 			}
+			&.updating {
+				.img-wrap {
+					background-image: url(../images/folder-updating.png);
+				}
+			}
+			&.updated {
+				.img-wrap {
+					background-image: url(../images/folder-updated.png);
+				}
+			}
 		}
 		li:hover {
 			.actions-col {
@@ -182,8 +192,8 @@
 						color: $gray-2;
 						font-size: emCalc(16px);
 						position: relative;
-						top: 1px;
-						left: 10px;
+						top: 2px;
+						left: 18px;
 					}
 				}
 			}
