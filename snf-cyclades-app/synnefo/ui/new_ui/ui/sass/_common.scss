@@ -385,7 +385,7 @@ body {
 			padding: 0 10px;
 			font-size:emCalc(12px);
 			position: relative;
-			top:-2px;
+			top:-1px;
 		}
 		.options {
 			display: none;
@@ -468,13 +468,19 @@ body {
 			float: left;
 			span {
 				position: relative;
+				&.snf-listview {
+					font-size: emCalc(18px);
+				}
+				&.snf-gridview {
+					font-size: emCalc(18px);
+				}
 				&.snf-trash-outline {
 				}
 				&.snf-folder-create-outline {
-					font-size: emCalc(18px)
+					font-size: emCalc(18px);
 				}
 				&.snf-refresh-outline {
-					font-size: emCalc(14px);
+					font-size: emCalc(12px);
 					top: -2px;
 				}
 			}
@@ -483,7 +489,8 @@ body {
 			}
 		}
 		.single {
-			@include square(14px , $link-color);
+			@include square(12px , $link-color);
+			margin-top: 9px;
 			&.current,
 			&:hover {
 				background-color: $secondary-color;
