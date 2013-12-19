@@ -27,7 +27,8 @@
                 <li><a href="pithos.html" data-tooltip class="has-tip current" title="Storage"><span class="snf-pithos-outline"></span></a></li>
                 <li><a href="images_list.html" data-tooltip class="has-tip" title="Images"><span class="snf-image-outline"></span></a></li>
                 <li><a href="snapshots_list.html" data-tooltip class="has-tip" title="Snapshots"><span class="snf-snapshot-outline"></span></a></li>
-                <li><a href="" data-tooltip class="has-tip" title="More"><span class="snf-plus-outline"></span></a></li>
+                <li><a href="" data-tooltip class="has-tip" title="IPs"><span class="snf-nic-outline"></span></a></li>
+                <li><a href="" data-tooltip class="has-tip" title="SSH keys"><span class="snf-key-outline"></span></a></li>
             </ul>
         </nav>
         <div class="login">
@@ -81,7 +82,7 @@
                             <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
                         </form>
                     </li>
-                    <li data-status="folder" class="folder" data-path="/folder1/temp/">
+                    <li data-status="folder" class="folder" data-path="/folder1/temp/"  draggable="true">
                         <div class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </div>
@@ -94,11 +95,11 @@
                         <div class="actions-col">
                             <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
                             <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="delete" class="has-tip"><span>x</span></a>
                             <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
                         </div>
                     </li>
-                    <li data-status="file" class="file">
+                    <li data-status="file" class="file"  draggable="true">
                         <div class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </div>
@@ -113,11 +114,11 @@
                         <div class="actions-col">
                             <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
                             <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="delete" class="has-tip"><span>x</span></a>
                             <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
                         </div>
                     </li>
-                    <li data-status="file" class="file">
+                    <li data-status="file" class="file"  draggable="true">
                         <div class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </div>
@@ -132,11 +133,11 @@
                         <div class="actions-col">
                             <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
                             <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="delete" class="has-tip"><span>x</span></a>
                             <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
                         </div>
                     </li>
-                    <li data-status="file" class="file">
+                    <li data-status="file" class="file"  draggable="true">
                         <div class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </div>
@@ -151,7 +152,7 @@
                         <div class="actions-col">
                             <a href="#" title="share" class="has-tip"><span class="snf-link-outline"></span></a>
                             <a href="#" title="download" class="has-tip"><span class="snf-download-full"></span></a>
-                            <a href="#" title="delete" class="has-tip"><span>X</span></a>
+                            <a href="#" title="delete" class="has-tip"><span>x</span></a>
                             <a href="#" title="edit" class="has-tip"><span class="snf-edit"></span></a>
                         </div>
                     </li>
@@ -168,7 +169,7 @@
                         <li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>un</em>select all</li>
                         <li class="files"><a href="#" title=""><span class="snf-link-outline"></span> Share</a></li>
                         <li class="files"><a href="#" title=""><span class="snf-download-full"></span> Download</a></li>
-                        <li class="files"><a href="#"><span>X</span> Delete</a></li>
+                        <li class="files"><a href="#"><span>x</span> Delete</a></li>
                         <li class="all"><a href="#"><span class="snf-edit"></span> Rename</a></li>
                         <li class="all"><a href="#"><span class="snf-folder-move-outline"></span> Move</a></li>
                         <li class="all"><a href="#"><span class="snf-copy-outline"></span> Copy</a></li>
@@ -202,7 +203,7 @@
                                     </div>
                                 </div>
                                 <div class="remove">
-                                    <a href="">X <em>Remove</em></a>
+                                    <a href="">x <em>Remove</em></a>
                                 </div>
                             </li>
                             <li>
@@ -219,7 +220,7 @@
                                     </div>
                                 </div>
                                 <div class="remove">
-                                    <a href="">X <em>Remove</em></a>
+                                    <a href="">x <em>Remove</em></a>
                                 </div>
                             </li>
                         </ul>

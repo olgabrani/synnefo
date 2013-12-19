@@ -181,7 +181,7 @@
         txt += '<div class="progress-col"><div class="progress">';
         txt += '<span class="meter" style="width: 30%">30%</span>';
         txt += '</div></div>';
-        txt += '<div class="remove"><a href="" title="'+this.config.dictremoveFile+'">X <em>Remove</em></a></div>';
+        txt += '<div class="remove"><a href="" title="'+this.config.dictremoveFile+'">x</a></div>';
         txt += '</li>';
         el = $(txt);
         el.find("a").on('click', _.bind(function(e) {

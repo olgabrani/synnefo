@@ -222,13 +222,8 @@
 				visibility: visible;
 				a {
 					color: #fff;
-				}
-				em {
-					display: none;
-				}
-				&:hover {
-					em {
-						display: inline;
+					&:hover {
+						color: $gray-4;
 					}
 				}
 			}
