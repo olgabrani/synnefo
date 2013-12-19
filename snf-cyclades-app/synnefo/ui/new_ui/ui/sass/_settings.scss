@@ -10,13 +10,29 @@
 //
 // Foundation Global Variables
 //
+// PALETTE
+$gray-0: #2D3338; // almost black OK (text VM wizard header)
+$gray-1: #BEBEBE; // light(deactivated)
+$gray-2: #485057; // charbon OK(links OFF machine logo wizard BGND)
+$gray-3: #787878; // medium OK(shutting down wizard menu level 2)
+$gray-4: #f0f0f0; // super light gray (sorting bar)
 
+
+$turquoise-1 : #30c79e;
+$green-1: #00a551;
+$red-1: #ff4040;
+$cobalt-1: #566db1;
+$cobalt-2: #4c71ff;
+$yellow-1: #ffc54a;
+$orange-1: #ff7049;
+$salmon-1: #ff948c;
+$salmon-2: #ffb5af;
 // This is the default html and body font-size for the base em value.
 // $em-base: 16px;
 
 // We use these to control various global styles
 // $body-bg: #fff;
-$body-font-color: #1e1e1e;
+$body-font-color: $gray-0;
 $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -27,39 +43,26 @@ $body-font-family: "Open Sans", "Helvetica", Helvetica, Arial, sans-serif;
 // We use these to control text direction settings
 // $text-direction: ltr;
 
-// PALETTE
 
-$gray-1: #919194; // light
-$gray-2: #485057; // charbon
-$gray-3: #636a70; // medium
-$gray-4: #33383D; // dark
-$turquoise-1 : #30c79e;
-$green-1: #00a551;
-$red-1: #ff4040;
-$cobalt-1: #566db1;
-$cobalt-2: #4c71ff;
-$yellow-1: #ffc54a;
-$orange-1: #ff7049;
-$salmon-1: #ff948c;
-$salmon-2: #ffb5af;
 
 // We use these as default colors throughout
+// For foundation purposes
 $primary-color: $gray-1; // inactive gray
 $secondary-color: $turquoise-1; // green
 $third-color: $gray-2;
 
-$overlay-bg-color: $third-color;
-$overlay-color-top: $gray-3;
-$overlay-darker-color: $gray-4;
+$overlay-bg-color: $gray-2;
+$overlay-color-header: $gray-3;
+$overlay-color-top: $gray-0;
 
-$light-bg: lighten($primary-color,35%); // common light grey bg
+$light-bg: $gray-1; // common light grey bg
 
 // links color usage
 $inactive-color: $primary-color;
-$link-color: $third-color;
+$link-color: $gray-2;
 $link-color-hover : $secondary-color;
 
-$border-color-1 : lighten($primary-color,10%);
+$border-color-1 : $gray-4;
 
 $alert-color: $secondary-color;
 $success-color: $green-1;

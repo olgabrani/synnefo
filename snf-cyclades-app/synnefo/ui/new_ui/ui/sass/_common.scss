@@ -365,7 +365,7 @@ body {
 	text-align:center;
 	height:$bar-height;
 	line-height:$bar-height;
-	background-color: $light-bg;
+	background-color: $gray-4;
 	h2 {
 		float: left;
 		margin:0 0 0 15px;
@@ -439,7 +439,7 @@ body {
 			}
 			z-index:1;
 			position: relative;
-			background: lighten($primary-color,35%);
+			background: $gray-4;
 		}
 		.hd-search-input {
 			border: transparent;

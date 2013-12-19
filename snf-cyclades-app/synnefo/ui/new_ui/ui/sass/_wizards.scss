@@ -7,7 +7,7 @@
 				position: relative;
 				color:white;
 				.top {
-					background:$overlay-color-top;
+					background:$overlay-color-header;
 					height:$bar-menu-height + $bar-submenu-height;
 					position:fixed;
 					left:0;
@@ -29,7 +29,7 @@
 						}
 						height: $bar-menu-height;
 						line-height: 50px;
-						background:$overlay-darker-color;
+						background:$overlay-color-top;
 					}
 					.menus {
 						height: $bar-submenu-height;
@@ -207,7 +207,7 @@
 								padding:15px 0;
 								&:hover,
 								&.hover {
-									background:$overlay-darker-color;
+									background:$gray-0;
 								}
 								&.current {
 									background:white;
