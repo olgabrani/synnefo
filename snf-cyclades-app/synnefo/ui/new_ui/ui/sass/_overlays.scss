@@ -53,64 +53,18 @@ body.with-overlay {
 	    }
 	    &#reboot-confirm {
 			background: #ff7049 url('../images/restart.png') no-repeat center 50px;
-			.btn4 {
-			background-color: #ff7049;
-			border-color: white;
-			&:hover {
-					color: #ff7049;
-					background-color: white;
-					border-color: #ff7049;
-				}
-			}
 		}
 		&#shutdown-confirm {
-		background: #ff7049 url('../images/shutdown.png') no-repeat center 50px;	//55px from top
-			.btn4 {
-				background-color: #ff7049;
-				border-color: white;
-				&:hover {
-					color: #ff7049;
-					background-color: white;
-					border-color: #ff7049;
-				}
-			}
+			background: #ff7049 url('../images/shutdown.png') no-repeat center 50px;	//55px from top
 		}
 		&#destroy-vm-confirm {
-		background: #d7145a url('../images/destroy-vm.png') no-repeat center 46px;	//55px from top
-			.btn4 {
-				background-color: #d7145a;
-				border-color: white;
-				&:hover {
-					color: #d7145a;
-					background-color: white;
-					border-color: #d7145a;
-				}
-			}
+			background: #d7145a url('../images/destroy-vm.png') no-repeat center 46px;	//55px from top
 		}
 		&#destroy-network-confirm {
 			background: #d7145a url('../images/destroy-network-1.png') no-repeat center 50px;	//55px from top
-			.btn4 {
-				background-color: #d7145a;
-				border-color: white;
-				&:hover {
-					color: #d7145a;
-					background-color: white;
-					border-color: #d7145a;
-				}
-			}
 		}
 		&#destroy-disk-confirm {
 			background: #d7145a url('../images/destroy-disk.png') no-repeat center 50px;	//55px from top
-			.btn4 {
-				background-color: #d7145a;
-				border-color: white;
-				&:hover {
-					color: #d7145a;
-					background-color: white;
-					border-color: #d7145a;
-				}
-			}
-
 		}
 		&#vm-connect, &.remove {
 			p {
