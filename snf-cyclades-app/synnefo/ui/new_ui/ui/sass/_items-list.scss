@@ -233,7 +233,7 @@
 		overflow:hidden;
 		& >li {
 			&.selected {
-				background-color: $light-bg;
+				background-color: $gray-4;
 			}
 			@extend .clearfix;
 			height:auto;
@@ -241,7 +241,7 @@
 			padding:15px 15px 15px $lt-bar-width;
 			background-image: none;
 			&:hover{
-				background-color:lighten($primary-color,30%);
+				background-color: $gray-4;
 			}
 			.check {
 				width:$check-w;
@@ -249,6 +249,7 @@
 				line-height: $list-icon-height;
 				text-align: center;
 				float:left;
+				padding-left: 20px;
 				&:hover {
 					cursor: pointer;
 					color:$link-color-hover;
@@ -259,7 +260,6 @@
 				float:left;
 				text-align: center;
 				height: $list-icon-height;
-				top: -6px;
 				.os {
 					@include sprite('../images/os-unknown.png', 14px, 14px);
 					background-size:100%;
@@ -281,9 +281,12 @@
 				overflow: hidden;
 				float:left;
 				text-align: left;
-				height:18px;
+				padding-right: 20px;
+				height: $list-icon-height;
+				line-height: $list-icon-height;
 				margin: 0;
 				color: inherit;
+				padding-right: 20px;
 			}
 			.tags {
 				float:left;
@@ -291,7 +294,7 @@
 				height:$list-icon-height;
 				line-height: $list-icon-height;
 				a {
-					vertical-align: text-top;
+					vertical-align: middle;
 				}
 			}
 			.size, .remove {
@@ -301,13 +304,16 @@
 				line-height: $list-icon-height;
 				font-size: emCalc(12px);
 				text-align: left;
+				padding-left: 20px;
 			}
 			.status {
 				position: absolute;
 				left: $img-wrap-w+$check-w + $lt-bar-width;
 				text-align: left;
-				top:30px;
-				width:$h4-w;
+				top:36px;
+				font-size: 11px;
+				line-height: 110%;
+				width:$vm-h4-w;
 				span {
 					display: inline;
 				}
@@ -315,6 +321,7 @@
 			.info, .progress-col {
 				float: left;
 				width: $info-w;
+				padding-right: 20px;
 				height:$list-icon-height;
 				line-height: $list-icon-height;
 				font-size: emCalc(12px);
@@ -324,8 +331,8 @@
 				height:$list-icon-height;
 				line-height: $list-icon-height;
 				position: relative;
-				top:-4px;
-				margin:0 10px;
+				padding:0 10px;
+				top: 2px;
 				a {
 					&:first-child {
 						margin-right:5px;
@@ -439,11 +446,6 @@
 	// overflow: hidden;
 	display: inline-block;
 	line-height: 100%;
-	span {
-		&:hover {
-			cursor: pointer;
-		}
-	}
 	.os {
 		@include sprite('../images/os-unknown.png', 22px, 22px);
 		position: absolute;

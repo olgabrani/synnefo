@@ -22,12 +22,7 @@
 			}
 			h4 {
 				width: $storage-h4-w;
-				height: $list-icon-height;
-				line-height: $list-icon-height;
 			}
-			.info {
-				margin-right: 40px;
-			}	
 		}
 		.folder {
 			.img-wrap {
@@ -83,8 +78,8 @@
 		overflow: visible;
 		&>li {
 			text-align: left;
-			padding-right: 15px;
-			padding-left: 15px;
+			padding-right: 50px;
+			padding-left: 50px;
 			.col {
 				float: left;
 			}
@@ -93,11 +88,24 @@
 				width: auto;
 			}
 			.basic-data {
-				width: 250px;
+				width: 180px;
+				padding-right: 20px;
+				.img-wrap {
+					a {
+						display: block;
+					}
+				}
+				&:hover {
+					a {
+						color: $link-color-hover;
+					}
+				}
 			}
 			.size-data{
-				width: 400px;
+				width: 360px;
+				padding-right: 20px;
 				.progress-col {
+					width: $progress-col-w;
 					padding-top: 7px;
 					.progress {
 						border-color: $gray-2;
@@ -115,26 +123,25 @@
 				}
 				.size {
 					width: auto;
-					padding-left: 20px;
 					font-size: emCalc(14px);
 				}
 			}
 			h5 {
 				float: left;
-				width: 158px;
+				width: 220px;
 				font-size: emCalc(14px);
 				font-weight: normal;
 				line-height: $list-icon-height;
 				height: $list-icon-height;
 				margin: 0;
-				margin:0 20px;
+				margin:0 20px 0 0 ;
 				overflow: hidden;
 				white-space: nowrap;
 			}
 			.project {
 				line-height: $list-icon-height;
 				height: $list-icon-height;
-				width: 102px;
+				width: 100px;
 				font-size: emCalc(14px);
 				position: relative;
 				right: 0;
@@ -148,7 +155,7 @@
 					display: none;
 					z-index: 1;
 					background: #fff;
-					min-width: 100px + 200px;
+					min-width: 100px + 240px;
 					li {
 						padding: 6px 5px;
 					}
@@ -157,7 +164,7 @@
 					border: 1px solid $gray-2;
 					position: relative;
 					min-width: $list-icon-height;
-					padding: 0 11px;
+					padding: 0 10px;
 					float: right;
 					em {
 						// display: none;
