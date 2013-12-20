@@ -222,6 +222,7 @@
 					a {
 						span {
 							font-size: 1.5em;
+							margin-right: 2px;
 						}
 					}
 				}
@@ -350,8 +351,6 @@
 					visibility: hidden;
 				}
 				h4 {
-					// height:auto;
-					// line-height: $bar-height;
 					margin:0;
 				}
 				.img-wrap {
@@ -371,6 +370,28 @@
 						margin:0 auto;
 					}
 				}
+			}
+		}
+	}
+}
+
+// disable hover effect for the .containers li
+.containers {
+	.storage {
+		.items-list {
+			&>li:hover {
+				background-color: inherit;
+			}
+		}
+	}
+}
+
+// select-all for pithos view (alignment)
+.storage {
+	.lt-bar {
+		.lt-actions {
+			.select {
+				margin-right: 4px;
 			}
 		}
 	}

@@ -121,20 +121,20 @@
 			}
 			h5 {
 				float: left;
-				width: 200px;
+				width: 158px;
 				font-size: emCalc(14px);
 				font-weight: normal;
 				line-height: $list-icon-height;
 				height: $list-icon-height;
 				margin: 0;
-				padding:0 20px;
+				margin:0 20px;
 				overflow: hidden;
 				white-space: nowrap;
 			}
 			.project {
 				line-height: $list-icon-height;
 				height: $list-icon-height;
-				width: 100px;
+				width: 102px;
 				font-size: emCalc(14px);
 				position: relative;
 				right: 0;
@@ -155,7 +155,9 @@
 				}
 				.btn-more {
 					border: 1px solid $gray-2;
-					padding: 0 10px;
+					position: relative;
+					min-width: $list-icon-height;
+					padding: 0 11px;
 					float: right;
 					em {
 						display: none;
@@ -163,17 +165,21 @@
 						font-style: normal;
 						color: $body-font-color;
 						@include transition(opacity, 300ms, linear);
+						margin-right: 7px;
 					}
 					&:hover {
 						color: $link-color;
 						em {
-							display: inline-block;
-							opacity: 1;
+							// display: inline-block;
+							// opacity: 1;
 						}
 					}
 					&.clicked {
 						background-color: $link-color;
 						color: #fff;
+						.arrow-down:after {
+							border-color: white transparent transparent transparent;
+						}
 						em {
 							@include transition(opacity, 300ms, linear);
 							display: inline-block;
@@ -181,6 +187,17 @@
 							color: #fff;
 						}
 					}
+				}
+				.arrow-down:after {
+					content: "";
+					display: inline-block;
+					width: 0;
+					height: 0;
+					border: inset 5px;
+					border-color: black transparent transparent transparent;
+					border-top-style: solid;
+					position: relative;
+					top: 3px;
 				}
 
 			}
@@ -239,7 +256,7 @@
 		height: 20px;
 		.meter {
 			background-color: #fff;
-			color: $body-font-color;
+			color: $turquoise-1;
 			text-align: right;
 			padding-right: 10px;
 			line-height: 120%;
