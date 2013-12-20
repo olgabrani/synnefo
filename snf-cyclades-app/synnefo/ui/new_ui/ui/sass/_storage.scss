@@ -160,8 +160,8 @@
 					padding: 0 11px;
 					float: right;
 					em {
-						display: none;
-						opacity: 0;
+						// display: none;
+						// opacity: 0;
 						font-style: normal;
 						color: $body-font-color;
 						@include transition(opacity, 300ms, linear);
