@@ -750,6 +750,7 @@ $(document).ready(function(){
      $('.lt-bar .select').click(function(e){
         $(this).find('span').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
         $(this).find('em').toggle();
+        $(this).toggleClass('selected');
         if ( $(this).find('span').hasClass('snf-checkbox-unchecked')){
             $('.list-view  li .check span').removeClass('snf-checkbox-checked');
             $('.list-view  li .check span').addClass('snf-checkbox-unchecked');
