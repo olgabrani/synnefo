@@ -661,7 +661,7 @@ body {
 		width: 0%;
 	}
 	.summary {
-		padding-left: $lt-bar-width + $check-w;
+		padding-left: $lt-bar-width + $check-w + $img-wrap-w;
 		margin: 0;
 		font-size: emCalc(12px);
 		span {
