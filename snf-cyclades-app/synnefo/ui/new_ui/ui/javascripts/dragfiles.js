@@ -144,10 +144,8 @@
       this.fileSelectHandler(e);
       setTimeout( function(){
         self.fileUploaded(self.files[0])
-        self.removeFile(self.files[0], $('.storage-progress .items-list li').first());
+        self.removeFileFromFiles(self.files[0], $('.storage-progress .items-list li').last());
       } ,1000);
-
-
     },
 
     fileSelectHandler: function (e){
@@ -185,10 +183,10 @@
         txt += '</li>';
         el = $(txt);
         el.find("a").on('click', _.bind(function(e) {
-          console.log(e,'e');
-          console.log(this, 'thisis');
           e.preventDefault();
-          this.removeFile(f, el);
+          el.fadeOut('slow');
+          var li = $(e.target).parents('li');
+          this.removeFileFromFiles(f, li);
         }, this));
         list.append(el);
       }, this);
@@ -209,16 +207,14 @@
       } ,4000);
     },
 
-    removeFile: function(file, el) {
-      var index = this.files.indexOf(file);
+    removeFileFromFiles: function(file, li) {
       var self = this;
+      li.fadeOut('slow', function(){
+        self.parseFiles(self.files);
+      });
+      var index = this.files.indexOf(file);
       if (index > -1) {
         this.files.splice(index, 1);
-      }
-      if (el) {
-        el.fadeOut(1000, function(){
-          self.parseFiles(self.files);
-        });
       }
     },
 
@@ -249,10 +245,6 @@
       txt += '<div class="actions-col"></div>';
       txt += '</li>';
       el = $(txt);
-      el.find("a").on('click', _.bind(function(e) {
-        e.preventDefault();
-        this.removeFile(f, el);
-      }, this));
       $(this.elem).find('#drop').append(el);
     },
   }
