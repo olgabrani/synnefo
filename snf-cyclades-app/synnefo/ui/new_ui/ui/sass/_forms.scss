@@ -51,22 +51,22 @@
 		height:237px;
 		width: 100%
 	}
-	#color {
-		display: none;
-	}
+
 	#picker {
 	    position: relative;
 	    width: 207px;
 	    margin: 25px 5px 30px;
 	    display: inline-block;
 	}
-
-		#color {
-			@extend .tag-demo;
+		.color-preview {
+			@include circle(9px);
+			// background-color: #16C1E9;
+			position: relative;
+			left: 10px;
+			bottom: -5px;
 			margin: 0 15px 0 10px;
-			position: static;
 			vertical-align: text-bottom;
-			border-color:transparent;
+			border-color: transparent;
 			color: transparent;
 		}
 }

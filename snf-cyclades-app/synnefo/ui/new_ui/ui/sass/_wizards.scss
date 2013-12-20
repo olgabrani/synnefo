@@ -641,7 +641,21 @@
 			                            margin-right:20px;
 			                        }
 			                        .tag-demo {
-										left:10px;
+										@include circle(9px);
+										margin: 0 15px 0 10px;
+										vertical-align: text-bottom;
+										border-color:transparent;
+										color: transparent;
+										// temporary
+										&.tag4 {
+											background-color: $red-1;
+										}
+										&.tag5 {
+											background-color: $yellow-1;
+										}
+										&.tag6 {
+											background-color: $orange-1;
+										}
 			                        }
 			                        h3 {
 			                            width: $conf-area-h-width;

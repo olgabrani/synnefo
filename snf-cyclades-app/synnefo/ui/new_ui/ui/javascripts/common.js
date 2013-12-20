@@ -722,8 +722,11 @@ $(document).ready(function(){
         }
     });
 
-    if($('#picker').length>0) {
-        $('#picker').farbtastic('#color');
+    if($('#picker-1').length>0) {
+        $('#picker-1').farbtastic('#color-1');
+    };
+    if($('#picker-2').length>0) {
+        $('#picker-2').farbtastic('#color-2');
     };
     if($('#sb-search').length>0) {
         new UISearch( document.getElementById( 'sb-search' ) );
