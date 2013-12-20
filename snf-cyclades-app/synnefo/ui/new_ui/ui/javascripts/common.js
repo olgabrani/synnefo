@@ -939,6 +939,9 @@ $(document).ready(function(){
         })
     }
 
+    // add a <span> element inside the content of each a.wrap-a element
+    $('a.wrap-a').wrapInner('<span></span>');
+
 })
 
 

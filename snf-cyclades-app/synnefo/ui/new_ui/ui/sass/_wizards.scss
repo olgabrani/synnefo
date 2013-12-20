@@ -217,11 +217,19 @@
 									}
 									.btn-col {
 										a {
+
 											border-color:$overlay-bg-color;
 											color:$overlay-bg-color;
+											&:hover {
+												span {
+													border-color:$overlay-bg-color; 
+												}
+											}
 											&.current {
 												color:white;
-												background:$overlay-bg-color;
+												span {
+													background:$overlay-bg-color;
+												}
 											}
 										}
 									}
