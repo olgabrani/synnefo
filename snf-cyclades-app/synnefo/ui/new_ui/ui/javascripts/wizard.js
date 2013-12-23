@@ -464,29 +464,6 @@ $(document).ready(function() {
 				e.preventDefault();
 				ui.expandDownArea(this, wizard.find('.advanced-conf-options'));
 			});
-
-
-			// reaction li.click *
-			wizard.find('.advanced-conf-options .with-checkbox').click(function(e) {
-				e.preventDefault();
-				$(this).find('.check').trigger('click');
-			});
-
-			// reaction a.click *
-			$('.with-checkbox .check').click(function(e) {
-				e.stopPropagation();
-				console.log('hi');
-				var self = this;
-				if ($(this).closest('.with-checkbox').hasClass('has-more')) {
-					$(this).parent().next('.more').stop().slideToggle(400, function() {
-						if ($(self).parent().next('.more:visible').length != 0) {
-							$(self).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
-						} else {
-							$(self).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
-						}
-					});
-				}
-			});
 		}
 		else if (wizardType == 'network-wizard') {
 

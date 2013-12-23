@@ -643,6 +643,17 @@ $(document).ready(function(){
         e.preventDefault();
         e.stopPropagation();
         ui.changeCheckboxState(this);
+        console.log('check clicked');
+        var parentLi = $(this).closest('li');
+        if (parentLi.hasClass('with-checkbox') && parentLi.hasClass('has-more')) {
+            $(this).parent().next('.more').stop().slideToggle(400, function() {
+                if ($(this).parent().next('.more:visible').length != 0) {
+                    $(this).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
+                } else {
+                    $(this).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
+                }
+            });
+        }
     });
 
     // for checkboxes created after document.ready
@@ -654,10 +665,8 @@ $(document).ready(function(){
 
 
     $('.with-checkbox').click(function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var checkbox = $(this).find('.check');
-        ui.changeCheckboxState(checkbox);
+        console.log('with-checkbox');
+        $(this).find('.check').trigger('click');
     });
 
     $('.with-checkbox').find('a').click(function(e){
