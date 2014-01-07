@@ -675,29 +675,29 @@ Confirm that the options you have selected are correct</p>
 			<div id="start-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
 				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 			<div id="reboot-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to reboot your machine?</p>
 				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 			<div id="shutdown-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to shutdown your machine?</p>
 				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 			<div id="destroy-vm-confirm" class="reveal-modal medium">
 				<p class="message-forimg">Are you sure you want to destroy your machine?</p>
 				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 			<div id="vm-connect" class="reveal-modal medium">
 				<p>A direct connection to this machine can be established using the <a href=​"http:​/​/​en.wikipedia.org/​wiki/​Secure_Shell" target=​"_blank">​SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
 				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
 
 				<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 			<div id="attach-volume" class="reveal-modal medium list-availables">
 				<span>Available volumes:</span>
@@ -716,7 +716,7 @@ Confirm that the options you have selected are correct</p>
 					<a href="" class="btn1 wrap-a ok">OK</a>
 					<a href="" class="btn1 wrap-a cancel">Cancel</a>
 				</p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 			<div id="connect-to-network" class="reveal-modal medium list-availables">
 				<span>Available networks:</span>
@@ -735,15 +735,15 @@ Confirm that the options you have selected are correct</p>
 					<a href="" class="btn1 wrap-a ok">OK</a>
 					<a href="" class="btn1 wrap-a cancel">Cancel</a>
 				</p>
-				<a class="close-reveal-modal" title="close window">x</a>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
 			</div>
 		</section>
 		<section class="actions-bar clearfix">
 			<h2><a href="vm_list.html">Virtual Machines</a> > My Awesome Network</h2>
 			<div class="rt-actions">
-				<a href="" class="single current" title="single view"></a>
-				<a href="vm_list.html" class="grid" title="grid view"><span class="snf-gridview"></span></a>
-				<a href="vm_list.html" class="list" title="list view"><span class="snf-listview "></span></a>
+				<a href="" class="single current"></a>
+				<a href="vm_list.html" class="grid"><span class="snf-gridview"></span></a>
+				<a href="vm_list.html" class="list"><span class="snf-listview "></span></a>
 			</div>
 			<div class="filter-menu">
 				<a class="filter" href="">Filter</a>
@@ -809,8 +809,8 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
 									<div class= "status">
 										<span class="state">REBOOTING</span>
@@ -853,8 +853,8 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
 									<div class= "status">
 										<span class="state">STARTING</span>
@@ -897,8 +897,8 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>short name</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
 									<div class= "status">
 										<span class="state">SHUTTING DOWN</span>
@@ -941,10 +941,9 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>short name</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
-
 									<div class= "status">
 										<span class="state"></span>
 									</div>
@@ -987,8 +986,8 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>short name</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
 									<div class= "status">
 									</div>
@@ -1028,8 +1027,8 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>short name</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
 									<div class="tags">
 									</div>
@@ -1071,8 +1070,8 @@ Confirm that the options you have selected are correct</p>
 									</div>
 									<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
 									<div class="actions">
-										<a href="" data-reveal-id="vm-connect" title="connect" class="connect"><span class="snf-thunder-full"></span></a>
-										<a href="vm_details.html" title="view vm details" class="snf-info-outline"></a>
+										<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+										<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
 									</div>
 									<div class= "status">
 									</div>
