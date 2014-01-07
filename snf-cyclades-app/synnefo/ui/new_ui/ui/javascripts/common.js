@@ -548,9 +548,6 @@ $(document).ready(function(){
         if($('.communication-error').css('bottom') == '0px') {
             $('.communication-error').animate({bottom: "-151px"});
         }
-        if($('.details .lt-bar').is(':visible')) {
-            $('.toggle-lt-bar').trigger('click');
-        }
     });
 
     if($('.vms.entities').length!=0){
@@ -901,12 +898,6 @@ $(document).ready(function(){
     // end of connected details js
 
     ui.replaceClass($('a.current, a.active'), 'outline', 'full', 'snf-');
-
-    // with the function below the sidebar in detailed views
-    // will not hide if we click something in a wizard
-    $('.wizard').click(function(e) {
-        e.stopPropagation();
-    })
 
     $('.tag-data').mouseover(function() {
         $(this).find('.delete').css({visibility: 'visible'})
