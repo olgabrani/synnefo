@@ -1,0 +1,94 @@
+ul.side-actions {
+	position: absolute;
+	left: 0;
+	top: -20px;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	li {
+		list-style: none outside none;
+		&>a {
+			display: block;
+			height: 20px;
+			width: 20px;
+			line-height: 20px;
+			border-radius: 50%;
+			border: 1px solid $inactive-color;
+			margin-bottom: 5px;
+			color: $inactive-color;
+			&.details {
+				font-size: emCalc(13px);
+				font-weight: bold;
+			}	
+		}
+		&.more-actions {
+			&> a {
+				line-height: 8px;
+			}
+			ul {
+				display: none;
+				position: absolute;
+				border: 1px solid $link-color;
+				padding: 5px 10px;
+				text-align: left;
+				top: 0;
+				left: 40px;
+				margin: 0;
+				background: white;
+				min-height: 80px;
+				a {
+					border-radius: 0;
+					border:0  none;
+					width: auto;
+					height: auto;
+					font-size: emCalc(14px);
+					white-space: nowrap;
+					color: $link-color;
+
+				}
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 49px;
+					left: -20px;
+					width: 0;
+					height: 0;
+					border-color: transparent #fff transparent transparent ;
+					border-style: solid;
+					border-width: 10px;
+				}
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 48px;
+					left: -22px;
+					width: 0;
+					height: 0;
+					border-color: transparent $link-color transparent transparent ;
+					border-style: solid;
+					border-width: 11px;
+				}
+			}
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.items-list {
+	li:hover {
+		ul.side-actions li> a {
+			color: $link-color;
+			border-color: $link-color;
+			&:hover {
+				color: $link-color-hover;
+				border-color: $link-color-hover;
+			}
+		}
+	}
+}

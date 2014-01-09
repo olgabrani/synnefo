@@ -1,0 +1,1066 @@
+
+<!DOCTYPE html>
+    <!--[if lte IE 7]><script src="javascripts/lte-ie7.js"></script><![endif]-->
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>VMs list</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,greek-ext,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/normalize.css" />
+    <link rel="stylesheet" href="stylesheets/app.css" />
+    <link rel="stylesheet" href="stylesheets/farbtastic.css" />
+    <link rel="stylesheet" href="stylesheets/font_custom.css" />
+    <link rel="stylesheet" href="stylesheets/jquery.jscrollpane.css" media="all" />
+    <link rel="stylesheet" href="stylesheets/magnific-popup.css" />
+
+    <script src="javascripts/vendor/custom.modernizr.js"></script>
+</head>
+<body>	
+	<header class="header">
+		<nav>
+			<ul class="icons-nav">
+				<li><a href="vm_list.html" data-tooltip class="has-tip current" title="Machines"><span class="snf-pc-outline"></span></a></li>
+				<li><a href="network_list.html" data-tooltip class="has-tip" title="Networks"><span class="snf-network-outline"></span></a></li>
+				<li><a href="volumes_list.html" data-tooltip class="has-tip" title="Disks"><span class="snf-volume-outline"></span></a></li>
+				<li><a href="pithos.html" data-tooltip class="has-tip" title="Storage"><span class="snf-pithos-outline"></span></a></li>
+				<li><a href="images_list.html" data-tooltip class="has-tip" title="Images"><span class="snf-image-outline"></span></a></li>
+				<li><a href="snapshots_list.html" data-tooltip class="has-tip" title="Snapshots"><span class="snf-snapshot-outline"></span></a></li>
+				<li><a href="" data-tooltip class="has-tip" title="IPs"><span class="snf-nic-outline"></span></a></li>
+                <li><a href="" data-tooltip class="has-tip" title="SSH keys"><span class="snf-key-outline"></span></a></li>
+			</ul>
+		</nav>
+		<div class="login">
+			<div class="wrap">
+				<a href="">user1@synnefo.org</a>
+				<ul>
+					<li><a href="">dashboard</a></li>
+					<li><a href="">sign out</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="logo">
+			<a href="index.html"><img src="images/synnefo-logo.png" alt="software logo"></a>
+		</div>
+	</header>
+	<div class="body-wrapper">
+		<section class="overlay-area-custom">
+			<div id="vm-wizard" class="overlay-div wizard">
+				<div class="top">
+					<div class="numbers">
+						<div class="row">
+							<a href="" class="close"><span class="snf-close"></span></a>
+							<ul class="nums">
+								<li class="current preselected">
+									<em><span>1</span></em>
+									<p><strong>Select an OS</strong> Choose your preferred image</p>
+								</li>
+								<li>
+									<em><span>2</span></em>
+									<p><strong>Select CPUs, RAM and Disk Size </strong>
+Available options are filtered based on the selected image</p>
+								</li>
+								<li>
+									<em><span>3</span></em>
+									<p><strong>Virtual machine custom options</strong>
+Virtual machine custom options</p>
+								</li>
+								<li>
+									<em><span>4</span></em>
+									<p><strong>Confirm your settings</strong>
+Confirm that the options you have selected are correct</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row menus">
+						<nav class="sub-menu" data-step=1>
+							<ul>
+								<li><a href="" class="current preselected el2 firstfocus-1" data-img-type="system-images">System</a></li>
+								<li><a href="" data-img-type="my-images">My images</a></li>
+								<li><a href="" data-img-type="shared-images">Shared with me</a></li>
+								<li><a href="" data-next="el1" data-img-type="public-images">Public</a></li>
+							</ul>
+						</nav>
+						<nav class="sub-menu" data-step=2>
+							<ul>
+								<li><a href="" class="current preselected el4 firstfocus-2" data-size="small">Small</a></li>
+								<li><a href="" data-size="medium">Medium</a></li>
+								<li><a href="" data-size="large" data-next="el5">Large</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="middle">
+						<div class="steps">
+							<div class="step step-1 current preselected" id="step-1" data-step="1">
+								<ul class="os">
+									<li  class="current preselected system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
+											<a href="" class="name-col el1">Kubuntu</a>
+											<div class="size-col">3.13 GB</div>
+											<div class="btn-col"><a href="" class="wrap-a">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="public-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-kubuntu.png" alt=""></div>
+											<a href="" class="name-col">Kubuntu LTS (by Kpal)</a>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="" class="wrap-a">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="public-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<a href="" class="name-col">Fedora (by Athina)</a>
+											<div class="size-col">10GB</div>
+											<div class="btn-col"><a href="" class="wrap-a">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="shared-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-fedora.png" alt=""></div>
+											<a href="" class="name-col">Fedora (by Athina)</a>
+											<div class="size-col">3.67 GB</div>
+											<div class="btn-col"><a href="" class="wrap-a">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="my-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2012</a>
+											<div class="size-col">13.66 GB</div>
+											<div class="btn-col"><a href="" class="wrap-a">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2012</a>
+											<div class="size-col">13.66 GB</div>
+											<div class="btn-col"><a href="" class="wrap-a">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									<li class="system-images">
+										<div class="row">
+											<div class="img-col"><img src="images/os-windows.png" alt=""></div>
+											<a href="" class="name-col">Windows Server 2008</a>
+											<div class="size-col">10.79 GB</div>
+											<div class="btn-col"><a href="" class="wrap-a" data-next="el3">details</a></div>
+										</div>
+										<div class="details">
+											<div class="row">
+												<h3>Image metadata</h3>
+												<dl>
+													<dt>Owner</dt>
+													<dd>system</dd>
+													<dt>OS</dt>
+													<dd>Kubuntu</dd>
+													<dt>Kernel</dt>
+													<dd>4.8.2</dd>
+													<dt>Size</dt>
+													<dd>2.51GB</dd>
+													<dt>Users</dt>
+													<dd>user</dd>
+													<dt>Root partition</dt>
+													<dd>1</dd>
+												</dl>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+							<div class="step step-2" id="step-2" data-step=2>
+								<div class="row">
+									<form class="custom">
+									  <select class="medium">
+									    <option class="el5">Basic Project</option>
+									    <option>Project 2</option>
+									    <option>Project 3</option>
+									  </select>
+									</form>
+									<ul class="flavor">
+										<li>
+											<div class="title">
+												<span class="snf-chip-outline snf-font"></span>
+												<h2>
+													CPU<span> (x cores)</span>
+													<em>Choose number of CPU cores</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:60%">
+																<div class="current" style="width:30%"></div>
+																<span>60%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected  wrap-a" data-help="help text for 1">1</a></li>
+													<li><a href="" class="medium wrap-a" data-help="help text for 2">2</a></li>
+													<li><a href="" class="large disabled wrap-a" data-help="help text for 3">3</a></li>
+													<li><a href="" class="disabled wrap-a" data-help="help text for 4">4</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<div class="title">
+												<span class="snf-ram-outline snf-font"></span>
+												<h2>
+													Memory Size 
+													<span> (MB)</span>
+													<em>Choose memory size</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:60%">
+																<div class="current" style="width:30%"></div>
+																<span>60%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected wrap-a">1024</a></li>
+													<li><a href="" class="medium wrap-a">2048</a></li>
+													<li><a href="" class="large wrap-a">4096</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<div class="title">
+												<span class="snf-volume-outline snf-font"></span>
+												<h2>
+													Disk Size<span> (GB)</span>
+													<em>Choose disk size</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total low" style="width:40%">
+																<div class="current" style="width:80%"></div>
+																<span>40%</span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options with-flavor">
+													<li><a href="" class="small current preselected wrap-a">10</a></li>
+													<li><a href="" class="medium wrap-a">20</a></li>
+													<li><a href="" class="large wrap-a">30</a></li>
+													<li><a href="" class="wrap-a">40</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<div class="title">
+												<span class="snf-volume-outline snf-font"></span>
+												<h2>
+													Storage
+													<em>Select storage type</em>
+												</h2>
+												<p>HOVER EXPLANATORY TEXT Volumes residing on our custom storage layer Archipelago, supporting fast VM spawning with cloning. Will also support Volume snapshotting really soon.</p>
+											</div>
+											<div class="options-bar">
+												<div class="bar">
+													<div class="wrap  disabled-progress-bar">
+														<div class="container">
+															<!-- width percentages do not correspond to actual mesurements -->
+															<div class="total" style="width:100%">
+																<div class="current" style="width:0%"></div>
+																<span></span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="options vm-storage-selection">
+													<li><a href="" class="current preselected wrap-a">DRBD</a></li>
+													<li><a href="" data-next="el3" class="wrap-a">Archipelago</a></li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="step step-3" id="step-3" data-step=3>
+								<div class="advanced-conf-step">
+									<div class="adv-main row">
+										<div class="name">
+											<h2>Machine name</h2>
+											<span class="input">
+												<input type="text" placeholder="My Ubuntu Server" class="el7">
+											</span>
+										</div>
+										<div class="expand-btn">
+											<a class="expand-arrow" href="">
+												Advanced Configuration
+												<span class="snf-arrow-down preselected"></span>
+											</a>
+										</div>
+									</div>
+									<div class="advanced-conf-options">
+										<div class="ssh-keys-area area">
+											<div class="row">
+												<h2>Public SSH keys</h2>
+												<p>Your account contains the following SSH public keys. Select one or more to activate in your new machine. You will then be able to ssh with the corresponding private key without a password."</p>
+												<ul>
+													<li class="trigger-checkbox">
+														<h3>My public key long name one </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+													<li class="trigger-checkbox">
+														<h3>Other public key </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+													<li class="trigger-checkbox">
+														<h3>My public key long name one </h3>
+														<a href="" class="check">
+															<span class="snf-checkbox-unchecked"></span>
+														</a>
+													</li>
+												</ul>
+												<div>
+													<a href="" class="btn5 wrap-a" data-reveal-id="sshkeys-wizard" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
+												</div>
+											</div>
+										</div>
+										<div class="networks-area area">
+											<h2 class="row">Networks</h2>
+											<ul>
+												<li class="trigger-checkbox row has-more select-net">
+													<h3 class="">	
+														<span class="net-icons">
+															<span class="temp-line line1"></span>
+															<span class="snf-www"></span>
+															<span class="snf-network-full"></span>
+														</span>
+														Public Network
+													</h3>
+													<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
+												</li>
+												<li class="more">
+													<div class="row">
+														<div class="trigger-checkbox clearfix">
+															<h3>192.168.2.3</h3>
+															<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
+														</div>
+														<div class="trigger-checkbox clearfix">
+															<h3>192.168.2.3</h3>
+															<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+														</div>
+														<div class="trigger-checkbox clearfix">
+															<h3>192.168.2.3</h3>
+															<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+														</div>
+														<div>
+															<a href="" class="btn5 wrap-a">allocate ip</a>
+														</div>
+													</div>
+												</li>
+												<li class="trigger-checkbox row select-net">
+													<h3 class="net-name">
+														<span class="net-icons">
+															<span class="temp-line line1"></span>
+															<span class="temp-line line2"></span>
+															<span class="snf-www"></span>
+															<span class="snf-router-outline"></span>
+															<span class="snf-network-full"></span>
+														</span>
+														Routed Network
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+												<li class="trigger-checkbox row select-net">
+													<h3 class="net-name">
+														<span class="net-icons">
+															<span class="snf-network-full"></span>
+														</span>
+														Private Network 1
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+												<li class="trigger-checkbox row select-net">
+													<h3 class="net-name">
+														<span class="net-icons">
+															<span class="snf-network-full"></span>
+														</span>
+														Private Network 2
+													</h3>
+													<a href="" class="check">
+														<span class="snf-checkbox-unchecked"></span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<div class="tags-area area">
+											<div class="row">
+												<h2>Tags</h2>
+												<p>Dude use your tags like you eat your cereal.<br>You can color code them as well</p>
+												<ul>
+													<li>
+														<h3>My tags</h3>
+														<span>select</span>
+													</li>
+													<li class="trigger-checkbox">
+														<h3>
+															<span class="tag-demo tag4"></span>
+															Operating system
+														</h3>
+														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													</li>
+													<li class="trigger-checkbox">
+														<h3>
+															<span class="tag-demo tag5"></span>
+															Pirate PC1
+														</h3>
+														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													</li>
+													<li class="trigger-checkbox">
+														<h3>
+															<span class="tag-demo tag6"></span>
+															Pirate PC1
+														</h3>
+														<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+													</li>
+												</ul>
+												<div ><a class="btn5 show-add-tag wrap-a" href="" id="show-add-tag">add new Tag</a></div>
+												<div class="snf-color-picker">
+													<form action="#" method="post">
+														<div id="picker-1">
+															<div class="farbtastic">
+																<div class="color" style="background-color: rgb(255, 0, 21);"></div>
+																<div class="wheel"></div>
+																<div class="overlay"></div>
+																<div class="h-marker marker" style="left: 90px; top: 13px;"></div>
+																<div class="sl-marker marker" style="left: 87px; top: 114px;"></div>
+															</div>
+														</div>
+														<div class="form-item">
+															<input type="text" id="color-1" class="color-preview" name="color" value="#16C1E9" disabled>
+															<span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
+														</div>
+													</form>									
+													<div class="btns">
+														<a class="btn5 wrap-a" href="">OK</a>
+														<a class="btn5 hide-add-tag wrap-a" href="">CANCEL</a>
+													</div>
+													<a href="" id="hide-add-tag-dummy" style="position:relative;top:50px">&nbsp;</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+	<!-- end step 3 -->				</div>
+							<div class="step step-4" id="step-4" data-step=4>
+								<div class="summary">
+									<div class="row">
+										<div class="wrap">
+											<dl>
+												<dt><span class="snf-pc-full snf-font"></span>Machine name</dt>
+												<dd>handsome frank</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="wrap">
+											<dl>
+												<dt>Image</dt>
+												<dd>Fedora</dd>
+												<dt>Name</dt>
+												<dd>Debian Base</dd>
+												<dt>Desciption</dt>
+												<dd>open suse description open suse description open suse description open suse description open suse description</dd>
+												<dt>os</dt>
+												<dd>Debian</dd>
+												<dt>Size</dt>
+												<dd>10.4GB</dd>
+												<dt>GUI</dt>
+												<dd>No GUI</dd>
+												<dt>Kernel</dt>
+												<dd>2.3.4</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="wrap">
+											<h2>Flavor</h2>
+											<dl>
+												<dt><span class="snf-chip-outline snf-font"></span>CPUs</dt>
+												<dd>4x</dd>
+												<dt><span class="snf-ram-outline snf-font"></span>Memory</dt>
+												<dd>512 MB</dd>
+												<dt><span class="snf-volume-outline snf-font"></span>Disk</dt>
+												<dd>4GB</dd>
+												<dt><span class="snf-volume-outline snf-font"></span>Storage Type</dt>
+												<dd>DRBD</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="row">
+										<div class="wrap">
+											<dl>
+												<dt>Machine Tags</dt>
+												<dd>Database server</dd>
+												<dt>SSH Keys</dt>
+												<dd>
+													my public key 1<br>
+													my public key 3<br>
+												</dd>
+												<dt>IPs</dt>
+												<dd>192.168.1.3<br>192.168.1.3</dd>
+												<dt>Private networks</dt>
+												<dd>No private networks selected</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="bottom">
+					<div class="row">
+						<a href="" class="nav prev el3"><span>CANCEL</span></a>
+						<a href="" class="nav next" data-step="1" data-next="el2"><span>NEXT</span></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="overlay-area-reveal">
+			<div id="sshkeys-wizard" class="reveal-modal medium secondary-wizard">
+                <h2>SSH keys</h2>
+                <a class="close-reveal-modal close" title="close">x</a>
+                <p>You can use SSH keys to establish a secure connection between your computer and your virtual machines.<br>
+                Note: SSH keys are supported only for Linux machines.</p>
+                <p>Click "generate new" to create a new SSH key pair.</p>
+                <p>Click "import/add" to import your public key from your home machine or to copy/paste its contents to ~okeanos.</p>
+                <p class="buttons"><a href="" class="btn4 generate-key-btn">generate</a><a href="" class="btn4 import-key-btn">add/import</a></p>
+                <div class="generate-key-area">
+                    <p>clock tba</p>
+                    <p>
+                        Your new public key has been added.<br>
+                        To download your *private key* click here.
+                    </p>
+                    <p>
+                        Note: We do not keep it! I f you don't download now you cannot access it in the future.
+                    </p>
+                <p class="buttons"><a href="" class="btn4">ok</a></p>
+                </div>
+                <div class="import-key-area">
+                    <div class="key-name">
+                    <h4>Key name</h4>
+                        <span class="input"><input class="key-name-input" type="text" placeholder="my key"></span>
+                        <div class="error-msg"></div>
+                    </div>
+                    <div class="key-content">
+                        <h4>Key content</h4>
+                        <div class="error-msg"></div>
+                        <textarea></textarea>
+                    </div>
+                    <div class="upload-key">
+                        <label>Import from file (header maybe?)</label>
+                            <p class="buttons">
+                                <a href="" class="browse-files dz-clickable">browse files</a>
+                            </p>
+                        <form action="#" class="dropzone" id="files-dropzone">
+                            <p>sto plai?</p>
+                            <ul class="files dropzone-files"></ul>
+                            <div class="dz-default dz-message"><span></span></div>
+                        </form>
+                        <p class="buttons"><a href="" class="btn4">Cancel</a><a href="" class="btn4">Submit</a></p>
+                    </div>
+                </div>
+                <h3>Your SSH public keys</h3>
+                <ul>
+                    <li>
+                        <div class="name-col">key name 1</div>
+                        <div class="actions-col">
+                            <a href="" class="show-key">key</a>
+                            <a href="" class="show-fingerprint">fingerprint</a>
+                            <a href="" class="edit">edit</a>
+                            <a href="">remove</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="name-col">key name 2</div>
+                        <div class="actions-col">
+                            <a href="" class="show-key">key</a>
+                            <a href="" class="show-fingerprint">fingerprint</a>
+                            <a href="" class="edit">edit</a>
+                            <a href="">remove</a>
+                        </div>
+                    </li>
+                </ul>
+                <p class="buttons"><a href="" class="btn4 close-reveal-modal">close</a></p>
+            </div>
+
+			<div id="vm-connect" class="reveal-modal medium">
+				<p>A direct connection to this machine can be established using the<a href="http://en.wikipedia.org/wiki/Secure_Shell" title=""> SSH Protocol</a>. To do so open a terminal and type the following at the prompt to connect to your machine:</p>
+				<p class="ssh"><span>ssh user@snf-38389.vm.okeanos.grnet.gr</span></p>
+				<p class="info">Keep in mind that recently rebooted or created VMs may take up to 5 minutes to connect to them.</p>
+				<p>Alternatively you can connect to your VM via <a href="#" title="">Console</a> (slow connection - meant only for troubleshooting).</p>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
+			</div>
+			<div id="start-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to turn on your machine?</p>
+				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
+			</div>
+			<div id="reboot-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to reboot your machine?</p>
+				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
+			</div>
+			<div id="shutdown-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to shutdown your machine?</p>
+				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
+			</div>
+			<div id="destroy-vm-confirm" class="reveal-modal medium">
+				<p class="message-forimg">Are you sure you want to destroy your machine?</p>
+				<p class="buttons"><a href="" class="btn4 wrap-a">Yes</a><a href="" class="btn4 wrap-a">No</a></p>
+				<a class="close-reveal-modal has-tip" data-tooltip title="close window">x</a>
+			</div>
+		</section>
+		<section class="actions-bar clearfix">
+			<h2>Virtual Machines</h2>
+			<div class="rt-actions">
+				<a href="vm_details.html" class="single"></a>
+				<a href="#grid" class="grid"><span class="snf-gridview current"></span></a>
+				<a href="#list" class="list"><span class="snf-listview "></span></a>
+			</div>
+			<div class="filter-menu">
+				<div><a class="filter" href="">Filter</a></div>
+				<ul class="options">
+					<li><a href="">option 1</a></li>
+					<li><a href="">option 2</a></li>
+					<li><a href="">option 3</a></li>
+					<li><a href="">option 4</a></li>
+				</ul>
+			</div>
+			<div id="hd-search" class="hd-search">
+			    <form>
+					<span class="hd-icon-search snf-search"></span>
+			        <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			    </form>
+			</div>
+		</section>
+		<section class="main row">
+			<div class="vms entities grid-view">
+				<ul class="items-list">
+					<li data-status="add-new" class="add-new not-selectable" data-overlay-id="vm-wizard">
+						<div class="container">
+							<div class="check"></div>
+							<div class="img-wrap">
+								<span class="snf-pc-create-full snf-font"></span>
+							</div>
+							<h4>New Machine</h4>
+						</div>
+					</li>
+					<li data-status="building" class="building">
+						<a href="" class="btn5 temp">animation</a>
+						<div class="container">
+							<ul class="side-actions">
+								<li><a href="vm_details.html" title="view details" class="details">i</a></li>
+								<li><a href="#" title="connect to machine" data-reveal-id="vm-connect"><span class="snf-thunder-full"></span></a></li>
+								<li class="more-actions">
+									<a href="#" title="more actions available">...</a>
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Snapshot</a></li>
+										<li><a href="">Attach to network</a></li>
+									</ul>
+								</li>
+							</ul>	
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</a>
+							<div class="img-wrap">
+								<span class="snf-pc-full snf-font incomplete"></span>
+								<span class="snf-pc-full snf-font complete"></span>
+								<span class="os">unknown</span>
+							</div>
+							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+								<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
+							</div>
+							<div class= "status">
+								<span class="state">BUILDING</span>
+								<span class="logs">798.56 MB of 4.33 GB (18%)</span>
+							</div>
+							<div class="tags">
+							</div>
+							<div class="info"><a href="snf-9733.vm.okeanos.grnet.gr" title="">snf-9733.vm.okeanos.grnet.gr</a></div>
+						</div>
+					</li>
+					<li data-status="error" class="error">
+						<div class="container">
+							<ul class="side-actions">
+								<li><a href="vm_details.html" title="view details" class="details">i</a></li>
+								<li><a href="#" title="connect to machine" data-reveal-id="vm-connect"><span class="snf-thunder-full"></span></a></li>
+								<li class="more-actions">
+									<a href="#" title="more actions available">...</a>
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Snapshot</a></li>
+										<li><a href="">Attach to network</a></li>
+									</ul>
+								</li>
+							</ul>	
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</a>
+							<div class="img-wrap">
+								<span class="snf-pc-full snf-font"></span>
+								<span class="os">unknown</span>
+							</div>
+							<h4>short name</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+								<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
+							</div>
+							<div class="tags">
+							</div>
+							<div class= "status">
+								<span class="state">ERROR</span>
+								<span class="logs">Image customization failed. Did not finish on time.</span>
+							</div>
+							<div class="info"><a href="snf-9733.vm.okeanos.grnet.gr" title="">snf-9733.vm.okeanos.grnet.gr</a></div>
+						</div>
+					</li>
+					<li data-status="running" class="running">
+						<div class="container">
+							<ul class="side-actions">
+								<li><a href="vm_details.html" title="view details" class="details">i</a></li>
+								<li><a href="#" title="connect to machine" data-reveal-id="vm-connect"><span class="snf-thunder-full"></span></a></li>
+								<li class="more-actions">
+									<a href="#" title="more actions available">...</a>
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+									</ul>
+								</li>
+							</ul>	
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</a>
+							<div class="img-wrap">
+								<span class="snf-pc-full snf-font"></span>
+								<span class="os fedora">fedora</span>
+							</div>
+							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+								<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
+							</div>
+							<div class= "status">
+							</div>
+							<div class="tags">
+							</div>
+							<div class="info"><a href="snf-9733.vm.okeanos.grnet.gr" title="">snf-9733.vm.okeanos.grnet.gr</a></div>
+						</div>
+					</li>
+					<li data-status="rebooting" class="rebooting">
+						<a href="" class="btn5 temp">animation</a>
+						<div class="container">
+							<ul class="side-actions">
+								<li><a href="vm_details.html" title="view details" class="details">i</a></li>
+								<li><a href="#" title="connect to machine" data-reveal-id="vm-connect"><span class="snf-thunder-full"></span></a></li>
+								<li class="more-actions">
+									<a href="#" title="more actions available">...</a>
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+									</ul>
+								</li>
+							</ul>	
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</a>
+							<div class="img-wrap">
+								<span class="snf-pc-full snf-font"></span>
+								<span class="os kubuntu">kubuntu</span>
+							</div>
+							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+								<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
+							</div>
+							<div class= "status">
+								<span class="state">REBOOTING</span>
+							</div>
+							<div class="tags">
+								<a href="" class="tag tag1 has-tip" data-tooltip title="Tooltip1">&nbsp;</a>
+								<a href="" class="tag tag2 has-tip" data-tooltip title="Tooltip2">&nbsp;</a>
+							</div>
+							<div class="info"><a href="snf-9733.vm.okeanos.grnet.gr" title="">snf-9733.vm.okeanos.grnet.gr</a></div>
+						</div>
+					</li>
+					<li data-status="starting" class="starting">
+						<div class="container">
+							<ul class="side-actions">
+								<li><a href="vm_details.html" title="view details" class="details">i</a></li>
+								<li><a href="#" title="connect to machine" data-reveal-id="vm-connect"><span class="snf-thunder-full"></span></a></li>
+								<li class="more-actions">
+									<a href="#" title="more actions available">...</a>
+									<ul>
+										<li><a href="">Start</a></li>
+										<li><a href="">Shutdown</a></li>
+										<li><a href="">Reboot</a></li>
+										<li><a href="">Destroy</a></li>
+										<li><a href="">Snapshot</a></li>
+										<li><a href="">Attach to network</a></li>
+									</ul>
+								</li>
+							</ul>	
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked"></span>
+							</a>
+							<div class="img-wrap">
+								<span class="snf-pc-full snf-font"></span>
+								<span class="os kubuntu">kubuntu</span>
+							</div>
+							<h4>vm name 1 really large name vm name vm 1 really large name vm</h4>
+							<div class="actions">
+								<a href="" data-reveal-id="vm-connect" data-tooltip title="connect" class="connect has-tip"><span class="snf-thunder-full"></span></a>
+								<a href="vm_details.html" data-tooltip title="view vm details" class="snf-info-outline has-tip"></a>
+							</div>
+							<div class= "status">
+								<span class="state">STARTING</span>
+							</div>
+							<div class="tags">
+							</div>
+							<div class="info"><a href="snf-9733.vm.okeanos.grnet.gr" title="">snf-9733.vm.okeanos.grnet.gr</a></div>
+						</div>
+					</li>
+					<li class="temp-for-btns"><a href="" class="btn5 temp communication-error-btn">communication error</a></li>
+				</ul>
+				<div class="communication-error">
+					<p>Sorry! Something went wrong!<br>Try again, but if you keep seeing this message please contact us through the feedback form.</p>
+					<p class="buttons">
+						<a class="btn5" href="">feedback</a>
+						<a href="" class="btn5">close</a>
+					</p>
+				</div>
+				<div class="lt-bar">
+					<ul class="lt-actions">
+						<li class="select trigger-checkbox">
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked checkbox"></span>
+							</a>
+							<em>Un</em>Select all
+						</li>
+						<li class="running"><a href="#" title="" data-reveal-id="reboot-confirm">Reboot</a></li>
+						<li class="running"><a href="#" title="" data-reveal-id="shutdown-confirm">Shutdown</a></li>
+						<li class="both"><a href="#" data-reveal-id="destroy-vm-confirm">Destroy</a></li>
+						<li class="off"><a href="#">Start</a></li>
+						 <!-- in case we want an action always activated
+						<li class="pernament"><a href="" class="active">Action</a></li> -->
+					</ul>
+				</div>
+				<div class="welcome">It seems you have not yet created a VM! Go ahead!</div>
+			</div>
+		</section>
+	</div>
+
+	<script src="javascripts/vendor/jquery.js"></script>
+	<script src="javascripts/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="javascripts/underscore-min.js"></script>
+	<script src="javascripts/foundation/foundation.js"></script>
+	<script src="javascripts/foundation/foundation.alerts.js"></script>
+	
+	<script src="javascripts/foundation/foundation.clearing.js"></script>
+	
+	<script src="javascripts/foundation/foundation.cookie.js"></script>
+	
+	<script src="javascripts/foundation/foundation.dropdown.js"></script>
+	
+	<script src="javascripts/foundation/foundation.forms.js"></script>
+	
+	<script src="javascripts/foundation/foundation.joyride.js"></script>
+	
+	<script src="javascripts/foundation/foundation.magellan.js"></script>
+	
+	<script src="javascripts/foundation/foundation.orbit.js"></script>
+	
+	<script src="javascripts/foundation/foundation.placeholder.js"></script>
+	
+	<script src="javascripts/foundation/foundation.reveal.js"></script>
+	
+	<script src="javascripts/foundation/foundation.section.js"></script>
+	
+	<script src="javascripts/foundation/foundation.tooltips.js"></script>
+	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.jscrollpane.js"></script>
+	<!-- dropzone.js used for drag and drop files to upload them --> 
+	<script type="text/javascript" src="javascripts/dropzone.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.magnific-popup.js"></script>
+	<!-- fabrastic.js used for the color picker --> 
+	<script type="text/javascript" src="javascripts/farbtastic.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.scrollintoview.js"></script>
+	<script src="javascripts/common.js"></script>
+	
+	<script type="text/javascript" src="javascripts/wizard.js"></script>
+	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+	<script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
+  <script>
+    $(document).foundation();
+    $(document).ready(function() {
+
+    })
+  </script>
+</body>
+</html>
