@@ -611,7 +611,7 @@
 			                                    color:#fff;
 			                                    margin-left:145px;
 			                                }
-			                                .with-checkbox {
+			                                .trigger-checkbox {
 			                                    a {
 			                                        span {
 			                                            color: #fff;
@@ -755,10 +755,6 @@
 		} // end of .wizard
 
 
-
-
-
-
 // for network creation wizard
 #network-wizard {
 
@@ -766,7 +762,7 @@
 		&.nav:focus {
 			border: none;
 		}
-		&.radio_btn:focus, &.check:focus{
+		&.radiobtn:focus, &.check:focus{
 				border: 1px solid #aee7cc;
 				padding: 2px;
 			}
@@ -774,7 +770,7 @@
 	.snf-checkbox-checked, .snf-checkbox-unchecked {
 		font-size: 1.3em;
 	}
-	.subnet_options {
+	.subnet-options {
 		margin: 0;
 		li {
 			margin-top: 20px;
@@ -782,7 +778,7 @@
 	}
 	.step {
 		a {	color: $wizard-base-font-color;}
-		.network_options {
+		.network-options {
 			position: relative;
 			padding-bottom: 20px;
 			.explanatory {
@@ -790,7 +786,7 @@
 					margin-top:20px;
 					margin-bottom:60px;
 			}
-			.check, .radio_btn {
+			.check, .radiobtn {
 				position: absolute;
 				right: 0;
 				&:focus {
@@ -834,7 +830,7 @@
 		&.nav:focus {
 			border: none;
 		}
-		&.radio_btn:focus, &.check:focus{
+		&.radiobtn:focus, &.check:focus{
 				border: 1px solid #aee7cc;
 				padding: 2px;
 			}

@@ -63,9 +63,9 @@
 					</div>
 				</div>
 				<div class="middle">
-					<div class="steps">
-						<div class="step step-1 preselected current">
-							<ul class="row network_options">
+				<div class="steps">
+					<div class="step step-1 preselected current">
+						<ul class="row network-options">
 								<li class="project-selection">
 									<form class="custom">
 									  <select class="medium">
@@ -81,7 +81,7 @@
 										<span class="input"><input class="el1" type="text" placeholder="My Network"></span>
 									</div>
 								</li>
-								<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
+								<li class="dhcp-option trigger-checkbox selected"><span>Assign IP addresses automatically:</span>
 									<a href="" class="check">
 										<span class="snf-checkbox-checked prechecked"></span>
 									</a>
@@ -91,34 +91,34 @@
 								</li>
 								<li>
 									<span class="sub_title">Network subnet:</span>
-									<ul class="subnet_options">
-										<li>
+									<ul class="subnet-options">
+										<li class="trigger-radiobtn selected">
 											<span>Auto
-												<a href="" class="radio_btn">
+												<a href="" class="radiobtn">
 													<span class="snf-radio-checked prechecked"></span>
 												</a>
 											</span>
 										</li>
-										<li class="manual">
+										<li class="manual trigger-radiobtn">
 											<form>
 												<span>Manual
-													<a href="" class="radio_btn manual">
+													<a href="" class="radiobtn">
 														<span class="snf-radio-unchecked"></span>
 													</a>
 													<span class="input"><input type="text" placeholder="192.168.32.0/24"></span>
 												</span>
 											</form>
 										</li>
-										<li>
+										<li class="trigger-radiobtn">
 											<span>10.0.0.0/24
-												<a href="" class="radio_btn">
+												<a href="" class="radiobtn">
 													<span class="snf-radio-unchecked"></span>
 												</a>
 											</span>
 										</li>
-										<li>
+										<li class="trigger-radiobtn">
 											<span>192.168.0.0/24
-												<a href="" class="radio_btn">
+												<a href="" class="radiobtn">
 													<span class="snf-radio-unchecked"></span>
 												</a>
 											</span>
@@ -176,7 +176,7 @@
 				<div class="lt-bar">
 					<div class="scroll-wrap">
 						<ul class="items-list">
-							<li data-status="add-new" class="add-new" data-overlay-id="network-wizard">
+							<li data-status="add-new" class="add-new not-selectable" data-overlay-id="network-wizard">
 								<div class="container">
 									<div class="check"></div>
 									<div class="img-wrap">
@@ -189,9 +189,9 @@
 								<div class="more">
 								</div>
 								<div class="container">
-									<div class="check">
+									<a href="" class="check">
 										<span class="snf-checkbox-unchecked"></span>
-									</div>
+									</a>
 									<div class="img-wrap">
 										<span class="snf-network-full snf-font"></span>
 									</div>
@@ -214,9 +214,9 @@
 								<div class="more">
 								</div>
 								<div class="container">
-									<div class="check">
+									<a href="" class="check">
 										<span class="snf-checkbox-unchecked"></span>
-									</div>
+									</a>
 									<div class="img-wrap">
 										<span class="snf-network-full snf-font"></span>
 									</div>
@@ -307,17 +307,17 @@
 									</div>
 									<div class="firewall" data-firewall="fully">
 										<p>Firewall <em>on</em></p>
-										<div class="more">
-											<p class="fully">
-												<a href="">Fully protected mode<span class="snf-radio-checked"></span></a>
-											</p>
-											<p class="basic">
-												<a href="">Basically protected mode<span class="snf-radio-unchecked"></span></a>
-											</p>
-											<p class="unprotected">
-												<a href="">Unprotected mode<span class="snf-radio-unchecked"></span></a>
-											</p>
-										</div>
+										<ul class="more">
+											<li class="fully selected trigger-radiobtn">
+												<a href="" class="radiobtn">Fully protected mode<span class="snf-radio-checked"></span></a>
+											</li>
+											<li class="basic trigger-radiobtn">
+												<a href="" class="radiobtn">Basically protected mode<span class="snf-radio-unchecked"></span></a>
+											</li>
+											<li class="unprotected trigger-radiobtn">
+												<a href="" class="radiobtn">Unprotected mode<span class="snf-radio-unchecked"></span></a>
+											</li>
+										</ul>
 									</div>
 								</li>
 							</ul>
@@ -346,17 +346,17 @@
 									</div>
 									<div class="firewall" data-firewall="unprotected">
 										<p>Firewall <em>on</em></p>
-										<div class="more">
-											<p class="fully">
-												<a href="">Fully protected mode<span class="snf-radio-unchecked"></span></a>
-											</p>
-											<p class="basic">
-												<a href="">Basically protected mode<span class="snf-radio-unchecked"></span></a>
-											</p>
-											<p class="unprotected">
-												<a href="">Unprotected mode<span class="snf-radio-checked"></span></a>
-											</p>
-										</div>
+										<ul class="more">
+											<li class="fully trigger-radiobtn">
+												<a href="" class="radiobtn">Fully protected mode<span class="snf-radio-unchecked"></span></a>
+											</li>
+											<li class="basic trigger-radiobtn">
+												<a href="" class="radiobtn">Basically protected mode<span class="snf-radio-unchecked"></span></a>
+											</li>
+											<li class="unprotected selected trigger-radiobtn">
+												<a href="" class="radiobtn">Unprotected mode<span class="snf-radio-checked"></span></a>
+											</li>
+										</ul>
 									</div>
 								</li>
 								<li>
@@ -370,19 +370,19 @@
 											</li>
 										</ul>
 									</div>
-									<div class="firewall" data-firewall="unprotected">
+									<div class="firewall" data-firewall="basic">
 										<p>Firewall <em>on</em></p>
-										<div class="more">
-											<p class="fully">
-												<a href="">Fully protected mode<span class="snf-radio-unchecked"></span></a>
-											</p>
-											<p class="basic">
-												<a href="">Basically protected mode<span class="snf-radio-unchecked"></span></a>
-											</p>
-											<p class="unprotected">
-												<a href="">Unprotected mode<span class="snf-radio-checked"></span></a>
-											</p>
-										</div>
+										<ul class="more">
+											<li class="fully trigger-radiobtn">
+												<a href="" class="radiobtn">Fully protected mode<span class="snf-radio-unchecked"></span></a>
+											</li>
+											<li class="basic selected trigger-radiobtn">
+												<a href="" class="radiobtn">Basically protected mode<span class="snf-radio-checked"></span></a>
+											</li>
+											<li class="unprotected trigger-radiobtn">
+												<a href="" class="radiobtn">Unprotected mode<span class="snf-radio-unchecked"></span></a>
+											</li>
+										</ul>
 									</div>
 								</li>
 								<li>
@@ -480,6 +480,7 @@
 	
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
 	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+	<script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
   <script>
     $(document).foundation();
   </script>

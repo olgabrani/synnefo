@@ -180,7 +180,7 @@ ui.wizard = {
 		}
 		else if(wizardType == 'network-wizard') {
 			wizard.find('li .manual .input').hide();
-	        wizard.find('ul.subnet_options').parent('li').show();
+	        wizard.find('ul.subnet-options').parent('li').show();
 		}
 
 		ui.wizard.currentStep = 1;
@@ -198,10 +198,8 @@ ui.wizard = {
 		wizard.find('.current').not('.preselected').removeClass('current');
 		wizard.find('.preselected').not('.current').addClass('current');
 		wizard.find('.custom.dropdown.medium a:first').addClass('current'); // to fix
-		wizard.find('.snf-radio-checked').not('.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
-		wizard.find('.snf-radio-unchecked.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
-		wizard.find('.snf-checkbox-checked').not('.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
-		wizard.find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
+		ui.radiobtn.reset(wizard);
+		ui.checkbox.reset(wizard);
 		wizard.find('.snf-arrow-up.preselected').toggleClass('snf-arrow-up snf-arrow-down');
 		if(wizardType == 'vm-wizard') {
 			var preselectedImgCategory = wizard.find('.top .sub-menu[data-step=1] .preselected').data('img-type');
@@ -465,39 +463,7 @@ $(document).ready(function() {
 				ui.expandDownArea(this, wizard.find('.advanced-conf-options'));
 			});
 		}
-		else if (wizardType == 'network-wizard') {
 
-			wizard.find('.network_options .check').click(function(e){
-				e.preventDefault();
-				e.stopPropagation();
-				this.blur();
-				$(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
-			});
-
-			wizard.find('.network_options .dhcp_option').click(function(e){
-				e.preventDefault();
-				$(this).find('.check').trigger('click');
-			});
-
-			wizard.find('.network_options .radio_btn').click(function(e){
-		        e.preventDefault();
-		        e.stopPropagation();
-		        this.blur();
-		        var state = $(this).find('span');
-		        if(state.hasClass('snf-radio-checked')) {
-		            if($(this).hasClass('manual')) {
-		                $(this).siblings('.input').show();
-		            }
-		            else {
-		                $(this).closest('li').siblings('.manual').find('.input').hide();
-		            }
-		        }
-		    });
-
-			wizard.find('.subnet_options>li').click(function(e) {
-				$(this).find('.radio_btn').trigger('click');
-			})
-		}
 		else if (wizardType == 'volume-wizard') {
 			// step-1
 			wizard.find('.volume_options .options a').hover(
@@ -513,35 +479,8 @@ $(document).ready(function() {
 					$(this).addClass('current');
 				}
 			});
-
-			//step-2
-			wizard.find('.vms-list a').click(function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-				ui.checkOneRadioButton(this);
-				ui.changeRadiobuttonState(this);
-			});
-
-			wizard.find('.vms-list li').click(function(e) {
-				e.preventDefault();
-				$(this).find('a').trigger('click');
-			});
-
 		}
 
-		else if(wizardType == 'snapshot-wizard') {
-			wizard.find('.vms-list a').click(function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-				ui.checkOneRadioButton(this);
-				ui.changeRadiobuttonState(this);
-			});
-
-			wizard.find('.vms-list li').click(function(e) {
-				e.preventDefault();
-				$(this).find('a').trigger('click');
-			});
-		}
 	}
 
 })

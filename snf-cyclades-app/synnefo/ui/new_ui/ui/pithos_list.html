@@ -70,8 +70,8 @@
         <section class="main row all-height">
             <div class="storage entities list-view">
                 <ul class="items-list" id="drop">
-                    <li class="add-new">
-                        <a class="check">
+                    <li class="add-new not-selectable">
+                        <a href="" class="check">
                         </a>
                         <div class="img-wrap">
                             <span class="rect-plus">+</span>
@@ -83,7 +83,7 @@
                         </form>
                     </li>
                     <li data-status="folder" class="folder" data-path="/folder1/temp/"  draggable="true">
-                        <a class="check">
+                        <a href="" class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </a>
                         <div class="img-wrap"></div>
@@ -100,7 +100,7 @@
                         </div>
                     </li>
                     <li data-status="file" class="file"  draggable="true">
-                        <a class="check">
+                        <a href="" class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </a>
                         <div class="img-wrap">
@@ -119,7 +119,7 @@
                         </div>
                     </li>
                     <li data-status="file" class="file"  draggable="true">
-                        <a class="check">
+                        <a href="" class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </a>
                         <div class="img-wrap">
@@ -138,7 +138,7 @@
                         </div>
                     </li>
                     <li data-status="file" class="file"  draggable="true">
-                        <a class="check">
+                        <a href="" class="check">
                             <span class="snf-checkbox-unchecked"></span>
                         </a>
                         <div class="img-wrap">
@@ -166,7 +166,12 @@
                 </div>
                 <div class="lt-bar">
                     <ul class="lt-actions">
-                        <li class="select"><a><span class="snf-checkbox-unchecked checkbox"></span></a><em>Un</em>Select all</li>
+                        <li class="select trigger-checkbox">
+                            <a href="" class="check">
+                                <span class="snf-checkbox-unchecked checkbox"></span>
+                            </a>
+                            <em>Un</em>Select all
+                        </li>
                         <li class="files"><a href="#" title=""><span class="snf-link-outline"></span> Share</a></li>
                         <li class="files"><a href="#" title=""><span class="snf-download-full"></span> Download</a></li>
                         <li class="files"><a href="#"><span>x</span> Delete</a></li>
@@ -261,6 +266,7 @@
     <script type="text/javascript" src="javascripts/wizard.js"></script>
     <script type="text/javascript" src="javascripts/dragfiles.js"></script>
     <script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+    <script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
   <script>
     $(document).foundation();
   </script>

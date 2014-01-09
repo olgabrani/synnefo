@@ -234,7 +234,7 @@
 
     fileUploaded: function(file) {
       var txt = '';
-      txt += '<li class="with-checkbox">';
+      txt += '<li class="trigger-checkbox">';
       txt += '<div class="check"><span class="snf-checkbox-unchecked"></span></div>';
       txt += '<div class="img-wrap">';
       txt += '<span class='+ ui.mimeToExt(file.type) +'></span>';

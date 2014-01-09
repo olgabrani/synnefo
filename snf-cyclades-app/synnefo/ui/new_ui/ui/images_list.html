@@ -124,11 +124,11 @@
 		<section class="main row">
 			<div class="images entities grid-view">
 				<ul class="items-list">
-					<li data-status="add-new" class="add-new" data-overlay-id="image-wizard">
+					<li data-status="add-new" class="add-new not-selectable" data-overlay-id="image-wizard">
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 									<span class="snf-image-full snf-font"></span>
 									<span class="os symbol">+</span>
@@ -162,9 +162,9 @@
 							<div class="name">Image Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-font snf-image-full"></span>
 							</div>
@@ -199,9 +199,9 @@
 							<div class="name">Image Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-font snf-image-full"></span>						
 							</div>
@@ -217,7 +217,12 @@
 				</ul>
 				<div class="lt-bar">
 					<ul>
-						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>Un</em>Select all</li>
+						<li class="select trigger-checkbox">
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked checkbox"></span>
+							</a>
+							<em>Un</em>Select all
+						</li>
 						<li class="running"><a href="#" title="">Destroy</a></li>
 						<!-- in case we want an action always activated
 						<li class="pernament"><a href="" class="active">Action</a></li> -->
@@ -260,6 +265,7 @@
 	
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
 	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+	<script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
   <script>
     $(document).foundation();
   </script>

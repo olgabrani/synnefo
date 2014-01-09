@@ -9,6 +9,8 @@ ui = {};
 * here is the declaration only
 */
 ui.wizard = {};
+ui.checkbox = {};
+ui.radiobtn = {};
 
 /* when closeEl el is clicked, its parent with class divToCloseClass slidesUp */
 ui.closeDiv = function(closeEl, divToCloseClass) {
@@ -156,14 +158,7 @@ ui.firewallSetup = function(){
     });
 }
 
-ui.checkedListItems = function (){
-    $('.list-view .items-list').find('.snf-checkbox-checked').each(function(){
-        $(this).parents('li').addClass('selected');
-    });
-    $('.list-view .items-list').find('.snf-checkbox-unchecked').each(function(){
-        $(this).parents('li').removeClass('selected');
-    });
-};
+
 
 /*
 * In order for the editable value functionality to work, the html markup
@@ -287,28 +282,7 @@ function goToByScroll(id){
 }
 
 
-/*
-* functions concerning checkboxes and radiobuttons links
-*/
-
-ui.changeCheckboxState =function(checkbox_link) {
-    console.log(checkbox_link);
-    $(checkbox_link).find('.snf-checkbox-unchecked, .snf-checkbox-checked').toggleClass('snf-checkbox-unchecked snf-checkbox-checked');
-    ui.entitiesActionsEnabled();
-    ui.checkedListItems();
-}
-
-// to use the above functions use first the ui.checkOneRadioButton and then ui.changeRadiobuttonState
-ui.checkOneRadioButton = function(radiobtn_link) {
-    $(radiobtn_link).closest('ul').find('span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
-}
-ui.changeRadiobuttonState = function(radiobtn_link) {
-    $(radiobtn_link).find('span.snf-radio-unchecked, span.snf-radio-checked').toggleClass('snf-radio-unchecked snf-radio-checked');
-}
-
-
-
-// toggle expand arrrow  and corresponding area
+// toggle expand arrrow  and  area
 // todo: one function for all the areas we reveal
 ui.expandDownArea = function(arrow_link, area) {
     var arrow_link = $(arrow_link);
@@ -325,7 +299,16 @@ ui.expandDownArea = function(arrow_link, area) {
             });
 }
 
-
+// toggle checkbox and area
+ui.slideHiddenArea = function(checkbox_link, area) {
+    area.stop().slideToggle(400, function() {
+        if (area.is(':visible')) {
+            ui.checkbox.check(checkbox_link);
+        } else {
+           ui.checkbox.uncheck(checkbox_link);
+        }
+    });
+};
 /* Tabs functionality
 * tabsEl is the div/ul with the links to the sections and the sections that
 * with toggle have class sectionEl.
@@ -468,7 +451,6 @@ ui.ltBarToggle = function(speed){
             $(this).addClass('fix-position');
            var scrollBarWidth = 14;
             var marg = parseInt($(self).css('marginLeft')) + cmarg - scrollBarWidth;
-            tt = marg;
             setTimeout(function(){
                 $(self).animate({
                     'margin-left': marg,
@@ -634,50 +616,6 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
-    // checkbox: basic reaction on click (checked, unchecked)
-    // see wizard
-    $('.check').on('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        ui.changeCheckboxState(this);
-        console.log('check clicked');
-        var parentLi = $(this).closest('li');
-        if (parentLi.hasClass('with-checkbox') && parentLi.hasClass('has-more')) {
-            $(this).parent().next('.more').stop().slideToggle(400, function() {
-                if ($(this).parent().next('.more:visible').length != 0) {
-                    $(this).find('span').removeClass('snf-checkbox-unchecked').addClass('snf-checkbox-checked');
-                } else {
-                    $(this).find('span').removeClass('snf-checkbox-checked').addClass('snf-checkbox-unchecked');
-                }
-            });
-        }
-    });
-
-    // for checkboxes created after document.ready
-    $('.items-list').on('click','.check', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        ui.changeCheckboxState(this);
-    })
-
-
-    $('.with-checkbox').click(function(e){
-        console.log('with-checkbox');
-        $(this).find('.check').trigger('click');
-    });
-
-    $('.with-checkbox').find('a').click(function(e){
-        e.stopPropagation();
-    })
-    $('.radio_btn').click(function(e) {
-        e.preventDefault();
-         var state = $(this).find('span');
-         if(state.hasClass('snf-radio-unchecked')) {
-            ui.checkOneRadioButton(this);
-            ui.changeRadiobuttonState(this);
-        }
-    });
-
     $('.main-actions li a').click(function(e){
         if (!($(this).hasClass('active'))) {
             e.preventDefault();
@@ -699,16 +637,7 @@ $(document).ready(function(){
 
     $('.browse-files').click(function(e){
         e.preventDefault();
-    })
-
-    Dropzone.options.filesDropzone = {
-        dictDefaultMessage:'',
-        clickable: '.browse-files',
-        previewsContainer: '.dropzone-files',
-        createImageThumbnails: false,
-        dictRemoveFile: "snf-Remove file",
-    };
-
+    });
 
     $('.main .files').magnificPopup({
         delegate: 'a.show.image',
@@ -753,20 +682,7 @@ $(document).ready(function(){
         }
     });
 
-     $('.lt-bar .select').click(function(e){
-        $(this).find('span').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
-        $(this).find('em').toggle();
-        $(this).toggleClass('selected');
-        if ( $(this).find('span').hasClass('snf-checkbox-unchecked')){
-            $('.list-view  li .check span').removeClass('snf-checkbox-checked');
-            $('.list-view  li .check span').addClass('snf-checkbox-unchecked');
-        } else {
-            $('.list-view  li .check span').addClass('snf-checkbox-checked');
-            $('.list-view  li .check span').removeClass('snf-checkbox-unchecked');
-        }
-        ui.entitiesActionsEnabled();
-        ui.checkedListItems();
-     });
+
 
     // set filter visible
     $('.filter-menu .filter').click(function(e) {
@@ -833,18 +749,7 @@ $(document).ready(function(){
     ui.detailsCustom($('#network-connected'));
     ui.detailsCustom($('#vm-connected'));
     ui.firewallSetup();
-    $('.firewall .more  a').click(function(e){
-        e.preventDefault();
-        if ($(this).find('span').hasClass('snf-radio-checked')) {
-            return false;
-        }
-        $(this).parents('.firewall').removeAttr('data-firewall');
-        $(this).parents('.firewall').data('firewall', $(this).parent().attr('class'));
-        $(this).find('span').toggleClass('snf-radio-unchecked snf-radio-checked');
-        $(this).parent('p').siblings('p').find('span').removeClass('snf-radio-checked');
-        $(this).parent('p').siblings('p').find('span').addClass('snf-radio-unchecked');
-         ui.firewallSetup();
-    });
+
     $('.firewall').mouseenter(function(e){
         $(this).css('z-index',2);
         $(this).find('.more').stop(true, true).slideDown(200);

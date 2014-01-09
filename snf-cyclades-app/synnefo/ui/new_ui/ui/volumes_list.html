@@ -155,36 +155,36 @@
 						<div class="step step-2">
 							<h2 class="row"> Machines</h2>
 							<ul class="row vms-list">
-								<li>
+								<li class="trigger-radiobtn selected">
 									<div class="img-wrap">
 										<span class="snf-pc-outline snf-font"></span>
 									</div>
 									<div class="name">no machine</div>
-									<a href=""><span class="snf-radio-checked prechecked"></span></a>
+									<a href="" class="radiobtn"><span class="snf-radio-checked prechecked"></span></a>
 								</li>
-								<li>
+								<li class="trigger-radiobtn">
 									<div class="img-wrap">
 										<span class="snf-pc-full snf-font"></span>
 										<span class="os">unknown</span>
 									</div>
 									<div class="name">Machine Name</div>
-									<a href=""><span class="snf-radio-unchecked"></span></a>
+									<a href="" class="radiobtn"><span class="snf-radio-unchecked"></span></a>
 								</li>
-								<li>
+								<li class="trigger-radiobtn">
 									<div class="img-wrap">
 										<span class="snf-pc-full snf-font"></span>
 										<span class="os">unknown</span>
 									</div>
 									<div class="name">A Longer Machine Name</div>
-									<a href=""><span class="snf-radio-unchecked"></span></a>
+									<a href="" class="radiobtn"><span class="snf-radio-unchecked"></span></a>
 								</li>
-								<li>
+								<li class="trigger-radiobtn">
 									<div class="img-wrap">
 										<span class="snf-pc-full snf-font"></span>
 										<span class="os">unknown</span>
 									</div>
 									<div class="name">Shorty</div>
-									<a href=""><span class="snf-radio-unchecked"></span></a>
+									<a href="" class="radiobtn"><span class="snf-radio-unchecked"></span></a>
 								</li>
 							</ul>
 						</div>
@@ -262,9 +262,9 @@
 		<section class="main row">
 			<div class="volumes entities grid-view">
 				<ul class="items-list">
-					<li data-status="add-new" class="add-new" data-overlay-id="volume-wizard">
+					<li data-status="add-new" class="add-new not-selectable" data-overlay-id="volume-wizard">
 						<div class="container">
-							<div class="check"></div>
+							<a class="check"></a>
 							<div class="img-wrap">
 								<span class="snf-volume-create-full snf-font"></span>
 							</div>
@@ -291,9 +291,9 @@
 							<div class="name">Volume Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-font snf-volume-full"></span>
 							</div>
@@ -326,9 +326,9 @@
 							<div class="name">Volume Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-font snf-volume-full"></span>
 							</div>
@@ -344,7 +344,12 @@
 				</ul>
 				<div class="lt-bar">
 					<ul>
-						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>Un</em>Select all</li>
+						<li class="select trigger-checkbox">
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked checkbox"></span>
+							</a>
+							<em>Un</em>Select all
+						</li>
 						<li class="running pernament"><a href="#" title="" class="active">Destroy</a></li>
 						<li class="running"><a href="#" title="">Detach from Machine</a></li>
 						<!-- in case we want an action always activated
@@ -386,6 +391,7 @@
 	<script src="javascripts/common.js"></script>
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
 	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+	<script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
 	<script>
 		$(document).foundation();
 		$(document).ready(function() {})

@@ -78,7 +78,7 @@
 				<div class="middle">
 				<div class="steps">
 					<div class="step step-1 preselected current">
-						<ul class="row network_options">
+						<ul class="row network-options">
 								<li class="project-selection">
 									<form class="custom">
 									  <select class="medium">
@@ -94,7 +94,7 @@
 										<span class="input"><input class="el1" type="text" placeholder="My Network"></span>
 									</div>
 								</li>
-								<li class="dhcp_option"><span>Assign IP addresses automatically:</span>
+								<li class="dhcp-option trigger-checkbox selected"><span>Assign IP addresses automatically:</span>
 									<a href="" class="check">
 										<span class="snf-checkbox-checked prechecked"></span>
 									</a>
@@ -104,34 +104,34 @@
 								</li>
 								<li>
 									<span class="sub_title">Network subnet:</span>
-									<ul class="subnet_options">
-										<li>
+									<ul class="subnet-options">
+										<li class="trigger-radiobtn selected">
 											<span>Auto 
-												<a href="" class="radio_btn">
+												<a href="" class="radiobtn">
 													<span class="snf-radio-checked prechecked"></span>
 												</a>
 											</span>
 										</li>
-										<li class="manual">
+										<li class="manual trigger-radiobtn">
 											<form>
 												<span>Manual
-													<a href="" class="radio_btn manual">
+													<a href="" class="radiobtn">
 														<span class="snf-radio-unchecked"></span>
 													</a>
 													<span class="input"><input type="text" placeholder="192.168.32.0/24"></span>
 												</span>
 											</form>
 										</li>
-										<li>
+										<li class="trigger-radiobtn">
 											<span>10.0.0.0/24 
-												<a href="" class="radio_btn">
+												<a href="" class="radiobtn">
 													<span class="snf-radio-unchecked"></span>
 												</a>
 											</span>
 										</li>
-										<li>
+										<li class="trigger-radiobtn">
 											<span>192.168.0.0/24 
-												<a href="" class="radio_btn">
+												<a href="" class="radiobtn">
 													<span class="snf-radio-unchecked"></span>
 												</a>
 											</span>
@@ -183,7 +183,7 @@
 		<section class="main row">
 			<div class="networks entities grid-view">
 				<ul class="items-list">
-					<li data-status="add-new" class="add-new" data-overlay-id="network-wizard">
+					<li data-status="add-new" class="add-new not-selectable" data-overlay-id="network-wizard">
 						<div class="container">
 							<div class="check"></div>
 							<div class="img-wrap">
@@ -211,9 +211,9 @@
 							<div class="name">Network Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-network-full snf-font"></span>
 							</div>
@@ -245,9 +245,9 @@
 							<div class="name">Network Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-network-full snf-font"></span>
 							</div>
@@ -279,9 +279,9 @@
 							<div class="name">Network Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-network-full snf-font"></span>
 							</div>
@@ -297,7 +297,12 @@
 				</ul>
 				<div class="lt-bar">
 					<ul>
-						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>Un</em>Select all</li>
+						<li class="select trigger-checkbox">
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked checkbox"></span>
+							</a>
+							<em>Un</em>Select all
+						</li>
 						<li class="running"><a href="#" title="">Connect VM</a></li>
 						<li class="permanent"><a href="#" class="active">Destroy</a></li>
 						<li class="both"><a href="#" >Option i</a></li>
@@ -341,6 +346,7 @@
 	<script src="javascripts/common.js"></script>
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
 	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+	<script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
 	<script>
 	    $(document).foundation();
     </script>

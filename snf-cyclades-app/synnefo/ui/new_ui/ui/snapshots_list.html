@@ -82,38 +82,38 @@
 						<div class="step step-1 preselected current">
 							<h2 class="row">Your Archipelago Machines:</h2>
 								<ul class="row vms-list">
-									<li>
-										<div class="img-wrap">
-											<span class="snf-pc-outline snf-font"></span>
-										</div>
-										<div class="name">no machine</div>
-										<a href=""><span class="snf-radio-checked prechecked"></span></a>
-									</li>
-									<li>
-										<div class="img-wrap">
-											<span class="snf-pc-full snf-font"></span>
-											<span class="os">unknown</span>
-										</div>
-										<div class="name">Machine Name</div>
-										<a href=""><span class="snf-radio-unchecked"></span></a>
-									</li>
-									<li>
-										<div class="img-wrap">
-											<span class="snf-pc-full snf-font"></span>
-											<span class="os">unknown</span>
-										</div>
-										<div class="name">A Longer Machine Name</div>
-										<a href=""><span class="snf-radio-unchecked"></span></a>
-									</li>
-									<li>
-										<div class="img-wrap">
-											<span class="snf-pc-full snf-font"></span>
-											<span class="os">unknown</span>
-										</div>
-										<div class="name">Shorty</div>
-										<a href=""><span class="snf-radio-unchecked"></span></a>
-									</li>
-								</ul>
+								<li class="trigger-radiobtn selected">
+									<div class="img-wrap">
+										<span class="snf-pc-outline snf-font"></span>
+									</div>
+									<div class="name">no machine</div>
+									<a href="" class="radiobtn"><span class="snf-radio-checked prechecked"></span></a>
+								</li>
+								<li class="trigger-radiobtn">
+									<div class="img-wrap">
+										<span class="snf-pc-full snf-font"></span>
+										<span class="os">unknown</span>
+									</div>
+									<div class="name">Machine Name</div>
+									<a href="" class="radiobtn"><span class="snf-radio-unchecked"></span></a>
+								</li>
+								<li class="trigger-radiobtn">
+									<div class="img-wrap">
+										<span class="snf-pc-full snf-font"></span>
+										<span class="os">unknown</span>
+									</div>
+									<div class="name">A Longer Machine Name</div>
+									<a href="" class="radiobtn"><span class="snf-radio-unchecked"></span></a>
+								</li>
+								<li class="trigger-radiobtn">
+									<div class="img-wrap">
+										<span class="snf-pc-full snf-font"></span>
+										<span class="os">unknown</span>
+									</div>
+									<div class="name">Shorty</div>
+									<a href="" class="radiobtn"><span class="snf-radio-unchecked"></span></a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -158,7 +158,7 @@
 		<section class="main row">
 			<div class="snapshots entities grid-view">
 				<ul class="items-list">
-					<li data-status="add-new" class="add-new" data-overlay-id="snapshot-wizard">
+					<li data-status="add-new" class="add-new not-selectable" data-overlay-id="snapshot-wizard">
 						<div class="container">
 							<div class="check"></div>
 							<div class="img-wrap">
@@ -189,9 +189,9 @@
 							<div class="name">Snapshot Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-font snf-snapshot-full"></span>
 							</div>
@@ -226,9 +226,9 @@
 							<div class="name">Snapshot Name</div>
 						</div>
 						<div class="container">
-							<div class="check">
+							<a href="" class="check">
 								<span class="snf-checkbox-unchecked"></span>
-							</div>
+							</a>
 							<div class="img-wrap">
 								<span class="snf-font snf-snapshot-full"></span>
 							</div>
@@ -244,7 +244,12 @@
 				</ul>
 				<div class="lt-bar">
 					<ul>
-						<li class="select"><span class="snf-checkbox-unchecked checkbox"></span><em>Un</em>select all</li>
+						<li class="select trigger-checkbox">
+							<a href="" class="check">
+								<span class="snf-checkbox-unchecked checkbox"></span>
+							</a>
+							<em>Un</em>select all
+						</li>
 						<li class="running"><a href="#" title="">Destroy</a></li>
 						<!-- in case we want an action always activated
 						<li class="pernament"><a href="" class="active">Action</a></li> -->
@@ -286,6 +291,7 @@
 	<script src="javascripts/common.js"></script>
 	<script type="text/javascript" src="javascripts/wizard.js"></script>
 	<script type="text/javascript" src="javascripts/sshkeys-wizard.js"></script>
+	<script type="text/javascript" src="javascripts/checkboxes-radiobuttons.js"></script>
   <script>
     $(document).foundation();
   </script>

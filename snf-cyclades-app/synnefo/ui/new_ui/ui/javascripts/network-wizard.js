@@ -21,7 +21,7 @@ ui.wizard.network = {
         $(area).find('.snf-checkbox-checked').not('.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
         $(area).find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
         $(area).find('li .manual .input').hide();
-        $(area).find('ul.subnet_options').parent('li').show();
+        $(area).find('ul.subnet-options').parent('li').show();
     }
 }
 
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
     $('.network_options .check').click(function(e){
         e.preventDefault();
-        $(this).parents('li').siblings().find('ul.subnet_options').parent('li').toggle();
+        $(this).parents('li').siblings().find('ul.subnet-options').parent('li').toggle();
     });
 
     $('.network_options .radio_btn').click(function(e){

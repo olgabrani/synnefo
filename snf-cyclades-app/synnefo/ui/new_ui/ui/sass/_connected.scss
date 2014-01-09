@@ -210,8 +210,12 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	}
 	.more {
 		margin-top: 10px;
+		margin-left: 0;
+		list-style: none;
 		display: none;
-		p {
+
+
+		li {
 			min-width: 200px;
 			span {
 				float: right;

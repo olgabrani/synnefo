@@ -314,7 +314,7 @@ to be transfered to sass
 	list-style: none outside none;
 }
 
-.subnet_options {
+.subnet-options {
 	margin: 0;
 }
 
@@ -340,7 +340,7 @@ to be transfered to sass
 	margin-bottom: 13px;
 }
 
-.subnet_options li {
+.subnet-options li {
 	margin-bottom: 6px;
 	padding-left: 155px;
 }
