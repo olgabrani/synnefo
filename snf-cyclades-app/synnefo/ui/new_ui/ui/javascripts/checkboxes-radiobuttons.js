@@ -49,7 +49,7 @@ ui.radiobtn = {
             e.preventDefault();
             e.stopPropagation();
             ui.checkbox.changeState(this);
-            ui.entitiesActionsEnabled(); // ?
+            ui.entitiesActionsEnabled();
         });
 
         $('.lt-bar .select .check').click(function(e) {
@@ -78,8 +78,6 @@ ui.radiobtn = {
             e.stopPropagation();
         });
 
-
-        // ???
          // for checkboxes created after document.ready
         $('.items-list').on('click','.check', function(e){
             e.preventDefault();

@@ -1,0 +1,84 @@
+.main .vms .items-list {
+	li.testOverlay {
+		.more {
+			width: 222px;
+			top: 0;
+			left: 0;
+			background-color: $gray-4;
+			padding: 14px;
+			height: 215px;
+			.temp {
+				display: inline-block;
+				margin-left:7px;
+				position: relative;
+				top: 0;
+				overflow-y: auto;
+			}
+			.actions-list {
+				list-style: none;
+				margin-left: 0;
+				display: inline-block;
+				margin-left:7px;
+				position: relative;
+				top: 0;
+				
+				a {
+					font-size: 12px;
+				}
+			}
+			.name {
+				background-image: none;
+				padding: 10px 20px;
+			}
+			.main-btns {
+				text-align: center;
+				font-size:12px;
+				padding-right: 22px;
+				padding-left: 22px;
+				a:first-child {
+					margin-right: 20px;
+				}
+				span {
+					@include circle(10px, transparent);
+					border: 1px solid;
+					line-height: 20px;
+					font-size: 16px;
+					margin-right: 4px;
+					
+				}
+			}
+			.actions-area {
+				margin-bottom:10px;
+				height: 100px;
+				overflow: hidden;
+				text-align: left;
+				margin-right: 24px;
+				margin-left: 24px;
+
+			}
+			.arrows {
+				width: 20px;
+				display: inline-block;
+				float: right;
+				a {
+					display: inline-block;
+					height: 20px;
+					width: 20px;
+					background-image: url("../images/ios7-arrow-down.png");
+					background-size: 20px;
+					&.inactive {
+						background-image: url("../images/ios7-arrow-down-inactive.png");
+					}
+					&:first-child {
+						background-image: url("../images/ios7-arrow-up.png");
+						margin-bottom: 48px;
+						&.inactive {
+							background-image: url("../images/ios7-arrow-up-inactive.png");
+						}
+					}
+				}
+
+			}
+		}
+	}
+}

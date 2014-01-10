@@ -565,7 +565,12 @@ $(document).ready(function(){
     $('.inactive').click(function(e){
         e.stopPropagation();
         e.preventDefault();
-     })
+     });
+
+    $('.arrows').on('click','.inactive', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+    });
 
 
     $('.lt-actions a:not(.active)').click(function(e){
