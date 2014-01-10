@@ -195,7 +195,7 @@ ui.editable = function(){
         e.preventDefault();
         var el = elem.parents('.editable'); 
         el.find('input[type="text"]').val(el.find('.input-txt').html());
-        el.find('input[type="text"]').show();
+        el.find('input[type="text"]').show().focus();
         el.find('a.cancel, a.save').show();
         elem.hide();
         el.find('.input-txt').hide();
