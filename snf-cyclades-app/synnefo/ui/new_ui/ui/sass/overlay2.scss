@@ -1,102 +1,162 @@
 ul.side-actions {
-	position: absolute;
-	left: 0;
-	top: -20px;
+	float: left;
+	height: 100%;
+	width: $side-actions-width;
 	margin: 0;
-	padding: 0;
-	z-index: 1;
+	background: $gray-4;
+	padding: 10px 0;
 	li {
 		list-style: none outside none;
 		&>a {
 			display: block;
-			height: 20px;
-			width: 20px;
+			color: #fff;
+			border: 0 none;
+			padding: 5px;
+			height: $side-actions-width;
 			line-height: 20px;
-			border-radius: 50%;
-			border: 1px solid $inactive-color;
-			margin-bottom: 5px;
-			color: $inactive-color;
 			&.details {
 				font-size: emCalc(13px);
 				font-weight: bold;
-			}	
-		}
-		&.more-actions {
-			&> a {
-				line-height: 8px;
-			}
-			ul {
-				display: none;
-				position: absolute;
-				border: 1px solid $link-color;
-				padding: 5px 10px;
-				text-align: left;
-				top: 26px;
-				left: 40px;
-				margin: 0;
-				background: white;
-				a {
-					border-radius: 0;
-					border:0  none;
-					width: auto;
-					height: auto;
-					font-size: emCalc(14px);
-					white-space: nowrap;
-					color: $link-color;
-
-				}
-				&:after {
-					content: '';
-					display: block;
-					position: absolute;
-					top: 23px;
-					left: -20px;
-					width: 0;
-					height: 0;
-					border-color: transparent #fff transparent transparent ;
-					border-style: solid;
-					border-width: 10px;
-				}
-				&:before {
-					content: '';
-					display: block;
-					position: absolute;
-					top: 22px;
-					left: -22px;
-					width: 0;
-					height: 0;
-					border-color: transparent $link-color transparent transparent ;
-					border-style: solid;
-					border-width: 11px;
-				}
-				&.many {
-					top: 0px;
-					&:after {
-						top: 49px;
-					}
-					&:before {
-						top: 48px;
-					}
-				}
 			}
 			&:hover {
-				ul {
-					display: block;
+				background: $secondary-color;
+				color:#fff;
+			}
+		}
+		&.bottom {
+			position: absolute;
+			bottom: 5px;
+			left: 0;
+			width: $side-actions-width;
+			ul {
+				top: auto;
+				bottom:0;
+				&:before {
+					top: auto;
+					bottom: 3px;
+				}
+				&:after {
+					top: auto;
+					bottom: 4px;
 				}
 			}
+			ul.options {
+				display: none;
+				.selected {
+					a {
+						color: $inactive-color;
+					}
+				}
+			}
+		}
+		&.more-actions + a {
+			line-height: 10px;
+		}
+		ul {
+			z-index: 1;
+			display: none;
+			position: absolute;
+			border: 1px solid $link-color;
+			padding: 5px 10px;
+			text-align: left;
+			top: 34px;
+			left: 40px;
+			margin: 0;
+			background: #fff;
+			li {
+				padding: 5px;
+				font-size: emCalc(14px);
+				white-space: nowrap;
+			}
+			a {
+				padding: 0;
+				border-radius: 0;
+				border:0  none;
+				width: auto;
+				height: auto;
+				color: $link-color;
+				&:hover {
+					background: #fff;
+					color: $link-color-hover;
+				}
+
+			}
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 41px;
+				left: -20px;
+				width: 0;
+				height: 0;
+				border-color: transparent #fff transparent transparent ;
+				border-style: solid;
+				border-width: 10px;
+			}
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 40px;
+				left: -22px;
+				width: 0;
+				height: 0;
+				border-color: transparent $link-color transparent transparent ;
+				border-style: solid;
+				border-width: 11px;
+			}
+			&.many {
+				top: 5px;
+				&:after {
+					top: 72px;
+				}
+				&:before {
+					top: 71px;
+				}
+			}
+			&.single {
+				top: 62px;
+				&:after {
+					top: 13px;
+				}
+				&:before {
+					top: 12px;
+				}
+			}
+		}
+		&:hover {
+			ul{
+				display: block;
+			}
+		}
+	}
+	.arrow-right {
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 5px solid $link-color;
+		margin-left:10px;
+	}
+	a:hover {
+		.arrow-right {
+			border-left-color: $link-color-hover;
 		}
 	}
 }
 
 .items-list {
 	li:hover {
-		ul.side-actions li> a {
-			color: $link-color;
-			border-color: $link-color;
-			&:hover {
-				color: $link-color-hover;
-				border-color: $link-color-hover;
-			}
+		ul.side-actions {
+			@include transition(background, 300ms, ease-out);
+			background: $gray-2;
 		}
+	}
+}
+
+.list-view {
+	.side-actions {
+		display: none;
 	}
 }

@@ -146,10 +146,11 @@
 				}
 			}
 			.container {
-				height:160px;
-				margin: 40px 20px 20px;
+				height:100%;
+				padding: 40px 10px 20px;
 				position: relative;
 				line-height:120%;
+				overflow: hidden;
 				.tags {
 					width: 100%;
 					min-height: 12px;
