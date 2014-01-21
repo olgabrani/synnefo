@@ -23,7 +23,7 @@ ui.checkbox = {
         $(area).find('.snf-radio-unchecked.prechecked').toggleClass('snf-radio-checked snf-radio-unchecked');
     }
 
-}
+};
 
 ui.radiobtn = {
     changeState: function(radiobtn_link) {
@@ -39,7 +39,7 @@ ui.radiobtn = {
         $(area).find('.snf-checkbox-unchecked.prechecked').toggleClass('snf-checkbox-checked snf-checkbox-unchecked');
     }
 
-}
+};
 
     $(document).ready(function(){
 
@@ -67,7 +67,7 @@ ui.radiobtn = {
 
         $('.dhcp-option .check').click(function(e) {
             $(this).parents('li').siblings().find('ul.subnet-options').parent('li').toggle();
-        })
+        });
 
         // for lis that we want to change the checkbox state
         $('.trigger-checkbox').click(function(e){
@@ -115,4 +115,4 @@ ui.radiobtn = {
             ui.firewallSetup();
         });
 
-    })
+    });

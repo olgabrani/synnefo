@@ -74,22 +74,40 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 					}
 				}
 				.act {
+					$act-btn-radius: 12.5px;
+					$act-btn-color: $gray-3;
 					position: absolute;
-					left:0;
-					top:-9px;
+					@include circle($act-btn-radius);
+					left: 17px;
+					top:-$act-btn-radius;
 					display: block;
-					height: 20px;
-					width:65px;
-					background: url(../images/connected.png) no-repeat 25px center;
 					z-index: 2;
-					-moz-transition: none;
-					-webkit-transition: none;
-					transition: none;
+					background-color: white;
+					border: 1px solid $act-btn-color;
+					color: $act-btn-color;
+					text-align: center;
+					line-height: $act-btn-radius*2 - 4;
+					font-weight: bold;
+					&:before {
+						content: "x";
+					}
+					&:hover {
+						$act-btn-color-hover: $red-1;
+						border-color: $act-btn-color-hover;
+						color: $act-btn-color-hover;
+					}
 					&.open {
-						background:url(../images/disconnected.png) no-repeat 0 0 #fff;
-						-moz-transition: none;
-						-webkit-transition: none;
-						transition: none;
+						border-color:white;
+							width: 29px;
+							line-height: 16px;
+							color: $gray-0;
+						&:before {
+							content: "...";
+						}
+						// background:url(../images/disconnected.png) no-repeat 0 0 #fff;
+						// -moz-transition: none;
+						// -webkit-transition: none;
+						// transition: none;
 					}
 				}
 				.data {
