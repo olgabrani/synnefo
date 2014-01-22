@@ -97,12 +97,14 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 						color: $act-btn-color-hover;
 					}
 					&.open {
-						border-color:white;
+							border-color:white;
 							width: 29px;
-							line-height: 16px;
-							color: $gray-0;
+							height: 29px;
+							// line-height: 16px;
+							// color: $gray-0;
+							background:url(../images/gear-485057.GIF) no-repeat 0 0 #fff;
 						&:before {
-							content: "...";
+							content: "";
 						}
 						// background:url(../images/disconnected.png) no-repeat 0 0 #fff;
 						// -moz-transition: none;
