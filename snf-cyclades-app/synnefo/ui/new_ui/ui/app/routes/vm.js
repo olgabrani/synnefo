@@ -6,6 +6,7 @@ Snf.VmRoute = Ember.Route.extend({
     renderTemplate: function() {
         this.render('details');
     },
+
 });
 
 

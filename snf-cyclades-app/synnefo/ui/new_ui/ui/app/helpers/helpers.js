@@ -15,6 +15,5 @@ Ember.Handlebars.helper('bytes-to-human',function (bytes) {
       } while(bytes >= thresh);
       return bytes.toFixed(1)+' '+units[u];
   }
-  console.log(value);
-  return humanSize(value,false);
+  return humanSize(bytes,false);
 }, 'bytes');

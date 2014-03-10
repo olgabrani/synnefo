@@ -1,0 +1,15 @@
+{{#unless isEditable}}
+    <span class="prop">{{prop}}</span>
+{{/unless}}
+{{#if isEditable}}
+    {{input value=prop focus-out="acceptEditableChanges" insert-newline="acceptEditableChanges"}}
+{{/if}}
+<span class="editbuttons">
+    {{#unless isEditable}}
+        <a class="edit" {{action "allowEdit"}}><span class="snf-edit"></span></a>
+    {{/unless}}
+    {{#if isEditable}}
+        <a class="save" {{action "acceptEditableChanges"}}><span class="snf-ok-sign"></span></a>
+    {{/if}}
+</span>
+                    

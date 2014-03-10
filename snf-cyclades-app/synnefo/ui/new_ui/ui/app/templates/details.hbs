@@ -4,15 +4,32 @@
     <div {{bind-attr class=":details status"}}>
         <section class="top">
             <div class="lt">
-                img-wrap placeholder
+                <div class="img-wrap">
+                    <span {{bind-attr class=":snf-font iconCls"}}></span>
+                    {{#if os}}<span {{bind-attr class=":os os"}}>{{os}}</span>{{/if}}
+                </div>
+
             </div>
             <div class="rt">
                 <div class="title">
-                    <span class="status">{{status-to-text this.status}}</span></h1>
+                    {{editable-prop prop=name ok="saveModel" }}
+                    <span class="status">{{status-to-text status}}</span></h1>
+                </div>
+                 <div class="actions">
+                    <ul>
+                        {{#each item in actionsMeta}}
+                            <li>
+                                <a href="#" {{action 'openModal' item.act item.controller model}}>{{item.title}}</span></a>
+                            </li>
+                        {{else}}
+                            <li>There are no available actions</li>
+
+                        {{/each}}
+                    </ul>
                 </div>
                 <div class="tabs">
                      <ul>
-                        {{#each menu in this.submenu}}
+                        {{#each menu in submenu}}
                             <li>{{#link-to menu.link title=menu.link}}<span {{bind-attr class="menu.icon"}}></span>{{/link-to}}</li>
                         {{/each}}
                     </ul>

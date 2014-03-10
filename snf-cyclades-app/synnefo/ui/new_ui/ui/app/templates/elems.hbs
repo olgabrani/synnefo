@@ -5,9 +5,7 @@
         <ul class="items-list">
         {{add-new type=controller.type icon=controller.iconCls action="openWizard"}}
         {{#each}}
-            <li {{bind-attr data-status=this.status class="this.status"}}>
-                {{render 'elem' this}}
-            </li>
+           {{render 'elem' this}}
         {{/each}}
         </ul>
     </div>

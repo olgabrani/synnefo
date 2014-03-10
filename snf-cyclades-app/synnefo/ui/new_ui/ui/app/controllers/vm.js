@@ -95,3 +95,6 @@ Snf.VmsController = Snf.ElemsListController.extend({
     iconCls  : 'snf-pc-full',
 });
 
+Snf.VmInfoController = Snf.VmController.extend();
+
+Snf.VmDiskConnectedController = Snf.VmController.extend();

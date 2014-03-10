@@ -3,6 +3,7 @@
 // {{add-new type=controller.type icon=controller.iconCls action="openWizard"}}
 
 Snf.AddNewComponent = Ember.Component.extend({
+
 	layoutName: 'elem', // templateName is deprecated for components
 	addNewBtn: true,
 	selectable: false,
@@ -13,12 +14,13 @@ Snf.AddNewComponent = Ember.Component.extend({
 	tagName: 'li',
 	status: 'add-new',
 	classNameBindings: ['status'],
-	attributeBindings: ['data-status, data-reveal-id'],
+	attributeBindings: ['data-status'],
 
 	'data-status': function() {
 		return this.status;
 	}.property(),
-	name: function() {
+
+	text: function() {
 		var msg = 'Create New ';
 		var btnType = this.get('type');
 		switch(btnType){
@@ -34,7 +36,9 @@ Snf.AddNewComponent = Ember.Component.extend({
 				return '+ Upload New Image';
 		}
 	}.property(),
-		click: function () {
-			this.sendAction('action');
-		}
+
+	click: function () {
+		this.sendAction('action');
+	},
+
 });

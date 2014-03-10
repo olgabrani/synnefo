@@ -24,6 +24,18 @@ Snf.VolumeController = Snf.ElController.extend({
         var enabledActions = this.get('model').get('enabledActions');
         return _.map(enabledActions, function(val,key) {return actionsMetaVolume[val]; });      
     }.property('model.enabledActions'),
+
+    actions: {
+
+        dettachVolume: function(volume){
+            volume.get('vm').get('volumes').removeObject(volume);
+        },
+        destroyVolume: function(){
+            this.get('model').deleteRecord();
+            this.get('model').save();
+            this.transitionToRoute('volumes/grid-view');
+        },
+    }
 });
 
 
