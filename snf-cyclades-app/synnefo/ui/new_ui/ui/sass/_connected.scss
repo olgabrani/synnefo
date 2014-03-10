@@ -1,0 +1,244 @@
+/*
+* Used for connected elements in details page.
+* Each icon is unique and therefore, customization
+* is needed for different entities.
+*/
+@mixin position-connected($x: $details-lt-width/2, $y: - $details-top-height/2) {
+	left: $x;
+	top: $y;
+	padding-top: abs($y);
+}
+
+$rel-top: -10px; // how much icon and box are above green border
+$data-width: 350px; // grey box witdth
+$lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
+	
+.connected {
+	position: relative;
+	border-left: 2px solid $secondary-color;
+	@include position-connected;
+	.item {
+		padding-top:40px;
+		position: relative;
+		.what {
+			padding:10px 0 20px;
+			@extend .clearfix;
+			.img-wrap {
+				width: $lt-width;
+				text-align: center;
+				position: relative;
+				display: block;
+				.snf-font {
+					font-size: 60px;
+				}
+			}
+			h4 {
+				position: absolute;
+				top: 20px;
+				left: $lt-width;
+				font-size: emCalc(16px);
+				white-space: nowrap;
+				.status {
+					font-weight: normal;
+					display: block;
+					font-size: emCalc(14px);
+				}
+			}
+		}
+		.clearfix {
+			position: relative;
+		}
+		.connections {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+			float: left;
+			&> li {
+				list-style: none outside none;
+				margin: 0;
+				padding: 0;
+				position: relative;
+				margin-bottom: 10px;
+				@extend .clearfix;
+				.icon {
+					width: $lt-width;
+					text-align: center;
+					border-top: 2px solid $secondary-color;
+					float: left;
+					span {
+						position: relative;
+						top:$rel-top - 10px;
+						background-color: $light-bg;
+						padding:0px 10px;
+						font-size: 30px;
+						line-height: 120%;
+					}
+				}
+				.act {
+					position: absolute;
+					left:0;
+					top:-9px;
+					display: block;
+					height: 20px;
+					width:65px;
+					background: url(../images/connected.png) no-repeat 25px center;
+					z-index: 2;
+					-moz-transition: none;
+					-webkit-transition: none;
+					transition: none;
+					&.open {
+						background:url(../images/disconnected.png) no-repeat 0 0 #fff;
+						-moz-transition: none;
+						-webkit-transition: none;
+						transition: none;
+					}
+				}
+				.data {
+					float: left;
+					position: relative;
+					top: $rel-top - 5px;
+					width: $data-width;
+					ul {
+						padding: 5px 0 0;
+						margin: 0;
+						background-color: $light-bg;
+						li {
+							font-size: emCalc(12px);
+							list-style: none outside none;
+							padding: 0 10px 10px 10px;
+							h5 { 
+								float: left;
+								margin: 0;
+								line-height: 1.3em;
+								&.ip-data {
+									width: 10%;
+								}
+								&.volume-data {
+									width: 35%;
+								}
+							}
+							p {
+								overflow: hidden;
+								padding-left:10px;
+								margin: 0;
+								line-height: 1.3em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.connect-new {
+	position: absolute;
+	bottom: -150px;
+	left:0;
+	width: $lt-width;
+	text-align: center;
+	padding-top: 100px;
+	background: url(../images/dashed_atom.png) repeat-y left center;
+	margin-bottom: 50px;
+	margin-left: -1px;
+	.img-wrap {
+		position: relative;
+		display: block;
+		width:$lt-width/2;
+		height: 2px;
+		background: url(../images/dashed_atom-x.png) repeat-x left top;
+		overflow: inherit;
+		&>a {
+			display:  block;
+			position: absolute;
+			left:0;
+			top:0;
+			width: $lt-width;
+			text-align: center;
+			margin: -20px 0 0 ;
+			.snf-font{
+				color: $link-color;
+				font-size: $snf-font-size-medium;
+			}
+			.snf-network-full {
+				position: relative;
+				top: -9px;
+			}
+		}
+	}
+	p {
+		position: absolute;
+		left: $lt-width;
+		width: $data-width;
+		text-align: left;
+		font-size: emCalc(14px);
+		top: 90px;
+	}
+	&.network p {
+		top: 90px;
+	}
+	&.disk p {
+		top: 94px;
+	}
+	&:hover {
+		.img-wrap>a .snf-font ,span, a {
+			color: $link-color-hover;
+		}
+	}
+
+}
+
+.network .connected {
+	@include position-connected( $details-lt-width/2 - 2px , -$details-top-height/2 );
+}
+
+.firewall {
+	float: left;
+	margin-left:20px;
+	border: 1px solid $primary-color;
+	padding: 5px 20px;
+	position: absolute;
+	left:$data-width + $lt-width;
+	top: $rel-top - 5px;
+	font-size: emCalc(12px);
+	white-space: nowrap;
+	background-color: #fff;
+	p {
+		margin: 0;
+		em {
+			color: $secondary-color;
+		}
+	}
+	.more {
+		margin-top: 10px;
+		margin-left: 0;
+		list-style: none;
+		display: none;
+
+
+		li {
+			min-width: 200px;
+			span {
+				float: right;
+				font-size: emCalc(14px);
+				height: 14px;
+				line-height: 22px;
+			}
+			em {
+				float: right;
+				margin:0 5px 0 20px;
+				width: 15px;
+				display: inline-block;
+			}
+		}
+	}
+	&.unprotected >p em,
+	.unprotected a em  { 
+		color: $error-color;	
+	}
+
+}
+.details .placeholder {
+	height: 100px;
+
+}

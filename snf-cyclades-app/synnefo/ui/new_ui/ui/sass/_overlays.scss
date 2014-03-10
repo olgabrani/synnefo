@@ -1,0 +1,195 @@
+/*
+
+Overlays (Todo: clean up)
+
+*/
+body.with-overlay {
+	background:$overlay-bg-color;
+	.main {
+		opacity:0;
+	}
+}
+
+
+.body-wrapper {
+	position: relative;
+	left:0;
+	top:0;
+	.welcome {
+		display:none;
+		}
+	&.no-vm {
+		background:url(../images/draw-welcome.png) no-repeat center 50px $secondary-color;
+		.welcome {
+			display:none;
+			color:#fff;
+			text-align:center;
+			position: relative;
+			top:-15px;
+			left:75px;
+			display:block;
+		}
+	}
+	.overlay-area-custom {
+		display:none;
+		position:absolute;
+		left:0;
+		right:0;
+		top:-$bar-height;
+		width:100%;
+		height:100%;
+		background:$overlay-bg-color;
+		z-index:20;
+		.overlay-div {
+			display: none;
+			z-index:50;
+			position: relative;
+			background:#fff;
+			top:20%;
+			left:25%;
+			width:50%;
+			padding:25px;
+			.buttons {
+				a {
+					margin-right:20px;
+				}
+			}
+			.close {
+				float:right;
+				font-size:30px;
+			}
+			&.upload-widget {
+				background:transparent;
+				padding:45px 0;
+				width:80%;
+				left:10%;
+				border:1px solid white;
+			}
+		} // end of .overlay-div
+}
+
+}
+
+.communication-error {
+	// display: none;
+	background-color: $error-color;
+	color: $wizard-base-font-color;
+	position: fixed;
+	bottom: -151px;
+	left: 0px;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	z-index: 10;
+	p {
+		text-align: center;
+		line-height: 2em;
+		margin: 0 auto;
+		max-width: 800px;
+		&.buttons {
+			margin-top:10px;
+			a:not(:first-child) {
+				margin-left: 15px;
+			} 
+		}
+	}
+}
+
+
+
+.reveal-modal {
+	padding: 0;
+	.inner-modal {
+		padding: 40px 100px;
+	}
+	.colored-modal {
+		padding:200px 140px 40px;
+		p { 
+			color: #fff;
+			&.buttons {
+				.btn4, .btn4:hover span, .btn4:focus span {
+					border-color: #fff; 
+				}
+				.btn4 span {
+					color: #fff;
+				}
+			}
+		}
+		.close-reveal-modal {
+			color: #fff;
+			&:hover {
+				color: $gray-0;
+			}
+		}
+	}
+	.ssh {
+		padding: 5px 10px;
+		background:$secondary-color;
+		color:#fff;
+	}
+	p	{	
+		&.buttons {
+			text-align: center;
+			a:first-child {
+				margin-right:20px;
+			}
+			.btn4, .btn4:hover span, .btn4:focus span {
+				border-color: $body-font-color; 
+			}
+			.btn4 span {
+				color: $body-font-color;
+			}
+		}
+	}
+
+	#reboot-vm-modal {
+		background: $orange-1 url('../images/restart.png') no-repeat center 50px;
+		@extend .colored-modal;
+	}
+
+	#start-vm-modal {
+		background: $secondary-color url('../images/shutdown.png') no-repeat center 50px;
+		@extend .colored-modal;
+	}
+
+	#shutdown-vm-modal {
+		background: $cobalt-2 url('../images/shutdown.png') no-repeat center 50px;
+		@extend .colored-modal;
+	}
+
+	#destroy-vm-modal {
+		background: $fuchsia-1 url('../images/destroy-vm.png') no-repeat center 46px;
+		@extend .colored-modal;
+	}
+
+	#destroy-network-modal {
+		background: $fuchsia-1 url('../images/destroy-network-1.png') no-repeat center 50px;
+		@extend .colored-modal;
+	}
+
+	#destroy-volume-modal {
+		background: $fuchsia-1 url('../images/destroy-network-2.png') no-repeat center 50px;
+		@extend .colored-modal;
+	}
+
+}
+
+/* Responive ------------------------------------------------ */
+@media only screen and (max-width: $small-mobile) {
+}
+
+@media only screen and (max-width: $small-screen) {
+    .wizard {
+        .top {
+            position: static;
+        }
+        .middle {
+            padding-top:0;
+        }
+    }
+    .body-wrapper {
+        .overlay-area {
+            top:0;
+        }
+    }
+}

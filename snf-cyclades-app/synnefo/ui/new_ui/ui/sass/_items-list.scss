@@ -1,0 +1,503 @@
+/* List view for VMs, networks  */
+
+.entities {
+	position:relative;
+}
+
+.items-list {
+	&>li {
+		text-align:center;
+		position: relative;
+		list-style: none;
+		background:url(../images/dashed-bg-corner.png) no-repeat right bottom;
+		height: 215px;
+		.status {
+			font-size: emCalc(12px);
+			line-height:140%;
+			span {
+				display: block;
+			}
+		}
+		.more {
+			$col-height: 200px;
+			display: none;
+			background: #fff;
+			left:-10px;
+			top: -10px;
+			z-index:101;
+			position: absolute;
+			@include clearfix;
+			@include box-shadow(0 0 10px #ccc);
+			.col {
+				width: 50%;
+				float: left;
+				font-size: emCalc(14px);
+				height: $col-height;
+				ul {
+					margin: 0;
+					padding: 0;
+					list-style: none outside none;
+					li {
+						padding: 0;
+						text-align: left;
+						padding: 5px 5px 5px 30px;
+						a {
+							display: block;
+							width:100%;
+						}
+					}
+				}
+				&.lt {
+					ul {
+						padding-top:10px;
+					}
+				}
+				&.rt {
+					ul {
+						li {
+							height: $col-height/2;
+							padding:0 30px 0 0 ;
+							text-align: right;
+							a {
+								height: 100%;
+								line-height: $col-height/2;
+								span {
+									margin-right: 8px;
+									position: relative;
+									top: 1px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.name {
+				background:url(../images/dashed_atom-x.png) repeat-x center top;
+				padding: 10px;
+				font-size: emCalc(10px);
+			}
+		}
+		h4 {
+			font-size: emCalc(12px);
+			// overflow: hidden;
+			margin-bottom: 4px;
+			height: 32px;
+			font-weight: normal;
+		}
+		&.add-new {
+			background-color: $link-color-hover;
+			@include transition(background-color, 300ms, linear);
+			.container {
+				.img-wrap {
+					span.snf-font {
+						color: white;
+					}
+					.symbol {
+						background-image: none;
+						color: $link-color-hover;
+						font-size: 30px;
+						text-indent: 0;
+					}
+				}
+				h4 {
+					color: white;
+				}
+			}
+			&:hover {
+				background-color: $link-color;
+				@include transition(background-color, 300ms, linear);
+				cursor: pointer;
+				.container {
+					.img-wrap {
+						.symbol {
+							color: $link-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.grid-view {
+	.lt-bar {
+		display: none;
+	}
+	.items-list {
+		@include block-grid(2, 0, true);
+		padding-left:1px;
+		@media #{$small} {
+			@include block-grid(4, 0, true);
+			padding-left:1px;
+		};
+		background:url(../images/dashed_atom.png) repeat-y left center;
+
+		&>li {
+			height:215px;
+			.check, .info, .actions {
+				display: none;
+			}
+			.img-wrap {
+				margin-bottom: 6px;
+				height:$grid-icon-height;
+				.snf-font {
+					font-size: $grid-icon-height;
+					// line-height: 120%;
+				}
+			}
+			.container {
+				height:100%;
+				padding: 40px 10px 20px;
+				position: relative;
+				line-height:120%;
+				overflow: hidden;
+				.tags {
+					margin:1em 0;
+					li {
+						display: inline;
+					}
+					span, .delete {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+.list-view, .storage-progress {
+	.btn5 {
+		display: none;
+	}
+	.lt-bar {
+		@include ltbar;
+		ul {
+			list-style: none outside none;
+			font-size:emCalc(12px);
+			li  {
+				list-style: none outside none;
+				height: $list-icon-height;
+				line-height: $list-icon-height;
+				&.select {
+					text-transform: capitalize;
+					span {
+						font-size: 16px;
+						margin-right: 5px;
+						position: relative;
+						top: 2px;
+					}
+					em {
+						display: none;
+						font-style: normal;
+					}
+					&:hover {
+						color: $link-color-hover;
+						cursor: pointer;
+					}
+					&.selected {
+							text-transform: lowercase;
+						em {
+							text-transform: capitalize;
+						}
+					}
+				}
+			}
+			&.lt-actions {
+				li {
+					a {
+						color:$inactive-color;
+						&:hover {
+							color:$inactive-color;
+							cursor:default;
+						}
+						&.active {
+							color:$link-color;
+							&:hover {
+								color:$link-color-hover;
+								cursor: pointer;
+							}
+						}
+						span {
+							margin-right: 6px;
+							width: 14px;
+							display: inline-block;
+							&.snf-folder-move-outline {
+								font-size: 1.5em;
+								position: relative;
+								// top: -2px;
+							}
+						}
+					}
+				}
+			}
+			&.more {
+				li {
+					a {
+						span {
+							font-size: 1.5em;
+							margin-right: 2px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.items-list {
+		overflow:hidden;
+		& >li {
+			&.selected {
+				background-color: $gray-4;
+			}
+			@extend .clearfix;
+			height:auto;
+			width:100%;
+			padding:15px 15px 15px $lt-bar-width;
+			background-image: none;
+			&:hover{
+				background-color: $gray-4;
+			}
+			.check {
+				width:$check-w;
+				height: $list-icon-height;
+				line-height: $list-icon-height;
+				text-align: center;
+				float:left;
+				padding-left: 20px;
+				&:hover {
+					cursor: pointer;
+					color:$link-color-hover;
+				}
+			}
+			.img-wrap {
+				width:$img-wrap-w;
+				float:left;
+				text-align: center;
+				height: $list-icon-height;
+				.os {
+					@include sprite('../images/os-unknown.png', 14px, 14px);
+					background-size:100%;
+					position: absolute;
+					display: block;
+					text-align: center;
+					// line-height:18px;
+					left:50%;
+					margin-left: -7px;
+					top: 6px;
+				}
+				.snf-font {
+					font-size: $list-icon-height;
+					line-height: 120%;
+				}
+			}
+			h4 {
+				width:$h4-w;
+				overflow: hidden;
+				float:left;
+				text-align: left;
+				padding-right: 20px;
+				height: $list-icon-height;
+				line-height: $list-icon-height;
+				margin: 0;
+				color: inherit;
+				padding-right: 20px;
+			}
+			.tags {
+				float:left;
+				width:$tags-w;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				a {
+					vertical-align: middle;
+				}
+			}
+			.size, .remove {
+				float:left;
+				width:$tags-w;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				font-size: emCalc(12px);
+				text-align: left;
+				padding-left: 20px;
+			}
+			.status {
+				position: absolute;
+				left: $img-wrap-w+$check-w + $lt-bar-width;
+				text-align: left;
+				top:36px;
+				font-size: 11px;
+				line-height: 110%;
+				width:$vm-h4-w;
+				span {
+					display: inline;
+				}
+			}
+			.info, .progress-col {
+				float: left;
+				width: $info-w;
+				padding-right: 20px;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				font-size: emCalc(12px);
+			}
+			.actions {
+				float: left;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				position: relative;
+				padding:0 10px;
+				top: 2px;
+				a {
+					&:first-child {
+						margin-right:5px;
+					}
+				}
+			}
+			.actions-col, .remove {
+				visibility: hidden;
+				height:$list-icon-height;
+				line-height: $list-icon-height;
+				text-align: left;
+				width: $actions-w;
+				float: left;
+				a {
+					margin-right: 10px;
+				}
+			}
+			&.add-new {
+				&:hover {
+					background: $link-color;
+				}
+				.check {
+					visibility: hidden;
+				}
+				h4 {
+					margin:0;
+				}
+				.img-wrap {
+					.symbol {
+						font-size:24px;
+					}
+				}
+			}
+			&.building {
+				.img-wrap {
+					.incomplete {
+						width:$list-icon-height;
+						margin:0 auto;
+					}
+					.complete {
+						top:-$list-icon-height;
+						margin:0 auto;
+					}
+				}
+			}
+		}
+	}
+}
+
+// disable hover effect for the .containers li
+.containers {
+	.storage {
+		.items-list {
+			&>li:hover {
+				background-color: inherit;
+			}
+		}
+	}
+}
+
+// select-all for pithos view (alignment)
+.storage {
+	.lt-bar {
+		.lt-actions {
+			.select {
+				margin-right: 4px;
+			}
+		}
+	}
+}
+
+.lt-bar {
+	.items-list {
+		.check, .actions, .info {
+			display: none;
+		}
+		.container {
+			padding: 40px 0;
+		}
+		.side-actions {
+			display: none;
+		}
+	}
+}
+
+
+/* img-wrap div ( colors & styles ) */
+
+.img-wrap {
+	width: 60px;
+	position: relative;
+	// overflow: hidden;
+	display: inline-block;
+	line-height: 100%;
+	.os {
+		@include sprite('../images/os-unknown.png', 22px, 22px);
+		position: absolute;
+		top: 8px;
+		left:50%;
+		margin-left:-11px;
+		&.windows { background-image:url('../images/os-windows.png'); }
+		&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+		&.fedora { background-image:url('../images/os-fedora.png'); }
+		&.symbol {
+			position: relative;
+			top: -50px;
+			left: 0;
+			margin-left: 0;
+			width: auto;
+			height: auto;
+			// top: 10px;
+		}
+	}
+}
+
+.running {
+	@include stateColor($vm-active-color);
+}
+.off {
+	@include stateColor($vm-off-color);
+}
+.error {
+	@include stateColor($vm-error-color);
+}
+.shutting {
+	@include stateColor($vm-shutting-color);
+}
+.starting {
+	@include stateColor($vm-starting-color);
+}
+.rebooting {
+	@include stateColor($vm-rebooting-color);
+}
+
+.building {
+	@include stateColor($vm-active-color);
+}
+
+.building {
+	.img-wrap {
+		.snf-pc-full {
+			display: block;
+			// overflow: hidden;
+		}
+		.incomplete {
+			color: $vm-building-color;
+			width:60px;
+		}
+		.complete {
+			width: 0%;
+			position: absolute;
+			top: 0;
+			overflow: hidden;
+		}
+	}
+}

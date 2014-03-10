@@ -1,0 +1,37 @@
+    <ul class="side-actions">
+        <li>{{#link-to type this}}i{{/link-to}}</li>
+        {{#if hasConnect}}
+        <li>
+            <a {{action 'openModal' 'connect-vm-modal' 'vm' model}} title="connect"><span class="snf-thunder-full"></span></a>
+        </li>
+        {{/if}}
+
+        {{#each item in actionsMeta}}
+        <li>
+            <a {{action 'openModal' item.act item.controller model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+        </li>
+        {{/each}}
+    </ul>
+
+    <div class="container">
+        
+        <a href="" class="check">
+            <span class="snf-checkbox-unchecked"></span>
+        </a>
+        
+        <div class="img-wrap">
+            <span {{bind-attr class=":snf-font iconCls"}}></span>
+            {{#if this.os}}<span {{bind-attr class=":os this.os"}}>{{this.os}}</span>{{/if}}
+        </div>
+
+        <h4>{{this.name}}</h4>
+        
+        <div class= "status">
+            <span class="state">{{status-to-text this.status}}</span>
+        </div>
+        
+        {{#if hasTags}}
+            {{view Snf.tagsListView}}
+        {{/if}}
+
+    </div>

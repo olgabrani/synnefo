@@ -1,0 +1,120 @@
+/* Table of Contents
+
+- editable
+- universal form styles
+- vm wizard styles
+*/
+
+
+/* editable (used for changing info asychronously) ------------------ */
+
+.editable {
+	&.save, &.cancel {
+		span {
+			font-size: 18px;
+		}
+	} 
+	input[type="text"] {
+		width: 85%;
+	}
+}
+
+
+/* universal form styles ------------------ */
+
+.input {
+	display: inline-block;
+	padding-left:6px;
+	input[type="text"] {
+		width: 142px;
+		padding:0 12px 0 6px;
+		border:0 none;
+		background-color: transparent;
+		outline: 0;
+		margin:0;
+		@include box-shadow(none);
+	}
+}
+
+
+.snf-color-picker {
+    display: none;
+	&>form {
+		height:237px;
+		width: 100%
+	}
+
+	#picker {
+	    position: relative;
+	    width: 207px;
+	    margin: 25px 5px 30px;
+	    display: inline-block;
+	}
+		.color-preview {
+			@include circle(9px);
+			// background-color: #16C1E9;
+			position: relative;
+			left: 10px;
+			bottom: -5px;
+			margin: 0 15px 0 10px;
+			vertical-align: text-bottom;
+			border-color: transparent;
+			color: transparent;
+		}
+}
+
+/* detailed view styles ------------------ */
+.details {
+	.input{
+		background:url(../images/input-bg-lt-black.png) no-repeat left bottom;
+		input[type="text"] {
+			background:url(../images/input-bg-rt-black.png) no-repeat right bottom;
+			color: $body-font-color;
+			@include placeholder {
+				color:$primary-color;
+			}
+		}
+	}
+}
+
+
+/* vm wizard styles ------------------ */
+.wizard {
+	form.custom .custom.dropdown.medium {
+		background:$overlay-bg-color;
+		color:white;
+	}
+	form.custom .custom.dropdown .current {
+		color:white;
+	}
+	form.custom .custom.dropdown .selector {
+		border-left:1px solid white;
+		height: 30px;
+	}
+	form.custom .custom.dropdown.open ul {
+		background:$overlay-bg-color;
+		color:white;
+	}
+	form.custom .custom.dropdown ul li {
+		color:white;
+	}
+	form.custom .custom.dropdown ul li.selected {
+		color:white;
+		background:lighten($overlay-bg-color,10%);
+	}
+	form.custom .custom.dropdown ul li:hover {
+		background:lighten($overlay-bg-color,20%);
+		color:white;
+	}
+
+	.input {
+		background:url(../images/input-bg-lt.png) no-repeat left bottom;
+		input[type="text"] {
+			background:url(../images/input-bg-rt.png) no-repeat right bottom;
+			color: $wizard-base-font-color;
+			@include placeholder {
+			color:$body-font-color;
+			}
+		}
+	}
+}

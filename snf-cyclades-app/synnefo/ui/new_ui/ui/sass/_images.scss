@@ -1,0 +1,27 @@
+.images{
+	&.grid-view {
+		.items-list {
+			&>li {
+				.img-wrap {
+					.os.symbol {
+						top: -47px;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+	&.list-view {
+		.items-list {
+			&>li {
+				.img-wrap {
+					.os.symbol {
+						font-size: 16px;
+						// top: 4px;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}

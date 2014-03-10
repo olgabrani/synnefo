@@ -1,0 +1,245 @@
+$details-icon-large : 90px;
+
+.details {
+	$details-top-title-h : 0.4 * $details-top-height;
+	$details-top-more-h : ( $details-top-height - $details-top-title-h )/2;
+	position:relative;
+	border-left: 1px solid $border-color-1;
+	border-right: 1px solid $border-color-1;
+	.lt {
+		width: $details-lt-width;
+		float: left;
+		text-align: center;
+		border-right: 1px solid $border-color-1;
+		height: $details-top-height;
+		line-height: $details-top-height;
+	}
+	.rt {
+		overflow: hidden;
+	}
+	.top {
+		@extend .clearfix;
+		border-bottom:1px solid $border-color-1;
+		position: relative;
+		z-index: 1;
+		.img-wrap {
+			position: relative;
+			vertical-align: middle;
+			width: auto;
+			height: $details-icon-large;
+			.snf-pc-full,
+			.snf-network-full,
+			.snf-volume-full {
+				font-size: $details-icon-large;
+			}
+			.os {
+				@include sprite('../images/os-unknown.png', 30px, 30px);
+				position: absolute;
+				background-size:100%;
+				left: 42px;
+				top: 15px;
+				&.windows { background-image:url('../images/os-windows.png'); }
+				&.kubuntu { background-image:url('../images/os-kubuntu.png'); }
+				&.fedora { background-image:url('../images/os-fedora.png'); }
+			}
+		}
+		.title {
+			height: $details-top-title-h;
+			padding: 0 0 0 $details-top-more-padding-lt; 
+		}
+		.actions, .tabs {
+			border-top: 1px solid $border-color-1;
+			height: $details-top-more-h;
+			line-height: $details-top-more-h;
+			padding: 0 0 0 $details-top-more-padding-lt; 
+		}
+		.actions {
+			font-size: emCalc(14px);
+			a {
+				text-transform: capitalize;
+			}
+		}
+		.tabs {
+			font-size: emCalc(22px);
+		}
+		ul {
+			list-style: none outside none;
+			padding:0;
+			margin: 0;
+			li {
+				display: inline-block;
+				padding: 0 20px 0 0 ;
+				margin: 0;
+				line-height: $details-top-more-h;
+			}
+		}
+		h1 {
+			font-size: emCalc(16px);
+			margin: 0;
+			padding-top: 16px;
+			span {
+				font-size: emCalc(12px);
+				display: block;
+				font-weight: normal;
+			}
+		}
+	}
+	.content {
+		&.hidden {
+			display: none;
+		}
+	}
+	.info-simple {
+		padding: 0 0 0 $details-lt-width;
+		.info-block {
+			padding:$details-top-more-padding-lt;
+			background: url('../images/dashed_atom-x.png') repeat-x bottom;
+			dl {
+				margin-bottom: 0;
+				font-size: emCalc(14px);
+				dt {
+					display: inline-block;
+					width: 42%;
+					vertical-align: top;
+					font-weight: normal;
+					.snf-font {
+						width: 40px;
+						display: inline-block;
+						font-size: emCalc(24px);
+						position: relative;
+						bottom: -2px;
+					}
+				}
+				dd {
+					display: inline-block;
+					width: 45%;
+					margin-bottom: 1em;
+				}
+			}
+			.tags {
+				text-align:left;
+				li {
+					list-style: none outside none;
+					display: inline-block;
+					margin-right: 25px;
+					&:hover {
+						span {
+							color:$link-color;
+						}
+					}
+				}
+				.tag {
+					vertical-align: middle;
+				}
+				.delete {
+					margin-left: 10px;	
+				}
+			}
+			.add-tag {
+				.buttons {
+					margin-bottom: 1em;
+				}
+			}
+			&.charts {
+				.graph_container {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	.content {
+		h2 {
+			font-size: emCalc(16px);
+			line-height: 1;
+			margin-bottom: 40px;
+		}
+		h3 {
+			margin: 0;
+			font-size: emCalc(14px);
+			font-weight: normal;
+		}
+	}
+	.lt-bar {
+		@include ltbar($details-lt-width);
+		padding: 0;
+		display: none;
+		.items-list {
+			.img-wrap {
+				.snf-font {
+					font-size: $snf-font-size-medium;;
+				}
+			}
+		}
+	}
+}
+
+.scroll-wrap {
+	// overflow: auto;
+	position: relative;
+}
+
+.toggle-lt-bar {
+	position: absolute;
+	left:0;
+	top: 35px;
+	background: $link-color;
+	z-index: 4;
+	color: #fff;
+	display: block;
+	height: 100px;
+	line-height: 85px;
+	padding: 0 5px;
+	&:hover {
+		background: $link-color-hover;
+		color: #fff;
+	}
+	&.fix-position {
+		position: fixed;
+		top: $header-height + $bar-height + 35px;
+		left: 50%;
+		margin-left: - ($row-width/2 - emCalc(10px));
+		border: 1px solid white;
+
+	}
+}
+
+.list-availables {
+	&>span{
+			margin-bottom: 1em;
+			display: inline-block;
+		}
+	ul {
+		list-style-type: none;
+		li {
+			line-height: 2.5em;
+			span {
+				display: inline-block;
+				&:not(:last-child), span:not(:first-child) {
+					margin-right: 20px;
+				}
+				&:first-child {
+					margin-right: 30px;
+				}
+				&.snf-font{
+					vertical-align: middle;
+					&.snf-network-full, &.snf-volume-full {
+						font-size: 24px;
+						color: $secondary-color;
+					}
+				}
+				&.name {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+
+// experiment with select lists
+.select-list {
+	border: 0 !important;  /*Removes border*/
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+	-moz-appearance: none;  /*Removes default style Firefox*/
+	background-color: transparent;
+
+}

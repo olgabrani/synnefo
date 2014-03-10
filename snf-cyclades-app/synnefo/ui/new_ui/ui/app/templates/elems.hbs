@@ -1,0 +1,14 @@
+{{outlet}}
+{{partial 'actions-bar'}}
+<section class="main row">
+    <div {{bind-attr class=":entities viewCls"}}>
+        <ul class="items-list">
+        {{add-new type=controller.type icon=controller.iconCls action="openWizard"}}
+        {{#each}}
+            <li {{bind-attr data-status=this.status class="this.status"}}>
+                {{render 'elem' this}}
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+</section>

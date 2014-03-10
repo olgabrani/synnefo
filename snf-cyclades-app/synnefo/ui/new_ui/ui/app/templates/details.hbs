@@ -1,0 +1,27 @@
+{{partial 'actions-bar'}}
+<section class="main row">
+
+    <div {{bind-attr class=":details status"}}>
+        <section class="top">
+            <div class="lt">
+                img-wrap placeholder
+            </div>
+            <div class="rt">
+                <div class="title">
+                    <span class="status">{{status-to-text this.status}}</span></h1>
+                </div>
+                <div class="tabs">
+                     <ul>
+                        {{#each menu in this.submenu}}
+                            <li>{{#link-to menu.link title=menu.link}}<span {{bind-attr class="menu.icon"}}></span>{{/link-to}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        {{outlet}}
+
+        <div class="placeholder"></div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+<section class="content info-simple">
+
+	<section class="info-block">
+		<h2>info</h2>
+		<dl>
+			<dt><span class="snf-font snf-pc-full"></span>Name</dt>
+			<dd>
+				{{this.name}}
+			</dd>
+			<dt><span class="snf-font snf-dashboard-outline"></span>Assigned Project</dt>
+			<dd>Basic Projecxt</dd>
+			<dt><span class="snf-chip-outline snf-font"></span>CPUs</dt>
+			<dd>4</dd>
+			<dt><span class="snf-ram-full snf-font"></span>RAM</dt>
+			<dd>512 MB</dd>
+			<dt><span class="snf-volume-full snf-font"></span>System Disk Size</dt>
+			<dd>4GB</dd>
+			<dt><span class="snf-volume-full snf-font"></span>Storage Type</dt>
+			<dd>Archipelago</dd>
+			<dt><span class="snf-image-full snf-font"></span>Image Name</dt>
+			<dd>Fedora</dd>
+			<dt><span class="snf-image-full snf-font"></span>Image Size</dt>
+			<dd>3.68 GB</dd>
+			<dt><span class="snf-nic-full snf-font"></span>IPv4</dt>
+			<dd>83.212.96.152</dd>
+			<dt><span class="snf-nic-full snf-font"></span>IPv4</dt>
+			<dd>83.212.96.153</dd>
+			<dt><span class="snf-nic-full snf-font"></span>IPv6</dt>
+			<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
+		</dl>
+	</section>
+
+	<section class="info-block">
+		<h2>tags</h2>
+		{{view Snf.tagsListView}}
+        {{! notice that we pass the current controller model (vm/network etc.) as model to the AddTagController }}
+		{{!-- {{render "add-tag" model }} --}}
+	</section>
+
+
+
+	<section class="info-block charts">
+		<div>
+			<h2>CPU utilization</h2>
+			<div class="graph_container">
+				<img src="../images/cpu-ts.png" alt="CPU utilization graph">
+			</div>
+		</div>
+		<div>
+			<h2>Network utilization</h2>
+			<div class="graph_container">
+				<img src="../images/net-ts.png" alt="network utilization graph">
+			</div>
+		</div>
+	</section>
+</section>

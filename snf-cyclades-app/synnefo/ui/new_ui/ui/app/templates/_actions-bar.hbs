@@ -1,0 +1,34 @@
+<section class="actions-bar clearfix">
+
+    <h2>{{pageTitle}}</h2>
+
+    {{#if hasViewOptions}}
+    <div class="rt-actions">
+        {{#link-to childInit class="single"}}{{/link-to}}
+        {{#link-to parent 'grid-view'}}<span class="snf-gridview">{{/link-to}}
+        {{#link-to parent 'list-view'}}<span class="snf-listview"></span>{{/link-to}}
+    </div>
+    {{/if}}
+    
+    {{#if hasFilter}}
+    <div class="filter-menu">
+        <div><a class="filter" href="">Filter</a></div>
+        <ul class="options">
+            <li><a href="">option 1</a></li>
+            <li><a href="">option 2</a></li>
+            <li><a href="">option 3</a></li>
+            <li><a href="">option 4</a></li>
+        </ul>
+    </div>
+    {{/if}}
+    
+    {{#if hasSearch}}
+    <div id="hd-search" class="hd-search">
+        <form>
+            <span class="hd-icon-search snf-search"></span>
+            <input class="hd-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+        </form>
+    </div>
+    {{/if}}
+
+</section>

@@ -1,0 +1,12 @@
+@import "settings";
+
+.vms.list-view {
+	.items-list {
+		&>li {
+			h4 {
+				width: $vm-h4-w;
+			}	
+		}
+		
+	}
+}
