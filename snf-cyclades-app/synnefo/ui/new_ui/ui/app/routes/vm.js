@@ -30,7 +30,7 @@ Snf.VmInfoRoute = Ember.Route.extend({
 
 Snf.VmDiskConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/disk-connected');
+        this.render('details/vm-disk-connected');
     },
     model: function () {
         return this.modelFor("vm");
@@ -39,7 +39,7 @@ Snf.VmDiskConnectedRoute = Ember.Route.extend({
 
 Snf.VmNetworkConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/network-connected');
+        this.render('details/vm-network-connected');
     },
     model: function () {
         return this.modelFor("vm");

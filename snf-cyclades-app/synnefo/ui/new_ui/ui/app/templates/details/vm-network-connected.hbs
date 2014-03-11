@@ -1,0 +1,73 @@
+<section class="content connected network">
+    {{#each port in this.ports}}
+        <section {{bind-attr class=":item port.network.status"}}>
+        <div class="what">
+            <div class="img-wrap">
+                <span class="snf-network-full snf-font"></span>
+            </div>
+            <h4>{{port.network.name}}</h4>
+        </div>
+        <div class="clearfix">
+            <ul class="connections">
+                <li>
+                    <a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
+                    <div class="icon"><span class="snf-nic-full"></span></div>
+                    <div class="data">
+                        <ul>
+                            <li>
+                                <h5 class="ip-data">IPv4</h5>
+                                <p>83.212.96.12</p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
+                    <div class="icon"><span class="snf-nic-full"></span></div>
+                    <div class="data">
+                        <ul>
+                            <li>
+                                <h5 class="ip-data">IPv4</h5>
+                                <p>83.212.96.12</p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="icon"><span class="snf-nic-full"></span></div>
+                    <div class="data">
+                        <ul>
+                            <li>
+                                <h5 class="ip-data">IPv6</h5>
+                                <p>2001:648:2ffc:1112:a80c:eaff:fe34:1234</p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <div class="firewall" data-firewall="fully">
+                    <p>Firewall <em>on</em></p>
+                    <ul class="more">
+                        <li class="fully selected">
+                            <a href="" class="radiobtn">Fully protected mode<span class="snf-radio-checked"></span></a>
+                        </li>
+                        <li class="basic">
+                            <a href="" class="radiobtn">Basically protected mode<span class="snf-radio-unchecked"></span></a>
+                        </li>
+                        <li class="unprotected">
+                            <a href="" class="radiobtn">Unprotected mode<span class="snf-radio-unchecked"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+    </section>
+    {{/each}}
+    <section class="connect-new network">
+		<div class="img-wrap">
+			<a href="" data-reveal-id="connect-to-network">
+				<span class="snf-network-full snf-font"></span>
+			</a>
+		</div>
+		<p><a href="" data-reveal-id="connect-to-network">Connect to Network</a></p>
+	</section>
+</section>
