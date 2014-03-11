@@ -1,0 +1,29 @@
+<div class="buttons">
+    <a href="" class="btn1 show-add-tag wrap-a" id="show-add-tag"><span>add new tag</span></a>
+</div>
+
+<div class="snf-color-picker">
+    <h3>Select color:</h3>
+    <form action="#" method="post">
+        <div id="colorpicker">
+            <div class="farbtastic">
+                <div class="color" style="background-color: rgb(255, 0, 21);"></div>
+                <div class="wheel"></div>
+                <div class="overlay"></div>
+                <div class="h-marker marker" style="left: 90px; top: 13px;"></div>
+                <div class="sl-marker marker" style="left: 87px; top: 114px;"></div>
+            </div>
+        </div>
+        
+        <div class="form-item">
+            {{ input value=newTagColor class="color-preview" type="text" id="color" disabled="disabled"}}
+            <span class="input">
+                {{ input value=newTagName class="tag_name" type="text" placeholder="My Tag" }}
+            </span>
+        </div>
+    </form>    
+    <div class="btns">
+        <a class="btn1 wrap-a" href="" {{action 'handleSubmit'}}><span>OK</span></a>
+        <a class="btn1 hide-add-tag wrap-a" href=""><span>CANCEL</span></a>
+    </div>
+</div>
