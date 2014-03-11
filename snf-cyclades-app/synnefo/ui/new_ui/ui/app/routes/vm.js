@@ -5,7 +5,14 @@ Snf.VmsRoute = Snf.ElemsRoute.extend({
 Snf.VmRoute = Ember.Route.extend({
     renderTemplate: function() {
         this.render('details');
+        
+        this.render('lt-bar', {
+            into: 'details',
+            outlet: 'lt-bar',
+            controller: 'vms',
+        });
     },
+
 
 });
 

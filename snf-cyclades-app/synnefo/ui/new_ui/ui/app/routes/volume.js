@@ -5,6 +5,11 @@ Snf.VolumesRoute = Snf.ElemsRoute.extend({
 Snf.VolumeRoute = Ember.Route.extend({
     renderTemplate: function() {
         this.render('details');
+        this.render('lt-bar', {
+            into: 'details',
+            outlet: 'lt-bar',
+            controller: 'volumes',
+        });
     },
     afterModel: function(model,transition) {
         this.transitionTo('volume.info');

@@ -423,6 +423,15 @@
 		}
 		.container {
 			padding: 40px 0;
+			.tags {
+					margin:1em 0;
+					li {
+						display: inline;
+					}
+					span, .delete {
+						display: none;
+					}
+				}
 		}
 		.side-actions {
 			display: none;

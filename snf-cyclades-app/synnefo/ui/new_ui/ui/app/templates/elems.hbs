@@ -2,11 +2,6 @@
 {{partial 'actions-bar'}}
 <section class="main row">
     <div {{bind-attr class=":entities viewCls"}}>
-        <ul class="items-list">
-        {{add-new type=controller.type icon=controller.iconCls action="openWizard"}}
-        {{#each}}
-           {{render 'elem' this}}
-        {{/each}}
-        </ul>
+        {{view Snf.itemsListView}}
     </div>
 </section>

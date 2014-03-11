@@ -8128,20 +8128,32 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 .lt-bar .items-list .container {
   padding: 40px 0;
 }
-/* line 427, ../sass/_items-list.scss */
+/* line 426, ../sass/_items-list.scss */
+.lt-bar .items-list .container .tags {
+  margin: 1em 0;
+}
+/* line 428, ../sass/_items-list.scss */
+.lt-bar .items-list .container .tags li {
+  display: inline;
+}
+/* line 431, ../sass/_items-list.scss */
+.lt-bar .items-list .container .tags span, .lt-bar .items-list .container .tags .delete {
+  display: none;
+}
+/* line 436, ../sass/_items-list.scss */
 .lt-bar .items-list .side-actions {
   display: none;
 }
 
 /* img-wrap div ( colors & styles ) */
-/* line 436, ../sass/_items-list.scss */
+/* line 445, ../sass/_items-list.scss */
 .img-wrap {
   width: 60px;
   position: relative;
   display: inline-block;
   line-height: 100%;
 }
-/* line 442, ../sass/_items-list.scss */
+/* line 451, ../sass/_items-list.scss */
 .img-wrap .os {
   background: url("../images/os-unknown.png") no-repeat center center;
   width: 22px;
@@ -8154,19 +8166,19 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   left: 50%;
   margin-left: -11px;
 }
-/* line 448, ../sass/_items-list.scss */
+/* line 457, ../sass/_items-list.scss */
 .img-wrap .os.windows {
   background-image: url("../images/os-windows.png");
 }
-/* line 449, ../sass/_items-list.scss */
+/* line 458, ../sass/_items-list.scss */
 .img-wrap .os.kubuntu {
   background-image: url("../images/os-kubuntu.png");
 }
-/* line 450, ../sass/_items-list.scss */
+/* line 459, ../sass/_items-list.scss */
 .img-wrap .os.fedora {
   background-image: url("../images/os-fedora.png");
 }
-/* line 451, ../sass/_items-list.scss */
+/* line 460, ../sass/_items-list.scss */
 .img-wrap .os.symbol {
   position: relative;
   top: -50px;
@@ -8253,16 +8265,16 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   color: #6ae0cd;
 }
 
-/* line 488, ../sass/_items-list.scss */
+/* line 497, ../sass/_items-list.scss */
 .building .img-wrap .snf-pc-full {
   display: block;
 }
-/* line 492, ../sass/_items-list.scss */
+/* line 501, ../sass/_items-list.scss */
 .building .img-wrap .incomplete {
   color: #94e9db;
   width: 60px;
 }
-/* line 496, ../sass/_items-list.scss */
+/* line 505, ../sass/_items-list.scss */
 .building .img-wrap .complete {
   width: 0%;
   position: absolute;
