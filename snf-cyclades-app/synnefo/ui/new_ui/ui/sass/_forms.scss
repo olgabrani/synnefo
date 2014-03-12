@@ -38,7 +38,18 @@
 
 
 .snf-color-picker {
-    display: none;
+    max-height: 0;
+    overflow-y: hidden;
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    &.opened {
+        max-height:340px;
+    }
+    &.closed {
+        max-height:0;
+    }
+
 	&>form {
 		height:237px;
 		width: 100%

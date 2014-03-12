@@ -8633,21 +8633,33 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 
 /* line 40, ../sass/_forms.scss */
 .snf-color-picker {
-  display: none;
+  max-height: 0;
+  overflow-y: hidden;
+  transition-property: all;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
-/* line 42, ../sass/_forms.scss */
+/* line 46, ../sass/_forms.scss */
+.snf-color-picker.opened {
+  max-height: 340px;
+}
+/* line 49, ../sass/_forms.scss */
+.snf-color-picker.closed {
+  max-height: 0;
+}
+/* line 53, ../sass/_forms.scss */
 .snf-color-picker > form {
   height: 237px;
   width: 100%;
 }
-/* line 47, ../sass/_forms.scss */
+/* line 58, ../sass/_forms.scss */
 .snf-color-picker #picker {
   position: relative;
   width: 207px;
   margin: 25px 5px 30px;
   display: inline-block;
 }
-/* line 53, ../sass/_forms.scss */
+/* line 64, ../sass/_forms.scss */
 .snf-color-picker .color-preview {
   display: inline-block;
   -webkit-border-radius: 999px;
@@ -8667,11 +8679,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 
 /* detailed view styles ------------------ */
-/* line 68, ../sass/_forms.scss */
+/* line 79, ../sass/_forms.scss */
 .details .input {
   background: url(../images/input-bg-lt-black.png) no-repeat left bottom;
 }
-/* line 70, ../sass/_forms.scss */
+/* line 81, ../sass/_forms.scss */
 .details .input input[type="text"] {
   background: url(../images/input-bg-rt-black.png) no-repeat right bottom;
   color: #2d3338;
@@ -8694,44 +8706,44 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 
 /* vm wizard styles ------------------ */
-/* line 83, ../sass/_forms.scss */
+/* line 94, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown.medium {
   background: #485057;
   color: white;
 }
-/* line 87, ../sass/_forms.scss */
+/* line 98, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown .current {
   color: white;
 }
-/* line 90, ../sass/_forms.scss */
+/* line 101, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown .selector {
   border-left: 1px solid white;
   height: 30px;
 }
-/* line 94, ../sass/_forms.scss */
+/* line 105, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown.open ul {
   background: #485057;
   color: white;
 }
-/* line 98, ../sass/_forms.scss */
+/* line 109, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown ul li {
   color: white;
 }
-/* line 101, ../sass/_forms.scss */
+/* line 112, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown ul li.selected {
   color: white;
   background: #5f6a73;
 }
-/* line 105, ../sass/_forms.scss */
+/* line 116, ../sass/_forms.scss */
 .wizard form.custom .custom.dropdown ul li:hover {
   background: #77838e;
   color: white;
 }
-/* line 110, ../sass/_forms.scss */
+/* line 121, ../sass/_forms.scss */
 .wizard .input {
   background: url(../images/input-bg-lt.png) no-repeat left bottom;
 }
-/* line 112, ../sass/_forms.scss */
+/* line 123, ../sass/_forms.scss */
 .wizard .input input[type="text"] {
   background: url(../images/input-bg-rt.png) no-repeat right bottom;
   color: white;

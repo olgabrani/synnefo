@@ -1,8 +1,8 @@
 <div class="buttons">
-    <a href="" class="btn1 show-add-tag wrap-a" id="show-add-tag"><span>add new tag</span></a>
+    <a href="" class="btn1 show-add-tag wrap-a" id="show-add-tag" {{action 'open'}}><span>add new tag</span></a>
 </div>
 
-<div class="snf-color-picker">
+<div class="snf-color-picker" {{bind-attr class="isOpen:opened:closed"}}>
     <h3>Select color:</h3>
     <form action="#" method="post">
         <div id="colorpicker">
@@ -24,6 +24,6 @@
     </form>    
     <div class="btns">
         <a class="btn1 wrap-a" href="" {{action 'handleSubmit'}}><span>OK</span></a>
-        <a class="btn1 hide-add-tag wrap-a" href=""><span>CANCEL</span></a>
+        <a class="btn1 hide-add-tag wrap-a" href="" {{action 'close'}}><span>CANCEL</span></a>
     </div>
 </div>

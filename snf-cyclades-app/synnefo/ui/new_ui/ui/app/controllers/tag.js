@@ -17,29 +17,38 @@ Snf.TagController = Ember.ObjectController.extend({
 var _defaultNewTagColor = '#16C1E9';
 
 Snf.AddTagController = Snf.TagController.extend({
-  newTagName: '',
-  newTagColor: _defaultNewTagColor,
-  closed: false,
-  actions: {
-    handleSubmit: function() {
-      // resolve form params
-      var tagDetails = {
-        name: this.get('newTagName'),
-        color: this.get('newTagColor')
-      };
+    newTagName: '',
+    newTagColor: _defaultNewTagColor,
+    isOpen: false,
 
-      // validate ???
-      // failed validation messages ???
+    actions: {
+        open: function(){
+            this.toggleProperty('isOpen');
+        },
+        close: function(){
+            this.set('isOpen', false);
+        },
 
-      // do create tag
-      this.send('createTag', tagDetails, this.get('model'));
+        handleSubmit: function() {
 
-      // hide form (view should use this attr)
-      this.set('closed', true);
+            // resolve form params
+            var tagDetails = {
+                name: this.get('newTagName'),
+                color: $('#color').val(),
+            };
 
-      // reset the newTag
-      this.set('newTagName', '');
-      this.set('newTagColor', _defaultNewTagColor);
+            // validate ???
+            // failed validation messages ???
+
+            // do create tag
+            this.send('createTag', tagDetails, this.get('model'));
+
+            // hide form (view should use this attr)
+            this.set('isOpen', false);
+
+            // reset the newTag
+            this.set('newTagName', '');
+            this.set('newTagColor', _defaultNewTagColor);
+        }
     }
-  }
 });
