@@ -74,7 +74,10 @@ Snf.ElController = Ember.ObjectController.extend({
         return this.type+'init';
     }.property(),
 
-
-
+    actions: {
+        refreshModel: function(model){
+            this.controllerFor(this.type).set('model', model);
+        },
+    }
 
 });

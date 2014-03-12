@@ -8191,77 +8191,91 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 131, ../sass/_common.scss */
 .running .snf-pc-full,
 .running .snf-network-full,
-.running .snf-volume-full {
+.running .snf-volume-full, .lt-bar .running .snf-pc-full,
+.lt-bar .running .snf-network-full,
+.lt-bar .running .snf-volume-full {
   color: #30c79e;
 }
 /* line 135, ../sass/_common.scss */
-.running .status {
+.running .status, .lt-bar .running .status {
   color: #30c79e;
 }
 
 /* line 131, ../sass/_common.scss */
 .off .snf-pc-full,
 .off .snf-network-full,
-.off .snf-volume-full {
+.off .snf-volume-full, .lt-bar .off .snf-pc-full,
+.lt-bar .off .snf-network-full,
+.lt-bar .off .snf-volume-full {
   color: #485057;
 }
 /* line 135, ../sass/_common.scss */
-.off .status {
+.off .status, .lt-bar .off .status {
   color: #485057;
 }
 
 /* line 131, ../sass/_common.scss */
 .error .snf-pc-full,
 .error .snf-network-full,
-.error .snf-volume-full {
+.error .snf-volume-full, .lt-bar .error .snf-pc-full,
+.lt-bar .error .snf-network-full,
+.lt-bar .error .snf-volume-full {
   color: #e02b2b;
 }
 /* line 135, ../sass/_common.scss */
-.error .status {
+.error .status, .lt-bar .error .status {
   color: #e02b2b;
 }
 
 /* line 131, ../sass/_common.scss */
 .shutting .snf-pc-full,
 .shutting .snf-network-full,
-.shutting .snf-volume-full {
+.shutting .snf-volume-full, .lt-bar .shutting .snf-pc-full,
+.lt-bar .shutting .snf-network-full,
+.lt-bar .shutting .snf-volume-full {
   color: #787878;
 }
 /* line 135, ../sass/_common.scss */
-.shutting .status {
+.shutting .status, .lt-bar .shutting .status {
   color: #787878;
 }
 
 /* line 131, ../sass/_common.scss */
 .starting .snf-pc-full,
 .starting .snf-network-full,
-.starting .snf-volume-full {
+.starting .snf-volume-full, .lt-bar .starting .snf-pc-full,
+.lt-bar .starting .snf-network-full,
+.lt-bar .starting .snf-volume-full {
   color: #566db1;
 }
 /* line 135, ../sass/_common.scss */
-.starting .status {
+.starting .status, .lt-bar .starting .status {
   color: #566db1;
 }
 
 /* line 131, ../sass/_common.scss */
 .rebooting .snf-pc-full,
 .rebooting .snf-network-full,
-.rebooting .snf-volume-full {
+.rebooting .snf-volume-full, .lt-bar .rebooting .snf-pc-full,
+.lt-bar .rebooting .snf-network-full,
+.lt-bar .rebooting .snf-volume-full {
   color: #ffc748;
 }
 /* line 135, ../sass/_common.scss */
-.rebooting .status {
+.rebooting .status, .lt-bar .rebooting .status {
   color: #ffc748;
 }
 
 /* line 131, ../sass/_common.scss */
 .building .snf-pc-full,
 .building .snf-network-full,
-.building .snf-volume-full {
+.building .snf-volume-full, .lt-bar .building .snf-pc-full,
+.lt-bar .building .snf-network-full,
+.lt-bar .building .snf-volume-full {
   color: #30c79e;
 }
 /* line 135, ../sass/_common.scss */
-.building .status {
+.building .status, .lt-bar .building .status {
   color: #30c79e;
 }
 

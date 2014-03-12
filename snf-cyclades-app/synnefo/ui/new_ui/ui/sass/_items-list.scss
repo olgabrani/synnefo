@@ -469,26 +469,26 @@
 	}
 }
 
-.running {
+.running, .lt-bar .running {
 	@include stateColor($vm-active-color);
 }
-.off {
+.off, .lt-bar .off {
 	@include stateColor($vm-off-color);
 }
-.error {
+.error, .lt-bar .error {
 	@include stateColor($vm-error-color);
 }
-.shutting {
+.shutting, .lt-bar .shutting {
 	@include stateColor($vm-shutting-color);
 }
-.starting {
+.starting, .lt-bar .starting {
 	@include stateColor($vm-starting-color);
 }
-.rebooting {
+.rebooting, .lt-bar .rebooting {
 	@include stateColor($vm-rebooting-color);
 }
 
-.building {
+.building, .lt-bar .building {
 	@include stateColor($vm-active-color);
 }
 

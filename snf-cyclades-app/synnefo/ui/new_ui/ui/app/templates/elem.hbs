@@ -21,10 +21,17 @@
         </a>
         
         <div class="img-wrap">
-            {{#link-to type this}}
-            <span {{bind-attr class=":snf-font iconCls"}}></span>
-            {{#if this.os}}<span {{bind-attr class=":os this.os"}}>{{this.os}}</span>{{/if}}
-            {{/link-to}}
+            {{#if view.ltBar}}
+                <a {{action 'refreshModel' model}}>
+                <span {{bind-attr class=":snf-font iconCls"}}></span>
+                {{#if this.os}}<span {{bind-attr class=":os this.os"}}>{{this.os}}</span>{{/if}}
+                </a>
+            {{else}}
+                {{#link-to type this}}
+                <span {{bind-attr class=":snf-font iconCls"}}></span>
+                {{#if this.os}}<span {{bind-attr class=":os this.os"}}>{{this.os}}</span>{{/if}}
+                {{/link-to}}                
+            {{/if}}
         </div>
 
         <h4>{{this.name}}</h4>
