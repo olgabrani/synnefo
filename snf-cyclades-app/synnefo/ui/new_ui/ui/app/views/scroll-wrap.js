@@ -5,5 +5,4 @@ Snf.scrollWrapView = Ember.View.extend({
     didInsertElement: function() {
         ui.setElHeight(this.$());
     },
-    ltBar: true,
 });

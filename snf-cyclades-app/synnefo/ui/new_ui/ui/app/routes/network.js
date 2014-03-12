@@ -8,7 +8,9 @@ Snf.NetworkRoute = Ember.Route.extend({
         this.render('details');
 
         var controller = this.controllerFor('networks');
-        controller.set('model',this.store.find('network'));
+        if (!controller.get('model').get("length")) {
+            controller.set('model',this.store.find('network'));
+        }
 
         this.render('lt-bar', {
             into: 'details',

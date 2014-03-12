@@ -8,7 +8,9 @@ Snf.VolumeRoute = Ember.Route.extend({
         this.render('details');
 
         var controller = this.controllerFor('volumes');
-        controller.set('model',this.store.find('volume'));
+        if (!controller.get('model').get("length")) {
+            controller.set('model',this.store.find('volume'));
+        }
 
         this.render('lt-bar', {
             into: 'details',
