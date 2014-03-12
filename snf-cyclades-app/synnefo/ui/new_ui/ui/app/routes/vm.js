@@ -3,17 +3,20 @@ Snf.VmsRoute = Snf.ElemsRoute.extend({
 });
 
 Snf.VmRoute = Ember.Route.extend({
+
     renderTemplate: function() {
+
         this.render('details');
-        
+
+        var controller = this.controllerFor('vms');
+        controller.set('model',this.store.find('vm'));
+
         this.render('lt-bar', {
             into: 'details',
             outlet: 'lt-bar',
-            controller: 'vms',
+            controller: controller,
         });
     },
-
-
 });
 
 

@@ -3,16 +3,19 @@ Snf.NetworksRoute = Snf.ElemsRoute.extend({
 });
 
 Snf.NetworkRoute = Ember.Route.extend({
+
     renderTemplate: function() {
+
         this.render('details');
+
+        var controller = this.controllerFor('networks');
+        controller.set('model',this.store.find('network'));
+
         this.render('lt-bar', {
             into: 'details',
             outlet: 'lt-bar',
-            controller: 'networks',
+            controller: controller,
         });
-    },
-    afterModel: function(model,transition) {
-        this.transitionTo('network.info');
     },
 });
 
