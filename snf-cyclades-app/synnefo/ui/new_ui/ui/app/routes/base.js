@@ -14,8 +14,6 @@ Snf.ApplicationRoute = Ember.Route.extend({
 });
 
 
-
-
 Snf.ElemsRoute = Ember.Route.extend({
     
     modelName: '',

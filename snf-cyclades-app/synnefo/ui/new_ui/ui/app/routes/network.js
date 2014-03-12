@@ -3,7 +3,6 @@ Snf.NetworksRoute = Snf.ElemsRoute.extend({
 });
 
 Snf.NetworkRoute = Ember.Route.extend({
-
     renderTemplate: function() {
 
         this.render('details');
@@ -19,6 +18,11 @@ Snf.NetworkRoute = Ember.Route.extend({
     },
 });
 
+Snf.NetworkIndexRoute = Ember.Route.extend({
+    beforeModel: function() {
+        this.transitionTo('network.info');
+    },
+});
 
 Snf.NetworkinitRoute = Ember.Route.extend({
     model: function(){
