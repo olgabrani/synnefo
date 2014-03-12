@@ -1703,7 +1703,7 @@ small {
 code {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   font-weight: bold;
-  color: #2cd2b7;
+  color: #21896d;
 }
 
 /* Lists */
@@ -2014,13 +2014,13 @@ button:hover, button:focus, .button:hover, .button:focus {
 }
 /* line 177, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.secondary, .button.secondary {
-  background-color: #6ae0cd;
-  border-color: #40d7bf;
+  background-color: #30c79e;
+  border-color: #269e7d;
   color: white;
 }
 /* line 123, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
-  background-color: #40d7bf;
+  background-color: #269e7d;
 }
 /* line 134, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
@@ -2042,13 +2042,13 @@ button.success:hover, button.success:focus, .button.success:hover, .button.succe
 }
 /* line 179, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.alert, .button.alert {
-  background-color: #6ae0cd;
-  border-color: #40d7bf;
+  background-color: #30c79e;
+  border-color: #269e7d;
   color: white;
 }
 /* line 123, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
-  background-color: #40d7bf;
+  background-color: #269e7d;
 }
 /* line 134, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
@@ -2118,8 +2118,8 @@ button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[dis
 }
 /* line 190, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.secondary, button[disabled].secondary, .button.disabled.secondary, .button[disabled].secondary {
-  background-color: #6ae0cd;
-  border-color: #40d7bf;
+  background-color: #30c79e;
+  border-color: #269e7d;
   color: white;
   cursor: default;
   opacity: 0.6;
@@ -2128,7 +2128,7 @@ button.disabled.secondary, button[disabled].secondary, .button.disabled.secondar
 }
 /* line 123, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
-  background-color: #40d7bf;
+  background-color: #269e7d;
 }
 /* line 134, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
@@ -2136,7 +2136,7 @@ button.disabled.secondary:hover, button.disabled.secondary:focus, button[disable
 }
 /* line 147, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.secondary:hover, button.disabled.secondary:focus, button[disabled].secondary:hover, button[disabled].secondary:focus, .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
 }
 /* line 191, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.success, button[disabled].success, .button.disabled.success, .button[disabled].success {
@@ -2162,8 +2162,8 @@ button.disabled.success:hover, button.disabled.success:focus, button[disabled].s
 }
 /* line 192, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[disabled].alert {
-  background-color: #6ae0cd;
-  border-color: #40d7bf;
+  background-color: #30c79e;
+  border-color: #269e7d;
   color: white;
   cursor: default;
   opacity: 0.6;
@@ -2172,7 +2172,7 @@ button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[d
 }
 /* line 123, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-  background-color: #40d7bf;
+  background-color: #269e7d;
 }
 /* line 134, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
@@ -2180,7 +2180,7 @@ button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert
 }
 /* line 147, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
 button.disabled.alert:hover, button.disabled.alert:focus, button[disabled].alert:hover, button[disabled].alert:focus, .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
 }
 
 /* line 197, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_buttons.scss */
@@ -2596,7 +2596,7 @@ span.error, small.error {
   margin-bottom: 1em;
   font-size: 0.75em;
   font-weight: bold;
-  background: #6ae0cd;
+  background: #30c79e;
   color: white;
   display: none;
 }
@@ -2605,8 +2605,8 @@ span.error, small.error {
 .error input,
 .error textarea,
 .error select {
-  border-color: #6ae0cd;
-  background-color: rgba(106, 224, 205, 0.1);
+  border-color: #30c79e;
+  background-color: rgba(48, 199, 158, 0.1);
   margin-bottom: 0;
 }
 /* line 230, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
@@ -2619,7 +2619,7 @@ span.error, small.error {
 /* line 370, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 .error label,
 .error label.error {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 374, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 .error small.error {
@@ -2629,7 +2629,7 @@ span.error, small.error {
   margin-bottom: 1em;
   font-size: 0.75em;
   font-weight: bold;
-  background: #6ae0cd;
+  background: #30c79e;
   color: white;
 }
 /* line 378, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
@@ -2640,8 +2640,8 @@ span.error, small.error {
 /* line 384, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 input.error,
 textarea.error {
-  border-color: #6ae0cd;
-  background-color: rgba(106, 224, 205, 0.1);
+  border-color: #30c79e;
+  background-color: rgba(48, 199, 158, 0.1);
 }
 /* line 230, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 input.error:focus,
@@ -2652,8 +2652,8 @@ textarea.error:focus {
 
 /* line 388, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 .error select {
-  border-color: #6ae0cd;
-  background-color: rgba(106, 224, 205, 0.1);
+  border-color: #30c79e;
+  background-color: rgba(48, 199, 158, 0.1);
 }
 /* line 230, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 .error select:focus {
@@ -2663,7 +2663,7 @@ textarea.error:focus {
 
 /* line 392, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
 label.error {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 
 /* Button Groups */
@@ -2931,7 +2931,7 @@ label.error {
 }
 /* line 79, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_split-buttons.scss */
 .split.button.secondary span {
-  border-left-color: #2cd2b7;
+  border-left-color: #21896d;
 }
 /* line 142, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_split-buttons.scss */
 .split.button.secondary span:before {
@@ -2939,7 +2939,7 @@ label.error {
 }
 /* line 79, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_split-buttons.scss */
 .split.button.alert span {
-  border-left-color: #2cd2b7;
+  border-left-color: #21896d;
 }
 /* line 79, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_split-buttons.scss */
 .split.button.success span {
@@ -4292,11 +4292,11 @@ label.error {
 }
 /* line 253, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.secondary {
-  background: #6ae0cd;
+  background: #30c79e;
 }
 /* line 255, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.secondary.hover {
-  background: #40d7bf;
+  background: #269e7d;
 }
 /* line 259, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.success {
@@ -4308,11 +4308,11 @@ label.error {
 }
 /* line 265, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.alert {
-  background: #6ae0cd;
+  background: #30c79e;
 }
 /* line 267, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li > a.button.alert.hover {
-  background: #40d7bf;
+  background: #269e7d;
 }
 /* line 275, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_top-bar.scss */
 .top-bar-section ul li.hover > a {
@@ -5455,7 +5455,7 @@ label.error {
   font-size: 0.875em;
   background-color: #bebebe;
   border-color: #a5a5a5;
-  color: #041411;
+  color: black;
 }
 /* line 97, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_alert-boxes.scss */
 .alert-box .close {
@@ -5490,14 +5490,14 @@ label.error {
 }
 /* line 103, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_alert-boxes.scss */
 .alert-box.alert {
-  background-color: #6ae0cd;
-  border-color: #40d7bf;
+  background-color: #30c79e;
+  border-color: #269e7d;
   color: white;
 }
 /* line 104, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_alert-boxes.scss */
 .alert-box.secondary {
-  background-color: #6ae0cd;
-  border-color: #40d7bf;
+  background-color: #30c79e;
+  border-color: #269e7d;
   color: white;
 }
 
@@ -5774,9 +5774,9 @@ form.custom .custom.dropdown.open.large ul {
 }
 /* line 211, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_custom-forms.scss */
 form.custom .error .custom.dropdown {
-  border-color: #6ae0cd;
-  background-color: rgba(106, 224, 205, 0.1);
-  background: rgba(106, 224, 205, 0.1);
+  border-color: #30c79e;
+  background-color: rgba(48, 199, 158, 0.1);
+  background: rgba(48, 199, 158, 0.1);
   margin-bottom: 0;
 }
 /* line 230, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_forms.scss */
@@ -5888,7 +5888,7 @@ kbd {
 }
 /* line 80, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_labels.scss */
 .label.alert {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
   color: white;
 }
 /* line 81, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_labels.scss */
@@ -5898,7 +5898,7 @@ kbd {
 }
 /* line 82, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_labels.scss */
 .label.secondary {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
   color: white;
 }
 
@@ -6130,7 +6130,7 @@ ul.pagination li {
 }
 /* line 57, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_progress-bars.scss */
 .progress.secondary .meter {
-  background: #6ae0cd;
+  background: #30c79e;
   height: 100%;
   display: block;
 }
@@ -6142,7 +6142,7 @@ ul.pagination li {
 }
 /* line 59, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_progress-bars.scss */
 .progress.alert .meter {
-  background: #6ae0cd;
+  background: #30c79e;
   height: 100%;
   display: block;
 }
@@ -6577,7 +6577,7 @@ a.th {
 /* line 36, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_tooltips.scss */
 .has-tip:hover, .has-tip:focus {
   border-bottom: none;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 42, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_tooltips.scss */
 .has-tip.tip-left, .has-tip.tip-right {
@@ -6614,7 +6614,7 @@ a.th {
 }
 /* line 71, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p247/gems/zurb-foundation-4.3.0/scss/foundation/components/_tooltips.scss */
 .tooltip.opened {
-  color: #6ae0cd !important;
+  color: #30c79e !important;
   border-bottom: none !important;
 }
 
@@ -6848,7 +6848,7 @@ a.th {
 }
 /* line 150, ../sass/_common.scss */
 .tags .tag.tag3 {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
 }
 
 /* Buttons and Links ----------------------------------------------- */
@@ -6858,7 +6858,7 @@ a {
 }
 /* line 160, ../sass/_common.scss */
 a:hover, a.current, a.active {
-  color: #6ae0cd;
+  color: #30c79e;
   -webkit-transition: background 300ms ease-out;
   -moz-transition: background 300ms ease-out;
   -ms-transition: background 300ms ease-out;
@@ -6912,9 +6912,9 @@ a:hover, a.current, a.active {
 
 /* line 206, ../sass/_common.scss */
 .btn2 {
-  color: #6ae0cd;
+  color: #30c79e;
   background: #fff;
-  border-color: #6ae0cd;
+  border-color: #30c79e;
 }
 /* line 213, ../sass/_common.scss */
 .btn2:hover, .btn2.current, .btn2:focus {
@@ -6929,7 +6929,7 @@ a:hover, a.current, a.active {
 }
 /* line 225, ../sass/_common.scss */
 .btn3:hover, .btn3.current, .btn3:focus {
-  color: #6ae0cd;
+  color: #30c79e;
   background: #fff;
   border-color: #fff;
 }
@@ -6954,7 +6954,7 @@ a:hover, a.current, a.active {
 /* line 247, ../sass/_common.scss */
 .btn4.current {
   background: white;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 248, ../sass/_common.scss */
 .btn4.current span {
@@ -6986,7 +6986,7 @@ a:hover, a.current, a.active {
 /* line 278, ../sass/_common.scss */
 .btn5.current, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .os li .btn-col a.current, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .flavor li .options-bar .options li a.current, #volume-wizard .step .volume_options > li .options-bar .options li a.current {
   background: white;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 279, ../sass/_common.scss */
 .btn5.current span, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .os li .btn-col a.current span, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .flavor li .options-bar .options li a.current span, #volume-wizard .step .volume_options > li .options-bar .options li a.current span {
@@ -7003,7 +7003,7 @@ a:hover, a.current, a.active {
 
 /* line 295, ../sass/_common.scss */
 .btn-img {
-  border-color: #6ae0cd;
+  border-color: #30c79e;
 }
 /* line 299, ../sass/_common.scss */
 .btn-img:hover, .btn-img:focus {
@@ -7120,7 +7120,7 @@ body {
   text-align: center;
   height: 30px;
   line-height: 30px;
-  background-color: #ff6b9a;
+  background-color: #f0f0f0;
 }
 /* line 407, ../sass/_common.scss */
 .actions-bar h2 {
@@ -7197,11 +7197,11 @@ body {
   color: #485057;
   z-index: 1;
   position: relative;
-  background: #ff6b9a;
+  background: #f0f0f0;
 }
 /* line 474, ../sass/_common.scss */
 .actions-bar .hd-search .hd-icon-search:hover {
-  color: #6ae0cd;
+  color: #30c79e;
   cursor: pointer;
 }
 /* line 482, ../sass/_common.scss */
@@ -7229,7 +7229,7 @@ body {
 }
 /* line 502, ../sass/_common.scss */
 .actions-bar .rt-actions .current, .actions-bar .rt-actions a:hover {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 505, ../sass/_common.scss */
 .actions-bar .rt-actions a {
@@ -7270,7 +7270,7 @@ body {
 }
 /* line 533, ../sass/_common.scss */
 .actions-bar .rt-actions .single.current, .actions-bar .rt-actions .single:hover {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
 }
 
 /* line 543, ../sass/_common.scss */
@@ -7321,7 +7321,7 @@ body {
 
 /* line 586, ../sass/_common.scss */
 .info.alert {
-  background: #6ae0cd;
+  background: #30c79e;
   color: #fff;
 }
 
@@ -7350,7 +7350,7 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  border-top: 1px solid #6ae0cd;
+  border-top: 1px solid #30c79e;
   width: 100%;
   background: #fff;
   padding: 20px 0 20px 310px;
@@ -7386,7 +7386,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #6ae0cd;
+  background: #30c79e;
   color: #fff;
   z-index: 50;
   overflow-y: auto;
@@ -7423,7 +7423,7 @@ body {
 /* line 669, ../sass/_common.scss */
 .storage-progress .summary span {
   background-color: #fff;
-  color: #6ae0cd;
+  color: #30c79e;
   padding: 2px 6px;
   margin-right: 10px;
   -webkit-transition: opacity 500ms linear;
@@ -7690,7 +7690,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 87, ../sass/_items-list.scss */
 .items-list > li.add-new {
-  background-color: #6ae0cd;
+  background-color: #30c79e;
   -webkit-transition: background-color 300ms linear;
   -moz-transition: background-color 300ms linear;
   -ms-transition: background-color 300ms linear;
@@ -7704,7 +7704,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 95, ../sass/_items-list.scss */
 .items-list > li.add-new .container .img-wrap .symbol {
   background-image: none;
-  color: #6ae0cd;
+  color: #30c79e;
   font-size: 30px;
   text-indent: 0;
 }
@@ -7894,7 +7894,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 192, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select:hover, .storage-progress .lt-bar ul li.select:hover {
-  color: #6ae0cd;
+  color: #30c79e;
   cursor: pointer;
 }
 /* line 196, ../sass/_items-list.scss */
@@ -7920,7 +7920,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 214, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a.active:hover, .storage-progress .lt-bar ul.lt-actions li a.active:hover {
-  color: #6ae0cd;
+  color: #30c79e;
   cursor: pointer;
 }
 /* line 219, ../sass/_items-list.scss */
@@ -7952,11 +7952,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 247, ../sass/_items-list.scss */
 .list-view .items-list > li.selected, .storage-progress .items-list > li.selected {
-  background-color: #ff6b9a;
+  background-color: #f0f0f0;
 }
 /* line 255, ../sass/_items-list.scss */
 .list-view .items-list > li:hover, .storage-progress .items-list > li:hover {
-  background-color: #ff6b9a;
+  background-color: #f0f0f0;
 }
 /* line 258, ../sass/_items-list.scss */
 .list-view .items-list > li .check, .storage-progress .items-list > li .check {
@@ -7970,7 +7970,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 265, ../sass/_items-list.scss */
 .list-view .items-list > li .check:hover, .storage-progress .items-list > li .check:hover {
   cursor: pointer;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 270, ../sass/_items-list.scss */
 .list-view .items-list > li .img-wrap, .storage-progress .items-list > li .img-wrap {
@@ -8192,11 +8192,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 .running .snf-pc-full,
 .running .snf-network-full,
 .running .snf-volume-full {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 135, ../sass/_common.scss */
 .running .status {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 
 /* line 131, ../sass/_common.scss */
@@ -8258,11 +8258,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 .building .snf-pc-full,
 .building .snf-network-full,
 .building .snf-volume-full {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 135, ../sass/_common.scss */
 .building .status {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 
 /* line 497, ../sass/_items-list.scss */
@@ -8271,7 +8271,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 501, ../sass/_items-list.scss */
 .building .img-wrap .incomplete {
-  color: #94e9db;
+  color: #54d6b3;
   width: 60px;
 }
 /* line 505, ../sass/_items-list.scss */
@@ -8285,15 +8285,15 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 3, ../sass/_details.scss */
 .details {
   position: relative;
-  border-left: 1px solid #ff6b9a;
-  border-right: 1px solid #ff6b9a;
+  border-left: 1px solid #f0f0f0;
+  border-right: 1px solid #f0f0f0;
 }
 /* line 9, ../sass/_details.scss */
 .details .lt {
   width: 290px;
   float: left;
   text-align: center;
-  border-right: 1px solid #ff6b9a;
+  border-right: 1px solid #f0f0f0;
   height: 160px;
   line-height: 160px;
 }
@@ -8303,7 +8303,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 20, ../sass/_details.scss */
 .details .top {
-  border-bottom: 1px solid #ff6b9a;
+  border-bottom: 1px solid #f0f0f0;
   position: relative;
   z-index: 1;
 }
@@ -8364,7 +8364,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 60, ../sass/_details.scss */
 .details .top .actions, .details .top .tabs {
-  border-top: 1px solid #ff6b9a;
+  border-top: 1px solid #f0f0f0;
   height: 48px;
   line-height: 48px;
   padding: 0 0 0 20px;
@@ -8529,7 +8529,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 202, ../sass/_details.scss */
 .toggle-lt-bar:hover {
-  background: #6ae0cd;
+  background: #30c79e;
   color: #fff;
 }
 /* line 206, ../sass/_details.scss */
@@ -8573,7 +8573,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 235, ../sass/_details.scss */
 .list-availables ul li span.snf-font.snf-network-full, .list-availables ul li span.snf-font.snf-volume-full {
   font-size: 24px;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 240, ../sass/_details.scss */
 .list-availables ul li span.name {
@@ -8829,48 +8829,48 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 @-webkit-keyframes pulse {
   /* line 29, ../sass/_animations.scss */
   from {
-    color: #6ae0cd;
+    color: #30c79e;
   }
 
   /* line 32, ../sass/_animations.scss */
   to {
-    color: #40d7bf;
+    color: #269e7d;
   }
 }
 
 @-moz-keyframes pulse {
   /* line 29, ../sass/_animations.scss */
   from {
-    color: #6ae0cd;
+    color: #30c79e;
   }
 
   /* line 32, ../sass/_animations.scss */
   to {
-    color: #40d7bf;
+    color: #269e7d;
   }
 }
 
 @-ms-keyframes pulse {
   /* line 29, ../sass/_animations.scss */
   from {
-    color: #6ae0cd;
+    color: #30c79e;
   }
 
   /* line 32, ../sass/_animations.scss */
   to {
-    color: #40d7bf;
+    color: #269e7d;
   }
 }
 
 @keyframes pulse {
   /* line 29, ../sass/_animations.scss */
   from {
-    color: #6ae0cd;
+    color: #30c79e;
   }
 
   /* line 32, ../sass/_animations.scss */
   to {
-    color: #40d7bf;
+    color: #269e7d;
   }
 }
 
@@ -9029,7 +9029,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 .storage .rect-plus {
   display: inline-block;
   background-color: #fff;
-  color: #6ae0cd;
+  color: #30c79e;
   padding: 0 6px;
   font-size: 1.625em;
 }
@@ -9128,7 +9128,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 100, ../sass/_storage.scss */
 .containers .items-list > li .basic-data:hover a {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 105, ../sass/_storage.scss */
 .containers .items-list > li .size-data {
@@ -9318,7 +9318,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 265, ../sass/_storage.scss */
 .storage-progress .progress .meter {
   background-color: #fff;
-  color: #6ae0cd;
+  color: #30c79e;
   text-align: right;
   padding-right: 10px;
   line-height: 120%;
@@ -9428,7 +9428,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   line-height: 50px;
   font-size: 0.5625em;
   padding-right: 120px;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 80, ../sass/_wizards.scss */
 .body-wrapper .overlay-area-custom .overlay-div.wizard .top .nums li {
@@ -9451,7 +9451,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 .body-wrapper .overlay-area-custom .overlay-div.wizard .top .nums li em {
   display: inline-block;
   border-radius: 50%;
-  border: 1px solid #6ae0cd;
+  border: 1px solid #30c79e;
   width: 20px;
   height: 20px;
   line-height: 18px;
@@ -9461,7 +9461,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 }
 /* line 104, ../sass/_wizards.scss */
 .body-wrapper .overlay-area-custom .overlay-div.wizard .top .nums li a {
-  color: #6ae0cd;
+  color: #30c79e;
   display: block;
 }
 /* line 107, ../sass/_wizards.scss */
@@ -9482,11 +9482,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   width: 30px;
   height: 30px;
   line-height: 27px;
-  border-color: #6ae0cd;
+  border-color: #30c79e;
 }
 /* line 122, ../sass/_wizards.scss */
 .body-wrapper .overlay-area-custom .overlay-div.wizard .top .nums li.current em * {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 127, ../sass/_wizards.scss */
 .body-wrapper .overlay-area-custom .overlay-div.wizard .top .nums li.past {
@@ -9553,7 +9553,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
 /* line 177, ../sass/_wizards.scss */
 .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .vms-list > li .img-wrap .snf-font {
   font-size: 1.875em;
-  color: #6ae0cd;
+  color: #30c79e;
   line-height: 120%;
 }
 /* line 182, ../sass/_wizards.scss */
@@ -10475,7 +10475,7 @@ body.with-overlay .main {
 }
 /* line 21, ../sass/_overlays.scss */
 .body-wrapper.no-vm {
-  background: url(../images/draw-welcome.png) no-repeat center 50px #6ae0cd;
+  background: url(../images/draw-welcome.png) no-repeat center 50px #30c79e;
 }
 /* line 23, ../sass/_overlays.scss */
 .body-wrapper.no-vm .welcome {
@@ -10591,7 +10591,7 @@ body.with-overlay .main {
 /* line 125, ../sass/_overlays.scss */
 .reveal-modal .ssh {
   padding: 5px 10px;
-  background: #6ae0cd;
+  background: #30c79e;
   color: #fff;
 }
 /* line 131, ../sass/_overlays.scss */
@@ -10616,7 +10616,7 @@ body.with-overlay .main {
 }
 /* line 150, ../sass/_overlays.scss */
 .reveal-modal #start-vm-modal {
-  background: #6ae0cd url("../images/shutdown.png") no-repeat center 50px;
+  background: #30c79e url("../images/shutdown.png") no-repeat center 50px;
 }
 /* line 155, ../sass/_overlays.scss */
 .reveal-modal #shutdown-vm-modal {
@@ -10674,8 +10674,8 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard p.buttons {
 body .body-wrapper .overlay-area-reveal .secondary-wizard p.buttons a {
   background-color: white;
   text-decoration: none;
-  color: #6ae0cd;
-  border-color: #6ae0cd;
+  color: #30c79e;
+  border-color: #30c79e;
 }
 /* line 21, ../sass/_sshkeys-wizard.scss */
 body .body-wrapper .overlay-area-reveal .secondary-wizard p.buttons a:first-child {
@@ -10684,7 +10684,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard p.buttons a:first-chil
 /* line 30, ../sass/_sshkeys-wizard.scss */
 body .body-wrapper .overlay-area-reveal .secondary-wizard p.buttons a.current {
   color: white;
-  background-color: #6ae0cd;
+  background-color: #30c79e;
   border-color: white;
 }
 /* line 35, ../sass/_sshkeys-wizard.scss */
@@ -10766,7 +10766,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard .close-reveal-modal {
 }
 /* line 104, ../sass/_sshkeys-wizard.scss */
 body .body-wrapper .overlay-area-reveal .secondary-wizard .close-reveal-modal:hover {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 108, ../sass/_sshkeys-wizard.scss */
 body .body-wrapper .overlay-area-reveal .secondary-wizard ul {
@@ -10809,7 +10809,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
 /* line 16, ../sass/_connected.scss */
 .connected {
   position: relative;
-  border-left: 2px solid #6ae0cd;
+  border-left: 2px solid #30c79e;
   left: 145px;
   top: -80px;
   padding-top: 80px;
@@ -10871,7 +10871,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
 .connected .item .connections > li .icon {
   width: 165px;
   text-align: center;
-  border-top: 2px solid #6ae0cd;
+  border-top: 2px solid #30c79e;
   float: left;
 }
 /* line 68, ../sass/_connected.scss */
@@ -11005,7 +11005,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
 }
 /* line 184, ../sass/_connected.scss */
 .connect-new:hover .img-wrap > a .snf-font, .connect-new:hover span, .connect-new:hover a {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 
 /* line 191, ../sass/_connected.scss */
@@ -11034,7 +11034,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
 }
 /* line 208, ../sass/_connected.scss */
 .firewall p em {
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 212, ../sass/_connected.scss */
 .firewall .more {
@@ -11098,7 +11098,7 @@ ul.side-actions {
   height: 100%;
   width: 30px;
   margin: 0;
-  background: #ff6b9a;
+  background: #f0f0f0;
   padding: 10px 0;
 }
 /* line 8, ../sass/_overlay2.scss */
@@ -11121,7 +11121,7 @@ ul.side-actions li > a.details {
 }
 /* line 21, ../sass/_overlay2.scss */
 ul.side-actions li > a:hover {
-  background: #6ae0cd;
+  background: #30c79e;
   color: #fff;
 }
 /* line 26, ../sass/_overlay2.scss */
@@ -11189,7 +11189,7 @@ ul.side-actions li ul a {
 /* line 78, ../sass/_overlay2.scss */
 ul.side-actions li ul a:hover {
   background: #fff;
-  color: #6ae0cd;
+  color: #30c79e;
 }
 /* line 84, ../sass/_overlay2.scss */
 ul.side-actions li ul:after {
@@ -11257,7 +11257,7 @@ ul.side-actions .arrow-right {
 }
 /* line 143, ../sass/_overlay2.scss */
 ul.side-actions a:hover .arrow-right {
-  border-left-color: #6ae0cd;
+  border-left-color: #30c79e;
 }
 
 /* line 151, ../sass/_overlay2.scss */
