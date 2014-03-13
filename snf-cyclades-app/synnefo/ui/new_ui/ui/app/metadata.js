@@ -33,9 +33,11 @@ Snf.wizards = Ember.Object.create({
     ],
     stepsMenus: [
         {
+            actionName: 'showImageCategory',
             options:['System', 'My images', 'Shared with me', 'Public'] // Snaphots could be in this list
         },
         {
+            actionName: 'pickFlavor',
             options: ['Small', 'Medium', 'large']
         }
     ],
@@ -52,5 +54,6 @@ Snf.wizards = Ember.Object.create({
     stepsMenus: [],
     stepsLength: 1
   }),
-  
 });
+
+Snf.SystemUUIDs = ['25ecced9-bf53-4145-91ee-cf47377e9fb2'];
