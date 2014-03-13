@@ -7813,19 +7813,23 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   height: 215px;
 }
 /* line 137, ../sass/_items-list.scss */
+.grid-view .items-list > li div:first-child {
+  height: 215px;
+}
+/* line 140, ../sass/_items-list.scss */
 .grid-view .items-list > li .check, .grid-view .items-list > li .info, .grid-view .items-list > li .actions {
   display: none;
 }
-/* line 140, ../sass/_items-list.scss */
+/* line 143, ../sass/_items-list.scss */
 .grid-view .items-list > li .img-wrap {
   margin-bottom: 6px;
   height: 3.75em;
 }
-/* line 143, ../sass/_items-list.scss */
+/* line 146, ../sass/_items-list.scss */
 .grid-view .items-list > li .img-wrap .snf-font {
   font-size: 3.75em;
 }
-/* line 148, ../sass/_items-list.scss */
+/* line 151, ../sass/_items-list.scss */
 .grid-view .items-list > li .container {
   height: 100%;
   padding: 40px 10px 20px;
@@ -7833,24 +7837,24 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   line-height: 120%;
   overflow: hidden;
 }
-/* line 154, ../sass/_items-list.scss */
+/* line 157, ../sass/_items-list.scss */
 .grid-view .items-list > li .container .tags {
   margin: 1em 0;
 }
-/* line 156, ../sass/_items-list.scss */
+/* line 159, ../sass/_items-list.scss */
 .grid-view .items-list > li .container .tags li {
   display: inline;
 }
-/* line 159, ../sass/_items-list.scss */
+/* line 162, ../sass/_items-list.scss */
 .grid-view .items-list > li .container .tags span, .grid-view .items-list > li .container .tags .delete {
   display: none;
 }
 
-/* line 168, ../sass/_items-list.scss */
+/* line 171, ../sass/_items-list.scss */
 .list-view .btn5, .list-view .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .os li .btn-col a, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .os li .btn-col .list-view a, .list-view .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .flavor li .options-bar .options li a, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .flavor li .options-bar .options li .list-view a, .list-view #volume-wizard .step .volume_options > li .options-bar .options li a, #volume-wizard .step .volume_options > li .options-bar .options li .list-view a, .storage-progress .btn5, .storage-progress .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .os li .btn-col a, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .os li .btn-col .storage-progress a, .storage-progress .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .flavor li .options-bar .options li a, .body-wrapper .overlay-area-custom .overlay-div.wizard .middle .step .flavor li .options-bar .options li .storage-progress a, .storage-progress #volume-wizard .step .volume_options > li .options-bar .options li a, #volume-wizard .step .volume_options > li .options-bar .options li .storage-progress a {
   display: none;
 }
-/* line 171, ../sass/_items-list.scss */
+/* line 174, ../sass/_items-list.scss */
 .list-view .lt-bar, .storage-progress .lt-bar {
   position: fixed;
   overflow: scroll;
@@ -7865,100 +7869,100 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   background: white;
   z-index: 3;
 }
-/* line 173, ../sass/_items-list.scss */
+/* line 176, ../sass/_items-list.scss */
 .list-view .lt-bar ul, .storage-progress .lt-bar ul {
   list-style: none outside none;
   font-size: 0.75em;
 }
-/* line 176, ../sass/_items-list.scss */
+/* line 179, ../sass/_items-list.scss */
 .list-view .lt-bar ul li, .storage-progress .lt-bar ul li {
   list-style: none outside none;
   height: 30px;
   line-height: 30px;
 }
-/* line 180, ../sass/_items-list.scss */
+/* line 183, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select, .storage-progress .lt-bar ul li.select {
   text-transform: capitalize;
 }
-/* line 182, ../sass/_items-list.scss */
+/* line 185, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select span, .storage-progress .lt-bar ul li.select span {
   font-size: 16px;
   margin-right: 5px;
   position: relative;
   top: 2px;
 }
-/* line 188, ../sass/_items-list.scss */
+/* line 191, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select em, .storage-progress .lt-bar ul li.select em {
   display: none;
   font-style: normal;
 }
-/* line 192, ../sass/_items-list.scss */
+/* line 195, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select:hover, .storage-progress .lt-bar ul li.select:hover {
   color: #30c79e;
   cursor: pointer;
 }
-/* line 196, ../sass/_items-list.scss */
+/* line 199, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select.selected, .storage-progress .lt-bar ul li.select.selected {
   text-transform: lowercase;
 }
-/* line 198, ../sass/_items-list.scss */
+/* line 201, ../sass/_items-list.scss */
 .list-view .lt-bar ul li.select.selected em, .storage-progress .lt-bar ul li.select.selected em {
   text-transform: capitalize;
 }
-/* line 206, ../sass/_items-list.scss */
+/* line 209, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a, .storage-progress .lt-bar ul.lt-actions li a {
   color: #bebebe;
 }
-/* line 208, ../sass/_items-list.scss */
+/* line 211, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a:hover, .storage-progress .lt-bar ul.lt-actions li a:hover {
   color: #bebebe;
   cursor: default;
 }
-/* line 212, ../sass/_items-list.scss */
+/* line 215, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a.active, .storage-progress .lt-bar ul.lt-actions li a.active {
   color: #485057;
 }
-/* line 214, ../sass/_items-list.scss */
+/* line 217, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a.active:hover, .storage-progress .lt-bar ul.lt-actions li a.active:hover {
   color: #30c79e;
   cursor: pointer;
 }
-/* line 219, ../sass/_items-list.scss */
+/* line 222, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a span, .storage-progress .lt-bar ul.lt-actions li a span {
   margin-right: 6px;
   width: 14px;
   display: inline-block;
 }
-/* line 223, ../sass/_items-list.scss */
+/* line 226, ../sass/_items-list.scss */
 .list-view .lt-bar ul.lt-actions li a span.snf-folder-move-outline, .storage-progress .lt-bar ul.lt-actions li a span.snf-folder-move-outline {
   font-size: 1.5em;
   position: relative;
 }
-/* line 235, ../sass/_items-list.scss */
+/* line 238, ../sass/_items-list.scss */
 .list-view .lt-bar ul.more li a span, .storage-progress .lt-bar ul.more li a span {
   font-size: 1.5em;
   margin-right: 2px;
 }
-/* line 244, ../sass/_items-list.scss */
+/* line 247, ../sass/_items-list.scss */
 .list-view .items-list, .storage-progress .items-list {
   overflow: hidden;
 }
-/* line 246, ../sass/_items-list.scss */
+/* line 249, ../sass/_items-list.scss */
 .list-view .items-list > li, .storage-progress .items-list > li {
   height: auto;
   width: 100%;
   padding: 15px 15px 15px 140px;
   background-image: none;
 }
-/* line 247, ../sass/_items-list.scss */
+/* line 250, ../sass/_items-list.scss */
 .list-view .items-list > li.selected, .storage-progress .items-list > li.selected {
   background-color: #f0f0f0;
 }
-/* line 255, ../sass/_items-list.scss */
+/* line 258, ../sass/_items-list.scss */
 .list-view .items-list > li:hover, .storage-progress .items-list > li:hover {
   background-color: #f0f0f0;
 }
-/* line 258, ../sass/_items-list.scss */
+/* line 261, ../sass/_items-list.scss */
 .list-view .items-list > li .check, .storage-progress .items-list > li .check {
   width: 60px;
   height: 30px;
@@ -7967,19 +7971,19 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   float: left;
   padding-left: 20px;
 }
-/* line 265, ../sass/_items-list.scss */
+/* line 268, ../sass/_items-list.scss */
 .list-view .items-list > li .check:hover, .storage-progress .items-list > li .check:hover {
   cursor: pointer;
   color: #30c79e;
 }
-/* line 270, ../sass/_items-list.scss */
+/* line 273, ../sass/_items-list.scss */
 .list-view .items-list > li .img-wrap, .storage-progress .items-list > li .img-wrap {
   width: 60px;
   float: left;
   text-align: center;
   height: 30px;
 }
-/* line 275, ../sass/_items-list.scss */
+/* line 278, ../sass/_items-list.scss */
 .list-view .items-list > li .img-wrap .os, .storage-progress .items-list > li .img-wrap .os {
   background: url("../images/os-unknown.png") no-repeat center center;
   width: 14px;
@@ -7995,12 +7999,12 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   margin-left: -7px;
   top: 6px;
 }
-/* line 286, ../sass/_items-list.scss */
+/* line 289, ../sass/_items-list.scss */
 .list-view .items-list > li .img-wrap .snf-font, .storage-progress .items-list > li .img-wrap .snf-font {
   font-size: 30px;
   line-height: 120%;
 }
-/* line 291, ../sass/_items-list.scss */
+/* line 294, ../sass/_items-list.scss */
 .list-view .items-list > li h4, .storage-progress .items-list > li h4 {
   width: 180px;
   overflow: hidden;
@@ -8013,18 +8017,18 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   color: inherit;
   padding-right: 20px;
 }
-/* line 303, ../sass/_items-list.scss */
+/* line 306, ../sass/_items-list.scss */
 .list-view .items-list > li .tags, .storage-progress .items-list > li .tags {
   float: left;
   width: 100px;
   height: 30px;
   line-height: 30px;
 }
-/* line 308, ../sass/_items-list.scss */
+/* line 311, ../sass/_items-list.scss */
 .list-view .items-list > li .tags a, .storage-progress .items-list > li .tags a {
   vertical-align: middle;
 }
-/* line 312, ../sass/_items-list.scss */
+/* line 315, ../sass/_items-list.scss */
 .list-view .items-list > li .size, .list-view .items-list > li .remove, .storage-progress .items-list > li .size, .storage-progress .items-list > li .remove {
   float: left;
   width: 100px;
@@ -8034,7 +8038,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   text-align: left;
   padding-left: 20px;
 }
-/* line 321, ../sass/_items-list.scss */
+/* line 324, ../sass/_items-list.scss */
 .list-view .items-list > li .status, .storage-progress .items-list > li .status {
   position: absolute;
   left: 260px;
@@ -8044,11 +8048,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   line-height: 110%;
   width: 240px;
 }
-/* line 329, ../sass/_items-list.scss */
+/* line 332, ../sass/_items-list.scss */
 .list-view .items-list > li .status span, .storage-progress .items-list > li .status span {
   display: inline;
 }
-/* line 333, ../sass/_items-list.scss */
+/* line 336, ../sass/_items-list.scss */
 .list-view .items-list > li .info, .list-view .items-list > li .progress-col, .storage-progress .items-list > li .info, .storage-progress .items-list > li .progress-col {
   float: left;
   width: 220px;
@@ -8057,7 +8061,7 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   line-height: 30px;
   font-size: 0.75em;
 }
-/* line 341, ../sass/_items-list.scss */
+/* line 344, ../sass/_items-list.scss */
 .list-view .items-list > li .actions, .storage-progress .items-list > li .actions {
   float: left;
   height: 30px;
@@ -8066,11 +8070,11 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   padding: 0 10px;
   top: 2px;
 }
-/* line 349, ../sass/_items-list.scss */
+/* line 352, ../sass/_items-list.scss */
 .list-view .items-list > li .actions a:first-child, .storage-progress .items-list > li .actions a:first-child {
   margin-right: 5px;
 }
-/* line 354, ../sass/_items-list.scss */
+/* line 357, ../sass/_items-list.scss */
 .list-view .items-list > li .actions-col, .list-view .items-list > li .remove, .storage-progress .items-list > li .actions-col, .storage-progress .items-list > li .remove {
   visibility: hidden;
   height: 30px;
@@ -8079,81 +8083,85 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   width: 140px;
   float: left;
 }
-/* line 361, ../sass/_items-list.scss */
+/* line 364, ../sass/_items-list.scss */
 .list-view .items-list > li .actions-col a, .list-view .items-list > li .remove a, .storage-progress .items-list > li .actions-col a, .storage-progress .items-list > li .remove a {
   margin-right: 10px;
 }
-/* line 366, ../sass/_items-list.scss */
+/* line 369, ../sass/_items-list.scss */
 .list-view .items-list > li.add-new:hover, .storage-progress .items-list > li.add-new:hover {
   background: #485057;
 }
-/* line 369, ../sass/_items-list.scss */
+/* line 372, ../sass/_items-list.scss */
 .list-view .items-list > li.add-new .check, .storage-progress .items-list > li.add-new .check {
   visibility: hidden;
 }
-/* line 372, ../sass/_items-list.scss */
+/* line 375, ../sass/_items-list.scss */
 .list-view .items-list > li.add-new h4, .storage-progress .items-list > li.add-new h4 {
   margin: 0;
 }
-/* line 376, ../sass/_items-list.scss */
+/* line 379, ../sass/_items-list.scss */
 .list-view .items-list > li.add-new .img-wrap .symbol, .storage-progress .items-list > li.add-new .img-wrap .symbol {
   font-size: 24px;
 }
-/* line 383, ../sass/_items-list.scss */
+/* line 386, ../sass/_items-list.scss */
 .list-view .items-list > li.building .img-wrap .incomplete, .storage-progress .items-list > li.building .img-wrap .incomplete {
   width: 30px;
   margin: 0 auto;
 }
-/* line 387, ../sass/_items-list.scss */
+/* line 390, ../sass/_items-list.scss */
 .list-view .items-list > li.building .img-wrap .complete, .storage-progress .items-list > li.building .img-wrap .complete {
   top: -30px;
   margin: 0 auto;
 }
 
-/* line 401, ../sass/_items-list.scss */
+/* line 404, ../sass/_items-list.scss */
 .containers .storage .items-list > li:hover {
   background-color: inherit;
 }
 
-/* line 412, ../sass/_items-list.scss */
+/* line 415, ../sass/_items-list.scss */
 .storage .lt-bar .lt-actions .select {
   margin-right: 4px;
 }
 
-/* line 421, ../sass/_items-list.scss */
+/* line 424, ../sass/_items-list.scss */
+.lt-bar .items-list li.active {
+  background-color: #f0f0f0;
+}
+/* line 427, ../sass/_items-list.scss */
 .lt-bar .items-list .check, .lt-bar .items-list .actions, .lt-bar .items-list .info {
   display: none;
 }
-/* line 424, ../sass/_items-list.scss */
+/* line 430, ../sass/_items-list.scss */
 .lt-bar .items-list .container {
   padding: 40px 0;
 }
-/* line 426, ../sass/_items-list.scss */
+/* line 432, ../sass/_items-list.scss */
 .lt-bar .items-list .container .tags {
   margin: 1em 0;
 }
-/* line 428, ../sass/_items-list.scss */
+/* line 434, ../sass/_items-list.scss */
 .lt-bar .items-list .container .tags li {
   display: inline;
 }
-/* line 431, ../sass/_items-list.scss */
+/* line 437, ../sass/_items-list.scss */
 .lt-bar .items-list .container .tags span, .lt-bar .items-list .container .tags .delete {
   display: none;
 }
-/* line 436, ../sass/_items-list.scss */
+/* line 442, ../sass/_items-list.scss */
 .lt-bar .items-list .side-actions {
   display: none;
 }
 
 /* img-wrap div ( colors & styles ) */
-/* line 445, ../sass/_items-list.scss */
+/* line 451, ../sass/_items-list.scss */
 .img-wrap {
   width: 60px;
   position: relative;
   display: inline-block;
   line-height: 100%;
 }
-/* line 451, ../sass/_items-list.scss */
+/* line 457, ../sass/_items-list.scss */
 .img-wrap .os {
   background: url("../images/os-unknown.png") no-repeat center center;
   width: 22px;
@@ -8166,19 +8174,19 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   left: 50%;
   margin-left: -11px;
 }
-/* line 457, ../sass/_items-list.scss */
+/* line 463, ../sass/_items-list.scss */
 .img-wrap .os.windows {
   background-image: url("../images/os-windows.png");
 }
-/* line 458, ../sass/_items-list.scss */
+/* line 464, ../sass/_items-list.scss */
 .img-wrap .os.kubuntu {
   background-image: url("../images/os-kubuntu.png");
 }
-/* line 459, ../sass/_items-list.scss */
+/* line 465, ../sass/_items-list.scss */
 .img-wrap .os.fedora {
   background-image: url("../images/os-fedora.png");
 }
-/* line 460, ../sass/_items-list.scss */
+/* line 466, ../sass/_items-list.scss */
 .img-wrap .os.symbol {
   position: relative;
   top: -50px;
@@ -8279,16 +8287,16 @@ body .jspVerticalBar .jspArrow.jspArrowUp {
   color: #30c79e;
 }
 
-/* line 497, ../sass/_items-list.scss */
+/* line 503, ../sass/_items-list.scss */
 .building .img-wrap .snf-pc-full {
   display: block;
 }
-/* line 501, ../sass/_items-list.scss */
+/* line 507, ../sass/_items-list.scss */
 .building .img-wrap .incomplete {
   color: #54d6b3;
   width: 60px;
 }
-/* line 505, ../sass/_items-list.scss */
+/* line 511, ../sass/_items-list.scss */
 .building .img-wrap .complete {
   width: 0%;
   position: absolute;

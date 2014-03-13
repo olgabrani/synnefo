@@ -1,4 +1,5 @@
- <li {{bind-attr data-status=this.status class="this.status"}}>
+{{#link-to type this tagName='li'}}
+<div {{bind-attr data-status=this.status class="this.status"}}>
     <ul class="side-actions">
         <li>{{#link-to type this}}i{{/link-to}}</li>
         {{#if hasConnect}}
@@ -23,14 +24,14 @@
         <div class="img-wrap">
             {{#link-to type this}}
             <span {{bind-attr class=":snf-font iconCls"}}></span>
-            {{#if this.os}}<span {{bind-attr class=":os this.os"}}>{{this.os}}</span>{{/if}}
+            {{#if os}}<span {{bind-attr class=":os os"}}>{{os}}</span>{{/if}}
             {{/link-to}}
         </div>
 
-        <h4>{{this.name}}</h4>
+        <h4>{{name}}</h4>
         
         <div class= "status">
-            <span class="state">{{status-to-text this.status}}</span>
+            <span class="state">{{status-to-text status}}</span>
         </div>
         
         {{#if hasTags}}
@@ -38,4 +39,5 @@
         {{/if}}
 
     </div>
-</li>
+</div>
+{{/link-to}}
