@@ -72,7 +72,7 @@ Snf.VmController = Snf.ElController.extend({
         destroyVm: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('vms.grid-view');
+            this.transitionToRoute('vms', 'grid-view');
         },
 
         shutdownVm: function(){
@@ -86,6 +86,7 @@ Snf.VmController = Snf.ElController.extend({
         startVm: function(){
             this.get('model').set('status','running');
         },
+
     },
 });
 
@@ -98,3 +99,6 @@ Snf.VmsController = Snf.ElemsListController.extend({
 Snf.VmInfoController = Snf.VmController.extend();
 
 Snf.VmDiskConnectedController = Snf.VmController.extend();
+
+
+Snf.VmNetworkConnectedController = Snf.VmController.extend();

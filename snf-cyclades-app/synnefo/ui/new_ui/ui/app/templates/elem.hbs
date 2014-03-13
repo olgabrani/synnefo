@@ -4,13 +4,13 @@
         <li>{{#link-to type this}}i{{/link-to}}</li>
         {{#if hasConnect}}
         <li>
-            <a {{action 'openModal' 'connect-vm-modal' 'vm' model}} title="connect"><span class="snf-thunder-full"></span></a>
+            <a {{action 'openModal' 'connect-vm-modal' 'vm' model bubbles=false}} title="connect"><span class="snf-thunder-full"></span></a>
         </li>
         {{/if}}
 
         {{#each item in actionsMeta}}
         <li>
-            <a {{action 'openModal' item.act item.controller model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+            <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
         </li>
         {{/each}}
     </ul>
