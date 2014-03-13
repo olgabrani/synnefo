@@ -137,6 +137,9 @@
 			div:first-child {
 				height:215px;
 			}
+			&.add-new div:first-child {
+				height: auto;
+			}
 			.check, .info, .actions {
 				display: none;
 			}
