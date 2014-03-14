@@ -1,1 +1,175 @@
-<p>step-3</p>
+<div class="advanced-conf-step">
+	<div class="adv-main row">
+		<div class="name">
+			<h2>Machine name</h2>
+			<span class="input">
+				<input type="text" placeholder="My Ubuntu Server" class="el7">
+			</span>
+		</div>
+		<div class="expand-btn">
+			<a class="expand-arrow" href="">
+				Advanced Configuration
+				<span class="snf-arrow-down preselected"></span>
+			</a>
+		</div>
+	</div>
+	<div class="advanced-conf-options">
+		<div class="ssh-keys-area area">
+			<div class="row">
+				<h2>Public SSH keys</h2>
+				<p>Your account contains the following SSH public keys. Select one or more to activate in your new machine. You will then be able to ssh with the corresponding private key without a password."</p>
+				<ul>
+					<li class="trigger-checkbox">
+						<h3>My public key long name one </h3>
+						<a href="" class="check">
+							<span class="snf-checkbox-unchecked"></span>
+						</a>
+					</li>
+					<li class="trigger-checkbox">
+						<h3>Other public key </h3>
+						<a href="" class="check">
+							<span class="snf-checkbox-unchecked"></span>
+						</a>
+					</li>
+					<li class="trigger-checkbox">
+						<h3>My public key long name one </h3>
+						<a href="" class="check">
+							<span class="snf-checkbox-unchecked"></span>
+						</a>
+					</li>
+				</ul>
+				<div>
+					<a href="" class="btn5 wrap-a" data-reveal-id="sshkeys-wizard" title="set data-reveal-id: sshkeys-wizard">manage ssh keys</a>
+				</div>
+			</div>
+		</div>
+		<div class="networks-area area">
+			<h2 class="row">Networks</h2>
+			<ul>
+				<li class="trigger-checkbox row has-more select-net">
+					<h3 class="">
+						<span class="net-icons">
+							<span class="temp-line line1"></span>
+							<span class="snf-www"></span>
+							<span class="snf-network-full"></span>
+						</span>
+						Public Network
+					</h3>
+					<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
+				</li>
+				<li class="more">
+					<div class="row">
+						<div class="trigger-checkbox clearfix">
+							<h3>192.168.2.3</h3>
+							<a href="" class="check"><span class="snf-checkbox-checked prechecked"></span></a>
+						</div>
+						<div class="trigger-checkbox clearfix">
+							<h3>192.168.2.3</h3>
+							<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+						</div>
+						<div class="trigger-checkbox clearfix">
+							<h3>192.168.2.3</h3>
+							<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+						</div>
+						<div>
+							<a href="" class="btn5 wrap-a">allocate ip</a>
+						</div>
+					</div>
+				</li>
+				<li class="trigger-checkbox row select-net">
+					<h3 class="net-name">
+						<span class="net-icons">
+							<span class="temp-line line1"></span>
+							<span class="temp-line line2"></span>
+							<span class="snf-www"></span>
+							<span class="snf-router-outline"></span>
+							<span class="snf-network-full"></span>
+						</span>
+						Routed Network
+					</h3>
+					<a href="" class="check">
+						<span class="snf-checkbox-unchecked"></span>
+					</a>
+				</li>
+				<li class="trigger-checkbox row select-net">
+					<h3 class="net-name">
+						<span class="net-icons">
+							<span class="snf-network-full"></span>
+						</span>
+						Private Network 1
+					</h3>
+					<a href="" class="check">
+						<span class="snf-checkbox-unchecked"></span>
+					</a>
+				</li>
+				<li class="trigger-checkbox row select-net">
+					<h3 class="net-name">
+						<span class="net-icons">
+							<span class="snf-network-full"></span>
+						</span>
+						Private Network 2
+					</h3>
+					<a href="" class="check">
+						<span class="snf-checkbox-unchecked"></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tags-area area">
+			<div class="row">
+				<h2>Tags</h2>
+				<p>Dude use your tags like you eat your cereal.<br>You can color code them as well</p>
+				<ul>
+					<li>
+						<h3>My tags</h3>
+						<span>select</span>
+					</li>
+					<li class="trigger-checkbox">
+						<h3>
+							<span class="tag-demo tag4"></span>
+							Operating system
+						</h3>
+						<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+					</li>
+					<li class="trigger-checkbox">
+						<h3>
+							<span class="tag-demo tag5"></span>
+							Pirate PC1
+						</h3>
+						<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+					</li>
+					<li class="trigger-checkbox">
+						<h3>
+							<span class="tag-demo tag6"></span>
+							Pirate PC1
+						</h3>
+						<a href="" class="check"><span class="snf-checkbox-unchecked"></span></a>
+					</li>
+				</ul>
+				<div ><a class="btn5 show-add-tag wrap-a" href="" id="show-add-tag">add new Tag</a></div>
+				<div class="snf-color-picker">
+					<form action="#" method="post">
+						<div id="picker-1">
+							<div class="farbtastic">
+								<div class="color" style="background-color: rgb(255, 0, 21);"></div>
+								<div class="wheel"></div>
+								<div class="overlay"></div>
+								<div class="h-marker marker" style="left: 90px; top: 13px;"></div>
+								<div class="sl-marker marker" style="left: 87px; top: 114px;"></div>
+							</div>
+						</div>
+						<div class="form-item">
+							<input type="text" id="color-1" class="color-preview" name="color" value="#16C1E9" disabled>
+							<span class="input"><input class="tag_name" type="text" placeholder="My Tag"></span>
+						</div>
+					</form>
+					<div class="btns">
+						<a class="btn5 wrap-a" href="">OK</a>
+						<a class="btn5 hide-add-tag wrap-a" href="">CANCEL</a>
+					</div>
+					<a href="" id="hide-add-tag-dummy" style="position:relative;top:50px">&nbsp;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

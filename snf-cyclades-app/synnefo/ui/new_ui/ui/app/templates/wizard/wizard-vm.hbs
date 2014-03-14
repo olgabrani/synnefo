@@ -1,0 +1,33 @@
+<div id="vm-wizard" class="overlay-div wizard">
+	<div class="top">
+			<div class="numbers">
+				<div class="row">
+					{{close-wizard action="resetClose"}}
+					<ul class="nums">
+					{{#each headers}}
+						{{view Snf.WizardHeaderView}}
+					{{/each}}
+					</ul>
+				</div>
+			</div>
+			<div class="row menus">
+			{{#each menus}}
+				{{view Snf.WizardMenuView}}
+			{{/each}}
+			</div>
+		</div>
+		<div class="middle">
+			<div class="steps">
+				{{render "WizardVmStep1" "WizardVmStep1"}}
+				{{render "WizardVmStep2" "WizardVmStep2"}}
+				{{render "WizardVmStep3" "WizardVmStep3"}}
+				{{render "WizardVmStep4" "WizardVmStep4"}}
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="row">
+				{{view Snf.WizardBtnBackView}}
+				{{view Snf.WizardBtnNextView}}
+			</div>
+		</div>
+</div>

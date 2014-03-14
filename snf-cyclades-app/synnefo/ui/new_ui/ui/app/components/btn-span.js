@@ -1,4 +1,4 @@
-Snf.BtnsSpanComponent = Ember.Component.extend({
+Snf.BtnSpanComponent = Ember.Component.extend({
 	tagName: 'a',
 	layoutName: 'components/btn-span',
 	click: function() {
