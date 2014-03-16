@@ -1,4 +1,4 @@
-Snf.CloseWizardComponent = Snf.BtnsSpanComponent.extend({
+Snf.CloseWizardComponent = Snf.BtnSpanComponent.extend({
 	classNames: ['close'],
 	spanCls: 'snf-close',
 });

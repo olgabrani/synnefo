@@ -56,4 +56,4 @@ Snf.wizards = Ember.Object.create({
   }),
 });
 
-Snf.SystemUUIDs = ['25ecced9-bf53-4145-91ee-cf47377e9fb2'];
+Snf.SystemUUIDs = ['5e06c85e-166f-4dec-a5ff-f3931e80a48d'];
