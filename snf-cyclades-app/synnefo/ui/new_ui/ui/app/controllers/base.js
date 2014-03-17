@@ -2,10 +2,14 @@ Snf.ElemsListController = Ember.ArrayController.extend({
     
     type: '',
 
+    fullName: function () {
+        return _.capitalize(this.type);
+    }.property('type'),
+
     // returns type without an 's', i.e. network
     _item: function () {
         return this.type.substring(0, this.type.length - 1);
-    }.property(),
+    }.property('type'),
     
     // returns type without an 's', i.e. network
     itemController: function () {
@@ -27,8 +31,8 @@ Snf.ElemsListController = Ember.ArrayController.extend({
     hasFilter: true,
 
     pageTitle: function () {
-        return this.get('type')+' ('+this.get('viewCls')+')';
-    }.property('viewCls'),
+        return this.get('fullName')+' ('+this.get('viewCls')+')';
+    }.property('viewCls', 'fullName'),
 
     // used for link-to purposes
     parent: function () {

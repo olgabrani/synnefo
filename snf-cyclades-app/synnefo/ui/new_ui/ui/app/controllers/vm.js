@@ -1,4 +1,10 @@
 var actionsMetaVm = {
+    'connect': {
+        title: 'connect vm',
+        act: 'connect-vm-modal',
+        spanCls: 'snf-thunder-full',
+        controller: 'vm',
+    },
     'start': {
         title: 'start me now',
         act: 'start-vm-modal',
@@ -90,10 +96,10 @@ Snf.VmController = Snf.ElController.extend({
     },
 });
 
-
 Snf.VmsController = Snf.ElemsListController.extend({
     type : 'vms',
     iconCls  : 'snf-pc-full',
+    fullName: 'Virtual Machines',
 });
 
 Snf.VmInfoController = Snf.VmController.extend();

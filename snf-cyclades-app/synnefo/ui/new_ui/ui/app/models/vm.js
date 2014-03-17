@@ -1,24 +1,24 @@
 var statusActionsVm = {
     'off'      : {
-        enabledActions : ['start', 'destroy'],
+        enabledActions : ['connect', 'start', 'destroy'],
     },
     'error'      : {
-        enabledActions : ['destroy'],
+        enabledActions : ['connect', 'destroy'],
     },
     'building'      : {
-        enabledActions : [],
+        enabledActions : ['connect'],
     },
     'running'      : {
-        enabledActions : ['reboot', 'shutdown', 'destroy'],
+        enabledActions : ['connect', 'reboot', 'shutdown', 'destroy', ],
     },
     'rebooting'      : {
-        enabledActions : ['destroy'],
+        enabledActions : ['connect', 'destroy'],
     },
     'starting'      : {
-        enabledActions : ['destroy'],
+        enabledActions : ['connect', 'destroy'],
     },
     'shutting'      : {
-        enabledActions : ['destroy'],
+        enabledActions : ['connect', 'destroy'],
     },
 };
 

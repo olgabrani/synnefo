@@ -2,11 +2,6 @@
 <div {{bind-attr data-status=this.status class="this.status"}}>
     <ul class="side-actions">
         <li>{{#link-to type this}}i{{/link-to}}</li>
-        {{#if hasConnect}}
-        <li>
-            <a {{action 'openModal' 'connect-vm-modal' 'vm' model bubbles=false}} title="connect"><span class="snf-thunder-full"></span></a>
-        </li>
-        {{/if}}
 
         {{#each item in actionsMeta}}
         <li>
