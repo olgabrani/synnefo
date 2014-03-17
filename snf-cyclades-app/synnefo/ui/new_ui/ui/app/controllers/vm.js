@@ -1,6 +1,6 @@
 var actionsMetaVm = {
     'connect': {
-        title: 'connect vm',
+        title: 'connect',
         act: 'connect-vm-modal',
         spanCls: 'snf-thunder-full',
         controller: 'vm',
@@ -54,9 +54,34 @@ Snf.VmController = Snf.ElController.extend({
 
     actionsMeta: function() {
         var enabledActions = this.get('model').get('enabledActions');
-        return _.map(enabledActions, function(val,key) { return actionsMetaVm[val]; });      
+        return _.map(enabledActions, function(val,key) {
+            return actionsMetaVm[val];
+        });
     }.property('model.enabledActions'),
-    
+
+    fewActionsMeta: function() {
+        var enabledActions = this.get('model').get('enabledActions');
+        return _.map(enabledActions, function(val,key) {
+            return actionsMetaVm[val];
+        }).slice(0,3);
+    }.property('model.enabledActions'),
+
+    moreActionsMeta: function() {
+        var enabledActions = this.get('model').get('enabledActions');
+        var cnt = 3 - this.get('model').get('enabledActions').length;
+        return _.map(enabledActions, function(val,key) {
+            return actionsMetaVm[val];
+        }).slice(cnt);
+    }.property('model.enabledActions'),
+
+    actionsMany: function() {
+        return this.get('model').get('enabledActions').length > 4;
+    }.property('model.enabledActions'),
+
+    actionsCount: function() {
+        return this.get('model').get('enabledActions').length;
+    }.property('model.enabledActions'),
+
     actions: {
 
         deleteTag: function(tag) {

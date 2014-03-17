@@ -3,11 +3,34 @@
     <ul class="side-actions">
         <li>{{#link-to type this}}i{{/link-to}}</li>
 
-        {{#each item in actionsMeta}}
-        <li>
-            <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
-        </li>
-        {{/each}}
+        {{#if actionsMany}}
+            {{#each item in fewActionsMeta}}
+            <li>
+                <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+            </li>
+            {{/each}}
+            <li class="more-actions">
+                <a href="javascript:void(0)" title=""{{action bubbles=false}}>...</a>
+                <ul>
+                    {{#each item in moreActionsMeta}}
+                    <li>
+                        <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}>{{item.title}}</span></a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </li>
+        {{else}}
+            {{#each item in actionsMeta}}
+            <li>
+                <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+            </li>
+            {{/each}}
+        {{/if}}
+
+
+        {{#if os}}
+            {{sideactions-project reassignProject="reassignProject" param=this}}
+        {{/if}}
     </ul>
 
     <div class="container">
@@ -21,7 +44,7 @@
             {{/link-to}}
         </div>
 
-        <h4>{{name}}</h4>
+        <h4>{{name}}{{actionsCount}}</h4>
         
         <div class= "status">
             <span class="state">{{status-to-text status}}</span>

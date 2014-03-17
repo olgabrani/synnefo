@@ -1,6 +1,6 @@
 var statusActionsVm = {
     'off'      : {
-        enabledActions : ['connect', 'start', 'destroy'],
+        enabledActions : ['connect', 'start', 'destroy', ],
     },
     'error'      : {
         enabledActions : ['connect', 'destroy'],
@@ -9,7 +9,7 @@ var statusActionsVm = {
         enabledActions : ['connect'],
     },
     'running'      : {
-        enabledActions : ['connect', 'reboot', 'shutdown', 'destroy', ],
+        enabledActions : ['connect', 'reboot', 'shutdown', 'destroy','connect', 'reboot',  ],
     },
     'rebooting'      : {
         enabledActions : ['connect', 'destroy'],
@@ -67,7 +67,7 @@ Snf.Vm.FIXTURES = [
     },
     {
         id: 3,
-        name: 'My cool VM 3',
+        name: 'vm name 3 really large name vm name vm 1 really large name vm',
         status: 'building',
         os: 'windows',
         hostname: "user@snf-38389.vm.okeanos.grnet.gr",

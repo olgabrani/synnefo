@@ -52,6 +52,22 @@ ul.side-actions {
 		&.more-actions + a {
 			line-height: 10px;
 		}
+		&.more-actions {
+			position: relative;
+			ul {
+				li {
+
+				}
+				&:after {
+					bottom:5px;
+					top: auto;
+				}
+				&:before{
+					bottom:4px;
+					top: auto;
+				}
+			}
+		}
 		ul {
 			z-index: 1;
 			display: none;
@@ -59,7 +75,7 @@ ul.side-actions {
 			border: 1px solid $link-color;
 			padding: 5px 10px;
 			text-align: left;
-			top: 34px;
+			bottom: -5px;
 			left: 40px;
 			margin: 0;
 			background: #fff;
@@ -85,7 +101,7 @@ ul.side-actions {
 				content: '';
 				display: block;
 				position: absolute;
-				top: 41px;
+				top: 133px;
 				left: -20px;
 				width: 0;
 				height: 0;
@@ -97,31 +113,13 @@ ul.side-actions {
 				content: '';
 				display: block;
 				position: absolute;
-				top: 40px;
+				top: 132px;
 				left: -22px;
 				width: 0;
 				height: 0;
 				border-color: transparent $link-color transparent transparent ;
 				border-style: solid;
 				border-width: 11px;
-			}
-			&.many {
-				top: 5px;
-				&:after {
-					top: 72px;
-				}
-				&:before {
-					top: 71px;
-				}
-			}
-			&.single {
-				top: 62px;
-				&:after {
-					top: 13px;
-				}
-				&:before {
-					top: 12px;
-				}
 			}
 		}
 		&:hover {
