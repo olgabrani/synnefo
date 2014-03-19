@@ -60,18 +60,12 @@ Snf.VmController = Snf.ElController.extend({
     }.property('model.enabledActions'),
 
     fewActionsMeta: function() {
-        var enabledActions = this.get('model').get('enabledActions');
-        return _.map(enabledActions, function(val,key) {
-            return actionsMetaVm[val];
-        }).slice(0,3);
+        return this.get('actionsMeta').slice(0,3);
     }.property('model.enabledActions'),
 
     moreActionsMeta: function() {
-        var enabledActions = this.get('model').get('enabledActions');
-        var cnt = 3 - this.get('model').get('enabledActions').length;
-        return _.map(enabledActions, function(val,key) {
-            return actionsMetaVm[val];
-        }).slice(cnt);
+        var cnt = 3 - this.get('actionsCount');
+        return this.get('actionsMeta').slice(cnt);
     }.property('model.enabledActions'),
 
     actionsMany: function() {
