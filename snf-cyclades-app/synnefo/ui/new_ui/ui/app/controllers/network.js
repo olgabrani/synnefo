@@ -9,6 +9,7 @@ var actionsMetaNetwork = {
 
 Snf.NetworkController = Snf.ElController.extend({
 
+    maxActionsVisible: 2,
     type: 'network',
 
     submenu: [{

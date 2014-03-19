@@ -52,32 +52,11 @@ Snf.VmController = Snf.ElController.extend({
         'icon': 'snf-network-outline',
     }],
 
-    projects: function(){
-        return this.store.find('project');
-    }.property(),
-
     actionsMeta: function() {
         var enabledActions = this.get('model').get('enabledActions');
         return _.map(enabledActions, function(val,key) {
             return actionsMetaVm[val];
         });
-    }.property('model.enabledActions'),
-
-    fewActionsMeta: function() {
-        return this.get('actionsMeta').slice(0,3);
-    }.property('model.enabledActions'),
-
-    moreActionsMeta: function() {
-        var cnt = 3 - this.get('actionsCount');
-        return this.get('actionsMeta').slice(cnt);
-    }.property('model.enabledActions'),
-
-    actionsMany: function() {
-        return this.get('model').get('enabledActions').length > 4;
-    }.property('model.enabledActions'),
-
-    actionsCount: function() {
-        return this.get('model').get('enabledActions').length;
     }.property('model.enabledActions'),
 
     actions: {

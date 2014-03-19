@@ -78,10 +78,40 @@ Snf.ElController = Ember.ObjectController.extend({
         return this.type+'init';
     }.property(),
 
+    // defines how many action icons will be visible at the sidebar
+    maxActionsVisible: 4,
+
+    // show a few action icons
+    fewActions: function() {
+        var cnt = this.maxActionsVisible - 1;
+        return this.get('actionsMeta').slice(0,cnt);
+    }.property('model.enabledActions'),
+
+    // ... and more actions on hover
+    moreActions: function() {
+        var cnt = this.maxActionsVisible - 1 - this.get('actionsCount');
+        return this.get('actionsMeta').slice(cnt);
+    }.property('model.enabledActions'),
+
+    // returns true if therea are more actions that can be shown at the sidebar
+    actionsMany: function() {
+        return this.get('model').get('enabledActions').length > this.maxActionsVisible;
+    }.property('model.enabledActions'),
+
+    actionsCount: function() {
+        return this.get('model').get('enabledActions').length;
+    }.property('model.enabledActions'),
+
+
     actions: {
         refreshModel: function(model){
             this.controllerFor(this.type).set('model', model);
         },
-    }
+    },
+
+    projects: function(){
+        return this.store.find('project');
+    }.property(),
+
 
 });

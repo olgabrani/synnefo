@@ -647,14 +647,14 @@ function program4(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n            ");
-  stack1 = helpers.each.call(depth0, "item", "in", "fewActionsMeta", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "item", "in", "fewActions", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n            <li class=\"more-actions\">\n                <a href=\"javascript:void(0)\" title=\"\"");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, {hash:{
     'bubbles': (false)
   },hashTypes:{'bubbles': "BOOLEAN"},hashContexts:{'bubbles': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">...</a>\n                <ul>\n                    ");
-  stack1 = helpers.each.call(depth0, "item", "in", "moreActionsMeta", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "item", "in", "moreActions", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n                </ul>\n            </li>\n        ");
   return buffer;
