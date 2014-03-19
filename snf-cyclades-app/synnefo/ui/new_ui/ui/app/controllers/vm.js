@@ -52,6 +52,10 @@ Snf.VmController = Snf.ElController.extend({
         'icon': 'snf-network-outline',
     }],
 
+    projects: function(){
+        return this.store.find('project');
+    }.property(),
+
     actionsMeta: function() {
         var enabledActions = this.get('model').get('enabledActions');
         return _.map(enabledActions, function(val,key) {
@@ -112,6 +116,9 @@ Snf.VmController = Snf.ElController.extend({
             this.get('model').set('status','running');
         },
 
+        reassignProject: function(project){
+            //this.get('model').set('project',project);
+        },
     },
 });
 

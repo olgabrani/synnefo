@@ -33,6 +33,7 @@ Snf.Vm = DS.Model.extend({
     tags      : DS.hasMany('tag', { async:true }),
     volumes   : DS.hasMany('volume', { async:true}),
     ports     : DS.hasMany('port', { async: true}),
+    project   : DS.belongsTo('project',{ async:true}),
     
     enabledActions: function() {
         return statusActionsVm[this.get('status')].enabledActions;
@@ -53,6 +54,7 @@ Snf.Vm.FIXTURES = [
         tags: [1,2,3],
         volumes: [1,2],
         ports: [1,2,6],
+        project: 1,
     },
     {
         id: 2,
@@ -64,6 +66,7 @@ Snf.Vm.FIXTURES = [
         tags: [4,5,6],
         volumes: [3],
         ports: [3],
+        project: 2,
     },
     {
         id: 3,
@@ -73,6 +76,7 @@ Snf.Vm.FIXTURES = [
         hostname: "user@snf-38389.vm.okeanos.grnet.gr",
         tags: [7],
         ports: [4,5],
+        project: 3,
     },
     {
         id: 4,
@@ -80,6 +84,7 @@ Snf.Vm.FIXTURES = [
         status: 'off',
         os: 'fedora',
         tags: [8],
+        project: 4,
     },
     {
         id: 5,
@@ -87,17 +92,20 @@ Snf.Vm.FIXTURES = [
         status: 'rebooting',
         os: 'kubuntu',
         tags: [9],
+        project: 1,
     },
     {
         id: 6,
         name: 'athina',
         status: 'starting',
         os: 'kubuntu',
+        project: 2,
     },
     {
         id: 7,
         name: 'kpap',
         status: 'shutting',
         os: 'kubuntu',
+        project: 3,
     },
 ];

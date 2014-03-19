@@ -11175,44 +11175,37 @@ ul.side-actions li.bottom {
 ul.side-actions li.bottom ul {
   top: auto;
   bottom: 0;
+  display: block;
 }
-/* line 34, ../sass/_overlay2.scss */
+/* line 35, ../sass/_overlay2.scss */
 ul.side-actions li.bottom ul:before {
   top: auto;
   bottom: 3px;
 }
-/* line 38, ../sass/_overlay2.scss */
+/* line 39, ../sass/_overlay2.scss */
 ul.side-actions li.bottom ul:after {
   top: auto;
   bottom: 4px;
 }
-/* line 43, ../sass/_overlay2.scss */
-ul.side-actions li.bottom ul.options {
-  display: none;
-}
-/* line 46, ../sass/_overlay2.scss */
-ul.side-actions li.bottom ul.options .selected a {
-  color: #bebebe;
-}
-/* line 52, ../sass/_overlay2.scss */
+/* line 45, ../sass/_overlay2.scss */
 ul.side-actions li.more-actions + a {
   line-height: 10px;
 }
-/* line 55, ../sass/_overlay2.scss */
+/* line 48, ../sass/_overlay2.scss */
 ul.side-actions li.more-actions {
   position: relative;
 }
-/* line 61, ../sass/_overlay2.scss */
+/* line 54, ../sass/_overlay2.scss */
 ul.side-actions li.more-actions ul:after {
   bottom: 5px;
   top: auto;
 }
-/* line 65, ../sass/_overlay2.scss */
+/* line 58, ../sass/_overlay2.scss */
 ul.side-actions li.more-actions ul:before {
   bottom: 4px;
   top: auto;
 }
-/* line 71, ../sass/_overlay2.scss */
+/* line 64, ../sass/_overlay2.scss */
 ul.side-actions li ul {
   z-index: 1;
   display: none;
@@ -11225,13 +11218,13 @@ ul.side-actions li ul {
   margin: 0;
   background: #fff;
 }
-/* line 82, ../sass/_overlay2.scss */
+/* line 75, ../sass/_overlay2.scss */
 ul.side-actions li ul li {
   padding: 5px;
   font-size: 0.875em;
   white-space: nowrap;
 }
-/* line 87, ../sass/_overlay2.scss */
+/* line 80, ../sass/_overlay2.scss */
 ul.side-actions li ul a {
   padding: 0;
   border-radius: 0;
@@ -11240,12 +11233,12 @@ ul.side-actions li ul a {
   height: auto;
   color: #485057;
 }
-/* line 94, ../sass/_overlay2.scss */
+/* line 87, ../sass/_overlay2.scss */
 ul.side-actions li ul a:hover {
   background: #fff;
   color: #30c79e;
 }
-/* line 100, ../sass/_overlay2.scss */
+/* line 93, ../sass/_overlay2.scss */
 ul.side-actions li ul:after {
   content: '';
   display: block;
@@ -11258,7 +11251,7 @@ ul.side-actions li ul:after {
   border-style: solid;
   border-width: 10px;
 }
-/* line 112, ../sass/_overlay2.scss */
+/* line 105, ../sass/_overlay2.scss */
 ul.side-actions li ul:before {
   content: '';
   display: block;
@@ -11271,11 +11264,11 @@ ul.side-actions li ul:before {
   border-style: solid;
   border-width: 11px;
 }
-/* line 126, ../sass/_overlay2.scss */
+/* line 119, ../sass/_overlay2.scss */
 ul.side-actions li:hover ul {
   display: block;
 }
-/* line 131, ../sass/_overlay2.scss */
+/* line 124, ../sass/_overlay2.scss */
 ul.side-actions .arrow-right {
   display: inline-block;
   width: 0;
@@ -11285,12 +11278,12 @@ ul.side-actions .arrow-right {
   border-left: 5px solid #485057;
   margin-left: 10px;
 }
-/* line 141, ../sass/_overlay2.scss */
+/* line 134, ../sass/_overlay2.scss */
 ul.side-actions a:hover .arrow-right {
   border-left-color: #30c79e;
 }
 
-/* line 149, ../sass/_overlay2.scss */
+/* line 142, ../sass/_overlay2.scss */
 .items-list li:hover ul.side-actions {
   -webkit-transition: background 300ms ease-out;
   -moz-transition: background 300ms ease-out;
@@ -11300,7 +11293,7 @@ ul.side-actions a:hover .arrow-right {
   background: #485057;
 }
 
-/* line 157, ../sass/_overlay2.scss */
+/* line 150, ../sass/_overlay2.scss */
 .list-view .side-actions {
   display: none;
 }

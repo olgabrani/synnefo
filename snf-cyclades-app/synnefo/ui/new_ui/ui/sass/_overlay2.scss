@@ -31,6 +31,7 @@ ul.side-actions {
 			ul {
 				top: auto;
 				bottom:0;
+				display: block;
 				&:before {
 					top: auto;
 					bottom: 3px;
@@ -38,14 +39,6 @@ ul.side-actions {
 				&:after {
 					top: auto;
 					bottom: 4px;
-				}
-			}
-			ul.options {
-				display: none;
-				.selected {
-					a {
-						color: $inactive-color;
-					}
 				}
 			}
 		}

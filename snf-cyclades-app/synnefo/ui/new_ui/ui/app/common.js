@@ -614,17 +614,6 @@ $(document).ready(function(){
     $('a.wrap-a').wrapInner('<span></span>');
 
 
-    $('.side-actions .bottom .reassign').click(function(e){
-        e.preventDefault();
-        $(this).parents('.bottom').find('ul').hide();
-        $(this).parents('.bottom').find('ul.options').show();
-    });
-
-    $('.side-actions ul.options').mouseleave(function(e){
-        $(this).hide();
-        $(this).siblings('ul').removeAttr('style');
-    });
-
 });
 
 
