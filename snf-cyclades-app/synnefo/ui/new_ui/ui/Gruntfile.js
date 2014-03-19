@@ -70,6 +70,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint','concat',  'emberTemplates','watch']);
+  grunt.registerTask('build', ['jshint', 'concat', 'emberTemplates']);
+  grunt.registerTask('default', ['build','watch']);
 
 };
