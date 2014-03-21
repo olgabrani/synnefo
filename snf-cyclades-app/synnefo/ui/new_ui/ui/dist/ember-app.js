@@ -1,9 +1,9 @@
 window.Snf = Ember.Application.create({
-    LOG_ACTIVE_GENERATION: true,
+/*    LOG_ACTIVE_GENERATION: true,
     LOG_MODULE_RESOLVER: true,
     LOG_TRANSITIONS: true,
     LOG_TRANSITIONS_INTERNAL: true,
-    LOG_VIEW_LOOKUPS: true,
+    LOG_VIEW_LOOKUPS: true,*/
 });
 
 Snf.ApplicationAdapter = DS.FixtureAdapter;
@@ -353,7 +353,6 @@ $(document).ready(function(){
         ui.inactiveActions();
     }
     ui.setElminHeight($('.main > .details'));
-    ui.setElminHeight($('.lt-bar'));
     ui.setElmaxHeight($('.storage-progress'));
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;
@@ -703,13 +702,14 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
 	spanCls: undefined,
 	checkedCls: 'snf-checkbox-checked',
 	uncheckedCls: 'snf-checkbox-unchecked',
+
+
 	didInsertElement: function() {
 		this.setInitClasses();
 	},
 	setInitClasses: function() {
 		var initialState = this.get('checkboxState');
-        console.log('given state: ', this.get('checkboxState'));
-		if(initialState === 'preselected')
+        if(initialState === 'preselected')
 			this.check();
 		else
 			this.uncheck();
@@ -730,13 +730,15 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
 			this.uncheck();
 		else
 			this.check();
-		},
-    check : function() {
+	},
+    check : function(param) {
+		this.get('param').set('isSelected', true);
 		this.set('spanCls', this.get('checkedCls'));
         this.toggleParentLiState();
     },
-    uncheck : function() {
-		this.set('spanCls', this.get('uncheckedCls'));
+    uncheck : function(param) {
+        this.get('param').set('isSelected', false);
+        this.set('spanCls', this.get('uncheckedCls'));
 		this.toggleParentLiState();
 	},
 
@@ -792,6 +794,13 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
     isEditable: false,
     isDisplayed: false,
 
+    availableProjects: function() {
+        var current = this.get('current');
+        return this.get('projects').filter(function(p) {
+            return p.get('id') != current.get('id');
+        });
+    }.property('projects'),
+
     mouseEnter: function(evt) {
         this.set('isDisplayed', true);
     },
@@ -806,13 +815,11 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
             this.set('isEditable', true);
         },
         reassignProject: function(){
-            console.log(this.get('param'));
-            this.sendAction('reassignProject',this.get('param'));
+            this.sendAction('reassignProject');
             this.set('isEditable', false);
             this.set('isDisplayed', false);
         }
-    }
-
+    },
 });
 ;Snf.TagElComponent = Ember.Component.extend({
     tagName: 'li',
@@ -880,6 +887,12 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
         return this.get('_item')+'init';
     }.property(),
 
+    actions: {
+        'toggleCheckboxesState': function(){
+            console.log('toggleChecks');
+        },
+    },
+
 });
 
 Snf.ElController = Ember.ObjectController.extend({
@@ -917,14 +930,14 @@ Snf.ElController = Ember.ObjectController.extend({
     // defines how many action icons will be visible at the sidebar
     maxActionsVisible: 4,
 
-    // show a few action icons
-    fewActions: function() {
+    // show main action icons
+    mainActions: function() {
         var cnt = this.maxActionsVisible - 1;
         return this.get('actionsMeta').slice(0,cnt);
     }.property('model.enabledActions'),
 
     // ... and more actions on hover
-    moreActions: function() {
+    secondaryActions: function() {
         var cnt = this.maxActionsVisible - 1 - this.get('actionsCount');
         return this.get('actionsMeta').slice(cnt);
     }.property('model.enabledActions'),
@@ -992,6 +1005,9 @@ Snf.NetworkController = Snf.ElController.extend({
 
 Snf.NetworksController = Snf.ElemsListController.extend({
     type : 'networks',
+    actionsMeta: function(){
+        return _.toArray(actionsMetaNetwork);
+    }.property(),
 });
 ;Snf.PortController = Ember.ObjectController.extend();;Snf.ProjectsController = Ember.ArrayController.extend();
 
@@ -1088,6 +1104,7 @@ Snf.VmController = Snf.ElController.extend({
     iconCls: 'snf-pc-full',
     hasConnect: true,
     hasTags : true,
+    isSelected: false,
 
     submenu: [
     {
@@ -1109,6 +1126,7 @@ Snf.VmController = Snf.ElController.extend({
             return actionsMetaVm[val];
         });
     }.property('model.enabledActions'),
+
 
     actions: {
 
@@ -1156,6 +1174,10 @@ Snf.VmsController = Snf.ElemsListController.extend({
     type : 'vms',
     iconCls  : 'snf-pc-full',
     fullName: 'Virtual Machines',
+
+    actionsMeta: function(){
+        return _.toArray(actionsMetaVm);
+    }.property(),
 });
 
 Snf.VmInfoController = Snf.VmController.extend();
@@ -1207,6 +1229,9 @@ Snf.VolumeController = Snf.ElController.extend({
 
 Snf.VolumesController = Snf.ElemsListController.extend({
     type : 'volumes',
+    actionsMeta: function(){
+        return _.toArray(actionsMetaVolume);
+    }.property(),
 });
 
 ;/* Controllers for Wizards */
@@ -3096,6 +3121,12 @@ Snf.Vm = DS.Model.extend({
         return statusActionsVm[this.get('status')].enabledActions;
     }.property('status'),
 
+/*  Why this does not return the networks?
+
+    networks: function() {
+        return this.get('ports').getEach('network').uniq();
+    }.property('model.@each.ports'),
+*/
 });
 
 
@@ -3499,10 +3530,22 @@ Snf.VolumeVmConnectedRoute = Ember.Route.extend({
     },
     
 });
-;Snf.itemsListView = Ember.View.extend({
+;Snf.ItemsListLtBarView = Ember.View.extend({
+
+    tagName: 'div',
+    classNames: ['lt-bar'],
+    templateName: 'items-list-lt-bar',
+    didInsertElement: function () {
+        ui.setElminHeight(this.$());
+    }
+
+});
+;Snf.ItemsListView = Ember.View.extend({
+
     tagName: 'ul',
     classNames: ['items-list'],
     templateName: 'items-list',
+
 });
 ;Snf.scrollWrapView = Ember.View.extend({
     tagName: 'div',

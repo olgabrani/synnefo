@@ -1,0 +1,12 @@
+<ul class="lt-actions">
+    <li class="select trigger-checkbox"  {{action 'toggleCheckboxesState'}}>
+        <a href="" class="check">
+            <span class="snf-checkbox-unchecked checkbox"></span>
+        </a>
+        <em>Un</em>Select all
+
+    </li>
+    {{#each a in actionsMeta}}
+        <li><a {{action 'openModal' a.act  bubbles=false}} {{bind-attr class="a.title"}}>{{a.title}}</a></li>
+    {{/each}}    
+</ul>

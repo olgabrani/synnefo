@@ -41,5 +41,8 @@ Snf.VolumeController = Snf.ElController.extend({
 
 Snf.VolumesController = Snf.ElemsListController.extend({
     type : 'volumes',
+    actionsMeta: function(){
+        return _.toArray(actionsMetaVolume);
+    }.property(),
 });
 

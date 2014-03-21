@@ -1,17 +1,13 @@
 <a href="#" title="Show projects"><span class="snf-folder-move-full"></span></a>
 {{#if isDisplayed}}
-
-<ul>
-    <li>{{item.project.name}}</li>
-{{#if isEditable}}   
-{{#with item.project as p}}    
-    {{#each project in item.projects}}
-        {{!-- {{project.id}}/ {{p.id}} --}}
-        <li><a {{action 'reassignProject' param=this bubbles=false}}>{{project.name}}</a></li>
-    {{/each}}
-{{/with}}
-{{else}}
-    <li><a  class="reassign" {{action 'showProjects' bubbles=false}}>Reassign<span class="arrow-right"></span></a></li>
-{{/if}}
-</ul>
+    <ul>
+        <li>{{current.name}}</li>
+        {{#if isEditable}}
+            {{#each project in availableProjects}}
+                <li><a {{action 'reassignProject' param=project bubbles=false}}>{{project.name}}</a></li>
+            {{/each}}
+        {{else}}
+        <li><a  class="reassign" {{action 'showProjects' bubbles=false}}>Reassign<span class="arrow-right"></span></a></li>
+        {{/if}}
+    </ul>
 {{/if}}

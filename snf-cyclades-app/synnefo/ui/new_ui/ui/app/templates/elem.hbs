@@ -4,7 +4,7 @@
         <li>{{#link-to type this}}i{{/link-to}}</li>
 
         {{#if actionsMany}}
-            {{#each item in fewActions}}
+            {{#each item in mainActions}}
             <li>
                 <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
             </li>
@@ -12,9 +12,9 @@
             <li class="more-actions">
                 <a href="javascript:void(0)" title=""{{action bubbles=false}}>...</a>
                 <ul>
-                    {{#each item in moreActions}}
+                    {{#each item in secondaryActions}}
                     <li>
-                        <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}>{{item.title}}</span></a>
+                        <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}>{{item.title}}</a>
                     </li>
                     {{/each}}
                 </ul>
@@ -29,13 +29,13 @@
 
 
         {{#if os}}
-            {{sideactions-project reassignProject="reassignProject" item=this controller="project"}}
+            {{sideactions-project reassignProject="reassignProject" current=this.project projects=projects}}
         {{/if}}
     </ul>
 
     <div class="container">
         
-        {{checkbox-custom}}
+        {{checkbox-custom param=this}}
         
         <div class="img-wrap">
             {{#link-to type this}}
@@ -44,12 +44,16 @@
             {{/link-to}}
         </div>
 
-        <h4>{{name}}{{actionsCount}}</h4>
+        <h4>{{name}}//{{isSelected}}</h4>
         
         <div class= "status">
             <span class="state">{{status-to-text status}}</span>
         </div>
-        
+        <div class="actions">
+            {{#each item in actionsMeta}}
+                <a {{action 'openModal' item.act item.controller model bubbles=false}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+            {{/each}}
+        </div>
         {{#if hasTags}}
             {{view Snf.tagsListView}}
         {{/if}}

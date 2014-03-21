@@ -289,6 +289,15 @@
 					margin-left: -7px;
 					top: 6px;
 				}
+				.windows {
+					@include sprite('../images/os-windows.png', 14px, 14px);
+				}
+				.kubuntu {
+					@include sprite('../images/os-kubuntu.png', 14px, 14px);
+				}
+				.fedora {
+					@include sprite('../images/os-fedora.png', 14px, 14px);
+				}
 				.snf-font {
 					font-size: $list-icon-height;
 					line-height: 120%;
@@ -311,7 +320,15 @@
 				width:$tags-w;
 				height:$list-icon-height;
 				line-height: $list-icon-height;
-				a {
+				margin:0;
+				text-align: left;
+				li {
+					display: inline;
+				}
+				span, .delete {
+					display: none;
+				}
+				a,em {
 					vertical-align: middle;
 				}
 			}
@@ -351,6 +368,8 @@
 				position: relative;
 				padding:0 10px;
 				top: 2px;
+				width: 200px;
+				text-align: left;
 				a {
 					&:first-child {
 						margin-right:5px;
@@ -433,14 +452,14 @@
 		.container {
 			padding: 40px 0;
 			.tags {
-					margin:1em 0;
-					li {
-						display: inline;
-					}
-					span, .delete {
-						display: none;
-					}
+				margin:1em 0;
+				li {
+					display: inline;
 				}
+				span, .delete {
+					display: none;
+				}
+			}
 		}
 		.side-actions {
 			display: none;

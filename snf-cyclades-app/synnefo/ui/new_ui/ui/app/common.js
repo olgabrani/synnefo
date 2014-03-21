@@ -344,7 +344,6 @@ $(document).ready(function(){
         ui.inactiveActions();
     }
     ui.setElminHeight($('.main > .details'));
-    ui.setElminHeight($('.lt-bar'));
     ui.setElmaxHeight($('.storage-progress'));
     $('#hd-search .hd-icon-search').click(function(e){
         var that = this;

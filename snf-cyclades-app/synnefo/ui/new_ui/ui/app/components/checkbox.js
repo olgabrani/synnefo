@@ -9,13 +9,14 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
 	spanCls: undefined,
 	checkedCls: 'snf-checkbox-checked',
 	uncheckedCls: 'snf-checkbox-unchecked',
+
+
 	didInsertElement: function() {
 		this.setInitClasses();
 	},
 	setInitClasses: function() {
 		var initialState = this.get('checkboxState');
-        console.log('given state: ', this.get('checkboxState'));
-		if(initialState === 'preselected')
+        if(initialState === 'preselected')
 			this.check();
 		else
 			this.uncheck();
@@ -36,13 +37,15 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
 			this.uncheck();
 		else
 			this.check();
-		},
-    check : function() {
+	},
+    check : function(param) {
+		this.get('param').set('isSelected', true);
 		this.set('spanCls', this.get('checkedCls'));
         this.toggleParentLiState();
     },
-    uncheck : function() {
-		this.set('spanCls', this.get('uncheckedCls'));
+    uncheck : function(param) {
+        this.get('param').set('isSelected', false);
+        this.set('spanCls', this.get('uncheckedCls'));
 		this.toggleParentLiState();
 	},
 

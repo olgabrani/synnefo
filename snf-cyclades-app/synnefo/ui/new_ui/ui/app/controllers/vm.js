@@ -37,6 +37,7 @@ Snf.VmController = Snf.ElController.extend({
     iconCls: 'snf-pc-full',
     hasConnect: true,
     hasTags : true,
+    isSelected: false,
 
     submenu: [
     {
@@ -58,6 +59,7 @@ Snf.VmController = Snf.ElController.extend({
             return actionsMetaVm[val];
         });
     }.property('model.enabledActions'),
+
 
     actions: {
 
@@ -105,6 +107,10 @@ Snf.VmsController = Snf.ElemsListController.extend({
     type : 'vms',
     iconCls  : 'snf-pc-full',
     fullName: 'Virtual Machines',
+
+    actionsMeta: function(){
+        return _.toArray(actionsMetaVm);
+    }.property(),
 });
 
 Snf.VmInfoController = Snf.VmController.extend();

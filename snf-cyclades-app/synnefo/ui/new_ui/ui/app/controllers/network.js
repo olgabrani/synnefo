@@ -39,4 +39,7 @@ Snf.NetworkController = Snf.ElController.extend({
 
 Snf.NetworksController = Snf.ElemsListController.extend({
     type : 'networks',
+    actionsMeta: function(){
+        return _.toArray(actionsMetaNetwork);
+    }.property(),
 });

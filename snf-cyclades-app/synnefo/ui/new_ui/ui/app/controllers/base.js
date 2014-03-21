@@ -44,6 +44,12 @@ Snf.ElemsListController = Ember.ArrayController.extend({
         return this.get('_item')+'init';
     }.property(),
 
+    actions: {
+        'toggleCheckboxesState': function(){
+            console.log('toggleChecks');
+        },
+    },
+
 });
 
 Snf.ElController = Ember.ObjectController.extend({
@@ -81,14 +87,14 @@ Snf.ElController = Ember.ObjectController.extend({
     // defines how many action icons will be visible at the sidebar
     maxActionsVisible: 4,
 
-    // show a few action icons
-    fewActions: function() {
+    // show main action icons
+    mainActions: function() {
         var cnt = this.maxActionsVisible - 1;
         return this.get('actionsMeta').slice(0,cnt);
     }.property('model.enabledActions'),
 
     // ... and more actions on hover
-    moreActions: function() {
+    secondaryActions: function() {
         var cnt = this.maxActionsVisible - 1 - this.get('actionsCount');
         return this.get('actionsMeta').slice(cnt);
     }.property('model.enabledActions'),

@@ -317,56 +317,47 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("\n\n<ul>\n    <li>");
-  stack1 = helpers._triageMustache.call(depth0, "item.project.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("\n    <ul>\n        <li>");
+  stack1 = helpers._triageMustache.call(depth0, "current.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</li>\n");
-  stack1 = helpers['if'].call(depth0, "isEditable", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(6, program6, data),fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("</li>\n        ");
+  stack1 = helpers['if'].call(depth0, "isEditable", {hash:{},hashTypes:{},hashContexts:{},inverse:self.program(5, program5, data),fn:self.program(2, program2, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n</ul>\n");
+  data.buffer.push("\n    </ul>\n");
   return buffer;
   }
 function program2(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("   \n");
-  stack1 = helpers['with'].call(depth0, "item.project", "as", "p", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  data.buffer.push("\n            ");
+  stack1 = helpers.each.call(depth0, "project", "in", "availableProjects", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n");
+  data.buffer.push("\n        ");
   return buffer;
   }
 function program3(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("    \n    ");
-  stack1 = helpers.each.call(depth0, "project", "in", "item.projects", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n");
-  return buffer;
-  }
-function program4(depth0,data) {
-  
-  var buffer = '', stack1;
-  data.buffer.push("\n        \n        <li><a ");
+  data.buffer.push("\n                <li><a ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "reassignProject", {hash:{
-    'param': (""),
+    'param': ("project"),
     'bubbles': (false)
   },hashTypes:{'param': "ID",'bubbles': "BOOLEAN"},hashContexts:{'param': depth0,'bubbles': depth0},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(">");
   stack1 = helpers._triageMustache.call(depth0, "project.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</a></li>\n    ");
+  data.buffer.push("</a></li>\n            ");
   return buffer;
   }
 
-function program6(depth0,data) {
+function program5(depth0,data) {
   
   var buffer = '';
-  data.buffer.push("\n    <li><a  class=\"reassign\" ");
+  data.buffer.push("\n        <li><a  class=\"reassign\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "showProjects", {hash:{
     'bubbles': (false)
   },hashTypes:{'bubbles': "BOOLEAN"},hashContexts:{'bubbles': depth0},contexts:[depth0],types:["STRING"],data:data})));
-  data.buffer.push(">Reassign<span class=\"arrow-right\"></span></a></li>\n");
+  data.buffer.push(">Reassign<span class=\"arrow-right\"></span></a></li>\n        ");
   return buffer;
   }
 
@@ -619,20 +610,25 @@ function program1(depth0,data) {
   stack1 = helpers['if'].call(depth0, "os", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(11, program11, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    </ul>\n\n    <div class=\"container\">\n        \n        ");
-  stack1 = helpers._triageMustache.call(depth0, "checkbox-custom", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(escapeExpression((helper = helpers['checkbox-custom'] || (depth0 && depth0['checkbox-custom']),options={hash:{
+    'param': ("")
+  },hashTypes:{'param': "ID"},hashContexts:{'param': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "checkbox-custom", options))));
   data.buffer.push("\n        \n        <div class=\"img-wrap\">\n            ");
   stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(13, program13, data),contexts:[depth0,depth0],types:["ID","ID"],data:data},helper ? helper.call(depth0, "type", "", options) : helperMissing.call(depth0, "link-to", "type", "", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n        </div>\n\n        <h4>");
   stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  stack1 = helpers._triageMustache.call(depth0, "actionsCount", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("//");
+  stack1 = helpers._triageMustache.call(depth0, "isSelected", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</h4>\n        \n        <div class= \"status\">\n            <span class=\"state\">");
   data.buffer.push(escapeExpression((helper = helpers['status-to-text'] || (depth0 && depth0['status-to-text']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "status", options) : helperMissing.call(depth0, "status-to-text", "status", options))));
-  data.buffer.push("</span>\n        </div>\n        \n        ");
-  stack1 = helpers['if'].call(depth0, "hasTags", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(16, program16, data),contexts:[depth0],types:["ID"],data:data});
+  data.buffer.push("</span>\n        </div>\n        <div class=\"actions\">\n            ");
+  stack1 = helpers.each.call(depth0, "item", "in", "actionsMeta", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(16, program16, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n        </div>\n        ");
+  stack1 = helpers['if'].call(depth0, "hasTags", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(18, program18, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n\n    </div>\n</div>\n");
   return buffer;
@@ -647,14 +643,14 @@ function program4(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n            ");
-  stack1 = helpers.each.call(depth0, "item", "in", "fewActions", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "item", "in", "mainActions", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(5, program5, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n            <li class=\"more-actions\">\n                <a href=\"javascript:void(0)\" title=\"\"");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, {hash:{
     'bubbles': (false)
   },hashTypes:{'bubbles': "BOOLEAN"},hashContexts:{'bubbles': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">...</a>\n                <ul>\n                    ");
-  stack1 = helpers.each.call(depth0, "item", "in", "moreActions", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  stack1 = helpers.each.call(depth0, "item", "in", "secondaryActions", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n                </ul>\n            </li>\n        ");
   return buffer;
@@ -692,7 +688,7 @@ function program7(depth0,data) {
   data.buffer.push(">");
   stack1 = helpers._triageMustache.call(depth0, "item.title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</span></a>\n                    </li>\n                    ");
+  data.buffer.push("</a>\n                    </li>\n                    ");
   return buffer;
   }
 
@@ -712,9 +708,9 @@ function program11(depth0,data) {
   data.buffer.push("\n            ");
   data.buffer.push(escapeExpression((helper = helpers['sideactions-project'] || (depth0 && depth0['sideactions-project']),options={hash:{
     'reassignProject': ("reassignProject"),
-    'item': (""),
-    'controller': ("project")
-  },hashTypes:{'reassignProject': "STRING",'item': "ID",'controller': "STRING"},hashContexts:{'reassignProject': depth0,'item': depth0,'controller': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "sideactions-project", options))));
+    'current': ("project"),
+    'projects': ("projects")
+  },hashTypes:{'reassignProject': "STRING",'current': "ID",'projects': "ID"},hashContexts:{'reassignProject': depth0,'current': depth0,'projects': depth0},contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "sideactions-project", options))));
   data.buffer.push("\n        ");
   return buffer;
   }
@@ -749,6 +745,25 @@ function program14(depth0,data) {
 function program16(depth0,data) {
   
   var buffer = '';
+  data.buffer.push("\n                <a ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "item.controller", "model", {hash:{
+    'bubbles': (false)
+  },hashTypes:{'bubbles': "BOOLEAN"},hashContexts:{'bubbles': depth0},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': ("item.title")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push("><span ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': ("item.spanCls")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push("></span></a>\n            ");
+  return buffer;
+  }
+
+function program18(depth0,data) {
+  
+  var buffer = '';
   data.buffer.push("\n            ");
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Snf.tagsListView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("\n        ");
@@ -778,8 +793,43 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
     'class': (":entities viewCls")
   },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
   data.buffer.push(">\n        ");
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Snf.itemsListView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Snf.ItemsListView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push("\n        ");
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Snf.ItemsListLtBarView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
   data.buffer.push("\n    </div>\n</section>");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["items-list-lt-bar"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1;
+  data.buffer.push("\n        <li><a ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "a.act", {hash:{
+    'bubbles': (false)
+  },hashTypes:{'bubbles': "BOOLEAN"},hashContexts:{'bubbles': depth0},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
+  data.buffer.push(" ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': ("a.title")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">");
+  stack1 = helpers._triageMustache.call(depth0, "a.title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</a></li>\n    ");
+  return buffer;
+  }
+
+  data.buffer.push("<ul class=\"lt-actions\">\n    <li class=\"select trigger-checkbox\"  ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleCheckboxesState", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
+  data.buffer.push(">\n        <a href=\"\" class=\"check\">\n            <span class=\"snf-checkbox-unchecked checkbox\"></span>\n        </a>\n        <em>Un</em>Select all\n\n    </li>\n    ");
+  stack1 = helpers.each.call(depth0, "a", "in", "actionsMeta", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("    \n</ul>");
   return buffer;
   
 });
@@ -1028,7 +1078,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   var escapeExpression=this.escapeExpression;
 
 
-  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Snf.itemsListView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Snf.ItemsListView", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
   
 });
 

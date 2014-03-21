@@ -39,6 +39,12 @@ Snf.Vm = DS.Model.extend({
         return statusActionsVm[this.get('status')].enabledActions;
     }.property('status'),
 
+/*  Why this does not return the networks?
+
+    networks: function() {
+        return this.get('ports').getEach('network').uniq();
+    }.property('model.@each.ports'),
+*/
 });
 
 
