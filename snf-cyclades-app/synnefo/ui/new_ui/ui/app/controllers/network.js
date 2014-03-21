@@ -2,7 +2,7 @@ var actionsMetaNetwork = {
     'destroy': {
         title: 'destroy',
         act: 'destroy-network-modal',
-        spanCls: 'snf-switch',
+        spanCls: 'snf-trash-outline',
         controller: 'network'
     },
 };
@@ -11,6 +11,7 @@ Snf.NetworkController = Snf.ElController.extend({
 
     maxActionsVisible: 2,
     type: 'network',
+    needs: ['networks'],
 
     submenu: [{
         'link': 'network.info',
@@ -30,7 +31,8 @@ Snf.NetworkController = Snf.ElController.extend({
         destroyNetwork: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('networks.grid-view');
+            var viewCls = this.get('controllers.networks.viewCls') || 'grid-view'
+            this.transitionToRoute('networks', viewCls);
         },
     }
 

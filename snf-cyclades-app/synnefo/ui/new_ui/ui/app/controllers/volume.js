@@ -2,13 +2,14 @@ var actionsMetaVolume = {
     'destroy': {
         title: 'destroy',
         act: 'destroy-volume-modal',
-        spanCls: 'snf-switch',
+        spanCls: 'snf-trash-outline',
         controller: 'volume'
     },
 };
 
 Snf.VolumeController = Snf.ElController.extend({
     type: 'volume',
+    needs: ['volumes'],
 
     submenu: [
     {
@@ -33,7 +34,8 @@ Snf.VolumeController = Snf.ElController.extend({
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('volumes/grid-view');
+            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view'
+            this.transitionToRoute('volumes', viewCls);
         },
     }
 });

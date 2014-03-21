@@ -38,6 +38,7 @@ Snf.VmController = Snf.ElController.extend({
     hasConnect: true,
     hasTags : true,
     isSelected: false,
+    needs: ['vms'],
 
     submenu: [
     {
@@ -82,7 +83,8 @@ Snf.VmController = Snf.ElController.extend({
         destroyVm: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('vms', 'grid-view');
+            var viewCls = this.get('controllers.vms.viewCls') || 'grid-view'
+            this.transitionToRoute('vms', viewCls);
         },
 
         shutdownVm: function(){

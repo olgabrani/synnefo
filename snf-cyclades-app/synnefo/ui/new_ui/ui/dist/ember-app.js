@@ -956,6 +956,10 @@ Snf.ElController = Ember.ObjectController.extend({
         refreshModel: function(model){
             this.controllerFor(this.type).set('model', model);
         },
+        saveModel: function(){
+            this.get('model').save();
+        },
+
     },
 
     projects: function(){
@@ -968,7 +972,7 @@ Snf.ElController = Ember.ObjectController.extend({
     'destroy': {
         title: 'destroy',
         act: 'destroy-network-modal',
-        spanCls: 'snf-switch',
+        spanCls: 'snf-trash-outline',
         controller: 'network'
     },
 };
@@ -977,6 +981,7 @@ Snf.NetworkController = Snf.ElController.extend({
 
     maxActionsVisible: 2,
     type: 'network',
+    needs: ['networks'],
 
     submenu: [{
         'link': 'network.info',
@@ -996,7 +1001,8 @@ Snf.NetworkController = Snf.ElController.extend({
         destroyNetwork: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('networks.grid-view');
+            var viewCls = this.get('controllers.networks.viewCls') || 'grid-view'
+            this.transitionToRoute('networks', viewCls);
         },
     }
 
@@ -1105,6 +1111,7 @@ Snf.VmController = Snf.ElController.extend({
     hasConnect: true,
     hasTags : true,
     isSelected: false,
+    needs: ['vms'],
 
     submenu: [
     {
@@ -1149,7 +1156,8 @@ Snf.VmController = Snf.ElController.extend({
         destroyVm: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('vms', 'grid-view');
+            var viewCls = this.get('controllers.vms.viewCls') || 'grid-view'
+            this.transitionToRoute('vms', viewCls);
         },
 
         shutdownVm: function(){
@@ -1190,13 +1198,14 @@ Snf.VmNetworkConnectedController = Snf.VmController.extend();
     'destroy': {
         title: 'destroy',
         act: 'destroy-volume-modal',
-        spanCls: 'snf-switch',
+        spanCls: 'snf-trash-outline',
         controller: 'volume'
     },
 };
 
 Snf.VolumeController = Snf.ElController.extend({
     type: 'volume',
+    needs: ['volumes'],
 
     submenu: [
     {
@@ -1221,7 +1230,8 @@ Snf.VolumeController = Snf.ElController.extend({
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            this.transitionToRoute('volumes/grid-view');
+            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view'
+            this.transitionToRoute('volumes', viewCls);
         },
     }
 });
