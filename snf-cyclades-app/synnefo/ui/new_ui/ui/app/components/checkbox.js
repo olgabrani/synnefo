@@ -33,11 +33,14 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
 	},
 	changeState : function() {
 		var currentState = this.get('spanCls');
-		if(currentState === this.get('checkedCls'))
+		if(currentState === this.get('checkedCls')) {
 			this.uncheck();
-		else
+            this.sendAction('unselect', this.get('param'));
+		} else {
 			this.check();
-	},
+            this.sendAction('select', this.get('param'));
+        }
+    },
     check : function(param) {
 		this.get('param').set('isSelected', true);
 		this.set('spanCls', this.get('checkedCls'));

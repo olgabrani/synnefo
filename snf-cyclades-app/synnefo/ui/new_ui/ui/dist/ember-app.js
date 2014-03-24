@@ -20,6 +20,14 @@ _.mixin({
 
 em = {};
 
+em.removeByValue = function(arr, val) {
+    for(var i=0; i<arr.length; i++) {
+        if(arr[i] == val) {
+            arr.splice(i, 1);
+            break;
+        }
+    }
+};
 
 
 
@@ -726,11 +734,14 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
 	},
 	changeState : function() {
 		var currentState = this.get('spanCls');
-		if(currentState === this.get('checkedCls'))
+		if(currentState === this.get('checkedCls')) {
 			this.uncheck();
-		else
+            this.sendAction('unselect', this.get('param'));
+		} else {
 			this.check();
-	},
+            this.sendAction('select', this.get('param'));
+        }
+    },
     check : function(param) {
 		this.get('param').set('isSelected', true);
 		this.set('spanCls', this.get('checkedCls'));
@@ -887,11 +898,20 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
         return this.get('_item')+'init';
     }.property(),
 
+    selectedItems : [],
+
     actions: {
-        'toggleCheckboxesState': function(){
+        toggleCheckboxesState: function(){
             console.log('toggleChecks');
         },
+        selectItem: function(param) {
+            this.get('selectedItems').push(param);
+        },
+        unselectItem: function(param) {
+            em.removeByValue(this.get('selectedItems'), param);
+        },
     },
+
 
 });
 
@@ -1001,7 +1021,7 @@ Snf.NetworkController = Snf.ElController.extend({
         destroyNetwork: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            var viewCls = this.get('controllers.networks.viewCls') || 'grid-view'
+            var viewCls = this.get('controllers.networks.viewCls') || 'grid-view';
             this.transitionToRoute('networks', viewCls);
         },
     }
@@ -1156,7 +1176,7 @@ Snf.VmController = Snf.ElController.extend({
         destroyVm: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            var viewCls = this.get('controllers.vms.viewCls') || 'grid-view'
+            var viewCls = this.get('controllers.vms.viewCls') || 'grid-view';
             this.transitionToRoute('vms', viewCls);
         },
 
@@ -1230,7 +1250,7 @@ Snf.VolumeController = Snf.ElController.extend({
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view'
+            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view';
             this.transitionToRoute('volumes', viewCls);
         },
     }

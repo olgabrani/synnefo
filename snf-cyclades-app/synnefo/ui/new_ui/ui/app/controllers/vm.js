@@ -83,7 +83,7 @@ Snf.VmController = Snf.ElController.extend({
         destroyVm: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            var viewCls = this.get('controllers.vms.viewCls') || 'grid-view'
+            var viewCls = this.get('controllers.vms.viewCls') || 'grid-view';
             this.transitionToRoute('vms', viewCls);
         },
 

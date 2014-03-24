@@ -31,7 +31,7 @@ Snf.NetworkController = Snf.ElController.extend({
         destroyNetwork: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            var viewCls = this.get('controllers.networks.viewCls') || 'grid-view'
+            var viewCls = this.get('controllers.networks.viewCls') || 'grid-view';
             this.transitionToRoute('networks', viewCls);
         },
     }

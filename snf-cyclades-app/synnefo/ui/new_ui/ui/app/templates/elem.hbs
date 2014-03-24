@@ -35,7 +35,7 @@
 
     <div class="container">
         
-        {{checkbox-custom param=this}}
+        {{checkbox-custom param=this select="selectItem" unselect="unselectItem"}}
         
         <div class="img-wrap">
             {{#link-to type this}}
@@ -44,7 +44,7 @@
             {{/link-to}}
         </div>
 
-        <h4>{{name}}//{{isSelected}}</h4>
+        <h4>{{name}}</h4>
         
         <div class= "status">
             <span class="state">{{status-to-text status}}</span>
