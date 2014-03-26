@@ -39,12 +39,39 @@ Snf.Vm = DS.Model.extend({
         return statusActionsVm[this.get('status')].enabledActions;
     }.property('status'),
 
-/*  Why this does not return the networks?
 
-    networks: function() {
-        return this.get('ports').getEach('network').uniq();
-    }.property('model.@each.ports'),
-*/
+    _networks: function() {
+        var self = this;
+
+        this.set('networks', this.get('ports').getEach('network').filter(function(p) {
+            // wait until ports are loaded
+            if (!p) { return false; }
+            var fp = p.get('isFulfilled');
+
+            // if ports are not Fulfilled, wait until they actually are loaded
+            // and then call again _networks()
+            if (!fp) {
+                p.then(function(n) {
+                    self._networks();
+                });
+            }
+
+            return p.get('isFulfilled');
+        }).map(function(p) {
+            // console.log(p.toString());
+            // p returns promise whereas p.content returns a network
+            return p.content;
+        }).uniq());
+
+    // recalculate _networks when a network of a port changes
+    }.observes('ports.@each.network'),
+
+    // networks is a VM computed property
+    /* From ember.Array documentation:
+    When you are designing code that needs to accept any kind of Array-like
+    object, you should use these methods instead of Array primitives because
+    these will properly notify observers of changes to the array.*/
+    networks: Ember.A(),
 });
 
 

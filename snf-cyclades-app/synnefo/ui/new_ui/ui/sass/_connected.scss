@@ -98,7 +98,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 					position: relative;
 					top: $rel-top - 5px;
 					width: $data-width;
-					ul {
+					ul:first-child {
 						padding: 5px 0 0;
 						margin: 0;
 						background-color: $light-bg;
@@ -117,7 +117,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 									width: 35%;
 								}
 							}
-							p {
+							p.inner {
 								overflow: hidden;
 								padding-left:10px;
 								margin: 0;
@@ -198,13 +198,13 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	border: 1px solid $primary-color;
 	padding: 5px 20px;
 	position: absolute;
-	left:$data-width + $lt-width;
-	top: $rel-top - 5px;
-	font-size: emCalc(12px);
+	left:$data-width ;
+	top: 0;
 	white-space: nowrap;
 	background-color: #fff;
 	p {
 		margin: 0;
+		overflow: auto;
 		em {
 			color: $secondary-color;
 		}
@@ -215,12 +215,10 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 		list-style: none;
 		display: none;
 
-
 		li {
 			min-width: 200px;
 			span {
 				float: right;
-				font-size: emCalc(14px);
 				height: 14px;
 				line-height: 22px;
 			}

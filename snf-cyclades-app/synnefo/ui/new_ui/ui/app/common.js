@@ -552,17 +552,6 @@ $(document).ready(function(){
     ui.detailsCustom($('#vm-connected'));
     ui.firewallSetup();
 
-    $('.firewall').mouseenter(function(e){
-        $(this).css('z-index',2);
-        $(this).find('.more').stop(true, true).slideDown(200);
-    });
-    $('.firewall').mouseleave(function(e){
-        $(this).css('z-index',1);
-        $(this).find('.more').stop(true, true).slideUp(200);
-    });
-    
-
-
     $('.act').click(function(e) {
         $(this).addClass('pending last');
     });

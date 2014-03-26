@@ -44,14 +44,15 @@ Snf.ElemsListController = Ember.ArrayController.extend({
         return this.get('_item')+'init';
     }.property(),
 
-    selectedItems : [],
+    selectedItems : Ember.A(),
 
     actions: {
         toggleCheckboxesState: function(){
             console.log('toggleChecks');
         },
         selectItem: function(param) {
-            this.get('selectedItems').push(param);
+            this.get('selectedItems').pushObject(param);
+            console.log(this.get('selectedItems').toString());
         },
         unselectItem: function(param) {
             em.removeByValue(this.get('selectedItems'), param);

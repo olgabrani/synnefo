@@ -121,3 +121,11 @@ Snf.VmDiskConnectedController = Snf.VmController.extend();
 
 
 Snf.VmNetworkConnectedController = Snf.VmController.extend();
+
+Snf.VmNetworkPortsController = Ember.ObjectController.extend({
+
+    ports: function() {
+        return  this.get('model').get('ports');
+    }.property(),
+
+});

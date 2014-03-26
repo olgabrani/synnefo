@@ -1,13 +1,20 @@
 window.Snf = Ember.Application.create({
-/*    LOG_ACTIVE_GENERATION: true,
+    LOG_ACTIVE_GENERATION: true,
     LOG_MODULE_RESOLVER: true,
     LOG_TRANSITIONS: true,
     LOG_TRANSITIONS_INTERNAL: true,
-    LOG_VIEW_LOOKUPS: true,*/
+    LOG_VIEW_LOOKUPS: true,
+    currentPath: '',
 });
 
 Snf.ApplicationAdapter = DS.FixtureAdapter;
-;/*
+
+
+Snf.ApplicationController = Ember.Controller.extend({
+    updateCurrentPath: function() {
+        Snf.set('currentPath', this.get('currentPath'));
+    }.observes('currentPath')
+});;/*
 * These functions are used throughout ember
 */
 
@@ -561,17 +568,6 @@ $(document).ready(function(){
     ui.detailsCustom($('#vm-connected'));
     ui.firewallSetup();
 
-    $('.firewall').mouseenter(function(e){
-        $(this).css('z-index',2);
-        $(this).find('.more').stop(true, true).slideDown(200);
-    });
-    $('.firewall').mouseleave(function(e){
-        $(this).css('z-index',1);
-        $(this).find('.more').stop(true, true).slideUp(200);
-    });
-    
-
-
     $('.act').click(function(e) {
         $(this).addClass('pending last');
     });
@@ -898,14 +894,15 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
         return this.get('_item')+'init';
     }.property(),
 
-    selectedItems : [],
+    selectedItems : Ember.A(),
 
     actions: {
         toggleCheckboxesState: function(){
             console.log('toggleChecks');
         },
         selectItem: function(param) {
-            this.get('selectedItems').push(param);
+            this.get('selectedItems').pushObject(param);
+            console.log(this.get('selectedItems').toString());
         },
         unselectItem: function(param) {
             em.removeByValue(this.get('selectedItems'), param);
@@ -1214,6 +1211,14 @@ Snf.VmDiskConnectedController = Snf.VmController.extend();
 
 
 Snf.VmNetworkConnectedController = Snf.VmController.extend();
+
+Snf.VmNetworkPortsController = Ember.ObjectController.extend({
+
+    ports: function() {
+        return  this.get('model').get('ports');
+    }.property(),
+
+});
 ;var actionsMetaVolume = {
     'destroy': {
         title: 'destroy',
@@ -1250,7 +1255,6 @@ Snf.VolumeController = Snf.ElController.extend({
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
-            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view';
             this.transitionToRoute('volumes', viewCls);
         },
     }
@@ -2969,6 +2973,8 @@ Snf.Network.FIXTURES = [
     vm         : DS.belongsTo('vm', {async:true}),
     network    : DS.belongsTo('network', {async:true}),
     firewall   : DS.attr(),
+    ipv4       : DS.attr(),
+    ipv6       : DS.attr(),
 
     // firewallState can be off or on
     firewallState: function() {
@@ -2987,36 +2993,42 @@ Snf.Port.FIXTURES = [
         vm: 1,
         network: 1,
         firewall: 'on',
+        ipv4: '83.212.96.12',
     },
     {
         id: 2,
         vm: 1,
         network: 2,
         firewall: 'partial',
+        ipv4: '83.212.96.30',
     },
     {
         id: 3,
         vm: 2,
         network: 1,
         firewall: 'off',
+        ipv4: '83.212.96.00',
     },
     {
         id: 4,
         vm: 3,
         network: 1,
         firewall: 'on',
+        ipv6: 'FE80:0000:0000:0000:0202:B3FF:FE1E:8329',
     },
     {
         id: 5,
         vm: 3,
         network: 1,
         firewall: 'on',
+        ipv6: '2001:0db8:85a3:0042:1000:8a2e:0370:7334'
     },
     {
         id: 6,
         vm: 1,
         network: 1,
         firewall: 'on',
+        ipv6: ' 2001:0db8:85a3:0042:1000:8a2e:0370:7334',
     },
 ];
 ;Snf.Project = DS.Model.extend({
@@ -3151,12 +3163,39 @@ Snf.Vm = DS.Model.extend({
         return statusActionsVm[this.get('status')].enabledActions;
     }.property('status'),
 
-/*  Why this does not return the networks?
 
-    networks: function() {
-        return this.get('ports').getEach('network').uniq();
-    }.property('model.@each.ports'),
-*/
+    _networks: function() {
+        var self = this;
+
+        this.set('networks', this.get('ports').getEach('network').filter(function(p) {
+            // wait until ports are loaded
+            if (!p) { return false; }
+            var fp = p.get('isFulfilled');
+
+            // if ports are not Fulfilled, wait until they actually are loaded
+            // and then call again _networks()
+            if (!fp) {
+                p.then(function(n) {
+                    self._networks();
+                });
+            }
+
+            return p.get('isFulfilled');
+        }).map(function(p) {
+            // console.log(p.toString());
+            // p returns promise whereas p.content returns a network
+            return p.content;
+        }).uniq());
+
+    // recalculate _networks when a network of a port changes
+    }.observes('ports.@each.network'),
+
+    // networks is a VM computed property
+    /* From ember.Array documentation:
+    When you are designing code that needs to accept any kind of Array-like
+    object, you should use these methods instead of Array primitives because
+    these will properly notify observers of changes to the array.*/
+    networks: Ember.A(),
 });
 
 
@@ -3384,7 +3423,11 @@ Snf.NetworkRoute = Ember.Route.extend({
 
 Snf.NetworkIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        this.transitionTo('network.info');
+        if ( Snf.get('currentPath') == 'network.vm-connected' ) {
+            this.transitionTo('network.vm-connected');
+        } else {
+            this.transitionTo('network.info');
+        }
     },
 });
 
@@ -3409,7 +3452,7 @@ Snf.NetoworkInfoRoute = Ember.Route.extend({
 
 Snf.NetworkVmConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/disk-connected');
+        this.render('details/network-vm-connected');
     },
     model: function () {
         return this.modelFor("network");
@@ -3438,7 +3481,13 @@ Snf.VmRoute = Ember.Route.extend({
 
 Snf.VmIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        this.transitionTo('vm.info');
+        if ( Snf.get('currentPath') == 'vm.disk-connected' ) {
+            this.transitionTo('vm.disk-connected');
+        } else if ( Snf.get('currentPath')=='vm.network-connected' ) {
+            this.transitionTo('vm.network-connected');
+        } else {
+            this.transitionTo('vm.info');
+        }
     },
 });
 
@@ -3483,7 +3532,6 @@ Snf.VmNetworkConnectedRoute = Ember.Route.extend({
 
 Snf.VolumeRoute = Ember.Route.extend({
     renderTemplate: function() {
-
         this.render('details');
 
         var controller = this.controllerFor('volumes');
@@ -3502,7 +3550,11 @@ Snf.VolumeRoute = Ember.Route.extend({
 
 Snf.VolumeIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        this.transitionTo('volume.info');
+        if ( Snf.get('currentPath') == 'volume.vm-connected' ) {
+            this.transitionTo('volume.vm-connected');
+        } else {
+            this.transitionTo('volume.info');
+        }
     },
 });
 
@@ -3527,7 +3579,7 @@ Snf.VolumeInfoRoute = Ember.Route.extend({
 
 Snf.VolumeVmConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/disk-connected');
+        this.render('details/volume-vm-connected');
     },
     model: function () {
         return this.modelFor("volume");
@@ -3559,6 +3611,22 @@ Snf.VolumeVmConnectedRoute = Ember.Route.extend({
         $('#colorpicker').farbtastic('#color');
     },
     
+});
+;Snf.FirewallView = Ember.View.extend({
+
+    tagName: 'div',
+    classNames: ['firewall'],
+    templateName: 'firewall',
+    didInsertElement: function () {
+        this.$().mouseenter(function(e){
+            $(this).css('z-index',2);
+            $(this).find('.more').stop(true, true).slideDown(200);
+        });
+        this.$().mouseleave(function(e){
+            $(this).css('z-index',1);
+            $(this).find('.more').stop(true, true).slideUp(200);
+        });
+    },
 });
 ;Snf.ItemsListLtBarView = Ember.View.extend({
 

@@ -10991,33 +10991,33 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   width: 350px;
 }
 /* line 101, ../sass/_connected.scss */
-.connected .item .connections > li .data ul {
+.connected .item .connections > li .data ul:first-child {
   padding: 5px 0 0;
   margin: 0;
   background-color: #bebebe;
 }
 /* line 105, ../sass/_connected.scss */
-.connected .item .connections > li .data ul li {
+.connected .item .connections > li .data ul:first-child li {
   font-size: 0.75em;
   list-style: none outside none;
   padding: 0 10px 10px 10px;
 }
 /* line 109, ../sass/_connected.scss */
-.connected .item .connections > li .data ul li h5 {
+.connected .item .connections > li .data ul:first-child li h5 {
   float: left;
   margin: 0;
   line-height: 1.3em;
 }
 /* line 113, ../sass/_connected.scss */
-.connected .item .connections > li .data ul li h5.ip-data {
+.connected .item .connections > li .data ul:first-child li h5.ip-data {
   width: 10%;
 }
 /* line 116, ../sass/_connected.scss */
-.connected .item .connections > li .data ul li h5.volume-data {
+.connected .item .connections > li .data ul:first-child li h5.volume-data {
   width: 35%;
 }
 /* line 120, ../sass/_connected.scss */
-.connected .item .connections > li .data ul li p {
+.connected .item .connections > li .data ul:first-child li p.inner {
   overflow: hidden;
   padding-left: 10px;
   margin: 0;
@@ -11101,15 +11101,15 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   border: 1px solid #bebebe;
   padding: 5px 20px;
   position: absolute;
-  left: 515px;
-  top: -15px;
-  font-size: 0.75em;
+  left: 350px;
+  top: 0;
   white-space: nowrap;
   background-color: #fff;
 }
-/* line 206, ../sass/_connected.scss */
+/* line 205, ../sass/_connected.scss */
 .firewall p {
   margin: 0;
+  overflow: auto;
 }
 /* line 208, ../sass/_connected.scss */
 .firewall p em {
@@ -11122,31 +11122,30 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   list-style: none;
   display: none;
 }
-/* line 219, ../sass/_connected.scss */
+/* line 218, ../sass/_connected.scss */
 .firewall .more li {
   min-width: 200px;
 }
-/* line 221, ../sass/_connected.scss */
+/* line 220, ../sass/_connected.scss */
 .firewall .more li span {
   float: right;
-  font-size: 0.875em;
   height: 14px;
   line-height: 22px;
 }
-/* line 227, ../sass/_connected.scss */
+/* line 225, ../sass/_connected.scss */
 .firewall .more li em {
   float: right;
   margin: 0 5px 0 20px;
   width: 15px;
   display: inline-block;
 }
-/* line 236, ../sass/_connected.scss */
+/* line 234, ../sass/_connected.scss */
 .firewall.unprotected > p em,
 .firewall .unprotected a em {
   color: #e02b2b;
 }
 
-/* line 241, ../sass/_connected.scss */
+/* line 239, ../sass/_connected.scss */
 .details .placeholder {
   height: 100px;
 }
