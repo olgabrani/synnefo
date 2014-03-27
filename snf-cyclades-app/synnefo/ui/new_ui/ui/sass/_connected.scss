@@ -114,8 +114,11 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 									width: 10%;
 								}
 								&.volume-data {
-									width: 35%;
+									width: 40%;
 								}
+							}
+							p {
+								margin-bottom: 0;
 							}
 							p.inner {
 								overflow: hidden;

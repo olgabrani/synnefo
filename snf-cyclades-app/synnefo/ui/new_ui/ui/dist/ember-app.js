@@ -822,7 +822,7 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
             this.set('isEditable', true);
         },
         reassignProject: function(){
-            this.sendAction('reassignProject');
+            this.sendAction('reassignProject', this.get('newproject'));
             this.set('isEditable', false);
             this.set('isDisplayed', false);
         }
@@ -999,6 +999,9 @@ Snf.NetworkController = Snf.ElController.extend({
     maxActionsVisible: 2,
     type: 'network',
     needs: ['networks'],
+    vmsCnt: function(){
+        return this.get('model').get('vms').length;
+    }.property('model.vms'),
 
     submenu: [{
         'link': 'network.info',
@@ -1031,6 +1034,19 @@ Snf.NetworksController = Snf.ElemsListController.extend({
     actionsMeta: function(){
         return _.toArray(actionsMetaNetwork);
     }.property(),
+});
+
+
+Snf.NetworkInfoController = Snf.NetworkController.extend();
+
+Snf.NetworkVmConnectedController = Snf.NetworkController.extend();
+
+Snf.NetworkVmPortsController = Ember.ObjectController.extend({
+
+    ports: function() {
+        return  this.get('model').get('ports');
+    }.property(),
+
 });
 ;Snf.PortController = Ember.ObjectController.extend();;Snf.ProjectsController = Ember.ArrayController.extend();
 
@@ -2941,10 +2957,32 @@ Snf.Network = DS.Model.extend({
     name       : DS.attr(),
     status     : DS.attr(),
     ports      : DS.hasMany('port', { async:true }),
+    project    : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {
         return statusActionsNetwork[this.get('status')].enabledActions;
     }.property('status'),
+
+    _vms: function() {
+        var self = this;
+
+        this.set('vms', this.get('ports').getEach('vm').filter(function(p) {
+            if (!p) { return false; }
+            var fp = p.get('isFulfilled');
+
+            if (!fp) {
+                p.then(function(n) {
+                    self._vms();
+                });
+            }
+            return p.get('isFulfilled');
+        }).map(function(p) {
+            return p.content;
+        }).uniq());
+
+    }.observes('ports.@each.vm'),
+
+    vms: Ember.A(),
 
 });
 
@@ -2955,17 +2993,20 @@ Snf.Network.FIXTURES = [
         name: 'Network 1',
         status: 'running',
         ports: [1,3,4,6],
+        project: 1,
     },
     {
         id: 2,
         name: 'Network 2',
         status: 'building',
         ports: [2,5],
+        project: 2,
     },
     {
         id: 3,
         name: 'Network 3',
         status: 'error',
+        project: 3,
     },
 ];
 ;Snf.Port = DS.Model.extend({
@@ -3288,6 +3329,7 @@ Snf.Volume = DS.Model.extend({
     size        : DS.attr('number'),
     storageType : DS.attr('string', {defaultValue: 'Archipelago'}),
     vm          : DS.belongsTo('vm', { async:false }),
+    project     : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {
         return statusActionsVolume[this.get('status')].enabledActions;
@@ -3303,6 +3345,7 @@ Snf.Volume.FIXTURES = [
         status: 'running',
         size: 10737418240,
         vm: 1,
+        project: 1,
     },
     {
         id: 2,
@@ -3310,6 +3353,7 @@ Snf.Volume.FIXTURES = [
         status: 'running',
         size: 2048,
         vm: 1,
+        project: 1,
     },
     {
         id: 3,
@@ -3318,6 +3362,7 @@ Snf.Volume.FIXTURES = [
         size: 4096,
         storageType: 'drpd',
         vm: 3,
+        project: 1,
     },
 ];
 ;Snf.Router.map(function() {
@@ -3441,9 +3486,9 @@ Snf.NetworkinitRoute = Ember.Route.extend({
     },
 });
 
-Snf.NetoworkInfoRoute = Ember.Route.extend({
+Snf.NetworkInfoRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/info');
+        this.render('details/network-info');
     },
     model: function () {
         return this.modelFor("network");
@@ -3464,6 +3509,7 @@ Snf.NetworkVmConnectedRoute = Ember.Route.extend({
 
 Snf.VmRoute = Ember.Route.extend({
     renderTemplate: function() {
+
         this.render('details');
 
         var controller = this.controllerFor('vms');
@@ -3493,16 +3539,17 @@ Snf.VmIndexRoute = Ember.Route.extend({
 
 Snf.VminitRoute = Ember.Route.extend({
     model: function(){
-      return this.store.find('vm');
+        return this.store.find('vm');
     },
+    
     afterModel: function(model) {
-       this.transitionTo('vm', model.get('firstObject').id);
+        this.transitionTo('vm', model.get('firstObject').id);
     },
 });
 
 Snf.VmInfoRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/info');
+        this.render('details/vm-info');
     },
     model: function () {
         return this.modelFor("vm");
@@ -3570,7 +3617,7 @@ Snf.VolumeinitRoute = Ember.Route.extend({
 
 Snf.VolumeInfoRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/info');
+        this.render('details/volume-info');
     },
     model: function () {
         return this.modelFor("volume");

@@ -12,6 +12,9 @@ Snf.NetworkController = Snf.ElController.extend({
     maxActionsVisible: 2,
     type: 'network',
     needs: ['networks'],
+    vmsCnt: function(){
+        return this.get('model').get('vms').length;
+    }.property('model.vms'),
 
     submenu: [{
         'link': 'network.info',
@@ -44,4 +47,17 @@ Snf.NetworksController = Snf.ElemsListController.extend({
     actionsMeta: function(){
         return _.toArray(actionsMetaNetwork);
     }.property(),
+});
+
+
+Snf.NetworkInfoController = Snf.NetworkController.extend();
+
+Snf.NetworkVmConnectedController = Snf.NetworkController.extend();
+
+Snf.NetworkVmPortsController = Ember.ObjectController.extend({
+
+    ports: function() {
+        return  this.get('model').get('ports');
+    }.property(),
+
 });

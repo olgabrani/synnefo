@@ -42,7 +42,7 @@ Snf.VolumeinitRoute = Ember.Route.extend({
 
 Snf.VolumeInfoRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/info');
+        this.render('details/volume-info');
     },
     model: function () {
         return this.modelFor("volume");

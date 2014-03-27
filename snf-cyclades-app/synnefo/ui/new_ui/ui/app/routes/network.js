@@ -40,9 +40,9 @@ Snf.NetworkinitRoute = Ember.Route.extend({
     },
 });
 
-Snf.NetoworkInfoRoute = Ember.Route.extend({
+Snf.NetworkInfoRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/info');
+        this.render('details/network-info');
     },
     model: function () {
         return this.modelFor("network");

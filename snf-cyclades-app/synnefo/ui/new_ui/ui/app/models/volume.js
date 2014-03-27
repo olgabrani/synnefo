@@ -20,6 +20,7 @@ Snf.Volume = DS.Model.extend({
     size        : DS.attr('number'),
     storageType : DS.attr('string', {defaultValue: 'Archipelago'}),
     vm          : DS.belongsTo('vm', { async:false }),
+    project     : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {
         return statusActionsVolume[this.get('status')].enabledActions;
@@ -35,6 +36,7 @@ Snf.Volume.FIXTURES = [
         status: 'running',
         size: 10737418240,
         vm: 1,
+        project: 1,
     },
     {
         id: 2,
@@ -42,6 +44,7 @@ Snf.Volume.FIXTURES = [
         status: 'running',
         size: 2048,
         vm: 1,
+        project: 1,
     },
     {
         id: 3,
@@ -50,5 +53,6 @@ Snf.Volume.FIXTURES = [
         size: 4096,
         storageType: 'drpd',
         vm: 3,
+        project: 1,
     },
 ];

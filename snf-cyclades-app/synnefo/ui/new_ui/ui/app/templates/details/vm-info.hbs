@@ -4,11 +4,9 @@
 		<h2>info</h2>
 		<dl>
 			<dt><span class="snf-font snf-pc-full"></span>Name</dt>
-			<dd>
-				{{this.name}}
-			</dd>
+			<dd>{{name}}</dd>
 			<dt><span class="snf-font snf-dashboard-outline"></span>Assigned Project</dt>
-			<dd>Basic Projecxt</dd>
+			<dd>{{project.name}}</dd>
 			<dt><span class="snf-chip-outline snf-font"></span>CPUs</dt>
 			<dd>4</dd>
 			<dt><span class="snf-ram-full snf-font"></span>RAM</dt>
@@ -21,12 +19,16 @@
 			<dd>Fedora</dd>
 			<dt><span class="snf-image-full snf-font"></span>Image Size</dt>
 			<dd>3.68 GB</dd>
+			{{#each port in ports}}
+				{{#if port.ipv4}}
 			<dt><span class="snf-nic-full snf-font"></span>IPv4</dt>
-			<dd>83.212.96.152</dd>
-			<dt><span class="snf-nic-full snf-font"></span>IPv4</dt>
-			<dd>83.212.96.153</dd>
+			<dd>{{port.ipv4}}</dd>
+				{{/if}}
+				{{#if port.ipv6}}
 			<dt><span class="snf-nic-full snf-font"></span>IPv6</dt>
-			<dd>2001:648:2ffc:1112:a80c:eaff:fec2:8cd9</dd>
+			<dd>{{port.ipv6}}</dd>
+				{{/if}}
+			{{/each}}
 		</dl>
 	</section>
 

@@ -12,7 +12,7 @@
             <ul class="connections">
                 {{#each port in ports}}
                 <li>
-                    <a href="#" class="act" data-reveal-id="disconnect-from-network">&nbsp;</a>
+                    <a href="#" class="act" {{action 'openModal' 'dettach-network-modal' 'network' model}}>&nbsp;</a>
                     <div class="icon"><span class="snf-nic-full"></span></div>
                     <div class="data">
                         <ul>

@@ -4,6 +4,7 @@ Snf.VmsRoute = Snf.ElemsRoute.extend({
 
 Snf.VmRoute = Ember.Route.extend({
     renderTemplate: function() {
+
         this.render('details');
 
         var controller = this.controllerFor('vms');
@@ -33,16 +34,17 @@ Snf.VmIndexRoute = Ember.Route.extend({
 
 Snf.VminitRoute = Ember.Route.extend({
     model: function(){
-      return this.store.find('vm');
+        return this.store.find('vm');
     },
+    
     afterModel: function(model) {
-       this.transitionTo('vm', model.get('firstObject').id);
+        this.transitionTo('vm', model.get('firstObject').id);
     },
 });
 
 Snf.VmInfoRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/info');
+        this.render('details/vm-info');
     },
     model: function () {
         return this.modelFor("vm");

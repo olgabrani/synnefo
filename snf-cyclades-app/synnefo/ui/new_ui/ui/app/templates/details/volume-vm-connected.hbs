@@ -1,3 +1,49 @@
 <section class="content connected">
-{{!--     {{view Snf.VmElView controller=vm}}   --}}
+    <section {{bind-attr class=":item volume.status"}}>
+            <div class="what">
+                <div class="img-wrap">
+                    {{#link-to 'vm' vm}}
+                    <span class="snf-font snf-pc-full"></span>
+                    <span {{bind-attr class=":os vm.os"}}>{{vm.os}}</span>
+                    {{/link-to}}
+                </div>
+                <h4>{{vm.name}}</h4>
+            </div>
+            <div class="clearfix">
+                <ul class="connections">
+                    <li>
+                        <a href="#" {{action 'openModal' 'dettach-volume-modal' 'volume' model}}  class="act" >&nbsp;</a>
+                        <div class="icon"></div>
+                        <div class="data">
+                            <ul>
+                                <li>
+                                    <h5 class="volume-data">Assigned Project</h5>
+                                    <p>{{vm.project.name}}</p>
+                                </li>
+                                <li>
+                                    <h5 class="volume-data">CPUs</h5>
+                                    <p>4</p>
+                                </li>
+                                <li>
+                                    <h5 class="volume-data">Image Name</h5>
+                                    <p>Fedora</p>
+                                </li>
+                                <li>
+                                    <h5 class="volume-data">Image Size</h5>
+                                    <p>3.68 GB</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    <section class="connect-new vvm">
+        <div class="img-wrap">
+            <a href="">
+                <span class="snf-pc-full snf-font"></span>
+            </a>
+        </div>
+        <p><a href="">Attach to VM</a></p>
+    </section>
 </section>

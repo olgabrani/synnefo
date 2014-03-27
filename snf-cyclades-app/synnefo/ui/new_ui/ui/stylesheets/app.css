@@ -11014,9 +11014,13 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
 }
 /* line 116, ../sass/_connected.scss */
 .connected .item .connections > li .data ul:first-child li h5.volume-data {
-  width: 35%;
+  width: 40%;
 }
 /* line 120, ../sass/_connected.scss */
+.connected .item .connections > li .data ul:first-child li p {
+  margin-bottom: 0;
+}
+/* line 123, ../sass/_connected.scss */
 .connected .item .connections > li .data ul:first-child li p.inner {
   overflow: hidden;
   padding-left: 10px;
@@ -11024,7 +11028,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   line-height: 1.3em;
 }
 
-/* line 134, ../sass/_connected.scss */
+/* line 137, ../sass/_connected.scss */
 .connect-new {
   position: absolute;
   bottom: -150px;
@@ -11036,7 +11040,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   margin-bottom: 50px;
   margin-left: -1px;
 }
-/* line 144, ../sass/_connected.scss */
+/* line 147, ../sass/_connected.scss */
 .connect-new .img-wrap {
   position: relative;
   display: block;
@@ -11045,7 +11049,7 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   background: url(../images/dashed_atom-x.png) repeat-x left top;
   overflow: inherit;
 }
-/* line 151, ../sass/_connected.scss */
+/* line 154, ../sass/_connected.scss */
 .connect-new .img-wrap > a {
   display: block;
   position: absolute;
@@ -11055,17 +11059,17 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   text-align: center;
   margin: -20px 0 0;
 }
-/* line 159, ../sass/_connected.scss */
+/* line 162, ../sass/_connected.scss */
 .connect-new .img-wrap > a .snf-font {
   color: #485057;
   font-size: 3.75em;
 }
-/* line 163, ../sass/_connected.scss */
+/* line 166, ../sass/_connected.scss */
 .connect-new .img-wrap > a .snf-network-full {
   position: relative;
   top: -9px;
 }
-/* line 169, ../sass/_connected.scss */
+/* line 172, ../sass/_connected.scss */
 .connect-new p {
   position: absolute;
   left: 165px;
@@ -11074,27 +11078,27 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   font-size: 0.875em;
   top: 90px;
 }
-/* line 177, ../sass/_connected.scss */
+/* line 180, ../sass/_connected.scss */
 .connect-new.network p {
   top: 90px;
 }
-/* line 180, ../sass/_connected.scss */
+/* line 183, ../sass/_connected.scss */
 .connect-new.disk p {
   top: 94px;
 }
-/* line 184, ../sass/_connected.scss */
+/* line 187, ../sass/_connected.scss */
 .connect-new:hover .img-wrap > a .snf-font, .connect-new:hover span, .connect-new:hover a {
   color: #30c79e;
 }
 
-/* line 191, ../sass/_connected.scss */
+/* line 194, ../sass/_connected.scss */
 .network .connected {
   left: 143px;
   top: -80px;
   padding-top: 80px;
 }
 
-/* line 195, ../sass/_connected.scss */
+/* line 198, ../sass/_connected.scss */
 .firewall {
   float: left;
   margin-left: 20px;
@@ -11106,46 +11110,46 @@ body .body-wrapper .overlay-area-reveal .secondary-wizard ul li:hover {
   white-space: nowrap;
   background-color: #fff;
 }
-/* line 205, ../sass/_connected.scss */
+/* line 208, ../sass/_connected.scss */
 .firewall p {
   margin: 0;
   overflow: auto;
 }
-/* line 208, ../sass/_connected.scss */
+/* line 211, ../sass/_connected.scss */
 .firewall p em {
   color: #30c79e;
 }
-/* line 212, ../sass/_connected.scss */
+/* line 215, ../sass/_connected.scss */
 .firewall .more {
   margin-top: 10px;
   margin-left: 0;
   list-style: none;
   display: none;
 }
-/* line 218, ../sass/_connected.scss */
+/* line 221, ../sass/_connected.scss */
 .firewall .more li {
   min-width: 200px;
 }
-/* line 220, ../sass/_connected.scss */
+/* line 223, ../sass/_connected.scss */
 .firewall .more li span {
   float: right;
   height: 14px;
   line-height: 22px;
 }
-/* line 225, ../sass/_connected.scss */
+/* line 228, ../sass/_connected.scss */
 .firewall .more li em {
   float: right;
   margin: 0 5px 0 20px;
   width: 15px;
   display: inline-block;
 }
-/* line 234, ../sass/_connected.scss */
+/* line 237, ../sass/_connected.scss */
 .firewall.unprotected > p em,
 .firewall .unprotected a em {
   color: #e02b2b;
 }
 
-/* line 239, ../sass/_connected.scss */
+/* line 242, ../sass/_connected.scss */
 .details .placeholder {
   height: 100px;
 }

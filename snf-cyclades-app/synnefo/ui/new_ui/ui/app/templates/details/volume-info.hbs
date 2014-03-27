@@ -1,0 +1,17 @@
+<section class="content info-simple">
+    <section class="info-block">
+        <h2>info</h2>
+        <dl>
+            <dt><span class="snf-font snf-volume-full"></span>Name</dt>
+            <dd>{{name}}</dd>
+            <dt><span class="snf-font snf-image-full"></span>Storage type</dt>
+            <dd>{{storageType}}</dd>
+            <dt><span class="snf-font snf-image-full"></span>Size</dt>
+            <dd>{{bytes-to-human size}}</dd>
+            <dt><span class="snf-font snf-dashboard-outline"></span>Assigned Project</dt>
+            <dd>{{project.name}}</dd>
+            <dt><span class="snf-pc-full snf-font"></span>Attached to</dt>
+            <dd>{{#link-to 'vm' vm}}{{vm.name}}{{/link-to}}</dd>
+        </dl>
+    </section>
+</section>

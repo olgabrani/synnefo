@@ -27,7 +27,7 @@ Snf.SideactionsProjectComponent = Ember.Component.extend({
             this.set('isEditable', true);
         },
         reassignProject: function(){
-            this.sendAction('reassignProject');
+            this.sendAction('reassignProject', this.get('newproject'));
             this.set('isEditable', false);
             this.set('isDisplayed', false);
         }

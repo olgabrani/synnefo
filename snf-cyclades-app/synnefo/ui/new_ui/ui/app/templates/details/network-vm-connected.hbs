@@ -1,11 +1,47 @@
-<section class="content connected">
-{{!--     {{view Snf.VmsListView itemController='vm'}}
- --}}    <section class="connect-new">
+<section class="content connected network">
+    {{ports.name}}
+    {{#each vm in vms itemController='NetworkVmPorts'}}
+    <section {{bind-attr class=":item port.vm.status"}}>
+        <div class="what">
+            <div class="img-wrap">
+                <span class="snf-pc-full snf-font"></span>
+                <span {{bind-attr class=":os vm.os"}}>{{vm.os}}</span>
+            </div>
+            <h4>{{vm.name}}</h4>
+        </div>
+        <div class="clearfix">
+            <ul class="connections">
+                {{#each port in ports}}
+                <li>
+                    <a href="#" class="act" {{action 'openModal' 'dettach-network-modal' 'network' model}}>&nbsp;</a>
+                    <div class="icon"><span class="snf-nic-full"></span></div>
+                    <div class="data">
+                        <ul>
+                            <li>
+                            {{#if port.ipv4}}
+                                <h5 class="ip-data">IPv4</h5>
+                                <p class="inner">{{port.ipv4}}</p>
+                            {{/if}}
+                            {{#if port.ipv6}}
+                                <h5 class="ip-data">IPv4</h5>
+                                <p class="inner">{{port.ipv6}}</p>
+                            {{/if}}
+                            {{view Snf.FirewallView}}
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </section>
+    {{/each}}
+    <section class="connect-new machine">
         <div class="img-wrap">
-            <a href="" data-reveal-id="connect-vm-to-network">
+            <a href="" data-reveal-id="connect-to-network">
                 <span class="snf-pc-full snf-font"></span>
             </a>
         </div>
-        <p><a href="" data-reveal-id="connect-vm-to-network">Connect Machine</a></p>
+        <p><a href="">Connect VM</a></p>
     </section>
 </section>
