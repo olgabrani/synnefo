@@ -5,6 +5,7 @@ Snf.ElemsListController = Ember.ArrayController.extend({
     fullName: function () {
         return _.capitalize(this.type);
     }.property('type'),
+    sortProperties: ['status', 'name'],
 
     // returns type without an 's', i.e. network
     _item: function () {
