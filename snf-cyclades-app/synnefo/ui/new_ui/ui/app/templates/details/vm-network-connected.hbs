@@ -1,5 +1,4 @@
 <section class="content connected network">
-    {{ports.name}}
     {{#each network in networks itemController='VmNetworkPorts'}}
     <section {{bind-attr class=":item port.network.status"}}>
         <div class="what">
