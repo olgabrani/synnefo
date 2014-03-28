@@ -5,7 +5,7 @@
         {{#if actionsMany}}
             {{#each item in mainActions}}
             <li>
-                <a {{action 'openModal' item.act item.controller model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+                <a {{action 'openModal' item.act type model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
             </li>
             {{/each}}
             <li class="more-actions">
@@ -13,7 +13,7 @@
                 <ul>
                     {{#each item in secondaryActions}}
                     <li>
-                        <a {{action 'openModal' item.act item.controller model}} {{bind-attr class="item.title"}}>{{item.title}}</a>
+                        <a {{action 'openModal' item.act type model}} {{bind-attr class="item.title"}}>{{item.title}}</a>
                     </li>
                     {{/each}}
                 </ul>
@@ -21,7 +21,7 @@
         {{else}}
             {{#each item in actionsMeta}}
             <li>
-                <a {{action 'openModal' item.act item.controller model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+                <a {{action 'openModal' item.act type model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
             </li>
             {{/each}}
         {{/if}}
@@ -50,7 +50,7 @@
         </div>
         <div class="actions">
             {{#each item in actionsMeta}}
-                <a {{action 'openModal' item.act item.controller model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
+                <a {{action 'openModal' item.act type model}} {{bind-attr class="item.title"}}><span {{bind-attr class="item.spanCls"}}></span></a>
             {{/each}}
         </div>
         {{#if hasTags}}

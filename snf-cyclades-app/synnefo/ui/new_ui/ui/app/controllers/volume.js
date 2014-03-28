@@ -3,7 +3,6 @@ var actionsMetaVolume = {
         title: 'destroy',
         act: 'destroy-volume-modal',
         spanCls: 'snf-trash-outline',
-        controller: 'volume'
     },
 };
 
@@ -28,12 +27,14 @@ Snf.VolumeController = Snf.ElController.extend({
 
     actions: {
 
-        dettachVolume: function(volume){
-            volume.get('vm').get('volumes').removeObject(volume);
+        dettachVolume: function(){
+            console.log(this.get('model').get('name'));
+            this.get('model').get('vm').get('volumes').removeObject(this.get('model'));
         },
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
+            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view';
             this.transitionToRoute('volumes', viewCls);
         },
     }
@@ -46,4 +47,3 @@ Snf.VolumesController = Snf.ElemsListController.extend({
         return _.toArray(actionsMetaVolume);
     }.property(),
 });
-

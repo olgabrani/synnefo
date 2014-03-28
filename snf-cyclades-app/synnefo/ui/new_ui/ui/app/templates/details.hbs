@@ -20,7 +20,7 @@
                     <ul>
                         {{#each item in actionsMeta}}
                             <li>
-                                <a href="#" {{action 'openModal' item.act item.controller model}}>{{item.title}}</span></a>
+                                <a href="#" {{action 'openModal' item.act type model}}>{{item.title}}</span></a>
                             </li>
                         {{else}}
                             <li>There are no available actions</li>

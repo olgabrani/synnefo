@@ -3,7 +3,6 @@ var actionsMetaNetwork = {
         title: 'destroy',
         act: 'destroy-network-modal',
         spanCls: 'snf-trash-outline',
-        controller: 'network'
     },
 };
 

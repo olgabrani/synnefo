@@ -991,7 +991,6 @@ Snf.ElController = Ember.ObjectController.extend({
         title: 'destroy',
         act: 'destroy-network-modal',
         spanCls: 'snf-trash-outline',
-        controller: 'network'
     },
 };
 
@@ -1110,31 +1109,26 @@ Snf.AddTagController = Snf.TagController.extend({
         title: 'connect',
         act: 'connect-vm-modal',
         spanCls: 'snf-thunder-full',
-        controller: 'vm',
     },
     'start': {
         title: 'start me now',
         act: 'start-vm-modal',
         spanCls: 'snf-switch',
-        controller: 'vm',
     },
     'destroy': {
         title: 'destroy',
         act: 'destroy-vm-modal',
         spanCls: 'snf-trash-outline',
-        controller: 'vm',
     },
     'reboot': {
         title: 'reboot',
         act: 'reboot-vm-modal',
         spanCls: 'snf-refresh-outline',
-        controller: 'vm',
     },
     'shutdown': {
         title: 'shutdown',
         act: 'shutdown-vm-modal',
         spanCls: 'snf-pc-broken-full',
-        controller: 'vm',
     },
 };
 
@@ -1176,7 +1170,11 @@ Snf.VmController = Snf.ElController.extend({
         },
 
         dettachVolume: function(volume){
-            volume.get('vm').get('volumes').removeObject(volume);
+            this.get('model').get('volumes').removeObject(volume);
+        },
+        dettachVmFromVolume: function(param){
+            console.log(this.get('model').toString(),'model');
+            console.log(param.toString(), 'param');
         },
 
         rebootVm: function(){
@@ -1241,7 +1239,6 @@ Snf.VmNetworkPortsController = Ember.ObjectController.extend({
         title: 'destroy',
         act: 'destroy-volume-modal',
         spanCls: 'snf-trash-outline',
-        controller: 'volume'
     },
 };
 
@@ -1266,12 +1263,14 @@ Snf.VolumeController = Snf.ElController.extend({
 
     actions: {
 
-        dettachVolume: function(volume){
-            volume.get('vm').get('volumes').removeObject(volume);
+        dettachVolume: function(){
+            console.log(this.get('model').get('name'));
+            this.get('model').get('vm').get('volumes').removeObject(this.get('model'));
         },
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
+            var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view';
             this.transitionToRoute('volumes', viewCls);
         },
     }
@@ -1283,9 +1282,7 @@ Snf.VolumesController = Snf.ElemsListController.extend({
     actionsMeta: function(){
         return _.toArray(actionsMetaVolume);
     }.property(),
-});
-
-;/* Controllers for Wizards */
+});;/* Controllers for Wizards */
 
 Snf.VmsCreateController = Ember.Controller.extend({
 	currentStep: 0,

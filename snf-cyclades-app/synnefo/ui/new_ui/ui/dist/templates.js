@@ -287,10 +287,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  var buffer = '', stack1;
-  data.buffer.push("\n");
-  stack1 = helpers._triageMustache.call(depth0, "foo", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  var buffer = '';
   data.buffer.push("\n    <p class=\"buttons\">\n        <a href=\"\" ");
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "ok", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["STRING"],data:data})));
   data.buffer.push(" class=\"btn4\"><span>Yes</span></a>\n        <a href=\"\" ");
@@ -410,7 +407,7 @@ function program3(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n                            <li>\n                                <a href=\"#\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "item.controller", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "type", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
   data.buffer.push(">");
   stack1 = helpers._triageMustache.call(depth0, "item.title", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
@@ -701,7 +698,7 @@ function program5(depth0,data) {
     'itemController': ("VmNetworkPorts")
   },hashTypes:{'itemController': "STRING"},hashContexts:{'itemController': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n    <section class=\"connect-new network\">\n		<div class=\"img-wrap\">\n			<a href=\"\" data-reveal-id=\"connect-to-network\">\n				<span class=\"snf-network-full snf-font\"></span>\n			</a>\n		</div>\n		<p><a href=\"\" data-reveal-id=\"connect-to-network\">Connect to Network</a></p>\n	</section>\n</section>\n");
+  data.buffer.push("\n    <section class=\"connect-new network\">\n		<div class=\"img-wrap\">\n			<a href=\"\" data-reveal-id=\"connect-to-network\">\n				<span class=\"snf-network-full snf-font\"></span>\n			</a>\n		</div>\n		<p><a href=\"\" data-reveal-id=\"connect-to-network\">Connect to Network</a></p>\n	</section>\n</section>");
   return buffer;
   
 });
@@ -840,7 +837,7 @@ function program4(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n            <li>\n                <a ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "item.controller", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "type", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("item.title")
@@ -857,7 +854,7 @@ function program6(depth0,data) {
   
   var buffer = '', stack1;
   data.buffer.push("\n                    <li>\n                        <a ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "item.controller", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "type", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("item.title")
@@ -923,7 +920,7 @@ function program15(depth0,data) {
   
   var buffer = '';
   data.buffer.push("\n                <a ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "item.controller", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "item.act", "type", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","ID","ID","ID"],data:data})));
   data.buffer.push(" ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'class': ("item.title")
@@ -1149,7 +1146,10 @@ function program1(depth0,data) {
   data.buffer.push("\n    <p>You can connect to your ");
   stack1 = helpers._triageMustache.call(depth0, "model.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push(" VM using this stuff:</p>\n    <p><span class=\"ssh\">ssh root@okeanos.grnet.gr/123</span></p>\n");
+  data.buffer.push(" VM using this stuff:</p>\n    <p><span class=\"ssh\">");
+  stack1 = helpers._triageMustache.call(depth0, "model.hostname", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</span></p>\n");
   return buffer;
   }
 
@@ -1258,28 +1258,6 @@ function program1(depth0,data) {
   
 });
 
-Ember.TEMPLATES["modals/dettach-vm-modal"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var stack1, helper, options, self=this, helperMissing=helpers.helperMissing;
-
-function program1(depth0,data) {
-  
-  
-  data.buffer.push("\n    <p>Are you sure you want to dettach this IP from your Network?</p>\n");
-  }
-
-  stack1 = (helper = helpers['reveal-modal'] || (depth0 && depth0['reveal-modal']),options={hash:{
-    'id': ("dettach-network-modal"),
-    'hasButtons': ("true"),
-    'ok': ("dettachIp"),
-    'param': ("model")
-  },hashTypes:{'id': "STRING",'hasButtons': "STRING",'ok': "STRING",'param': "ID"},hashContexts:{'id': depth0,'hasButtons': depth0,'ok': depth0,'param': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "reveal-modal", options));
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  else { data.buffer.push(''); }
-  
-});
-
 Ember.TEMPLATES["modals/dettach-volume-modal"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -1287,16 +1265,19 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  
-  data.buffer.push("\n    <p>Are you sure you want to dettach this Volume?</p>\n");
+  var buffer = '', stack1;
+  data.buffer.push("\n    <p>Are you sure you want to dettach the Volume ");
+  stack1 = helpers._triageMustache.call(depth0, "model.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(" from the VM?</p>\n");
+  return buffer;
   }
 
   stack1 = (helper = helpers['reveal-modal'] || (depth0 && depth0['reveal-modal']),options={hash:{
     'id': ("dettach-volume-modal"),
     'hasButtons': ("true"),
-    'ok': ("dettachVolume"),
-    'param': ("model")
-  },hashTypes:{'id': "STRING",'hasButtons': "STRING",'ok': "STRING",'param': "ID"},hashContexts:{'id': depth0,'hasButtons': depth0,'ok': depth0,'param': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "reveal-modal", options));
+    'ok': ("dettachVolume")
+  },hashTypes:{'id': "STRING",'hasButtons': "STRING",'ok': "STRING"},hashContexts:{'id': depth0,'hasButtons': depth0,'ok': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "reveal-modal", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   else { data.buffer.push(''); }
   
@@ -1345,9 +1326,8 @@ function program1(depth0,data) {
   stack1 = (helper = helpers['reveal-modal'] || (depth0 && depth0['reveal-modal']),options={hash:{
     'id': ("shutdown-vm-modal"),
     'hasButtons': ("true"),
-    'ok': ("shutdownVm"),
-    'param': ("model")
-  },hashTypes:{'id': "STRING",'hasButtons': "STRING",'ok': "STRING",'param': "ID"},hashContexts:{'id': depth0,'hasButtons': depth0,'ok': depth0,'param': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "reveal-modal", options));
+    'ok': ("shutdownVm")
+  },hashTypes:{'id': "STRING",'hasButtons': "STRING",'ok': "STRING"},hashContexts:{'id': depth0,'hasButtons': depth0,'ok': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[],types:[],data:data},helper ? helper.call(depth0, options) : helperMissing.call(depth0, "reveal-modal", options));
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   else { data.buffer.push(''); }
   

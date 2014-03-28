@@ -3,31 +3,26 @@ var actionsMetaVm = {
         title: 'connect',
         act: 'connect-vm-modal',
         spanCls: 'snf-thunder-full',
-        controller: 'vm',
     },
     'start': {
         title: 'start me now',
         act: 'start-vm-modal',
         spanCls: 'snf-switch',
-        controller: 'vm',
     },
     'destroy': {
         title: 'destroy',
         act: 'destroy-vm-modal',
         spanCls: 'snf-trash-outline',
-        controller: 'vm',
     },
     'reboot': {
         title: 'reboot',
         act: 'reboot-vm-modal',
         spanCls: 'snf-refresh-outline',
-        controller: 'vm',
     },
     'shutdown': {
         title: 'shutdown',
         act: 'shutdown-vm-modal',
         spanCls: 'snf-pc-broken-full',
-        controller: 'vm',
     },
 };
 
@@ -69,7 +64,11 @@ Snf.VmController = Snf.ElController.extend({
         },
 
         dettachVolume: function(volume){
-            volume.get('vm').get('volumes').removeObject(volume);
+            this.get('model').get('volumes').removeObject(volume);
+        },
+        dettachVmFromVolume: function(param){
+            console.log(this.get('model').toString(),'model');
+            console.log(param.toString(), 'param');
         },
 
         rebootVm: function(){
