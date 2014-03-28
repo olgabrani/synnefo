@@ -1,4 +1,4 @@
-<section class="content connected disk">
+<section class="content connected volume">
     {{#each volume in this.volumes itemController="Volume"}}
         <section {{bind-attr class=":item volume.status"}}>
             <div class="what">
@@ -29,7 +29,7 @@
             </div>
         </section>
     {{/each}}
-	<section class="connect-new disk">
+	<section class="connect-new volume">
 		<div class="img-wrap">
 			<a href="" data-reveal-id="attach-volume">
 				<span class="snf-volume-full snf-font"></span>

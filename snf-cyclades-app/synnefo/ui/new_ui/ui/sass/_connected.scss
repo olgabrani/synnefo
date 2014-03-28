@@ -180,7 +180,7 @@ $lt-width: $details-lt-width/2 + $details-top-more-padding-lt ;
 	&.network p {
 		top: 90px;
 	}
-	&.disk p {
+	&.volume p {
 		top: 94px;
 	}
 	&:hover {

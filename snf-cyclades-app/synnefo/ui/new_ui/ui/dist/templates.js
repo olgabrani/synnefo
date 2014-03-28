@@ -581,42 +581,6 @@ function program5(depth0,data) {
   
 });
 
-Ember.TEMPLATES["details/vm-disk-connected"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
-this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = '', stack1, helper, options;
-  data.buffer.push("\n        <section ");
-  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
-    'class': (":item volume.status")
-  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
-  data.buffer.push(">\n            <div class=\"what\">\n                <div class=\"img-wrap\">\n                    <span class=\"snf-volume-full snf-font\"></span>\n                </div>\n                <h4>");
-  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</h4>\n            </div>\n            <div class=\"clearfix\">\n                <ul class=\"connections\">\n                    <li>\n                        <a href=\"#\" ");
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "dettach-volume-modal", "volume", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","STRING","STRING","ID"],data:data})));
-  data.buffer.push("  class=\"act\" >&nbsp;</a>\n                        <div class=\"icon\"></div>\n                        <div class=\"data\">\n                            <ul>\n                                <li>\n                                    <h5 class=\"volume-data\">Size</h5>\n                                    <p>");
-  data.buffer.push(escapeExpression((helper = helpers['bytes-to-human'] || (depth0 && depth0['bytes-to-human']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "size", options) : helperMissing.call(depth0, "bytes-to-human", "size", options))));
-  data.buffer.push("</p>\n                                </li>\n                                <li>\n                                    <h5 class=\"volume-data\">Storage Type</h5>\n                                    <p>");
-  stack1 = helpers._triageMustache.call(depth0, "storageType", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("</p>\n                                </li>\n                            </ul>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </section>\n    ");
-  return buffer;
-  }
-
-  data.buffer.push("<section class=\"content connected disk\">\n    ");
-  stack1 = helpers.each.call(depth0, "volume", "in", "volumes", {hash:{
-    'itemController': ("Volume")
-  },hashTypes:{'itemController': "STRING"},hashContexts:{'itemController': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n	<section class=\"connect-new disk\">\n		<div class=\"img-wrap\">\n			<a href=\"\" data-reveal-id=\"attach-volume\">\n				<span class=\"snf-volume-full snf-font\"></span>\n			</a>\n		</div>\n		<p><a href=\"\">Attach Volume</a></p>\n	</section>\n</section>");
-  return buffer;
-  
-});
-
 Ember.TEMPLATES["details/vm-info"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -738,6 +702,42 @@ function program5(depth0,data) {
   },hashTypes:{'itemController': "STRING"},hashContexts:{'itemController': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    <section class=\"connect-new network\">\n		<div class=\"img-wrap\">\n			<a href=\"\" data-reveal-id=\"connect-to-network\">\n				<span class=\"snf-network-full snf-font\"></span>\n			</a>\n		</div>\n		<p><a href=\"\" data-reveal-id=\"connect-to-network\">Connect to Network</a></p>\n	</section>\n</section>\n");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["details/vm-volume-connected"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n        <section ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'class': (":item volume.status")
+  },hashTypes:{'class': "STRING"},hashContexts:{'class': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(">\n            <div class=\"what\">\n                <div class=\"img-wrap\">\n                    <span class=\"snf-volume-full snf-font\"></span>\n                </div>\n                <h4>");
+  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</h4>\n            </div>\n            <div class=\"clearfix\">\n                <ul class=\"connections\">\n                    <li>\n                        <a href=\"#\" ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "openModal", "dettach-volume-modal", "volume", "model", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0,depth0,depth0],types:["STRING","STRING","STRING","ID"],data:data})));
+  data.buffer.push("  class=\"act\" >&nbsp;</a>\n                        <div class=\"icon\"></div>\n                        <div class=\"data\">\n                            <ul>\n                                <li>\n                                    <h5 class=\"volume-data\">Size</h5>\n                                    <p>");
+  data.buffer.push(escapeExpression((helper = helpers['bytes-to-human'] || (depth0 && depth0['bytes-to-human']),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "size", options) : helperMissing.call(depth0, "bytes-to-human", "size", options))));
+  data.buffer.push("</p>\n                                </li>\n                                <li>\n                                    <h5 class=\"volume-data\">Storage Type</h5>\n                                    <p>");
+  stack1 = helpers._triageMustache.call(depth0, "storageType", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</p>\n                                </li>\n                            </ul>\n                        </div>\n                    </li>\n                </ul>\n            </div>\n        </section>\n    ");
+  return buffer;
+  }
+
+  data.buffer.push("<section class=\"content connected volume\">\n    ");
+  stack1 = helpers.each.call(depth0, "volume", "in", "volumes", {hash:{
+    'itemController': ("Volume")
+  },hashTypes:{'itemController': "STRING"},hashContexts:{'itemController': depth0},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n	<section class=\"connect-new volume\">\n		<div class=\"img-wrap\">\n			<a href=\"\" data-reveal-id=\"attach-volume\">\n				<span class=\"snf-volume-full snf-font\"></span>\n			</a>\n		</div>\n		<p><a href=\"\">Attach Volume</a></p>\n	</section>\n</section>");
   return buffer;
   
 });

@@ -22,8 +22,8 @@ Snf.VmRoute = Ember.Route.extend({
 
 Snf.VmIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        if ( Snf.get('currentPath') == 'vm.disk-connected' ) {
-            this.transitionTo('vm.disk-connected');
+        if ( Snf.get('currentPath') == 'vm.volume-connected' ) {
+            this.transitionTo('vm.volume-connected');
         } else if ( Snf.get('currentPath')=='vm.network-connected' ) {
             this.transitionTo('vm.network-connected');
         } else {
@@ -51,9 +51,9 @@ Snf.VmInfoRoute = Ember.Route.extend({
     },
 });
 
-Snf.VmDiskConnectedRoute = Ember.Route.extend({
+Snf.VmVolumeConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/vm-disk-connected');
+        this.render('details/vm-volume-connected');
     },
     model: function () {
         return this.modelFor("vm");

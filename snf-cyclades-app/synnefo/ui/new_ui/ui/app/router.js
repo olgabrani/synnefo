@@ -5,7 +5,7 @@ Snf.Router.map(function() {
     this.resource('vminit', { path: '/vm'});
     this.resource('vm', { path: '/vm/:vm_id' }, function () {
         this.route('info');
-        this.route('disk-connected');
+        this.route('volume-connected');
         this.route('network-connected');
     });
 

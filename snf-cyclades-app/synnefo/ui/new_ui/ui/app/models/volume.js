@@ -48,7 +48,7 @@ Snf.Volume.FIXTURES = [
     },
     {
         id: 3,
-        name: 'Disk 3',
+        name: 'Volume 3',
         status: 'starting',
         size: 4096,
         storageType: 'drpd',

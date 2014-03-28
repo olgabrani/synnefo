@@ -46,7 +46,7 @@ Snf.VmController = Snf.ElController.extend({
         'icon': 'snf-info-outline',
     },
     {
-        'link': 'vm.disk-connected',
+        'link': 'vm.volume-connected',
         'icon': 'snf-volume-outline',
     },
     {
@@ -117,7 +117,7 @@ Snf.VmsController = Snf.ElemsListController.extend({
 
 Snf.VmInfoController = Snf.VmController.extend();
 
-Snf.VmDiskConnectedController = Snf.VmController.extend();
+Snf.VmVolumeConnectedController = Snf.VmController.extend();
 
 
 Snf.VmNetworkConnectedController = Snf.VmController.extend();

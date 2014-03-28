@@ -855,6 +855,7 @@ Snf.CheckboxCustomComponent = Ember.Component.extend({
     fullName: function () {
         return _.capitalize(this.type);
     }.property('type'),
+    sortProperties: ['status', 'name'],
 
     // returns type without an 's', i.e. network
     _item: function () {
@@ -1152,7 +1153,7 @@ Snf.VmController = Snf.ElController.extend({
         'icon': 'snf-info-outline',
     },
     {
-        'link': 'vm.disk-connected',
+        'link': 'vm.volume-connected',
         'icon': 'snf-volume-outline',
     },
     {
@@ -1223,7 +1224,7 @@ Snf.VmsController = Snf.ElemsListController.extend({
 
 Snf.VmInfoController = Snf.VmController.extend();
 
-Snf.VmDiskConnectedController = Snf.VmController.extend();
+Snf.VmVolumeConnectedController = Snf.VmController.extend();
 
 
 Snf.VmNetworkConnectedController = Snf.VmController.extend();
@@ -3357,7 +3358,7 @@ Snf.Volume.FIXTURES = [
     },
     {
         id: 3,
-        name: 'Disk 3',
+        name: 'Volume 3',
         status: 'starting',
         size: 4096,
         storageType: 'drpd',
@@ -3372,7 +3373,7 @@ Snf.Volume.FIXTURES = [
     this.resource('vminit', { path: '/vm'});
     this.resource('vm', { path: '/vm/:vm_id' }, function () {
         this.route('info');
-        this.route('disk-connected');
+        this.route('volume-connected');
         this.route('network-connected');
     });
 
@@ -3527,8 +3528,8 @@ Snf.VmRoute = Ember.Route.extend({
 
 Snf.VmIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        if ( Snf.get('currentPath') == 'vm.disk-connected' ) {
-            this.transitionTo('vm.disk-connected');
+        if ( Snf.get('currentPath') == 'vm.volume-connected' ) {
+            this.transitionTo('vm.volume-connected');
         } else if ( Snf.get('currentPath')=='vm.network-connected' ) {
             this.transitionTo('vm.network-connected');
         } else {
@@ -3556,9 +3557,9 @@ Snf.VmInfoRoute = Ember.Route.extend({
     },
 });
 
-Snf.VmDiskConnectedRoute = Ember.Route.extend({
+Snf.VmVolumeConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/vm-disk-connected');
+        this.render('details/vm-volume-connected');
     },
     model: function () {
         return this.modelFor("vm");
