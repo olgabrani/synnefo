@@ -1,0 +1,6 @@
+{{#reveal-modal id="connect-vm-many-modal"}}
+    {{#each vm in selectedItems}}
+        <p>You can connect to your {{vm.name}} VM using this stuff:</p>
+        <p><span class="ssh">{{vm.hostname}}</span></p>
+    {{/each}}
+{{/reveal-modal}}

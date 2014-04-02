@@ -52,14 +52,12 @@ Snf.ElemsListController = Ember.ArrayController.extend({
             console.log('toggleChecks');
         },
         selectItem: function(param) {
-            this.get('selectedItems').pushObject(param);
-            console.log(this.get('selectedItems').toString());
+            this.get('selectedItems').pushObject(param.get('model'));
         },
         unselectItem: function(param) {
-            em.removeByValue(this.get('selectedItems'), param);
+            this.get('selectedItems').removeObject(param.get('model'));
         },
     },
-
 
 });
 
@@ -132,7 +130,7 @@ Snf.ElController = Ember.ObjectController.extend({
 
     projects: function(){
         return this.store.find('project');
-    }.property(),
+    }.property('model.project'),
 
 
 });

@@ -1,4 +1,3 @@
-{{controller.selectedItems}}
 <ul class="lt-actions">
     <li class="select trigger-checkbox"  {{action 'toggleCheckboxesState'}}>
         <a href="" class="check">
@@ -7,7 +6,9 @@
         <em>Un</em>Select all
 
     </li>
-    {{#each a in actionsMeta}}
-        <li><a {{action 'openModal' a.act  bubbles=false}} {{bind-attr class="a.title"}}>{{a.title}}</a></li>
-    {{/each}}    
+    {{#each a in actionsMetaLt}}
+        {{#if a.actMany}}
+            <li><a {{action 'openModal' a.actMany type}} {{bind-attr class="a.title"}}>{{a.title}}</a></li>
+        {{/if}}
+    {{/each}}        
 </ul>

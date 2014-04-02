@@ -3,6 +3,7 @@ var actionsMetaVolume = {
         title: 'destroy',
         act: 'destroy-volume-modal',
         spanCls: 'snf-trash-outline',
+        actMany: 'destroy-volume-many-modal',
     },
 };
 
@@ -43,7 +44,34 @@ Snf.VolumeController = Snf.ElController.extend({
 
 Snf.VolumesController = Snf.ElemsListController.extend({
     type : 'volumes',
+
     actionsMeta: function(){
         return _.toArray(actionsMetaVolume);
     }.property(),
+
+    actionsIntersection: function(){
+        var Actions = this.get('selectedItems').map(function(i){
+            return statusActionsVolume[i.get('status')].enabledActions;
+        });
+        // KPAP giati oxi ayto? :S
+        console.log(_.intersection(Actions[0]));
+        return _.intersection.apply(_,Actions);
+    }.property('selectedItems.@each'),
+
+
+    actionsMetaLt: function() {
+       return _.map(this.get('actionsIntersection'), function(val,key) {
+            return actionsMetaVolume[val];
+        });
+
+    }.property('actionsIntersection.@each'),
+
+    actions: {
+        destroyVolumeMany: function(){
+            this.get('selectedItems').map(function(i){
+                i.deleteRecord();
+                i.save();
+            });
+        },
+    },
 });

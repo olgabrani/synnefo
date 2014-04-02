@@ -1,4 +1,12 @@
         {{add-new type=controller.type icon=controller.iconCls action="openWizard"}}
         {{#each}}
-           {{render 'elem' this}}
+           {{#if view.sidebar}}
+                {{#link-to type this tagName='li'}}
+                    {{partial 'elem'}}
+                {{/link-to}}
+            {{else}}
+                <li>
+                    {{partial 'elem'}}
+                </li>
+            {{/if}}
         {{/each}}

@@ -157,7 +157,7 @@ body.with-overlay {
 		@extend .colored-modal;
 	}
 
-	#destroy-vm-modal {
+	#destroy-vm-modal, #destroy-vm-many-modal {
 		background: $fuchsia-1 url('../images/destroy-vm.png') no-repeat center 46px;
 		@extend .colored-modal;
 	}

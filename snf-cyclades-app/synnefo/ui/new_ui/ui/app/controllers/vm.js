@@ -2,26 +2,31 @@ var actionsMetaVm = {
     'connect': {
         title: 'connect',
         act: 'connect-vm-modal',
+        actMany: 'connect-vm-many-modal',
         spanCls: 'snf-thunder-full',
     },
     'start': {
         title: 'start me now',
         act: 'start-vm-modal',
+        actMany: 'start-vm-many-modal',
         spanCls: 'snf-switch',
     },
     'destroy': {
         title: 'destroy',
         act: 'destroy-vm-modal',
+        actMany: 'destroy-vm-many-modal',
         spanCls: 'snf-trash-outline',
     },
     'reboot': {
         title: 'reboot',
         act: 'reboot-vm-modal',
+        actMany: 'reboot-vm-many-modal',
         spanCls: 'snf-refresh-outline',
     },
     'shutdown': {
         title: 'shutdown',
         act: 'shutdown-vm-modal',
+        actMany: 'shutdown-vm-many-modal',
         spanCls: 'snf-pc-broken-full',
     },
 };
@@ -33,6 +38,7 @@ Snf.VmController = Snf.ElController.extend({
     hasConnect: true,
     hasTags : true,
     isSelected: false,
+    // KPAP wuat?
     needs: ['vms'],
 
     submenu: [
@@ -98,8 +104,8 @@ Snf.VmController = Snf.ElController.extend({
             this.get('model').set('status','running');
         },
 
-        reassignProject: function(project){
-            //this.get('model').set('project',project);
+        reassignProject: function(newproject){
+            this.get('model').set('project', newproject);
         },
     },
 });
@@ -109,9 +115,30 @@ Snf.VmsController = Snf.ElemsListController.extend({
     iconCls  : 'snf-pc-full',
     fullName: 'Virtual Machines',
 
-    actionsMeta: function(){
-        return _.toArray(actionsMetaVm);
-    }.property(),
+    actionsIntersection: function(){
+        var Actions = this.get('selectedItems').map(function(i){
+            return statusActionsVm[i.get('status')].enabledActions;
+        });
+        return _.intersection.apply(_,Actions);
+    }.property('selectedItems.@each'),
+
+
+    actionsMetaLt: function() {
+       return _.map(this.get('actionsIntersection'), function(val,key) {
+            return actionsMetaVm[val];
+        });
+
+    }.property('actionsIntersection.@each'),
+
+    actions: {
+        destroyVmMany: function(){
+            this.get('selectedItems').map(function(i){
+                i.deleteRecord();
+                i.save();
+            });
+        },
+    },
+
 });
 
 Snf.VmInfoController = Snf.VmController.extend();

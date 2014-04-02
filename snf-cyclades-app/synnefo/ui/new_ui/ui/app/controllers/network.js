@@ -3,6 +3,7 @@ var actionsMetaNetwork = {
         title: 'destroy',
         act: 'destroy-network-modal',
         spanCls: 'snf-trash-outline',
+        actMany: 'destroy-network-many-modal',
     },
 };
 
@@ -46,6 +47,30 @@ Snf.NetworksController = Snf.ElemsListController.extend({
     actionsMeta: function(){
         return _.toArray(actionsMetaNetwork);
     }.property(),
+
+    actionsIntersection: function(){
+        var Actions = this.get('selectedItems').map(function(i){
+            return statusActionsNetwork[i.get('status')].enabledActions;
+        });
+        return _.intersection.apply(_,Actions);
+    }.property('selectedItems.@each'),
+
+
+    actionsMetaLt: function() {
+       return _.map(this.get('actionsIntersection'), function(val,key) {
+            return actionsMetaNetwork[val];
+        });
+
+    }.property('actionsIntersection.@each'),
+
+    actions: {
+        destroyNetworkMany: function(){
+            this.get('selectedItems').map(function(i){
+                i.deleteRecord();
+                i.save();
+            });
+        },
+    },
 });
 
 

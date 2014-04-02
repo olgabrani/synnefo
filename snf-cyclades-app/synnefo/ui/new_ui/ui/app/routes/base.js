@@ -2,7 +2,9 @@ Snf.ApplicationRoute = Ember.Route.extend({
     actions: {
         openModal: function(modalName, controller, model) {
 
-            this.controllerFor(controller).set("model", model);
+            if (model) {
+                this.controllerFor(controller).set("model", model);
+            }
             this.render('modals/'+modalName, {
                 into: 'application',
                 outlet: 'modal',
