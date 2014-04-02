@@ -4,7 +4,7 @@
         <li>{{current.name}}</li>
         {{#if isEditable}}
             {{#each project in availableProjects}}
-                <li><a {{action 'reassignProject' newproject=project}}>{{project.name}}</a></li>
+                <li><a {{action 'reassignProject' project}}>{{project.name}}</a></li>
             {{/each}}
         {{else}}
         <li><a  class="reassign" {{action 'showProjects'}}>Reassign<span class="arrow-right"></span></a></li>
