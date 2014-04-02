@@ -107,6 +107,10 @@ Snf.VmController = Snf.ElController.extend({
         reassignProject: function(newproject){
             this.get('model').set('project', newproject);
         },
+
+        destroyPort: function(port) {
+            port.deleteRecord();
+        },
     },
 });
 
@@ -155,3 +159,11 @@ Snf.VmNetworkPortsController = Ember.ObjectController.extend({
     }.property(),
 
 });
+
+/*Snf.DestroyPortModalController = Ember.ObjectController.extend({
+    actions: {
+        destroyPort: function(port) {
+            port.deleteRecord();
+        },
+    }
+});*/

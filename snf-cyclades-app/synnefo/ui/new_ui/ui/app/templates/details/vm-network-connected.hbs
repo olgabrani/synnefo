@@ -11,7 +11,9 @@
             <ul class="connections">
                 {{#each port in ports}}
                 <li>
-                    <a href="#" class="act" {{action 'openModal' 'dettach-network-modal' 'network' model}}>&nbsp;</a>
+                    {{#if port.dettachable}}
+                    <a href="#" class="act" {{action 'openModal' 'destroy-port-modal' 'vm' port}}>&nbsp;</a>
+                    {{/if}}
                     <div class="icon"><span class="snf-nic-full"></span></div>
                     <div class="data">
                         <ul>
