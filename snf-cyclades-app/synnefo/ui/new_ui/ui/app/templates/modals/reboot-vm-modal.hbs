@@ -1,3 +1,5 @@
 {{#reveal-modal id="reboot-vm-modal" hasButtons="true" ok="rebootVm"}}
-    <p>Are you sure you want to reboot the VM <strong>{{model.name}}</strong>?</p>
+    {{#each model in models}}
+        <p>Are you sure you want to reboot the VM <strong>{{model.name}}</strong>?</p>
+    {{/each}}
 {{/reveal-modal}}

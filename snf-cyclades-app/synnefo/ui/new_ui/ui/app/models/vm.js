@@ -44,7 +44,7 @@ Snf.Vm = DS.Model.extend({
     // resolve the content of the above promises
     portsNetworks: Ember.computed.mapBy('portsNetworksPromises', 'content'),
     // filter out un-fulfilled promise contents
-    validNetworks: Ember.computed.filter('portsNetworks', function(n) { return n }),
+    validNetworks: Ember.computed.filter('portsNetworks', function(n) { return n; }),
     // yay!!! vm network objects
     networks: Ember.computed.uniq('validNetworks')
     // ^^^ too verbose ? we need a way to shorten out above computed properties shitload.
@@ -116,5 +116,12 @@ Snf.Vm.FIXTURES = [
         status: 'shutting',
         os: 'kubuntu',
         project: 3,
+    },
+    {
+        id: 8,
+        name: 'barcelona',
+        status: 'running',
+        os: 'kubuntu',
+        project: 2,
     },
 ];

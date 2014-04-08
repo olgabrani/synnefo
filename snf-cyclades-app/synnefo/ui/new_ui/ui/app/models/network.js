@@ -29,7 +29,7 @@ Snf.Network = DS.Model.extend({
 
     portsVmsPromises: Ember.computed.mapBy('ports', 'vm'),
     portsVms: Ember.computed.mapBy('portsVmsPromises', 'content'),
-    validVms: Ember.computed.filter('portsVms', function(n) { return n }),
+    validVms: Ember.computed.filter('portsVms', function(n) { return n; }),
     vms: Ember.computed.uniq('validVms'),
 
 });

@@ -3,7 +3,7 @@ var actionsMetaVolume = {
         title: 'destroy',
         act: 'destroy-volume-modal',
         spanCls: 'snf-trash-outline',
-        actMany: 'destroy-volume-many-modal',
+        actMany: true,
     },
 };
 
@@ -67,8 +67,8 @@ Snf.VolumesController = Snf.ElemsListController.extend({
     }.property('actionsIntersection.@each'),
 
     actions: {
-        destroyVolumeMany: function(){
-            this.get('selectedItems').map(function(i){
+        destroyVolume: function(){
+            this.get('models').map(function(i){
                 i.deleteRecord();
                 i.save();
             });

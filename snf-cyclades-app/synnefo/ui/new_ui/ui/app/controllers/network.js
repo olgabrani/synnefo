@@ -3,7 +3,7 @@ var actionsMetaNetwork = {
         title: 'destroy',
         act: 'destroy-network-modal',
         spanCls: 'snf-trash-outline',
-        actMany: 'destroy-network-many-modal',
+        actMany: true,
     },
 };
 
@@ -64,8 +64,8 @@ Snf.NetworksController = Snf.ElemsListController.extend({
     }.property('actionsIntersection.@each'),
 
     actions: {
-        destroyNetworkMany: function(){
-            this.get('selectedItems').map(function(i){
+        destroyNetwork: function(){
+            this.get('models').map(function(i){
                 i.deleteRecord();
                 i.save();
             });

@@ -47,9 +47,16 @@ Snf.ElemsListController = Ember.ArrayController.extend({
 
     selectedItems : Ember.A(),
 
+    selectedAll: false,
+
     actions: {
         toggleCheckboxesState: function(){
-            console.log('toggleChecks');
+            //this.get('selectedItems').addObjects(this.store.find('vm'));
+            if (this.get('selectedAll')) {
+                this.set('selectedItems',[]);
+            }
+            this.toggleProperty('selectedAll');
+            console.log(this.get('selectedItems').toString());
         },
         selectItem: function(param) {
             this.get('selectedItems').pushObject(param.get('model'));
@@ -58,6 +65,10 @@ Snf.ElemsListController = Ember.ArrayController.extend({
             this.get('selectedItems').removeObject(param.get('model'));
         },
     },
+
+    models: function(){
+        return this.get('selectedItems');
+    }.property('selectedItems'),
 
 });
 
@@ -125,12 +136,18 @@ Snf.ElController = Ember.ObjectController.extend({
         saveModel: function(){
             this.get('model').save();
         },
-
     },
 
     projects: function(){
         return this.store.find('project');
     }.property('model.project'),
+
+    models: function(){
+        var t = Ember.A();
+        var m = this.get('model');
+        t.pushObject(m);
+        return t;
+    }.property('model'),
 
 
 });

@@ -1,3 +1,5 @@
 {{#reveal-modal id="destroy-volume-modal" hasButtons="true" ok="destroyVolume"}}
-    <p>Are you sure you want to destroy the volume {{model.name}}? </p>
+    {{#each model in models}}
+        <p>Are you sure you want to destroy the volume <strong>{{model.name}}</strong>? </p>
+    {{/each}}
 {{/reveal-modal}}

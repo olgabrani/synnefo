@@ -2,31 +2,31 @@ var actionsMetaVm = {
     'connect': {
         title: 'connect',
         act: 'connect-vm-modal',
-        actMany: 'connect-vm-many-modal',
+        actMany: true,
         spanCls: 'snf-thunder-full',
     },
     'start': {
         title: 'start me now',
         act: 'start-vm-modal',
-        actMany: 'start-vm-many-modal',
+        actMany: true,
         spanCls: 'snf-switch',
     },
     'destroy': {
         title: 'destroy',
         act: 'destroy-vm-modal',
-        actMany: 'destroy-vm-many-modal',
+        actMany: true,
         spanCls: 'snf-trash-outline',
     },
     'reboot': {
         title: 'reboot',
         act: 'reboot-vm-modal',
-        actMany: 'reboot-vm-many-modal',
+        actMany: false,
         spanCls: 'snf-refresh-outline',
     },
     'shutdown': {
         title: 'shutdown',
         act: 'shutdown-vm-modal',
-        actMany: 'shutdown-vm-many-modal',
+        actMany: true,
         spanCls: 'snf-pc-broken-full',
     },
 };
@@ -38,7 +38,6 @@ Snf.VmController = Snf.ElController.extend({
     hasConnect: true,
     hasTags : true,
     isSelected: false,
-    // KPAP wuat?
     needs: ['vms'],
 
     submenu: [
@@ -135,10 +134,34 @@ Snf.VmsController = Snf.ElemsListController.extend({
     }.property('actionsIntersection.@each'),
 
     actions: {
-        destroyVmMany: function(){
-            this.get('selectedItems').map(function(i){
+        destroyVm: function(){
+            this.get('models').map(function(i){
                 i.deleteRecord();
                 i.save();
+            });
+        },
+
+        rebootVm: function(){
+            this.get('models').map(function(i){
+                i.set('status','rebooting');
+                setTimeout(function(){
+                    i.set('status','running'); 
+                },3000);
+            });
+        },
+
+        shutdownVm: function(){
+            this.get('models').map(function(i){
+                i.set('status','shutting');
+                setTimeout(function(){
+                    i.set('status','off'); 
+                },3000);
+            });
+        },
+
+        startVm: function(){
+            this.get('models').map(function(i){
+                i.set('status','running');
             });
         },
     },

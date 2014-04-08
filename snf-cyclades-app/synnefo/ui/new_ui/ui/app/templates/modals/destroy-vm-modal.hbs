@@ -1,3 +1,5 @@
 {{#reveal-modal id="destroy-vm-modal" hasButtons="true" ok="destroyVm"}}
-    <p>Are you sure you want to destroy the VM <strong>{{model.name}}</strong>?</p>
+    {{#each model in models}}
+        <p>Are you sure you want to destroy the VM <strong>{{model.name}}</strong>?</p>
+    {{/each}}
 {{/reveal-modal}}

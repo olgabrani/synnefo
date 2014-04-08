@@ -1,3 +1,5 @@
 {{#reveal-modal id="destroy-network-modal" hasButtons="true" ok="destroyNetwork"}}
-    <p>Are you sure you want to destroy the network {{model.name}}? </p>
+    {{#each model in models}}
+        <p>Are you sure you want to destroy the network {{model.name}}? </p>
+    {{/each}}
 {{/reveal-modal}}

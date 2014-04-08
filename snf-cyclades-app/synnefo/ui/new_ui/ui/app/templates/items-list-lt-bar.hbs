@@ -8,7 +8,7 @@
     </li>
     {{#each a in actionsMetaLt}}
         {{#if a.actMany}}
-            <li><a {{action 'openModal' a.actMany type}} {{bind-attr class="a.title"}}>{{a.title}}</a></li>
+            <li><a {{action 'openModal' a.act type model}} {{bind-attr class="a.title"}}>{{a.title}}</a></li>
         {{/if}}
     {{/each}}        
 </ul>
