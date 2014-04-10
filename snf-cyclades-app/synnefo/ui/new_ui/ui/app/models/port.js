@@ -24,7 +24,7 @@ Snf.Port.FIXTURES = [
         vm: 1,
         network: 1,
         firewall: 'on',
-        ipv4: '83.212.96.12',
+        ipv4: '11.212.96.12',
         dettachable: true,
     },
     {
@@ -32,7 +32,7 @@ Snf.Port.FIXTURES = [
         vm: 1,
         network: 2,
         firewall: 'partial',
-        ipv4: '83.212.96.30',
+        ipv4: '22.212.96.30',
         dettachable: true,  
     },
     {
@@ -40,7 +40,7 @@ Snf.Port.FIXTURES = [
         vm: 2,
         network: 1,
         firewall: 'off',
-        ipv4: '83.212.96.00',
+        ipv4: '33.212.96.00',
         dettachable: true,
     },
     {
@@ -48,7 +48,7 @@ Snf.Port.FIXTURES = [
         vm: 3,
         network: 1,
         firewall: 'on',
-        ipv6: 'FE80:0000:0000:0000:0202:B3FF:FE1E:8329',
+        ipv6: '4444:0000:0000:0000:0202:B3FF:FE1E:8329',
         dettachable: true,
     },
     {
@@ -56,13 +56,13 @@ Snf.Port.FIXTURES = [
         vm: 3,
         network: 1,
         firewall: 'on',
-        ipv6: '2001:0db8:85a3:0042:1000:8a2e:0370:7334'
+        ipv6: '5555:0db8:85a3:0042:1000:8a2e:0370:7334'
     },
     {
         id: 6,
         vm: 1,
         network: 1,
         firewall: 'on',
-        ipv6: ' 2001:0db8:85a3:0042:1000:8a2e:0370:7334',
+        ipv6: ' 6666:0db8:85a3:0042:1000:8a2e:0370:7334',
     },
 ];

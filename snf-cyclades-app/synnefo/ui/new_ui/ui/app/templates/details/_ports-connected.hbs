@@ -1,0 +1,21 @@
+<li>
+    {{#if port.dettachable}}
+    <a href="#" class="act" {{action 'openModal' 'destroy-port-modal' 'port' port}}>&nbsp;</a>
+    {{/if}}
+    <div class="icon"><span class="snf-nic-full"></span></div>
+    <div class="data">
+        <ul>
+            <li>
+            {{#if port.ipv4}}
+                <h5 class="ip-data">IPv4</h5>
+                <p class="inner">{{port.ipv4}}</p>
+            {{/if}}
+            {{#if port.ipv6}}
+                <h5 class="ip-data">IPv6</h5>
+                <p class="inner">{{port.ipv6}}</p>
+            {{/if}}
+            {{view Snf.FirewallView}}
+            </li>
+        </ul>
+    </div>
+</li>

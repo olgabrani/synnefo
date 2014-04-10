@@ -80,8 +80,14 @@ Snf.NetworkVmConnectedController = Snf.NetworkController.extend();
 
 Snf.NetworkVmPortsController = Ember.ObjectController.extend({
 
-    ports: function() {
-        return  this.get('model').get('ports');
-    }.property(),
+    networkPorts: function() {
+        var parentNetwork = this.get('parentController').get('model'); 
+
+        // http://stackoverflow.com/questions/20479179
+        return this.get('ports').filter(function(e) {
+            return e.get('data.network.id') == parentNetwork.get('id')
+        });
+
+    }.property('ports.@each'),
 
 });

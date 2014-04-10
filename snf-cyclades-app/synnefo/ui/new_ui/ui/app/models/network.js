@@ -40,14 +40,14 @@ Snf.Network.FIXTURES = [
         id: 1,
         name: 'Network 1',
         status: 'running',
-        ports: [1,3,4,6],
+        ports: [1,3,4,5,6],
         project: 1,
     },
     {
         id: 2,
         name: 'Network 2',
         status: 'building',
-        ports: [2,5],
+        ports: [2],
         project: 2,
     },
     {

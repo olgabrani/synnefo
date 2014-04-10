@@ -1,35 +1,19 @@
 <section class="content connected network">
     {{#each vm in vms itemController='NetworkVmPorts'}}
-    <section {{bind-attr class=":item port.vm.status"}}>
+    <section {{bind-attr class=":item vm.status"}}>
         <div class="what">
             <div class="img-wrap">
+                {{#link-to 'vm' vm}}
                 <span class="snf-pc-full snf-font"></span>
                 <span {{bind-attr class=":os vm.os"}}>{{vm.os}}</span>
+                {{/link-to}}
             </div>
-            <h4>{{vm.name}}</h4>
+            <h4>{{#link-to 'vm' vm}}{{vm.name}}{{/link-to}}</h4>
         </div>
         <div class="clearfix">
             <ul class="connections">
-                {{#each port in ports}}
-                <li>
-                    <a href="#" class="act" {{action 'openModal' 'dettach-network-modal' 'network' model}}>&nbsp;</a>
-                    <div class="icon"><span class="snf-nic-full"></span></div>
-                    <div class="data">
-                        <ul>
-                            <li>
-                            {{#if port.ipv4}}
-                                <h5 class="ip-data">IPv4</h5>
-                                <p class="inner">{{port.ipv4}}</p>
-                            {{/if}}
-                            {{#if port.ipv6}}
-                                <h5 class="ip-data">IPv4</h5>
-                                <p class="inner">{{port.ipv6}}</p>
-                            {{/if}}
-                            {{view Snf.FirewallView}}
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                {{#each port in networkPorts}} 
+                    {{partial 'details/ports-connected'}}
                 {{/each}}
             </ul>
         </div>

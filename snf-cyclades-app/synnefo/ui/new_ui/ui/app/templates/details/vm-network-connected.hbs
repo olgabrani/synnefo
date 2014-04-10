@@ -1,36 +1,18 @@
 <section class="content connected network">
-    {{#each network in networks itemController='VmNetworkPorts'}}
-    <section {{bind-attr class=":item port.network.status"}}>
+    {{#each network in networks itemController='VmNetworkPorts' skata='skatoules'}}
+    <section {{bind-attr class=":item network.status"}}>
         <div class="what">
             <div class="img-wrap">
-                <span class="snf-network-full snf-font"></span>
+                {{#link-to 'network' network}}
+                    <span class="snf-network-full snf-font"></span>
+                {{/link-to}}
             </div>
-            <h4>{{network.name}}</h4>
+            <h4>{{#link-to 'network' network}}{{network.name}}{{/link-to}}</h4>
         </div>
         <div class="clearfix">
             <ul class="connections">
-                {{#each port in ports}}
-                <li>
-                    {{#if port.dettachable}}
-                    <a href="#" class="act" {{action 'openModal' 'destroy-port-modal' 'vm' port}}>&nbsp;</a>
-                    {{/if}}
-                    <div class="icon"><span class="snf-nic-full"></span></div>
-                    <div class="data">
-                        <ul>
-                            <li>
-                            {{#if port.ipv4}}
-                                <h5 class="ip-data">IPv4</h5>
-                                <p class="inner">{{port.ipv4}}</p>
-                            {{/if}}
-                            {{#if port.ipv6}}
-                                <h5 class="ip-data">IPv4</h5>
-                                <p class="inner">{{port.ipv6}}</p>
-                            {{/if}}
-                            {{view Snf.FirewallView}}
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                {{#each port in vmPorts}} 
+                    {{partial 'details/ports-connected'}}
                 {{/each}}
             </ul>
         </div>

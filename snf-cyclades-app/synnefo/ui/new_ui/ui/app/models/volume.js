@@ -32,7 +32,7 @@ Snf.Volume = DS.Model.extend({
 Snf.Volume.FIXTURES = [
     {
         id: 1,
-        name: 'Ο αγαπημένος μου δίσκος',
+        name: 'Volume 1',
         status: 'running',
         size: 10737418240,
         vm: 1,
@@ -40,7 +40,7 @@ Snf.Volume.FIXTURES = [
     },
     {
         id: 2,
-        name: 'Crypto',
+        name: 'Volume 2',
         status: 'running',
         size: 2048,
         vm: 1,

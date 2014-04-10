@@ -46,8 +46,9 @@ Snf.Vm = DS.Model.extend({
     // filter out un-fulfilled promise contents
     validNetworks: Ember.computed.filter('portsNetworks', function(n) { return n; }),
     // yay!!! vm network objects
-    networks: Ember.computed.uniq('validNetworks')
+    networks: Ember.computed.uniq('validNetworks'),
     // ^^^ too verbose ? we need a way to shorten out above computed properties shitload.
+
 });
 
 

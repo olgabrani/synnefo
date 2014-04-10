@@ -7,7 +7,7 @@
                     <span {{bind-attr class=":os vm.os"}}>{{vm.os}}</span>
                     {{/link-to}}
                 </div>
-                <h4>{{vm.name}}</h4>
+                <h4>{{#link-to 'vm' vm}}{{vm.name}}{{/link-to}}</h4>
             </div>
             <div class="clearfix">
                 <ul class="connections">

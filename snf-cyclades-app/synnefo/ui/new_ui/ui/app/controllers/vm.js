@@ -106,10 +106,6 @@ Snf.VmController = Snf.ElController.extend({
         reassignProject: function(newproject){
             this.get('model').set('project', newproject);
         },
-
-        destroyPort: function(port) {
-            port.deleteRecord();
-        },
     },
 });
 
@@ -172,21 +168,19 @@ Snf.VmInfoController = Snf.VmController.extend();
 
 Snf.VmVolumeConnectedController = Snf.VmController.extend();
 
-
 Snf.VmNetworkConnectedController = Snf.VmController.extend();
 
 Snf.VmNetworkPortsController = Ember.ObjectController.extend({
 
-    ports: function() {
-        return  this.get('model').get('ports');
-    }.property(),
+    vmPorts: function() {
+        
+        var parentVM = this.get('parentController').get('model');        
+        
+        // http://stackoverflow.com/questions/20479179
+        return this.get('ports').filter(function(e) {
+            return e.get('data.vm.id') == parentVM.get('id')
+        });
+
+    }.property('ports.@each'),
 
 });
-
-/*Snf.DestroyPortModalController = Ember.ObjectController.extend({
-    actions: {
-        destroyPort: function(port) {
-            port.deleteRecord();
-        },
-    }
-});*/

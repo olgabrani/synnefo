@@ -1,1 +1,7 @@
-Snf.PortController = Ember.ObjectController.extend();
+Snf.PortController = Ember.ObjectController.extend({
+    actions: {
+        destroyPort: function(port) {
+            port.deleteRecord();
+        },
+    }
+});
