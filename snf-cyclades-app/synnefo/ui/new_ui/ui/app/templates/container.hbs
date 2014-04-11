@@ -1,0 +1,120 @@
+<section class="main row all-height">
+            <div class="storage entities list-view">
+                <ul class="items-list" id="drop">
+                    <li class="add-new not-selectable">
+                        <a href="" class="check">
+                        </a>
+                        <div class="img-wrap">
+                            <span class="rect-plus">+</span>
+                        </div>
+                        <h4>Upload file</h4>
+                        <form id="upload" action="upload.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+                            <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                        </form>
+                    </li>
+                    <li data-status="folder" class="folder" data-path="/folder1/temp/"  draggable="true">
+                        <a href="" class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </a>
+                        <div class="img-wrap"></div>
+                        <h4>Folder 1</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" data-tooltip class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" data-tooltip class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" data-tooltip class="has-tip"><span>x</span></a>
+                            <a href="#" title="edit" data-tooltip class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                    <li data-status="file" class="file"  draggable="true">
+                        <a href="" class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </a>
+                        <div class="img-wrap">
+                            <span class="ai"></span>
+                        </div>
+                        <h4>supercool.ai</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" data-tooltip class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" data-tooltip class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" data-tooltip class="has-tip"><span>x</span></a>
+                            <a href="#" title="edit" data-tooltip class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                    <li data-status="file" class="file"  draggable="true">
+                        <a href="" class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </a>
+                        <div class="img-wrap">
+                            <span class="txt"></span>
+                        </div>
+                        <h4>words.txt</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" data-tooltip class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" data-tooltip class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" data-tooltip class="has-tip"><span>x</span></a>
+                            <a href="#" title="edit" data-tooltip class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                    <li data-status="file" class="file"  draggable="true">
+                        <a href="" class="check">
+                            <span class="snf-checkbox-unchecked"></span>
+                        </a>
+                        <div class="img-wrap">
+                            <span class="pdf"></span>
+                        </div>
+                        <h4>presentation.pdf</h4>
+                        <div class="size">
+                            100KB
+                        </div>
+                        <div class="info">Last updated: 23/12/2013 11:56pm</div>
+                        <div class="actions-col">
+                            <a href="#" title="share" data-tooltip class="has-tip"><span class="snf-link-outline"></span></a>
+                            <a href="#" title="download" data-tooltip class="has-tip"><span class="snf-download-full"></span></a>
+                            <a href="#" title="delete" data-tooltip class="has-tip"><span>x</span></a>
+                            <a href="#" title="edit" data-tooltip class="has-tip"><span class="snf-edit"></span></a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="communication-error">
+                    <p>Sorry! Something went terribly wrong!<br>Try again, but if you keep seeing this message please contact us through the feedback form.</p>
+                    <p class="buttons">
+                        <a class="btn5" href="">feedback</a>
+                        <a href="" class="btn5">close</a>
+                    </p>
+                </div>
+                <div class="lt-bar">
+                    <ul class="lt-actions">
+                        <li class="select trigger-checkbox">
+                            <a href="" class="check">
+                                <span class="snf-checkbox-unchecked checkbox"></span>
+                            </a>
+                            <em>Un</em>Select all
+                        </li>
+                        <li class="files"><a href="#" title=""><span class="snf-link-outline"></span> Share</a></li>
+                        <li class="files"><a href="#" title=""><span class="snf-download-full"></span> Download</a></li>
+                        <li class="files"><a href="#"><span>x</span> Delete</a></li>
+                        <li class="all"><a href="#"><span class="snf-edit"></span> Rename</a></li>
+                        <li class="all"><a href="#"><span class="snf-folder-move-outline"></span> Move</a></li>
+                        <li class="all"><a href="#"><span class="snf-copy-outline"></span> Copy</a></li>
+                        <li class="folders"><a href="#"><span>...</span> Version</a></li>
+                    </ul>
+                    <ul class="more">
+                        <li><a href="#"><span class="snf-shared-by-me-outline"></span> Shared by me</a></li>
+                        <li><a href="#"><span class="snf-shared-to-me-outline"></span> Shared to me</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>

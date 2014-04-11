@@ -178,7 +178,7 @@ Snf.VmNetworkPortsController = Ember.ObjectController.extend({
         
         // http://stackoverflow.com/questions/20479179
         return this.get('ports').filter(function(e) {
-            return e.get('data.vm.id') == parentVM.get('id')
+            return e.get('data.vm.id') == parentVM.get('id');
         });
 
     }.property('ports.@each'),

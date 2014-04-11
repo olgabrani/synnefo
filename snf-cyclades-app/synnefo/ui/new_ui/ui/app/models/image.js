@@ -1,3 +1,9 @@
+var statusActionsImage = {
+    'available'      : {
+        enabledActions : ['destroy'],
+    },
+};
+
 // included some properties of the received json
 Snf.Image = DS.Model.extend({
   name: DS.attr(),
@@ -9,7 +15,7 @@ Snf.Image = DS.Model.extend({
   deleted_at: DS.attr(),// should be date
   is_public: DS.attr('boolean'),
   sortorder: DS.attr('number'),
-  properties: DS.attr('raw')
+  properties: DS.attr('raw'),
   /*
     properties include:
     partition_table
@@ -22,6 +28,11 @@ Snf.Image = DS.Model.extend({
     root_partition
     description
   */
+
+  enabledActions: function() {
+      return statusActionsImage[this.get('status')].enabledActions;
+  }.property('status'),
+
 });
 
 

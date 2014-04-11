@@ -62,14 +62,14 @@ Snf.ElemsListController = Ember.ArrayController.extend({
             console.log('selectedItems on select');
             jQuery.each(this.get('selectedItems'),function(i, val){
                 console.log(val.get('name'), i);
-            })
+            });
         },
         unselectItem: function(param) {
             this.get('selectedItems').removeObject(param.get('model'));
             console.log('selectedItems on UNSELECT');
             jQuery.each(this.get('selectedItems'),function(i, val){
                 console.log(val.get('name'), i);
-            })
+            });
         },
     },
 

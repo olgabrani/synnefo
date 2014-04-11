@@ -25,4 +25,12 @@ Snf.Router.map(function() {
        this.route('vm-connected');
     });
 
+    this.resource('images', { path: '/images/:view_cls' });
+    this.resource('imageinit', { path: '/image'});
+    this.resource('image', { path: '/image/:image_id' });
+
+    this.resource('snapshots', { path: '/snapshots/:view_cls' });
+
+    this.resource('storage');
+    this.resource('container', {path: 'container/:container_id'});
 });
