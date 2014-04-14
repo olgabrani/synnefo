@@ -32,5 +32,5 @@ Snf.Router.map(function() {
     this.resource('snapshots', { path: '/snapshots/:view_cls' });
 
     this.resource('storage');
-    this.resource('container', {path: 'container/:container_id'});
+    this.resource('container', {path: 'container/:node_id'});
 });
