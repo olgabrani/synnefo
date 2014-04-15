@@ -43,7 +43,7 @@ Snf.Node.FIXTURES = [
         parent: 2,
     }, {
         id: 5,
-        name: 'child 3a',
+        name: 'child3a.txt',
         parent: 4,
         size: 52000.
     }, {
