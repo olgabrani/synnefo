@@ -1,0 +1,67 @@
+<section class="content info-simple">
+
+    <section class="info-block">
+        <h2>info</h2>
+        <dl>
+            <dt><span class="snf-font snf-image-full"></span>Name</dt>
+            <dd>{{name}}</dd>
+            <dt><span class="snf-font snf-volume-full"></span>Size</dt>
+            <dd>{{bytes-to-human size}}</dd>
+            <dt>Created at</dt>
+            <dd>{{created_at}}</dd>
+            {{#if location}}
+                <dt>Location</dt>
+                <dd>{{location}}</dd>
+            {{/if}}
+            {{#if updated_at}}
+                <dt>Updated at</dt>
+                <dd>{{updated_at}}</dd>
+            {{/if}}    
+            {{#if properties.description}}
+                <dt>Description</dt>
+                <dd>{{properties.description}}</dd>
+            {{/if}}
+            {{#if properties.min_ram}}
+                <dt><span class="snf-font snf-ram-full"></span>Minimum RAM required</dt>
+                <dd>{{bytes-to-human properties.min_ram}}</dd>
+            {{/if}}
+            
+            <dt>Public</dt>
+            <dd>{{#if is_public}}{{is_public}}{{else}}False{{/if}}</dd>
+        
+        </dl>
+    </section>
+    <section class="info-block">
+        <h2>OS info</h2>
+        <dl>
+           
+            {{#if properties.users}}
+                <dt>Users</dt>
+                <dd>{{properties.users}}</dd>    
+            {{/if}}
+            {{#if properties.gui}}
+                <dt>GUI</dt>
+                <dd>{{properties.gui}}</dd>
+            {{/if}}
+            {{#if properties.os}}
+                <dt>OS</dt>
+                <dd>{{properties.os}}</dd>
+            {{/if}}
+            {{#if properties.osfamily}}
+                <dt>OS Family</dt>
+                <dd>{{properties.osfamily}}</dd>
+            {{/if}}
+            {{#if properties.kernel}}
+                <dt>Kernel</dt>
+                <dd>{{properties.kernel}}</dd>
+            {{/if}}
+            
+            {{#if properties.partition_table}}
+                <dt>Partition table</dt>
+                <dd>{{properties.partition_table}}</dd>
+            {{/if}}
+            
+        </dl>
+    </section>
+
+</section>

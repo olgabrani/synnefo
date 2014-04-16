@@ -27,7 +27,9 @@ Snf.Router.map(function() {
 
     this.resource('images', { path: '/images/:view_cls' });
     this.resource('imageinit', { path: '/image'});
-    this.resource('image', { path: '/image/:image_id' });
+    this.resource('image', { path: '/image/:image_id' }, function () {
+        this.route('info');
+    });
 
     this.resource('snapshots', { path: '/snapshots/:view_cls' });
 

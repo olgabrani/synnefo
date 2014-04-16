@@ -18,6 +18,12 @@ Snf.ImageController = Snf.ElController.extend({
         return _.map(enabledActions, function(val,key) { return actionsMetaImage[val]; });      
     }.property('model.enabledActions'),
 
+    submenu: [
+    {
+        'link': 'image.info',
+        'icon': 'snf-info-outline',
+    }],
+
    
 });
 

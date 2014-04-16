@@ -29,7 +29,8 @@ $details-icon-large : 90px;
 			height: $details-icon-large;
 			.snf-pc-full,
 			.snf-network-full,
-			.snf-volume-full {
+			.snf-volume-full,
+			.snf-image-full, {
 				font-size: $details-icon-large;
 			}
 			.os {

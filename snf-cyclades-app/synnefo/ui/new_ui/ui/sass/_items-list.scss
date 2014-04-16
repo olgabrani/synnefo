@@ -497,7 +497,7 @@
 	}
 }
 
-.running, .lt-bar .running {
+.running, .available, .lt-bar .running, .lt-bar .available {
 	@include stateColor($vm-active-color);
 }
 .off, .lt-bar .off {
