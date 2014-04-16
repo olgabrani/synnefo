@@ -1,7 +1,7 @@
 var actionsMetaImage = {
     'destroy': {
         title: 'destroy',
-        act: 'destroy-network-modal',
+        act: 'destroy-image-modal',
         spanCls: 'snf-trash-outline',
         actMany: true,
     },
@@ -23,7 +23,14 @@ Snf.ImageController = Snf.ElController.extend({
         'link': 'image.info',
         'icon': 'snf-info-outline',
     }],
-
+    actions: {
+        destroyImage: function(){
+            this.get('model').deleteRecord();
+            this.get('model').save();
+            var viewCls = this.get('controllers.images.viewCls') || 'grid-view';
+            this.transitionToRoute('images', viewCls);
+        },
+    }
    
 });
 
@@ -50,7 +57,7 @@ Snf.ImagesController = Snf.ElemsListController.extend({
     }.property('actionsIntersection.@each'),
 
     actions: {
-        destroyNetwork: function(){
+        destroyImage: function(){
             this.get('models').map(function(i){
                 i.deleteRecord();
                 i.save();

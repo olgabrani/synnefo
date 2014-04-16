@@ -1,0 +1,5 @@
+{{#reveal-modal id="destroy-image-modal" hasButtons="true" ok="destroyImage"}}
+    {{#each model in models}}
+        <p>Are you sure you want to delete the image <strong>{{model.name}}</strong>?</p>
+    {{/each}}
+{{/reveal-modal}}
