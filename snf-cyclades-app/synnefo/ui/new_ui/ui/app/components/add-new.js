@@ -24,7 +24,7 @@ Snf.AddNewComponent = Ember.Component.extend({
 		var msg = 'Create New ';
 		var btnType = this.get('type');
 		switch(btnType){
-			case 'vms':
+			case 'servers':
 				return msg + 'Machine';
 			case 'networks':
 				return msg + 'Network';

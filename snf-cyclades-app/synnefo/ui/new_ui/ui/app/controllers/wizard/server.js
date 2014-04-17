@@ -1,8 +1,8 @@
 /* Controllers for Wizards */
 
-Snf.VmsCreateController = Ember.Controller.extend({
+Snf.ServersCreateController = Ember.Controller.extend({
 	currentStep: 0,
-	type: 'vm',
+	type: 'server',
 
 	headers: function() {
 		var type = this.get('type');
@@ -75,44 +75,44 @@ Snf.VmsCreateController = Ember.Controller.extend({
 				this.set('selectedMenuOption', value);
 			}
 		},
-		newVmConf: function(dataType, dataValue) {
-			console.log('[newVmConf] dataType: ' + dataType + 'selectedImageID ' + dataValue);
+		newServerConf: function(dataType, dataValue) {
+			console.log('[newServerConf] dataType: ' + dataType + 'selectedImageID ' + dataValue);
 			if(dataType === 'image') this.set('selectedImageID', dataValue);
 		}
 	}
 });
 
 
-Snf.WizardVmStepController = Ember.Controller.extend({
-	needs: ['vmsCreate'],
+Snf.WizardServerStepController = Ember.Controller.extend({
+	needs: ['serversCreate'],
 	index: 0,
 	indexToDisplay: function(){
 		return this.get('index')+1;
 	}.property(),
 	isCurrent: function() {
-		return this.get('index') === this.get('controllers.vmsCreate').get('currentStep');
-	}.property('controllers.vmsCreate.currentStep'),
+		return this.get('index') === this.get('controllers.serversCreate').get('currentStep');
+	}.property('controllers.serversCreate.currentStep'),
 	isPast: function() {
-		return this.get('index') < this.get('controllers.vmsCreate').get('currentStep');
-	}.property('controllers.vmsCreate.currentStep'),
+		return this.get('index') < this.get('controllers.serversCreate').get('currentStep');
+	}.property('controllers.serversCreate.currentStep'),
 	isNext: function() {
-		return this.get('index') === (this.get('controllers.vmsCreate').get('currentStep')+1);
-	}.property('controllers.vmsCreate.currentStep'),
+		return this.get('index') === (this.get('controllers.serversCreate').get('currentStep')+1);
+	}.property('controllers.serversCreate.currentStep'),
 
 });
 
-Snf.WizardVmStep1Controller = Snf.WizardVmStepController.extend({
+Snf.WizardServerStep1Controller = Snf.WizardServerStepController.extend({
 	index: 0
 });
 
-Snf.WizardVmStep2Controller = Snf.WizardVmStepController.extend({
+Snf.WizardServerStep2Controller = Snf.WizardServerStepController.extend({
 	index: 1
 });
 
-Snf.WizardVmStep3Controller = Snf.WizardVmStepController.extend({
+Snf.WizardServerStep3Controller = Snf.WizardServerStepController.extend({
 	index: 2
 });
 
-Snf.WizardVmStep4Controller = Snf.WizardVmStepController.extend({
+Snf.WizardServerStep4Controller = Snf.WizardServerStepController.extend({
 	index: 3
 });

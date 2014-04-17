@@ -19,7 +19,7 @@ Snf.Volume = DS.Model.extend({
     status      : DS.attr(),
     size        : DS.attr('number'),
     storageType : DS.attr('string', {defaultValue: 'Archipelago'}),
-    vm          : DS.belongsTo('vm', { async:false }),
+    server      : DS.belongsTo('server', { async:false }),
     project     : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {
@@ -35,7 +35,7 @@ Snf.Volume.FIXTURES = [
         name: 'Volume 1',
         status: 'running',
         size: 10737418240,
-        vm: 1,
+        server: 1,
         project: 1,
     },
     {
@@ -43,7 +43,7 @@ Snf.Volume.FIXTURES = [
         name: 'Volume 2',
         status: 'running',
         size: 2048,
-        vm: 1,
+        server: 1,
         project: 1,
     },
     {
@@ -52,7 +52,7 @@ Snf.Volume.FIXTURES = [
         status: 'starting',
         size: 4096,
         storageType: 'drpd',
-        vm: 3,
+        server: 3,
         project: 1,
     },
 ];

@@ -1,9 +1,9 @@
 /* Wizard View */
 
-Snf.WizardVmView = Ember.View.extend({
+Snf.WizardServerView = Ember.View.extend({
 	tagName: 'section',
 	classNames: ['overlay-area-custom'],
-	templateName: 'wizard/wizard-vm',
+	templateName: 'wizard/wizard-server',
 	didInsertElement: function() {
         $('body').addClass('with-overlay');
 		this.$().fadeIn(100);
@@ -13,7 +13,7 @@ Snf.WizardVmView = Ember.View.extend({
 		$('body').removeClass('with-overlay');
 	},
 	counter: function() {
-		return Snf.wizards.get('vm').get('stepsLength');
+		return Snf.wizards.get('server').get('stepsLength');
 	}.property(),
 	init: function() {
 		this._super();
@@ -97,32 +97,32 @@ Snf.WizardStepView = Ember.View.extend({
 		return 'step-'+stepNum;
 	}.property(),
 	isCurrent: function() {
-		return this.get('index') === this.get('controller').get('controllers.vmsCreate').get('currentStep');
-	}.property('controller.controllers.vmsCreate.currentStep'),
+		return this.get('index') === this.get('controller').get('controllers.serversCreate').get('currentStep');
+	}.property('controller.controllers.serversCreate.currentStep'),
 	isPast: function() {
-		return this.get('index') < this.get('controller').get('controllers.vmsCreate').get('currentStep');
-	}.property('controller.controllers.vmsCreate.currentStep'),
+		return this.get('index') < this.get('controller').get('controllers.serversCreate').get('currentStep');
+	}.property('controller.controllers.serversCreate.currentStep'),
 	isNext: function() {
-		return this.get('index') === (this.get('controller').get('controllers.vmsCreate').get('currentStep')+1);
-	}.property('controller.controllers.vmsCreate.currentStep'),
+		return this.get('index') === (this.get('controller').get('controllers.serversCreate').get('currentStep')+1);
+	}.property('controller.controllers.serversCreate.currentStep'),
 	isFirst: function() {
 		return this.get('index') === 0;
-	}.property('controller.controllers.vmsCreate.currentStep'),
+	}.property('controller.controllers.serversCreate.currentStep'),
 });
 
-Snf.WizardVmStep1View = Snf.WizardStepView.extend({
+Snf.WizardServerStep1View = Snf.WizardStepView.extend({
 	index: 0,
 });
 
-Snf.WizardVmStep2View = Snf.WizardStepView.extend({
+Snf.WizardServerStep2View = Snf.WizardStepView.extend({
 	index: 1
 });
 
-Snf.WizardVmStep3View = Snf.WizardStepView.extend({
+Snf.WizardServerStep3View = Snf.WizardStepView.extend({
 	index: 2,
 });
 
-Snf.WizardVmStep4View = Snf.WizardStepView.extend({
+Snf.WizardServerStep4View = Snf.WizardStepView.extend({
 	index: 3
 });
 
@@ -183,14 +183,14 @@ Snf.WizardImageView = Ember.View.extend({
 		});
 	},
 	isVisibleCategory: function() {
-		return (this.get('type') === this.get('controller').get('controllers.vmsCreate').get('showImageCategory'));
-	}.property('controller.controllers.vmsCreate.showImageCategory'),
+		return (this.get('type') === this.get('controller').get('controllers.serversCreate').get('showImageCategory'));
+	}.property('controller.controllers.serversCreate.showImageCategory'),
 	click: function(e) {
 			e.preventDefault();
 
 			this.set('isCurrent',!this.get('isCurrent'));
 			console.log('selected image ', this.get('imageData').get('id'));
-			this.get('controller').send('newVmConf', 'image', this.get('imageData').get('id'));
+			this.get('controller').send('newServerConf', 'image', this.get('imageData').get('id'));
 		}
  });
 

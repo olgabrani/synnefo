@@ -22,8 +22,8 @@ Snf.VolumeRoute = Ember.Route.extend({
 
 Snf.VolumeIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        if ( Snf.get('currentPath') == 'volume.vm-connected' ) {
-            this.transitionTo('volume.vm-connected');
+        if ( Snf.get('currentPath') == 'volume.server-connected' ) {
+            this.transitionTo('volume.server-connected');
         } else {
             this.transitionTo('volume.info');
         }
@@ -49,9 +49,9 @@ Snf.VolumeInfoRoute = Ember.Route.extend({
     },
 });
 
-Snf.VolumeVmConnectedRoute = Ember.Route.extend({
+Snf.VolumeServerConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/volume-vm-connected');
+        this.render('details/volume-server-connected');
     },
     model: function () {
         return this.modelFor("volume");

@@ -1,9 +1,9 @@
 Snf.Router.map(function() {
 
-    this.resource('vms', { path: '/vms/:view_cls' });
-    this.resource('vmsCreate', { path: '/vms/create' });
-    this.resource('vminit', { path: '/vm'});
-    this.resource('vm', { path: '/vm/:vm_id' }, function () {
+    this.resource('servers', { path: '/vms/:view_cls' });
+    this.resource('serversCreate', { path: '/vms/create' });
+    this.resource('serverinit', { path: '/vm'});
+    this.resource('server', { path: '/vm/:server_id' }, function () {
         this.route('info');
         this.route('volume-connected');
         this.route('network-connected');
@@ -14,7 +14,7 @@ Snf.Router.map(function() {
     this.resource('networkinit', { path: '/network'});
     this.resource('network', { path: '/network/:network_id' }, function () {
         this.route('info');
-        this.route('vm-connected');
+        this.route('server-connected');
     });
 
     this.resource('volumes', {path: '/volumes/:view_cls'});
@@ -22,7 +22,7 @@ Snf.Router.map(function() {
     this.resource('volumeinit', { path: '/volume'});
     this.resource('volume', { path: '/volume/:volume_id' }, function () {
        this.route('info');
-       this.route('vm-connected');
+       this.route('server-connected', { path: '/server-connected'});
     });
 
     this.resource('images', { path: '/images/:view_cls' });

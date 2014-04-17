@@ -1,5 +1,5 @@
 <section class="content connected network">
-    {{#each network in networks itemController='VmNetworkPorts' skata='skatoules'}}
+    {{#each network in networks itemController='ServerNetworkPorts' skata='skatoules'}}
     <section {{bind-attr class=":item network.status"}}>
         <div class="what">
             <div class="img-wrap">
@@ -11,7 +11,7 @@
         </div>
         <div class="clearfix">
             <ul class="connections">
-                {{#each port in vmPorts}} 
+                {{#each port in serverPorts}} 
                     {{partial 'details/ports-connected'}}
                 {{/each}}
             </ul>

@@ -1,14 +1,14 @@
 <section class="content connected network">
-    {{#each vm in vms itemController='NetworkVmPorts'}}
-    <section {{bind-attr class=":item vm.status"}}>
+    {{#each server in servers itemController='NetworkVmPorts'}}
+    <section {{bind-attr class=":item server.status"}}>
         <div class="what">
             <div class="img-wrap">
-                {{#link-to 'vm' vm}}
+                {{#link-to 'server' server}}
                 <span class="snf-pc-full snf-font"></span>
-                <span {{bind-attr class=":os vm.os"}}>{{vm.os}}</span>
+                <span {{bind-attr class=":os server.os"}}>{{server.os}}</span>
                 {{/link-to}}
             </div>
-            <h4>{{#link-to 'vm' vm}}{{vm.name}}{{/link-to}}</h4>
+            <h4>{{#link-to 'server' server}}{{server.name}}{{/link-to}}</h4>
         </div>
         <div class="clearfix">
             <ul class="connections">

@@ -12,16 +12,16 @@ Snf.NetworkController = Snf.ElController.extend({
     maxActionsVisible: 2,
     type: 'network',
     needs: ['networks'],
-    vmsCnt: function(){
-        return this.get('model').get('vms').length;
-    }.property('model.vms'),
+    serversCnt: function(){
+        return this.get('model').get('servers').length;
+    }.property('model.servers'),
 
     submenu: [{
         'link': 'network.info',
         'icon': 'snf-info-outline',
     },
     {
-        'link': 'network.vm-connected',
+        'link': 'network.server-connected',
         'icon': 'snf-pc-outline',
     }],
 
@@ -76,9 +76,9 @@ Snf.NetworksController = Snf.ElemsListController.extend({
 
 Snf.NetworkInfoController = Snf.NetworkController.extend();
 
-Snf.NetworkVmConnectedController = Snf.NetworkController.extend();
+Snf.NetworkServerConnectedController = Snf.NetworkController.extend();
 
-Snf.NetworkVmPortsController = Ember.ObjectController.extend({
+Snf.NetworkServerPortsController = Ember.ObjectController.extend({
 
     networkPorts: function() {
         var parentNetwork = this.get('parentController').get('model'); 

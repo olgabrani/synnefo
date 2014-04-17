@@ -1,10 +1,10 @@
-Snf.VmsCreateRoute = Ember.Route.extend({
+Snf.ServersCreateRoute = Ember.Route.extend({
     init: function() {
         this._super();
-        console.log('init of VmsCreateRoute');
+        console.log('init of ServersCreateRoute');
     },
     renderTemplate: function(controller) {
-        this.render('wizardVm', {controller: controller}); // view
+        this.render('wizardServer', {controller: controller}); // view
     },
     setupController: function(controller) {
         controller.set('image', this.store.find('image'));

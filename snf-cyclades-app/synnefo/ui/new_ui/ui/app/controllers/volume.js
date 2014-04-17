@@ -17,7 +17,7 @@ Snf.VolumeController = Snf.ElController.extend({
         'icon': 'snf-info-outline',
     },
     {
-        'link': 'volume.vm-connected',
+        'link': 'volume.server-connected',
         'icon': 'snf-pc-outline',
     }],
 
@@ -29,7 +29,7 @@ Snf.VolumeController = Snf.ElController.extend({
     actions: {
 
         dettachVolume: function(){
-            this.get('model').get('vm').get('volumes').removeObject(this.get('model'));
+            this.get('model').get('server').get('volumes').removeObject(this.get('model'));
         },
         destroyVolume: function(){
             this.get('model').deleteRecord();

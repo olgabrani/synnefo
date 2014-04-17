@@ -22,8 +22,8 @@ Snf.NetworkRoute = Ember.Route.extend({
 
 Snf.NetworkIndexRoute = Ember.Route.extend({
     beforeModel: function() {
-        if ( Snf.get('currentPath') == 'network.vm-connected' ) {
-            this.transitionTo('network.vm-connected');
+        if ( Snf.get('currentPath') == 'network.server-connected' ) {
+            this.transitionTo('network.server-connected');
         } else {
             this.transitionTo('network.info');
         }
@@ -49,9 +49,9 @@ Snf.NetworkInfoRoute = Ember.Route.extend({
     },
 });
 
-Snf.NetworkVmConnectedRoute = Ember.Route.extend({
+Snf.NetworkServerConnectedRoute = Ember.Route.extend({
     renderTemplate: function() {
-        this.render('details/network-vm-connected');
+        this.render('details/network-server-connected');
     },
     model: function () {
         return this.modelFor("network");

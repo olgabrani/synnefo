@@ -27,10 +27,10 @@ Snf.Network = DS.Model.extend({
         return statusActionsNetwork[this.get('status')].enabledActions;
     }.property('status'),
 
-    portsVmsPromises: Ember.computed.mapBy('ports', 'vm'),
-    portsVms: Ember.computed.mapBy('portsVmsPromises', 'content'),
-    validVms: Ember.computed.filter('portsVms', function(n) { return n; }),
-    vms: Ember.computed.uniq('validVms'),
+    portsServersPromises: Ember.computed.mapBy('ports', 'server'),
+    portsServers: Ember.computed.mapBy('portsServersPromises', 'content'),
+    validServers: Ember.computed.filter('portsServers', function(n) { return n; }),
+    servers: Ember.computed.uniq('validServers'),
 
 });
 

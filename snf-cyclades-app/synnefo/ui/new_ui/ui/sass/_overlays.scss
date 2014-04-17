@@ -142,22 +142,22 @@ body.with-overlay {
 		}
 	}
 
-	#reboot-vm-modal {
+	#reboot-server-modal {
 		background: $orange-1 url('../images/restart.png') no-repeat center 50px;
 		@extend .colored-modal;
 	}
 
-	#start-vm-modal {
+	#start-server-modal {
 		background: $secondary-color url('../images/shutdown.png') no-repeat center 50px;
 		@extend .colored-modal;
 	}
 
-	#shutdown-vm-modal {
+	#shutdown-server-modal {
 		background: $cobalt-2 url('../images/shutdown.png') no-repeat center 50px;
 		@extend .colored-modal;
 	}
 
-	#destroy-vm-modal {
+	#destroy-server-modal {
 		background: $fuchsia-1 url('../images/destroy-vm.png') no-repeat center 46px;
 		@extend .colored-modal;
 	}

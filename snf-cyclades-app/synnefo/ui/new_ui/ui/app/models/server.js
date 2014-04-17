@@ -1,4 +1,4 @@
-var statusActionsVm = {
+var statusActionsServer = {
     'off'      : {
         enabledActions : ['connect', 'start', 'destroy', ],
     },
@@ -22,7 +22,7 @@ var statusActionsVm = {
     },
 };
 
-Snf.Vm = DS.Model.extend({
+Snf.Server = DS.Model.extend({
 
     name      : DS.attr(),
     status    : DS.attr(),
@@ -36,7 +36,7 @@ Snf.Vm = DS.Model.extend({
     project   : DS.belongsTo('project',{ async:true}),
     
     enabledActions: function() {
-        return statusActionsVm[this.get('status')].enabledActions;
+        return statusActionsServer[this.get('status')].enabledActions;
     }.property('status'),
 
     // ember-data returns promise objects for blongsTo properties
@@ -45,14 +45,14 @@ Snf.Vm = DS.Model.extend({
     portsNetworks: Ember.computed.mapBy('portsNetworksPromises', 'content'),
     // filter out un-fulfilled promise contents
     validNetworks: Ember.computed.filter('portsNetworks', function(n) { return n; }),
-    // yay!!! vm network objects
+    // yay!!! server network objects
     networks: Ember.computed.uniq('validNetworks'),
     // ^^^ too verbose ? we need a way to shorten out above computed properties shitload.
 
 });
 
 
-Snf.Vm.FIXTURES = [
+Snf.Server.FIXTURES = [
     {
         created: '2011-04-19T10:18:52.085737+00:00',
         id: 1,

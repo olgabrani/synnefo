@@ -1,6 +1,6 @@
 Snf.Port = DS.Model.extend({
 
-    vm          : DS.belongsTo('vm', {async:true}),
+    server          : DS.belongsTo('server', {async:true}),
     network     : DS.belongsTo('network', {async:true}),
     firewall    : DS.attr(),
     ipv4        : DS.attr(),
@@ -21,7 +21,7 @@ Snf.Port = DS.Model.extend({
 Snf.Port.FIXTURES = [
     {
         id: 1,
-        vm: 1,
+        server: 1,
         network: 1,
         firewall: 'on',
         ipv4: '11.212.96.12',
@@ -29,7 +29,7 @@ Snf.Port.FIXTURES = [
     },
     {
         id: 2,
-        vm: 1,
+        server: 1,
         network: 2,
         firewall: 'partial',
         ipv4: '22.212.96.30',
@@ -37,7 +37,7 @@ Snf.Port.FIXTURES = [
     },
     {
         id: 3,
-        vm: 2,
+        server: 2,
         network: 1,
         firewall: 'off',
         ipv4: '33.212.96.00',
@@ -45,7 +45,7 @@ Snf.Port.FIXTURES = [
     },
     {
         id: 4,
-        vm: 3,
+        server: 3,
         network: 1,
         firewall: 'on',
         ipv6: '4444:0000:0000:0000:0202:B3FF:FE1E:8329',
@@ -53,14 +53,14 @@ Snf.Port.FIXTURES = [
     },
     {
         id: 5,
-        vm: 3,
+        server: 3,
         network: 1,
         firewall: 'on',
         ipv6: '5555:0db8:85a3:0042:1000:8a2e:0370:7334'
     },
     {
         id: 6,
-        vm: 1,
+        server: 1,
         network: 1,
         firewall: 'on',
         ipv6: ' 6666:0db8:85a3:0042:1000:8a2e:0370:7334',
