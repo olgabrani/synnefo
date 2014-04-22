@@ -1,13 +1,13 @@
 {{partial 'actions-bar'}}
 <section class="main row">
 
-    <div {{bind-attr class=":details status"}}>
+    <div {{bind-attr class=":details statusLowerCase"}}>
         {{outlet lt-bar}}
         <section class="top">
             <div class="lt">
                 <div class="img-wrap">
                     <span {{bind-attr class=":snf-font iconCls"}}></span>
-                    {{#if os}}<span {{bind-attr class=":os os"}}>{{os}}</span>{{/if}}
+                    {{#if metadata.os}}<span {{bind-attr class=":os metadata.os"}}>{{metadata.os}}</span>{{/if}}
                 </div>
 
             </div>

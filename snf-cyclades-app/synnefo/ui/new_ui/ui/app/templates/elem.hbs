@@ -1,4 +1,4 @@
-<div {{bind-attr data-status=this.status class="this.status"}}>
+<div {{bind-attr data-status=this.statusLowerCase class="this.statusLowerCase"}}>
     <ul class="side-actions">
         <li>{{#link-to type this}}i{{/link-to}}</li>
 
@@ -27,7 +27,7 @@
         {{/if}}
 
 
-        {{#if os}}
+        {{#if project}}
             {{sideactions-project reassignProject="reassignProject" current=this.project projects=projects}}
         {{/if}}
     </ul>
@@ -39,7 +39,7 @@
         <div class="img-wrap">
             {{#link-to type this}}
             <span {{bind-attr class=":snf-font iconCls"}}></span>
-            {{#if os}}<span {{bind-attr class=":os os"}}>{{os}}</span>{{/if}}
+            {{#if metadata.os}}<span {{bind-attr class=":os metadata.os"}}>{{metadata.os}}</span>{{/if}}
             {{/link-to}}
         </div>
 

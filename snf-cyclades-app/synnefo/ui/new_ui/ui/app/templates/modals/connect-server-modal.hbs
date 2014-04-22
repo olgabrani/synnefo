@@ -1,6 +1,6 @@
 {{#reveal-modal id="connect-server-modal"}}
     {{#each model in models}}
         <p>You can connect to your {{model.name}} VM using this stuff:</p>
-        <p><span class="ssh">{{model.hostname}}</span></p>
+        <p><span class="ssh">{{model.SNF:fqdn}}</span></p>
     {{/each}}
 {{/reveal-modal}}

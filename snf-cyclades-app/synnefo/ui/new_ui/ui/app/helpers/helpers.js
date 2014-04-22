@@ -17,3 +17,8 @@ Ember.Handlebars.helper('bytes-to-human',function (bytes) {
   }
   return humanSize(bytes,true);
 }, 'bytes');
+
+
+Ember.Handlebars.registerHelper('tolower', function(str) {
+    return str.toLowerCase();
+});

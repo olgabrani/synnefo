@@ -403,7 +403,7 @@
 					}
 				}
 			}
-			&.building {
+			&.build {
 				.img-wrap {
 					.incomplete {
 						width:$list-icon-height;
@@ -497,7 +497,7 @@
 	}
 }
 
-.running, .available, .lt-bar .running, .lt-bar .available {
+.active, .available, .lt-bar .active, .lt-bar .available {
 	@include stateColor($vm-active-color);
 }
 .off, .lt-bar .off {
@@ -512,22 +512,22 @@
 .starting, .lt-bar .starting {
 	@include stateColor($vm-starting-color);
 }
-.rebooting, .lt-bar .rebooting {
+.reboot, .lt-bar .reboot {
 	@include stateColor($vm-rebooting-color);
 }
 
-.building, .lt-bar .building {
+.build, .lt-bar .build {
 	@include stateColor($vm-active-color);
 }
 
-.building {
+.build {
 	.img-wrap {
 		.snf-pc-full {
 			display: block;
 			// overflow: hidden;
 		}
 		.incomplete {
-			color: $vm-building-color;
+			color: $vm-build-color;
 			width:60px;
 		}
 		.complete {

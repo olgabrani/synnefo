@@ -76,7 +76,7 @@ $vm-off-color: $gray-2;
 $vm-shutting-color: $gray-3;
 $vm-starting-color: $cobalt-1;
 $vm-rebooting-color: $yellow-1;
-$vm-building-color: lighten($vm-active-color, 10%);
+$vm-build-color: lighten($vm-active-color, 10%);
 
 // wizard step2 colors
 $disabled-resource-color: $primary-color;
@@ -132,7 +132,7 @@ $check-w : 60px;
 $img-wrap-w : 60px;
 $h4-w : 180px;
 $vm-h4-w: 240px;
-$tags-w : 100px;
+$tags-w : 140px;
 $info-w: 220px;
 $progress-col-w : 150px;
 $actions-w: 140px;

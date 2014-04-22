@@ -77,10 +77,10 @@ Snf.ServerController = Snf.ElController.extend({
         },
 
         rebootServer: function(){
-            this.get('model').set('status','rebooting');
+            this.get('model').set('status','REBOOT');
             var that = this;
             setTimeout(function(){
-                that.get('model').set('status','running'); 
+                that.get('model').set('status','ACTIVE');
             },3000);
         },
 
@@ -92,15 +92,15 @@ Snf.ServerController = Snf.ElController.extend({
         },
 
         shutdownServer: function(){
-            this.get('model').set('status','shutting');
+            this.get('model').set('status','SHUTTING');
             var that = this;
             setTimeout(function(){
-                that.get('model').set('status','off'); 
+                that.get('model').set('status','STOPPED');
             },3000);
         },
 
         startServer: function(){
-            this.get('model').set('status','running');
+            this.get('model').set('status','ACTIVE');
         },
 
         reassignProject: function(newproject){
@@ -116,7 +116,7 @@ Snf.ServersController = Snf.ElemsListController.extend({
 
     actionsIntersection: function(){
         var Actions = this.get('selectedItems').map(function(i){
-            return statusActionsServer[i.get('status')].enabledActions;
+            return statusActionsServer[i.get('status').toLowerCase()].enabledActions;
         });
         return _.intersection.apply(_,Actions);
     }.property('selectedItems.@each'),
@@ -139,25 +139,25 @@ Snf.ServersController = Snf.ElemsListController.extend({
 
         rebootServer: function(){
             this.get('models').map(function(i){
-                i.set('status','rebooting');
+                i.set('status','REBOOT');
                 setTimeout(function(){
-                    i.set('status','running'); 
+                    i.set('status','ACTIVE'); 
                 },3000);
             });
         },
 
         shutdownServer: function(){
             this.get('models').map(function(i){
-                i.set('status','shutting');
+                i.set('status','SHUTTING');
                 setTimeout(function(){
-                    i.set('status','off'); 
+                    i.set('status','STOPPED'); 
                 },3000);
             });
         },
 
         startServer: function(){
             this.get('models').map(function(i){
-                i.set('status','running');
+                i.set('status','ACTIVE');
             });
         },
     },

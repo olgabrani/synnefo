@@ -1,11 +1,12 @@
 var statusText ={
-    'off'      : 'STOPPED',
-    'error'    : 'ERROR',
-    'building' : 'BUILDING',
-    'running'  : 'RUNNING',
-    'rebooting': 'REBOOTING',
+    'SHUTOFF'  : 'STOPPED',
+    'ERROR'    : 'ERROR',
+    'BUILD'    : 'BUILDING',
+    'ACTIVE'   : 'RUNNING',
+    'REBOOT'   : 'REBOOTING',
     'starting' : 'STARTING',
     'shutting' : 'SHUTTING DOWN',
+    'STOPPED'  : 'STOPPED',
 };
 
 /* Wizards */

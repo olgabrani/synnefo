@@ -4,7 +4,7 @@ Snf.ServersRoute = Snf.ElemsRoute.extend({
 
 Snf.ServerRoute = Ember.Route.extend({
     renderTemplate: function() {
-
+    
         this.render('details');
 
         var controller = this.controllerFor('servers');
