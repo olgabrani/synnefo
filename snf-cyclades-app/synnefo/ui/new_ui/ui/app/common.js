@@ -1,32 +1,8 @@
-/*
-* These functions are used throughout ember
-*/
-
 _.mixin({
   capitalize: function(string) {
     return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
   }
 });
-
-
-em = {};
-
-em.removeByValue = function(arr, val) {
-    for(var i=0; i<arr.length; i++) {
-        if(arr[i] == val) {
-            arr.splice(i, 1);
-            break;
-        }
-    }
-};
-
-
-
-/* ---------------------- */
-/* END OF EMBER FUNCTIONS */
-
-
-
 
 /*
 * Various functions that will be used throughout all templates
@@ -93,79 +69,6 @@ ui.setElmaxHeight = function(el){
     el.css('max-height', h1);
 };
 
-/* 
-* Logic for Entities actions. Present in items_list pages
-* Available categories are :
-*  - both/single ( for multiple entities/single entities)
-*  - running/off ( for running/off entities)
-*  - permanent ( for entities always active )
-* Can be used for pithos as well
-* Available categories are :
-* - files ( for files only actions)
-* - folders ( for folders only actions)
-* - all ( for files/folders actions)
-*/
-ui.entitiesActionsEnabled = function(){
-    var all = $('.snf-checkbox-checked').length;
-    var running = $('.snf-checkbox-checked').parents('li.running').length;
-    var off = $('.snf-checkbox-checked').parents('li.off').length;
-    var files = $('.snf-checkbox-checked').parents('li.file').length;
-    var folders = $('.snf-checkbox-checked').parents('li.folder').length;
-
-    console.log(files,'files');
-    console.log(folders,'folders');
-
-    $('.lt-bar .lt-actions li:not(.permanent) a').removeClass('active');
-
-    if ( ( files * folders )>0 ) {
-        $('.lt-actions li.all a').addClass('active');
-    } else {
-        if ( files>0 ) {
-            $('.lt-actions li.files a').addClass('active');
-        }
-        if ( folders>0 ){
-            $('.lt-actions li.folders a').addClass('active');
-        }
-    }
-
-    if ( (running*off) > 0 ){
-         $('.lt-actions li.both a').addClass('active');
-         $('.lt-actions li.single a').removeClass('active');
-    } else {
-        if (running > 0) {
-            $('.lt-actions li.both a').addClass('active');
-            $('.lt-actions li.running a').addClass('active');
-        } else if (off>0) {
-            $('.lt-actions li.both a').addClass('active');
-            $('.lt-actions li.off a').addClass('active');
-        }
-        if ( all > 1 ) {
-            $('.lt-actions li.single a').removeClass('active');
-        }
-    }
-};
-
-ui.inactiveActions = function() {
-
-    // Availble actions: connect, reboot, shut, destroy, start
-    // These actions will be DISABLED
-    var statesActions ={
-        'off'      : ['connect', 'reboot', 'shut'],
-        'error'    : ['connect', 'reboot', 'shut', 'start'],
-        'building' : ['reboot', 'start'],
-        'running'  : ['start'],
-        'rebooting': ['start'],
-        'starting' : ['start'],
-        'shutting' : ['connect', 'reboot', 'shut']
-    } ;
-
-    _.each (statesActions, function(val, key) {
-        _.each(val, function(value) {
-            var el = '.' + key + ' .' + value;
-            $(el).addClass('inactive');
-        });
-    });
-};
 
 ui.detailsCustom = function(area) {
     // position last connected item
@@ -187,8 +90,6 @@ ui.firewallSetup = function(){
         }
     });
 };
-
-
 
 
 /* TODO: better overlay functionality */
@@ -290,54 +191,6 @@ ui.replaceClass = function(elements, str1, str2, firstSubStr) {
     });
 };
 
-function bytesToSize(bytes) {
-    var sizes = [ 'n/a', 'bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-    var i = +Math.floor(Math.log(bytes) / Math.log(1024));
-    return  (bytes / Math.pow(1024, i)).toFixed( 0 ) + sizes[ isNaN( bytes ) ? 0 : i+1 ];
-}
-function date_ddmmmyytime(date)
-{
-  var d = date.getDate();
-  var m = date.getMonth();
-  var y = date.getYear();
-  if(y >= 100)
-  {
-    y -= 100;
-    y += 2000;
-  }
-
-    var curr_hour = date.getHours();
-
-    if (curr_hour < 12){
-        a_p = "am";
-    } else {
-       a_p = "pm";
-    }
-
-    if (curr_hour === 0) {
-       curr_hour = 12;
-    }
-    if (curr_hour > 12){
-       curr_hour = curr_hour - 12;
-    }
-
-    var curr_min = date.getMinutes();
-
-  return "" +
-    (d<10?"0"+d:d) + "/" +m + "/" + y + ' '+curr_hour + ":" + curr_min + a_p;
-}
-
- // returns the file class/extension of a file
-ui.mimeToExt = function( mimetype) {
-  var mimeExt = {
-    'image/jpeg': 'jpg',
-    'image/png': 'png',
-    'application/pdf': 'pdf',
-    'text/plain': 'txt',
-  };
-  console.log(mimetype);
-  return mimeExt[mimetype] || 'unknown';
-};
 
 $(document).ready(function(){
 
@@ -348,9 +201,7 @@ $(document).ready(function(){
         }
     });
 
-    if($('.vms.entities').length!==0){
-        ui.inactiveActions();
-    }
+    
     ui.setElminHeight($('.main > .details'));
     ui.setElmaxHeight($('.storage-progress'));
     $('#hd-search .hd-icon-search').click(function(e){
@@ -368,12 +219,6 @@ $(document).ready(function(){
     });
     $('.header .login').mouseleave(function(e){
         $(this).find('ul').stop(true, true).slideUp(200);
-    });
-
-    $('.entities a').click(function(){
-        if ($(this).attr('data-reveal-id') && !($(this).hasClass('inactive'))) {
-            $('.entities li .more').hide();
-        }
     });
 
     $('.inactive').click(function(e){
@@ -413,14 +258,6 @@ $(document).ready(function(){
         $(this).fadeOut(50, function() {
             $(this).siblings('.container').fadeIn(50);
         });
-    });
-    $('.grid-view .items-list > li').mouseleave(function(e){
-        var that = this;
-        setTimeout(function(){
-            $(that).find('.more').fadeOut(200, function() {
-                $(this).siblings('.container').fadeIn('fast');
-            });
-        },50);
     });
 
     ui.closeDiv($('.info .close'), '.info');
@@ -473,19 +310,6 @@ $(document).ready(function(){
         ui.ltBarToggle(400);
     }
 
-    /* grid/list view for items-list */
-
-    $('.actions-bar .list, .actions-bar .grid').click(function(e){
-        //e.preventDefault();
-        /*if (!($(this).find('span').hasClass('current'))) {
-            $('.actions-bar .grid span, .actions-bar .list span').removeClass('current');
-            $(this).find('span').addClass('current');
-            $('.entities').toggleClass('grid-view list-view');
-        }*/
-    });
-
-
-
     // set filter visible
     $('.filter-menu .filter').click(function(e) {
         e.preventDefault();
@@ -503,11 +327,6 @@ $(document).ready(function(){
         $(this).siblings('.container').find('.snf-pc-full').toggleClass('reboot-progress');
     });
 
-    // //temp function to preventDefault of links in modal
-    // $('.reveal-modal a:not(".close-reveal-modal, .generate-key-btn, .import-key-btn")').click(function(e){
-    //     e.preventDefault();
-    //     $('a.close-reveal-modal').trigger('click');
-    // });
 
      // temp btn to show communication error message
     $('.temp-for-btns .communication-error-btn').click(function(e) {
@@ -531,20 +350,11 @@ $(document).ready(function(){
         $(this).parents('.tags-area, .tags').find('.snf-color-picker').slideDown('slow', function() {
             $('#hide-add-tag-dummy').scrollintoview({
                 'duration': 'slow'
+            });
         });
-    });
-    ui.colorPickerVisible = 1;
+        ui.colorPickerVisible = 1;
     });
 
-    $('.hide-add-tag').click(function(e) {
-        e.preventDefault();
-        $(this).parents('.tags-area, .tags').find('.snf-color-picker').slideUp(400, function() {
-            $('.show-add-tag').first().scrollintoview({
-                'duration': 'slow'
-            });
-            ui.colorPickerVisible = 0;
-        });
-    });
 
     // connected details js
     ui.detailsCustom($('#disk-connected'));
@@ -594,6 +404,7 @@ $(document).ready(function(){
         $(this).addClass('clicked');
         $(this).siblings('ul').stop(true, true).slideDown('slow');
     });
+    
     $('.containers .project').mouseleave(function(e){
         $(this).find('ul').fadeOut();
         $(this).find('.btn-more').removeClass('clicked');

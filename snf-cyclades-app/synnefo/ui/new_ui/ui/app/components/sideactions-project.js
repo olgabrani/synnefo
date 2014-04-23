@@ -7,7 +7,6 @@ Snf.SideactionsProjectComponent = Ember.Component.extend({
     isDisplayed: false,
 
     availableProjects: function() {
-        console.log(this.get('current').toString());
         var current = this.get('current');
         return this.get('projects').filter(function(p) {
             return p.get('id') != current.get('id');

@@ -41,7 +41,6 @@ Snf.Server = DS.Model.extend({
     project     : DS.belongsTo('project',{ async:true}), // NOT OK. Where do we get projects from
     
     enabledActions: function() {
-        console.log(statusActionsServer[this.get('status').toLowerCase()], 'status');
         return statusActionsServer[this.get('status').toLowerCase()].enabledActions;
     }.property('status'),
 

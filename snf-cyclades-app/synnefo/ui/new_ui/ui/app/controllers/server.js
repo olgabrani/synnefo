@@ -72,8 +72,7 @@ Snf.ServerController = Snf.ElController.extend({
             this.get('model').get('volumes').removeObject(volume);
         },
         dettachServerFromVolume: function(param){
-            console.log(this.get('model').toString(),'model');
-            console.log(param.toString(), 'param');
+            // To implement
         },
 
         rebootServer: function(){

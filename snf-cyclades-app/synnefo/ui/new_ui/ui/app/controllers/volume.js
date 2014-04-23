@@ -52,8 +52,6 @@ Snf.VolumesController = Snf.ElemsListController.extend({
         var Actions = this.get('selectedItems').map(function(i){
             return statusActionsVolume[i.get('status')].enabledActions;
         });
-        // KPAP giati oxi ayto? :S
-        console.log(_.intersection(Actions[0]));
         return _.intersection.apply(_,Actions);
     }.property('selectedItems.@each'),
 
