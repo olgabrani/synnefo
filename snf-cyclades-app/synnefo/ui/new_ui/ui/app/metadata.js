@@ -1,12 +1,14 @@
 var statusText ={
-    'BUILD'    : 'BUILDING',
-    'ACTIVE'   : 'RUNNING',
-    'STOPPED'  : 'STOPPED',
-    'SHUTOFF'  : 'STOPPED',
-    'ERROR'    : 'ERROR',
-    'UNKNOWN'  : 'Αn unexpected error has occured',
-    'REBOOT'   : 'REBOOTING',
-    'REBUILD'  : 'REBUILDING VM',
+    'BUILD'       : 'BUILDING',
+    'ACTIVE'      : 'RUNNING',
+    'STOPPED'     : 'STOPPED',
+    'SHUTOFF'     : 'STOPPED',
+    'ERROR'       : 'ERROR',
+    'UNKNOWN'     : 'Αn unexpected error has occured',
+    'REBOOT'      : 'REBOOTING',
+    'REBUILD'     : 'REBUILDING VM',
+    'DOWN'        : 'DOWN',
+    'SNF:DRAINED' : 'DRAINED',
 };
 
 /* Wizards */

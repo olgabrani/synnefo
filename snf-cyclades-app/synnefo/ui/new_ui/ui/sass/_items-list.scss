@@ -503,7 +503,7 @@
 .off, .lt-bar .off {
 	@include stateColor($vm-off-color);
 }
-.error, .lt-bar .error {
+.error, .lt-bar .error, .drained, .lt-bar .drained  {
 	@include stateColor($vm-error-color);
 }
 .shutting, .lt-bar .shutting {
