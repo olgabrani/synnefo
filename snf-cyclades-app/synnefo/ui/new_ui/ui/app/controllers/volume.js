@@ -28,7 +28,7 @@ Snf.VolumeController = Snf.ElController.extend({
 
     actions: {
 
-        dettachVolume: function(){
+        detachVolume: function(){
             this.get('model').get('server').get('volumes').removeObject(this.get('model'));
         },
         destroyVolume: function(){

@@ -1,11 +1,11 @@
 Snf.Port = DS.Model.extend({
 
-    server          : DS.belongsTo('server', {async:true}),
+    server      : DS.belongsTo('server', {async:true}),
     network     : DS.belongsTo('network', {async:true}),
     firewall    : DS.attr(),
     ipv4        : DS.attr(),
     ipv6        : DS.attr(),
-    dettachable : DS.attr('boolean', {defaultValue: false}),
+    detachable  : DS.attr('boolean', {defaultValue: false}),
 
     // firewallState can be off or on
     firewallState: function() {
@@ -25,7 +25,7 @@ Snf.Port.FIXTURES = [
         network: 1,
         firewall: 'on',
         ipv4: '11.212.96.12',
-        dettachable: true,
+        detachable: true,
     },
     {
         id: 2,
@@ -33,7 +33,7 @@ Snf.Port.FIXTURES = [
         network: 2,
         firewall: 'partial',
         ipv4: '22.212.96.30',
-        dettachable: true,  
+        detachable: true,  
     },
     {
         id: 3,
@@ -41,7 +41,7 @@ Snf.Port.FIXTURES = [
         network: 1,
         firewall: 'off',
         ipv4: '33.212.96.00',
-        dettachable: true,
+        detachable: true,
     },
     {
         id: 4,
@@ -49,7 +49,7 @@ Snf.Port.FIXTURES = [
         network: 1,
         firewall: 'on',
         ipv6: '4444:0000:0000:0000:0202:B3FF:FE1E:8329',
-        dettachable: true,
+        detachable: true,
     },
     {
         id: 5,
