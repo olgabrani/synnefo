@@ -1,12 +1,12 @@
 var statusText ={
-    'SHUTOFF'  : 'STOPPED',
-    'ERROR'    : 'ERROR',
     'BUILD'    : 'BUILDING',
     'ACTIVE'   : 'RUNNING',
-    'REBOOT'   : 'REBOOTING',
-    'starting' : 'STARTING',
-    'shutting' : 'SHUTTING DOWN',
     'STOPPED'  : 'STOPPED',
+    'SHUTOFF'  : 'STOPPED',
+    'ERROR'    : 'ERROR',
+    'UNKNOWN'  : 'Αn unexpected error has occured',
+    'REBOOT'   : 'REBOOTING',
+    'REBUILD'  : 'REBUILDING VM',
 };
 
 /* Wizards */

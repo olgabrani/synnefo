@@ -14,10 +14,7 @@ var statusActionsServer = {
     'reboot'      : {
         enabledActions : ['connect', 'destroy'],
     },
-    'starting'      : {
-        enabledActions : ['connect', 'destroy'],
-    },
-    'shutting'      : {
+    'unknown'      : {
         enabledActions : ['connect', 'destroy'],
     },
     'stopped'      : {
@@ -456,6 +453,107 @@ Snf.Server.FIXTURES = [
         "SNF:fqdn": "snf-42.vm.example.org",
         "key_name": null,
         "name": "My Server 4",
+        "created": "2014-02-12T08:31:37.834542+00:00",
+        "tenant_id": "s0m5-u5e7-1d",
+        "SNF:port_forwarding": {},
+        "SNF:task_state": "",
+        "diagnostics": [
+            {
+                "level": "DEBUG",
+                "created": "2014-02-12T08:31:37.834542+00:00",
+                "source": "image-info",
+                "source_date": "2014-02-12T08:32:35.929507+00:00",
+                "message": "Image customization finished successfully.",
+                "details": null
+            }
+        ],
+        "metadata": {
+            "os": "debian",
+            "users": "root"
+        },
+        'project': 1,
+    },,{
+        "addresses": [
+        { 
+            "2718": [
+            {
+                "version": 6,
+                "addr": "2001:443:2dfc:1232:a810:3cf:fe9b:21ab",
+                "OS-EXT-IPS:type": "fixed",
+            }],
+            "2719": [
+            {
+                "version": 4,
+                "addr": "192.168.1.2",
+                "OS-EXT-IPS:type": "floating",
+            }],
+        }],
+        "attachments": [
+            {
+                "id": "1",
+                "network_id": "2718",
+                "mac_address": "aa:01:02:6c:34:ab",
+                "firewallProfile": "DISABLED",
+                "ipv4": "",
+                "ipv6": "2001:443:2dfc:1232:a810:3cf:fe9b:21ab",
+                "OS-EXT-IPS:type": "fixed",
+            }, {
+                "id": "2",
+                "network_id": "2719",
+                "mac_address": "aa:00:0c:6d:34:bb",
+                "firewallProfile": "PROTECTED",
+                "ipv4": "192.168.1.2",
+                "ipv6": "",
+                "OS-EXT-IPS:type": "floating",
+            }
+        ],
+        "links": [
+        {
+            "href": "https://example.org/compute/v2.0/servers/42",
+            "rel": "self"
+        }, {
+            "href": "https://example.org/compute/v2.0/servers/42",
+            "rel": "bookmark"
+        }],
+        "image": {
+            "id": "im4g3-1d",
+            "links": [
+            {
+                "href": "https://example.org/compute/v2.0/images/im4g3-1d",
+                "rel": "self"
+            }, {
+                "href": "https://example.org/compute/v2.0/images/im4g3-1d",
+                "rel": "bookmark"
+            }, {
+                "href": "https://example.org/image/v1.0/images/im4g3-1d",
+                "rel": "alternate"
+            }]
+        },
+        "suspended": false,
+        "flavor" : {
+            "id": "1",
+            "links": [
+            {
+                "href" : "https://example.org/compute/v2.0/flavors/1",
+                "rel"  : "self",
+            }, {
+                "href": "https://example.org/compute/v2.0/flavors/1",
+                "rel": "bookmark",
+            }]
+        },
+        "id": "5",
+        "security_groups": [{"name": "default"}],
+        "user_id": "s0m5-u5e7-1d",
+        "accessIPv4": "",
+        "accessIPv6": "",
+        "progress": 100,
+        "config_drive": "",
+        "status": "STOPPED",
+        "updated": "2011-05-29T14:07:07.037602+00:00",
+        "hostId": "",
+        "SNF:fqdn": "snf-42.vm.example.org",
+        "key_name": null,
+        "name": "Sherlock",
         "created": "2014-02-12T08:31:37.834542+00:00",
         "tenant_id": "s0m5-u5e7-1d",
         "SNF:port_forwarding": {},
