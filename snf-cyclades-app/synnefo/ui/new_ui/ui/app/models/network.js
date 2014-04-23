@@ -21,7 +21,7 @@ Snf.Network = DS.Model.extend({
     name       : DS.attr(),
     status     : DS.attr(),
     ports      : DS.hasMany('port', { async:true }),
-    project    : DS.belongsTo('project',{ async:true}),
+    tenant_id  : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {
         return statusActionsNetwork[this.get('status').toLowerCase()].enabledActions;
@@ -68,7 +68,6 @@ Snf.Network.FIXTURES = [
         28
       ],
       "type": "IP_LESS_ROUTED",
-      'project':1,
     }, {
       "id": "2",
       "name": "My Private Network",
@@ -87,13 +86,12 @@ Snf.Network.FIXTURES = [
         }
       ],
       "created": "2014-02-13T09:40:05.101008+00:00",
-      "tenant_id": "s0m3-u5e7-1d",
+      "tenant_id": "2",
       "admin_state_up": true,
       "type": "MAC_FILTERED",
       "subnets": [],
       "SNF:floating_ip_pool": false,
       "public": false,
-      'project': 2,
     }, {
       "id": "3",
       "name": "My Private Network 3",
@@ -112,12 +110,11 @@ Snf.Network.FIXTURES = [
         }
       ],
       "created": "2014-02-13T09:40:05.101008+00:00",
-      "tenant_id": "s0m3-u5e7-1d",
+      "tenant_id": "3",
       "admin_state_up": true,
       "type": "MAC_FILTERED",
       "subnets": [],
       "SNF:floating_ip_pool": false,
       "public": false,
-      'project': 2,
     }
   ];

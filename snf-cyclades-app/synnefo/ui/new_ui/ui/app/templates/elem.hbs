@@ -25,10 +25,8 @@
             </li>
             {{/each}}
         {{/if}}
-
-
-        {{#if project}}
-            {{sideactions-project reassignProject="reassignProject" current=this.project projects=projects}}
+        {{#if tenant_id}}
+            {{sideactions-project reassignProject="reassignProject" current=this.tenant_id projects=projects}}
         {{/if}}
     </ul>
 

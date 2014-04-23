@@ -35,7 +35,7 @@ Snf.Server = DS.Model.extend({
     volumes     : DS.hasMany('volume', { async:true}),
     //ports       : DS.hasMany('port', { async: true}),
     attachments : DS.attr('raw'),
-    project     : DS.belongsTo('project',{ async:true}), // NOT OK. Where do we get projects from
+    tenant_id   : DS.belongsTo('project',{ async:true}), 
     
     enabledActions: function() {
         return statusActionsServer[this.get('status').toLowerCase()].enabledActions;
@@ -154,7 +154,7 @@ Snf.Server.FIXTURES = [
         "key_name": null,
         "name": "My Server 1",
         "created": "2014-02-12T08:31:37.834542+00:00",
-        "tenant_id": "s0m5-u5e7-1d",
+        "tenant_id": "1",
         "SNF:port_forwarding": {},
         "SNF:task_state": "",
         "diagnostics": [
@@ -249,7 +249,7 @@ Snf.Server.FIXTURES = [
         "key_name": null,
         "name": "My Server 2",
         "created": "2014-02-12T08:31:37.834542+00:00",
-        "tenant_id": "s0m5-u5e7-1d",
+        "tenant_id": "2",
         "SNF:port_forwarding": {},
         "SNF:task_state": "",
         "diagnostics": [
@@ -352,7 +352,7 @@ Snf.Server.FIXTURES = [
         "key_name": null,
         "name": "My Server 3",
         "created": "2014-02-12T08:31:37.834542+00:00",
-        "tenant_id": "s0m5-u5e7-1d",
+        "tenant_id": "3",
         "SNF:port_forwarding": {},
         "SNF:task_state": "",
         "diagnostics": [
@@ -454,7 +454,7 @@ Snf.Server.FIXTURES = [
         "key_name": null,
         "name": "My Server 4",
         "created": "2014-02-12T08:31:37.834542+00:00",
-        "tenant_id": "s0m5-u5e7-1d",
+        "tenant_id": "4",
         "SNF:port_forwarding": {},
         "SNF:task_state": "",
         "diagnostics": [
@@ -555,7 +555,7 @@ Snf.Server.FIXTURES = [
         "key_name": null,
         "name": "Sherlock",
         "created": "2014-02-12T08:31:37.834542+00:00",
-        "tenant_id": "s0m5-u5e7-1d",
+        "tenant_id": "1",
         "SNF:port_forwarding": {},
         "SNF:task_state": "",
         "diagnostics": [
