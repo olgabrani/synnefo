@@ -1,7 +1,7 @@
 <section class="content info-simple">
 
     <section class="info-block">
-        <h2>info</h2>
+        <h2>Info</h2>
         <dl>
             <dt><span class="snf-font snf-image-full"></span>Name</dt>
             <dd>{{name}}</dd>
@@ -17,7 +17,18 @@
                 <dt>Updated at</dt>
                 <dd>{{updated_at}}</dd>
             {{/if}}    
-            {{#if properties.description}}
+            
+            
+            <dt>Public</dt>
+            <dd>{{#if is_public}}{{is_public}}{{else}}False{{/if}}</dd>
+        
+        </dl>
+    </section>
+    {{#if properties}}
+    <section class="info-block">
+        <h2>Properties</h2>
+        <dl>
+           {{#if properties.description}}
                 <dt>Description</dt>
                 <dd>{{properties.description}}</dd>
             {{/if}}
@@ -25,16 +36,6 @@
                 <dt><span class="snf-font snf-ram-full"></span>Minimum RAM required</dt>
                 <dd>{{bytes-to-human properties.min_ram}}</dd>
             {{/if}}
-            
-            <dt>Public</dt>
-            <dd>{{#if is_public}}{{is_public}}{{else}}False{{/if}}</dd>
-        
-        </dl>
-    </section>
-    <section class="info-block">
-        <h2>OS info</h2>
-        <dl>
-           
             {{#if properties.users}}
                 <dt>Users</dt>
                 <dd>{{properties.users}}</dd>    
@@ -63,5 +64,5 @@
             
         </dl>
     </section>
-
+    {{/if}}
 </section>

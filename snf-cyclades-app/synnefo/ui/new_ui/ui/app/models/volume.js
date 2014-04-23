@@ -5,7 +5,7 @@ var statusActionsVolume = {
     'building'      : {
         enabledActions : [],
     },
-    'running'      : {
+    'active'      : {
         enabledActions : ['destroy'],
     },
     'starting'      : {
@@ -23,9 +23,12 @@ Snf.Volume = DS.Model.extend({
     project     : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {
-        return statusActionsVolume[this.get('status')].enabledActions;
+        return statusActionsVolume[this.get('status').toLowerCase()].enabledActions;
     }.property('state'),
-
+    
+    statusLowerCase: function() {
+        return this.get('status').toLowerCase();
+    }.property('status'),
 });
 
 
@@ -33,7 +36,7 @@ Snf.Volume.FIXTURES = [
     {
         id: 1,
         name: 'Volume 1',
-        status: 'running',
+        status: 'ACTIVE',
         size: 10737418240,
         server: 1,
         project: 1,
@@ -41,7 +44,7 @@ Snf.Volume.FIXTURES = [
     {
         id: 2,
         name: 'Volume 2',
-        status: 'running',
+        status: 'ERROR',
         size: 2048,
         server: 1,
         project: 1,
@@ -49,7 +52,7 @@ Snf.Volume.FIXTURES = [
     {
         id: 3,
         name: 'Volume 3',
-        status: 'starting',
+        status: 'ACTIVE',
         size: 4096,
         storageType: 'drpd',
         server: 3,

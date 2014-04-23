@@ -37,6 +37,10 @@ Snf.Image = DS.Model.extend({
         return statusActionsImage[this.get('status')].enabledActions;
     }.property('status'),
 
+    statusLowerCase: function() {
+        return this.get('status').toLowerCase();
+    }.property('status'),
+
     os: function(){
         if (_.contains(available_os_icons, this.get('properties.os'))){
             return this.get('properties.os');
