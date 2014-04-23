@@ -37,6 +37,9 @@ Snf.NetworkController = Snf.ElController.extend({
             var viewCls = this.get('controllers.networks.viewCls') || 'grid-view';
             this.transitionToRoute('networks', viewCls);
         },
+        reassignProject: function(newproject){
+            this.get('model').set('project', newproject);
+        },
     }
 
 });
