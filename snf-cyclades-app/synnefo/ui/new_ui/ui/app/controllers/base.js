@@ -132,7 +132,7 @@ Snf.ElController = Ember.ObjectController.extend({
             this.controllerFor(this.type).set('model', model);
         },
         saveModel: function(){
-            this.get('model').save();
+            console.log('save model');
         },
     },
 

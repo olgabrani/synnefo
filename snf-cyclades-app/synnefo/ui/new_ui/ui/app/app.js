@@ -7,8 +7,17 @@ window.Snf = Ember.Application.create({
     currentPath: '',
 });
 
+
 Snf.ApplicationAdapter = DS.FixtureAdapter;
 
+Snf.RawTransform = DS.Transform.extend({
+    deserialize: function(serialized) {
+        return serialized;
+    },
+    serialize: function(deserialized) {
+        return deserialized;
+    }
+});
 
 Snf.ApplicationController = Ember.Controller.extend({
     updateCurrentPath: function() {

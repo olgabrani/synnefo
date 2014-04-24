@@ -10,8 +10,11 @@ Snf.EditablePropComponent = Ember.Component.extend({
             this.set('isEditable', true);
         },
         acceptEditableChanges: function(){
-            this.set('isEditable', false);
+            //https://github.com/emberjs/website/issues/1284
+            // Ember.run.debounce(this, this.sendAction('ok'), 50);
             this.sendAction('ok');
+            this.set('isEditable', false);
+
         },
     }
 
