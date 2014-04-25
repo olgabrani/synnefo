@@ -1,6 +1,6 @@
 Ember.Handlebars.helper('status-to-text', function(value) {
   return statusText[value];
-}, 'status');
+}, 'value');
 
 
 Ember.Handlebars.helper('bytes-to-human',function (bytes) {

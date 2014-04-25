@@ -45,9 +45,9 @@ Snf.Server = DS.Model.extend({
         return this.get('status').toLowerCase();
     }.property('status'),
 
-/*    ports: function() {
-        return [1,2];
-    }.property('attachments'),*/
+    manyVolumes: function(){
+        return this.get('volumes.length') > 1;
+    }.property('volumes.length'),
 
     // ember-data returns promise objects for blongsTo properties
     portsNetworksPromises: Ember.computed.mapBy('ports', 'network'),

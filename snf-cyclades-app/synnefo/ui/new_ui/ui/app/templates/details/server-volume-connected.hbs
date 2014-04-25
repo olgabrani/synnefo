@@ -1,4 +1,5 @@
 <section class="content connected volume">
+    {{#with manyVolumes as manyVolumes}}
     {{#each volume in this.volumes itemController="Volume"}}
         <section {{bind-attr class=":item volume.status"}}>
             <div class="what">
@@ -10,7 +11,9 @@
             <div class="clearfix">
                 <ul class="connections">
                     <li>
-                        <a href="#" {{action 'openModal' 'detach-volume-modal' 'volume' model}}  class="act" >&nbsp;</a>
+                        {{#if parentController.manyVolumes}}
+                        <a href="#" {{action 'openModal' 'destroy-volume-modal' 'volume' model}}  class="act" >&nbsp;</a>
+                        {{/if}}
                         <div class="icon"></div>
                         <div class="data">
                             <ul>
@@ -29,6 +32,7 @@
             </div>
         </section>
     {{/each}}
+    {{/with}}
 	<section class="connect-new volume">
 		<div class="img-wrap">
 			<a href="" data-reveal-id="attach-volume">

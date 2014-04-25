@@ -35,6 +35,9 @@ Snf.VolumeController = Snf.ElController.extend({
         destroyVolume: function(){
             this.get('model').deleteRecord();
             this.get('model').save();
+            if ( this.get('target').get('url').split('/')[1].indexOf('volume') < 0 ) {
+                return;
+            }
             var viewCls = this.get('controllers.volumes.viewCls') || 'grid-view';
             this.transitionToRoute('volumes', viewCls);
         },
