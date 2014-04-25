@@ -1,43 +1,45 @@
 <section class="content connected">
+{{#if server}}
     <section {{bind-attr class=":item volume.status"}}>
-            <div class="what">
-                <div class="img-wrap">
-                    {{#link-to 'server' server}}
-                    <span class="snf-font snf-pc-full"></span>
-                    <span {{bind-attr class=":os server.os"}}>{{server.os}}</span>
-                    {{/link-to}}
-                </div>
-                <h4>{{#link-to 'server' server}}{{server.name}}{{/link-to}}</h4>
+        <div class="what">
+            <div class="img-wrap">
+                {{#link-to 'server' server}}
+                <span class="snf-font snf-pc-full"></span>
+                <span {{bind-attr class=":os server.os"}}>{{server.os}}</span>
+                {{/link-to}}
             </div>
-            <div class="clearfix">
-                <ul class="connections">
-                    <li>
-                        <a href="#" {{action 'openModal' 'detach-volume-modal' 'volume' model}}  class="act" >&nbsp;</a>
-                        <div class="icon"></div>
-                        <div class="data">
-                            <ul>
-                                <li>
-                                    <h5 class="volume-data">Assigned Project</h5>
-                                    <p>{{server.project.name}}</p>
-                                </li>
-                                <li>
-                                    <h5 class="volume-data">CPUs</h5>
-                                    <p>4</p>
-                                </li>
-                                <li>
-                                    <h5 class="volume-data">Image Name</h5>
-                                    <p>Fedora</p>
-                                </li>
-                                <li>
-                                    <h5 class="volume-data">Image Size</h5>
-                                    <p>3.68 GB</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
+            <h4>{{#link-to 'server' server}}{{server.name}}{{/link-to}}</h4>
+        </div>
+        <div class="clearfix">
+            <ul class="connections">
+                <li>
+                    <a href="#" {{action 'openModal' 'detach-volume-modal' 'volume' model}}  class="act" >&nbsp;</a>
+                    <div class="icon"></div>
+                    <div class="data">
+                        <ul>
+                            <li>
+                                <h5 class="volume-data">Assigned Project</h5>
+                                <p>{{server.tenant_id.name}}</p>
+                            </li>
+                            <li>
+                                <h5 class="volume-data">CPUs</h5>
+                                <p>4</p>
+                            </li>
+                            <li>
+                                <h5 class="volume-data">Image Name</h5>
+                                <p>Fedora</p>
+                            </li>
+                            <li>
+                                <h5 class="volume-data">Image Size</h5>
+                                <p>3.68 GB</p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+{{/if}}
     <section class="connect-new vserver">
         <div class="img-wrap">
             <a href="">

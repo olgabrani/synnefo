@@ -173,7 +173,7 @@ Snf.Server.FIXTURES = [
         },
         'tags': [1,2],
         'project': 1,
-        'volumes': [1,3]
+        'volumes': [1,2]
     }, {
         "addresses": [
         { 
@@ -268,7 +268,6 @@ Snf.Server.FIXTURES = [
         },
         'tags': [2,3,4],
         'project': 2,
-        'volumes': [2],
     }, {
         "addresses": [
         { 
@@ -371,6 +370,7 @@ Snf.Server.FIXTURES = [
         },
         'tags': [1,2,3,4,5],
         'project': 3,
+        'volumes': [3]
     },{
         "addresses": [
         { 

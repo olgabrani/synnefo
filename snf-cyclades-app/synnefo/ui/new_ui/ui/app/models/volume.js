@@ -19,7 +19,7 @@ Snf.Volume = DS.Model.extend({
     status      : DS.attr(),
     size        : DS.attr('number'),
     storageType : DS.attr('string', {defaultValue: 'Archipelago'}),
-    server      : DS.belongsTo('server', { async:false }),
+    server      : DS.belongsTo('server', { async:false}),
     tenant_id   : DS.belongsTo('project',{ async:true}),
 
     enabledActions: function() {

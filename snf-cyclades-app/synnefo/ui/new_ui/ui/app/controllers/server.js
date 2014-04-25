@@ -68,11 +68,12 @@ Snf.ServerController = Snf.ElController.extend({
             this.get('model').get('tags').removeObject(tag);
         },
 
+
         detachVolume: function(volume){
-            this.get('model').get('volumes').removeObject(volume);
+           // to implement if necessary
         },
         detachServerFromVolume: function(param){
-            // To implement
+            // To implement if necessary
         },
 
         rebootServer: function(){
