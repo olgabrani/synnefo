@@ -6,12 +6,16 @@ Snf.SideactionsProjectComponent = Ember.Component.extend({
     isEditable: false,
     isDisplayed: false,
 
-    availableProjects: function() {
-        var current = this.get('current');
-        return this.get('projects').filter(function(p) {
-            return p.get('id') != current.get('id');
-        });
+    componentCurrent: function(){
+        return this.get('current');
     }.property(),
+
+    availableProjects: function() {
+        var componentCurrent = this.get('componentCurrent');
+        return this.get('projects').filter(function(p) {
+            return p.get('id') != componentCurrent.get('id');
+        });
+    }.property('componentCurrent'),
 
     mouseEnter: function(evt) {
         this.set('isDisplayed', true);
@@ -27,6 +31,7 @@ Snf.SideactionsProjectComponent = Ember.Component.extend({
             this.set('isEditable', true);
         },
         reassignProject: function(newproject){
+            this.set('componentCurrent', newproject);
             this.set('current', newproject);
             this.sendAction('reassignProject', newproject);
             this.set('isEditable', false);

@@ -134,6 +134,9 @@ Snf.ElController = Ember.ObjectController.extend({
         saveModel: function(){
             console.log('save model');
         },
+        reassignProject: function(newproject){
+            this.get('model').set('project', newproject);
+        },
     },
 
     projects: function(){

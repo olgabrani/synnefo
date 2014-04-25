@@ -102,10 +102,6 @@ Snf.ServerController = Snf.ElController.extend({
         startServer: function(){
             this.get('model').set('status','ACTIVE');
         },
-
-        reassignProject: function(newproject){
-            this.get('model').set('project', newproject);
-        },
     },
 });
 

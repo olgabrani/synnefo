@@ -1,7 +1,7 @@
 <a title="Show projects"><span class="snf-folder-move-full"></span></a>
 {{#if isDisplayed}}
     <ul>
-        <li>{{current.name}}</li>
+        <li><strong>{{current.name}}</strong></li>
         {{#if isEditable}}
             {{#each project in availableProjects}}
                 <li><a {{action 'reassignProject' project}}>{{project.name}}</a></li>
