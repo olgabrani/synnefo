@@ -1,0 +1,14 @@
+<h5>{{current.name}}</h5>
+<div class="project col">
+    <a class="btn-more">
+        <em>reassign</em>
+        <span class="arrow-down"></span>
+    </a>
+    {{#if isDisplayed}}
+    <ul>
+        {{#each project in availableProjects}}
+            <li><a {{action 'reassignProject' project}}>{{project.name}}</a></li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>
