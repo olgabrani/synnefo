@@ -95,7 +95,7 @@ Snf.ElController = Ember.ObjectController.extend({
     }.property('name'),
 
     parent: function() {
-        return this.type+'s';
+        return this.type.pluralize();
     }.property(),
 
     childInit: function() {
