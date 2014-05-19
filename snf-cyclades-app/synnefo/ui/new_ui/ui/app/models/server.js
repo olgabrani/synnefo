@@ -33,7 +33,7 @@ Snf.Server = DS.Model.extend({
     tags        : DS.hasMany('tag', { async:true }), // ΝΟΤ ΟΚ. Where do we get tags from
     // http://www.synnefo.org/docs/synnefo/latest/compute-api-guide.html#flavor
     volumes     : DS.hasMany('volume', { async:true}),
-    //ports       : DS.hasMany('port', { async: true}),
+    ports       : DS.hasMany('port', { async: true}),
     attachments : DS.attr('raw'),
     tenant_id   : DS.belongsTo('project',{ async:true}), 
     
@@ -173,7 +173,8 @@ Snf.Server.FIXTURES = [
         },
         'tags': [1,2],
         'project': 1,
-        'volumes': [1,2]
+        'volumes': [1,2],
+        'ports': [1,2],
     }, {
         "addresses": [
         { 
@@ -268,6 +269,7 @@ Snf.Server.FIXTURES = [
         },
         'tags': [2,3,4],
         'project': 2,
+        'ports': [3],
     }, {
         "addresses": [
         { 
@@ -370,7 +372,8 @@ Snf.Server.FIXTURES = [
         },
         'tags': [1,2,3,4,5],
         'project': 3,
-        'volumes': [3]
+        'volumes': [3],
+        'ports': [4,5],
     },{
         "addresses": [
         { 

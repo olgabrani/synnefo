@@ -173,7 +173,8 @@ Snf.ServerNetworkPortsController = Ember.ObjectController.extend({
         var parentVM = this.get('parentController').get('model');        
         
         // http://stackoverflow.com/questions/20479179
-        return this.get('ports').filter(function(e) {
+        return this.get('model').get('ports').filter(function(e) {
+            console.log('?');
             return e.get('data.server.id') == parentVM.get('id');
         });
 
