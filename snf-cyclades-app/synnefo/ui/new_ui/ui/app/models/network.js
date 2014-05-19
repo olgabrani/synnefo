@@ -68,6 +68,7 @@ Snf.Network.FIXTURES = [
         28
       ],
       "type": "IP_LESS_ROUTED",
+      'ports': [1,3,4,5,6],
     }, {
       "id": "2",
       "name": "My Private Network",
@@ -116,5 +117,6 @@ Snf.Network.FIXTURES = [
       "subnets": [],
       "SNF:floating_ip_pool": false,
       "public": false,
+      'ports': [2],
     }
   ];
