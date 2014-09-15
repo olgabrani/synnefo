@@ -153,11 +153,11 @@ setup(
     install_requires=INSTALL_REQUIRES,
 
     dependency_links=['http://docs.dev.grnet.gr/pypi'],
-    entry_points={
-        'synnefo': [
-            'urls = synnefo_ui.urls:urlpatterns',
-            'web_context_processors = synnefo_ui.context_processors:hello_world',
-            'default_settings = synnefo_ui.settings',
-        ]
-    },
+#    entry_points={
+#        'synnefo': [
+#            'urls = synnefo_ui.urls:urlpatterns',
+#            'web_context_processors = synnefo_ui.context_processors:hello_world',
+#            'default_settings = synnefo_ui.settings',
+#        ]
+#    },
     )
