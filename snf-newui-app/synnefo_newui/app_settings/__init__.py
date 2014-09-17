@@ -15,19 +15,7 @@
 
 
 """
-Settings for the snf-newui-app.
+Django settings metadata. To be used in setup.py snf-webproject entry points.
 """
 
-# --------------------------------------------------------------------
-# Process Admin settings
-
-from django.conf import settings
-from collections import OrderedDict
-from synnefo.lib import parse_base_url
-
-
-BASE_URL = getattr(settings, 'NEWUI_BASE_URL',
-                   'https://admin.example.synnefo.org/newui/')
-BASE_HOST, BASE_PATH = parse_base_url(BASE_URL)
-
-ADMIN_FOO = getattr(settings, 'ADMIN_FOO', 'foo')
+installed_apps = ['synnefo_newui.newui']

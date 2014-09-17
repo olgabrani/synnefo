@@ -12,22 +12,13 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
 
+"""Url configuration for the newui interface"""
 
-"""
-Settings for the snf-newui-app.
-"""
+from django.conf.urls import patterns, url
 
-# --------------------------------------------------------------------
-# Process Admin settings
-
-from django.conf import settings
-from collections import OrderedDict
-from synnefo.lib import parse_base_url
-
-
-BASE_URL = getattr(settings, 'NEWUI_BASE_URL',
-                   'https://admin.example.synnefo.org/newui/')
-BASE_HOST, BASE_PATH = parse_base_url(BASE_URL)
-
-ADMIN_FOO = getattr(settings, 'ADMIN_FOO', 'foo')
+urlpatterns = patterns(
+    'synnefo_newui.newui.views',
+    url(r'^$', 'home', name='newui-home'),
+)
