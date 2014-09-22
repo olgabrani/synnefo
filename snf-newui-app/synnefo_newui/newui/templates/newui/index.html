@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{BRANDING_SERVICE_NAME}} UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <base href="/newui/">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}newui/assets/vendor.css">
+    <link rel="stylesheet" href="{{ MEDIA_URL }}newui/assets/new-ui.css">
+  </head>
+  <body>
+    <script>
+      window.NewUiENV = {"environment":"development","baseURL":"newui/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true}};
+      window.EmberENV = window.NewUiENV.EmberENV;
+    </script>
+
+    <script src="{{ MEDIA_URL }}newui/assets/vendor.js"></script>
+    <script src="{{ MEDIA_URL }}newui/assets/new-ui.js"></script>
+    <script>
+      window.NewUi = require('new-ui/app')['default'].create(NewUiENV.APP);
+    </script>
+  </body>
+</html>

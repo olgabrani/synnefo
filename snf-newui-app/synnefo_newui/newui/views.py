@@ -1,5 +1,5 @@
 from django.views.generic.simple import direct_to_template
 
 def home(request):
-    return direct_to_template(request, "newui/home.html")
+    return direct_to_template(request, "newui/index.html")
 
