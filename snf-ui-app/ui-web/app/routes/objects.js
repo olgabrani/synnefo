@@ -3,9 +3,12 @@ import ResetScrollMixin from 'ui-web/mixins/reset-scroll';
 
 export default Ember.Route.extend(ResetScrollMixin,{
   model: function(params){
-    var containerID = this.modelFor('container').get('name');
+    // TODO: get container_id directly
+    var containerID = this.modelFor('container').get('id');
+    var containerName = this.modelFor('container').get('name');
     var currentPath = params.current_path ? params.current_path : '/';
     this.store.set('container_id', containerID);
+    this.store.set('container_name', containerName);
     this.set('current_path', currentPath);
     var self = this;
 
@@ -30,7 +33,7 @@ export default Ember.Route.extend(ResetScrollMixin,{
 
                 // remove the last part of the url
                 parentPath = currentPath.substring(0, currentPath.lastIndexOf('/'));
-                return self.store.find('object', {
+                return self.store.findQueryReloadable('object', {
                     path: parentPath, 
                     container_id:containerID
                   }).then(function(objList) {
@@ -99,8 +102,8 @@ export default Ember.Route.extend(ResetScrollMixin,{
   },
   setupController: function(controller,model){
     controller.set('model', model);
-    var containerID = this.modelFor('container').get('name');
-    controller.set('container_id', containerID);
+    controller.set('container_id', this.store.get('container_id'));
+    controller.set('container_name', this.store.get('container_name'));
     controller.set('current_path', this.get('current_path'));
     controller.set('selectedItems', []);
   },
