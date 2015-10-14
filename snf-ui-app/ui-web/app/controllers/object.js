@@ -45,13 +45,11 @@ export default Ember.Controller.extend({
   canReplace: function(){
     return this.get('model.is_file') && this.get('write_only');
   }.property('model.is_file', 'write_only'),
-
-  
   
   versioning: Ember.computed.alias('parentController.versioning'),
 
   handleSelect: function(selected) {
-    this.set('isSelected', selected);
+    this.set('model.isSelected', selected);
   },
 
   bindToSelectAll: function() {
@@ -79,18 +77,6 @@ export default Ember.Controller.extend({
       Ember.removeListener(context, "selectAll", this, this.handleSelect);
     }
   }.on('destroy'),
-
-  isSelected: false,
-
-  watchSelected: function(){
-    var self = this;
-    var o = this.get('parentController.selectedItems');
-    if (this.get('isSelected')){
-      o.pushObject(self);
-    } else {
-      o.removeObject(self);
-    }
-  }.observes('isSelected'),
 
   view_src: function(){
     var base_url = this.get('settings').get('storage_view_url');
@@ -201,7 +187,7 @@ export default Ember.Controller.extend({
   actions: {
     initAction: function(action){
       this.get('parentController').send('clearSelected');
-      this.set('isSelected', true);
+      this.set('model.isSelected', true);
       this.send(action);
     },
 

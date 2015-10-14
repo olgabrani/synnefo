@@ -16,12 +16,12 @@ export default Ember.View.extend(DropFileViewMixin, SnfAddHandlerMixin, {
   },
 
   isSelected: function(){
-    return this.get('controller').get('isSelected');
-  }.property('controller.isSelected'),
+    return this.get('controller.model.isSelected');
+  }.property('controller.model.isSelected'),
  
   loading: function(){
-    return this.get('controller').get('loading');
-  }.property('controller.loading'),
+    return this.get('controller').get('loading') || this.get('controller.model.loading');
+  }.property('controller.loading', 'controller.model.loading'),
 
   new: function(){
     return this.get('controller.model.new');
@@ -46,7 +46,7 @@ export default Ember.View.extend(DropFileViewMixin, SnfAddHandlerMixin, {
     let isDiv = (e.target.tagName == 'DIV') && (e.target.className != 'loader');
 
     if (isCheck || isDiv) {
-      this.get('controller').toggleProperty('isSelected');
+      this.get('controller.model').toggleProperty('isSelected');
     } else {
       return;
     }

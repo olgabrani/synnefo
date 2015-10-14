@@ -9,10 +9,10 @@ export default Ember.ArrayController.extend(ItemsControllerMixin, {
   
   objectsCount: Ember.computed.alias('length'),
   hasObjects: Ember.computed.bool('objectsCount'),
-  selectedMany: Ember.computed.gt('selectedItems.length', 1),
-  selectedOne: Ember.computed.equal('selectedItems.length', 1),
-  hasSelected: Ember.computed.bool('selectedItems.length'),
-  selectedCount: Ember.computed.alias('selectedItems.length'),
+  selectedMany: Ember.computed.gt('selectedModel.length', 1),
+  selectedOne: Ember.computed.equal('selectedModel.length', 1),
+  hasSelected: Ember.computed.bool('selectedModel.length'),
+  selectedCount: Ember.computed.alias('selectedModel.length'),
   current_user: Ember.computed.alias('controllers.application.currentUser'),
   trash: Ember.computed.equal('container_name', 'trash'),
   mine: true,
@@ -93,11 +93,11 @@ export default Ember.ArrayController.extend(ItemsControllerMixin, {
       var selectedCount = this.get('selectedCount');
       var verb =  this.t('action_verb.'+this.get('verb_for_action'));
       if (this.get('selectedOne')) {
-        name = this.get('selectedItems').get('firstObject').get('model.name');
+        name = this.get('selectedModel').get('firstObject').get('name');
       } 
       return this.t('overlay.confirm_simple.intro', selectedCount,  verb , 'object' , name);
     }
-  }.property('verb_for_action', 'selectedItems.@each.model.name'),
+  }.property('verb_for_action', 'selectedModel.@each.name'),
 
   confirm_button: function(){
     if (this.get('verb_for_action') ) {
@@ -105,8 +105,11 @@ export default Ember.ArrayController.extend(ItemsControllerMixin, {
     }
   }.property('verb_for_action'),
 
-  selectedItems: [],
-  copyFlag: false,
+  selectedModel: function() {
+    return this.filterBy('isSelected', true) || [];
+  }.property('@each.isSelected'),
+
+
 
  /*
  * Pithos API allows the name of objects to have at most 1024 chars
@@ -208,10 +211,10 @@ export default Ember.ArrayController.extend(ItemsControllerMixin, {
   checkSelectedCls: "fa-square-o",
 
   watchHasSelected: function(){
-    if (this.get('selectedItems.length') == 0) {
+    if (!(this.get('hasSelected'))) {
       this.set('checkSelectedCls', "fa-square-o");
     } 
-  }.observes('selectedItems.@each'),
+  }.observes('selectedModel.@each'),
 
   actions: {
     reset: function() {
@@ -279,38 +282,35 @@ export default Ember.ArrayController.extend(ItemsControllerMixin, {
     },
 
     toggleSelectAll: function(){
-      var toggle = this.get("selectedItems.length") ? false : true;
+      var toggle = this.get("selectedModel.length") ? false : true;
       var cls = toggle? "fa-check-square-o": "fa-square-o";
       this.set('checkSelectedCls', cls);
       Ember.sendEvent(this, "selectAll", [toggle]);
     },
 
     deleteObjects: function(controller_list){
-      var selected = controller_list || this.get('selectedItems');
+      var selected = controller_list || this.get('selectedModel');
       if (selected.length === 0) { return; }
 
       var onSuccess = function(a) {
-        this.get('model').update().then(function(){
-          a.unloadRecord();
-        });
+        // do something on Success
       }.bind(this);
 
       var onFail = function(reason){
         this.send('showErrorDialog', reason);
       }.bind(this);
+
+      selected.forEach(function(el){
+        el.set('loading', true);
+        el.deleteRecord();
+        el.save().then(onSuccess, onFail);
+      })
       
-      while (selected.get(0)) {
-        var object = selected.get(0).get('model');
-        selected.get(0).set('loading', true);
-        selected.get(0).set('isSelected', false);
-        object.deleteRecord();
-        object.save().then(onSuccess, onFail);
-     }
     },
 
     _moveObjects: function(selectedDir, controller_list, copyFlag, source_account){
       var self = this;
-      var selected = controller_list || this.get('selectedItems');
+      var selected = controller_list || this.get('selectedModel');
       if (selected.length === 0) { return; }
 
       var processNext = function() {
@@ -360,34 +360,26 @@ export default Ember.ArrayController.extend(ItemsControllerMixin, {
     },
 
     clearSelected: function(){
-      var selected = this.get('selectedItems') || [];
-      while (selected.get(0)) {
-        selected.get(0).set('isSelected', false);
-      }
+      this.get('model').setEach('isSelected', false);
     },
 
     openCopy: function(){
-      var selected = this.get('selectedItems');
-      if (selected.length === 0) { return; }
+      if (!(this.get('hasSelected'))) { return; }
       this.send('showDialog', 'paste', 'object/copy');
     },
 
     openCut: function(){
-      var selected = this.get('selectedItems');
-      if (selected.length === 0) { return; }
+      if (!(this.get('hasSelected'))) { return; }
       this.send('showDialog', 'paste', 'object/cut');
     },
 
     openDelete: function(){
-      var self = this;
-      var selected = this.get('selectedItems');
-      if (selected.length === 0) { return; }
-      this.send('showDialog', 'confirm-simple', self, null, 'deleteObjects' );
+      if (!(this.get('hasSelected'))) { return; }
+      this.send('showDialog', 'confirm-simple', this, null, 'deleteObjects' );
     },
 
     openRestore: function(){
-      var selected = this.get('selectedItems');
-      if (selected.length === 0) { return; }
+      if (!(this.get('hasSelected'))) { return; }
       this.send('showDialog', 'paste', 'object/restore');
     },
 

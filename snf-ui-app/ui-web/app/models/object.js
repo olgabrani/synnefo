@@ -16,6 +16,9 @@ export default DS.Model.extend({
   last_modified: DS.attr('string'),
   modified_by: DS.belongsTo('user', {async:true}),
   allowed_to: DS.attr('string'),
+  isSelected: DS.attr('boolean', {defaultValue: false}),
+  loading: DS.attr('boolean', {defaultValue: false}),
+  
 
   last_modified_human: function(){
     return timeHuman(this.get('last_modified'));
