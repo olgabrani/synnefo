@@ -1,3 +1,5 @@
+**Important: _snf-ui-app_ application has moved to [https://github.com/grnet/snf-ui-app](https://github.com/grnet/snf-ui-app)**
+
 Synnefo
 =======
 
